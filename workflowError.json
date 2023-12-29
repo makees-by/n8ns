@@ -292,8 +292,21 @@
     "executionOrder": "v1"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-28T08:03:06.646Z",
+      "updatedAt": "2023-12-28T08:03:06.646Z",
+      "id": "b0NYL2sHCdMBP0aq",
+      "name": "bot"
+    },
+    {
+      "createdAt": "2023-12-29T05:53:47.703Z",
+      "updatedAt": "2023-12-29T05:53:47.703Z",
+      "id": "s0ItgLIAIGZvrN1g",
+      "name": "err"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2023-12-27T14:33:23.000Z",
-  "versionId": "09ff7ab9-ea0d-4bb6-bc9e-811d8dd1d0e4"
+  "updatedAt": "2023-12-29T05:53:58.000Z",
+  "versionId": "65ef1cbb-b09c-464f-834f-7310921a2aaa"
 }
