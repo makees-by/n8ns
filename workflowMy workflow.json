@@ -121,8 +121,15 @@
     "errorWorkflow": "k3cmqrd2rdjhkgrK"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-29T05:48:03.050Z",
+      "updatedAt": "2023-12-29T05:48:03.050Z",
+      "id": "AgzDK5Bx0yz5Db7h",
+      "name": "json"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2023-12-27T14:36:47.000Z",
-  "versionId": "b386e378-b599-4566-a7f4-a1aa6a8bc1a5"
+  "updatedAt": "2023-12-29T05:51:19.000Z",
+  "versionId": "cda0f2e1-4b6e-48d0-8e6f-4894159da522"
 }
