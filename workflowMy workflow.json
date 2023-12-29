@@ -1,0 +1,128 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-11-14T15:43:39.212Z",
+  "id": "sG6lJH5AeWYBKCMC",
+  "meta": null,
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a936c654-5d3a-4e04-97dc-4682f2cf84b8",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        420,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "static",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=[ \n {\n  \"key\": \"{{ $json.key }}\"\n }\n]",
+        "filePath": "~/.n8n/forIra.json"
+      },
+      "id": "61e6c78c-0b33-40e3-be03-1e0c7d351b7a",
+      "name": "JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        220
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5bff5b7f-5610-43d4-a392-220b7a155700",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        740,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "key",
+              "stringValue": "wertyg"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0392c072-404f-48e8-815a-5469cc9f4c2f",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        860,
+        220
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "1da66da3-5ee5-4a04-a88a-0d523bef2b4f",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        640,
+        220
+      ],
+      "webhookId": "fcb9e2fe-7d12-4dde-8241-b827389af869"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "k3cmqrd2rdjhkgrK"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-12-27T14:36:47.000Z",
+  "versionId": "b386e378-b599-4566-a7f4-a1aa6a8bc1a5"
+}
