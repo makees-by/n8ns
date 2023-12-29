@@ -1,0 +1,708 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "zsForAnn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Начало",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Начало": {
+      "main": [
+        [
+          {
+            "node": "Запись данных в process_variebles",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Чтение данных всего файла в JsonDatabase2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Запись данных в checkProcess",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Запись данных в workProcess",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Запись данных в tg_chats",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "zsForvika Запись данных в process_variebles1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "zsForAnn json для записи",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "zsForvika json для записи",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ForIra json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных всего файла в JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "Изменение значения для ключа erl_become в JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Изменение значения для ключа erl_become в JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "считывание всего файла в JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "считывание всего файла в JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "Обнуление объекта данных в JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обнуление объекта данных в JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "Вызов значений из файла в JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в traks": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных всего файла в JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в process_trigers": {
+      "main": [
+        [
+          {
+            "node": "Запись данных в traks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForvika": {
+      "main": [
+        [
+          {
+            "node": "ForIra",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForvika Запись данных в process_variebles1": {
+      "main": [
+        [
+          {
+            "node": "Запись данных в process_trigers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForAnn": {
+      "main": [
+        [
+          {
+            "node": "zsForvika",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra": {
+      "main": [
+        [
+          {
+            "node": "Начало",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-12-23T07:54:50.839Z",
+  "id": "NI3FBfARkzo619qo",
+  "meta": null,
+  "name": "writeJSONforProceses",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "writeJSONforProceses",
+        "options": {}
+      },
+      "id": "fb00c0b0-8685-4283-b8ae-e2619709515d",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -2440,
+        1600
+      ],
+      "webhookId": "86368b02-2819-46f4-8d6e-df5d53372b20",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "8da4959a-c560-4cbc-b153-78375b16ab38",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2720,
+        1920
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "ff01a8ad-2784-4107-8519-0ce865050332",
+      "name": "Начало",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "78da9c37-0b22-4544-b9f6-f4bf7239ef97",
+      "name": "Чтение данных всего файла в JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1560,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles.url_become",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "\"www.makees.site\"",
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "616f51ff-4764-4570-aa20-d7c4fe8a2068",
+      "name": "Изменение значения для ключа erl_become в JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "acfd3834-1b4a-4fb2-b084-72ec84266883",
+      "name": "считывание всего файла в JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"is_empty\"",
+        "filePath": "=root/n8n/{{ $json.data.process.variebles.processID }}.json "
+      },
+      "id": "d1c7689d-a573-4e95-a77d-7648e4159176",
+      "name": "Обнуление объекта данных в JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "0d939089-3b98-44be-9f41-5827de13a09b",
+      "name": "Вызов значений из файла в JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1000,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "BP_traks",
+              "type": "objectValue"
+            },
+            {
+              "name": "EP_traks",
+              "type": "objectValue"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5c123bb8-b976-4cec-b931-8690ff951a19",
+      "name": "Составляем json для traks",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -2840,
+        1620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "traks",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n\"BP_traks\": \n{\n},\n\"EP_traks\": \n{\n}\n}",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "ad138a87-1569-4785-8055-bf3324b4ab98",
+      "name": "Запись данных в traks",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1760,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "processID",
+              "stringValue": "ForIra"
+            },
+            {
+              "name": "start_tableID",
+              "stringValue": "16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s"
+            },
+            {
+              "name": "start_pageID",
+              "type": "numberValue",
+              "numberValue": "343946080"
+            },
+            {
+              "name": "statistic_tableID",
+              "stringValue": "thisForTableId08"
+            },
+            {
+              "name": "statistic_pageID",
+              "type": "numberValue",
+              "numberValue": "2020327"
+            },
+            {
+              "name": "url_become",
+              "stringValue": "={{$execution.resumeUrl}}"
+            },
+            {
+              "name": "TrigerBP",
+              "stringValue": "0"
+            },
+            {
+              "name": "TrigerEP",
+              "stringValue": "0"
+            },
+            {
+              "name": "BP_traks",
+              "type": "objectValue"
+            },
+            {
+              "name": "EP_traks",
+              "type": "objectValue"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a42abd1e-58f0-4012-a657-a0c523cb771b",
+      "name": "Составляем json для process_variebles",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -3080,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "TrigerBP",
+              "type": "numberValue",
+              "numberValue": "0"
+            },
+            {
+              "name": "TrigerEP",
+              "type": "numberValue",
+              "numberValue": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cd5c09c5-f196-496c-bbb3-38d9ea856ec9",
+      "name": "Составляем json для process_trigers",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -2860,
+        1400
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n\n\"TrigerBP\": \n1,\n\"TrigerEP\": \n1\n}",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json"
+      },
+      "id": "8b61f41c-2d26-4f64-b9c1-53faf72ea151",
+      "name": "Запись данных в process_trigers",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1960,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n\"processID\": \n\"ForIra\",\n\"start_tableID\": \n\"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n\"start_pageID\": \n343946080,\n\"statistic_tableID\": \n\"thisForTableId08\",\n\"statistic_pageID\": \n2020327,\n\"url_become\": \n\"https://n8ns.makees.site/webhook-waiting/97\"}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "682107e1-3c25-4cf0-891e-46d7cfc4d358",
+      "name": "Запись данных в process_variebles",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2100,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "53c236fb-fb4a-4881-9a2b-b8c654b33477",
+      "name": "Чтение данных всего файла в JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2460,
+        1380
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "checkProcess",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n\"Iteration\": 0,\n\"Traks\": \n{\n}\n}",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "e5f0b48d-5f56-43ca-9de9-664d64bf9a00",
+      "name": "Запись данных в checkProcess",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1900,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "iteration",
+              "type": "numberValue",
+              "numberValue": "1"
+            },
+            {
+              "name": "TrackCollect",
+              "stringValue": "no"
+            },
+            {
+              "name": "BP_check",
+              "stringValue": "no"
+            },
+            {
+              "name": "EP_check",
+              "stringValue": "no"
+            },
+            {
+              "name": "CheckProcess",
+              "stringValue": "no"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "99c4ccbd-0d1b-4775-ad24-fd0609560370",
+      "name": "Составляем json для workProcess",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -3060,
+        1640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "= {\n    \"iteration\": 0,\n    \"TrackCollect\": \"no\",\n    \"BP_check\": \"no\",\n    \"EP_check\": \"no\",\n    \"CheckProcess\": \"no\"\n  }",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "b323f5e5-57f6-4f91-8dd8-5afc3f1750e9",
+      "name": "Запись данных в workProcess",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1900,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.tg_chats",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "= {\n    \"chat_id\": 1353185953,\n    \"chat_id2\": 206784276\n  }",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "c230dcbf-13cf-4a65-a500-74ea35346129",
+      "name": "Запись данных в tg_chats",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1900,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"zsForvika\"\n    }\n  }\n]\n);"
+      },
+      "id": "2ba82128-0216-4bc6-b722-5e2c27fd4e12",
+      "name": "zsForvika",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2320,
+        2060
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n\"processID\": \n\"zsForvika\",\n\"start_tableID\": \n\"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n\"start_pageID\": \n672397081,\n\"statistic_tableID\": \n\"thisForTableId08\",\n\"statistic_pageID\": \n2020327,\n\"url_become\": \n\"https://n8ns.makees.site/webhook-waiting/97\"}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "ae349029-87a1-4e64-a433-6f3ef06dc9b7",
+      "name": "zsForvika Запись данных в process_variebles1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2200,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"АйдиПроцессаЗдесь\",\n          \"start_tableID\": \"АйдиСтартовойТаблицыТут\",\n          \"start_pageID\": 10070701,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n    }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "14e14e01-29c8-42bd-98df-65a70926f012",
+      "name": "Шаблон json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -3080,
+        1860
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForAnn\",\n          \"start_tableID\": \"1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 1401389950,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n    }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "30c7f585-195e-4cab-b5c5-7386faa717e5",
+      "name": "zsForAnn json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2120,
+        2240
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"zsForAnn\"\n    }\n  }\n]\n);"
+      },
+      "id": "470ca8dd-a6aa-4437-a511-265308515ffa",
+      "name": "zsForAnn",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2320,
+        2240
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForvika\",\n          \"start_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n          \"start_pageID\": 672397081,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n    }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "6cb2d6ee-60e2-42eb-9b40-20a45ccd586b",
+      "name": "zsForvika json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2100,
+        2080
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ForIra\"\n    }\n  }\n]\n);"
+      },
+      "id": "aada0cd5-4154-4157-81cd-aaa796d368ee",
+      "name": "ForIra",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2320,
+        1880
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n    }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "f9172ca2-5697-4a98-8320-4f90b10bbd51",
+      "name": "ForIra json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2080,
+        1880
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "k3cmqrd2rdjhkgrK"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2023-12-29T05:29:19.000Z",
+  "versionId": "316399fb-c9f9-438f-bbf2-00de1b9df71a"
+}
