@@ -1,0 +1,1090 @@
+{
+  "active": true,
+  "connections": {
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Проверка прав пользователя",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "есть ли свойство text1": {
+      "main": [
+        [
+          {
+            "node": "начинается ли команда с символа /1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "если есть свойство callback_query(нажатие на кнопку)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "начинается ли команда с символа /1": {
+      "main": [
+        [
+          {
+            "node": "команды1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "команды1": {
+      "main": [
+        [
+          {
+            "node": "Start1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "есть ли home в конце callback_query(нажатие на кнопку)": {
+      "main": [
+        [
+          {
+            "node": "Обработка кнопок menu",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "есть ли home в конце callback_query(нажатие на кнопку)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram2": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверка прав пользователя": {
+      "main": [
+        [
+          {
+            "node": "есть ли свойство text1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Проверка на колбэкКвери",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверка на колбэкКвери": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Отправляем сообщение от бота мне",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных всего файла в JsonDatabase2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Обработка кнопок menu": {
+      "main": [
+        [
+          {
+            "node": "Запустить процесс для Иры",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "возврвт пустого ответа в ответ на запрос calback_query1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "если есть свойство callback_query(нажатие на кнопку)": {
+      "main": [
+        [
+          {
+            "node": "есть ли start в callback_query(нажатие на кнопку)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "есть ли start в callback_query(нажатие на кнопку)": {
+      "main": [
+        [
+          {
+            "node": "есть ли home в конце callback_query(нажатие на кнопку)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Возврат в стартовое меню1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Ответ на нажатие первой кнопки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных всего файла в JsonDatabase2": {
+      "main": [
+        [
+          {
+            "node": "Item Lists2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists2": {
+      "main": [
+        [
+          {
+            "node": "Ответ на нажатие первой кнопки1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных всего файла в JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Ответ на нажатие первой кнопки2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-12-28T08:10:27.128Z",
+  "id": "X47e4ESkdsBlGbNR",
+  "meta": null,
+  "name": "PotapAp",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "id": "42e8f6cd-b281-42bf-be76-e8194b7c05ec",
+      "name": "Telegram Trigger1",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1360
+      ],
+      "webhookId": "c30d2559-bcbd-4c3c-a200-3ff68372812f",
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "leave",
+        "chatId": "={{ $json.my_chat_member.chat.id }}"
+      },
+      "id": "466ba00c-f5a1-4422-a63e-36cdd795bdb4",
+      "name": "Telegram1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1200
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.hasOwnProperty(\"my_chat_member\")}}",
+              "value2": true
+            },
+            {
+              "value1": "={{$json[\"my_chat_member\"][\"new_chat_member\"][\"user\"][\"id\"]==5810332003}}",
+              "value2": true
+            },
+            {
+              "value1": "={{$json[\"my_chat_member\"][\"new_chat_member\"][\"status\"]==\"member\"}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "1dc772f7-947d-41f2-8833-0575d3b83680",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.message.hasOwnProperty(\"text\") }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "c9a82b88-56ed-4fc1-a834-47007392d3d3",
+      "name": "есть ли свойство text1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        460,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.message.text }}",
+              "operation": "startsWith",
+              "value2": "/"
+            }
+          ]
+        }
+      },
+      "id": "1905ad56-b9bd-4be7-94d5-c4c0801fa403",
+      "name": "начинается ли команда с символа /1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.message.text }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "startsWith",
+              "value2": "/start"
+            },
+            {
+              "value2": "/faq",
+              "output": 1
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "79dcba0c-f630-4687-9a25-a64732a19453",
+      "name": "команды1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        420,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}!</b>",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Просмотр заказов",
+                    "additionalFields": {
+                      "callback_data": "menu_list"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Проверить активные заказы",
+                    "additionalFields": {
+                      "callback_data": "menu_check"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Открыть БД в Notion",
+                    "additionalFields": {
+                      "url": "https://www.notion.so/68849ec8981b46e79e68c569496c3441?v=f4f8bd818e9845aabc244aef64d215c3"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "id": "8aafbaf5-57fd-41f1-8c66-0f3831b3501c",
+      "name": "Start1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1180
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "callback",
+        "queryId": "={{ $json.callback_query.id }}",
+        "additionalFields": {}
+      },
+      "id": "929bc555-b8f9-4e02-be22-962b5695d3e3",
+      "name": "возврвт пустого ответа в ответ на запрос calback_query1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        1200
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.callback_query.data }}",
+              "operation": "contains",
+              "value2": "yes"
+            }
+          ]
+        }
+      },
+      "id": "fe9b025c-c83d-45c7-962b-394cd73eb812",
+      "name": "есть ли home в конце callback_query(нажатие на кнопку)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $('Обработка кнопок menu').first().json.callback_query.from.id }}"
+      },
+      "id": "57828da8-02d5-4c5d-93f4-1df002a351d2",
+      "name": "Возврат в стартовое меню1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1640
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.callback_query.from.id }}",
+        "text": "=NodeApiError: Bad request - please check your parameters",
+        "additionalFields": {}
+      },
+      "id": "61b991e3-cd5a-4963-810e-ab73d7e90895",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        1780
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "errorMessage": "=Внимание!!! Несанкционированный доступ. Пользователь  {{ $json.result.chat.first_name }} {{ $json.result.chat.last_name }}, с username  {{ $json.result.chat.username }} иtg_id {{ $json.result.from.id }} хочет получить доступ к боту отправка посылок."
+      },
+      "id": "cdbc221c-0b79-47a9-8061-1cf69a84d53b",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        180,
+        2040
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "=NodeApiError: Bad request - please check your parameters",
+        "additionalFields": {}
+      },
+      "id": "938235fa-f01a-43e9-9384-72fe725b356c",
+      "name": "Telegram2",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        2040
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.callback_query.from.id }}",
+              "operation": "equal",
+              "value2": 899054246
+            },
+            {
+              "value1": "={{ $json.message.from.id }}",
+              "operation": "equal",
+              "value2": 899054246
+            },
+            {
+              "value1": "={{ $json.callback_query.from.id }}",
+              "operation": "equal",
+              "value2": 206784276
+            },
+            {
+              "value1": "={{ $json.message.from.id }}",
+              "operation": "equal",
+              "value2": 206784276
+            },
+            {
+              "value1": "={{ $json.message.from.id }}",
+              "operation": "equal",
+              "value2": 659078966
+            },
+            {
+              "value1": "={{ $json.callback_query.from.id }}",
+              "operation": "equal",
+              "value2": 659078966
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "3174c394-77d0-43e9-b39c-b31a4db108b6",
+      "name": "Проверка прав пользователя",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Работа с несанкионированными пользователями",
+        "height": 548.5402585089694,
+        "width": 834.513407598062
+      },
+      "id": "a35b56fd-915c-4fed-b589-b1262217c856",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.message.from.id }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "71aa5c37-9fea-492a-a0df-b20a250c2e99",
+      "name": "Проверка на колбэкКвери",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        180,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "path": "Potap_TrackChack",
+        "options": {}
+      },
+      "id": "4ded97fe-d4e9-43ba-9c43-b5484aa14539",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        920
+      ],
+      "webhookId": "f60eab19-fdf0-4f24-893d-d57c4022dd6e"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "872e0c6c-5b9c-4422-842d-1be45417ed46",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        120,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.body.processID }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "ForIra"
+            },
+            {
+              "value2": "zsForvika",
+              "output": 1
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "ba83f14f-66ce-4e43-aff4-dba303b67942",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        140,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json['data.process.tg_chats'] }}",
+        "text": "={{ $('Switch').item.json.body.send }}",
+        "additionalFields": {}
+      },
+      "id": "72288e47-bd60-4587-9aab-04b10231638e",
+      "name": "Ответ на нажатие первой кнопки1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        440,
+        340
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.callback_query.data }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "endsWith",
+              "value2": "ForIra"
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "23d4e2a8-df80-4c9a-9fe6-de10d687cf97",
+      "name": "Обработка кнопок menu",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.site/webhook/TraCh_start_modul_forira",
+        "options": {}
+      },
+      "id": "520ada86-62bc-488c-93b8-c83193f05938",
+      "name": "Запустить процесс для Иры",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        840,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.hasOwnProperty(\"callback_query\")}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "3b0c2d9d-ef2d-4967-94c2-814483ad1cfc",
+      "name": "если есть свойство callback_query(нажатие на кнопку)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        440,
+        1920
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.callback_query.data }}",
+              "operation": "startsWith",
+              "value2": "Start"
+            }
+          ]
+        }
+      },
+      "id": "293c2454-29fe-408e-9d1c-000e05f693fa",
+      "name": "есть ли start в callback_query(нажатие на кнопку)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        720,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.callback_query.data }}",
+              "operation": "contains",
+              "value2": "no"
+            }
+          ]
+        }
+      },
+      "id": "d92fc704-5671-4c0c-9953-4c98b1acc5ea",
+      "name": "есть ли home в конце callback_query(нажатие на кнопку)1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "39c3ef52-5cd7-4657-a13e-e5de74d484b5",
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        120,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.body.message }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "start"
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "fe5fe58a-87d0-4ee6-ad48-3acb33d41b37",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        320,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "=206784276",
+        "text": "=Процесс {{ $json.body.process_ID }} запущен.",
+        "additionalFields": {}
+      },
+      "id": "8a06c67b-3e8f-471f-be90-7bb25ce888f6",
+      "name": "Ответ на нажатие первой кнопки",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        640,
+        960
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "=206784276",
+        "text": "=Процесс {{ $json.body.processID }}:  {{ $json.body.send }}",
+        "additionalFields": {}
+      },
+      "id": "139f8193-26a4-4ca5-878a-f6254b4a80f5",
+      "name": "Отправляем сообщение от бота мне",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        380,
+        760
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "id": "8838827b-4c66-483e-bff2-251a8cc9759f",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        1200
+      ],
+      "webhookId": "c30d2559-bcbd-4c3c-a200-3ff68372812f",
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $json.body.processID }}.json"
+      },
+      "id": "ded5b6fd-5683-4e3b-aa0c-cbd32e1ca074",
+      "name": "Чтение данных всего файла в JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data.process.tg_chats",
+        "options": {}
+      },
+      "id": "edb7c200-0c82-49ce-9a26-0bab9c5f54bb",
+      "name": "Item Lists2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        180,
+        340
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json['data.process.tg_chats'] }}",
+        "text": "={{ $('Switch').item.json.body.send }}",
+        "additionalFields": {}
+      },
+      "id": "ee87b426-23d4-4379-8077-94ebe765ee04",
+      "name": "Ответ на нажатие первой кнопки2",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        400,
+        180
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $json.body.processID }}.json"
+      },
+      "id": "aee06755-1b96-4e51-8f55-f2744e409eda",
+      "name": "Чтение данных всего файла в JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data.process.tg_chats",
+        "options": {}
+      },
+      "id": "0503715e-0e4e-4891-8bda-eac5758f20d1",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        140,
+        180
+      ],
+      "alwaysOutputData": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-12-28T08:03:06.646Z",
+      "updatedAt": "2023-12-28T08:03:06.646Z",
+      "id": "b0NYL2sHCdMBP0aq",
+      "name": "bot"
+    },
+    {
+      "createdAt": "2023-12-28T08:03:06.653Z",
+      "updatedAt": "2023-12-28T08:03:06.653Z",
+      "id": "rez9x3A4mWjYtuqn",
+      "name": "tellegram"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2023-12-28T19:19:59.000Z",
+  "versionId": "6343d023-e2c4-4cd2-baaa-2d9481bb5836"
+}
