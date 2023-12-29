@@ -422,8 +422,21 @@
       "recurrencyRules": []
     }
   },
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-29T05:49:12.607Z",
+      "updatedAt": "2023-12-29T05:49:12.607Z",
+      "id": "2F2JpICiTQCMNk1Q",
+      "name": "treck_check"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:23.798Z",
+      "updatedAt": "2023-12-29T05:48:23.798Z",
+      "id": "UR0e0BgkatF4AB4O",
+      "name": "potap"
+    }
+  ],
   "triggerCount": 3,
-  "updatedAt": "2023-12-28T19:28:48.000Z",
-  "versionId": "efe749c0-f072-449a-912f-e2c149cfbd4a"
+  "updatedAt": "2023-12-29T05:50:00.000Z",
+  "versionId": "c142cc3b-1e17-498c-b943-2f0bcf5a0858"
 }
