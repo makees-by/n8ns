@@ -1,0 +1,2417 @@
+{
+  "active": true,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Начало",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "СБРОС всех значений вывод пустого массива2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ввод статичных значений",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Начало": {
+      "main": [
+        [
+          {
+            "node": "Изменение значения для ключа url_become в JsonDatabase1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Чтение данных из workProcess",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем список стартовых страниц": {
+      "main": [
+        [
+          {
+            "node": "Убираем пустые значения",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Убираем пустые значения": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Ввод статичных значений": {
+      "main": [
+        [
+          {
+            "node": "СБРОС всех значений вывод пустого массива",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "СБРОС всех значений вывод пустого массива": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных из workProcess1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск модуля сбора треков": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Начало",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных всего файла в JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "Получаем список стартовых страниц",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Изменение значения для ключа url_become в JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных всего файла в JsonDatabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "проверяем ответ от модуля сбора треков": {
+      "main": [
+        [
+          {
+            "node": "Запись данных в workProcess4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Отправляем сообщение в телеграмм",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "проверяем ответ от модуля сбора треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram3": {
+      "main": [
+        [
+          {
+            "node": "модуль сбора треков отработал успешно1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "модуль сбора треков отработал успешно": {
+      "main": [
+        [
+          {
+            "node": "СБРОС всех значений вывод пустого массива1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "СБРОС всех значений вывод пустого массива1": {
+      "main": [
+        [
+          {
+            "node": "БП запуск модуля проверки треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "сброс значений после цикла": {
+      "main": [
+        [
+          {
+            "node": "ЕП запуск модуля проверки треков.",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "2 сек": {
+      "main": [
+        [
+          {
+            "node": "сброс значений после цикла",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "получаем данные с первого оконченого процесса": {
+      "main": [
+        [
+          {
+            "node": "Определяем какой процесс завершился первым",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Определяем какой процесс завершился первым": {
+      "main": [
+        [
+          {
+            "node": "Проверяем всё ли впорядке у завершившегося первым процесса Белпочты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Проверяем всё ли в порядке у звершившегося первым модуля Европочты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем всё ли впорядке у завершившегося первым процесса Белпочты": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем всё ли в порядке у звершившегося первым модуля Европочты": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Первый морки отработал успешнодуль прове": {
+      "main": [
+        [
+          {
+            "node": "сброс значений после цикла8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ждун 1й": {
+      "main": [
+        [
+          {
+            "node": "получаем данные с первого оконченого процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "сброс значений после цикла8": {
+      "main": [
+        [
+          {
+            "node": "Ждун 2й",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Определяем како процесс завершился вторым": {
+      "main": [
+        [
+          {
+            "node": "Проверяем всё ли ок у завершенного вторым процесса Белпочты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Проверяем всё ли ок у завершенного вторым процесса Европочты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем всё ли ок у завершенного вторым процесса Белпочты": {
+      "main": [
+        [
+          {
+            "node": "Запись yes в WP BP_check1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем всё ли ок у завершенного вторым процесса Европочты": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "получаем данные с первого оконченого процесса1": {
+      "main": [
+        [
+          {
+            "node": "Определяем како процесс завершился вторым",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ждун 2й": {
+      "main": [
+        [
+          {
+            "node": "получаем данные с первого оконченого процесса1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "сброс значений после цикла3": {
+      "main": [
+        [
+          {
+            "node": "Запуск модуля проверки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Второй модуль проверки отработал успешно": {
+      "main": [
+        [
+          {
+            "node": "сброс значений после цикла3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "уходим на следующий цикл": {
+      "main": [
+        [
+          {
+            "node": "Запись данных в workProcess2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ЕП запуск модуля проверки треков.": {
+      "main": [
+        [
+          {
+            "node": "Ждун 1й",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "БП запуск модуля проверки треков": {
+      "main": [
+        [
+          {
+            "node": "2 сек",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск модуля проверки": {
+      "main": [
+        [
+          {
+            "node": "Жду",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Жду": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Убираем пустые значения1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Запись данных в workProcess1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Убираем пустые значения2": {
+      "main": [
+        [
+          {
+            "node": "Изменение значения для ключа url_become в JsonDatabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "44db",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Убираем пустые значения3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "44db": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных из workProcess": {
+      "main": [
+        [
+          {
+            "node": "Убираем пустые значения1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в workProcess1": {
+      "main": [
+        [
+          {
+            "node": "Убираем пустые значения2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в workProcess2": {
+      "main": [
+        [
+          {
+            "node": "уходим на следующий цикл1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "уходим на следующий цикл1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "СБРОС всех значений вывод пустого массива2": {
+      "main": [
+        [
+          {
+            "node": "Запись данных в workProcess3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных из workProcess1": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "Запуск модуля сбора треков",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "модуль сбора треков отработал успешно",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в workProcess4": {
+      "main": [
+        [
+          {
+            "node": "модуль сбора треков отработал успешно",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись yes в WP EP_check": {
+      "main": [
+        [
+          {
+            "node": "Второй модуль проверки отработал успешно",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись yes в WP EP_check1": {
+      "main": [
+        [
+          {
+            "node": "Первый морки отработал успешнодуль прове",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись yes в WP BP_check": {
+      "main": [
+        [
+          {
+            "node": "Первый морки отработал успешнодуль прове",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись yes в WP BP_check1": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись yes в WP CheckProcess": {
+      "main": [
+        [
+          {
+            "node": "уходим на следующий цикл",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Убираем пустые значения3": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "СБРОС всех значений вывод пустого массива3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм1": {
+      "main": [
+        [
+          {
+            "node": "Запись yes в WP BP_check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм2": {
+      "main": [
+        [
+          {
+            "node": "Запись yes в WP EP_check1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм3": {
+      "main": [
+        [
+          {
+            "node": "Второй модуль проверки отработал успешно",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм4": {
+      "main": [
+        [
+          {
+            "node": "Запись yes в WP EP_check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм5": {
+      "main": [
+        [
+          {
+            "node": "Запись yes в WP CheckProcess",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в workProcess3": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "СБРОС всех значений вывод пустого массива3": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-11-28T17:07:16.465Z",
+  "id": "QJuQGKgAzSJyxmPS",
+  "meta": null,
+  "name": "Start",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "modul_Start",
+        "options": {}
+      },
+      "id": "4ee75c2b-43f2-4eb6-84da-6f027d88166a",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        120,
+        240
+      ],
+      "webhookId": "86368b02-2819-46f4-8d6e-df5d53372b20"
+    },
+    {
+      "parameters": {},
+      "id": "92479fe9-fb35-4618-83b2-f2adb538f8e4",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        120,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "4d275f53-c14a-4534-9d45-5aadde3d9ca5",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1580,
+        -20
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2be1320a-ece0-4106-8179-4b22a69dabc8",
+      "name": "Начало",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        420,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.data.process.variebles.start_tableID }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.data.process.variebles.start_pageID }}",
+          "mode": "id"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Чек-бокс",
+              "lookupValue": "true"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "35b189cf-fe55-4b61-bbfb-8717cc0d825a",
+      "name": "Получаем список стартовых страниц",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.1,
+      "position": [
+        1120,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "ee5b89cd-6f8e-48e7-b297-07021c552aff",
+      "name": "Убираем пустые значения",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "8d26dffe-bd89-4a71-a694-40c20fc2cf8a",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2460,
+        0
+      ],
+      "webhookId": "4abd2f9e-f789-45a3-95b0-55d6ef6ea616"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "processID",
+              "stringValue": "={{ $('Начало').first().json.body.ProcessID }}"
+            },
+            {
+              "name": "main_tableID",
+              "stringValue": "={{ $json.Таблица }}"
+            },
+            {
+              "name": "main_pageID",
+              "type": "numberValue",
+              "numberValue": "={{ $json.Страница }}"
+            },
+            {
+              "name": "url_become",
+              "stringValue": "={{$execution.resumeUrl}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "657e3a76-1ec7-40c0-a7d5-90caeb6a0997",
+      "name": "Ввод статичных значений",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1760,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "include": "none",
+        "options": {}
+      },
+      "id": "7649506e-74fa-4a71-9a32-9553764a229a",
+      "name": "СБРОС всех значений вывод пустого массива",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1960,
+        0
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/modul_trackCollect",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "main_tableID",
+              "value": "={{ $('Ввод статичных значений').first().json.main_tableID }}"
+            },
+            {
+              "name": "main_pageID",
+              "value": "={{ $('Ввод статичных значений').first().json.main_pageID }}"
+            },
+            {
+              "name": "url_become",
+              "value": "={{ $('Ввод статичных значений').first().json.url_become }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "21a7174b-6d61-4091-ba54-5ca1aad510b6",
+      "name": "Запуск модуля сбора треков",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2240,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ForIra\"\n    }\n  }\n]\n);"
+      },
+      "id": "a8a1d1e9-c794-460b-88f6-90980ef03312",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        460
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "8dbc5acc-12a4-47ec-bdd2-31a7067930d4",
+      "name": "Чтение данных всего файла в JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        940,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.variebles.url_become",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"{{$execution.resumeUrl}}\"",
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "d6466bd1-4b91-4920-9284-861b9915408c",
+      "name": "Изменение значения для ключа url_become в JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        700,
+        240
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "96338c5f-c7e1-4ee2-bbc2-b2870f403923",
+      "name": "модуль сбора треков отработал успешно",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2620,
+        -440
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Блок сбора треков не отработал до конца"
+      },
+      "id": "a4b94a74-5136-4749-a9b8-521fa12f3f5e",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        2160,
+        -660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body.TrackCollect }}",
+              "value2": "OK"
+            }
+          ]
+        }
+      },
+      "id": "2ad5399c-8f60-4796-aab5-ef3aed23b094",
+      "name": "проверяем ответ от модуля сбора треков",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "206784276",
+        "text": "Треки собраны с процессе для иры.",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {}
+      },
+      "id": "57f0ae32-474a-4db3-a44a-cb03da9cfcd0",
+      "name": "Telegram3",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        2860,
+        -680
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "b2696e18-6011-4e0d-9b4e-2b2c5bef9510",
+      "name": "модуль сбора треков отработал успешно1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2660,
+        -680
+      ]
+    },
+    {
+      "parameters": {
+        "content": "https://n8ns.makees.site/workflow/VRyRwVTCmpPchy3Y",
+        "height": 80,
+        "width": 260.3911486622204,
+        "color": 5
+      },
+      "id": "793589be-39df-4373-8718-6b975daeac5c",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "include": "none",
+        "options": {}
+      },
+      "id": "ed4d36b1-19d0-41a7-9804-1368510eaae5",
+      "name": "СБРОС всех значений вывод пустого массива1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        2840,
+        -260
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "https://n8ns.makees.site/workflow/29MEWguRetOyjvsX",
+        "height": 80,
+        "width": 259.0317387514058,
+        "color": 2
+      },
+      "id": "510d8636-69df-4c38-81a4-cc093ef02db2",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "61c9325d-81f4-4fa2-8105-16ecf0ac921e",
+      "name": "сброс значений после цикла",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        3300,
+        300
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "0c63fd6a-1df7-4086-b11b-97fbc363c78c",
+      "name": "2 сек",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        300
+      ],
+      "webhookId": "0c0baebd-5e33-4d1e-a59b-ec65d7f4b6b8"
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "6b87b90e-6876-48f1-bbe6-586a73b07541",
+      "name": "Ждун 1й",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        3740,
+        -20
+      ],
+      "webhookId": "6b344a6e-7ecf-4e1f-9ea4-35b5ed15e1fe"
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "e6852e27-ef11-40f9-891a-922982334eda",
+      "name": "Ждун 2й",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        3980,
+        20
+      ],
+      "webhookId": "5f9fdffe-d5dc-4aca-be5b-1a5bcf42a62f"
+    },
+    {
+      "parameters": {
+        "errorMessage": "Первый блок проверки прислал что то не то."
+      },
+      "id": "c012bc1a-37a6-414c-9455-e5b3497cdc59",
+      "name": "Stop and Error1",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Первый блок проверки прислал что то не то."
+      },
+      "id": "d849400d-0904-481f-a785-22c9ea51e41e",
+      "name": "Stop and Error3",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        3680,
+        -740
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Первый блок проверки прислал что то не то."
+      },
+      "id": "60bdaf94-b4df-4a42-9f93-460631d8b109",
+      "name": "Stop and Error4",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        3380,
+        -340
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "workflow",
+              "value": "={{ $json.body.workflow }}"
+            },
+            {
+              "name": "status",
+              "value": "={{ $json.body.status }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "c14dcfd7-6b5b-400d-a622-77435d19846a",
+      "name": "получаем данные с первого оконченого процесса",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        3180,
+        -540
+      ],
+      "executeOnce": false,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.workflow }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "contains",
+              "value2": "BP_check"
+            },
+            {
+              "operation": "contains",
+              "value2": "EP_check",
+              "output": 1
+            }
+          ]
+        },
+        "fallbackOutput": 2
+      },
+      "id": "2e13399c-3f87-420c-97f7-782b3b675379",
+      "name": "Определяем какой процесс завершился первым",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        3400,
+        -540
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "value2": "OK"
+            }
+          ]
+        }
+      },
+      "id": "d99ec77f-57cc-4c74-ba91-896751720007",
+      "name": "Проверяем всё ли впорядке у завершившегося первым процесса Белпочты",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3420,
+        -760
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "value2": "OK"
+            }
+          ]
+        }
+      },
+      "id": "cbbee135-a1c4-433f-a73e-027b5dbde5a3",
+      "name": "Проверяем всё ли в порядке у звершившегося первым модуля Европочты",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3640,
+        -540
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "206784276",
+        "text": "Отработал первый чекер треков. Белпочта.",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {}
+      },
+      "id": "e459feb5-5067-489d-9f34-28d6f18b9bde",
+      "name": "Отправляем в телеграмм о том,что первым отработал процесс проверки Белпочты",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        3180,
+        -1120
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "chatId": "206784276",
+        "text": "Отработал первый чекер треков. Европочта.",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {}
+      },
+      "id": "b5cd75d8-bb44-47bb-9593-62e0d7f9d64f",
+      "name": "Отправляем в телеграмм о том,что первым отработал процесс проверки Европочты",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        4080,
+        -700
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "2ca7e205-0dac-45a1-b704-350adff73b92",
+      "name": "Первый морки отработал успешнодуль прове",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3980,
+        -920
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "fea50c46-e4a4-4f27-891a-128ceeacd4c7",
+      "name": "сброс значений после цикла8",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        4080,
+        -320
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "errorMessage": "Второй блок проверки прислал что то не то."
+      },
+      "id": "9d46cc17-680f-43ef-9006-dc1414c9588d",
+      "name": "Stop and Error5",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        4260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Второй блок проверки прислал что то не то."
+      },
+      "id": "624b754e-86e9-41b2-a6c3-07d8346729a2",
+      "name": "Stop and Error6",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        4460,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Второй блок проверки прислал что то не то."
+      },
+      "id": "abd45931-5f18-4408-9497-8fabc50c031d",
+      "name": "Stop and Error7",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        4440,
+        -200
+      ]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.workflow }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "contains",
+              "value2": "BP_check"
+            },
+            {
+              "operation": "contains",
+              "value2": "EP_check",
+              "output": 1
+            }
+          ]
+        },
+        "fallbackOutput": 2
+      },
+      "id": "bf7c4505-0be5-4d71-845f-c163304a424c",
+      "name": "Определяем како процесс завершился вторым",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        4180,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "value2": "OK"
+            }
+          ]
+        }
+      },
+      "id": "636894c6-28ee-43cf-a923-b90ae4505a5b",
+      "name": "Проверяем всё ли ок у завершенного вторым процесса Белпочты",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4280,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.status }}",
+              "value2": "OK"
+            }
+          ]
+        }
+      },
+      "id": "2a7d28ca-c30f-4082-b9df-61a6a889dfbc",
+      "name": "Проверяем всё ли ок у завершенного вторым процесса Европочты",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4440,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "206784276",
+        "text": "Отработал второй чекер треков. Европочта",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {}
+      },
+      "id": "0a837399-8d0a-4c97-8038-24a5b43bc048",
+      "name": "Отправляем сообщение что вторым завершился процесс проверки Европочты и всё ок",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        4640,
+        180
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "chatId": "206784276",
+        "text": "Отработал второй чекер треков. Белпочта.",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {}
+      },
+      "id": "f15b89e9-e870-4900-a8c3-df33adeea6c4",
+      "name": "Отправляем сообщение что вторым завершился процесс проверки Белпочты и всё ок",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        4980,
+        -600
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "18810f33-7622-446c-bee6-3c963cae5849",
+      "name": "Второй модуль проверки отработал успешно",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4840,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "workflow",
+              "value": "={{ $json.body.workflow }}"
+            },
+            {
+              "name": "status",
+              "value": "={{ $json.body.status }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "a78320a0-3f0c-4edd-b723-48acb09db069",
+      "name": "получаем данные с первого оконченого процесса1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        4040,
+        260
+      ],
+      "executeOnce": false,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "79ba2708-ad6e-43ff-9da8-f0b7f15e6dde",
+      "name": "сброс значений после цикла3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        5060,
+        0
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "content": "https://n8ns.makees.site/workflow/z4JEW8jpxWNFpwrw",
+        "height": 80,
+        "width": 316.0217600000001
+      },
+      "id": "8b144b9d-ad31-4fb9-8c3b-f447fe438f72",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5180,
+        180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2f2475bf-93d8-4d2f-867d-93443d8e5954",
+      "name": "уходим на следующий цикл",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5820,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "content": "https://n8ns.makees.site/workflow/pwofnTe8IYGRQZrS",
+        "height": 80,
+        "width": 385.4494257175231,
+        "color": 4
+      },
+      "id": "f7b9c60b-5152-4d3c-bb51-c9d1554ee5e6",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/ep_check",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url_become",
+              "value": "={{ $('Ввод статичных значений').item.json.url_become }}"
+            },
+            {
+              "name": "processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "170797b7-89b4-4c4c-b8e5-240514b2150d",
+      "name": "ЕП запуск модуля проверки треков.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        3260,
+        -20
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/bp_check",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url_become",
+              "value": "={{ $('Ввод статичных значений').item.json.url_become }}"
+            },
+            {
+              "name": "processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fa96d00f-d971-4ff6-9bc5-949dc3b1f39a",
+      "name": "БП запуск модуля проверки треков",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2900,
+        0
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/checkProcess",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "main_tableID",
+              "value": "={{ $('Ввод статичных значений').first().json.main_tableID }}"
+            },
+            {
+              "name": "main_pageID",
+              "value": "={{ $('Ввод статичных значений').first().json.main_pageID }}"
+            },
+            {
+              "name": "url_become",
+              "value": "={{ $('Ввод статичных значений').first().json.url_become }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c73a21c4-c629-4fa8-a7aa-7ff02f43f7ec",
+      "name": "Запуск модуля проверки",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        5300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "094da7fa-441c-4b6a-8683-87fa7984d7c5",
+      "name": "Жду",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        5560,
+        0
+      ],
+      "webhookId": "620d0d89-fbbf-4e96-8a68-ab2e9d398a80"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.data.iteration }}",
+              "operation": "largerEqual",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "896db75f-932f-4830-801c-0e91ec14b05f",
+      "name": "Убираем пустые значения1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        660,
+        -220
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "c8619142-c199-4a6f-b2d4-cb121fb84637",
+      "name": "Убираем пустые значения2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        500,
+        0
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "iteration",
+              "type": "numberValue",
+              "numberValue": "={{ $json.data.iteration +1}}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "a40296c2-2c93-42ae-8f7f-0f404e79d912",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        940,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch",
+        "output": "input2"
+      },
+      "id": "0706789b-cb57-4ac4-9096-f6c62dd3cd5c",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        1180,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.row_number }}",
+              "operation": "largerEqual",
+              "value2": "={{ $('44db').first().json.iteration }}"
+            }
+          ]
+        }
+      },
+      "id": "fe320d6e-f3f6-461f-b975-ee0bae4317bb",
+      "name": "Убираем пустые значения3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        0
+      ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {},
+      "id": "c67fe53a-41cb-4b89-8546-3b086d8a79bb",
+      "name": "44db",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        -380
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.workProcess",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "144f4488-a4d2-4b97-b6dc-b841f771cbf5",
+      "name": "Чтение данных из workProcess",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        440,
+        -220
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "= {\n    \"iteration\": 1,\n    \"TrackCollect\": \"no\",\n    \"BP_check\": \"no\",\n    \"EP_check\": \"no\",\n    \"CheckProcess\": \"no\"\n  }",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "456b91da-4c5b-4b71-a166-84fb2aa844cf",
+      "name": "Запись данных в workProcess1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        760,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "= {\n    \"iteration\": {{ JSON.stringify($('44db').first().json.iteration) }},\n    \"TrackCollect\": \"no\",\n    \"BP_check\": \"no\",\n    \"EP_check\": \"no\",\n    \"CheckProcess\": \"no\"\n  } ",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "7eeef687-4bc7-4b56-9ff6-b7f135e8485a",
+      "name": "Запись данных в workProcess2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        5340,
+        380
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a30b51f7-3f5d-4319-8795-878c718278aa",
+      "name": "уходим на следующий цикл1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "= {\n    \"iteration\": 0,\n    \"TrackCollect\": \"no\",\n    \"BP_check\": \"no\",\n    \"EP_check\": \"no\",\n    \"CheckProcess\": \"no\"\n  }",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "b25c5c9f-8931-460a-8762-43bf7c9460f1",
+      "name": "Запись данных в workProcess3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "include": "none",
+        "options": {}
+      },
+      "id": "1418753c-5cf0-44f5-8220-64dc17cc2a22",
+      "name": "СБРОС всех значений вывод пустого массива2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1680,
+        -280
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "queryPath": "process.workProcess",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "0ef65db3-cd97-4b9c-af44-b963ba26bf3d",
+      "name": "Чтение данных из workProcess1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.data.TrackCollect }}",
+              "value2": "no"
+            }
+          ]
+        }
+      },
+      "id": "010d6deb-cbdd-4b9f-9ddf-d44710e19f57",
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess.TrackCollect",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"yes\"",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "d46718cb-b727-4ac7-919f-97d2a964db65",
+      "name": "Запись данных в workProcess4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        -440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess.EP_check",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"yes\"",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "a3574012-7019-43cb-8338-04c795a1fe4d",
+      "name": "Запись yes в WP EP_check",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        4800,
+        -20
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess.EP_check",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"yes\"",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "4d727bd9-0d35-4990-9f11-3cbff21c3e8f",
+      "name": "Запись yes в WP EP_check1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3880,
+        -700
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess.BP_check",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"yes\"",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "7b2b1ed5-45ff-4c8c-bbba-eae302c8dcd8",
+      "name": "Запись yes в WP BP_check",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3740,
+        -920
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess.BP_check",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"yes\"",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "8e7972a5-e6ae-4c8a-90ee-5f28c4769805",
+      "name": "Запись yes в WP BP_check1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        4520,
+        -440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.workProcess.CheckProcess",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=\"yes\"",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json "
+      },
+      "id": "dc9c7e27-37ce-465b-adeb-1ecdaceff936",
+      "name": "Запись yes в WP CheckProcess",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        5800,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Запись JSON для процессов\nhttps://n8ns.makees.site/workflow/NI3FBfARkzo619qo",
+        "height": 104.87544125063036,
+        "width": 385.68633383761977
+      },
+      "id": "a9536bda-cb4e-483b-9fd5-31d0fe6170ec",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        140,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Запуск модуля сбора треков",
+        "height": 94.90576586018256,
+        "width": 215.20219651816478
+      },
+      "id": "53b20e80-ea90-41ef-8ff5-feb9929cd59e",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Сбор треков прошел успешно."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2e2d7b51-2f5c-4192-bc99-986b1bd4f15a",
+      "name": "Отправляем сообщение в телеграмм",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        2420,
+        -720
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Отработал первый чекер треков. Белпочта."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3c43a9ff-1bef-4c69-874d-808f82d11b55",
+      "name": "Отправляем сообщение в телеграмм1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3500,
+        -920
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Отработал первый чекер треков. Европочта."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4acec2b1-0add-4413-89da-9d4f43f24fd0",
+      "name": "Отправляем сообщение в телеграмм2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        3880,
+        -520
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Отработал второй чекер треков. Белпочта."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f02b2dc-136e-4a1a-82dc-e3af529c0363",
+      "name": "Отправляем сообщение в телеграмм3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4760,
+        -440
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Отработал второй чекер треков. Европочта"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6de7ce0a-e8fe-48db-9126-ddcf51d483d9",
+      "name": "Отправляем сообщение в телеграмм4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4640,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Отработала проверка процесса."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "98512b82-0fdc-403e-97a8-7a5db3c64e2d",
+      "name": "Отправляем сообщение в телеграмм5",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        5780,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Проверка завершена."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "84c59041-1c7b-4bdd-ba34-5c01e8c0251a",
+      "name": "Отправляем сообщение в телеграмм6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1560,
+        -640
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8ns.makees.site/webhook/Potap_TrackChack",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Начало').first().json.body.ProcessID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Процесс проверки запущен."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a09c8728-f6f1-412a-a77c-d1b20b3f3a4d",
+      "name": "Отправляем сообщение в телеграмм7",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1320,
+        -600
+      ]
+    },
+    {
+      "parameters": {
+        "include": "none",
+        "options": {}
+      },
+      "id": "16f880c8-90eb-4034-96ef-0069618ec75b",
+      "name": "СБРОС всех значений вывод пустого массива3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1360,
+        -300
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "k3cmqrd2rdjhkgrK"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2023-12-28T19:23:23.000Z",
+  "versionId": "3d560410-6afd-4983-894f-e01f75ea7945"
+}
