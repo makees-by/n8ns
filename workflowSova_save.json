@@ -243,8 +243,27 @@
     "executionOrder": "v1"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-28T08:03:06.646Z",
+      "updatedAt": "2023-12-28T08:03:06.646Z",
+      "id": "b0NYL2sHCdMBP0aq",
+      "name": "bot"
+    },
+    {
+      "createdAt": "2023-12-28T08:03:06.653Z",
+      "updatedAt": "2023-12-28T08:03:06.653Z",
+      "id": "rez9x3A4mWjYtuqn",
+      "name": "tellegram"
+    },
+    {
+      "createdAt": "2023-12-29T05:51:00.762Z",
+      "updatedAt": "2023-12-29T05:51:00.762Z",
+      "id": "uR4fI9KSndwE8uhC",
+      "name": "instagramm"
+    }
+  ],
   "triggerCount": 1,
-  "updatedAt": "2023-12-28T06:59:07.000Z",
-  "versionId": "c7472e3b-707c-47d7-8142-86443d721007"
+  "updatedAt": "2023-12-29T05:51:08.000Z",
+  "versionId": "2a9b4f99-3c3a-4980-a8a6-098821a84a4a"
 }
