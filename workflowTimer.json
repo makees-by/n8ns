@@ -105,8 +105,21 @@
     "errorWorkflow": "k3cmqrd2rdjhkgrK"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-29T05:49:12.607Z",
+      "updatedAt": "2023-12-29T05:49:12.607Z",
+      "id": "2F2JpICiTQCMNk1Q",
+      "name": "treck_check"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:23.798Z",
+      "updatedAt": "2023-12-29T05:48:23.798Z",
+      "id": "UR0e0BgkatF4AB4O",
+      "name": "potap"
+    }
+  ],
   "triggerCount": 1,
-  "updatedAt": "2023-12-27T14:36:17.000Z",
-  "versionId": "46e6254c-d23f-419b-afca-27c371c6bcb1"
+  "updatedAt": "2023-12-29T05:51:56.000Z",
+  "versionId": "96f337dd-bc8e-46cc-8c60-fda6d098b8c6"
 }
