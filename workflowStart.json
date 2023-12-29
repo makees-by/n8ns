@@ -2410,8 +2410,27 @@
     "errorWorkflow": "k3cmqrd2rdjhkgrK"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-29T05:49:12.607Z",
+      "updatedAt": "2023-12-29T05:49:12.607Z",
+      "id": "2F2JpICiTQCMNk1Q",
+      "name": "treck_check"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:03.050Z",
+      "updatedAt": "2023-12-29T05:48:03.050Z",
+      "id": "AgzDK5Bx0yz5Db7h",
+      "name": "json"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:23.798Z",
+      "updatedAt": "2023-12-29T05:48:23.798Z",
+      "id": "UR0e0BgkatF4AB4O",
+      "name": "potap"
+    }
+  ],
   "triggerCount": 1,
-  "updatedAt": "2023-12-28T19:23:23.000Z",
-  "versionId": "3d560410-6afd-4983-894f-e01f75ea7945"
+  "updatedAt": "2023-12-29T05:50:14.000Z",
+  "versionId": "4af75d2b-714c-40cc-8ee2-7bbcd9b659a6"
 }
