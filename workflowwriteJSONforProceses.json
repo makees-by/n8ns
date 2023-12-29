@@ -701,8 +701,27 @@
     "errorWorkflow": "k3cmqrd2rdjhkgrK"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2023-12-29T05:49:12.607Z",
+      "updatedAt": "2023-12-29T05:49:12.607Z",
+      "id": "2F2JpICiTQCMNk1Q",
+      "name": "treck_check"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:03.050Z",
+      "updatedAt": "2023-12-29T05:48:03.050Z",
+      "id": "AgzDK5Bx0yz5Db7h",
+      "name": "json"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:23.798Z",
+      "updatedAt": "2023-12-29T05:48:23.798Z",
+      "id": "UR0e0BgkatF4AB4O",
+      "name": "potap"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2023-12-29T05:29:19.000Z",
-  "versionId": "316399fb-c9f9-438f-bbf2-00de1b9df71a"
+  "updatedAt": "2023-12-29T05:49:42.000Z",
+  "versionId": "5ad3ef7f-4d10-4633-9dd8-3d5e6bada6cf"
 }
