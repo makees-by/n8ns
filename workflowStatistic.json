@@ -513,6 +513,8 @@
         380
       ],
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "notionApi": {
           "id": "7SpLd7HTUj4VhGrA",
@@ -552,6 +554,8 @@
         920
       ],
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "notionApi": {
           "id": "7SpLd7HTUj4VhGrA",
@@ -587,6 +591,8 @@
         1160
       ],
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "notionApi": {
           "id": "7SpLd7HTUj4VhGrA",
@@ -624,6 +630,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-12-29T05:52:25.000Z",
-  "versionId": "5bf79e38-3c76-4475-91a4-ccde7f0ee516"
+  "updatedAt": "2023-12-31T06:07:29.000Z",
+  "versionId": "81689794-8541-4e11-abfb-d171b5ad9782"
 }
