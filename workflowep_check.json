@@ -1300,7 +1300,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://n8ns.makees.site/webhook/Statistic",
+        "url": "https://n8n.makees.online/webhook/Statistic",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2013,6 +2013,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2023-12-29T05:52:52.000Z",
-  "versionId": "25f1666b-78b4-46ea-a920-19b595afff77"
+  "updatedAt": "2024-01-10T14:30:33.000Z",
+  "versionId": "bdbb63b6-e288-4cfc-9e03-b1e72072b446"
 }
