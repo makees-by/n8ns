@@ -150,8 +150,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        460,
-        260
+        840,
+        500
       ]
     },
     {
@@ -238,7 +238,8 @@
       "position": [
         940,
         40
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -259,7 +260,8 @@
       "position": [
         1100,
         -20
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -437,6 +439,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2024-01-09T13:07:11.000Z",
-  "versionId": "ff19d39e-5046-4c7c-a7dd-b1ec93bc9c6e"
+  "updatedAt": "2024-01-12T18:02:32.000Z",
+  "versionId": "baf83994-8891-4b42-b31d-8a1408260940"
 }
