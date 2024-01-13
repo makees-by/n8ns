@@ -181,8 +181,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "Обработка кнопок menu": {
@@ -761,27 +760,6 @@
     },
     {
       "parameters": {
-        "chatId": "={{ $json['data.process.tg_chats'] }}",
-        "text": "={{ $('Switch').item.json.body.send }}",
-        "additionalFields": {}
-      },
-      "id": "72288e47-bd60-4587-9aab-04b10231638e",
-      "name": "Ответ на нажатие первой кнопки1",
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1,
-      "position": [
-        440,
-        340
-      ],
-      "credentials": {
-        "telegramApi": {
-          "id": "VTWiXBie3BtYtQ5n",
-          "name": "Bot_potap"
-        }
-      }
-    },
-    {
-      "parameters": {
         "dataType": "string",
         "value1": "={{ $json.callback_query.data }}",
         "rules": {
@@ -1063,6 +1041,28 @@
         180
       ],
       "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json['data.process.tg_chats'] }}",
+        "text": "={{ $('Switch').item.json.body.send }}",
+        "additionalFields": {}
+      },
+      "id": "72288e47-bd60-4587-9aab-04b10231638e",
+      "name": "Ответ на нажатие первой кнопки1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        440,
+        340
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -1085,6 +1085,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2023-12-28T19:19:59.000Z",
-  "versionId": "6343d023-e2c4-4cd2-baaa-2d9481bb5836"
+  "updatedAt": "2024-01-12T15:13:39.000Z",
+  "versionId": "3dd7f1e1-d4f1-4266-9e98-4ba1593ed75b"
 }
