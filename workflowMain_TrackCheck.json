@@ -82,7 +82,7 @@
       "main": [
         [
           {
-            "node": "Edit Fields1",
+            "node": "zsForvika json для записи",
             "type": "main",
             "index": 0
           }
@@ -116,6 +116,17 @@
         [
           {
             "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForvika json для записи": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
@@ -300,7 +311,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        620,
+        400,
         160
       ]
     },
@@ -405,6 +416,22 @@
         1540,
         400
       ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForvika\",\n          \"start_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n          \"start_pageID\": 672397081,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/zsForvika.json"
+      },
+      "id": "d685e825-5d86-4155-ac6e-ed3c26839f33",
+      "name": "zsForvika json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        620,
+        160
+      ]
     }
   ],
   "pinData": {},
@@ -440,6 +467,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2024-01-14T10:53:39.000Z",
-  "versionId": "c2ab46c3-c29f-4a30-a698-a7f3ea7f4142"
+  "updatedAt": "2024-01-25T16:09:28.000Z",
+  "versionId": "9605c244-9f65-40f9-ae61-86bcbbf1b4e8"
 }
