@@ -1192,6 +1192,8 @@
         100
       ],
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -3103,6 +3105,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-09T13:09:09.000Z",
-  "versionId": "409c3bf6-65a7-42b7-8515-50e15dbb8df3"
+  "updatedAt": "2024-01-25T16:05:27.000Z",
+  "versionId": "0bfcfd54-2c5b-43fd-b004-cf75eeef655c"
 }
