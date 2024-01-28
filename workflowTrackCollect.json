@@ -3074,6 +3074,48 @@
         3640,
         -540
       ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Страница }}",
+          "mode": "id"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "Не доставлено"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "55dd9579-8e76-4b03-8d03-0048ff752aa6",
+      "name": "Получаем строки с треком1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        2080,
+        900
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -3105,6 +3147,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-25T16:05:27.000Z",
-  "versionId": "0bfcfd54-2c5b-43fd-b004-cf75eeef655c"
+  "updatedAt": "2024-01-27T21:09:37.000Z",
+  "versionId": "59a09701-2c8e-41c2-9171-2d3beb1a04c2"
 }
