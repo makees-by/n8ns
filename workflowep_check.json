@@ -778,8 +778,7 @@
         -2500,
         600
       ],
-      "webhookId": "9139b4ec-19ed-4614-9b49-2922ea239dfc",
-      "disabled": true
+      "webhookId": "9139b4ec-19ed-4614-9b49-2922ea239dfc"
     },
     {
       "parameters": {
@@ -1567,12 +1566,11 @@
     {
       "parameters": {
         "operation": "extractHtmlContent",
-        "dataPropertyName": "=data",
         "extractionValues": {
           "values": [
             {
               "key": "ivents",
-              "cssSelector": ".tracking-widget__list > li",
+              "cssSelector": ".tracking-widget__list",
               "returnValue": "html",
               "returnArray": true
             }
@@ -1588,7 +1586,7 @@
         -300,
         520
       ],
-      "alwaysOutputData": true,
+      "alwaysOutputData": false,
       "retryOnFail": true,
       "waitBetweenTries": 2000,
       "onError": "continueErrorOutput"
@@ -1604,7 +1602,8 @@
       "position": [
         -2240,
         800
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1915,7 +1914,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        -460,
+        -480,
         540
       ],
       "retryOnFail": true,
@@ -1990,6 +1989,34 @@
       "executeOnce": true,
       "alwaysOutputData": true,
       "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "ivents",
+              "cssSelector": ".tracking-widget__list > li",
+              "returnValue": "html",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "02e44c5f-00f8-4493-b5a2-cb36f155a400",
+      "name": "HTML",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        300
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "onError": "continueErrorOutput"
     }
   ],
   "pinData": {},
@@ -2020,7 +2047,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2024-01-25T19:45:04.000Z",
-  "versionId": "1f991f0d-0453-4a5f-bcf6-862f1d7cc882"
+  "triggerCount": 1,
+  "updatedAt": "2024-01-29T03:17:54.000Z",
+  "versionId": "774a2f64-e3d3-4298-8ae2-19112805afba"
 }
