@@ -923,7 +923,7 @@
     {
       "parameters": {
         "chatId": "=206784276",
-        "text": "=Процесс {{ $json.body.processID }}:  {{ $json.body.send }}",
+        "text": "=На сервере online Процесс {{ $json.body.processID }}:  {{ $json.body.send }}",
         "additionalFields": {}
       },
       "id": "139f8193-26a4-4ca5-878a-f6254b4a80f5",
@@ -1085,6 +1085,6 @@
     }
   ],
   "triggerCount": 2,
-  "updatedAt": "2024-01-14T12:00:17.000Z",
-  "versionId": "c781ffc7-1f9f-4539-b1e6-dec45d225a26"
+  "updatedAt": "2024-01-29T20:19:38.000Z",
+  "versionId": "c197284d-11c6-4a31-aad3-eb008cd54f20"
 }
