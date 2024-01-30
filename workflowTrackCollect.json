@@ -102,6 +102,11 @@
             "node": "Получаем строки с треком",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "СЗПЦ",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -283,7 +288,7 @@
       "main": [
         [
           {
-            "node": "СЗПЦ",
+            "node": "YGP7",
             "type": "main",
             "index": 0
           }
@@ -956,6 +961,17 @@
           }
         ]
       ]
+    },
+    "YGP7": {
+      "main": [
+        [
+          {
+            "node": "СЗПЦ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T07:05:50.659Z",
@@ -1155,7 +1171,7 @@
       "typeVersion": 1,
       "position": [
         1900,
-        -80
+        -120
       ],
       "alwaysOutputData": false
     },
@@ -1188,8 +1204,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        1940,
-        100
+        1920,
+        80
       ],
       "alwaysOutputData": true,
       "retryOnFail": true,
@@ -3077,45 +3093,23 @@
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "mode": "list",
-          "value": ""
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.Страница }}",
-          "mode": "id"
-        },
-        "filtersUI": {
-          "values": [
+        "conditions": {
+          "boolean": [
             {
-              "lookupColumn": "Отметка о доставке",
-              "lookupValue": "Не доставлено"
+              "value2": true
             }
           ]
-        },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
         }
       },
-      "id": "55dd9579-8e76-4b03-8d03-0048ff752aa6",
-      "name": "Получаем строки с треком1",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
+      "id": "9816cc59-261d-4ba5-8145-da5708e47a75",
+      "name": "YGP7",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
       "position": [
-        2080,
-        900
+        2340,
+        -280
       ],
-      "alwaysOutputData": true,
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      }
+      "alwaysOutputData": false
     }
   ],
   "pinData": {},
@@ -3147,6 +3141,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-27T21:09:37.000Z",
-  "versionId": "59a09701-2c8e-41c2-9171-2d3beb1a04c2"
+  "updatedAt": "2024-01-30T09:47:26.000Z",
+  "versionId": "b8619925-a19a-4934-831a-67c269a0fd8c"
 }
