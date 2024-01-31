@@ -67,7 +67,7 @@
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "IF5",
             "type": "main",
             "index": 0
           }
@@ -467,6 +467,17 @@
           }
         ]
       ]
+    },
+    "IF5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-12-14T08:24:04.771Z",
@@ -613,8 +624,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        140,
-        380
+        100,
+        440
       ],
       "alwaysOutputData": false
     },
@@ -1543,7 +1554,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        420,
+        620,
         200
       ],
       "executeOnce": true,
@@ -1807,6 +1818,26 @@
         340
       ],
       "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.трек }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "40f54f72-0202-4536-a076-a419c626657f",
+      "name": "IF5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        300,
+        420
+      ]
     }
   ],
   "pinData": {},
@@ -1838,6 +1869,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-20T20:50:22.000Z",
-  "versionId": "915bad70-d6fd-46ef-8319-54ee74018bca"
+  "updatedAt": "2024-01-31T13:18:57.000Z",
+  "versionId": "6f17cb78-60d2-429f-b27b-9961f4277034"
 }
