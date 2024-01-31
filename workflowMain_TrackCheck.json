@@ -1,22 +1,11 @@
 {
   "active": true,
   "connections": {
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Webhook": {
       "main": [
         [
           {
-            "node": "Edit Fields4",
+            "node": "fdd",
             "type": "main",
             "index": 0
           }
@@ -34,44 +23,11 @@
         ]
       ]
     },
-    "Edit Fields2": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields3": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "When clicking \"Execute Workflow\"": {
       "main": [
         [
           {
-            "node": "Edit Fields1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "ForIra": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
+            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -89,29 +45,18 @@
         ]
       ]
     },
-    "ForNat": {
+    "zsForvika json для записи": {
       "main": [
         [
           {
-            "node": "Edit Fields2",
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "ForAnn": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields4": {
+    "ZsForAnn": {
       "main": [
         [
           {
@@ -122,11 +67,55 @@
         ]
       ]
     },
-    "zsForvika json для записи": {
+    "ZsForAnn1": {
       "main": [
         [
           {
-            "node": "Edit Fields1",
+            "node": "ZsForAnn json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAnn json для записи": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "fdd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fromWebhoock": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fdd": {
+      "main": [
+        [
+          {
+            "node": "fromWebhoock",
             "type": "main",
             "index": 0
           }
@@ -150,7 +139,7 @@
       "typeVersion": 1,
       "position": [
         1260,
-        260
+        220
       ],
       "webhookId": "7d9e5eda-30f3-4640-a943-bff40feb982c"
     },
@@ -161,29 +150,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        840,
-        500
-      ]
-    },
-    {
-      "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "ProcessID",
-              "stringValue": "ForIra"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "a9257318-d716-4810-9884-724a542276d6",
-      "name": "Edit Fields",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        840,
-        320
+        1420,
+        580
       ]
     },
     {
@@ -232,76 +200,11 @@
     },
     {
       "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "ProcessID",
-              "stringValue": "ForNat"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "18fc1b7d-6f29-4d07-a778-ab066061d34f",
-      "name": "Edit Fields2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        940,
-        40
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "ProcessID",
-              "stringValue": "ForAnn"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c68ad585-152a-4f0c-afda-8263c82c36ff",
-      "name": "Edit Fields3",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        1100,
-        -20
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 7,
-              "triggerAtMinute": 2
-            }
-          ]
-        }
-      },
-      "id": "4ee88696-c433-492c-b708-ee3daefa899f",
-      "name": "ForIra",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        640,
-        320
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
         "rule": {
           "interval": [
             {
               "triggerAtHour": 20,
-              "triggerAtMinute": 3
+              "triggerAtMinute": 35
             }
           ]
         }
@@ -317,71 +220,10 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 1,
-              "triggerAtMinute": 1
-            }
-          ]
-        }
-      },
-      "id": "88858b74-cffd-4b05-96c2-fc7091883b28",
-      "name": "ForNat",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        740,
-        0
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 4,
-              "triggerAtMinute": 7
-            }
-          ]
-        }
-      },
-      "id": "5b54780c-e45b-4423-bd00-c486fea8de7a",
-      "name": "ForAnn",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        900,
-        -120
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "ProcessID",
-              "stringValue": "={{ $json.query.procID }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "57faea8b-9138-4d98-8e46-99fb246e843a",
-      "name": "Edit Fields4",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        1040,
-        460
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "content": "## Прод\nhttps://n8ns.makees.site/webhook/check_start?procID=ForIra\nhttps://n8ns.makees.site/webhook/check_start?procID=zsForvika"
+        "content": "## Прод\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=zsForvika\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForAnn\n",
+        "height": 188.1417142857143,
+        "width": 531.9001781002182,
+        "color": 4
       },
       "id": "be0f2e51-0087-4c87-a80b-d9bd099651e6",
       "name": "Sticky Note",
@@ -413,8 +255,8 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        1540,
-        400
+        1500,
+        320
       ]
     },
     {
@@ -431,6 +273,109 @@
       "position": [
         620,
         160
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForAnn"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c68ad585-152a-4f0c-afda-8263c82c36ff",
+      "name": "ZsForAnn",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1000,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 4,
+              "triggerAtMinute": 7
+            }
+          ]
+        }
+      },
+      "id": "5b54780c-e45b-4423-bd00-c486fea8de7a",
+      "name": "ZsForAnn1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        540,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 1401389950,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForAnn.json"
+      },
+      "id": "c1d8ce1e-a1ec-47d4-8500-d69b25e67fed",
+      "name": "ZsForAnn json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        780,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n  [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"Mozilla/5.0 (X11; Linux x86_64; rv:121.0) Gecko/20100101 Firefox/121.0\",\n      \"accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8\",\n      \"accept-encoding\": \"gzip, deflate, br\",\n      \"accept-language\": \"ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3\",\n      \"cookie\": \"rl_session=RudderEncrypt%3AU2FsdGVkX19O7nOOSl%2FVhw%2Ba95IIt9AAa%2B5V4TXBsYjaiyt7EYzFD%2Br8F63GxZWrqqlq60y5YlzV3dNhjZeoWWvcfhWauiG1bEnu9V2EWVwxdU9x4HMvbieBnnKpxnw%2BYlmWf3w3cI9plTt2cnKFOQ%3D%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2FRORbOuMPL5zz7FaZct9iLwMsDxAkPmZxrBBbba%2BNh3MGzTr8Y%2F38tSIdMJwra4QBtGVN17RmDiA%3D%3D; rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX19cHT5er3V00ROldkxpYsgFyX1DJVpBvnU%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX19AGnAzbZHoS6q%2FZgVoQoirlGLyVD9zZHg%3D; n8n-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkwYWZjMDZkLWE2OGEtNGQ0NS05ZWIzLThjOWQ2YTE2MTUwYiIsImVtYWlsIjoibWFrZWVzLmJ5QG1haWwucnUiLCJwYXNzd29yZCI6IjNiMTFiY2Q2OThmMzMwZDY1MGNlYTc3MGU5NGFjOTg4OTY2ZmMzMWM5OGNhYzMwYWZiYjVlMDk0ODhhNjBkN2IiLCJpYXQiOjE3MDY1OTY5OTIsImV4cCI6MTcwNzIwMTc5Mn0.geUONct-9mcH6Nj61S4_XQppWHil9TGGyf1D1WU7KKU; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2B8%2BLcuvD1t8DInPFlrRF7eyEYGsKZdL1P7vEKo3tKfQw%2BqThsHrsyylReu1suZe%2FghtOLayxybXZROD3XmXNMlB2neQKTMMhsoUBCku08dMPsiQfpYZWtedI692eVMsIBs0znzK6roa7ZUTOQwTyCP%2FlsagULTp18%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX19CREtYWjfsmdrvXhhkIZQ68IQ1G8wm5tTn3%2F1sYxdJy23ltoWmZ3T46Rp5mZQ1sZNwLx0Oo2KXz7JOAa%2FwQnMAVgcJj9HSxLc6vxB26%2B3TAEFb8dMSZV5KFNpDF5mc9icVUMT%2BZJypDQ%3D%3D; ph_phc_4URIAm1uYfJO7j8kWSe0J8lc8IqnstRLS7Jx8NcakHo_posthog=%7B%22distinct_id%22%3A%22007eae0f129aaf44ffdcbfd7690634716e980b9d6c41c19cb9666ce63f7be59a%2390afc06d-a68a-4d45-9eb3-8c9d6a16150b%22%2C%22%24sesid%22%3A%5B1706693811824%2C%22018d5ecc-fc6a-7358-b52c-36f285c1443a%22%2C1706692508778%5D%7D\",\n      \"referer\": \"https://n8n.makees.online/workflow/5teSeVT776DF4RDh\",\n      \"sec-fetch-dest\": \"document\",\n      \"sec-fetch-mode\": \"navigate\",\n      \"sec-fetch-site\": \"same-origin\",\n      \"sec-fetch-user\": \"?1\",\n      \"te\": \"trailers\",\n      \"upgrade-insecure-requests\": \"1\",\n      \"x-forwarded-for\": \"37.215.43.175\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"37.215.43.175\"\n    },\n    \"params\": {},\n    \"query\": {\n      \"ProcessID\": \"ZsForAnn\"\n    }\n  }\n]\n);"
+      },
+      "id": "5ea807c6-ed28-409a-85a5-8da07bd6320b",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        500
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "={{ $json.query.ProcessID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51d91f32-c1ac-47c1-8933-99a01fb61acb",
+      "name": "fromWebhoock",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        820,
+        340
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "dbadb844-2e70-4cde-9a34-666f0dd67d31",
+      "name": "fdd",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        420
       ]
     }
   ],
@@ -450,6 +395,9 @@
     },
     "node:ForAnn": {
       "recurrencyRules": []
+    },
+    "node:ZsForAnn1": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -466,7 +414,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 2,
-  "updatedAt": "2024-01-25T16:09:28.000Z",
-  "versionId": "9605c244-9f65-40f9-ae61-86bcbbf1b4e8"
+  "triggerCount": 3,
+  "updatedAt": "2024-01-31T09:53:27.000Z",
+  "versionId": "a7370949-9a9b-4bd0-9c90-9de4b9065a26"
 }
