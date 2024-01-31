@@ -365,6 +365,11 @@
             "node": "YGP5",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "СЗПЦ8",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -499,11 +504,12 @@
       "main": [
         [
           {
-            "node": "проверяем трекномер на соответствие шаблону белпо1",
+            "node": "СЗПЦ",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "YGP": {
@@ -854,13 +860,7 @@
     },
     "YGP5": {
       "main": [
-        [
-          {
-            "node": "проверяем трекномер на соответствие шаблону белпо",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "СЗПЦ10": {
@@ -1134,8 +1134,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1700,
-        20
+        1720,
+        -220
       ]
     },
     {
@@ -1702,8 +1702,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        2560,
-        140
+        2640,
+        860
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -1972,8 +1972,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2940,
-        140
+        3080,
+        1220
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -2101,8 +2101,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2320,
-        160
+        2060,
+        460
       ],
       "alwaysOutputData": false
     },
@@ -2159,8 +2159,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2360,
-        400
+        2240,
+        760
       ]
     },
     {
@@ -2369,8 +2369,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1680,
-        -280
+        1580,
+        -400
       ],
       "alwaysOutputData": false
     },
@@ -2950,8 +2950,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        3240,
-        140
+        3300,
+        720
       ],
       "alwaysOutputData": false
     },
@@ -3065,8 +3065,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2840,
-        -500
+        2860,
+        1500
       ]
     },
     {
@@ -3141,6 +3141,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-30T09:47:26.000Z",
-  "versionId": "b8619925-a19a-4934-831a-67c269a0fd8c"
+  "updatedAt": "2024-01-31T13:07:45.000Z",
+  "versionId": "c755fc6b-f6e6-48f9-9869-7080770a0df8"
 }
