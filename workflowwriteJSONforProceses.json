@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "zsForvika",
+            "node": "ZsTest",
             "type": "main",
             "index": 0
           }
@@ -63,6 +63,11 @@
           },
           {
             "node": "ZsForAnn json для записи",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ZsTest json для записи",
             "type": "main",
             "index": 0
           }
@@ -167,6 +172,17 @@
           }
         ]
       ]
+    },
+    "ZsTest": {
+      "main": [
+        [
+          {
+            "node": "zsForvika",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-12-23T07:54:50.839Z",
@@ -197,8 +213,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -2480,
-        2180
+        -2380,
+        2160
       ]
     },
     {
@@ -419,7 +435,7 @@
         "operation": "opWrite",
         "queryPath": "process.trigers",
         "sourceType": "sourceTypeJson",
-        "sourceData": "={\n\n\"TrigerBP\": \n1,\n\"TrigerEP\": \n1\n}",
+        "sourceData": "={\n\"TrigerNT\": \n1,\n\"TrigerBP\": \n1,\n\"TrigerEP\": \n1\n}",
         "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json"
       },
       "id": "8b61f41c-2d26-4f64-b9c1-53faf72ea151",
@@ -475,7 +491,7 @@
       "typeVersion": 1,
       "position": [
         -1900,
-        1600
+        1640
       ]
     },
     {
@@ -602,7 +618,7 @@
       "parameters": {
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
-        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForvika\",\n          \"start_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n          \"start_pageID\": 672397081,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForvika\",\n          \"start_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n          \"start_pageID\": 672397081,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
         "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
       },
       "id": "6cb2d6ee-60e2-42eb-9b40-20a45ccd586b",
@@ -626,15 +642,15 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1720,
-        1920
+        -1520,
+        1860
       ]
     },
     {
       "parameters": {
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
-        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 1401389950,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 1401389950,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
         "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
       },
       "id": "81fe7f9b-69a8-4e01-864d-469838d739d0",
@@ -657,6 +673,36 @@
       "position": [
         -2380,
         1940
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsTest\"\n    }\n  }\n]\n);"
+      },
+      "id": "bc4448e1-5d50-4d02-b120-90f65d0ac924",
+      "name": "ZsTest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2620,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsTest\",\n          \"start_tableID\": \"1E2_AUgkcpy0BrVZotmTyCH2Uy8ShDSkNZCpCddFwL-A\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "00201ea6-f273-4b40-9adf-e5e4d8ebb6ad",
+      "name": "ZsTest json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1840,
+        2040
       ]
     }
   ],
@@ -689,6 +735,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-01-31T13:18:37.000Z",
-  "versionId": "a871f03c-8fef-4bc1-8ece-2c35401c1b7d"
+  "updatedAt": "2024-02-01T10:34:10.000Z",
+  "versionId": "fa6ea6eb-c0c1-4133-a00a-da242f0b24e4"
 }
