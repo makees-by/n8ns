@@ -89,7 +89,7 @@
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "IF9",
             "type": "main",
             "index": 0
           }
@@ -537,9 +537,15 @@
         ]
       ]
     },
-    "Code": {
+    "IF9": {
       "main": [
-        []
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -746,7 +752,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1160,
+        -1140,
         580
       ]
     },
@@ -766,8 +772,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1160,
-        380
+        -1180,
+        300
       ]
     },
     {
@@ -1526,8 +1532,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1140,
-        820
+        -1440,
+        180
       ]
     },
     {
@@ -2021,6 +2027,26 @@
         760
       ],
       "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.трек }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "0d116c03-ba96-4543-981f-5c8a04857761",
+      "name": "IF9",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        420
+      ]
     }
   ],
   "pinData": {},
@@ -2052,6 +2078,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-31T12:00:22.000Z",
-  "versionId": "0f054441-49c9-434e-a8fd-4b3885afe00d"
+  "updatedAt": "2024-01-31T13:22:52.000Z",
+  "versionId": "fda79bdd-4099-4ce6-9622-ffbe0b27dba2"
 }
