@@ -34,17 +34,6 @@
         ]
       ]
     },
-    "ForVika": {
-      "main": [
-        [
-          {
-            "node": "zsForvika json для записи",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "zsForvika json для записи": {
       "main": [
         [
@@ -61,17 +50,6 @@
         [
           {
             "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "ZsForAnn1": {
-      "main": [
-        [
-          {
-            "node": "ZsForAnn json для записи",
             "type": "main",
             "index": 0
           }
@@ -116,6 +94,28 @@
         [
           {
             "node": "fromWebhoock",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAnn 04.00": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForVika 20.00": {
+      "main": [
+        [
+          {
+            "node": "zsForvika json для записи",
             "type": "main",
             "index": 0
           }
@@ -200,26 +200,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 20,
-              "triggerAtMinute": 35
-            }
-          ]
-        }
-      },
-      "id": "8d09b088-bda4-41af-a4f1-05183b74e380",
-      "name": "ForVika",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        400,
-        160
-      ]
-    },
-    {
-      "parameters": {
         "content": "## Прод\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=zsForvika\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForAnn\n",
         "height": 188.1417142857143,
         "width": 531.9001781002182,
@@ -298,26 +278,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 4,
-              "triggerAtMinute": 7
-            }
-          ]
-        }
-      },
-      "id": "5b54780c-e45b-4423-bd00-c486fea8de7a",
-      "name": "ZsForAnn1",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        540,
-        -60
-      ]
-    },
-    {
-      "parameters": {
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
         "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 1401389950,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
@@ -377,6 +337,46 @@
         1020,
         420
       ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 4,
+              "triggerAtMinute": 7
+            }
+          ]
+        }
+      },
+      "id": "5b54780c-e45b-4423-bd00-c486fea8de7a",
+      "name": "ZsForAnn 04.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        540,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20,
+              "triggerAtMinute": 3
+            }
+          ]
+        }
+      },
+      "id": "8d09b088-bda4-41af-a4f1-05183b74e380",
+      "name": "ForVika 20.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        560,
+        420
+      ]
     }
   ],
   "pinData": {},
@@ -398,6 +398,12 @@
     },
     "node:ZsForAnn1": {
       "recurrencyRules": []
+    },
+    "node:ZsForAnn 04.00": {
+      "recurrencyRules": []
+    },
+    "node:ForVika 20.00": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -415,6 +421,6 @@
     }
   ],
   "triggerCount": 3,
-  "updatedAt": "2024-02-01T13:15:47.000Z",
-  "versionId": "0527b8a3-a302-4767-883c-e417657951bc"
+  "updatedAt": "2024-02-01T16:55:07.000Z",
+  "versionId": "5a51c472-198e-4b20-8ad9-9ceb4e2ed3ff"
 }
