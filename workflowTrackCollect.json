@@ -94,11 +94,6 @@
       "main": [
         [
           {
-            "node": "Получаем строки с треком",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "СЗПЦ",
             "type": "main",
             "index": 0
@@ -165,7 +160,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "Запись данных в traks2",
             "type": "main",
             "index": 0
           }
@@ -187,7 +182,7 @@
       "main": [
         [
           {
-            "node": "YGP6",
+            "node": "Запись данных в traks1",
             "type": "main",
             "index": 0
           }
@@ -232,6 +227,72 @@
         [
           {
             "node": "Ждун",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в traks1": {
+      "main": [
+        [
+          {
+            "node": "Convert to/from binary data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to/from binary data": {
+      "main": [
+        [
+          {
+            "node": "Google Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись данных в traks2": {
+      "main": [
+        [
+          {
+            "node": "Convert to/from binary data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to/from binary data1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive": {
+      "main": [
+        [
+          {
+            "node": "YGP6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
@@ -713,8 +774,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1400,
-        -100
+        1560,
+        -420
       ]
     },
     {
@@ -759,7 +820,7 @@
       "typeVersion": 1,
       "position": [
         1440,
-        60
+        80
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -777,7 +838,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        800,
+        760,
         80
       ]
     },
@@ -870,6 +931,124 @@
         2540,
         300
       ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Статичные данные процесса').first().json.processID }}.json "
+      },
+      "id": "74f1d97c-35a2-4a37-b650-40c26f879d7c",
+      "name": "Запись данных в traks1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        700,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "jsonToBinary",
+        "options": {}
+      },
+      "id": "d8ea417f-373c-487d-b4f3-e862b48643d9",
+      "name": "Convert to/from binary data",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "typeVersion": 1.1,
+      "position": [
+        660,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Статичные данные процесса').item.json.processID }}_{{ $now.toISO().slice(0,19) }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg",
+          "mode": "list",
+          "cachedResultName": "n8n.online_jsonHistory",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg"
+        },
+        "options": {}
+      },
+      "id": "38c2d2ca-937a-46e5-aeb5-1936838b5814",
+      "name": "Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        940,
+        -260
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "X2pYQd9cGqUwnQbA",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/{{ $('Статичные данные процесса').first().json.processID }}.json"
+      },
+      "id": "e0eceaa9-f145-4e21-8621-a6fe65082d3d",
+      "name": "Запись данных в traks2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "jsonToBinary",
+        "options": {}
+      },
+      "id": "c5d04f2a-2a7d-4ceb-8004-a7692f8aa572",
+      "name": "Convert to/from binary data1",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "typeVersion": 1.1,
+      "position": [
+        1320,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Статичные данные процесса').item.json.processID }}_{{ $now.toISO().slice(0,19) }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg",
+          "mode": "list",
+          "cachedResultName": "n8n.online_jsonHistory",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg"
+        },
+        "options": {}
+      },
+      "id": "4f4ea61c-9130-4bb3-84c9-8a6a804c961b",
+      "name": "Google Drive1",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1280,
+        -420
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "X2pYQd9cGqUwnQbA",
+          "name": "Google Drive account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -901,6 +1080,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-01T12:14:48.000Z",
-  "versionId": "031b04a8-1c75-41ab-ada1-c511ce541d1e"
+  "updatedAt": "2024-02-03T09:02:24.000Z",
+  "versionId": "5adbc136-6d63-49a0-84f4-e4b665acf833"
 }
