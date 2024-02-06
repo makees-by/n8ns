@@ -23,11 +23,6 @@
         ],
         [
           {
-            "node": "сравниваем статус",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "проверяем вручен ли заказ1",
             "type": "main",
             "index": 0
@@ -37,16 +32,10 @@
     },
     "сравниваем статус": {
       "main": [
+        [],
         [
           {
-            "node": "Статус трека не поменялся",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "проверяем вручен ли заказ",
+            "node": "Ставим дату доставки и статус доставлено",
             "type": "main",
             "index": 0
           }
@@ -66,20 +55,8 @@
     },
     "проверяем вручен ли заказ": {
       "main": [
-        [
-          {
-            "node": "Ставим дату доставки и статус доставлено",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Изменяем статус доставки",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        [],
+        []
       ]
     },
     "When clicking \"Execute Workflow\"": {
@@ -122,6 +99,11 @@
             "node": "Создана новая запись в таблице статистики",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "проверяем вручен ли заказ1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -152,7 +134,26 @@
       "main": [
         [
           {
-            "node": "Ставим дату доставки и статус доставлено",
+            "node": "сравниваем статус",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "сравниваем статус1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "сравниваем статус1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Изменяем статус доставки",
             "type": "main",
             "index": 0
           }
@@ -217,8 +218,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        460,
-        700
+        740,
+        560
       ]
     },
     {
@@ -288,8 +289,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        460,
-        940
+        -480,
+        340
       ]
     },
     {
@@ -315,18 +316,7 @@
       "typeVersion": 1,
       "position": [
         400,
-        320
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "c4f56391-133b-4e5f-b88d-8dd83570355c",
-      "name": "Статус трека не поменялся",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        720,
-        680
+        300
       ]
     },
     {
@@ -336,8 +326,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        920,
-        920
+        1180,
+        640
       ]
     },
     {
@@ -353,7 +343,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"291\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"table\": \"1zZYqGPITkjr6NRrHBOcAgItgG_6YZf4c8kYVHnrilkQ\",\n      \"page\": \"2093517410\",\n      \"Трек номер\": \"BY080030985618\",\n      \"Статус и дата обновления\": \"Почтовое отправление прибыло на ОПС выдачи\",\n      \"индекс\": \"7410159\",\n      \"processID\": \"ForIra\"\n    }\n  }\n]\n  );"
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"291\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"table\": \"1zZYqGPITkjr6NRrHBOcAgItgG_6YZf4c8kYVHnrilkQ\",\n      \"page\": \"2093517410\",\n      \"Трек номер\": \"BY080030985618\",\n      \"Статус и дата обновления\": \"Почтовое отправление выдано\",\n      \"индекс\": \"7410159\",\n      \"processID\": \"ForIra\"\n    }\n  }\n]\n  );"
       },
       "id": "edafcbb0-52aa-4df2-8906-3718e8a49547",
       "name": "Входящий json1",
@@ -470,8 +460,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        800,
-        1160
+        1000,
+        920
       ]
     },
     {
@@ -566,8 +556,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.1,
       "position": [
-        700,
-        920
+        940,
+        640
       ],
       "alwaysOutputData": true,
       "retryOnFail": true,
@@ -603,8 +593,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.1,
       "position": [
-        520,
-        1160
+        780,
+        920
       ],
       "alwaysOutputData": true,
       "retryOnFail": true,
@@ -639,8 +629,28 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        480,
-        540
+        440,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.property_actual_status }}",
+              "value2": "={{ $('Структурируем http ответ3').first().json['Статус и дата обновления'] }}"
+            }
+          ]
+        }
+      },
+      "id": "851317f6-8865-4aca-becb-a41680dc4bb1",
+      "name": "сравниваем статус1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        520,
+        860
       ]
     }
   ],
@@ -673,6 +683,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-01T13:51:10.000Z",
-  "versionId": "a3fdde51-83b1-480c-bad2-3f4653cc5582"
+  "updatedAt": "2024-02-06T09:56:12.000Z",
+  "versionId": "e15398ce-9ad0-48d6-9341-2ac74a5e9fa3"
 }
