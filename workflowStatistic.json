@@ -53,12 +53,6 @@
         ]
       ]
     },
-    "проверяем вручен ли заказ": {
-      "main": [
-        [],
-        []
-      ]
-    },
     "When clicking \"Execute Workflow\"": {
       "main": [
         [
@@ -611,7 +605,7 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $json.property_actual_status }}",
+              "value1": "={{ $('Структурируем http ответ3').first().json['Статус и дата обновления'] }}",
               "operation": "contains",
               "value2": "Вручено "
             },
@@ -652,6 +646,36 @@
         520,
         860
       ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "db256969-1224-4de8-8e4c-3e666d570bf3",
+          "mode": "list",
+          "cachedResultName": "Project “Potap”",
+          "cachedResultUrl": "https://www.notion.so/db25696912244de88e4c3e666d570bf3"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "ee0fa90b-7108-4192-801c-3a6a1d44ca00",
+      "name": "Notion1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.1,
+      "position": [
+        620,
+        1120
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "7SpLd7HTUj4VhGrA",
+          "name": "Notion account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -683,6 +707,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-06T09:56:12.000Z",
-  "versionId": "e15398ce-9ad0-48d6-9341-2ac74a5e9fa3"
+  "updatedAt": "2024-02-06T15:01:44.000Z",
+  "versionId": "0140217a-03cd-45b2-bb37-5687d1734e16"
 }
