@@ -1200,8 +1200,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        3000,
-        -600
+        3040,
+        -720
       ]
     },
     {
@@ -2210,6 +2210,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-01T12:22:34.000Z",
-  "versionId": "7afde289-f409-4a35-b32d-ea954f327cb4"
+  "updatedAt": "2024-02-06T19:01:24.000Z",
+  "versionId": "2b884eb4-0bc2-4db5-a638-082192265c63"
 }
