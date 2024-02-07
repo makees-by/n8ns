@@ -426,7 +426,7 @@
       "main": [
         [
           {
-            "node": "Запуск модуля проверки",
+            "node": "Запуск модуля проверки1",
             "type": "main",
             "index": 0
           }
@@ -479,13 +479,7 @@
     },
     "Запуск модуля проверки": {
       "main": [
-        [
-          {
-            "node": "Жду",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Жду": {
@@ -808,6 +802,17 @@
           }
         ]
       ]
+    },
+    "Запуск модуля проверки1": {
+      "main": [
+        [
+          {
+            "node": "Жду",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-28T17:07:16.465Z",
@@ -1026,7 +1031,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"zsForvika\"\n    }\n  }\n]\n);"
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsTest\"\n    }\n  }\n]\n);"
       },
       "id": "a8a1d1e9-c794-460b-88f6-90980ef03312",
       "name": "Code1",
@@ -1653,7 +1658,7 @@
     },
     {
       "parameters": {
-        "content": "https://n8n.makees.online/workflow/z4JEW8jpxWNFpwrw",
+        "content": "https://n8n.makees.online/workflow/dk2vpgDyztVqJFwU",
         "height": 80,
         "width": 316.0217600000001
       },
@@ -1780,8 +1785,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        5300,
-        0
+        5280,
+        -260
       ]
     },
     {
@@ -2300,8 +2305,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        4640,
-        -40
+        4620,
+        -80
       ]
     },
     {
@@ -2400,6 +2405,41 @@
       ],
       "executeOnce": true,
       "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook/CPN",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            },
+            {
+              "name": "main_tableID",
+              "value": "={{ $('Ввод статичных значений').first().json.main_tableID }}"
+            },
+            {
+              "name": "main_pageID",
+              "value": "={{ $('Ввод статичных значений').first().json.main_pageID }}"
+            },
+            {
+              "name": "url_become",
+              "value": "={{ $('Ввод статичных значений').first().json.url_become }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "85cb9e7d-783f-4916-9746-85b8cb10a0ca",
+      "name": "Запуск модуля проверки1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        5280,
+        -60
+      ]
     }
   ],
   "pinData": {},
@@ -2431,6 +2471,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-12T15:11:59.000Z",
-  "versionId": "26606ca9-6df0-4dec-8265-55805aaada6b"
+  "updatedAt": "2024-02-07T11:57:55.000Z",
+  "versionId": "12a65501-85a7-4e5c-a337-6757763410b7"
 }
