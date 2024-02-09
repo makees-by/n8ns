@@ -1820,7 +1820,7 @@
     },
     {
       "parameters": {
-        "name": "={{ $('Статичные данные процесса').item.json.processID }}_{{ $now.toISO().slice(0,19) }}",
+        "name": "={{ $('Ввод id статичных таблиц').first().json.processID }}_{{ $now.toISO().slice(0,19) }}",
         "driveId": {
           "__rl": true,
           "mode": "list",
@@ -1840,8 +1840,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        680,
-        2040
+        660,
+        2020
       ],
       "credentials": {
         "googleDriveOAuth2Api": {
@@ -1882,6 +1882,38 @@
         860,
         2040
       ]
+    },
+    {
+      "parameters": {
+        "name": "={{ $('Статичные данные процесса').item.json.processID }}_{{ $now.toISO().slice(0,19) }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg",
+          "mode": "list",
+          "cachedResultName": "n8n.online_jsonHistory",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg"
+        },
+        "options": {}
+      },
+      "id": "87ee55e4-1b09-491b-beb6-e45acb3a96fd",
+      "name": "Google Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -660,
+        1540
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "X2pYQd9cGqUwnQbA",
+          "name": "Google Drive account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -1913,6 +1945,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-07T21:03:37.000Z",
-  "versionId": "f7a25cd1-7692-4a6a-a413-a2fa479fb0df"
+  "updatedAt": "2024-02-08T20:31:58.000Z",
+  "versionId": "bb58c29c-45b3-4179-9a96-976b5778008a"
 }
