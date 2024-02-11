@@ -75,6 +75,11 @@
             "node": "Google Sheets2",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Чтение данных всего файла в JsonDatabase1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -157,11 +162,6 @@
         [
           {
             "node": "No Operation, do nothing6",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Подтягиваем все собранные треки BP из JSON1",
             "type": "main",
             "index": 0
           }
@@ -331,7 +331,7 @@
       "main": [
         [
           {
-            "node": "Item Lists2",
+            "node": "IF4",
             "type": "main",
             "index": 0
           }
@@ -397,7 +397,7 @@
       "main": [
         [
           {
-            "node": "IF1",
+            "node": "СЗПЦ7",
             "type": "main",
             "index": 0
           }
@@ -594,6 +594,40 @@
         [
           {
             "node": "No Operation, do nothing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "СЗПЦ7": {
+      "main": [
+        [
+          {
+            "node": "Обнуление данных в checkProcess",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обнуление данных в checkProcess": {
+      "main": [
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF4": {
+      "main": [
+        [],
+        [
+          {
+            "node": "HTTP Request1",
             "type": "main",
             "index": 0
           }
@@ -811,8 +845,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        860,
-        2240
+        420,
+        2640
       ]
     },
     {
@@ -1003,9 +1037,9 @@
     {
       "parameters": {
         "operation": "opWrite",
-        "queryPath": "checkProcess",
+        "queryPath": "checkProcess.Iteration",
         "sourceType": "sourceTypeJson",
-        "sourceData": "={\n\"Iteration\": 0,\n\"Traks\": \n{\n}\n}",
+        "sourceData": "=1",
         "filePath": "=root/n8n/{{ $('Ввод id статичных таблиц').first().json.processID }}.json  "
       },
       "id": "e21cf12f-61f9-4049-9158-a944192ffa92",
@@ -1013,8 +1047,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1520,
-        1780
+        2840,
+        960
       ]
     },
     {
@@ -1211,8 +1245,8 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        1240,
-        1780
+        2200,
+        1620
       ],
       "alwaysOutputData": true
     },
@@ -1506,7 +1540,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1040,
+        520,
         1780
       ]
     },
@@ -1532,7 +1566,7 @@
       "typeVersion": 3,
       "position": [
         2260,
-        1180
+        1140
       ],
       "alwaysOutputData": true
     },
@@ -1546,8 +1580,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2060,
-        1200
+        2080,
+        1140
       ]
     },
     {
@@ -1598,8 +1632,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2640,
-        1240
+        2860,
+        1180
       ]
     },
     {
@@ -1658,8 +1692,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        620,
-        2240
+        420,
+        2440
       ]
     },
     {
@@ -1814,8 +1848,8 @@
       "type": "n8n-nodes-base.moveBinaryData",
       "typeVersion": 1.1,
       "position": [
-        500,
-        2040
+        1300,
+        1800
       ]
     },
     {
@@ -1840,8 +1874,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        660,
-        2020
+        1560,
+        1800
       ],
       "credentials": {
         "googleDriveOAuth2Api": {
@@ -1860,8 +1894,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        500,
-        1820
+        980,
+        1780
       ]
     },
     {
@@ -1879,8 +1913,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        860,
-        2040
+        1320,
+        2080
       ]
     },
     {
@@ -1914,6 +1948,67 @@
           "name": "Google Drive account"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.data.checkProcess.Iteration }}",
+              "operation": "notEqual"
+            }
+          ]
+        }
+      },
+      "id": "49a9cdd2-ae12-4658-904c-f24494485297",
+      "name": "IF4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        680,
+        1780
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "6205856b-70f0-4254-a52c-f92fae961e03",
+      "name": "СЗПЦ7",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        2660,
+        880
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "url": "=https://n8n.makees.online/webhook/reCheck",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "TrackCollect",
+              "value": "OK"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6ed6c538-e54f-4ba5-a1b3-0553bd2c68b0",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        740,
+        2020
+      ]
     }
   ],
   "pinData": {},
@@ -1945,6 +2040,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-08T20:31:58.000Z",
-  "versionId": "bb58c29c-45b3-4179-9a96-976b5778008a"
+  "updatedAt": "2024-02-11T13:07:27.000Z",
+  "versionId": "58ee1e62-2952-40a9-8f69-a3b74cdaa006"
 }
