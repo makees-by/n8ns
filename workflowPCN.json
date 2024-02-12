@@ -75,11 +75,6 @@
             "node": "Google Sheets2",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Чтение данных всего файла в JsonDatabase1",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -162,6 +157,11 @@
         [
           {
             "node": "No Operation, do nothing6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Чтение данных всего файла в JsonDatabase1",
             "type": "main",
             "index": 0
           }
@@ -604,18 +604,7 @@
       "main": [
         [
           {
-            "node": "Обнуление данных в checkProcess",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Обнуление данных в checkProcess": {
-      "main": [
-        [
-          {
-            "node": "IF1",
+            "node": "Ставим 1 в CcheckProcess.iterstion",
             "type": "main",
             "index": 0
           }
@@ -624,10 +613,31 @@
     },
     "IF4": {
       "main": [
-        [],
         [
           {
             "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все собранные треки BP из JSON1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ставим 1 в CcheckProcess.iterstion": {
+      "main": [
+        [
+          {
+            "node": "IF1",
             "type": "main",
             "index": 0
           }
@@ -822,8 +832,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        400,
-        2240
+        380,
+        2080
       ]
     },
     {
@@ -845,8 +855,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        420,
-        2640
+        400,
+        2480
       ]
     },
     {
@@ -1036,23 +1046,6 @@
     },
     {
       "parameters": {
-        "operation": "opWrite",
-        "queryPath": "checkProcess.Iteration",
-        "sourceType": "sourceTypeJson",
-        "sourceData": "=1",
-        "filePath": "=root/n8n/{{ $('Ввод id статичных таблиц').first().json.processID }}.json  "
-      },
-      "id": "e21cf12f-61f9-4049-9158-a944192ffa92",
-      "name": "Обнуление данных в checkProcess",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        2840,
-        960
-      ]
-    },
-    {
-      "parameters": {
         "operation": "appendOrUpdate",
         "documentId": {
           "__rl": true,
@@ -1234,21 +1227,6 @@
           "name": "Google Sheets account"
         }
       }
-    },
-    {
-      "parameters": {
-        "fieldToSplitOut": "Traks",
-        "options": {}
-      },
-      "id": "d03ea4e3-a8c0-4cf9-a50d-8b9721f0e3c3",
-      "name": "Item Lists2",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 3,
-      "position": [
-        2200,
-        1620
-      ],
-      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -1540,7 +1518,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        520,
+        600,
         1780
       ]
     },
@@ -1693,7 +1671,7 @@
       "typeVersion": 1,
       "position": [
         420,
-        2440
+        2280
       ]
     },
     {
@@ -1848,7 +1826,7 @@
       "type": "n8n-nodes-base.moveBinaryData",
       "typeVersion": 1.1,
       "position": [
-        1300,
+        1180,
         1800
       ]
     },
@@ -1874,7 +1852,7 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1560,
+        1380,
         1800
       ],
       "credentials": {
@@ -1895,7 +1873,7 @@
       "typeVersion": 1,
       "position": [
         980,
-        1780
+        1800
       ]
     },
     {
@@ -1913,8 +1891,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1320,
-        2080
+        1380,
+        2060
       ]
     },
     {
@@ -1965,8 +1943,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        680,
-        1780
+        600,
+        2020
       ]
     },
     {
@@ -1994,8 +1972,12 @@
         "bodyParameters": {
           "parameters": [
             {
-              "name": "TrackCollect",
-              "value": "OK"
+              "name": "recheck",
+              "value": "need"
+            },
+            {
+              "name": "processID",
+              "value": "={{ $('Ввод id статичных таблиц').first().json.processID }}"
             }
           ]
         },
@@ -2006,8 +1988,25 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        740,
-        2020
+        980,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "checkProcess.Iteration",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=1",
+        "filePath": "=root/n8n/{{ $('Ввод id статичных таблиц').first().json.processID }}.json  "
+      },
+      "id": "e21cf12f-61f9-4049-9158-a944192ffa92",
+      "name": "Ставим 1 в CcheckProcess.iterstion",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2840,
+        960
       ]
     }
   ],
@@ -2040,6 +2039,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-11T13:07:27.000Z",
-  "versionId": "58ee1e62-2952-40a9-8f69-a3b74cdaa006"
+  "updatedAt": "2024-02-12T12:18:31.000Z",
+  "versionId": "fa9e97f8-2a86-4d46-b6af-999bc1c9f708"
 }
