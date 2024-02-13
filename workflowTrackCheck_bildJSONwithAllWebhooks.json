@@ -1,0 +1,307 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Ручки",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "курлы-урлы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ручки": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "курлы-урлы": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "Rename Keys",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rename Keys": {
+      "main": [
+        [
+          {
+            "node": "Запись main JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись main JSON": {
+      "main": [
+        [
+          {
+            "node": "Чтение main JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-02-13T12:26:59.947Z",
+  "id": "Uok0IzYbACq6SNnD",
+  "meta": null,
+  "name": "TrackCheck_bildJSONwithAllWebhooks",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "89f711c1-bcdc-4cf6-8338-e5f5780092eb",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -600,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Стартовая колбаса всего процесса",
+              "stringValue": "https://n8n.makees.online/webhook/modul_Start"
+            },
+            {
+              "name": "Сбор треков_(1из2х)",
+              "stringValue": "https://n8n.makees.online/webhook/modul_trackCollect"
+            },
+            {
+              "name": "Сбор треков_глубина2_(2й из 2х)",
+              "stringValue": "https://n8n.makees.online/webhook/deep_TC"
+            },
+            {
+              "name": "Проверка Белпочты",
+              "stringValue": "https://n8n.makees.online/webhook/bp_check"
+            },
+            {
+              "name": "Проверка Европочты",
+              "stringValue": "https://n8n.makees.online/webhook/ep_check"
+            },
+            {
+              "name": "Статистика (только на сервере online)",
+              "stringValue": "https://n8n.makees.online/webhook/Statistic"
+            },
+            {
+              "name": "Проверка промахов",
+              "stringValue": "https://n8n.makees.online/webhook/CPN"
+            },
+            {
+              "name": "Исправление промахов",
+              "stringValue": "https://n8n.makees.online/webhook/reCheck"
+            },
+            {
+              "name": "Чат бот телеги",
+              "stringValue": "https://n8n.makees.online/webhook/Potap_TrackChack"
+            },
+            {
+              "name": "Таймер",
+              "stringValue": "https://n8n.makees.online/webhook/timer"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5aa957de-f3fd-4e41-9cc3-073d78116551",
+      "name": "Ручки",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -400,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Стартовая колбаса всего процесса",
+              "stringValue": "https://n8n.makees.online/workflow/QJuQGKgAzSJyxmPS"
+            },
+            {
+              "name": "Сбор треков_(1из2х)",
+              "stringValue": "https://n8n.makees.online/workflow/pwofnTe8IYGRQZrS"
+            },
+            {
+              "name": "Сбор треков_глубина2_(2й из 2х)",
+              "stringValue": "https://n8n.makees.online/workflow/AH0rdp23A5bNlc6a"
+            },
+            {
+              "name": "Проверка Белпочты",
+              "stringValue": "https://n8n.makees.online/workflow/VRyRwVTCmpPchy3Y"
+            },
+            {
+              "name": "Проверка Европочты",
+              "stringValue": "https://n8n.makees.online/workflow/29MEWguRetOyjvsX"
+            },
+            {
+              "name": "Статистика (только на сервере online)",
+              "stringValue": "https://n8n.makees.online/workflow/RWZ1VyvD7GhmW3Gc"
+            },
+            {
+              "name": "Проверка промахов",
+              "stringValue": "https://n8n.makees.ru/workflow/2cZCyuD9bFRKrXMC"
+            },
+            {
+              "name": "Исправление промахов",
+              "stringValue": "https://n8n.makees.online/workflow/9wJKOHskCm7q6kvo"
+            },
+            {
+              "name": "Чат бот телеги",
+              "stringValue": "https://n8n.makees.online/workflow/X47e4ESkdsBlGbNR"
+            },
+            {
+              "name": "Таймер",
+              "stringValue": "https://n8n.makees.online/workflow/NzDOgWMv6KgJnLSo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ffa94b38-6686-4154-9acd-b5118a2f17d9",
+      "name": "курлы-урлы",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -400,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0b48b798-93c6-49a7-835f-de9aa5329c90",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        -220,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "40557d57-8413-41a6-a1b9-cca143acb51b",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        -20,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "keys": {
+          "key": [
+            {
+              "currentKey": "data[0]",
+              "newKey": "endPoints"
+            },
+            {
+              "currentKey": "data[1]",
+              "newKey": "Urls"
+            }
+          ]
+        },
+        "additionalOptions": {}
+      },
+      "id": "fcf6994a-c391-4e90-ba9e-c1df1e4588ad",
+      "name": "Rename Keys",
+      "type": "n8n-nodes-base.renameKeys",
+      "typeVersion": 1,
+      "position": [
+        180,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\"endPoints\" : \n{{ JSON.stringify($input.item.json.endPoints) }},\n \"Urls\":\n{{ JSON.stringify($input.item.json.Urls) }}\n}",
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "8b09e5de-3b37-4793-b220-90b7cb68b396",
+      "name": "Запись main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        380,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "c05c9617-0e92-4336-8846-788894f172d3",
+      "name": "Чтение main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        380,
+        240
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-02-13T12:44:31.000Z",
+  "versionId": "5e2a99aa-5b7b-4ae7-9014-49480636d879"
+}
