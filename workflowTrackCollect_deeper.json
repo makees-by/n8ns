@@ -117,6 +117,11 @@
             "node": "Статичные данные процесса",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -765,6 +770,28 @@
         [
           {
             "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "main JSON": {
+      "main": [
+        [
+          {
+            "node": "KED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KED": {
+      "main": [
+        [
+          {
+            "node": "Статичные данные процесса",
             "type": "main",
             "index": 0
           }
@@ -2118,7 +2145,7 @@
     },
     {
       "parameters": {
-        "url": "=https://n8n.makees.online/webhook/timer",
+        "url": "={{ $('main JSON').first().json.data.endPoints.Таймер }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2185,6 +2212,39 @@
         980
       ],
       "webhookId": "712cc9f7-5476-4148-81c6-8f10ccfe3bc2"
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "829a15a1-6329-4f7f-82a4-62f77f374b4d",
+      "name": "main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "3f08babf-340b-4d3a-a514-5641d5e64c36",
+      "name": "KED",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2420,
+        60
+      ]
     }
   ],
   "pinData": {},
@@ -2210,6 +2270,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-06T19:01:24.000Z",
-  "versionId": "2b884eb4-0bc2-4db5-a638-082192265c63"
+  "updatedAt": "2024-02-13T13:16:00.000Z",
+  "versionId": "123ee9eb-8520-434a-8153-99f0ed3cbd2b"
 }
