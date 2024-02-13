@@ -46,6 +46,11 @@
             "node": "Запись данных в traks",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -298,6 +303,28 @@
           }
         ]
       ]
+    },
+    "main JSON": {
+      "main": [
+        [
+          {
+            "node": "KED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KED": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T07:05:50.659Z",
@@ -315,7 +342,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        480,
+        180,
         300
       ],
       "webhookId": "10890d55-af06-4ba9-a3d6-840cd2d62510"
@@ -375,7 +402,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        720,
+        660,
         300
       ]
     },
@@ -899,7 +926,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/deep_TC",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Сбор треков_глубина2_(2й из 2х)'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1049,6 +1076,39 @@
           "name": "Google Drive account"
         }
       }
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "bae4aa50-a60d-457d-a3a3-fd3e41cd8ec5",
+      "name": "main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        420,
+        -280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "8e8d0f79-3e13-47de-993c-dfc596609716",
+      "name": "KED",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        440,
+        220
+      ]
     }
   ],
   "pinData": {},
@@ -1080,6 +1140,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-06T19:00:33.000Z",
-  "versionId": "d111d4d4-0b65-4cbe-84d8-3a98fd6875e7"
+  "updatedAt": "2024-02-13T13:19:27.000Z",
+  "versionId": "91975063-11b6-4d2e-9577-95b6de7b26a3"
 }
