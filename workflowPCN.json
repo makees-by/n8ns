@@ -75,6 +75,11 @@
             "node": "Google Sheets2",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -643,6 +648,28 @@
           }
         ]
       ]
+    },
+    "main JSON": {
+      "main": [
+        [
+          {
+            "node": "KED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KED": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных всего файла в JsonDatabase3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-02-06T15:03:22.402Z",
@@ -657,8 +684,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1140,
-        1520
+        -1120,
+        1440
       ]
     },
     {
@@ -703,27 +730,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 7,
-              "triggerAtMinute": 7
-            }
-          ]
-        }
-      },
-      "id": "81d7803a-8a44-4278-9ebc-9b4d1b72dc05",
-      "name": "Schedule Trigger",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -1340,
-        1100
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
         "batchSize": 1,
         "options": {
           "reset": false
@@ -748,8 +754,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        -1120,
-        1020
+        -1180,
+        1200
       ],
       "webhookId": "858f8441-b2d2-43c3-b167-3e8e8eb99e61"
     },
@@ -966,19 +972,6 @@
     },
     {
       "parameters": {
-        "filePath": "=root/n8n/{{ $json.processID }}.json"
-      },
-      "id": "4c970c5e-d191-4619-b380-0c8c0a0f3072",
-      "name": "Чтение данных всего файла в JsonDatabase2",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        -860,
-        640
-      ]
-    },
-    {
-      "parameters": {
         "jsCode": "return(\n  [\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"167\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsTest\",\n      \"main_tableID\": \"1E2_AUgkcpy0BrVZotmTyCH2Uy8ShDSkNZCpCddFwL-A\",\n      \"main_pageID\": 1600679549,\n      \"url_become\": \"https://n8ns.makees.site/webhook-waiting/23\"\n    }\n  }\n]\n);"
       },
       "id": "56e37a43-1987-471f-81d1-857b18e17fe0",
@@ -986,8 +979,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1060,
-        1260
+        -900,
+        1440
       ],
       "disabled": true
     },
@@ -1026,23 +1019,6 @@
       ],
       "executeOnce": true,
       "alwaysOutputData": true
-    },
-    {
-      "parameters": {
-        "operation": "opWrite",
-        "queryPath": "checkProcess",
-        "sourceType": "sourceTypeJson",
-        "sourceData": "={\n\"Iteration\": 0,\n\"Traks\": \n{\n}\n}",
-        "filePath": "=root/n8n/{{ $('Ввод id статичных таблиц').first().json.processID }}.json  "
-      },
-      "id": "1ea392e2-eb36-499f-83bd-80d48acf9212",
-      "name": "Обнуление данных в checkProcess 1",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        -860,
-        840
-      ]
     },
     {
       "parameters": {
@@ -1338,27 +1314,6 @@
       "position": [
         -180,
         1220
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "concatenateItems",
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
-            {
-              "fieldToAggregate": "traks"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "1767ef77-e6a9-4dc7-b7fd-9d9fee624292",
-      "name": "Item Lists4",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 3.1,
-      "position": [
-        -860,
-        440
       ]
     },
     {
@@ -1897,38 +1852,6 @@
     },
     {
       "parameters": {
-        "name": "={{ $('Статичные данные процесса').item.json.processID }}_{{ $now.toISO().slice(0,19) }}",
-        "driveId": {
-          "__rl": true,
-          "mode": "list",
-          "value": "My Drive"
-        },
-        "folderId": {
-          "__rl": true,
-          "value": "1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg",
-          "mode": "list",
-          "cachedResultName": "n8n.online_jsonHistory",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1pUomJR50VhnhZf_DWVXhyvJaFDNhKzBg"
-        },
-        "options": {}
-      },
-      "id": "87ee55e4-1b09-491b-beb6-e45acb3a96fd",
-      "name": "Google Drive",
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        -660,
-        1540
-      ],
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "X2pYQd9cGqUwnQbA",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "conditions": {
           "number": [
             {
@@ -1967,7 +1890,7 @@
     },
     {
       "parameters": {
-        "url": "=https://n8n.makees.online/webhook/reCheck",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Исправление промахов'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2008,6 +1931,39 @@
         2840,
         960
       ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "271b610c-b953-4f08-a98d-417409a71b50",
+      "name": "main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "7dd962fe-3326-4a7a-8231-e796328207ba",
+      "name": "KED",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        900
+      ]
     }
   ],
   "pinData": {},
@@ -2039,6 +1995,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-12T12:18:31.000Z",
-  "versionId": "fa9e97f8-2a86-4d46-b6af-999bc1c9f708"
+  "updatedAt": "2024-02-13T13:10:50.000Z",
+  "versionId": "3da9f635-c694-4422-bb18-654d81b30501"
 }
