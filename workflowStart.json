@@ -53,6 +53,11 @@
             "node": "Чтение данных из workProcess",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -477,11 +482,6 @@
         ]
       ]
     },
-    "Запуск модуля проверки": {
-      "main": [
-        []
-      ]
-    },
     "Жду": {
       "main": [
         [
@@ -813,6 +813,28 @@
           }
         ]
       ]
+    },
+    "main JSON": {
+      "main": [
+        [
+          {
+            "node": "KED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KED": {
+      "main": [
+        [
+          {
+            "node": "Изменение значения для ключа url_become в JsonDatabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-28T17:07:16.465Z",
@@ -902,6 +924,8 @@
         1120,
         240
       ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -996,7 +1020,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/modul_trackCollect",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Сбор треков_(1из2х)'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1700,7 +1724,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/ep_check",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Проверка Европочты'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1728,7 +1752,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/bp_check",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Проверка Белпочты'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2176,7 +2200,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2203,7 +2227,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2230,7 +2254,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2257,7 +2281,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2284,7 +2308,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2311,7 +2335,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2338,7 +2362,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2365,7 +2389,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Potap_TrackChack",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2408,7 +2432,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/CPN",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Проверка промахов'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2439,6 +2463,39 @@
       "position": [
         5280,
         -60
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "a113898a-36c4-4cd8-832e-8e699e7de665",
+      "name": "main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        20,
+        -20
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "be220362-43dc-468c-af8a-476303dce0bc",
+      "name": "KED",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        220,
+        -20
       ]
     }
   ],
@@ -2471,6 +2528,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-07T11:57:55.000Z",
-  "versionId": "12a65501-85a7-4e5c-a337-6757763410b7"
+  "updatedAt": "2024-02-13T13:00:04.000Z",
+  "versionId": "95f5f5dd-05d6-4bee-9614-dfca861a8c44"
 }
