@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "in",
             "type": "main",
             "index": 0
           }
@@ -49,7 +49,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "in",
             "type": "main",
             "index": 0
           }
@@ -82,7 +82,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "in",
             "type": "main",
             "index": 0
           }
@@ -121,6 +121,44 @@
           }
         ]
       ]
+    },
+    "main JSON": {
+      "main": [
+        [
+          {
+            "node": "KED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "in": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KED": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -138,10 +176,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        1260,
-        220
+        680,
+        480
       ],
-      "webhookId": "7d9e5eda-30f3-4640-a943-bff40feb982c"
+      "webhookId": "7d9e5eda-30f3-4640-a943-bff40feb982c",
+      "disabled": true
     },
     {
       "parameters": {},
@@ -150,13 +189,13 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1420,
-        580
+        680,
+        660
       ]
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/modul_Start",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Стартовая колбаса всего процесса'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -173,8 +212,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        1020,
-        220
+        1280,
+        40
       ]
     },
     {
@@ -224,8 +263,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1340,
-        40
+        1760,
+        -200
       ]
     },
     {
@@ -235,8 +274,8 @@
       "type": "n8n-nodes-base.stopAndError",
       "typeVersion": 1,
       "position": [
-        1500,
-        320
+        1520,
+        -60
       ]
     },
     {
@@ -272,7 +311,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        1000,
+        820,
         -60
       ]
     },
@@ -288,7 +327,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        780,
+        640,
         -60
       ]
     },
@@ -301,8 +340,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1220,
-        500
+        1060,
+        660
       ],
       "disabled": true
     },
@@ -323,8 +362,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        820,
-        340
+        1060,
+        240
       ]
     },
     {
@@ -334,8 +373,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1020,
-        420
+        1060,
+        480
       ]
     },
     {
@@ -354,7 +393,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        540,
+        380,
         -60
       ]
     },
@@ -374,8 +413,52 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        560,
-        420
+        380,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "84b6167d-6d3d-42d3-9a44-af26367fd42d",
+      "name": "main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        -180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "bf49d34c-e0d4-475d-ace8-5953ed2a408a",
+      "name": "in",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "a925c40b-4cb4-4b50-b505-5a0d869960a5",
+      "name": "KED",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        -180
       ]
     }
   ],
@@ -420,7 +503,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 3,
-  "updatedAt": "2024-02-03T08:22:35.000Z",
-  "versionId": "63913f0b-86cd-48f7-8cc5-fcd5315b87e5"
+  "triggerCount": 2,
+  "updatedAt": "2024-02-13T12:50:17.000Z",
+  "versionId": "21593c23-3854-4712-a85b-02268ecaf515"
 }
