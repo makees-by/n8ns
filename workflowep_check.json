@@ -139,6 +139,11 @@
             "node": "Чтение данных из workProcess1",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -547,6 +552,28 @@
           }
         ]
       ]
+    },
+    "main JSON": {
+      "main": [
+        [
+          {
+            "node": "KED",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "KED": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных из workProcess1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-12-15T14:34:19.225Z",
@@ -674,8 +701,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -2500,
-        360
+        -2860,
+        400
       ]
     },
     {
@@ -1251,7 +1278,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://n8n.makees.online/webhook/Statistic",
+        "url": "={{ $('main JSON').first().json.data.endPoints['Статистика (только на сервере online)'] }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1537,22 +1564,6 @@
       ]
     },
     {
-      "parameters": {
-        "operation": "opWrite",
-        "queryPath": "=zsotku.{{ $json['processID'] }}.EPcheck",
-        "sourceType": "sourceTypeJson",
-        "sourceData": "false"
-      },
-      "id": "f3866c6f-b878-4c3d-8044-b74961736e75",
-      "name": "(TrackCollect_true) Запись ПерП1",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        -2680,
-        400
-      ]
-    },
-    {
       "parameters": {},
       "id": "bd362594-2294-4126-aae8-1de988193515",
       "name": "No Operation, do nothing",
@@ -1696,7 +1707,7 @@
       "typeVersion": 1,
       "position": [
         -2020,
-        560
+        600
       ]
     },
     {
@@ -2047,6 +2058,39 @@
         -1080,
         420
       ]
+    },
+    {
+      "parameters": {
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "c394953f-e691-4f9a-b509-a74552e2c611",
+      "name": "main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -2260,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Страница }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "b28d81e5-5834-45af-a48d-3130a1e8b35b",
+      "name": "KED",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2020,
+        340
+      ]
     }
   ],
   "pinData": {},
@@ -2078,6 +2122,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-01-31T13:22:52.000Z",
-  "versionId": "fda79bdd-4099-4ce6-9622-ffbe0b27dba2"
+  "updatedAt": "2024-02-13T13:26:14.000Z",
+  "versionId": "e6492a3b-34bf-4bb5-86f9-42a520caba8f"
 }
