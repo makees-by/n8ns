@@ -103,7 +103,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "IF",
             "type": "main",
             "index": 0
           }
@@ -797,6 +797,17 @@
           }
         ]
       ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-02-01T08:49:02.295Z",
@@ -874,7 +885,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3720,
+        3940,
         -500
       ],
       "executeOnce": false
@@ -909,7 +920,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        4000,
+        4220,
         220
       ],
       "executeOnce": false
@@ -1035,7 +1046,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        3420,
+        3640,
         860
       ],
       "credentials": {
@@ -1071,7 +1082,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        4000,
+        4220,
         420
       ],
       "executeOnce": true,
@@ -1089,7 +1100,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
       "position": [
-        4200,
+        4420,
         400
       ]
     },
@@ -1112,7 +1123,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        7000,
+        7220,
         980
       ]
     },
@@ -1133,7 +1144,7 @@
       "typeVersion": 1,
       "position": [
         2980,
-        260
+        280
       ],
       "alwaysOutputData": false
     },
@@ -1283,7 +1294,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3560,
+        3780,
         -400
       ]
     },
@@ -1294,7 +1305,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3820,
+        4040,
         320
       ]
     },
@@ -1325,7 +1336,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        6180,
+        6400,
         1000
       ],
       "alwaysOutputData": false
@@ -1410,7 +1421,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3920,
+        4140,
         -820
       ],
       "disabled": true
@@ -1430,7 +1441,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        4980,
+        5200,
         -660
       ],
       "alwaysOutputData": false
@@ -1447,7 +1458,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3420,
+        3640,
         -660
       ],
       "executeOnce": true,
@@ -1479,7 +1490,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3720,
+        3940,
         -300
       ],
       "executeOnce": true,
@@ -1497,7 +1508,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        5060,
+        5280,
         -480
       ],
       "executeOnce": true,
@@ -1516,7 +1527,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4160,
+        4380,
         -660
       ]
     },
@@ -1532,7 +1543,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3900,
+        4120,
         -500
       ],
       "executeOnce": true,
@@ -1548,7 +1559,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4140,
+        4360,
         -500
       ]
     },
@@ -1562,7 +1573,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4340,
+        4560,
         -500
       ],
       "alwaysOutputData": true
@@ -1578,7 +1589,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
       "position": [
-        3920,
+        4140,
         -320
       ]
     },
@@ -1589,7 +1600,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
       "position": [
-        4160,
+        4380,
         -300
       ]
     },
@@ -1604,7 +1615,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4540,
+        4760,
         -300
       ]
     },
@@ -1621,7 +1632,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4960,
+        5180,
         -300
       ]
     },
@@ -1637,7 +1648,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3680,
+        3900,
         40
       ],
       "executeOnce": true,
@@ -1658,7 +1669,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        4820,
+        5040,
         40
       ],
       "alwaysOutputData": false
@@ -1675,7 +1686,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        4200,
+        4420,
         220
       ],
       "executeOnce": true,
@@ -1691,7 +1702,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4380,
+        4600,
         220
       ]
     },
@@ -1705,7 +1716,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4580,
+        4800,
         220
       ],
       "alwaysOutputData": true
@@ -1717,7 +1728,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
       "position": [
-        4380,
+        4600,
         420
       ]
     },
@@ -1732,7 +1743,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4580,
+        4800,
         420
       ]
     },
@@ -1749,7 +1760,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4800,
+        5020,
         420
       ]
     },
@@ -1765,7 +1776,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        4880,
+        5100,
         220
       ],
       "executeOnce": true,
@@ -1786,7 +1797,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        5300,
+        5520,
         220
       ],
       "alwaysOutputData": false
@@ -1803,7 +1814,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        5380,
+        5600,
         1000
       ],
       "executeOnce": true,
@@ -1819,7 +1830,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        5840,
+        6060,
         1000
       ]
     },
@@ -1835,7 +1846,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        4540,
+        4760,
         640
       ],
       "executeOnce": true,
@@ -1848,7 +1859,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5320,
+        5540,
         760
       ]
     },
@@ -1886,7 +1897,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 2,
       "position": [
-        3240,
+        3460,
         240
       ]
     },
@@ -1897,7 +1908,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3320,
+        3540,
         -420
       ]
     },
@@ -1908,7 +1919,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3620,
+        3840,
         220
       ]
     },
@@ -1919,7 +1930,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3340,
+        3560,
         660
       ]
     },
@@ -1935,7 +1946,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        6460,
+        6680,
         980
       ],
       "executeOnce": true,
@@ -1953,7 +1964,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        3680,
+        3900,
         660
       ],
       "executeOnce": true,
@@ -1974,7 +1985,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        4140,
+        4360,
         660
       ],
       "alwaysOutputData": false
@@ -1994,7 +2005,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        5320,
+        5540,
         420
       ],
       "alwaysOutputData": false
@@ -2014,7 +2025,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        5300,
+        5520,
         20
       ],
       "alwaysOutputData": false
@@ -2026,7 +2037,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4500,
+        4720,
         860
       ]
     },
@@ -2037,7 +2048,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5020,
+        5240,
         640
       ]
     },
@@ -2054,7 +2065,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        5120,
+        5340,
         20
       ]
     },
@@ -2071,7 +2082,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        5120,
+        5340,
         220
       ]
     },
@@ -2088,7 +2099,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        5120,
+        5340,
         420
       ]
     },
@@ -2122,7 +2133,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3860,
+        4080,
         660
       ]
     },
@@ -2139,7 +2150,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4380,
+        4600,
         40
       ]
     },
@@ -2162,7 +2173,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        6160,
+        6380,
         1240
       ]
     },
@@ -2208,7 +2219,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        6680,
+        6900,
         980
       ],
       "webhookId": "712cc9f7-5476-4148-81c6-8f10ccfe3bc2"
@@ -2245,6 +2256,26 @@
         2420,
         60
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.Индекс }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "d13b2582-3b1b-4936-9f1a-8e8098273b32",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        260
+      ]
     }
   ],
   "pinData": {},
@@ -2270,6 +2301,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-13T13:16:00.000Z",
-  "versionId": "123ee9eb-8520-434a-8153-99f0ed3cbd2b"
+  "updatedAt": "2024-02-13T18:25:49.000Z",
+  "versionId": "91effe5b-f6e3-4602-80c9-80a10f21d772"
 }
