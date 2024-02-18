@@ -196,11 +196,6 @@
       "main": [
         [
           {
-            "node": "JsonDatabase1",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "YGP",
             "type": "main",
             "index": 0
@@ -277,11 +272,6 @@
     "Меняем BP_triger на 1": {
       "main": [
         [
-          {
-            "node": "JsonDatabase3",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "YGP1",
             "type": "main",
@@ -1144,7 +1134,7 @@
       "typeVersion": 1,
       "position": [
         2980,
-        280
+        260
       ],
       "alwaysOutputData": false
     },
@@ -1219,6 +1209,8 @@
         260
       ],
       "alwaysOutputData": false,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -1238,8 +1230,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        3040,
-        -720
+        3560,
+        -740
       ]
     },
     {
@@ -1260,15 +1252,15 @@
     {
       "parameters": {
         "content": "# Выставляем отметку об отсутствии трек номера, если вмсесто трека написано что то другое",
-        "height": 249.03425295109602,
-        "width": 757.6993006125347
+        "height": 133.9370246058483,
+        "width": 939.2971497794813
       },
       "id": "6573ffea-db13-44e4-be30-960d167d7f6b",
       "name": "Sticky Note3",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        3620,
+        3780,
         800
       ]
     },
@@ -1360,21 +1352,6 @@
     },
     {
       "parameters": {
-        "queryPath": "process.trigers",
-        "filePath": "=root/n8n/{{ $('Статичные данные процесса').first().json.processID }}.json"
-      },
-      "id": "41cc13aa-e51c-4c96-b7b9-859810100d73",
-      "name": "JsonDatabase1",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        2280,
-        -180
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
         "keepOnlySet": true,
         "options": {
           "dotNotation": false
@@ -1410,21 +1387,6 @@
         -160
       ],
       "alwaysOutputData": false
-    },
-    {
-      "parameters": {
-        "queryPath": "process.trigers",
-        "filePath": "=root/n8n/{{ $('Статичные данные процесса').first().json.processID }}.json"
-      },
-      "id": "5c0c4ff8-4f75-4d5f-994b-528469e2de42",
-      "name": "JsonDatabase3",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        4140,
-        -820
-      ],
-      "disabled": true
     },
     {
       "parameters": {
@@ -1898,7 +1860,7 @@
       "typeVersion": 2,
       "position": [
         3460,
-        240
+        220
       ]
     },
     {
@@ -2197,20 +2159,6 @@
     },
     {
       "parameters": {
-        "queryPath": "process.trigers",
-        "filePath": "=root/n8n/ZsTest.json"
-      },
-      "id": "bda516ac-fa05-4c3a-8100-2fc0491d1d06",
-      "name": "test",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        5840,
-        780
-      ]
-    },
-    {
-      "parameters": {
         "amount": 15,
         "unit": "seconds"
       },
@@ -2274,7 +2222,7 @@
       "typeVersion": 1,
       "position": [
         3200,
-        260
+        240
       ]
     }
   ],
@@ -2301,6 +2249,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-13T18:25:49.000Z",
-  "versionId": "91effe5b-f6e3-4602-80c9-80a10f21d772"
+  "updatedAt": "2024-02-18T08:39:07.000Z",
+  "versionId": "733e69c8-6537-4647-867d-d17e535d0752"
 }
