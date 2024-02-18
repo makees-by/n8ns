@@ -262,33 +262,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.property_actual_status }}",
-              "operation": "contains",
-              "value2": "Вручено "
-            },
-            {
-              "value1": "={{ $('Структурируем http ответ3').first().json['Статус и дата обновления'] }}",
-              "operation": "contains",
-              "value2": "выдано"
-            }
-          ]
-        },
-        "combineOperation": "any"
-      },
-      "id": "337ee7b9-400d-4748-a520-b63ba07fab57",
-      "name": "проверяем вручен ли заказ",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        -480,
-        340
-      ]
-    },
-    {
-      "parameters": {
         "content": "## Этот модуль записывает треки и присваиваем им дату попадания и дату выдачи.\n",
         "height": 246.38828204496534,
         "width": 204.8047739816805
@@ -382,64 +355,8 @@
         860
       ],
       "alwaysOutputData": true,
-      "credentials": {
-        "notionApi": {
-          "id": "7SpLd7HTUj4VhGrA",
-          "name": "Notion account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "databasePage",
-        "databaseId": {
-          "__rl": true,
-          "value": "db256969-1224-4de8-8e4c-3e666d570bf3",
-          "mode": "list",
-          "cachedResultName": "Project “Potap”",
-          "cachedResultUrl": "https://www.notion.so/db25696912244de88e4c3e666d570bf3"
-        },
-        "title": "={{ $('Структурируем http ответ3').item.json.processID }}_{{ $('Структурируем http ответ3').item.json['Трек номер'] }}",
-        "simple": false,
-        "propertiesUi": {
-          "propertyValues": [
-            {
-              "key": "treck_num|rich_text",
-              "textContent": "={{ $('Структурируем http ответ3').item.json['Трек номер'] }}"
-            },
-            {
-              "key": "Process_ID|rich_text",
-              "textContent": "={{ $('Структурируем http ответ3').item.json.processID }}"
-            },
-            {
-              "key": "index|number",
-              "numberValue": "={{ $('Структурируем http ответ3').item.json.индекс }}"
-            },
-            {
-              "key": "Table|rich_text",
-              "textContent": "={{ $('Структурируем http ответ3').item.json.table }}"
-            },
-            {
-              "key": "Page|rich_text",
-              "textContent": "={{ $('Структурируем http ответ3').item.json.page }}"
-            },
-            {
-              "key": "Actual_status|rich_text",
-              "textContent": "={{ $('Структурируем http ответ3').item.json['Статус и дата обновления'] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "00bcdaed-a33f-481c-bfe2-38301349a0c4",
-      "name": "Notion3",
-      "type": "n8n-nodes-base.notion",
-      "typeVersion": 2.1,
-      "position": [
-        -220,
-        320
-      ],
-      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "notionApi": {
           "id": "7SpLd7HTUj4VhGrA",
@@ -646,36 +563,6 @@
         520,
         860
       ]
-    },
-    {
-      "parameters": {
-        "resource": "databasePage",
-        "operation": "getAll",
-        "databaseId": {
-          "__rl": true,
-          "value": "db256969-1224-4de8-8e4c-3e666d570bf3",
-          "mode": "list",
-          "cachedResultName": "Project “Potap”",
-          "cachedResultUrl": "https://www.notion.so/db25696912244de88e4c3e666d570bf3"
-        },
-        "returnAll": true,
-        "options": {}
-      },
-      "id": "ee0fa90b-7108-4192-801c-3a6a1d44ca00",
-      "name": "Notion1",
-      "type": "n8n-nodes-base.notion",
-      "typeVersion": 2.1,
-      "position": [
-        620,
-        1120
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "notionApi": {
-          "id": "7SpLd7HTUj4VhGrA",
-          "name": "Notion account"
-        }
-      }
     }
   ],
   "pinData": {},
@@ -707,6 +594,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-06T15:01:44.000Z",
-  "versionId": "0140217a-03cd-45b2-bb37-5687d1734e16"
+  "updatedAt": "2024-02-18T08:40:10.000Z",
+  "versionId": "53e0ff84-373a-477c-bbec-c80b031042a3"
 }
