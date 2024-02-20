@@ -22,6 +22,17 @@
           }
         ]
       ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-02-18T09:59:45.024Z",
@@ -51,8 +62,18 @@
           "cachedResultName": "Project “Potap”",
           "cachedResultUrl": "https://www.notion.so/db25696912244de88e4c3e666d570bf3"
         },
-        "returnAll": true,
+        "limit": 100,
         "simple": false,
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Name|title",
+              "condition": "equals",
+              "titleValue": "ForIra_ru_PC167330678BY"
+            }
+          ]
+        },
         "options": {}
       },
       "id": "1971c08f-0267-4b77-a9dc-bf8bec989ecc",
@@ -76,7 +97,7 @@
           "string": [
             {
               "value1": "={{ $json.properties.Name.title[0].text.content }}",
-              "operation": "isNotEmpty"
+              "value2": "zsForHel_ru_PC164544351BY"
             }
           ]
         }
@@ -89,6 +110,27 @@
         1460,
         260
       ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "type": "arrayValue",
+              "arrayValue": "={{ $json.properties.iraSdf.relation }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8ee5c99f-97ea-4bbb-9a07-600ad117c4ef",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1780,
+        260
+      ]
     }
   ],
   "pinData": {},
@@ -98,6 +140,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-02-18T10:24:48.000Z",
-  "versionId": "004131cc-bb27-4afb-9b0b-1133e74f074b"
+  "updatedAt": "2024-02-18T19:11:45.000Z",
+  "versionId": "05006849-a007-469e-adec-696dcf69a540"
 }
