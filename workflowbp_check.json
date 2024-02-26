@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Wait2": {
       "main": [
@@ -34,20 +34,14 @@
       "main": [
         [
           {
-            "node": "Merge",
+            "node": "IF3",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Date & Time": {
-      "main": [
-        [
+          },
           {
-            "node": "Merge",
+            "node": "Отправка данных в модуль статистики",
             "type": "main",
-            "index": 1
+            "index": 0
           }
         ]
       ]
@@ -56,7 +50,7 @@
       "main": [
         [
           {
-            "node": "Получаем данные по трекам с сайта Белпочты",
+            "node": "Получаем данные по трекам с сайта Белпочты1",
             "type": "main",
             "index": 0
           }
@@ -223,29 +217,6 @@
         ]
       ]
     },
-    "Получаем данные по трекам с сайта Белпочты": {
-      "main": [
-        [
-          {
-            "node": "Структурируем http ответ",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "ошибка при получении данных по треку",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Loop Over Items": {
       "main": [
         [
@@ -269,22 +240,6 @@
         [
           {
             "node": "Wait2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge": {
-      "main": [
-        [
-          {
-            "node": "IF3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Отправка данных в модуль статистики",
             "type": "main",
             "index": 0
           }
@@ -505,6 +460,71 @@
           }
         ]
       ]
+    },
+    "HTML1": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ошибка при получении данных по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные по трекам с сайта Белпочты1": {
+      "main": [
+        [
+          {
+            "node": "HTML1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ошибка при получении данных по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "HTML2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML2": {
+      "main": [
+        [
+          {
+            "node": "Структурируем http ответ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ошибка при получении данных по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-12-14T08:24:04.771Z",
@@ -522,7 +542,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        1400,
+        1720,
         980
       ],
       "webhookId": "2ae1c550-b2bb-4c3d-b1e2-59083bd2e1c7"
@@ -534,15 +554,15 @@
           "string": [
             {
               "name": "Трек номер",
-              "value": "={{ $json[\"data\"][0][\"number\"] }}"
+              "value": "={{ $('получаем трек и отправляем только один').first().json.трек }}"
             },
             {
               "name": "Статус и дата обновления",
-              "value": "={{ $json[\"data\"][0][\"steps\"][0][\"event\"] }} / {{ $json[\"data\"][0][\"steps\"][0][\"place\"] }}  / {{ $json[\"data\"][0][\"steps\"][0][\"place_index\"] }} / {{ $json[\"data\"][0][\"steps\"][0][\"created_at\"] }}"
+              "value": "={{ $json.subject}}"
             },
             {
               "name": "статус кор.",
-              "value": "={{ $json[\"data\"][0][\"steps\"][0][\"event\"] }}"
+              "value": "={{ $json.subject[0] }}"
             },
             {
               "name": "=индекс",
@@ -567,8 +587,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        840,
-        300
+        1280,
+        320
       ]
     },
     {
@@ -588,21 +608,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1100,
+        1420,
         680
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "1a88d849-1692-4410-af67-982aec85ad9b",
-      "name": "Date & Time",
-      "type": "n8n-nodes-base.dateTime",
-      "typeVersion": 2,
-      "position": [
-        840,
-        460
       ]
     },
     {
@@ -707,9 +714,9 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "Дата последнего обновления": "={{ $json.currentDate.slice(0,19) }} БП",
+            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }}БП",
             "Индекс": "={{ $json.индекс }}",
-            "Актуальный статус": "={{ $('Merge').first().json['Трек номер'] }}: {{ $json['Статус и дата обновления'] }}"
+            "Актуальный статус": "={{ $('получаем трек и отправляем только один').first().json.трек }}: {{ $json['Статус и дата обновления'][0].replace(/\\s+/g, ' ').trim() }}  "
           },
           "matchingColumns": [
             "Индекс"
@@ -873,7 +880,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        1080,
+        1160,
         980
       ],
       "retryOnFail": true,
@@ -904,9 +911,9 @@
           "mappingMode": "defineBelow",
           "value": {
             "Отметка о доставке": "Доставлено",
-            "Дата последнего обновления": "={{ $json.currentDate.slice(0,19) }} БП",
+            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }}БП",
             "Индекс": "={{ $json.индекс }}",
-            "Актуальный статус": "={{ $('Merge').first().json['Трек номер'] }}: {{ $json['Статус и дата обновления'] }}"
+            "Актуальный статус": "={{ $('получаем трек и отправляем только один').first().json.трек }}: {{ $json['Статус и дата обновления'][0].replace(/\\s+/g, ' ').trim() }}"
           },
           "matchingColumns": [
             "Индекс"
@@ -1059,7 +1066,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        1540,
+        1860,
         780
       ],
       "alwaysOutputData": true,
@@ -1080,7 +1087,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1580,
+        1900,
         320
       ]
     },
@@ -1106,7 +1113,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1340,
+        1660,
         220
       ]
     },
@@ -1138,7 +1145,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1280,
+        1600,
         600
       ]
     },
@@ -1159,9 +1166,9 @@
           "mappingMode": "defineBelow",
           "value": {
             "Отметка о доставке": "Вручено отправителю",
-            "Дата последнего обновления": "={{ $json.currentDate.slice(0,19) }} БП",
+            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }}БП",
             "Индекс": "={{ $json.индекс }}",
-            "Актуальный статус": "={{ $('Merge').first().json['Трек номер'] }}: {{ $json['Статус и дата обновления']}}"
+            "Актуальный статус": "={{ $('получаем трек и отправляем только один').first().json.трек }}: {{ $json['Статус и дата обновления'][0].replace(/\\s+/g, ' ').trim()}}"
           },
           "matchingColumns": [
             "Индекс"
@@ -1314,7 +1321,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        1520,
+        1840,
         580
       ],
       "alwaysOutputData": true,
@@ -1330,7 +1337,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"82\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8ns.makees.site/webhook-waiting/179\",\n      \"processID\": \"ForIra\"\n    }\n  }\n]\n);"
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"82\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8ns.makees.site/webhook-waiting/179\",\n      \"processID\": \"ZsTest\"\n    }\n  }\n]\n);"
       },
       "id": "c7845e79-1022-4002-a2bf-d953987abdc5",
       "name": "Входящие данные",
@@ -1353,7 +1360,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1680,
+        2000,
         500
       ]
     },
@@ -1429,8 +1436,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        660,
-        400
+        -200,
+        -140
       ],
       "retryOnFail": true,
       "waitBetweenTries": 3000,
@@ -1458,22 +1465,7 @@
       "typeVersion": 1,
       "position": [
         740,
-        680
-      ]
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "combinationMode": "mergeByPosition",
-        "options": {}
-      },
-      "id": "6827cdc9-b860-4ccc-94a8-502cfa2db542",
-      "name": "Merge",
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 2.1,
-      "position": [
-        1040,
-        380
+        880
       ]
     },
     {
@@ -1546,7 +1538,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        620,
+        460,
         860
       ],
       "executeOnce": true,
@@ -1646,7 +1638,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1600,
+        1920,
         980
       ]
     },
@@ -1824,7 +1816,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1380,
+        1700,
         340
       ],
       "continueOnFail": true
@@ -1881,6 +1873,112 @@
         -560,
         0
       ]
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "ivents",
+              "cssSelector": ".tracking-widget__list",
+              "returnValue": "html",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6538f05a-c6a9-40d0-a9b8-160d624b5ffc",
+      "name": "HTML1",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1,
+      "position": [
+        920,
+        440
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://track.global/ajax-track",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "track",
+              "value": "={{ $json.трек }}"
+            },
+            {
+              "name": "client_id",
+              "value": "0"
+            },
+            {
+              "name": "not_frame",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "26b6eedb-935a-428f-99a0-530788049ebf",
+      "name": "Получаем данные по трекам с сайта Белпочты1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        700,
+        460
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "dataPropertyName": "ivents",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "subject",
+              "cssSelector": ".tracking-widget__list-box",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8d1a0582-1eb9-4232-ab5e-44348cd9e478",
+      "name": "HTML2",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        660
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "ivents",
+        "options": {}
+      },
+      "id": "b292aeda-c502-4b10-8f71-02282ae60a7a",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2.1,
+      "position": [
+        920,
+        660
+      ],
+      "alwaysOutputData": true
     }
   ],
   "pinData": {},
@@ -1911,7 +2009,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2024-02-13T13:29:15.000Z",
-  "versionId": "e791f599-7594-4f4a-a068-674683729d48"
+  "triggerCount": 0,
+  "updatedAt": "2024-02-26T11:51:55.000Z",
+  "versionId": "431777b3-b00f-46c7-b1da-29f013320323"
 }
