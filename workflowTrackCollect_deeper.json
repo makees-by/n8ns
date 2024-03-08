@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Code",
+            "node": "Code1",
             "type": "main",
             "index": 0
           }
@@ -130,12 +130,12 @@
       "main": [
         [
           {
-            "node": "проверяем есть ли трек",
+            "node": "СЗПЦ1",
             "type": "main",
             "index": 0
           },
           {
-            "node": "СЗПЦ1",
+            "node": "проверяем есть ли трек1",
             "type": "main",
             "index": 0
           }
@@ -500,32 +500,6 @@
         ]
       ]
     },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Треки Белпочты",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Треки Европочты",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [],
-        [
-          {
-            "node": "Не треки в треке",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Треки Белпочты": {
       "main": [
         [
@@ -691,11 +665,6 @@
             "node": "получаем все строки с отметкоу не доставлено",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "СЗПЦ",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -798,6 +767,72 @@
           }
         ]
       ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "нет ничего": {
+      "main": [
+        [
+          {
+            "node": "СЗПЦ8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "проверяем есть ли трек1": {
+      "main": [
+        [
+          {
+            "node": "СЗПЦ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "проверяем есть ли трек",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Треки Белпочты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Треки Европочты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [
+          {
+            "node": "Не треки в треке",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-02-01T08:49:02.295Z",
@@ -818,7 +853,8 @@
         1980,
         260
       ],
-      "webhookId": "cd61ae75-46bd-462b-913a-82e8225533cd"
+      "webhookId": "cd61ae75-46bd-462b-913a-82e8225533cd",
+      "disabled": true
     },
     {
       "parameters": {},
@@ -827,7 +863,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1980,
+        1920,
         480
       ]
     },
@@ -840,10 +876,9 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2240,
-        480
-      ],
-      "disabled": true
+        2220,
+        500
+      ]
     },
     {
       "parameters": {
@@ -1133,7 +1168,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2980,
+        3040,
         260
       ],
       "alwaysOutputData": false
@@ -1208,7 +1243,7 @@
         2680,
         260
       ],
-      "alwaysOutputData": false,
+      "alwaysOutputData": true,
       "retryOnFail": true,
       "waitBetweenTries": 2000,
       "credentials": {
@@ -1826,44 +1861,6 @@
       ]
     },
     {
-      "parameters": {
-        "dataType": "string",
-        "value1": "={{ $json.трек }}",
-        "rules": {
-          "rules": [
-            {
-              "operation": "regex",
-              "value2": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]B|bY|y",
-              "outputKey": "0"
-            },
-            {
-              "operation": "regex",
-              "value2": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
-              "outputKey": "1"
-            },
-            {
-              "value2": "[empty]",
-              "outputKey": "2"
-            },
-            {
-              "operation": "notEqual",
-              "value2": "[empty]",
-              "outputKey": "3"
-            }
-          ]
-        },
-        "fallbackOutput": 3
-      },
-      "id": "43e2d177-fd2a-4374-aa08-1438716b3698",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 2,
-      "position": [
-        3460,
-        220
-      ]
-    },
-    {
       "parameters": {},
       "id": "7f34172c-9bf1-45d3-bab0-59b2e55a5667",
       "name": "Треки Белпочты",
@@ -2151,7 +2148,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2500,
+        2940,
         1020
       ],
       "executeOnce": true,
@@ -2224,6 +2221,90 @@
         3200,
         240
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"179\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsForAnn\",\n      \"check_tableID\": \"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\",\n      \"check_pageID\": \"1911695135\",\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/123252\"\n    }\n  }\n]\n);"
+      },
+      "id": "7cfba37c-5dd5-4e49-ae0e-5140be6db40e",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        720
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "48d641ac-5ae4-478f-907d-c5547a4bcbc5",
+      "name": "нет ничего",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        1140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"col_1\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "a79cc93c-d0ab-4750-9fcb-1271ca399485",
+      "name": "проверяем есть ли трек1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2860,
+        420
+      ],
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.трек }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "regex",
+              "value2": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]B|bY|y",
+              "outputKey": "0"
+            },
+            {
+              "operation": "regex",
+              "value2": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+              "outputKey": "1"
+            },
+            {
+              "value2": "[empty]",
+              "outputKey": "2"
+            },
+            {
+              "operation": "notEqual",
+              "value2": "[empty]",
+              "outputKey": "3"
+            }
+          ]
+        },
+        "fallbackOutput": 3
+      },
+      "id": "43e2d177-fd2a-4374-aa08-1438716b3698",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        3460,
+        220
+      ]
     }
   ],
   "pinData": {},
@@ -2248,7 +2329,7 @@
       "name": "json"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2024-02-18T08:39:07.000Z",
-  "versionId": "733e69c8-6537-4647-867d-d17e535d0752"
+  "triggerCount": 0,
+  "updatedAt": "2024-03-08T07:52:15.000Z",
+  "versionId": "19ccb689-5b9e-4a71-b224-4b496ec5a43b"
 }
