@@ -804,6 +804,11 @@
             "node": "проверяем есть ли трек",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "СЗПЦ",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -853,8 +858,7 @@
         1980,
         260
       ],
-      "webhookId": "cd61ae75-46bd-462b-913a-82e8225533cd",
-      "disabled": true
+      "webhookId": "cd61ae75-46bd-462b-913a-82e8225533cd"
     },
     {
       "parameters": {},
@@ -878,7 +882,8 @@
       "position": [
         2220,
         500
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -2252,7 +2257,7 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $json[\"col_1\"] }}",
+              "value1": "={{ $json.row_number }}",
               "operation": "isEmpty"
             }
           ]
@@ -2329,7 +2334,7 @@
       "name": "json"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2024-03-08T07:52:15.000Z",
-  "versionId": "19ccb689-5b9e-4a71-b224-4b496ec5a43b"
+  "triggerCount": 1,
+  "updatedAt": "2024-03-08T20:55:52.000Z",
+  "versionId": "d99ff97e-d5a6-43d9-a88c-e664b3c1ea61"
 }
