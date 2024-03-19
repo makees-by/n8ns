@@ -842,7 +842,9 @@
   },
   "createdAt": "2024-02-01T08:49:02.295Z",
   "id": "AH0rdp23A5bNlc6a",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "TrackCollect_deeper",
   "nodes": [
     {
@@ -2248,8 +2250,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3280,
-        1140
+        5620,
+        1200
       ]
     },
     {
@@ -2335,6 +2337,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-03-08T20:55:52.000Z",
-  "versionId": "d99ff97e-d5a6-43d9-a88c-e664b3c1ea61"
+  "updatedAt": "2024-03-18T15:39:48.000Z",
+  "versionId": "a9948822-4ddd-46dd-bc49-b5db9de4c14d"
 }
