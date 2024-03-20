@@ -86,7 +86,9 @@
   },
   "createdAt": "2024-02-13T12:26:59.947Z",
   "id": "Uok0IzYbACq6SNnD",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "TrackCheck_bildJSONwithAllWebhooks",
   "nodes": [
     {
@@ -302,6 +304,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-02-13T12:44:31.000Z",
-  "versionId": "5e2a99aa-5b7b-4ae7-9014-49480636d879"
+  "updatedAt": "2024-03-19T18:29:06.000Z",
+  "versionId": "22e9f065-4da6-43a7-9a34-10e7213ca7d7"
 }
