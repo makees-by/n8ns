@@ -570,7 +570,8 @@
     "executionOrder": "v1",
     "saveManualExecutions": true,
     "callerPolicy": "workflowsFromSameOwner",
-    "errorWorkflow": "k3cmqrd2rdjhkgrK"
+    "errorWorkflow": "k3cmqrd2rdjhkgrK",
+    "saveDataSuccessExecution": "none"
   },
   "staticData": null,
   "tags": [
@@ -594,6 +595,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-18T08:40:10.000Z",
-  "versionId": "53e0ff84-373a-477c-bbec-c80b031042a3"
+  "updatedAt": "2024-03-22T15:20:38.000Z",
+  "versionId": "278babca-dcda-4134-8341-13bdb4ffd3a6"
 }
