@@ -30,27 +30,11 @@
         ]
       ]
     },
-    "Структурируем http ответ": {
-      "main": [
-        [
-          {
-            "node": "IF3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Отправка данных в модуль статистики",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "получаем трек и отправляем только один": {
       "main": [
         [
           {
-            "node": "Получаем данные по трекам с сайта Белпочты1",
+            "node": "HTTP Request1",
             "type": "main",
             "index": 0
           }
@@ -171,17 +155,6 @@
         [
           {
             "node": "Завершение процесса. Возврат в тглавный процесс.",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Входящие данные": {
-      "main": [
-        [
-          {
-            "node": "Ввод отрибутов процесс",
             "type": "main",
             "index": 0
           }
@@ -479,24 +452,6 @@
         ]
       ]
     },
-    "Получаем данные по трекам с сайта Белпочты1": {
-      "main": [
-        [
-          {
-            "node": "HTML1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "ошибка при получении данных по треку",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Item Lists1": {
       "main": [
         [
@@ -520,6 +475,51 @@
         [
           {
             "node": "ошибка при получении данных по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Входящие данные": {
+      "main": [
+        [
+          {
+            "node": "Ввод отрибутов процесс",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "HTML1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ошибка при получении данных по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Структурируем http ответ": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Отправка данных в модуль статистики",
             "type": "main",
             "index": 0
           }
@@ -549,50 +549,6 @@
     },
     {
       "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "Трек номер",
-              "value": "={{ $('получаем трек и отправляем только один').first().json.трек }}"
-            },
-            {
-              "name": "Статус и дата обновления",
-              "value": "={{ $json.subject.toString().replace(/\\s+/g, ' ').trim()}}"
-            },
-            {
-              "name": "статус кор.",
-              "value": "={{ $json.subject[0] }}"
-            },
-            {
-              "name": "=индекс",
-              "value": "={{ $('получаем трек и отправляем только один').item.json.индекс }}"
-            }
-          ],
-          "number": [
-            {
-              "name": "table",
-              "value": "={{ $('получаем трек и отправляем только один').item.json.table }}"
-            },
-            {
-              "name": "page",
-              "value": "={{ $('получаем трек и отправляем только один').item.json.page }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "6f09dba6-1469-4ca7-8a89-0cabf2cc0a6a",
-      "name": "Структурируем http ответ",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        1280,
-        320
-      ]
-    },
-    {
-      "parameters": {
         "conditions": {
           "string": [
             {
@@ -608,7 +564,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1420,
+        1380,
         680
       ]
     },
@@ -1088,7 +1044,7 @@
       "typeVersion": 1,
       "position": [
         1900,
-        320
+        340
       ]
     },
     {
@@ -1337,20 +1293,6 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"82\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8ns.makees.site/webhook-waiting/179\",\n      \"processID\": \"ZsTest\"\n    }\n  }\n]\n);"
-      },
-      "id": "c7845e79-1022-4002-a2bf-d953987abdc5",
-      "name": "Входящие данные",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 1,
-      "position": [
-        -620,
-        580
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
         "content": "https://n8ns.makees.site/workflow/RWZ1VyvD7GhmW3Gc",
         "height": 80,
         "color": 4
@@ -1360,8 +1302,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2000,
-        500
+        2160,
+        360
       ]
     },
     {
@@ -1930,8 +1872,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        700,
-        460
+        1300,
+        80
       ],
       "retryOnFail": true,
       "waitBetweenTries": 2000,
@@ -1989,8 +1931,228 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        980,
+        1200,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://track.global/ru/ajax-track",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "track",
+              "value": "PC164503697BY"
+            },
+            {
+              "name": "client_id",
+              "value": "0"
+            },
+            {
+              "name": "not_frame",
+              "value": "true"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "*/*"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "cookie",
+              "value": "tracks=%5B%22BY080028428116%22%2C%22PC154421327BY%22%2C%22BV332984352BY%22%2C%22PC154411965BY%22%2C%22BY080028659934%22%2C%22BY080029760778%22%2C%22BY080027481631%22%2C%22BY080030642656%22%2C%22PC164513677BY%22%2C%22PC164503697BY%22%5D; _csrf-frontend=6eaa32de65eb41ea1be345eb63366880144dc80a9dd5c27da0a8d12271a94e31a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22YJLRs6_V2U4hTgAnEZr3E5s295xYwOxU%22%3B%7D; _ym_uid=1694546323544847004; advanced-frontend=0p51np5o2j2vhegkq0ijeg0ij9; tracks=%5B%22BY080028428116%22%2C%22PC154421327BY%22%2C%22BV332984352BY%22%2C%22PC154411965BY%22%2C%22BY080028659934%22%2C%22BY080029760778%22%5D; _language=3fde6720ef4098bda6248d39cd80da12475548c9c47d003f754e9fd059bb6117a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _ym_d=1710751911; timezoneOffset=3; _ym_isad=2"
+            },
+            {
+              "name": "referer",
+              "value": "https://track.global/tracking/PC164503697BY"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fda128b7-8c02-4f58-ab57-0f81d8239858",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1100,
         100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"82\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8ns.makees.site/webhook-waiting/179\",\n      \"processID\": \"ZsTest\"\n    }\n  }\n]\n);"
+      },
+      "id": "c7845e79-1022-4002-a2bf-d953987abdc5",
+      "name": "Входящие данные",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        580
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://track.global/ru/ajax-track",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "track",
+              "value": "={{ $json.трек }}"
+            },
+            {
+              "name": "client_id",
+              "value": "0"
+            },
+            {
+              "name": "not_frame",
+              "value": "true"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "*/*"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "cookie",
+              "value": "tracks=%5B%22BY080028428116%22%2C%22PC154421327BY%22%2C%22BV332984352BY%22%2C%22PC154411965BY%22%2C%22BY080028659934%22%2C%22BY080029760778%22%2C%22BY080027481631%22%2C%22BY080030642656%22%2C%22PC164513677BY%22%2C%22PC164503697BY%22%5D; _csrf-frontend=6eaa32de65eb41ea1be345eb63366880144dc80a9dd5c27da0a8d12271a94e31a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22YJLRs6_V2U4hTgAnEZr3E5s295xYwOxU%22%3B%7D; _ym_uid=1694546323544847004; advanced-frontend=0p51np5o2j2vhegkq0ijeg0ij9; tracks=%5B%22BY080028428116%22%2C%22PC154421327BY%22%2C%22BV332984352BY%22%2C%22PC154411965BY%22%2C%22BY080028659934%22%2C%22BY080029760778%22%5D; _language=3fde6720ef4098bda6248d39cd80da12475548c9c47d003f754e9fd059bb6117a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; _ym_d=1710751911; timezoneOffset=3; _ym_isad=2"
+            },
+            {
+              "name": "referer",
+              "value": "=https://track.global/tracking/{{ $json.трек }}"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f55abd5b-7f33-4979-8da0-7e19dc571ee3",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        700,
+        460
+      ],
+      "retryOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "Трек номер",
+              "value": "={{ $('получаем трек и отправляем только один').first().json.трек }}"
+            },
+            {
+              "name": "Статус и дата обновления",
+              "value": "={{ $json.subject.toString().replace(/\\s+/g, ' ').trim()}}"
+            },
+            {
+              "name": "статус кор.",
+              "value": "={{ $json.subject[0].toString().replace(/\\s+/g, ' ').trim() }}"
+            },
+            {
+              "name": "=индекс",
+              "value": "={{ $('получаем трек и отправляем только один').item.json.индекс }}"
+            }
+          ],
+          "number": [
+            {
+              "name": "table",
+              "value": "={{ $('получаем трек и отправляем только один').item.json.table }}"
+            },
+            {
+              "name": "page",
+              "value": "={{ $('получаем трек и отправляем только один').item.json.page }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f09dba6-1469-4ca7-8a89-0cabf2cc0a6a",
+      "name": "Структурируем http ответ",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        340
       ]
     }
   ],
@@ -2023,6 +2185,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-03-01T15:18:00.000Z",
-  "versionId": "1a08dd2f-f8f7-4eb7-b10e-33c7a8c22fb3"
+  "updatedAt": "2024-03-23T09:16:42.000Z",
+  "versionId": "8c3419c9-5557-4845-82cf-dd49ed8b8d14"
 }
