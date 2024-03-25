@@ -1,0 +1,112 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Запись переменной балансировщика1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Входящие данные": {
+      "main": [
+        [
+          {
+            "node": "Запись переменной балансировщика1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Входящие данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-03-24T16:22:57.048Z",
+  "id": "91GT1WHPEkZDVU6V",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Balancer_off",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "balancer_ru",
+        "options": {}
+      },
+      "id": "94098e9f-ca24-46ae-a086-9d2a0902747c",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [
+        1040,
+        320
+      ],
+      "webhookId": "66dc1fcb-1ee1-4672-944b-3269911394f7"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "Balancer.balance_BP",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "\"Off\"",
+        "filePath": "=root/n8n/{{ $json.body.processID }}.json"
+      },
+      "id": "702e925b-b740-4ae6-8ccd-5797ac5fcbd7",
+      "name": "Запись переменной балансировщика1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.ru\",\n      \"user-agent\": \"axios/1.6.7\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"147.45.102.252\",\n      \"x-forwarded-host\": \"n8n.makees.ru\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e95093070eee\",\n      \"x-real-ip\": \"147.45.102.252\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsTest\"\n    }\n  }\n]\n);"
+      },
+      "id": "fe2115a9-6819-4cae-824f-ba51408282ec",
+      "name": "Входящие данные",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        500
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "676682dc-6fcb-4eb1-b123-25d8d2171e6f",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        500
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-03-24T16:30:54.000Z",
+  "versionId": "80a2c40b-28fd-412e-8f81-010e21463494"
+}
