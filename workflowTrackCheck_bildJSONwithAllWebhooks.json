@@ -177,11 +177,11 @@
             },
             {
               "name": "Проверка Белпочты",
-              "stringValue": "https://n8n.makees.online/workflow/VRyRwVTCmpPchy3Y"
+              "stringValue": "https://n8n.makees.online/workflow/z1ebLdFwBMuXHUut"
             },
             {
               "name": "Проверка Европочты",
-              "stringValue": "https://n8n.makees.online/workflow/29MEWguRetOyjvsX"
+              "stringValue": "https://n8n.makees.online/workflow/OJeMfeqoYo3vhJqU"
             },
             {
               "name": "Статистика (только на сервере online)",
@@ -304,6 +304,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-03-19T18:29:06.000Z",
-  "versionId": "22e9f065-4da6-43a7-9a34-10e7213ca7d7"
+  "updatedAt": "2024-03-24T16:44:37.000Z",
+  "versionId": "8592f37d-c432-4bbc-b4a5-1ddba0e5e938"
 }
