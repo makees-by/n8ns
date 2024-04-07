@@ -163,7 +163,9 @@
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
   "id": "5teSeVT776DF4RDh",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Main_TrackCheck",
   "nodes": [
     {
@@ -394,7 +396,8 @@
       "position": [
         380,
         -60
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -502,7 +505,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 3,
-  "updatedAt": "2024-02-26T11:53:30.000Z",
-  "versionId": "5d06b537-a527-43a0-8035-924838f6286e"
+  "triggerCount": 2,
+  "updatedAt": "2024-04-06T18:02:20.000Z",
+  "versionId": "f432e522-fbdd-447a-9456-c9b77ab2e383"
 }
