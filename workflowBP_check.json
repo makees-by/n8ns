@@ -2856,7 +2856,7 @@
         "operation": "opWrite",
         "queryPath": "Balancer.balance_BP",
         "sourceType": "sourceTypeJson",
-        "sourceData": "\"on\"",
+        "sourceData": "\"off\"",
         "filePath": "=root/n8n/{{ $('Ввод отрибутов процесс').first().json.processID }}.json"
       },
       "id": "2e411a76-da68-4e25-b4a4-9f3cf1685c07",
@@ -3158,6 +3158,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-03-24T16:53:40.000Z",
-  "versionId": "c0ec9562-b0ee-40a4-8e6b-fa3b0111391c"
+  "updatedAt": "2024-04-08T20:40:15.000Z",
+  "versionId": "af3ba202-d2d5-46fe-bfa2-674554ccd8ab"
 }
