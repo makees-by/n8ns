@@ -320,7 +320,8 @@
           "id": "VTWiXBie3BtYtQ5n",
           "name": "Bot_potap"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {
@@ -1084,7 +1085,7 @@
       "name": "tellegram"
     }
   ],
-  "triggerCount": 2,
-  "updatedAt": "2024-01-29T20:19:38.000Z",
-  "versionId": "c197284d-11c6-4a31-aad3-eb008cd54f20"
+  "triggerCount": 1,
+  "updatedAt": "2024-04-14T07:06:32.000Z",
+  "versionId": "9599603e-2ea6-4f42-ab18-9970b2de21b2"
 }
