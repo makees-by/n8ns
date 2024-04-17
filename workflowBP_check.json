@@ -2422,7 +2422,7 @@
           "string": [
             {
               "value1": "={{ $json.data }}",
-              "value2": "Off"
+              "value2": "off"
             }
           ]
         }
@@ -3158,6 +3158,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-04-08T20:40:15.000Z",
-  "versionId": "af3ba202-d2d5-46fe-bfa2-674554ccd8ab"
+  "updatedAt": "2024-04-17T08:07:11.000Z",
+  "versionId": "8198a387-10ba-4c55-bb1f-ebaf433f9301"
 }
