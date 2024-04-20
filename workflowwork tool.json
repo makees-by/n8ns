@@ -1,0 +1,70 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-19T15:19:00.926Z",
+  "id": "trE8UEAYWmMD6k8d",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "work tool",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "0066a486-5010-4e2b-a020-0221a22445c0",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        880,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "id": "43df43c1-2850-4e76-99b2-213b2769c317",
+      "name": "Notion",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1260,
+        260
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "7SpLd7HTUj4VhGrA",
+          "name": "Notion account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-04-19T15:21:19.000Z",
+  "versionId": "dbbc213e-4679-4552-a1ce-64998a68ba3f"
+}
