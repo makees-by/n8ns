@@ -56,6 +56,41 @@
           "name": "Notion account"
         }
       }
+    },
+    {
+      "parameters": {
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "additionalFields": {
+                      "callback_data": ""
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {}
+      },
+      "id": "24d39b4d-f0c9-489d-988e-17496157139a",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "position": [
+        460,
+        460
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -65,6 +100,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-04-19T15:21:19.000Z",
-  "versionId": "dbbc213e-4679-4552-a1ce-64998a68ba3f"
+  "updatedAt": "2024-04-20T19:26:51.000Z",
+  "versionId": "4acae36c-4100-45c5-9cc6-2124b49bf482"
 }
