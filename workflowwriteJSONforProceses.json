@@ -191,6 +191,11 @@
             "node": "ZsTest json более 250 записей BP",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "для проверки ограничения сбора треков",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -590,7 +595,8 @@
       "position": [
         -2340,
         2060
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -699,8 +705,7 @@
       "position": [
         -2380,
         2300
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -750,6 +755,22 @@
         -1920,
         2280
       ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\"process\":{\"variebles\":{\"processID\":\"ZsForAnn\",\"start_tableID\":\"1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\"start_pageID\":1401389950,\"url_become\":\"https://n8n.makees.online/webhook-waiting/215120\"},\"workProcess\":{\"iteration\":1,\"TrackCollect\":\"no\",\"BP_check\":\"no\",\"EP_check\":\"no\",\"CheckProcess\":\"no\"},\"tg_chats\":{\"chat_id\":12345,\"chat_id2\":254321},\"trigers\":{\"TrigerNT\":1,\"TrigerBP\":1,\"TrigerEP\":1}},\"checkProcess\":{\"Iteration\":0,\"Traks\":{}},\"traks\":{\"BP_traks\":[{\"row_number\":323,\"трек\":\"PC097161131BY\",\"индекс\":\"1468322\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1079,\"трек\":\"PC160552511BY\",\"индекс\":\"14681078\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1233,\"трек\":\"PC164525281BY\",\"индекс\":\"14681232\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1234,\"трек\":\"PC164525278BY\",\"индекс\":\"14681233\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1244,\"трек\":\"PC164525114BY\",\"индекс\":\"14681243\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1490,\"трек\":\"PC164525370BY\",\"индекс\":\"14681489\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1525,\"трек\":\"PC164516497BY\",\"индекс\":\"14681524\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1573,\"трек\":\"PC167347869BY\",\"индекс\":\"14681572\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1956,\"трек\":\"PC169872098BY\",\"индекс\":\"14681955\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1957,\"трек\":\"PC169872084BY\",\"индекс\":\"14681956\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1959,\"трек\":\"PC169872067BY\",\"индекс\":\"14681958\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1965,\"трек\":\"PC169871968BY\",\"индекс\":\"14681964\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1970,\"трек\":\"PC167320707BY\",\"индекс\":\"14681969\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1971,\"трек\":\"PC167360405BY\",\"индекс\":\"14681970\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1972,\"трек\":\"PC169871835BY\",\"индекс\":\"14681971\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1985,\"трек\":\"PC169871676BY\",\"индекс\":\"14681984\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":1987,\"трек\":\"PC167345054BY\",\"индекс\":\"14681986\",\"page\":\"1031711468\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":154,\"трек\":\"PC164525352BY\",\"индекс\":\"9768153\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":155,\"трек\":\"PC164525352BY\",\"индекс\":\"9768154\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":165,\"трек\":\"PC164525159BY\",\"индекс\":\"9768164\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":197,\"трек\":\"PC167328325BY\",\"индекс\":\"9768196\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":206,\"трек\":\"PC167327930BY\",\"индекс\":\"9768205\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":287,\"трек\":\"PC057267699BY\",\"индекс\":\"9768286\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":548,\"трек\":\"PC169890128BY\",\"индекс\":\"9768547\",\"page\":\"1974119768\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":147,\"трек\":\"PC167343756BY\",\"индекс\":\"9205146\",\"page\":\"829549205\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":162,\"трек\":\"PC169829537BY\",\"индекс\":\"9205161\",\"page\":\"829549205\",\"table\":\"1N8j0sGGRK1UtzZdXp8Hg1Q8rYmtP4oHDY53tulH271E\"},{\"row_number\":179,\"трек\":\"PC167327991BY\",\"индекс\":\"9958178\",\"page\":\"1900749958\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":180,\"трек\":\"PC167327991BY\",\"индекс\":\"9958179\",\"page\":\"1900749958\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":209,\"трек\":\"PC169829381BY\",\"индекс\":\"9958208\",\"page\":\"1900749958\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":343,\"трек\":\"PC167344252BY\",\"индекс\":\"2764342\",\"page\":\"819832764\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":348,\"трек\":\"PC164524958BY\",\"индекс\":\"2764347\",\"page\":\"819832764\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":326,\"трек\":\"PC164503706BY\",\"индекс\":\"8501325\",\"page\":\"2066958501\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":223,\"трек\":\"PC167343760BY\",\"индекс\":\"9427222\",\"page\":\"1278209427\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":61,\"трек\":\"PC164525131BY\",\"индекс\":\"189360\",\"page\":\"1703991893\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":167,\"трек\":\"PC164525065BY\",\"индекс\":\"4941166\",\"page\":\"314194941\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":200,\"трек\":\"PC164525012BY\",\"индекс\":\"4941199\",\"page\":\"314194941\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":249,\"трек\":\"PC167328113BY\",\"индекс\":\"9497248\",\"page\":\"504959497\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":211,\"трек\":\"PC164665540BY\",\"индекс\":\"6116210\",\"page\":\"764486116\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":272,\"трек\":\"PC167327890BY\",\"индекс\":\"6116271\",\"page\":\"764486116\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":284,\"трек\":\"PC167344589BY\",\"индекс\":\"6116283\",\"page\":\"764486116\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":295,\"трек\":\"PC167343932BY\",\"индекс\":\"6116294\",\"page\":\"764486116\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":265,\"трек\":\"PC164525105BY\",\"индекс\":\"1817264\",\"page\":\"1276451817\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":268,\"трек\":\"PC164525057BY\",\"индекс\":\"1817267\",\"page\":\"1276451817\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":269,\"трек\":\"PC164525043BY\",\"индекс\":\"1817268\",\"page\":\"1276451817\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":276,\"трек\":\"PC167328144BY\",\"индекс\":\"1817275\",\"page\":\"1276451817\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":296,\"трек\":\"PC167328095BY\",\"индекс\":\"1817295\",\"page\":\"1276451817\",\"table\":\"1Ad52sRy53vJ7PQ0-FwiiuO6oo16fb-73NcSTZvP9Ggw\"},{\"row_number\":179,\"трек\":\"PC164525321BY\",\"индекс\":\"9811178\",\"page\":\"858489811\",\"table\":\"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\"},{\"row_number\":193,\"трек\":\"PC164503697BY\",\"индекс\":\"9811192\",\"page\":\"858489811\",\"table\":\"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\"},{}],\"EP_traks\":[{\"row_number\":143,\"трек\":\"BY080025656523\",\"индекс\":\"3488142\",\"page\":\"374913488\",\"table\":\"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\"},{\"row_number\":144,\"трек\":\"BY080028486225\",\"индекс\":\"3488143\",\"page\":\"374913488\",\"table\":\"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\"},{\"row_number\":145,\"трек\":\"BY080028486225\",\"индекс\":\"3488144\",\"page\":\"374913488\",\"table\":\"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\"},{}]}}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "dc32fb02-6ccf-47a5-bf13-58fc40ecd843",
+      "name": "для проверки ограничения сбора треков",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        2500
+      ]
     }
   ],
   "pinData": {},
@@ -781,6 +802,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-04-11T07:33:41.000Z",
-  "versionId": "e25abf43-8c91-4bb2-b8cd-f5c000c822ce"
+  "updatedAt": "2024-04-23T10:30:13.000Z",
+  "versionId": "3d4b2183-aae2-44cd-b0d3-bff74dc9d9f0"
 }
