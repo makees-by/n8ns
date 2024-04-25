@@ -1,0 +1,142 @@
+{
+  "active": true,
+  "connections": {
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-25T08:15:40.741Z",
+  "id": "6IO790AJfly7jakY",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {
+        "respondWith": "redirect",
+        "redirectURL": "https://makees-n8n.github.io/",
+        "options": {}
+      },
+      "id": "f029facc-84e3-42f0-83de-c9d5401fc459",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1140,
+        180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "1925f1f0-580a-44b6-8c6e-9b57020e0c9b",
+      "name": "HTML",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        700,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "html",
+        "options": {}
+      },
+      "id": "c1c9df5b-d64a-4959-8e4a-cf6a995b20f7",
+      "name": "Convert to File",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        920,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "path": "pca",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "26e07534-93cf-480e-bbaa-1614c2028220",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        480,
+        200
+      ],
+      "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "ae15729b-aba5-4c02-a297-02601c92be86",
+      "name": "GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        680,
+        0
+      ],
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "pedIjuqpsxfsydB7",
+          "name": "makees-n8n"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-04-25T13:16:47.000Z",
+  "versionId": "6538f958-6c15-4143-9afe-6c8df5de0406"
+}
