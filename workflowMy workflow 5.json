@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Respond to Webhook",
+            "node": "GitHub",
             "type": "main",
             "index": 0
           }
@@ -27,7 +27,18 @@
       "main": [
         [
           {
-            "node": "HTML",
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n Form Trigger": {
+      "main": [
+        [
+          {
+            "node": "Code",
             "type": "main",
             "index": 0
           }
@@ -45,7 +56,7 @@
     {
       "parameters": {
         "respondWith": "redirect",
-        "redirectURL": "https://makees-n8n.github.io/",
+        "redirectURL": "https://n8n.makees.online/form/cnc",
         "options": {}
       },
       "id": "f029facc-84e3-42f0-83de-c9d5401fc459",
@@ -53,34 +64,136 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        1140,
-        180
+        560,
+        200
       ]
     },
     {
-      "parameters": {},
+      "parameters": {
+        "html": "<!DOCTYPE html>\n\n<html>\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>My HTML document</title>\n</head>\n<body>\n  <div class=\"container\">\n    <h1>Изменён3</h1>\n    <h2>This is an H2 heading</h2>\n    <p>This is a paragraph</p>\n  </div>\n</body>\n</html>\n\n<style>\n.container {\n  background-color: #ffffff;\n  text-align: center;\n  padding: 16px;\n  border-radius: 8px;\n}\n\nh1 {\n  color: #ff6d5a;\n  font-size: 24px;\n  font-weight: bold;\n  padding: 8px;\n}\n\nh2 {\n  color: #909399;\n  font-size: 18px;\n  font-weight: bold;\n  padding: 8px;\n}\n</style>\n\n<script>\nconsole.log(\"Hello World!\");\n</script>"
+      },
       "id": "1925f1f0-580a-44b6-8c6e-9b57020e0c9b",
       "name": "HTML",
       "type": "n8n-nodes-base.html",
       "typeVersion": 1.2,
       "position": [
-        700,
-        200
+        440,
+        -20
       ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "value": "makees-n8n",
+          "mode": "list",
+          "cachedResultName": "makees-n8n",
+          "cachedResultUrl": "https://github.com/makees-n8n"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "makees-n8n.github.io",
+          "mode": "list",
+          "cachedResultName": "makees-n8n.github.io",
+          "cachedResultUrl": "https://github.com/makees-n8n/makees-n8n.github.io"
+        },
+        "filePath": "index.html",
+        "binaryData": true,
+        "commitMessage": "Обновление README.md"
+      },
+      "id": "ae15729b-aba5-4c02-a297-02601c92be86",
+      "name": "GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        880,
+        -20
+      ],
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "pedIjuqpsxfsydB7",
+          "name": "makees-n8n"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "user",
+        "owner": {
+          "__rl": true,
+          "value": "makees-n8n",
+          "mode": "list",
+          "cachedResultName": "makees-n8n",
+          "cachedResultUrl": "https://github.com/makees-n8n"
+        }
+      },
+      "id": "fa571461-f19c-45a2-bf07-5862c82d1caf",
+      "name": "GitHub1",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        80
+      ],
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "pedIjuqpsxfsydB7",
+          "name": "makees-n8n"
+        }
+      }
     },
     {
       "parameters": {
         "operation": "html",
         "options": {}
       },
-      "id": "c1c9df5b-d64a-4959-8e4a-cf6a995b20f7",
+      "id": "2949521e-34c7-432d-9dbd-5033df736e33",
       "name": "Convert to File",
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        920,
-        200
+        700,
+        -120
       ]
+    },
+    {
+      "parameters": {
+        "path": "cnc",
+        "formTitle": "Какие станки гоняем",
+        "formDescription": "пришли какие станки ты гоняешь сегодня",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Какой станок 1й",
+              "fieldType": "number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Какой станок 2й",
+              "fieldType": "number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "какой станок 3й",
+              "fieldType": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a43e67e0-b6b6-43ab-ae99-87267961559b",
+      "name": "n8n Form Trigger",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2,
+      "position": [
+        520,
+        400
+      ],
+      "webhookId": "6d92cd65-c1df-486a-8767-c504b3b9ba63"
     },
     {
       "parameters": {
@@ -93,41 +206,23 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        480,
+        360,
         200
       ],
       "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "resource": "file",
-        "operation": "edit",
-        "owner": {
-          "__rl": true,
-          "mode": "list",
-          "value": ""
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "list",
-          "value": ""
-        }
+        "jsCode": "return (\n  [\n  {\n    \"Какой станок 1й\": 1.3,\n    \"Какой станок 2й\": 1.2,\n    \"какой станок 3й\": 1.1,\n    \"submittedAt\": \"2024-04-25T15:33:42.967Z\",\n    \"formMode\": \"production\"\n  }\n]\n);"
       },
-      "id": "ae15729b-aba5-4c02-a297-02601c92be86",
-      "name": "GitHub",
-      "type": "n8n-nodes-base.github",
-      "typeVersion": 1,
+      "id": "941fc632-9f99-4012-882f-4412c7f992db",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
-        680,
-        0
-      ],
-      "credentials": {
-        "githubOAuth2Api": {
-          "id": "pedIjuqpsxfsydB7",
-          "name": "makees-n8n"
-        }
-      }
+        740,
+        400
+      ]
     }
   ],
   "pinData": {},
@@ -136,7 +231,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2024-04-25T13:16:47.000Z",
-  "versionId": "6538f958-6c15-4143-9afe-6c8df5de0406"
+  "triggerCount": 3,
+  "updatedAt": "2024-04-25T15:41:30.000Z",
+  "versionId": "bf219946-fdd6-408e-a1b1-8d4b6e4ca2ec"
 }
