@@ -1,0 +1,1205 @@
+{
+  "active": false,
+  "connections": {
+    "1": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "ZsTest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsTest": {
+      "main": [
+        [
+          {
+            "node": "Начало",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Начало": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных всего файла в JsonDatabase2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных всего файла в JsonDatabase2": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase2": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out1": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase3": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "1-1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1-1": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase6": {
+      "main": [
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase7",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase7": {
+      "main": [
+        [
+          {
+            "node": "Split Out3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate2": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase8": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase9": {
+      "main": [
+        [
+          {
+            "node": "Обновляем значение BP_tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-04-23T10:31:20.474Z",
+  "id": "lOwswzZHhvZNY5XW",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "limited500",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f81e58fa-fd0c-4602-af58-6fb4ec807650",
+      "name": "1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2680,
+        380
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "19860801-0257-49f1-b651-f0365a6b4c79",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        520,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsTest\"\n    }\n  }\n]\n);"
+      },
+      "id": "49adee8e-b16f-449f-a096-e18f903ded40",
+      "name": "ZsTest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        380
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "cae4616c-6504-492e-9181-b0327215d949",
+      "name": "Начало",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "traks.BP_traks",
+        "filePath": "=root/n8n/{{ $('Начало').first().json.body.ProcessID }}.json"
+      },
+      "id": "553aa750-dc39-4e87-8d56-a2de5c008b5b",
+      "name": "Чтение данных всего файла в JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5451f1fb-98ce-4338-8b19-b1c85bff4879",
+              "name": "pages",
+              "value": "={{ $json.page.toInt()}}",
+              "type": "number"
+            },
+            {
+              "id": "db9df681-f453-4cf9-9bfb-48574c7e2968",
+              "name": "table",
+              "value": "={{ $json.table }}",
+              "type": "string"
+            },
+            {
+              "id": "4b57053e-3e12-4328-9085-1da763302035",
+              "name": "all_item_nums",
+              "value": "={{ $input.all().length }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d85f47a7-a21d-42c5-8925-2de9bdc1ffed",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        2220,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "a1cfd897-e0bf-4421-ac0b-4a442e3e178a",
+      "name": "Split Out",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        200
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "677c35b8-be57-4580-9873-a54897dedf0e",
+      "name": "Remove Duplicates",
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "24275463-9a7d-441e-9ec1-f408050b6211",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "",
+              "operator": {
+                "type": "number",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d640fb43-2b04-4185-ae01-cbecc73fa442",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1560,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c876927f-a382-43e6-b76f-adaeb2bc1648",
+              "leftValue": "={{ $json.page.toInt() }}",
+              "rightValue": "={{ $('1').first().json.pages }}",
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "55a1f273-1290-46b3-bc0f-8074cb92d078",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        3260,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f7dd0151-500a-4e61-8465-07366686740b",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2500,
+        360
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a79eadf3-d3df-434d-8c1f-4f898805db4c",
+      "name": "Replace Me",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2900,
+        620
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d57a0d0f-ac77-4523-af38-b448b845fb62",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2520,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "all",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($json.all) }}",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "9e0c201e-c2fc-4238-847b-500766d9a5ab",
+      "name": "JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "all",
+        "options": {}
+      },
+      "id": "f37e1f19-ec7e-4964-a12c-fd11702d9e22",
+      "name": "Aggregate",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "270e98ac-29dd-4561-8aa3-79d7cf198986",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e4a755f5-0063-435b-8d74-54f5a137537a",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2160,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={ }",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "8c6e8136-608f-4ae8-9b56-6ef9c0e1d20b",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "5f49966f-9c7d-4d55-a6d8-f9a2b61383f8",
+      "name": "JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2900,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data.all",
+        "options": {}
+      },
+      "id": "03977fca-27be-4e65-b3a5-be5e1966b2a8",
+      "name": "Split Out1",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        3060,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "=Items.pg{{ $json.pages.toString() }}pg",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($json) }}",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "877afa81-8f2b-4d4f-ad0c-a3bc3591dfe6",
+      "name": "JsonDatabase3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3380,
+        640
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a2b834c2-dd73-412f-ad33-830e91733b03",
+              "name": "pages",
+              "value": "={{ $('1').item.json.pages }}",
+              "type": "number"
+            },
+            {
+              "id": "5a1f18d1-ab80-4305-865a-df2ecb518ed7",
+              "name": "table",
+              "value": "={{ $('1').item.json.table }}",
+              "type": "string"
+            },
+            {
+              "id": "0021d8e1-2000-435f-b659-3f6895a35766",
+              "name": "limit_500",
+              "value": "={{ Math.round($input.all().length.toInt()*500/$('1').item.json.all_item_nums)}}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d403e9dd-194d-4c69-a23c-192c4da75a4e",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        3460,
+        400
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "queryPath": "Items",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "bdd190b1-b86b-4c49-909f-c1ef33c0c73f",
+      "name": "JsonDatabase4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        -300
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "fa8ee7e0-bf1b-449c-b389-87cf75d13d3e",
+      "name": "JsonDatabase5",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0d9267d1-9123-486d-9236-4adcaa38cfd1",
+              "leftValue": "={{ $json.limit }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b4d96d47-daea-43fa-95e7-eaa8c5002896",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        3680,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bd4abf98-a126-48fe-95de-ca49076dcf07",
+              "name": "limit",
+              "value": 1,
+              "type": "number"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "e4373f42-f26c-46e4-9928-8a81eda05799",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        3600,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "270e98ac-29dd-4561-8aa3-79d7cf198986",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e34eb735-85b5-475d-b93b-a38179415572",
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d13ec1b9-a8c8-4284-b85f-3dcb5f2df887",
+      "name": "Loop Over Items1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2880,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "05c528e6-696d-4113-a2ed-f11d9c004424",
+      "name": "JsonDatabase6",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3360,
+        -60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e4d838f3-984f-4b25-8cb0-96c0947b83be",
+      "name": "1-1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3160,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0d9267d1-9123-486d-9236-4adcaa38cfd1",
+              "leftValue": "={{ $json.page.toInt() }}",
+              "rightValue": "={{ $('1-1').item.json.pages }}",
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "62bbdcdc-1511-4667-8668-b47bf5fd7352",
+              "leftValue": "={{ $json.table }}",
+              "rightValue": "={{ $('1-1').item.json.table }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5b3d175e-4a51-40d6-80bb-af0d692b9f9e",
+      "name": "If4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        3780,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data.all",
+        "options": {}
+      },
+      "id": "ecddb55f-c959-4750-a701-d140ba86c649",
+      "name": "Split Out2",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        3580,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $('1-1').item.json.limit_500 }}"
+      },
+      "id": "d91f70f4-4a46-4a68-bfe8-ed9274dfb944",
+      "name": "Limit",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        3840,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "all",
+        "options": {}
+      },
+      "id": "3b3c3bf2-81bf-4110-a81a-f07b11c2bdf0",
+      "name": "Aggregate1",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        3140,
+        -500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d22f52d3-9d15-4a03-8883-51c343a28db0",
+      "name": "No Operation, do nothing1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2940,
+        -300
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "queryPath": "new_order",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "ce9101aa-a602-498b-8dcf-c67a167b88b0",
+      "name": "JsonDatabase7",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3320,
+        140
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "a3ec91b1-28ee-4234-a559-39ae2d519313",
+      "name": "Split Out3",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        3620,
+        160
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "71a81767-2ef8-4fb9-aca5-ccca75fec76e",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        2700,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "new_order",
+        "options": {}
+      },
+      "id": "06e638ae-a8e8-4033-a163-4a89e6f5ca4f",
+      "name": "Aggregate2",
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        2920,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "new_order",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($json.new_order) }}",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "0de50d58-ee22-4ad3-a5da-e816eb6e928b",
+      "name": "JsonDatabase8",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3100,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "new_order",
+        "filePath": "root/n8n/limeted.json"
+      },
+      "id": "7aa3f6f6-040d-43dd-8c12-d991420f3efa",
+      "name": "JsonDatabase9",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3220,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "traks.BP_traks",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($input.item.json.data) }}",
+        "filePath": "=root/n8n/{{ $('Начало').item.json.body.ProcessID }}.json"
+      },
+      "id": "1faeed23-c099-4f52-bb7d-3d043ece3115",
+      "name": "Обновляем значение BP_tracks",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3480,
+        -300
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-04-25T13:21:49.000Z",
+  "versionId": "81899d7c-0efa-4c77-979f-a5034c13c816"
+}
