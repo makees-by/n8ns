@@ -56,7 +56,7 @@
     {
       "parameters": {
         "respondWith": "redirect",
-        "redirectURL": "https://n8n.makees.online/form/cnc",
+        "redirectURL": "https://outstanding-roarer-329.notion.site/Quick-Note-477556ada5bc4de29d64e636a04a66fe?pvs=4",
         "options": {}
       },
       "id": "f029facc-84e3-42f0-83de-c9d5401fc459",
@@ -232,6 +232,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 3,
-  "updatedAt": "2024-04-25T15:41:30.000Z",
-  "versionId": "bf219946-fdd6-408e-a1b1-8d4b6e4ca2ec"
+  "updatedAt": "2024-04-30T11:05:01.000Z",
+  "versionId": "be5dc291-ac0f-49be-a544-cce06e4ae0ee"
 }
