@@ -1536,8 +1536,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1,
       "position": [
-        -720,
-        2080
+        -940,
+        2100
       ],
       "disabled": true
     },
@@ -3124,8 +3124,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1,
       "position": [
-        -500,
-        2080
+        -740,
+        1920
       ],
       "credentials": {
         "telegramApi": {
@@ -3365,6 +3365,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-05-01T07:52:11.000Z",
-  "versionId": "38dd9fe8-2f4d-4b78-8624-82fdb23bfe86"
+  "updatedAt": "2024-05-06T10:58:54.000Z",
+  "versionId": "da38a521-fd2b-472f-b5c7-6b34c74c4e51"
 }
