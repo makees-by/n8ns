@@ -23,17 +23,6 @@
         ]
       ]
     },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "n8n Form Trigger": {
       "main": [
         [
@@ -45,11 +34,33 @@
         ]
       ]
     },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Notion2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "When clicking \"Test workflow\"": {
       "main": [
         [
           {
-            "node": "Notion",
+            "node": "Webflow",
             "type": "main",
             "index": 0
           }
@@ -67,7 +78,7 @@
     {
       "parameters": {
         "respondWith": "redirect",
-        "redirectURL": "https://outstanding-roarer-329.notion.site/Quick-Note-477556ada5bc4de29d64e636a04a66fe?pvs=4",
+        "redirectURL": "https://tekushchiy-status-proverki-trekov.webflow.io",
         "options": {}
       },
       "id": "f029facc-84e3-42f0-83de-c9d5401fc459",
@@ -75,8 +86,8 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        560,
-        200
+        0,
+        -180
       ]
     },
     {
@@ -89,7 +100,7 @@
       "typeVersion": 1.2,
       "position": [
         440,
-        -20
+        -120
       ]
     },
     {
@@ -120,8 +131,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1,
       "position": [
-        880,
-        -20
+        900,
+        -120
       ],
       "credentials": {
         "githubOAuth2Api": {
@@ -147,8 +158,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1,
       "position": [
-        1040,
-        80
+        1100,
+        -120
       ],
       "credentials": {
         "githubOAuth2Api": {
@@ -208,22 +219,6 @@
     },
     {
       "parameters": {
-        "path": "pca",
-        "responseMode": "responseNode",
-        "options": {}
-      },
-      "id": "26e07534-93cf-480e-bbaa-1614c2028220",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        360,
-        200
-      ],
-      "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
-    },
-    {
-      "parameters": {
         "jsCode": "return (\n  [\n  {\n    \"Какой станок 1й\": 1.3,\n    \"Какой станок 2й\": 1.2,\n    \"какой станок 3й\": 1.1,\n    \"submittedAt\": \"2024-04-25T15:33:42.967Z\",\n    \"formMode\": \"production\"\n  }\n]\n);"
       },
       "id": "941fc632-9f99-4012-882f-4412c7f992db",
@@ -242,39 +237,37 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -140,
-        240
+        -640,
+        280
       ]
     },
     {
       "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
         "pageId": {
           "__rl": true,
-          "value": "ba35ba14a1df4147aaa7c697e8449d83",
-          "mode": "id"
+          "value": "https://www.notion.so/n8n8n-239d7743ed784cad87b047442da4b32a",
+          "mode": "url"
         },
-        "title": "dfhnf",
-        "blockUi": {
-          "blockValues": [
+        "simple": false,
+        "propertiesUi": {
+          "propertyValues": [
             {
-              "textContent": "fffhfjf"
-            },
-            {
-              "type": "to_do",
-              "checked": true,
-              "textContent": "ssss"
+              "key": "Tags|rich_text",
+              "textContent": "Таким образом, дальнейшее развитие различных форм деятельности обеспечивает актуальность дальнейших направлений развития проекта. Повседневная практика показывает, что социально-экономическое развитие представляет собой интересный эксперимент проверки модели развития! Не следует, однако, забывать о том, что сложившаяся структура организации обеспечивает широкому кругу специалистов участие в формировании системы масштабного изменения ряда параметров.  Не следует, однако, забывать о том, что повышение уровня гражданского сознания требует определения и уточнения соответствующих условий активизации.  Равным образом консультация с профессионалами из IT требует от нас анализа соответствующих условий активизации? Дорогие друзья, постоянное информационно-техническое обеспечение нашей деятельности представляет собой интересный эксперимент проверки модели развития. Значимость этих проблем настолько очевидна, что выбранный нами инновационный путь влечет за собой процесс внедрения и модернизации новых предложений.  Не следует, однако, забывать о том, что повышение уровня гражданского сознания представляет собой интересный эксперимент проверки модели развития. Повседневная практика показывает, что курс на социально-ориентированный национальный проект способствует повышению актуальности системы масштабного изменения ряда параметров. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности обеспечивает актуальность модели развития! Повседневная практика показывает, что социально-экономическое развитие в значительной степени обуславливает создание ключевых компонентов планируемого обновления. Не следует, однако, забывать о том, что сложившаяся структура организации требует от нас системного анализа новых предложений? Таким образом, рамки и место..."
             }
           ]
         },
         "options": {}
       },
-      "id": "3c95b10f-d44d-4094-a137-06e962ccda2d",
-      "name": "Notion",
+      "id": "111c7052-2882-45c8-8713-d6840a652761",
+      "name": "Notion2",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        80,
-        240
+        -380,
+        40
       ],
       "credentials": {
         "notionApi": {
@@ -282,6 +275,51 @@
           "name": "Notion account"
         }
       }
+    },
+    {
+      "parameters": {
+        "path": "create_page",
+        "options": {}
+      },
+      "id": "b5a8fd07-9ff2-4758-a845-10faa217615c",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -740,
+        40
+      ],
+      "webhookId": "3c63b3ec-a139-4f10-baca-df409ba8977e"
+    },
+    {
+      "parameters": {
+        "path": "pca",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "26e07534-93cf-480e-bbaa-1614c2028220",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -200,
+        -180
+      ],
+      "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update"
+      },
+      "id": "6bb3f066-67ab-4ed1-bf67-88f0a4c33854",
+      "name": "Webflow",
+      "type": "n8n-nodes-base.webflow",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        280
+      ]
     }
   ],
   "pinData": {},
@@ -290,7 +328,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 3,
-  "updatedAt": "2024-05-05T07:51:29.000Z",
-  "versionId": "196f2373-fc15-43ae-a8dd-552e16202c10"
+  "triggerCount": 4,
+  "updatedAt": "2024-05-06T09:56:19.000Z",
+  "versionId": "e5680444-f25a-486c-b2f7-3d2d934d4c49"
 }
