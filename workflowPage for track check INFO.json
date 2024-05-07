@@ -27,6 +27,17 @@
       "main": [
         [
           {
+            "node": "Webflow1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webflow1": {
+      "main": [
+        [
+          {
             "node": "Notion2",
             "type": "main",
             "index": 0
@@ -93,7 +104,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        -20,
+        200,
         300
       ],
       "credentials": {
@@ -121,16 +132,9 @@
     },
     {
       "parameters": {
-        "operation": "update",
+        "operation": "getAll",
         "siteId": "6638a76486f3c86d86a51725",
-        "collectionId": "6638ca3f91757d91c091d3cf",
-        "itemId": "6638cb85702c3e7be4436568",
-        "live": true,
-        "fieldsUi": {
-          "fieldValues": [
-            {}
-          ]
-        }
+        "collectionId": "6638e98b159da2f8a37b7b6f"
       },
       "id": "44a10c1c-c591-4375-99dc-bef8f835c51a",
       "name": "Webflow",
@@ -138,6 +142,36 @@
       "typeVersion": 1,
       "position": [
         -260,
+        300
+      ],
+      "credentials": {
+        "webflowApi": {
+          "id": "Gvpix45WRLH2V0bl",
+          "name": "Webflow account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "siteId": "6638a76486f3c86d86a51725",
+        "collectionId": "6638e98b159da2f8a37b7b6f",
+        "itemId": "=6638eaae01c6208da578a45c",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "text",
+              "fieldValue": "Татошка"
+            }
+          ]
+        }
+      },
+      "id": "9cf3e19d-f39c-4446-9a8a-b0a32c6ec7e3",
+      "name": "Webflow1",
+      "type": "n8n-nodes-base.webflow",
+      "typeVersion": 1,
+      "position": [
+        -40,
         300
       ],
       "credentials": {
@@ -155,6 +189,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-05-06T12:23:34.000Z",
-  "versionId": "44103b3f-8cfa-4cd0-badf-e5fa4b747250"
+  "updatedAt": "2024-05-06T14:57:07.000Z",
+  "versionId": "9abf223e-be79-4025-9dd5-cace172bc2ee"
 }
