@@ -78,7 +78,7 @@
     {
       "parameters": {
         "respondWith": "redirect",
-        "redirectURL": "https://tekushchiy-status-proverki-trekov.webflow.io",
+        "redirectURL": "https://docs.google.com/document/d/1PtxJPhG4s-GORzO7OxRkHzARadVo4TwanUGY1hKAe-Y/edit?usp=sharing",
         "options": {}
       },
       "id": "f029facc-84e3-42f0-83de-c9d5401fc459",
@@ -329,6 +329,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 4,
-  "updatedAt": "2024-05-06T09:56:19.000Z",
-  "versionId": "e5680444-f25a-486c-b2f7-3d2d934d4c49"
+  "updatedAt": "2024-05-08T09:36:33.000Z",
+  "versionId": "48a1d222-f00a-4014-9053-c435f10db84e"
 }
