@@ -78,17 +78,6 @@
         ]
       ]
     },
-    "css": {
-      "main": [
-        [
-          {
-            "node": "css1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "When clicking \"Test workflow\"": {
       "main": [
         [
@@ -165,6 +154,17 @@
         [
           {
             "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "css": {
+      "main": [
+        [
+          {
+            "node": "css1",
             "type": "main",
             "index": 0
           }
@@ -563,22 +563,6 @@
     },
     {
       "parameters": {
-        "path": "css",
-        "responseMode": "responseNode",
-        "options": {}
-      },
-      "id": "41799a63-efb9-4998-aaa0-5012b3edce5a",
-      "name": "css",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        -240,
-        -600
-      ],
-      "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
-    },
-    {
-      "parameters": {
         "operation": "download",
         "fileId": {
           "__rl": true,
@@ -707,6 +691,22 @@
     },
     {
       "parameters": {
+        "path": "css",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "41799a63-efb9-4998-aaa0-5012b3edce5a",
+      "name": "css",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        -600
+      ],
+      "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
+    },
+    {
+      "parameters": {
         "path": "index",
         "responseMode": "responseNode",
         "options": {}
@@ -729,6 +729,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 10,
-  "updatedAt": "2024-06-01T19:43:38.000Z",
-  "versionId": "a3364b49-37eb-42e9-9397-70e1b4298a1c"
+  "updatedAt": "2024-06-06T15:26:49.000Z",
+  "versionId": "44579d09-a3da-430b-83f5-200d53cb10fd"
 }
