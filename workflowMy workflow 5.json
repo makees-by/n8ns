@@ -181,6 +181,39 @@
           }
         ]
       ]
+    },
+    "HTML4": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook3": {
+      "main": [
+        [
+          {
+            "node": "HTML4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook4": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-04-25T08:15:40.741Z",
@@ -318,6 +351,10 @@
             {
               "fieldLabel": "какой станок 3й",
               "fieldType": "number"
+            },
+            {
+              "fieldLabel": "какое число",
+              "fieldType": "date"
             }
           ]
         },
@@ -720,6 +757,84 @@
         -400
       ],
       "webhookId": "9e3efe91-72ad-4cfa-b976-716430de766f"
+    },
+    {
+      "parameters": {
+        "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n<body>\n    \n    <label for=\"start\">Start date:</label>\n\n    <input type=\"date\" id=\"start\" name=\"trip-start\" value=\"2018-07-22\" min=\"2018-01-01\" max=\"2018-12-31\" />\n    \n\n<script>\n    const selectElement = document.querySelector(\".trip-start\");\nconst result = document.querySelector(\".result\");\n\nselectElement.addEventListener(\"change\", (event) => {\n  result12 = `You like ${event.target.value}`;\n\n  fetch('https://n8n.makees.online/webhook/sites', {\n  method: 'POST',\n  headers: {'Content-Type': 'application/json'},\n  body: JSON.stringify({кусе: result12 }) // Ваши данные для отправки\n})\n.then(res => res.json())\n.then(data => console.log('Успешно:', data))\n.catch(error => console.error('Ошибка:', error));\n\n\n\n});\n</script>\n\n</body>\n</html>"
+      },
+      "id": "11075d93-053a-425b-85a3-c79e6dd9e356",
+      "name": "HTML4",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        -20,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "59976b0b-11ce-4945-a346-67bd34f55f43",
+      "name": "Respond to Webhook5",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "path": "sites",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "41358074-b143-4a68-bb8b-d367f600e2db",
+      "name": "Webhook3",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        320
+      ],
+      "webhookId": "a488055e-33c4-46dd-92e5-536e86ee9cc6",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6c9dbc1c-040d-43b3-a330-f47e6c2b5f75",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -20,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "sites",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "a0f99aaf-5e2d-40a7-b1d8-b01a9c96ae48",
+      "name": "Webhook4",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        540
+      ],
+      "webhookId": "a488055e-33c4-46dd-92e5-536e86ee9cc6",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -729,6 +844,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 10,
-  "updatedAt": "2024-06-06T15:26:49.000Z",
-  "versionId": "44579d09-a3da-430b-83f5-200d53cb10fd"
+  "updatedAt": "2024-06-10T12:55:16.000Z",
+  "versionId": "091a0717-68f1-4599-8099-1d047341414a"
 }
