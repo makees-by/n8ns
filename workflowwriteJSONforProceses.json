@@ -70,6 +70,11 @@
             "node": "ZsTest json для записи",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "zsForAleks json для записи",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -144,7 +149,7 @@
       "main": [
         [
           {
-            "node": "ZsForAnn",
+            "node": "ZsForAleks",
             "type": "main",
             "index": 0
           }
@@ -194,6 +199,17 @@
           },
           {
             "node": "для проверки ограничения сбора треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAleks": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn",
             "type": "main",
             "index": 0
           }
@@ -593,8 +609,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -2340,
-        2060
+        -2380,
+        2100
       ],
       "disabled": true
     },
@@ -705,7 +721,8 @@
       "position": [
         -2380,
         2300
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -770,6 +787,35 @@
         -1920,
         2500
       ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAleks\",\n          \"start_tableID\": \"1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls\",\n          \"start_pageID\": 690413794,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "28369b10-7c37-4c97-9445-5a4af59811fd",
+      "name": "zsForAleks json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1880,
+        1960
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsForAleks\"\n    }\n  }\n]\n);"
+      },
+      "id": "2ae17a9c-560f-43b7-8d94-87fb5986185a",
+      "name": "ZsForAleks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2440,
+        1840
+      ]
     }
   ],
   "pinData": {},
@@ -801,6 +847,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-06T15:01:20.000Z",
-  "versionId": "1531c992-4606-44d3-84e3-f12cb33fe40d"
+  "updatedAt": "2024-06-10T18:14:57.000Z",
+  "versionId": "1f8ecbdb-9644-4195-bc2a-847d5ca62b43"
 }
