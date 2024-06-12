@@ -537,8 +537,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 20,
-              "triggerAtMinute": 3
+              "triggerAtMinute": 2
             }
           ]
         }
@@ -550,8 +549,7 @@
       "position": [
         380,
         320
-      ],
-      "disabled": true
+      ]
     }
   ],
   "pinData": {},
@@ -582,6 +580,9 @@
     },
     "node:ForVika 20.": {
       "recurrencyRules": []
+    },
+    "node:zsForAleks1": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -598,7 +599,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 3,
-  "updatedAt": "2024-06-10T18:14:08.000Z",
-  "versionId": "c1e5929b-7ceb-4c41-ae51-8e7dc28f5fa4"
+  "triggerCount": 4,
+  "updatedAt": "2024-06-11T15:45:01.000Z",
+  "versionId": "3e5d5e72-5f35-4db4-a63f-f7272c56da08"
 }
