@@ -1,0 +1,679 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion": {
+      "main": [
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Через неделю",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Через месяц",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Через год",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Через неделю": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Через месяц": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Через год": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "на неделе": {
+      "main": [
+        []
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Статус сегодня",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус прошло",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус прошло1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус прошло2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-06-13T06:00:05.615Z",
+  "id": "jG0KdLDh4FbYzeTo",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Ohronos_back_notion",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b4c51c3e-4b00-414d-b945-76f1c378ada6",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        880,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "a22e120b-e389-4d07-8055-316a4c11970a",
+          "mode": "list",
+          "cachedResultName": "Ohronos_bd",
+          "cachedResultUrl": "https://www.notion.so/a22e120be3894d078055316a4c11970a"
+        },
+        "returnAll": true,
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Статус|select",
+              "condition": "equals",
+              "selectValue": "Создано"
+            },
+            {
+              "key": "Статус|select",
+              "condition": "equals",
+              "selectValue": "Прошло"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0c7aaec9-5cb5-4024-a076-b7f15846bc09",
+      "name": "Notion",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        260
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "roundDate",
+        "date": "={{ $json.property_.start }}",
+        "toNearest": "day",
+        "options": {}
+      },
+      "id": "96c0de99-8be1-44e7-a423-9f6c72c941c0",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $today }}",
+        "timeUnit": "weeks",
+        "duration": 1,
+        "options": {}
+      },
+      "id": "9abec505-f40b-4f35-9dc0-77d3a6cd9e16",
+      "name": "Через неделю",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1340,
+        100
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.roundedDate }}",
+        "timeUnit": "months",
+        "duration": 1,
+        "options": {}
+      },
+      "id": "ace4dde2-4528-45cf-875e-8f2039fb5014",
+      "name": "Через месяц",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1320,
+        -40
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.roundedDate }}",
+        "timeUnit": "years",
+        "duration": 1,
+        "options": {}
+      },
+      "id": "4dcd0317-cb92-4895-9caf-2d24dea0c384",
+      "name": "Через год",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        -180
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "a1d93723-fc07-447b-98b4-aa65e75ea060",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "219f861a-2dfe-4b9a-ba95-0bd5c6d1bfa5",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1520,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $('Notion').item.json.url }}",
+          "mode": "url"
+        },
+        "simple": false,
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "Сегодня"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6a2d5937-90df-4aab-a1ab-cd08cab5b77c",
+      "name": "Статус сегодня",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        20
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $('Notion').item.json.url }}",
+          "mode": "url"
+        },
+        "simple": "",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "Прошло"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a059369d-6af7-43cb-9e36-fc73fb764ac9",
+      "name": "Статус прошло",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1940,
+        100
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "6375fe7c-cec9-47e9-9a9e-0fbd15aabc4b",
+              "leftValue": "={{ $json.roundedDate }}",
+              "rightValue": "={{ $today }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b77350f4-54b8-4858-9afc-5963189a749c",
+      "name": "сегодня",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        -140
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "aca0ed1e-e06f-4861-be25-23d22e35291f",
+              "leftValue": "={{ $json.roundedDate }}",
+              "rightValue": "={{ $today }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "044c5b47-853e-47c0-bbbf-eaaa73e84eae",
+      "name": "прошло",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2000,
+        -60
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "aca0ed1e-e06f-4861-be25-23d22e35291f",
+              "leftValue": "={{ $json.roundedDate }}",
+              "rightValue": "={{ $('Через неделю').first().json.newDate }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "beforeOrEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d15da55f-0454-4c32-9082-1e601e991012",
+      "name": "на неделе",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2140,
+        220
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $('Notion').item.json.url }}",
+          "mode": "url"
+        },
+        "simple": "",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "Прошло"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9b1368a9-b84e-445c-9e24-f4c491505eff",
+      "name": "Статус прошло1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1960,
+        260
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $today }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "сегодня"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "450a07e1-e397-46e2-88a9-ded63705cce8",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $today }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "before"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "прошло"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "d355651d-a0a0-4271-9df4-1cc60aff47d3",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Через неделю').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "beforeOrEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "на неделе"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "fc7e71a3-0e85-4eba-8d4a-3efb173958c6",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Через месяц').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "beforeOrEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "в течении месяца"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "988e5069-30de-469f-bf0c-b33d9569817a",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Через год').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "beforeOrEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "в течении года"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5e973de-3d51-419a-bb85-cc9bb6052076",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1600,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $('Notion').item.json.url }}",
+          "mode": "url"
+        },
+        "simple": "",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "Прошло"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d6875b53-d26a-44b7-85f1-5667423cb99a",
+      "name": "Статус прошло2",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1940,
+        440
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-06-13T07:29:07.000Z",
+  "versionId": "54c11e0a-7bd7-409e-b850-116916e35e48"
+}
