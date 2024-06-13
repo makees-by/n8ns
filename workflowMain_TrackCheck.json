@@ -500,7 +500,7 @@
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
         "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAleks\",\n          \"start_tableID\": \"1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls\",\n          \"start_pageID\": 690413794,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
-        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+        "filePath": "=root/n8n/zsForAleks.json"
       },
       "id": "34622a35-2612-4d3b-8dff-06a70e13fddf",
       "name": "zsForAleks json для записи",
@@ -600,6 +600,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2024-06-11T15:45:01.000Z",
-  "versionId": "3e5d5e72-5f35-4db4-a63f-f7272c56da08"
+  "updatedAt": "2024-06-13T05:22:00.000Z",
+  "versionId": "0d2b1a13-242e-4bd5-ad6f-5ed72ead31de"
 }
