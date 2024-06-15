@@ -63,27 +63,6 @@
         ]
       ]
     },
-    "Ввод id статичных таблиц": {
-      "main": [
-        [
-          {
-            "node": "Чтение данных всего файла в JsonDatabase3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Google Sheets2",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "main JSON",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Получаем данные проверяемой страницы": {
       "main": [
         [
@@ -207,39 +186,6 @@
             "node": "Edit Fields1",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Item Lists3": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields1": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields2": {
-      "main": [
-        [
-          {
-            "node": "Merge2",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
@@ -670,11 +616,108 @@
           }
         ]
       ]
+    },
+    "Ввод id статичных таблиц": {
+      "main": [
+        [
+          {
+            "node": "Чтение данных всего файла в JsonDatabase3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "main JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        []
+      ]
+    },
+    "Отправляем сообщение в телеграмм6": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ],
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-02-06T15:03:22.402Z",
   "id": "dk2vpgDyztVqJFwU",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "PCN",
   "nodes": [
     {
@@ -754,7 +797,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        -1180,
+        -1160,
         1200
       ],
       "webhookId": "858f8441-b2d2-43c3-b167-3e8e8eb99e61"
@@ -778,46 +821,6 @@
         1160,
         700
       ],
-      "alwaysOutputData": false
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "url_become",
-              "value": "={{ $json.body.url_become }}"
-            },
-            {
-              "name": "processID",
-              "value": "={{ $json.body.processID }}"
-            },
-            {
-              "name": "main_tableID",
-              "value": "={{ $json.body.main_tableID }}"
-            }
-          ],
-          "number": [
-            {
-              "name": "main_pageID",
-              "value": "={{ $json.body.main_pageID }}"
-            }
-          ]
-        },
-        "options": {
-          "dotNotation": false
-        }
-      },
-      "id": "a724ed73-c3fb-457d-93e7-6b470d78889a",
-      "name": "Ввод id статичных таблиц",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        -840,
-        1200
-      ],
-      "executeOnce": false,
       "alwaysOutputData": false
     },
     {
@@ -1239,27 +1242,6 @@
       ]
     },
     {
-      "parameters": {
-        "operation": "concatenateItems",
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
-            {
-              "fieldToAggregate": "data.traks.EP_traks"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c5ad4e74-dc87-4f39-bab8-3093fc3ac553",
-      "name": "Item Lists3",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 3.1,
-      "position": [
-        -380,
-        1220
-      ]
-    },
-    {
       "parameters": {},
       "id": "ef906414-f4c5-42e1-8159-997f36e5d2a5",
       "name": "Merge2",
@@ -1268,52 +1250,6 @@
       "position": [
         0,
         1140
-      ]
-    },
-    {
-      "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "traks",
-              "type": "arrayValue",
-              "arrayValue": "={{ $json.BP_traks[0] }}"
-            }
-          ]
-        },
-        "include": "none",
-        "options": {}
-      },
-      "id": "90732b60-00a8-4b20-a48a-ae8bbf9cf2cb",
-      "name": "Edit Fields1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        -180,
-        1040
-      ]
-    },
-    {
-      "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "traks",
-              "type": "arrayValue",
-              "arrayValue": "={{ $json.EP_traks[0] }}"
-            }
-          ]
-        },
-        "include": "none",
-        "options": {}
-      },
-      "id": "99d96ae0-6e9f-4aea-b747-f7c7f77f4b77",
-      "name": "Edit Fields2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        -180,
-        1220
       ]
     },
     {
@@ -1336,7 +1272,7 @@
       "typeVersion": 3.2,
       "position": [
         -220,
-        800
+        700
       ]
     },
     {
@@ -1352,7 +1288,7 @@
       "typeVersion": 3,
       "position": [
         -440,
-        800
+        700
       ]
     },
     {
@@ -1366,7 +1302,7 @@
       "typeVersion": 3.1,
       "position": [
         -40,
-        800
+        700
       ]
     },
     {
@@ -1964,6 +1900,183 @@
         -680,
         900
       ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "url_become",
+              "value": "={{ $json.body.url_become }}"
+            },
+            {
+              "name": "processID",
+              "value": "={{ $json.body.processID }}"
+            },
+            {
+              "name": "main_tableID",
+              "value": "={{ $json.body.main_tableID }}"
+            }
+          ],
+          "number": [
+            {
+              "name": "main_pageID",
+              "value": "={{ $json.body.main_pageID }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "a724ed73-c3fb-457d-93e7-6b470d78889a",
+      "name": "Ввод id статичных таблиц",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -840,
+        1200
+      ],
+      "executeOnce": false,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.6.7\",\n      \"content-length\": \"177\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"97724415995b\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsForAleks\",\n      \"main_tableID\": \"1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls\",\n      \"main_pageID\": 1600679549,\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/310942\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook/CPN\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+      },
+      "id": "706b2ca0-87fe-4e52-a118-df555b8585cd",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -840,
+        1580
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод id статичных таблиц').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Процесс PCN. Нет треков Европочты для проверки."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "44f9f1a4-ebd2-4765-8142-3a3e402997cd",
+      "name": "Отправляем сообщение в телеграмм6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        0,
+        1340
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "traks",
+              "type": "arrayValue",
+              "arrayValue": "={{ $json.EP_traks[0] }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "99d96ae0-6e9f-4aea-b747-f7c7f77f4b77",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -180,
+        1220
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "data.traks.EP_traks"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5ad4e74-dc87-4f39-bab8-3093fc3ac553",
+      "name": "Item Lists3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3.1,
+      "position": [
+        -380,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "traks",
+              "type": "arrayValue",
+              "arrayValue": "={{ $json.BP_traks[0] }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "90732b60-00a8-4b20-a48a-ae8bbf9cf2cb",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -180,
+        1040
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Ввод id статичных таблиц').first().json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Процесс PCN. Нет треков Белпочты для проверки."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "650bfe9e-6ade-465c-b1fd-48f64881b03f",
+      "name": "Отправляем сообщение в телеграмм",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -20,
+        900
+      ]
     }
   ],
   "pinData": {},
@@ -1995,6 +2108,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-13T13:10:50.000Z",
-  "versionId": "3da9f635-c694-4422-bb18-654d81b30501"
+  "updatedAt": "2024-06-15T05:29:17.000Z",
+  "versionId": "f52c1d3e-6a41-4b7d-b1a1-8607b242339c"
 }
