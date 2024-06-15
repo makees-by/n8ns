@@ -8,6 +8,11 @@
             "node": "Notion",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Вход1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -19,6 +24,11 @@
             "node": "Date & Time",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -42,7 +52,12 @@
             "index": 0
           },
           {
-            "node": "Switch",
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Завтра",
             "type": "main",
             "index": 0
           }
@@ -93,9 +108,81 @@
         ]
       ]
     },
-    "на неделе": {
+    "Статус сегодня": {
       "main": [
-        []
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Статус прошло": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Статус в течении месяца": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Статус в течении года": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Статус в течении недели": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Завтра": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Switch": {
@@ -116,14 +203,94 @@
         ],
         [
           {
-            "node": "Статус прошло1",
+            "node": "Статус Завтра",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Статус прошло2",
+            "node": "Статус в течении недели",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус в течении месяца",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус в течении года",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Статус Завтра": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Notion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion1": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Статус в течении года1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Вход": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Вход1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
@@ -146,7 +313,7 @@
       "typeVersion": 1,
       "position": [
         880,
-        260
+        280
       ]
     },
     {
@@ -166,13 +333,8 @@
           "conditions": [
             {
               "key": "Статус|select",
-              "condition": "equals",
-              "selectValue": "Создано"
-            },
-            {
-              "key": "Статус|select",
-              "condition": "equals",
-              "selectValue": "Прошло"
+              "condition": "does_not_equal",
+              "selectValue": "Завершено"
             }
           ]
         },
@@ -183,8 +345,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        1100,
-        260
+        1320,
+        280
       ],
       "credentials": {
         "notionApi": {
@@ -205,8 +367,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1320,
-        260
+        1620,
+        280
       ]
     },
     {
@@ -222,15 +384,15 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1340,
-        100
+        1600,
+        0
       ],
       "executeOnce": true
     },
     {
       "parameters": {
         "operation": "addToDate",
-        "magnitude": "={{ $json.roundedDate }}",
+        "magnitude": "={{ $today }}",
         "timeUnit": "months",
         "duration": 1,
         "options": {}
@@ -240,15 +402,15 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1320,
-        -40
+        1560,
+        -140
       ],
       "executeOnce": true
     },
     {
       "parameters": {
         "operation": "addToDate",
-        "magnitude": "={{ $json.roundedDate }}",
+        "magnitude": "={{ $today }}",
         "timeUnit": "years",
         "duration": 1,
         "options": {}
@@ -258,8 +420,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1300,
-        -180
+        1520,
+        -300
       ],
       "executeOnce": true
     },
@@ -292,8 +454,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        1520,
-        -40
+        1780,
+        -220
       ]
     },
     {
@@ -302,7 +464,7 @@
         "operation": "update",
         "pageId": {
           "__rl": true,
-          "value": "={{ $('Notion').item.json.url }}",
+          "value": "={{ $json.url }}",
           "mode": "url"
         },
         "simple": false,
@@ -321,8 +483,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        1760,
-        20
+        1960,
+        -120
       ],
       "credentials": {
         "notionApi": {
@@ -337,7 +499,7 @@
         "operation": "update",
         "pageId": {
           "__rl": true,
-          "value": "={{ $('Notion').item.json.url }}",
+          "value": "={{ $json.url }}",
           "mode": "url"
         },
         "simple": "",
@@ -356,8 +518,8 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        1940,
-        100
+        2060,
+        40
       ],
       "credentials": {
         "notionApi": {
@@ -394,8 +556,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        1760,
-        -140
+        460,
+        20
       ],
       "disabled": true
     },
@@ -427,7 +589,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2000,
+        520,
         -60
       ],
       "disabled": true
@@ -460,8 +622,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        2140,
-        220
+        560,
+        -120
       ],
       "disabled": true
     },
@@ -471,7 +633,7 @@
         "operation": "update",
         "pageId": {
           "__rl": true,
-          "value": "={{ $('Notion').item.json.url }}",
+          "value": "={{ $json.url }}",
           "mode": "url"
         },
         "simple": "",
@@ -479,19 +641,19 @@
           "propertyValues": [
             {
               "key": "Статус|select",
-              "selectValue": "Прошло"
+              "selectValue": "В течении месяца"
             }
           ]
         },
         "options": {}
       },
       "id": "9b1368a9-b84e-445c-9e24-f4c491505eff",
-      "name": "Статус прошло1",
+      "name": "Статус в течении месяца",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        1960,
-        260
+        2220,
+        440
       ],
       "credentials": {
         "notionApi": {
@@ -499,6 +661,141 @@
           "name": "Notion account 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url"
+        },
+        "simple": "",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "В течении года"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d6875b53-d26a-44b7-85f1-5667423cb99a",
+      "name": "Статус в течении года",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        2280,
+        580
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "a1d93723-fc07-447b-98b4-aa65e75ea060",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0af224ed-ffd7-4ac5-9909-ec7416367ec2",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2580,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition",
+        "options": {}
+      },
+      "id": "09e017ac-224e-4899-94cb-c645d6986949",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        1720,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url"
+        },
+        "simple": "",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "В течении недели"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0000268d-ee3f-41f4-98c7-e65fdfee24e1",
+      "name": "Статус в течении недели",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        2180,
+        300
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $today }}",
+        "duration": 1,
+        "options": {}
+      },
+      "id": "3d5225ea-974e-44bd-ad62-8881be2ea6f5",
+      "name": "Завтра",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1640,
+        140
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -548,6 +845,29 @@
               },
               "renameOutput": true,
               "outputKey": "прошло"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "770a177c-898b-450f-93ff-fd4423854cd4",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Завтра').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "завтра"
             },
             {
               "conditions": {
@@ -627,8 +947,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3,
       "position": [
-        1600,
-        260
+        1860,
+        180
       ]
     },
     {
@@ -637,7 +957,7 @@
         "operation": "update",
         "pageId": {
           "__rl": true,
-          "value": "={{ $('Notion').item.json.url }}",
+          "value": "={{ $json.url }}",
           "mode": "url"
         },
         "simple": "",
@@ -645,19 +965,19 @@
           "propertyValues": [
             {
               "key": "Статус|select",
-              "selectValue": "Прошло"
+              "selectValue": "Завтра"
             }
           ]
         },
         "options": {}
       },
-      "id": "d6875b53-d26a-44b7-85f1-5667423cb99a",
-      "name": "Статус прошло2",
+      "id": "39d1737f-2de6-47bf-9455-0f861f9c8804",
+      "name": "Статус Завтра",
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        1940,
-        440
+        2120,
+        160
       ],
       "credentials": {
         "notionApi": {
@@ -665,6 +985,232 @@
           "name": "Notion account 2"
         }
       }
+    },
+    {
+      "parameters": {
+        "content": "## Распределение статусов в зависимости от удалённости даты начала.",
+        "height": 186.57150772708127
+      },
+      "id": "d4eb1442-7ea8-466e-8b49-ff6591973fe3",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        980,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "a22e120b-e389-4d07-8055-316a4c11970a",
+          "mode": "list",
+          "cachedResultName": "Ohronos_bd",
+          "cachedResultUrl": "https://www.notion.so/a22e120be3894d078055316a4c11970a"
+        },
+        "title": "={{ $json['Имя события'] }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Тип события|select",
+              "selectValue": "={{ $json['Тип события'] }}"
+            },
+            {
+              "key": "Дата события|date",
+              "date": "={{ $json['Дата события'] }}"
+            },
+            {
+              "key": "Периодичность повторения|rich_text",
+              "textContent": "={{ $json['Периодичность повторения'] }}"
+            },
+            {
+              "key": "Статус|select",
+              "selectValue": "Создано"
+            }
+          ]
+        },
+        "blockUi": {
+          "blockValues": [
+            {
+              "textContent": "={{ $json['Заметка'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dc8c9d9d-cd61-4b83-975d-f940e1e0f771",
+      "name": "Notion1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        620
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "167a7123-7e18-490f-93fd-d5d9507ac77a",
+              "name": "Имя события",
+              "value": "Название события",
+              "type": "string"
+            },
+            {
+              "id": "dc71c3e4-3b88-47c9-ad36-86e3e86b678a",
+              "name": "Тип события",
+              "value": "Одноразовое",
+              "type": "string"
+            },
+            {
+              "id": "d598b927-79b1-496c-bceb-949f8d8a840e",
+              "name": "Дата события",
+              "value": "2024-08-09T12:00:00.000+03:00",
+              "type": "string"
+            },
+            {
+              "id": "2ef22c49-37a9-4fa8-b772-e7587dec92ba",
+              "name": "Периодичность повторения",
+              "value": "7 дней",
+              "type": "string"
+            },
+            {
+              "id": "c1d99b17-57b0-4ea3-b28f-3d08246b78d0",
+              "name": "Заметка",
+              "value": "Проверить сколько пыли на шкафу возле стены",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c387761f-0362-42ba-96ea-3a47cfa48369",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1100,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Создание события",
+        "height": 95.05798747880982,
+        "width": 150
+      },
+      "id": "a886366e-3fa5-4032-96dc-940b7569b3f8",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        960,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json['URL события'] }}",
+          "mode": "url"
+        },
+        "simple": "",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Статус|select",
+              "selectValue": "Завершено"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3f3b4a55-c371-4bcc-83ac-b592b34367a7",
+      "name": "Статус в течении года1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1340,
+        880
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "167a7123-7e18-490f-93fd-d5d9507ac77a",
+              "name": "URL события",
+              "value": "https://www.notion.so/037aa7175e784c4f94fa8307b5b5ec2d",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "29dd48ad-7631-46dd-936a-931e2903cb22",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1100,
+        880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "3c254a55-2caa-4fff-a25e-20bc836812f0",
+      "name": "Вход",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        620
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "24db517f-9ac2-4131-97c5-603e70b5d5b8",
+      "name": "Вход1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Завершение события",
+        "height": 91.72762786233855,
+        "width": 169.98215769882765
+      },
+      "id": "b4f158d3-f439-4d5e-bfb3-6b2cf36a5148",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        920,
+        760
+      ]
     }
   ],
   "pinData": {},
@@ -674,6 +1220,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-06-13T07:29:07.000Z",
-  "versionId": "54c11e0a-7bd7-409e-b850-116916e35e48"
+  "updatedAt": "2024-06-15T07:34:22.000Z",
+  "versionId": "b50e77b6-f274-4189-a1ce-291ccb86f2c2"
 }
