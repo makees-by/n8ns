@@ -1,0 +1,175 @@
+{
+  "active": true,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Test workflow\"": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2024-06-16T07:02:33.185Z",
+  "id": "WbQ6Ohcj1B63W2FW",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Ohronus_timer",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "847d1997-4dd5-4a53-84bf-a2aeec16d300",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        880,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n  [\n  {\n    \"Дата события\": \"2024-06-16T10:31:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/ab3e049275bf4fc8bd9c180ded5d2370\"\n  }\n]\n);"
+      },
+      "id": "d4502f3f-c063-4691-95a7-9debf52f0348",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "specificTime",
+        "dateTime": "={{ $json['Дата события'] }}"
+      },
+      "id": "9bfafec5-824c-46df-b5d9-72280b717d56",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        260
+      ],
+      "webhookId": "157305c2-d53c-409d-8f6e-afcfcf7d2905"
+    },
+    {
+      "parameters": {},
+      "id": "71fa2f61-13bd-44d1-8b46-4f42b06e929f",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $json['Дата события'] }}",
+        "format": "X",
+        "options": {}
+      },
+      "id": "020eb282-3ddb-4869-bc33-b3cae9bb9edd",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"готово\": \"Готово\"\n}",
+        "options": {}
+      },
+      "id": "8233242f-c136-4066-aa8b-3dee1701e6ee",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "path": "ohronos_timer_start",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "296a37a1-83eb-4594-8aed-99f1e7b53d36",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        260
+      ],
+      "webhookId": "4f7bb597-c36c-41cc-aadf-408aa332ff22"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-06-16T07:01:41.755Z",
+      "updatedAt": "2024-06-16T07:01:41.755Z",
+      "id": "eUkZw1ElfnLKRNRp",
+      "name": "ohronus"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-06-16T12:24:29.000Z",
+  "versionId": "59f9ac78-d77e-4461-a348-fddb77d243c4"
+}
