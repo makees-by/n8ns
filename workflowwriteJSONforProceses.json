@@ -72,7 +72,7 @@
             "index": 0
           },
           {
-            "node": "zsForAleks json для записи",
+            "node": "Начало1",
             "type": "main",
             "index": 0
           }
@@ -149,7 +149,7 @@
       "main": [
         [
           {
-            "node": "ZsForAleks",
+            "node": "ZsForEvg",
             "type": "main",
             "index": 0
           }
@@ -210,6 +210,33 @@
         [
           {
             "node": "ZsForAnn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForEvg": {
+      "main": [
+        [
+          {
+            "node": "ZsForAleks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Начало1": {
+      "main": [
+        [
+          {
+            "node": "zsForAleks json для записи",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ZsForEvg json для записи",
             "type": "main",
             "index": 0
           }
@@ -524,8 +551,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1900,
-        1640
+        -1640,
+        1420
       ]
     },
     {
@@ -676,7 +703,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1520,
+        -1340,
         1860
       ]
     },
@@ -800,8 +827,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1880,
-        1960
+        -1700,
+        1660
       ]
     },
     {
@@ -815,6 +842,61 @@
       "position": [
         -2440,
         1840
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"zsForvika\"\n    }\n  }\n]\n);"
+      },
+      "id": "824d30ed-4aa7-4409-b278-b0584955a7f4",
+      "name": "zsForvika1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        540,
+        540
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsForEvg\"\n    }\n  }\n]\n);"
+      },
+      "id": "35c9dde8-e08e-4a03-a037-cda13b191b0e",
+      "name": "ZsForEvg",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2580,
+        2100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForEvg\",\n          \"start_tableID\": \"1SJ_0NENavMNW6DGrKdjrTqF_PpFVeDnovS-bBd2dmhA\",\n          \"start_pageID\": 1401389950,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "3eda3793-1d74-4db7-9161-1c2f5d6b1285",
+      "name": "ZsForEvg json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1840,
+        1880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0f8c80fe-1b5b-40ed-b8d4-0642f8a3757d",
+      "name": "Начало1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1940,
+        1660
       ]
     }
   ],
@@ -847,6 +929,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-10T18:14:57.000Z",
-  "versionId": "1f8ecbdb-9644-4195-bc2a-847d5ca62b43"
+  "updatedAt": "2024-06-16T06:27:28.000Z",
+  "versionId": "a80ca752-73ef-4434-bdae-412d74a9fe87"
 }
