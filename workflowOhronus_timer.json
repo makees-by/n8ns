@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Wait",
+            "node": "Sort",
             "type": "main",
             "index": 0
           }
@@ -45,9 +45,26 @@
         ]
       ]
     },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "When clicking \"Test workflow\"": {
       "main": [
-        []
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -71,14 +88,14 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"Дата события\": \"2024-06-16T10:31:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/ab3e049275bf4fc8bd9c180ded5d2370\"\n  }\n]\n);"
+        "jsCode": "return (\n[\n  {\n    \"Дата события\": \"2024-06-17T12:45:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/f753514c17ad4c4fa8d4e79ed61815da\"\n  },\n  {\n    \"Дата события\": \"2024-06-17T13:00:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/30f539e9ec3648b68c597fc8d857f24b\"\n  },\n  {\n    \"Дата события\": \"2024-06-17T14:00:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/19522f02dc454032bbbffbce6c86d05a\"\n  },\n  {\n    \"Дата события\": \"2024-06-17T15:00:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/d84bfbea2d2642dda94a2cc7abeb2b20\"\n  },\n  {\n    \"Дата события\": \"2024-06-17T13:00:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/ab3e049275bf4fc8bd9c180ded5d2370\"\n  }\n]\n);"
       },
       "id": "d4502f3f-c063-4691-95a7-9debf52f0348",
       "name": "Code",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1400,
+        1360,
         260
       ]
     },
@@ -120,8 +137,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1260,
-        80
+        1620,
+        40
       ]
     },
     {
@@ -153,7 +170,28 @@
         1060,
         260
       ],
-      "webhookId": "4f7bb597-c36c-41cc-aadf-408aa332ff22"
+      "webhookId": "4f7bb597-c36c-41cc-aadf-408aa332ff22",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "['Дата события']"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ad73007d-a487-4851-8f3d-4258f34f1539",
+      "name": "Sort",
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        260
+      ]
     }
   ],
   "pinData": {},
@@ -169,7 +207,7 @@
       "name": "ohronus"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2024-06-16T12:24:29.000Z",
-  "versionId": "59f9ac78-d77e-4461-a348-fddb77d243c4"
+  "triggerCount": 0,
+  "updatedAt": "2024-06-17T12:06:34.000Z",
+  "versionId": "bf99e284-d97f-4c0c-8105-55e324d620e9"
 }
