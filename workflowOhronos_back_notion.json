@@ -255,13 +255,7 @@
     },
     "Notion1": {
       "main": [
-        [
-          {
-            "node": "Notion",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Edit Fields1": {
@@ -1411,6 +1405,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-16T12:24:35.000Z",
-  "versionId": "8882b143-4430-4af0-9df4-7a071d2e8b99"
+  "updatedAt": "2024-06-17T09:52:49.000Z",
+  "versionId": "96754984-fe09-44d4-b8d2-2e5c53affdf9"
 }
