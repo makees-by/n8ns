@@ -215,7 +215,7 @@
         ]
       ]
     },
-    "zsForAleks 02.00": {
+    "zsForAleks 04.00": {
       "main": [
         [
           {
@@ -462,7 +462,8 @@
       "position": [
         400,
         -320
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -626,21 +627,20 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 2,
+              "triggerAtHour": 4,
               "triggerAtMinute": 1
             }
           ]
         }
       },
       "id": "f2554855-d1f1-4fa8-b134-289075036165",
-      "name": "zsForAleks 02.00",
+      "name": "zsForAleks 04.00",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
         340,
         320
-      ],
-      "disabled": true
+      ]
     }
   ],
   "pinData": {},
@@ -677,6 +677,12 @@
     },
     "node:zsForAleks 00.00": {
       "recurrencyRules": []
+    },
+    "node:zsForAleks 02.00": {
+      "recurrencyRules": []
+    },
+    "node:zsForAleks 04.00": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -694,6 +700,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2024-06-16T12:24:22.000Z",
-  "versionId": "6c1d0eb6-6766-43f0-8dbc-8dcd7bc0b4a5"
+  "updatedAt": "2024-06-18T17:26:37.000Z",
+  "versionId": "dd50ed23-4d77-4a08-982d-cbdd9bdaf2f3"
 }
