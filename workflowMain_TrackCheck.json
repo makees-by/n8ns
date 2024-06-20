@@ -462,8 +462,7 @@
       "position": [
         400,
         -320
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -627,7 +626,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 4,
+              "triggerAtHour": 2,
               "triggerAtMinute": 1
             }
           ]
@@ -699,7 +698,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 4,
-  "updatedAt": "2024-06-18T17:26:37.000Z",
-  "versionId": "dd50ed23-4d77-4a08-982d-cbdd9bdaf2f3"
+  "triggerCount": 5,
+  "updatedAt": "2024-06-19T17:40:20.000Z",
+  "versionId": "9362d757-f802-495f-86b0-e0f4ef694acf"
 }
