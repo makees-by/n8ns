@@ -97,14 +97,14 @@
     },
     "есть ли свойство calbackQuery": {
       "main": [
-        [],
         [
           {
             "node": "есть ли свойство data в query",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "есть ли свойство data в query": {
@@ -537,8 +537,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        1360,
-        780
+        1420,
+        740
       ]
     },
     {
@@ -615,6 +615,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-06-16T07:01:59.000Z",
-  "versionId": "8e7fbd72-9f96-46d7-9acf-f0d4305b4c20"
+  "updatedAt": "2024-06-23T06:44:00.000Z",
+  "versionId": "90024b70-1630-4810-bbb2-e97adcf08ba0"
 }
