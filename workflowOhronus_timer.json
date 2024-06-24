@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Sort",
+            "node": "Статус в течении года2",
             "type": "main",
             "index": 0
           }
@@ -23,16 +23,16 @@
         ]
       ]
     },
-    "No Operation, do nothing": {
-      "main": [
-        []
-      ]
-    },
     "Sort": {
       "main": [
         [
           {
-            "node": "If",
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
@@ -105,7 +105,7 @@
       "main": [
         [
           {
-            "node": "Code",
+            "node": "Статус в течении года2",
             "type": "main",
             "index": 0
           }
@@ -117,6 +117,88 @@
         [
           {
             "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Sort",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Статус в течении года2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Через 9 минут",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Через 9 минут": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Статус в течении года2",
             "type": "main",
             "index": 0
           }
@@ -138,7 +220,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1060,
+        1100,
         460
       ]
     },
@@ -151,9 +233,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1360,
-        280
-      ]
+        1120,
+        660
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -164,7 +247,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2460,
+        3120,
         260
       ],
       "webhookId": "157305c2-d53c-409d-8f6e-afcfcf7d2905"
@@ -176,24 +259,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2220,
+        2880,
         20
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "formatDate",
-        "date": "={{ $json['Дата события'] }}",
-        "format": "X",
-        "options": {}
-      },
-      "id": "020eb282-3ddb-4869-bc33-b3cae9bb9edd",
-      "name": "Date & Time",
-      "type": "n8n-nodes-base.dateTime",
-      "typeVersion": 2,
-      "position": [
-        1620,
-        40
       ]
     },
     {
@@ -207,8 +274,8 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        2840,
-        20
+        2660,
+        -60
       ]
     },
     {
@@ -227,7 +294,7 @@
       "type": "n8n-nodes-base.sort",
       "typeVersion": 1,
       "position": [
-        1580,
+        1840,
         280
       ]
     },
@@ -245,7 +312,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1,
       "position": [
-        2700,
+        3360,
         260
       ],
       "credentials": {
@@ -264,7 +331,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2000,
+        2660,
         240
       ]
     },
@@ -275,7 +342,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2700,
+        3360,
         500
       ]
     },
@@ -307,8 +374,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        1760,
-        280
+        2420,
+        260
       ]
     },
     {
@@ -321,7 +388,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        1060,
+        1100,
         280
       ],
       "webhookId": "4f7bb597-c36c-41cc-aadf-408aa332ff22",
@@ -342,9 +409,196 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        2240,
+        2900,
         260
       ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "a22e120b-e389-4d07-8055-316a4c11970a",
+          "mode": "list",
+          "cachedResultName": "Ohronos_bd",
+          "cachedResultUrl": "https://www.notion.so/a22e120be3894d078055316a4c11970a"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Статус|select",
+              "condition": "equals",
+              "selectValue": "Сегодня"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "815f64b8-ebcf-4b98-bef9-275d28987abb",
+      "name": "Статус в течении года2",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1400,
+        280
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8e6e2ddb-4005-4adc-adc7-566df36d2267",
+              "name": "Дата события",
+              "value": "={{ $json.properties['Дата события'].date.start }}",
+              "type": "string"
+            },
+            {
+              "id": "81222394-717d-4501-9643-eecb9d8f6920",
+              "name": "Имя события",
+              "value": "={{ $json.properties.Name.title[0].text.content }}",
+              "type": "string"
+            },
+            {
+              "id": "9616c5a6-276f-4852-b076-e92c81439c28",
+              "name": "url",
+              "value": "={{ $json.url }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "98c8ecaf-8dac-47ad-b7d0-ba587ba2ce92",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1640,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cbed95bb-e1af-432c-9f77-e7a589ff5eb5",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "864280da-5a9a-4efc-ace9-c8b05073c17f",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1640,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "f5400599-47ef-4824-b58e-fbb1e25ed379",
+              "leftValue": "={{ $json['Дата события'] }}",
+              "rightValue": "={{ $('Через 9 минут').first().json.newDate }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5143540a-7745-479a-a95e-cb7c44428b58",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2080,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $now }}",
+        "timeUnit": "minutes",
+        "duration": 9,
+        "options": {}
+      },
+      "id": "020eb282-3ddb-4869-bc33-b3cae9bb9edd",
+      "name": "Через 9 минут",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1400,
+        40
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ba0190f2-97a1-4666-ad56-99b70a064c0d",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1860,
+        520
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "amount": 9,
+        "unit": "minutes"
+      },
+      "id": "2ae97bdd-00e5-4a09-a4ae-6016de96eb96",
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1580,
+        600
+      ],
+      "webhookId": "62aeefea-5554-4595-b21f-c6e7b71a93d5"
     }
   ],
   "pinData": {},
@@ -364,6 +618,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-23T06:32:39.000Z",
-  "versionId": "fccc1232-8071-4179-a415-b6e2f08a31ff"
+  "updatedAt": "2024-06-24T07:49:24.000Z",
+  "versionId": "547ad7fb-bb2d-4c87-a6c9-3e92352b333b"
 }
