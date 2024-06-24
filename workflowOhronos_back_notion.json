@@ -13,6 +13,11 @@
             "node": "Вход3",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Проверка прошедших событий со статусом сегодня на статус завершен",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -185,52 +190,6 @@
         ]
       ]
     },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Статус сегодня",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Статус прошло",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Статус Завтра",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Статус в течении недели",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Статус в течении месяца",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Статус в течении года",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Статус Завтра": {
       "main": [
         [
@@ -251,11 +210,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Notion1": {
-      "main": [
-        []
       ]
     },
     "Edit Fields1": {
@@ -334,6 +288,121 @@
         [
           {
             "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверка прошедших событий со статусом сегодня на статус завершен": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Notion2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notion2": {
+      "main": [
+        [
+          {
+            "node": "действительно ли события прошли",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Статус сегодня",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус прошло",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус Завтра",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус в течении недели",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус в течении месяца",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Статус в течении года",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "действительно ли события прошли": {
+      "main": [
+        [
+          {
+            "node": "Проверяем статус",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Тут те события, которые поменяли время исполнения",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем статус": {
+      "main": [
+        [
+          {
+            "node": "не делаем ничего тут все события, получившие статус завершено",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Отправляем напоминание о прошедших но незавершенных событиях",
             "type": "main",
             "index": 0
           }
@@ -599,8 +668,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        80,
-        640
+        640,
+        80
       ],
       "disabled": true
     },
@@ -632,8 +701,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        -100,
-        480
+        220,
+        120
       ],
       "disabled": true
     },
@@ -665,8 +734,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        120,
-        400
+        400,
+        80
       ],
       "disabled": true
     },
@@ -842,160 +911,6 @@
     },
     {
       "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $json.roundedDate }}",
-                    "rightValue": "={{ $today }}",
-                    "operator": {
-                      "type": "dateTime",
-                      "operation": "equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "сегодня"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "id": "450a07e1-e397-46e2-88a9-ded63705cce8",
-                    "leftValue": "={{ $json.roundedDate }}",
-                    "rightValue": "={{ $today }}",
-                    "operator": {
-                      "type": "dateTime",
-                      "operation": "before"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "прошло"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "id": "770a177c-898b-450f-93ff-fd4423854cd4",
-                    "leftValue": "={{ $json.roundedDate }}",
-                    "rightValue": "={{ $('Завтра').first().json.newDate }}",
-                    "operator": {
-                      "type": "dateTime",
-                      "operation": "equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "завтра"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "id": "d355651d-a0a0-4271-9df4-1cc60aff47d3",
-                    "leftValue": "={{ $json.roundedDate }}",
-                    "rightValue": "={{ $('Через неделю').first().json.newDate }}",
-                    "operator": {
-                      "type": "dateTime",
-                      "operation": "beforeOrEquals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "на неделе"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "id": "fc7e71a3-0e85-4eba-8d4a-3efb173958c6",
-                    "leftValue": "={{ $json.roundedDate }}",
-                    "rightValue": "={{ $('Через месяц').first().json.newDate }}",
-                    "operator": {
-                      "type": "dateTime",
-                      "operation": "beforeOrEquals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "в течении месяца"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict"
-                },
-                "conditions": [
-                  {
-                    "id": "988e5069-30de-469f-bf0c-b33d9569817a",
-                    "leftValue": "={{ $json.roundedDate }}",
-                    "rightValue": "={{ $('Через год').first().json.newDate }}",
-                    "operator": {
-                      "type": "dateTime",
-                      "operation": "beforeOrEquals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "в течении года"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c5e973de-3d51-419a-bb85-cc9bb6052076",
-      "name": "Switch",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3,
-      "position": [
-        1860,
-        180
-      ]
-    },
-    {
-      "parameters": {
         "resource": "databasePage",
         "operation": "update",
         "pageId": {
@@ -1031,16 +946,17 @@
     },
     {
       "parameters": {
-        "content": "## Распределение статусов в зависимости от удалённости даты начала.",
-        "height": 186.57150772708127
+        "content": "## Распределение статусов в зависимости от удалённости даты начала от сегодняшнего дня.",
+        "height": 143.8211086274178,
+        "width": 350.16448998759427
       },
       "id": "d4eb1442-7ea8-466e-8b49-ff6591973fe3",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        980,
-        60
+        960,
+        100
       ]
     },
     {
@@ -1274,7 +1190,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        1740,
+        1280,
         820
       ]
     },
@@ -1334,7 +1250,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2.2,
       "position": [
-        2380,
+        1700,
         820
       ],
       "credentials": {
@@ -1386,8 +1302,324 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        2740,
+        1940,
         820
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n  [\n  {\n    \"Дата события\": \"2024-06-23T09:36:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/30f539e9ec3648b68c597fc8d857f24b\"\n  },\n  {\n    \"Дата события\": \"2024-06-23T09:36:07.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/ab3e049275bf4fc8bd9c180ded5d2370\"\n  },\n  {\n    \"Дата события\": \"2024-06-23T09:37:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/f753514c17ad4c4fa8d4e79ed61815da\"\n  },\n  {\n    \"Дата события\": \"2024-06-23T09:38:00.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/19522f02dc454032bbbffbce6c86d05a\"\n  },\n  {\n    \"Дата события\": \"2024-06-23T09:38:20.000+03:00\",\n    \"Имя события\": \"Третье событие\",\n    \"url\": \"https://www.notion.so/d84bfbea2d2642dda94a2cc7abeb2b20\"\n  }\n]\n);"
+      },
+      "id": "d8a5d3ab-1121-4874-be3d-7a52c51ca236",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -340,
+        500
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a886a230-78c7-48da-ade6-d7af3b30880e",
+      "name": "Проверка прошедших событий со статусом сегодня на статус завершен",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "get",
+        "pageId": {
+          "__rl": true,
+          "value": "={{ $json.url }}",
+          "mode": "url"
+        },
+        "simple": false
+      },
+      "id": "0afe7180-4754-418f-8d6e-17b917598b85",
+      "name": "Notion2",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        -620,
+        720
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "j8RVok2hcJUt51fq",
+          "name": "Notion account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $today }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "сегодня"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "450a07e1-e397-46e2-88a9-ded63705cce8",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $today }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "before"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "прошло"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "770a177c-898b-450f-93ff-fd4423854cd4",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Завтра').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "завтра"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "d355651d-a0a0-4271-9df4-1cc60aff47d3",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Через неделю').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "beforeOrEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "на неделе"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "fc7e71a3-0e85-4eba-8d4a-3efb173958c6",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Через месяц').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "beforeOrEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "в течении месяца"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "988e5069-30de-469f-bf0c-b33d9569817a",
+                    "leftValue": "={{ $json.roundedDate }}",
+                    "rightValue": "={{ $('Через год').first().json.newDate }}",
+                    "operator": {
+                      "type": "dateTime",
+                      "operation": "beforeOrEquals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "в течении года"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5e973de-3d51-419a-bb85-cc9bb6052076",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1860,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Проверка прошедших событий со статусом \"сегодня\" на статус \"завершено\".\nДанные должны приходить из дневного таймера, при проверке на устарелость",
+        "height": 202.75039909966347,
+        "width": 294.2601219341882
+      },
+      "id": "02844663-3ac8-4e17-aa02-945aa6628ac6",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        480
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "79e00ece-3c29-4477-be04-b81635cafc70",
+      "name": "не делаем ничего тут все события, получившие статус завершено",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        140,
+        680
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "27be3271-e351-40ee-b8c0-95a7a1ea9ffe",
+      "name": "Отправляем напоминание о прошедших но незавершенных событиях",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "5aeb306c-4544-4ec0-9d52-312279b61257",
+              "leftValue": "={{ $json.properties['Дата события'].date.start }}",
+              "rightValue": "={{ $now }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0e814334-7cd9-4f89-89e7-313d3d123ff7",
+      "name": "действительно ли события прошли",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0dbd2e53-1d9c-411b-b6c6-6c55e9ebda05",
+              "leftValue": "={{ $json.properties['Статус'].select.name }}",
+              "rightValue": "Завершено",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a52561b3-0656-4fb0-81f1-68e2eb3cf267",
+      "name": "Проверяем статус",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        700
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "db126bb1-caaf-4bbf-8c27-0cd0c1e8267d",
+      "name": "Тут те события, которые поменяли время исполнения",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        940
       ]
     }
   ],
@@ -1405,6 +1637,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-17T09:52:49.000Z",
-  "versionId": "96754984-fe09-44d4-b8d2-2e5c53affdf9"
+  "updatedAt": "2024-06-23T20:54:20.000Z",
+  "versionId": "c61cc125-6fa3-4737-96c0-772a265ac92a"
 }
