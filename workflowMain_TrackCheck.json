@@ -160,17 +160,6 @@
         ]
       ]
     },
-    "zsForAleks json для записи": {
-      "main": [
-        [
-          {
-            "node": "zsForAleks",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "zsForAleks": {
       "main": [
         [
@@ -204,22 +193,44 @@
         ]
       ]
     },
-    "zsForAleks 00.00": {
+    "ZsForEvg 01.00": {
       "main": [
         [
           {
-            "node": "zsForAleks json для записи",
+            "node": "ZsForEvg json для записи",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "zsForAleks 04.00": {
+    "zsForAleks 00.": {
       "main": [
         [
           {
-            "node": "ZsForEvg json для записи",
+            "node": "zsForAleks json для записи1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat json для записи1": {
+      "main": [
+        [
+          {
+            "node": "zsForAleks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat 00.00": {
+      "main": [
+        [
+          {
+            "node": "ForNat json для записи1",
             "type": "main",
             "index": 0
           }
@@ -306,7 +317,7 @@
     },
     {
       "parameters": {
-        "content": "## Прод\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=zsForvika\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForAnn\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsTest\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForAleks\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForEvg",
+        "content": "## Прод\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=zsForvika\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForAnn\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsTest\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ZsForAleks\n\nhttps://n8n.makees.online/webhook/check_start?ProcessID=ForNat",
         "height": 394.58116653873867,
         "width": 531.9001781002182,
         "color": 4
@@ -540,8 +551,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        580,
-        120
+        -80,
+        180
       ]
     },
     {
@@ -550,7 +561,7 @@
           "values": [
             {
               "name": "ProcessID",
-              "stringValue": "ZsForAleks"
+              "stringValue": "ForNat"
             }
           ]
         },
@@ -607,17 +618,34 @@
         "rule": {
           "interval": [
             {
-              "triggerAtMinute": 2
+              "triggerAtHour": 2,
+              "triggerAtMinute": 1
             }
           ]
         }
       },
-      "id": "96540e54-f38a-4825-a4f9-f660ed9a3245",
-      "name": "zsForAleks 00.00",
+      "id": "f2554855-d1f1-4fa8-b134-289075036165",
+      "name": "ZsForEvg 01.00",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        360,
+        340,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForNat\",\n          \"start_tableID\": \"1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ForNat.json"
+      },
+      "id": "2bb177cd-c9d6-42cc-938b-76c01c60c8a4",
+      "name": "ForNat json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        560,
         120
       ]
     },
@@ -626,19 +654,53 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 2,
-              "triggerAtMinute": 1
+              "triggerAtMinute": 2
             }
           ]
         }
       },
-      "id": "f2554855-d1f1-4fa8-b134-289075036165",
-      "name": "zsForAleks 04.00",
+      "id": "e390ebeb-f6b0-4315-906d-9424574e8f94",
+      "name": "zsForAleks 00.",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        340,
-        320
+        -160,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAleks\",\n          \"start_tableID\": \"1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls\",\n          \"start_pageID\": 690413794,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForAleks.json"
+      },
+      "id": "566ccdfa-6323-45ca-b438-99b2fc4307ca",
+      "name": "zsForAleks json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        60,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 2
+            }
+          ]
+        }
+      },
+      "id": "96540e54-f38a-4825-a4f9-f660ed9a3245",
+      "name": "ForNat 00.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        320,
+        120
       ]
     }
   ],
@@ -682,6 +744,15 @@
     },
     "node:zsForAleks 04.00": {
       "recurrencyRules": []
+    },
+    "node:ZsForEvg 01.00": {
+      "recurrencyRules": []
+    },
+    "node:zsForAleks 00.": {
+      "recurrencyRules": []
+    },
+    "node:ForNat 00.00": {
+      "recurrencyRules": []
     }
   },
   "tags": [
@@ -698,7 +769,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 5,
-  "updatedAt": "2024-06-19T17:40:20.000Z",
-  "versionId": "9362d757-f802-495f-86b0-e0f4ef694acf"
+  "triggerCount": 6,
+  "updatedAt": "2024-06-25T08:10:36.000Z",
+  "versionId": "c6e7daf3-f1b8-48f6-955f-2276b995c0f9"
 }
