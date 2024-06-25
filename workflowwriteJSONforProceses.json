@@ -207,20 +207,14 @@
     },
     "ZsForAleks": {
       "main": [
-        [
-          {
-            "node": "ZsForAnn",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "ZsForEvg": {
       "main": [
         [
           {
-            "node": "ZsForAleks",
+            "node": "ForNat",
             "type": "main",
             "index": 0
           }
@@ -231,12 +225,23 @@
       "main": [
         [
           {
-            "node": "zsForAleks json для записи",
+            "node": "ZsForEvg json для записи",
             "type": "main",
             "index": 0
           },
           {
-            "node": "ZsForEvg json для записи",
+            "node": "ForNat json для записи1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn",
             "type": "main",
             "index": 0
           }
@@ -734,8 +739,7 @@
       "position": [
         -2280,
         1840
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -827,8 +831,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1700,
-        1660
+        -1280,
+        2200
       ]
     },
     {
@@ -840,8 +844,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -2440,
-        1840
+        -1500,
+        2200
       ],
       "disabled": true
     },
@@ -870,7 +874,8 @@
       "position": [
         -2580,
         2100
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -898,6 +903,36 @@
         -1940,
         1660
       ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForNat\",\n          \"start_tableID\": \"1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "e77aa236-2ca1-47f2-96c1-fda1ed21347f",
+      "name": "ForNat json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1700,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ForNat\"\n    }\n  }\n]\n);"
+      },
+      "id": "7086c37d-a191-4ebb-ac5c-07b184ac1c84",
+      "name": "ForNat",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2680,
+        1840
+      ],
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -929,6 +964,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-16T06:27:28.000Z",
-  "versionId": "a80ca752-73ef-4434-bdae-412d74a9fe87"
+  "updatedAt": "2024-06-25T08:10:30.000Z",
+  "versionId": "1376cb45-5af6-4052-a49e-d1ee2b207ddc"
 }
