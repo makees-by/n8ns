@@ -473,7 +473,8 @@
       "position": [
         400,
         -320
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -769,7 +770,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 6,
-  "updatedAt": "2024-06-25T08:10:36.000Z",
-  "versionId": "c6e7daf3-f1b8-48f6-955f-2276b995c0f9"
+  "triggerCount": 5,
+  "updatedAt": "2024-07-22T06:42:40.000Z",
+  "versionId": "fb1b492c-61d8-4e7a-b757-dc33a06f43f7"
 }
