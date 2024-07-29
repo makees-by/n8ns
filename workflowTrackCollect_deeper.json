@@ -126,22 +126,6 @@
         ]
       ]
     },
-    "получаем все строки с отметкоу не доставлено": {
-      "main": [
-        [
-          {
-            "node": "СЗПЦ1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "проверяем есть ли трек1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "No Operation, do nothing14": {
       "main": [
         [
@@ -768,17 +752,6 @@
         ]
       ]
     },
-    "Code1": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "нет ничего": {
       "main": [
         [
@@ -833,6 +806,73 @@
         [
           {
             "node": "Не треки в треке",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing3": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение в телеграмм6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "получаем все строки с отметкоу не доставлено": {
+      "main": [
+        [
+          {
+            "node": "СЗПЦ1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "проверяем есть ли трек1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем сообщение в телеграмм6": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
@@ -1217,48 +1257,6 @@
       ],
       "executeOnce": false,
       "alwaysOutputData": false
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.Таблица }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.Страница }}",
-          "mode": "id"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "Отметка о доставке",
-              "lookupValue": "Не доставлено"
-            }
-          ]
-        },
-        "options": {
-          "returnAllMatches": "returnAllMatches"
-        }
-      },
-      "id": "9eba9e32-9a43-4e2d-a885-20064af32b0b",
-      "name": "получаем все строки с отметкоу не доставлено",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [
-        2680,
-        260
-      ],
-      "alwaysOutputData": true,
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      }
     },
     {
       "parameters": {
@@ -2225,23 +2223,9 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        3200,
+        3240,
         240
       ]
-    },
-    {
-      "parameters": {
-        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"179\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsForAnn\",\n      \"check_tableID\": \"18izVDklbLI4FfcFbMcRtB0YOup_-uyz3OdTiLFxgIzA\",\n      \"check_pageID\": \"1911695135\",\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/123252\"\n    }\n  }\n]\n);"
-      },
-      "id": "7cfba37c-5dd5-4e49-ae0e-5140be6db40e",
-      "name": "Code1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        2240,
-        720
-      ],
-      "disabled": true
     },
     {
       "parameters": {},
@@ -2312,6 +2296,116 @@
         3460,
         220
       ]
+    },
+    {
+      "parameters": {},
+      "id": "5ceccb5c-b841-42ea-9c5b-c7cf8b004258",
+      "name": "No Operation, do nothing3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        7260,
+        1360
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Таблица }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Страница }}",
+          "mode": "id"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "Не доставлено"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "9eba9e32-9a43-4e2d-a885-20064af32b0b",
+      "name": "получаем все строки с отметкоу не доставлено",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        2680,
+        260
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "amount": 10.11
+      },
+      "id": "230dfd7a-4c22-4fa8-a7b2-8d64e68964c9",
+      "name": "Wait1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2760,
+        1380
+      ],
+      "webhookId": "561cd03d-45df-4915-b28c-e7cd58f887f1"
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"179\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsForAnn\",\n      \"check_tableID\": \"1f1HtJcDxyzkSVtSOsOtxDdfO5LqvNySWEhRboWgSFT4\",\n      \"check_pageID\": \"1152404420\",\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/123252\"\n    }\n  }\n]\n);"
+      },
+      "id": "7cfba37c-5dd5-4e49-ae0e-5140be6db40e",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2240,
+        720
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "={{ $('main JSON').first().json.data.endPoints['Чат бот телеги'] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=processID",
+              "value": "={{ $('Статичные данные процесса').item.json.processID }}"
+            },
+            {
+              "name": "send",
+              "value": "=Процесс {{ $('Статичные данные процесса').item.json.processID }}. Проблема с таблицей  {{ $('Статичные данные процесса').item.json['Таблица'] }} {{ $('Статичные данные процесса').item.json['Страница'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f691969e-714b-4cc9-b732-d5a3f0f20c84",
+      "name": "Отправляем сообщение в телеграмм6",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        7160,
+        1220
+      ]
     }
   ],
   "pinData": {},
@@ -2337,6 +2431,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-06-24T07:43:58.000Z",
-  "versionId": "64ad71f8-fa19-4235-806e-c38a09f9e3ad"
+  "updatedAt": "2024-07-29T09:11:15.000Z",
+  "versionId": "cc850e11-c222-4f70-b07e-d57c0c3f6e58"
 }
