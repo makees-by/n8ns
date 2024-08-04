@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Заново получаем данные проверяемой страницы",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "When clicking \"Execute Workflow\"": {
       "main": [
         [
@@ -646,7 +635,7 @@
       "main": [
         [
           {
-            "node": "получаем все строки с отметкоу не доставлено",
+            "node": "получаем все строки с отметкоу не доставлено1",
             "type": "main",
             "index": 0
           }
@@ -878,6 +867,46 @@
           }
         ]
       ]
+    },
+    "получаем все строки с отметкоу не доставлено1": {
+      "main": [
+        [
+          {
+            "node": "проверяем есть ли трек2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "проверяем есть ли трек2": {
+      "main": [
+        [
+          {
+            "node": "получаем все строки с отметкоу не доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Заново получаем данные проверяемой страницы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-02-01T08:49:02.295Z",
@@ -887,21 +916,6 @@
   },
   "name": "TrackCollect_deeper",
   "nodes": [
-    {
-      "parameters": {
-        "path": "deep_TC",
-        "options": {}
-      },
-      "id": "061dd92c-e878-4f16-a514-488961bb2802",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [
-        1980,
-        260
-      ],
-      "webhookId": "cd61ae75-46bd-462b-913a-82e8225533cd"
-    },
     {
       "parameters": {},
       "id": "3930d9ed-7e2c-4ca6-9b55-5fe07706a9ea",
@@ -2313,12 +2327,12 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "={{ $json.Таблица }}",
+          "value": "={{ $('Статичные данные процесса').item.json['Таблица'] }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $json.Страница }}",
+          "value": "={{ $('Статичные данные процесса').item.json['Страница'] }}",
           "mode": "id"
         },
         "filtersUI": {
@@ -2368,7 +2382,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"179\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"316b8289a2b8\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ZsForAnn\",\n      \"check_tableID\": \"1f1HtJcDxyzkSVtSOsOtxDdfO5LqvNySWEhRboWgSFT4\",\n      \"check_pageID\": \"1152404420\",\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/123252\"\n    }\n  }\n]\n);"
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.6.7\",\n      \"content-length\": \"176\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"87d4e31c242f\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ForNat\",\n      \"check_tableID\": \"1VWDxpvvv9VuReicAkVduADKZOn9N8KTeB7ako_PRMNs\",\n      \"check_pageID\": \"668068338\",\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/421023\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook/deep_TC\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
       },
       "id": "7cfba37c-5dd5-4e49-ae0e-5140be6db40e",
       "name": "Code1",
@@ -2392,7 +2406,7 @@
             },
             {
               "name": "send",
-              "value": "=Процесс {{ $('Статичные данные процесса').item.json.processID }}. Проблема с таблицей  {{ $('Статичные данные процесса').item.json['Таблица'] }} {{ $('Статичные данные процесса').item.json['Страница'] }}"
+              "value": "=Процесс trackCollectDiper Проблема с таблицей  {{ $('Статичные данные процесса').item.json['Таблица'].slice(39) }} {{ $('Статичные данные процесса').item.json['Страница'] }}."
             }
           ]
         },
@@ -2406,6 +2420,86 @@
         7160,
         1220
       ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Таблица }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Страница }}",
+          "mode": "id"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "Не доставлено"
+            }
+          ]
+        },
+        "options": {
+          "returnAllMatches": "returnAllMatches"
+        }
+      },
+      "id": "05df4150-35f1-40ad-bd6a-3e92e8fd4a40",
+      "name": "получаем все строки с отметкоу не доставлено1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        2520,
+        660
+      ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.row_number }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "6416e947-7baa-4e4a-961f-b05195fced8f",
+      "name": "проверяем есть ли трек2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2520,
+        460
+      ],
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "path": "deep_TC",
+        "options": {}
+      },
+      "id": "061dd92c-e878-4f16-a514-488961bb2802",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        260
+      ],
+      "webhookId": "cd61ae75-46bd-462b-913a-82e8225533cd"
     }
   ],
   "pinData": {},
@@ -2431,6 +2525,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-07-29T09:11:15.000Z",
-  "versionId": "cc850e11-c222-4f70-b07e-d57c0c3f6e58"
+  "updatedAt": "2024-08-03T18:58:30.000Z",
+  "versionId": "c4ff8246-3dc4-4f2b-9b6c-a7d26e6aa0e9"
 }
