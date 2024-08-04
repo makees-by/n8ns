@@ -292,6 +292,28 @@
           }
         ]
       ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-12-28T08:10:27.128Z",
@@ -1064,6 +1086,31 @@
         }
       },
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.6.7\",\n      \"content-length\": \"158\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"87d4e31c242f\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ForNat\",\n      \"send\": \"Процесс trackCollectDiper Проблема с таблицей:1VWDxpvvv9VuReicAkVduADKZOn9N8KTeB7ako_PRMNs,668068338.\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook/Potap_TrackChack\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+      },
+      "id": "40d73ec9-5a5f-454d-911f-0488163d49f1",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        920
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "id": "edef388a-c5ab-4c92-8242-4c686cc39606",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        960
+      ]
     }
   ],
   "pinData": {},
@@ -1086,6 +1133,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-04-14T07:06:32.000Z",
-  "versionId": "9599603e-2ea6-4f42-ab18-9970b2de21b2"
+  "updatedAt": "2024-08-03T18:57:35.000Z",
+  "versionId": "9dc4fead-d37a-488e-99e3-48bf2e31a678"
 }
