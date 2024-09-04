@@ -205,11 +205,6 @@
         ]
       ]
     },
-    "ZsForAleks": {
-      "main": [
-        []
-      ]
-    },
     "ZsForEvg": {
       "main": [
         [
@@ -739,7 +734,8 @@
       "position": [
         -2280,
         1840
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -752,8 +748,7 @@
       "position": [
         -2380,
         2300
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -964,6 +959,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2024-06-25T08:10:30.000Z",
-  "versionId": "1376cb45-5af6-4052-a49e-d1ee2b207ddc"
+  "updatedAt": "2024-09-04T07:49:09.000Z",
+  "versionId": "269f043f-5330-4947-8b00-75976d052222"
 }
