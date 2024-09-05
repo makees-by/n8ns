@@ -204,17 +204,6 @@
         ]
       ]
     },
-    "zsForAleks 00.": {
-      "main": [
-        [
-          {
-            "node": "zsForAleks json для записи1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "ForNat json для записи1": {
       "main": [
         [
@@ -660,41 +649,6 @@
           ]
         }
       },
-      "id": "e390ebeb-f6b0-4315-906d-9424574e8f94",
-      "name": "zsForAleks 00.",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -160,
-        -80
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "opWrite",
-        "sourceType": "sourceTypeJson",
-        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAleks\",\n          \"start_tableID\": \"1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls\",\n          \"start_pageID\": 690413794,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
-        "filePath": "=root/n8n/ZsForAleks.json"
-      },
-      "id": "566ccdfa-6323-45ca-b438-99b2fc4307ca",
-      "name": "zsForAleks json для записи1",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        60,
-        -80
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtMinute": 2
-            }
-          ]
-        }
-      },
       "id": "96540e54-f38a-4825-a4f9-f660ed9a3245",
       "name": "ForNat 00.00",
       "type": "n8n-nodes-base.scheduleTrigger",
@@ -774,7 +728,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 5,
-  "updatedAt": "2024-08-14T07:52:09.000Z",
-  "versionId": "c64625ed-88f1-4626-ab9f-804bf58ff1ea"
+  "triggerCount": 4,
+  "updatedAt": "2024-09-05T09:24:21.000Z",
+  "versionId": "d811f0e7-2450-45a8-99ad-c250c880cc07"
 }
