@@ -1,0 +1,796 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Запись адресов страниц",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Запись адресов страниц2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ручки": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "курлы-урлы": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "Rename Keys",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rename Keys": {
+      "main": [
+        [
+          {
+            "node": "Запись main JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись main JSON": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись адресов страниц": {
+      "main": [
+        [
+          {
+            "node": "курлы-урлы",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ручки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForvika": {
+      "main": [
+        [
+          {
+            "node": "zsForvika json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsTest": {
+      "main": [
+        [
+          {
+            "node": "ZsTest json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsTest json для записи": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForEvg": {
+      "main": [
+        [
+          {
+            "node": "ZsForEvg json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat": {
+      "main": [
+        [
+          {
+            "node": "ForNat json для записи1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись адресов страниц2": {
+      "main": [
+        [
+          {
+            "node": "ForNat",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ZsForEvg",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "zsForvika",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "ZsTest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat json для записи1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForEvg json для записи": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForvika json для записи": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [],
+        [
+          {
+            "node": "конец",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "конец",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "конец",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "конец",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "конец",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-05T09:20:58.053Z",
+  "id": "lH5ovgZ23hsJDTGd",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "After_Update",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a275c5a0-87ee-4032-9a38-ac4d90e0c370",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Стартовая колбаса всего процесса",
+              "stringValue": "https://n8n.makees.online/webhook/modul_Start"
+            },
+            {
+              "name": "Сбор треков_(1из2х)",
+              "stringValue": "https://n8n.makees.online/webhook/modul_trackCollect"
+            },
+            {
+              "name": "Сбор треков_глубина2_(2й из 2х)",
+              "stringValue": "https://n8n.makees.online/webhook/deep_TC"
+            },
+            {
+              "name": "Проверка Белпочты",
+              "stringValue": "https://n8n.makees.online/webhook/bp_check"
+            },
+            {
+              "name": "Проверка Европочты",
+              "stringValue": "https://n8n.makees.online/webhook/ep_check"
+            },
+            {
+              "name": "Статистика (только на сервере online)",
+              "stringValue": "https://n8n.makees.online/webhook/Statistic"
+            },
+            {
+              "name": "Проверка промахов",
+              "stringValue": "https://n8n.makees.online/webhook/CPN"
+            },
+            {
+              "name": "Исправление промахов",
+              "stringValue": "https://n8n.makees.online/webhook/reCheck"
+            },
+            {
+              "name": "Чат бот телеги",
+              "stringValue": "https://n8n.makees.online/webhook/Potap_TrackChack"
+            },
+            {
+              "name": "Таймер",
+              "stringValue": "https://n8n.makees.online/webhook/timer"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cb4c2cc9-ac0a-4e21-8075-05895fda2f57",
+      "name": "Ручки",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -180,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Стартовая колбаса всего процесса",
+              "stringValue": "https://n8n.makees.online/workflow/QJuQGKgAzSJyxmPS"
+            },
+            {
+              "name": "Сбор треков_(1из2х)",
+              "stringValue": "https://n8n.makees.online/workflow/pwofnTe8IYGRQZrS"
+            },
+            {
+              "name": "Сбор треков_глубина2_(2й из 2х)",
+              "stringValue": "https://n8n.makees.online/workflow/AH0rdp23A5bNlc6a"
+            },
+            {
+              "name": "Проверка Белпочты",
+              "stringValue": "https://n8n.makees.online/workflow/z1ebLdFwBMuXHUut"
+            },
+            {
+              "name": "Проверка Европочты",
+              "stringValue": "https://n8n.makees.online/workflow/OJeMfeqoYo3vhJqU"
+            },
+            {
+              "name": "Статистика (только на сервере online)",
+              "stringValue": "https://n8n.makees.online/workflow/RWZ1VyvD7GhmW3Gc"
+            },
+            {
+              "name": "Проверка промахов",
+              "stringValue": "https://n8n.makees.ru/workflow/2cZCyuD9bFRKrXMC"
+            },
+            {
+              "name": "Исправление промахов",
+              "stringValue": "https://n8n.makees.online/workflow/9wJKOHskCm7q6kvo"
+            },
+            {
+              "name": "Чат бот телеги",
+              "stringValue": "https://n8n.makees.online/workflow/X47e4ESkdsBlGbNR"
+            },
+            {
+              "name": "Таймер",
+              "stringValue": "https://n8n.makees.online/workflow/NzDOgWMv6KgJnLSo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b37ddf52-5275-43cc-bfd4-cc37fd3cdf75",
+      "name": "курлы-урлы",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -180,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "14df46e4-3341-48aa-aeb2-3e82ead698b9",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "1a2a532f-6c43-4e57-9ae8-f4dcd1e3a58c",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        200,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "keys": {
+          "key": [
+            {
+              "currentKey": "data[0]",
+              "newKey": "endPoints"
+            },
+            {
+              "currentKey": "data[1]",
+              "newKey": "Urls"
+            }
+          ]
+        },
+        "additionalOptions": {}
+      },
+      "id": "20d4845a-9608-4781-8863-0ab983ab7307",
+      "name": "Rename Keys",
+      "type": "n8n-nodes-base.renameKeys",
+      "typeVersion": 1,
+      "position": [
+        400,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\"endPoints\" : \n{{ JSON.stringify($input.item.json.endPoints) }},\n \"Urls\":\n{{ JSON.stringify($input.item.json.Urls) }}\n}",
+        "filePath": "=root/n8n/main.json"
+      },
+      "id": "0b603bf7-4188-4f8f-960e-aeed01f9c76f",
+      "name": "Запись main JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        600,
+        440
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "58d68eb9-6775-4f6a-8498-1379ab23d451",
+      "name": "Запись адресов страниц",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"zsForvika\"\n    }\n  }\n]\n);"
+      },
+      "id": "74e52816-96ce-4bf7-ac71-de62d33b96ef",
+      "name": "zsForvika",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForvika\",\n          \"start_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n          \"start_pageID\": 672397081,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "50223dc1-75b7-4ec6-8e1a-5b5e3f5a3909",
+      "name": "zsForvika json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        120,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsTest\"\n    }\n  }\n]\n);"
+      },
+      "id": "b28cdc06-7770-4731-8965-21455a338030",
+      "name": "ZsTest",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsTest\",\n          \"start_tableID\": \"1E2_AUgkcpy0BrVZotmTyCH2Uy8ShDSkNZCpCddFwL-A\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "46c04f92-966c-40f8-884e-4805a419baab",
+      "name": "ZsTest json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        120,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ZsForEvg\"\n    }\n  }\n]\n);"
+      },
+      "id": "71271964-9fc4-4453-b384-f13e4deebf39",
+      "name": "ZsForEvg",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -360,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForEvg\",\n          \"start_tableID\": \"1SJ_0NENavMNW6DGrKdjrTqF_PpFVeDnovS-bBd2dmhA\",\n          \"start_pageID\": 1401389950,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "25608a9f-99ef-420c-8c59-e7ad1136661e",
+      "name": "ZsForEvg json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        120,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForNat\",\n          \"start_tableID\": \"1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.body.ProcessID }}.json"
+      },
+      "id": "b4c91e90-18d8-4a36-bc75-49b03657be85",
+      "name": "ForNat json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        120,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8ns.makees.site\",\n      \"user-agent\": \"axios/0.21.4\",\n      \"content-length\": \"22\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8ns.makees.site\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"e8109027b64a\",\n      \"x-real-ip\": \"172.18.0.1\",\n      \"accept-encoding\": \"gzip\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"ProcessID\": \"ForNat\"\n    }\n  }\n]\n);"
+      },
+      "id": "309c4b36-ea05-4fa4-b829-82546c3e79a6",
+      "name": "ForNat",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        740
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b3402146-8143-4a1e-8aa9-0154330d53fd",
+      "name": "Запись адресов страниц2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "9d3170f5-36cb-47d2-a7cf-0f85d805e55f",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f24005ad-35f0-4417-a291-2d5fa6ede7b5",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        880,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "9d3170f5-36cb-47d2-a7cf-0f85d805e55f",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ad92fd83-5bf4-45cf-9564-bdc4e345fbfc",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "9d3170f5-36cb-47d2-a7cf-0f85d805e55f",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "2af21e93-4375-4d29-b4cb-9dd0bf5b4498",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "9d3170f5-36cb-47d2-a7cf-0f85d805e55f",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8446f4c7-a934-4e1f-9762-f6f61ebe2991",
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "9d3170f5-36cb-47d2-a7cf-0f85d805e55f",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "fe6a6a89-fd24-4a63-958c-d3e682576f9e",
+      "name": "If4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        1420
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b7e8f503-8b26-4358-ab8c-d82568833edc",
+      "name": "конец",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1440
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-09-05T09:29:57.000Z",
+  "versionId": "de012934-c92f-4e53-bffe-98be55f196d5"
+}
