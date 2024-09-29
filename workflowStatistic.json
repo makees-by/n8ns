@@ -1,17 +1,6 @@
 {
   "active": true,
   "connections": {
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Структурируем http ответ3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "IF7": {
       "main": [
         [
@@ -153,29 +142,26 @@
           }
         ]
       ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Структурируем http ответ3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-12-23T09:21:02.406Z",
   "id": "RWZ1VyvD7GhmW3Gc",
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "Statistic",
   "nodes": [
-    {
-      "parameters": {
-        "httpMethod": "POST",
-        "path": "Statistic",
-        "options": {}
-      },
-      "id": "725323e3-787c-4442-a1c8-87863e20bd14",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1,
-      "position": [
-        -160,
-        1060
-      ],
-      "webhookId": "aa91f96e-fe30-4ad2-9d7b-217ccc0f2851"
-    },
     {
       "parameters": {
         "conditions": {
@@ -563,6 +549,22 @@
         520,
         860
       ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "Statistic-no",
+        "options": {}
+      },
+      "id": "725323e3-787c-4442-a1c8-87863e20bd14",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        1060
+      ],
+      "webhookId": "aa91f96e-fe30-4ad2-9d7b-217ccc0f2851"
     }
   ],
   "pinData": {},
@@ -595,6 +597,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-03-22T15:20:38.000Z",
-  "versionId": "278babca-dcda-4134-8341-13bdb4ffd3a6"
+  "updatedAt": "2024-09-29T09:33:41.000Z",
+  "versionId": "9656df60-3979-418f-af5a-404df95dd52c"
 }
