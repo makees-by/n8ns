@@ -1,0 +1,197 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Получить все записи из таблицы Users",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновление параметра в таблице Users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу Users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-04T12:27:38.434Z",
+  "id": "BN33z2RD9BacyBSt",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Создание пользователя",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1e3f610d-c254-40f7-a47d-e19797e264d5",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "ID",
+              "value": "ZsForIra",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "DateLastPay",
+              "value": "2024-10-04",
+              "type": "string"
+            },
+            {
+              "id": "51f33998-208f-47d0-92bb-19d9d73c9dd0",
+              "name": "DateNextPay",
+              "value": "2024-11-04",
+              "type": "string"
+            },
+            {
+              "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
+              "name": "Summa",
+              "value": 100,
+              "type": "number"
+            },
+            {
+              "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
+              "name": "Status",
+              "value": "ok",
+              "type": "string"
+            },
+            {
+              "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
+              "name": "WorkOn",
+              "value": "1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f5065adb-f3f7-4db4-b002-f2b83b96b931",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Users",
+          "mode": "list",
+          "cachedResultName": "Users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "ZsTest",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "ok"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "59c6fba6-b7fc-4cb6-9104-13a1eaac647b",
+      "name": "Обновление параметра в таблице Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        960,
+        520
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO Users (ID, DateLastPay, DateNextPay, Summa, Status, WorkOn)\nVALUE ('{{ $json.ID }}', '{{ $json.DateLastPay }}', '{{ $json.DateNextPay }}', {{ $json.Summa }}, '{{ $json.Status }}', {{ $json.WorkOn }}); ",
+        "options": {}
+      },
+      "id": "7633acd0-f75b-4ab2-afda-2d5a53b94a93",
+      "name": "Добавление записи в таблицу Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1220,
+        340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "496ee9aa-db3e-4a76-8817-5704f87c180e",
+      "name": "Получить все записи из таблицы Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1060,
+        140
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-10-04T12:47:41.000Z",
+  "versionId": "97a751b1-453b-4e3d-9424-562d86ebbc31"
+}
