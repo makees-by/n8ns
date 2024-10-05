@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Edit Fields",
+            "node": "Данные для добавления",
             "type": "main",
             "index": 0
           },
@@ -18,15 +18,78 @@
             "node": "Обновление параметра в таблице Users",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Данные для добавления1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновление параметра в таблице Tabls",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Получить все записи из таблицы Tabls",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
-    "Edit Fields": {
+    "Данные для добавления": {
       "main": [
         [
           {
             "node": "Добавление записи в таблицу Users",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные для добавления1": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу Users1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные для добавления2": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу Users2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Traks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Данные для добавления2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновление параметра в таблице Traks",
             "type": "main",
             "index": 0
           }
@@ -51,6 +114,106 @@
         620,
         340
       ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Users",
+          "mode": "list",
+          "cachedResultName": "Users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "ZsTest",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "ok"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "59c6fba6-b7fc-4cb6-9104-13a1eaac647b",
+      "name": "Обновление параметра в таблице Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        620,
+        180
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO Users (ID, DateLastPay, DateNextPay, Summa, Status, WorkOn)\nVALUE ('{{ $json.ID }}', '{{ $json.DateLastPay }}', '{{ $json.DateNextPay }}', {{ $json.Summa }}, '{{ $json.Status }}', {{ $json.WorkOn }}); ",
+        "options": {}
+      },
+      "id": "7633acd0-f75b-4ab2-afda-2d5a53b94a93",
+      "name": "Добавление записи в таблицу Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1000,
+        180
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "496ee9aa-db3e-4a76-8817-5704f87c180e",
+      "name": "Получить все записи из таблицы Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        380,
+        180
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO Tabls (ID, Link, IdTables, NeedCheck)\nVALUE ('{{ $json.ID }}', '{{ $json.Link }}', '{{ $json.IdTables }}', {{ $json.NeedCheck }}); ",
+        "options": {}
+      },
+      "id": "3710b77a-cebb-48d3-8d61-74d1e8422168",
+      "name": "Добавление записи в таблицу Users1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1040,
+        600
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     },
     {
       "parameters": {
@@ -97,12 +260,253 @@
         "options": {}
       },
       "id": "f5065adb-f3f7-4db4-b002-f2b83b96b931",
-      "name": "Edit Fields",
+      "name": "Данные для добавления",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        960,
-        340
+        820,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Tabls ",
+        "options": {}
+      },
+      "id": "9141ea12-666a-451b-83c1-457a119377ca",
+      "name": "Получить все записи из таблицы Tabls",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        380,
+        600
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "ZsForIra",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "ZsForIra001"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1351bb12-2b98-4f5d-b27b-29d6085730e7",
+      "name": "Обновление параметра в таблице Tabls",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        620,
+        600
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Работа с таблицей Users",
+        "height": 80,
+        "width": 350.204081632653
+      },
+      "id": "1b0b21d5-b2ed-4b39-8b01-d7b728a19a8b",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        40,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Работа с таблицей Tabls",
+        "height": 80,
+        "width": 350.204081632653
+      },
+      "id": "5f3b3225-9a50-4243-b5fb-92fd29156cd2",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "ID",
+              "value": "ZsForIra",
+              "type": "string"
+            },
+            {
+              "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
+              "name": "Link",
+              "value": "WWW.leningrad.spb.ru",
+              "type": "string"
+            },
+            {
+              "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
+              "name": "IdTables",
+              "value": "ZsForIra001",
+              "type": "string"
+            },
+            {
+              "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
+              "name": "NeedCheck",
+              "value": 0,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "841fa38d-f814-4ddf-b3f1-6b305d1dde8d",
+      "name": "Данные для добавления1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        840,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "Track",
+              "value": "PC305187844BY",
+              "type": "string"
+            },
+            {
+              "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
+              "name": "IdTables",
+              "value": "ZsForIra001",
+              "type": "string"
+            },
+            {
+              "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
+              "name": "DateAdd",
+              "value": "2024-10-04",
+              "type": "string"
+            },
+            {
+              "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
+              "name": "DateLastUpd",
+              "value": "2024-10-04",
+              "type": "string"
+            },
+            {
+              "id": "254da46e-9ba3-478a-8cce-f57701a04171",
+              "name": "History",
+              "value": "Это история о том как этот трек гулял по адресам и что там с ним делали",
+              "type": "string"
+            },
+            {
+              "id": "4b12692a-202d-4235-ae5a-7d2c8865500f",
+              "name": "PP",
+              "value": "BP",
+              "type": "string"
+            },
+            {
+              "id": "2631a270-2360-4005-bace-c640688a37f2",
+              "name": "Status",
+              "value": "Не доставлено",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2cbb11a5-b461-4781-9684-8954399655d8",
+      "name": "Данные для добавления2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1380,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO Traks (Track, IdTables, Status, DateAdd, DateLastUpd, History, PostProvider)\nVALUE ('{{ $json.Track }}', '{{ $json.IdTables }}', '{{ $json.Status }}', {{ $json.DateAdd }}, '{{ $json.DateLastUpd }}','{{ $json.History }}', '{{ $json.PP }}') ; ",
+        "options": {}
+      },
+      "id": "95d79b97-fbe0-4495-bf81-871e12071c9c",
+      "name": "Добавление записи в таблицу Users2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1620,
+        360
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Traks ",
+        "options": {}
+      },
+      "id": "4e011c54-ca87-450e-b55b-91049493613e",
+      "name": "Получить все записи из таблицы Traks",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1260,
+        120
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "0bd22a57-9cc8-45c8-9c22-d4d9e9016ff3",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        360
       ]
     },
     {
@@ -110,72 +514,30 @@
         "operation": "update",
         "table": {
           "__rl": true,
-          "value": "Users",
+          "value": "Traks",
           "mode": "list",
-          "cachedResultName": "Users"
+          "cachedResultName": "Traks"
         },
         "dataMode": "defineBelow",
-        "columnToMatchOn": "ID",
-        "valueToMatchOn": "ZsTest",
+        "columnToMatchOn": "Track",
+        "valueToMatchOn": "PC305187844BY",
         "valuesToSend": {
           "values": [
             {
               "column": "Status",
-              "value": "ok"
+              "value": "Доставлено"
             }
           ]
         },
         "options": {}
       },
-      "id": "59c6fba6-b7fc-4cb6-9104-13a1eaac647b",
-      "name": "Обновление параметра в таблице Users",
+      "id": "b65aae58-3c5f-4fe6-a019-9ab936c765b1",
+      "name": "Обновление параметра в таблице Traks",
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        960,
-        520
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "INSERT INTO Users (ID, DateLastPay, DateNextPay, Summa, Status, WorkOn)\nVALUE ('{{ $json.ID }}', '{{ $json.DateLastPay }}', '{{ $json.DateNextPay }}', {{ $json.Summa }}, '{{ $json.Status }}', {{ $json.WorkOn }}); ",
-        "options": {}
-      },
-      "id": "7633acd0-f75b-4ab2-afda-2d5a53b94a93",
-      "name": "Добавление записи в таблицу Users",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1220,
-        340
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT * FROM Users ",
-        "options": {}
-      },
-      "id": "496ee9aa-db3e-4a76-8817-5704f87c180e",
-      "name": "Получить все записи из таблицы Users",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1060,
-        140
+        1300,
+        580
       ],
       "credentials": {
         "mySql": {
@@ -192,6 +554,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-04T12:47:41.000Z",
-  "versionId": "97a751b1-453b-4e3d-9424-562d86ebbc31"
+  "updatedAt": "2024-10-04T14:36:16.000Z",
+  "versionId": "89ead162-0bb3-4806-ae1d-b6956a85a544"
 }
