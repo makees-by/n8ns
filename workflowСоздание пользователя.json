@@ -5,37 +5,22 @@
       "main": [
         [
           {
-            "node": "Данные для добавления",
+            "node": "Таблица traks",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Получить все записи из таблицы Users",
+            "node": "Таблица user",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Обновление параметра в таблице Users",
+            "node": "Таблица tabls",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Данные для добавления1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Обновление параметра в таблице Tabls",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Получить все записи из таблицы Tabls",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "No Operation, do nothing",
+            "node": "Произвольный запрос",
             "type": "main",
             "index": 0
           }
@@ -57,7 +42,7 @@
       "main": [
         [
           {
-            "node": "Добавление записи в таблицу Users1",
+            "node": "Добавление записи в таблицу tabls",
             "type": "main",
             "index": 0
           }
@@ -68,14 +53,14 @@
       "main": [
         [
           {
-            "node": "Добавление записи в таблицу Users2",
+            "node": "Добавление записи в таблицу traks",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "No Operation, do nothing": {
+    "Таблица traks": {
       "main": [
         [
           {
@@ -90,6 +75,144 @@
           },
           {
             "node": "Обновление параметра в таблице Traks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Параметр для удаления и его значение",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Параметры запроса для замены1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Таблица user": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновление параметра в таблице Users",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Получить все записи из таблицы Users",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Параметр и его значение для удаления",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Параметры запроса для замены",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Таблица tabls": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновление параметра в таблице Tabls",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Получить все записи из таблицы Tabls",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Параметр для удаления и его значение1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Параметры запроса для замены2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Параметр для удаления и его значение": {
+      "main": [
+        [
+          {
+            "node": "Удаление строки в таблице traks по заданному параметру",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Параметр и его значение для удаления": {
+      "main": [
+        [
+          {
+            "node": "Удаление строки в таблице Users по заданному параметру",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Параметр для удаления и его значение1": {
+      "main": [
+        [
+          {
+            "node": "Удаление строки в таблице tabls по заданному параметру",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Параметры запроса для замены": {
+      "main": [
+        [
+          {
+            "node": "Удаление строки в таблице Users по заданному параметру1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Параметры запроса для замены1": {
+      "main": [
+        [
+          {
+            "node": "Удаление строки в таблице Users по заданному параметру2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Параметры запроса для замены2": {
+      "main": [
+        [
+          {
+            "node": "Удаление строки в таблице Tabls по заданному параметру",
             "type": "main",
             "index": 0
           }
@@ -111,7 +234,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        620,
+        0,
         340
       ]
     },
@@ -142,8 +265,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        620,
-        180
+        420,
+        -180
       ],
       "credentials": {
         "mySql": {
@@ -163,8 +286,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1000,
-        180
+        860,
+        60
       ],
       "credentials": {
         "mySql": {
@@ -184,29 +307,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        380,
-        180
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "INSERT INTO Tabls (ID, Link, IdTables, NeedCheck)\nVALUE ('{{ $json.ID }}', '{{ $json.Link }}', '{{ $json.IdTables }}', {{ $json.NeedCheck }}); ",
-        "options": {}
-      },
-      "id": "3710b77a-cebb-48d3-8d61-74d1e8422168",
-      "name": "Добавление записи в таблицу Users1",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1040,
-        600
+        160,
+        -180
       ],
       "credentials": {
         "mySql": {
@@ -222,13 +324,13 @@
             {
               "id": "797f5835-c47a-480d-9409-182e9c6d320f",
               "name": "ID",
-              "value": "ZsForIra",
+              "value": "ZsForIra1",
               "type": "string"
             },
             {
               "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
               "name": "DateLastPay",
-              "value": "2024-10-04",
+              "value": "2024-10-08",
               "type": "string"
             },
             {
@@ -264,8 +366,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        820,
-        180
+        680,
+        60
       ]
     },
     {
@@ -279,8 +381,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        380,
-        600
+        220,
+        840
       ],
       "credentials": {
         "mySql": {
@@ -316,8 +418,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        620,
-        600
+        440,
+        780
       ],
       "credentials": {
         "mySql": {
@@ -337,23 +439,24 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        40,
-        80
+        320,
+        260
       ]
     },
     {
       "parameters": {
         "content": "## Работа с таблицей Tabls",
         "height": 80,
-        "width": 350.204081632653
+        "width": 345.9449043924758,
+        "color": 4
       },
       "id": "5f3b3225-9a50-4243-b5fb-92fd29156cd2",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -20,
-        500
+        320,
+        440
       ]
     },
     {
@@ -369,13 +472,13 @@
             {
               "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
               "name": "Link",
-              "value": "WWW.leningrad.spb.ru",
+              "value": "WWW.leningrad1.spb.ru",
               "type": "string"
             },
             {
               "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
               "name": "IdTables",
-              "value": "ZsForIra001",
+              "value": "ZsForIra003",
               "type": "string"
             },
             {
@@ -393,8 +496,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        840,
-        600
+        700,
+        540
       ]
     },
     {
@@ -404,13 +507,13 @@
             {
               "id": "797f5835-c47a-480d-9409-182e9c6d320f",
               "name": "Track",
-              "value": "PC305187844BY",
+              "value": "PC305185556BY",
               "type": "string"
             },
             {
               "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
               "name": "IdTables",
-              "value": "ZsForIra001",
+              "value": "ZsForIra002",
               "type": "string"
             },
             {
@@ -452,30 +555,9 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1380,
-        360
+        -540,
+        160
       ]
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "INSERT INTO Traks (Track, IdTables, Status, DateAdd, DateLastUpd, History, PostProvider)\nVALUE ('{{ $json.Track }}', '{{ $json.IdTables }}', '{{ $json.Status }}', {{ $json.DateAdd }}, '{{ $json.DateLastUpd }}','{{ $json.History }}', '{{ $json.PP }}') ; ",
-        "options": {}
-      },
-      "id": "95d79b97-fbe0-4495-bf81-871e12071c9c",
-      "name": "Добавление записи в таблицу Users2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1620,
-        360
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
     },
     {
       "parameters": {
@@ -488,8 +570,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1260,
-        120
+        -1080,
+        40
       ],
       "credentials": {
         "mySql": {
@@ -497,17 +579,6 @@
           "name": "MySQL account"
         }
       }
-    },
-    {
-      "parameters": {},
-      "id": "0bd22a57-9cc8-45c8-9c22-d4d9e9016ff3",
-      "name": "No Operation, do nothing",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1200,
-        360
-      ]
     },
     {
       "parameters": {
@@ -536,8 +607,546 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1300,
-        580
+        -860,
+        -220
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "0bd22a57-9cc8-45c8-9c22-d4d9e9016ff3",
+      "name": "Таблица traks",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -800,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO Traks (Track, IdTables, Status, DateAdd, DateLastUpd, History, PostProvider)\nVALUE ('{{ $json.Track }}', '{{ $json.IdTables }}', '{{ $json.Status }}', {{ $json.DateAdd }}, '{{ $json.DateLastUpd }}','{{ $json.History }}', '{{ $json.PP }}') ; ",
+        "options": {}
+      },
+      "id": "95d79b97-fbe0-4495-bf81-871e12071c9c",
+      "name": "Добавление записи в таблицу traks",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -340,
+        160
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "abcc8084-558c-4de0-a332-eb3f0b4dfc88",
+      "name": "Таблица user",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        440,
+        60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "42a67374-66fa-41df-8a64-07bd67e596b9",
+      "name": "Таблица tabls",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        440,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO Tabls (ID, Link, IdTables, NeedCheck)\nVALUE ('{{ $json.ID }}', '{{ $json.Link }}', '{{ $json.IdTables }}', {{ $json.NeedCheck }}); ",
+        "options": {}
+      },
+      "id": "3710b77a-cebb-48d3-8d61-74d1e8422168",
+      "name": "Добавление записи в таблицу tabls",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        920,
+        540
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0bc245e5-e613-4ac5-99d6-11348fca3f41",
+      "name": "Удаление строки в таблице traks по заданному параметру",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -340,
+        -40
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prm",
+              "value": "IdTables",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "data",
+              "value": "ZsForIra003",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5588b472-f06c-4b22-822e-c32e6073b17f",
+      "name": "Параметр для удаления и его значение",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -540,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "Users",
+          "mode": "list",
+          "cachedResultName": "Users"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "={{ $json.prm }}",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f9f5b9b6-3098-48d6-af26-9f5bb61748bc",
+      "name": "Удаление строки в таблице Users по заданному параметру",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        840,
+        -160
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prm",
+              "value": "DateLastPay",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "data",
+              "value": "2024-10-08",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ebf32648-4f10-45c2-ae5e-112da529dc47",
+      "name": "Параметр и его значение для удаления",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        680,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "ALTER TABLE Tabls DROP FOREIGN KEY IdTables;",
+        "options": {}
+      },
+      "id": "0f31d8df-423e-46c8-97c9-8559b5c26f3d",
+      "name": "Произвольный запрос",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -300,
+        700
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Работа с таблицей Traks",
+        "height": 80,
+        "width": 345.9449043924758,
+        "color": 5
+      },
+      "id": "d2ea0581-5449-4f3b-91bd-5fd52c866414",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prm",
+              "value": "IdTables",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "data",
+              "value": "ZsForIra003",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "368c954c-c446-43e7-aabd-aa582a7cc4c8",
+      "name": "Параметр для удаления и его значение1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        700,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "={{ $json.data }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a41f52d4-280c-4a68-83d9-cd6d7b323eea",
+      "name": "Удаление строки в таблице tabls по заданному параметру",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        920,
+        760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Users",
+          "mode": "list",
+          "cachedResultName": "Users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "={{ $json.prmFmatch }}",
+        "valueToMatchOn": "={{ $json.dataFmatch }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "={{ $json.prmFchange }}",
+              "value": "={{ $json.dataFchange }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "81a6d525-b9b5-443b-ab1a-c750518bbcf2",
+      "name": "Удаление строки в таблице Users по заданному параметру1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        840,
+        -340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prmFmatch",
+              "value": "ID",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "dataFmatch",
+              "value": "ZsForIra",
+              "type": "string"
+            },
+            {
+              "id": "1c7c9c85-0e29-4786-8a4b-9ee36ea6cf36",
+              "name": "prmFchange",
+              "value": "DateLastPay",
+              "type": "string"
+            },
+            {
+              "id": "d34c6735-4050-4629-adcd-3f6110411b3a",
+              "name": "dataFchange",
+              "value": "2024-12-08",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "654b547a-b51f-49e9-a7cc-003aff039a92",
+      "name": "Параметры запроса для замены",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        -340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "={{ $json.prmFmatch }}",
+        "valueToMatchOn": "={{ $json.dataFmatch }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "={{ $json.prmFchange }}",
+              "value": "={{ $json.dataFchange }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "50b521aa-77a9-4997-bdee-a54860ef620f",
+      "name": "Удаление строки в таблице Users по заданному параметру2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -340,
+        -260
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prmFmatch",
+              "value": "Track",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "dataFmatch",
+              "value": "PC305187476BY",
+              "type": "string"
+            },
+            {
+              "id": "1c7c9c85-0e29-4786-8a4b-9ee36ea6cf36",
+              "name": "prmFchange",
+              "value": "Status",
+              "type": "string"
+            },
+            {
+              "id": "d34c6735-4050-4629-adcd-3f6110411b3a",
+              "name": "dataFchange",
+              "value": "Доставлено",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b492f6f5-3e92-42fd-b64e-b24fe61c19d9",
+      "name": "Параметры запроса для замены1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -540,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prmFmatch",
+              "value": "IdTables",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "dataFmatch",
+              "value": "ZsForIra002",
+              "type": "string"
+            },
+            {
+              "id": "1c7c9c85-0e29-4786-8a4b-9ee36ea6cf36",
+              "name": "prmFchange",
+              "value": "NeedCheck",
+              "type": "string"
+            },
+            {
+              "id": "d34c6735-4050-4629-adcd-3f6110411b3a",
+              "name": "dataFchange",
+              "value": "1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8c0c7dfa-de18-40ac-a4c7-514afe6ec7e5",
+      "name": "Параметры запроса для замены2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        720,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "={{ $json.prmFmatch }}",
+        "valueToMatchOn": "={{ $json.dataFmatch }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "={{ $json.prmFchange }}",
+              "value": "={{ $json.dataFchange }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9203316e-5f25-40cf-bde7-db55393b86d6",
+      "name": "Удаление строки в таблице Tabls по заданному параметру",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        920,
+        980
       ],
       "credentials": {
         "mySql": {
@@ -554,6 +1163,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-04T14:36:16.000Z",
-  "versionId": "89ead162-0bb3-4806-ae1d-b6956a85a544"
+  "updatedAt": "2024-10-08T11:59:24.000Z",
+  "versionId": "45625f88-5724-4680-8fcd-e131ffb5d131"
 }
