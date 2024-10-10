@@ -123,6 +123,11 @@
             "node": "Проверка оплаты",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Сбор треков из гугл таблиц",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -336,6 +341,61 @@
           }
         ]
       ]
+    },
+    "Сбор треков из гугл таблиц": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Users2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Users2": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем статус подписки1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем статус подписки1": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем workOn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем workOn": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Tabls2": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем NeedCheck",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-04T12:27:38.434Z",
@@ -404,7 +464,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        860,
+        1080,
         60
       ],
       "credentials": {
@@ -484,7 +544,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        680,
+        900,
         60
       ]
     },
@@ -899,7 +959,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        840,
+        1060,
         -160
       ],
       "credentials": {
@@ -934,7 +994,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        680,
+        900,
         -160
       ]
     },
@@ -1076,7 +1136,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        660,
+        880,
         -340
       ]
     },
@@ -1332,7 +1392,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1380,
+        1600,
         -340
       ],
       "credentials": {
@@ -1349,7 +1409,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1200,
+        1420,
         -80
       ]
     },
@@ -1360,7 +1420,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2080,
+        2300,
         -140
       ]
     },
@@ -1391,7 +1451,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        840,
+        1060,
         -340
       ],
       "credentials": {
@@ -1430,7 +1490,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2260,
+        2480,
         -380
       ]
     },
@@ -1448,7 +1508,7 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        2040,
+        2260,
         -380
       ]
     },
@@ -1481,7 +1541,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1800,
+        2020,
         -360
       ]
     },
@@ -1512,7 +1572,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1560,
+        1780,
         -580
       ],
       "credentials": {
@@ -1552,7 +1612,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1580,
+        1800,
         -340
       ]
     },
@@ -1583,7 +1643,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1800,
+        2020,
         -540
       ],
       "credentials": {
@@ -1600,8 +1660,175 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2520,
+        2740,
         -380
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9ce8fce5-a838-414f-9968-ffcb7f5c7b75",
+      "name": "Сбор треков из гугл таблиц",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "626dd382-43f9-417d-9c1c-5a719514bc31",
+      "name": "Получить все записи из таблицы Users2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1640,
+        360
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.Status }}",
+              "rightValue": "ok",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "41d01a35-d70c-4c66-ac19-eec7343cd567",
+      "name": "ПРОверяем статус подписки1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1860,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.WorkOn }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5b422004-c30e-4a48-835e-f4ff1457ae15",
+      "name": "ПРОверяем workOn",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2080,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7b0a50a1-d962-4987-b112-0abefbe3659c",
+      "name": "Получить все записи из таблицы Tabls2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2360,
+        320
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.NeedCheck }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4a9c0f36-7246-4769-9f31-8196caedde23",
+      "name": "ПРОверяем NeedCheck",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2600,
+        280
       ]
     }
   ],
@@ -1612,6 +1839,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-08T15:21:05.000Z",
-  "versionId": "b2e64b19-6786-47d0-950d-11bb38587899"
+  "updatedAt": "2024-10-09T15:31:29.000Z",
+  "versionId": "53781935-06bf-4522-948b-fbba315f913e"
 }
