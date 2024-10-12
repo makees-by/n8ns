@@ -226,7 +226,7 @@
       "main": [
         [
           {
-            "node": "Замена строки в таблице Users по заданному параметру2",
+            "node": "Замена строки в таблице Traks по заданному параметру2",
             "type": "main",
             "index": 0
           }
@@ -983,17 +983,17 @@
       "main": [
         [
           {
-            "node": "Отправка данных на проверку на 1й сервер",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Проверяем наличие треков в БД1",
             "type": "main",
             "index": 1
           },
           {
             "node": "Количество проверяемых треков BP",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Объединяем все треки в один массив",
             "type": "main",
             "index": 0
           }
@@ -1397,6 +1397,39 @@
             "node": "Окончание дневной проверки отправка отчёта",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Отправка данных на проверку на 1й сервер",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "выделяем idTables с соответствующим link": {
+      "main": [
+        [
+          {
+            "node": "Добавляем link к записям",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -3092,43 +3125,6 @@
     },
     {
       "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Traks",
-          "mode": "list",
-          "cachedResultName": "Traks"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "={{ $json.prmFmatch }}",
-        "valueToMatchOn": "={{ $json.dataFmatch }}",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "={{ $json.prmFchange }}",
-              "value": "={{ $json.dataFchange }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "50b521aa-77a9-4997-bdee-a54860ef620f",
-      "name": "Замена строки в таблице Users по заданному параметру2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        -340,
-        -240
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "mergeByFields": {
           "values": [
             {
@@ -3872,7 +3868,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -500,
+        -440,
         -1040
       ],
       "credentials": {
@@ -3907,7 +3903,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -300,
+        0,
         -1040
       ],
       "credentials": {
@@ -3947,7 +3943,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -100,
+        340,
         -1040
       ]
     },
@@ -3958,8 +3954,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1080,
-        -1780
+        1920,
+        -1820
       ]
     },
     {
@@ -3988,7 +3984,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        420,
+        860,
         -1700
       ]
     },
@@ -4001,7 +3997,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        800,
+        1240,
         -1700
       ]
     },
@@ -4015,7 +4011,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        800,
+        1240,
         -1480
       ]
     },
@@ -4026,7 +4022,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1080,
+        1520,
         -1320
       ]
     },
@@ -4037,8 +4033,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1080,
-        -1580
+        1520,
+        -1520
       ]
     },
     {
@@ -4067,7 +4063,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        420,
+        860,
         -1480
       ]
     },
@@ -4091,7 +4087,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        420,
+        860,
         -1260
       ]
     },
@@ -4115,7 +4111,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        800,
+        1240,
         -1280
       ]
     },
@@ -4126,7 +4122,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -380,
+        60,
         -1280
       ]
     },
@@ -4137,7 +4133,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -40,
+        400,
         -1820
       ]
     },
@@ -4167,7 +4163,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -240,
+        200,
         -620
       ]
     },
@@ -4180,7 +4176,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -40,
+        400,
         -740
       ]
     },
@@ -4194,7 +4190,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -40,
+        400,
         -580
       ]
     },
@@ -4282,7 +4278,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -480,
+        -260,
         -620
       ]
     },
@@ -4293,7 +4289,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        440,
+        880,
         -800
       ]
     },
@@ -4304,7 +4300,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        440,
+        880,
         -580
       ]
     },
@@ -4326,7 +4322,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        220,
+        660,
         -740
       ]
     },
@@ -4341,8 +4337,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -1320,
-        -1880
+        -1200,
+        -1900
       ]
     },
     {
@@ -4531,7 +4527,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        220,
+        660,
         -920
       ],
       "executeOnce": true
@@ -4561,7 +4557,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        220,
+        660,
         -1100
       ],
       "executeOnce": true
@@ -4583,7 +4579,7 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
       "position": [
-        820,
+        1260,
         -1000
       ]
     },
@@ -4594,7 +4590,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -260,
+        180,
         -800
       ]
     },
@@ -4605,7 +4601,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        600,
+        1040,
         -1000
       ]
     },
@@ -4717,7 +4713,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -100,
+        340,
         -1560
       ]
     },
@@ -4728,7 +4724,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1080,
+        1520,
         -1000
       ]
     },
@@ -4853,6 +4849,119 @@
         -2240.7992990163098,
         620
       ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "b935b32f-edf5-47dc-85b2-22aa7555c820",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1420,
+        -1800
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook/check_trackBP",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($input.item.json.data) }}",
+        "options": {}
+      },
+      "id": "353373fd-81c2-433d-849f-eda7b1b4bab5",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        -1800
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7092ee14-6828-48f6-a4de-65db9ed0c7d6",
+              "name": "IdTables",
+              "value": "={{ $json.IdTables }}",
+              "type": "string"
+            },
+            {
+              "id": "b1355f6d-45f2-4e11-b8ce-f695101c2d4f",
+              "name": "Link",
+              "value": "={{ $json.Link }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b6214a31-05f9-4d7e-aa52-4d6092b66e26",
+      "name": "выделяем idTables с соответствующим link",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -520,
+        -1420
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "IdTables",
+        "options": {}
+      },
+      "id": "204dbbce-3874-4d41-8cf3-0e6bafbb4256",
+      "name": "Добавляем link к записям",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        -260,
+        -1420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "={{ $json.prmFmatch }}",
+        "valueToMatchOn": "={{ $json.dataFmatch }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "={{ $json.prmFchange }}",
+              "value": "={{ $json.dataFchange }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "50b521aa-77a9-4997-bdee-a54860ef620f",
+      "name": "Замена строки в таблице Traks по заданному параметру2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -340,
+        -240
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -4862,6 +4971,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-11T11:58:35.000Z",
-  "versionId": "a09ef0a4-588d-495e-adfe-7c12fa725f17"
+  "updatedAt": "2024-10-11T14:29:35.000Z",
+  "versionId": "b43fe511-a101-45f4-91bb-6ed22b1fa20c"
 }
