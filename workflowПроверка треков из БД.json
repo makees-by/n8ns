@@ -70,6 +70,11 @@
             "node": "Получаем данные по трекам с сайта Белпочты",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -85,7 +90,7 @@
         ],
         [
           {
-            "node": "Без отметки доставлено мэтч по индексу (по ID) бп",
+            "node": "Выставляем в БД табл Traks статус Доставлено1",
             "type": "main",
             "index": 0
           }
@@ -112,13 +117,7 @@
     },
     "Без отметки доставлено мэтч по индексу (по ID) бп": {
       "main": [
-        [
-          {
-            "node": "No Operation, do nothing3",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "No Operation, do nothing3": {
@@ -165,7 +164,7 @@
       "main": [
         [
           {
-            "node": "Wait3",
+            "node": "No Operation, do nothing",
             "type": "main",
             "index": 0
           }
@@ -176,7 +175,7 @@
       "main": [
         [
           {
-            "node": "Wait3",
+            "node": "No Operation, do nothing",
             "type": "main",
             "index": 0
           }
@@ -221,6 +220,50 @@
         [
           {
             "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставляем в БД табл Traks статус Доставлено1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные по трекам с сайта Белпочты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
             "type": "main",
             "index": 0
           }
@@ -333,8 +376,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1740,
-        120
+        1480,
+        -20
       ]
     },
     {
@@ -651,8 +694,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        2600,
-        920
+        2460,
+        1180
       ],
       "retryOnFail": true,
       "waitBetweenTries": 3000,
@@ -672,8 +715,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2900,
-        920
+        3020,
+        540
       ]
     },
     {
@@ -691,8 +734,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        3120,
-        920
+        2880,
+        880
       ]
     },
     {
@@ -701,7 +744,8 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict"
+            "typeValidation": "strict",
+            "version": 1
           },
           "conditions": [
             {
@@ -723,8 +767,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        3280,
-        920
+        3120,
+        880
       ]
     },
     {
@@ -734,7 +778,7 @@
             {
               "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
               "name": "timer",
-              "value": "={{42- $json.timeDifference.seconds }}",
+              "value": "={{42- $json.timeDifference.seconds + Math.random()*10  }}",
               "type": "number"
             }
           ]
@@ -746,8 +790,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3480,
-        840
+        3340,
+        800
       ]
     },
     {
@@ -769,8 +813,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3480,
-        980
+        3340,
+        1000
       ]
     },
     {
@@ -783,8 +827,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3660,
-        920
+        3780,
+        880
       ],
       "webhookId": "4ea94f44-9cef-4c88-a1d6-8e2289dbcf32"
     },
@@ -895,8 +939,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2940,
-        360
+        3080,
+        240
       ],
       "credentials": {
         "mySql": {
@@ -904,6 +948,109 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Track",
+        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "={{ $json.data[0].steps[0].event }}"
+            },
+            {
+              "column": "DateLastUpd",
+              "value": "={{ $now.format('yyyy-MM-dd') }}"
+            },
+            {
+              "column": "History",
+              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2261c629-6a37-4fb4-a5fc-7b11806d79d6",
+      "name": "Выставляем в БД табл Traks статус Доставлено1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2500,
+        800
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "06bdfc80-aba2-4424-a938-3264d1957b9d",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1720,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "130997e0-9937-4e87-ac6b-a30e673b0c8a",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1efa6a2f-c7c2-4cf0-bb5b-fcd3d8ad3c58",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1920,
+        140
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "02d8e653-90c8-45b9-9ba0-d57d5b32f92e",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3560,
+        880
+      ]
     }
   ],
   "pinData": {},
@@ -913,6 +1060,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-11T14:40:16.000Z",
-  "versionId": "f4d59ca8-f223-4b91-85a6-c00faa056d89"
+  "updatedAt": "2024-10-13T08:16:22.000Z",
+  "versionId": "8c974368-d1ff-4b1f-b091-e9f1786609a2"
 }
