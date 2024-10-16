@@ -1,44 +1,16 @@
 {
   "active": false,
   "connections": {
-    "When clicking ‘Test workflow’": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "Распаковываем массив с треками",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Распаковываем массив с треками": {
       "main": [
         [
           {
             "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Произведём логические расчёты для Servers в БД",
             "type": "main",
             "index": 0
           }
@@ -49,7 +21,7 @@
       "main": [
         [
           {
-            "node": "Replace Me",
+            "node": "Отправляем уведомление об окончании проверки",
             "type": "main",
             "index": 0
           }
@@ -113,11 +85,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Без отметки доставлено мэтч по индексу (по ID) бп": {
-      "main": [
-        []
       ]
     },
     "No Operation, do nothing3": {
@@ -269,6 +236,154 @@
           }
         ]
       ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Servers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Произведём логические расчёты для Servers в БД": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Закидываем колличество треков в таблицу Servers для сервера BP_1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Закидываем колличество треков в таблицу Servers для сервера BP_",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Закидываем колличество треков в таблицу Servers для сервера BP_1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Закидываем колличество треков в таблицу Servers для сервера BP_": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Servers": {
+      "main": [
+        [
+          {
+            "node": "Уменьшаем на 1 количество оставшихся треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Уменьшаем на 1 количество оставшихся треков": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Servers для BP_X": {
+      "main": [
+        [
+          {
+            "node": "Получаем треки в массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем треки в массив": {
+      "main": [
+        [
+          {
+            "node": "Распаковываем массив с треками",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные процесса": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Servers для BP_X",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Данные процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Данные процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-11T13:49:20.450Z",
@@ -279,50 +394,14 @@
   "name": "Проверка треков из БД",
   "nodes": [
     {
-      "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"97813\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": [\n      {\n        \"Track\": \"BP191170662BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191170676BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191173417BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191175568BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV324506449BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV324786412BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV324926945BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV324927061BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325016375BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325016659BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325017209BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325017795BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325017835BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325018371BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325018399BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325018725BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325019451BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325019726BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325020097BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325020295BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325020485BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325020755BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325020980BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325021384BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325021424BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325021441BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325022115BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325028643BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325052642BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325052713BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325054246BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325056057BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325056321BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325056370BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325056454BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325056658BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325057579BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325057667BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325057715BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325057874BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325057905BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325058319BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325063407BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325063588BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325063781BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325064362BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325064481BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325064861BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325064963BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325065080BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325071690BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325071920BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325071995BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325072491BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325075555BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325076428BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325077057BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325077074BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325082220BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325083741BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325085521BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325085668BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325086535BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325091703BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325092329BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325092607BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099049BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099185BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099260BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099579BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099605BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099715BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099755BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325099976BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325100095BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325110226BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325110708BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325110977BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325114090BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325114700BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325115550BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325115855BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325116728BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325118600BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325118879BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325119123BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325119185BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325119313BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325120081BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325120118BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325120170BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325120206BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325120268BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325120356BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325127955BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325128947BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325129868BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325155134BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325157529BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325157740BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325158802BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325158881BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325158904BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325158935BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325159618BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325159635BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325159723BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325159825BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325160559BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325161673BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325163864BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325165644BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325165675BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325165701BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325165763BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325166295BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325166392BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325166401BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325166790BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325168994BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325170905BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325170919BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171021BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171389BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171401BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171429BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171450BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171477BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325171605BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325174751BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325174782BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325175071BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325176633BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325176854BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325199149BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325202744BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325202775BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325202801BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325202829BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325202903BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325202934BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203020BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203055BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203325BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203501BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203532BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203617BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203648BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203679BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325203957BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325213000BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325213035BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216292BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216315BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216377BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216385BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216479BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216584BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216686BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216726BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325216788BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325225250BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325234101BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325238695BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325238845BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325238908BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325238956BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325239041BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325240416BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325240455BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325240756BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325246135BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325246881BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325247110BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325247365BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325247428BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325247856BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325248689BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325248998BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325249295BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:39\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325249667BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253556BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253573BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253587BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253661BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253729BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253746BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253750BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253803BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253817BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253865BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325253919BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325254137BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255000BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255044BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255075BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255115BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255132BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255146BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255150BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255177BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255217BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255225BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255279BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255353BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255375BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255384BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325255398BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262120BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262178BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262195BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262310BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262354BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262368BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262371BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262408BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262425BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262456BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262460BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262495BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262500BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262575BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262592BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325262615BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325263536BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325263669BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325263686BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325263726BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325276248BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325276265BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325276591BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325276662BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325276870BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325277190BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325277844BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325278924BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325279173BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325279522BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325279726BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325279828BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325280018BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325280344BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325281035BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325281217BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325281415BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325291483BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325291775BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BV325291815BY\",\n        \"IdTables\": \"ZsForIra001\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-10 17:42:40\",\n        \"DateLastUpd\": \"2024-10-10\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191178754BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191179012BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191179128BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"BP191189394BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC298978465BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC298987665BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC298996733BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299000494BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299001265BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299005430BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299005616BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299005766BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299006174BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299006228BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299006568BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299006625BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299007033BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299010647BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299012427BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299013127BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299013135BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299013277BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299013365BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299016446BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299016517BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299016551BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299016769BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299016809BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299016905BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299017132BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299017203BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299017248BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299017424BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299017605BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC299017645BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305156440BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305156467BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305156935BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305157105BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305157895BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305158065BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305158304BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305158397BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305158410BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305162975BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305163817BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305163984BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164070BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164171BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164273BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164327BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164361BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164525BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164596BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164619BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164684BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305164715BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305166654BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305166708BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305166739BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305166742BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305166985BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305167031BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305167601BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305167663BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305167751BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305167941BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305168173BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305168350BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305173686BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305173690BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305173765BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305173791BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305173862BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174094BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174355BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174390BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174474BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174488BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174718BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174749BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174783BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305174956BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175259BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175276BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175316BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175418BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175421BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175452BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305175829BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176104BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176121BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176245BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176360BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176400BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176444BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176489BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176563BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176594BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176648BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176665BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176807BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305176886BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305177025BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305183754BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305183768BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305183989BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305184349BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305184508BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305184542BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305184882BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305185083BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305185137BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305185208BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305185361BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305185534BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305185548BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305190503BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305190698BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305190755BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305190786BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305190809BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199241BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199480BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199547BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199555BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199618BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199649BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199697BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199706BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199745BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199873BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305199927BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305210830BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305210843BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305210857BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305210914BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305210931BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211027BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211129BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211146BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211265BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211375BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211424BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211438BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211441BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211469BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      },\n      {\n        \"Track\": \"PC305211472BY\",\n        \"IdTables\": \"ZsForIra002\",\n        \"Status\": \"Не доставлено\",\n        \"DateAdd\": \"2024-10-11 11:25:55\",\n        \"DateLastUpd\": \"2024-10-11\",\n        \"History\": \"Этот трек впервые попал в БД\",\n        \"PostProvider\": \"BP\",\n        \"lim\": 396,\n        \"\": \"\"\n      }\n    ],\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/check_trackBP\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
-      },
-      "id": "e7f2d91c-a496-4994-ae61-a5ea1c9cb841",
-      "name": "Code",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        880,
-        540
-      ]
-    },
-    {
       "parameters": {},
       "id": "bf36efa6-5d66-4b12-8f96-99a4ad8d61bd",
       "name": "When clicking ‘Test workflow’",
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        640,
-        540
-      ]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "e68fd29a-2217-4dde-b045-ab192fb6faa5",
-              "name": "body",
-              "value": "={{ $json.body }}",
-              "type": "array"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "60261606-2c0b-4945-9a78-5432dfbcbd64",
-      "name": "Edit Fields",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        980,
-        340
+        660,
+        580
       ]
     },
     {
@@ -335,7 +414,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        1180,
+        1200,
         340
       ],
       "alwaysOutputData": true
@@ -350,7 +429,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        640,
+        320,
         340
       ],
       "webhookId": "0be951ee-3f27-49dc-9632-4596eb88b470",
@@ -365,19 +444,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1400,
+        1620,
         340
-      ]
-    },
-    {
-      "parameters": {},
-      "id": "b06c0af0-84a3-4f72-baf9-56694ec7c11b",
-      "name": "Replace Me",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1480,
-        -20
       ]
     },
     {
@@ -409,7 +477,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1940,
+        2160,
         360
       ],
       "retryOnFail": true,
@@ -436,38 +504,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1680,
+        1900,
         360
-      ]
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "Трек номер",
-              "value": "={{ $json[\"data\"][0][\"number\"] }}"
-            },
-            {
-              "name": "Статус и дата обновления",
-              "value": "={{ $json[\"data\"][0][\"steps\"][0][\"event\"] }} / {{ $json[\"data\"][0][\"steps\"][0][\"place\"] }}  / {{ $json[\"data\"][0][\"steps\"][0][\"place_index\"] }} / {{ $json[\"data\"][0][\"steps\"][0][\"created_at\"] }}"
-            },
-            {
-              "name": "статус кор.",
-              "value": "={{ $json[\"data\"][0][\"steps\"][0][\"event\"] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "d0c2bbb8-10da-48bd-8860-ed086f4f2c6a",
-      "name": "Структурируем http ответ",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        2420,
-        60
       ]
     },
     {
@@ -487,7 +525,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2440,
+        2660,
         280
       ]
     },
@@ -508,205 +546,9 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2740,
+        2960,
         260
       ]
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.table }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.page }}",
-          "mode": "id"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }} БП",
-            "Индекс": "={{ $json.индекс }}",
-            "Актуальный статус": "={{ $('Структурируем http ответ').first().json['Трек номер'] }}: {{ $json['Статус и дата обновления'] }} "
-          },
-          "matchingColumns": [
-            "Индекс"
-          ],
-          "schema": [
-            {
-              "id": "число",
-              "displayName": "число",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио менеджера",
-              "displayName": "фио менеджера",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио покупателя",
-              "displayName": "фио покупателя",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "продажа",
-              "displayName": "продажа",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "таблица",
-              "displayName": "таблица",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "накрут",
-              "displayName": "накрут",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "трек",
-              "displayName": "трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "штраф",
-              "displayName": "штраф",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "наличие",
-              "displayName": "наличие",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "личный",
-              "displayName": "личный",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Рос руб",
-              "displayName": "Рос руб",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Отметка о доставке",
-              "displayName": "Отметка о доставке",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Индекс",
-              "displayName": "Индекс",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Дата последнего обновления",
-              "displayName": "Дата последнего обновления",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Актуальный статус",
-              "displayName": "Актуальный статус",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "adc7c5fa-2616-4b36-b12c-a00146601c69",
-      "name": "Без отметки доставлено мэтч по индексу (по ID) бп",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [
-        2460,
-        1180
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 3000,
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      },
-      "continueOnFail": true
     },
     {
       "parameters": {},
@@ -715,7 +557,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3020,
+        3240,
         540
       ]
     },
@@ -734,8 +576,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        2880,
-        880
+        3100,
+        860
       ]
     },
     {
@@ -767,8 +609,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        3120,
-        880
+        3340,
+        860
       ]
     },
     {
@@ -778,7 +620,7 @@
             {
               "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
               "name": "timer",
-              "value": "={{42- $json.timeDifference.seconds + Math.random()*10  }}",
+              "value": "={{42- $json.timeDifference.seconds }}",
               "type": "number"
             }
           ]
@@ -790,8 +632,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3340,
-        800
+        3560,
+        700
       ]
     },
     {
@@ -813,8 +655,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3340,
-        1000
+        3560,
+        880
       ]
     },
     {
@@ -827,10 +669,11 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3780,
-        880
+        3760,
+        1100
       ],
-      "webhookId": "4ea94f44-9cef-4c88-a1d6-8e2289dbcf32"
+      "webhookId": "4ea94f44-9cef-4c88-a1d6-8e2289dbcf32",
+      "disabled": true
     },
     {
       "parameters": {
@@ -863,7 +706,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2160,
+        2380,
         280
       ]
     },
@@ -902,7 +745,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2700,
+        2920,
         540
       ],
       "credentials": {
@@ -939,7 +782,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3080,
+        3300,
         240
       ],
       "credentials": {
@@ -984,7 +827,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2500,
+        2720,
         800
       ],
       "credentials": {
@@ -1003,7 +846,7 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1720,
+        1940,
         140
       ]
     },
@@ -1037,7 +880,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1920,
+        2140,
         140
       ]
     },
@@ -1048,8 +891,339 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3560,
+        3760,
         880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b06c0af0-84a3-4f72-baf9-56694ec7c11b",
+      "name": "Отправляем уведомление об окончании проверки",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "be76c49d-530f-489a-a210-f3d28caa1004",
+      "name": "Произведём логические расчёты для Servers в БД",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b78f8de6-4c96-4704-a9a2-d80d429f48f0",
+              "name": "items",
+              "value": "={{ $input.all().length }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9d90812b-6e55-475e-bfb8-bc1f4c26f9a4",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1200,
+        -100
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "All_traks",
+              "value": "={{ $json.items }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7db82eec-055a-4e9d-b6b0-fc7d018f9592",
+      "name": "Закидываем колличество треков в таблицу Servers для сервера BP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1460,
+        -340
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ae808ddb-2e36-49bd-a7de-e5826056fac8",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "584c8b9f-fc97-4fe7-86af-e35b545379be",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1480,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Traks_left",
+              "value": "={{ $json.items }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "af1d1af0-0763-4cea-b675-c32374027652",
+      "name": "Закидываем колличество треков в таблицу Servers для сервера BP_",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1200,
+        -320
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## меняем счётчик оставшихся треков",
+        "height": 80,
+        "width": 494.0052728237823
+      },
+      "id": "103176fb-3d47-49e2-afd4-7a323a2727a0",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Server_name",
+              "value": "={{ $('Данные процесса').item.json.Server }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d10fe99d-2531-4959-8774-c874a62f6a2d",
+      "name": "Получить все записи из таблицы Servers",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1720,
+        1020
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Traks_left",
+              "value": "={{ $json.Traks_left - 1}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fcbae19b-a373-45ab-a3f4-59c764b96d61",
+      "name": "Уменьшаем на 1 количество оставшихся треков",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2120,
+        1020
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Server_name",
+              "value": "={{ $json.Server }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fd95aa3b-af22-40f7-88c1-2faa98331882",
+      "name": "Получить все записи из таблицы Servers для BP_X",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        820,
+        340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e68fd29a-2217-4dde-b045-ab192fb6faa5",
+              "name": "body",
+              "value": "={{ $json.TrFch }}",
+              "type": "array"
+            },
+            {
+              "id": "a30fdad0-ff52-4362-be0a-c75f6e2d6294",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "60261606-2c0b-4945-9a78-5432dfbcbd64",
+      "name": "Получаем треки в массив",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a30fdad0-ff52-4362-be0a-c75f6e2d6294",
+              "name": "Server",
+              "value": "BP_1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1ca6f9b-f733-4fdb-a486-f0f11664d013",
+      "name": "Данные процесса",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        620,
+        340
       ]
     }
   ],
@@ -1060,6 +1234,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-13T08:16:22.000Z",
-  "versionId": "8c974368-d1ff-4b1f-b091-e9f1786609a2"
+  "updatedAt": "2024-10-16T12:44:48.000Z",
+  "versionId": "24fece47-7ab6-4b57-9363-9c88dae3d06d"
 }
