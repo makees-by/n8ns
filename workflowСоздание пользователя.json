@@ -99,7 +99,7 @@
             "index": 0
           },
           {
-            "node": "No Operation, do nothing3",
+            "node": "Выставление статусов трекам в гугл таблицу",
             "type": "main",
             "index": 0
           }
@@ -1179,7 +1179,7 @@
       "main": [
         [
           {
-            "node": "Выставляем максимальное количество треков в проверке",
+            "node": "Запрос к процессу проверки оплаты",
             "type": "main",
             "index": 0
           }
@@ -1201,7 +1201,7 @@
       "main": [
         [
           {
-            "node": "Запрос к процессу сбора треков из гугл таблиц",
+            "node": "Запрос к процессу выставления статусов в гугл таблицу",
             "type": "main",
             "index": 0
           }
@@ -1387,7 +1387,7 @@
       "main": [
         [
           {
-            "node": "Запрос к процессу выставления статусов в гугл таблицу",
+            "node": "Окончание дневной проверки отправка отчёта",
             "type": "main",
             "index": 0
           }
@@ -1409,7 +1409,7 @@
       "main": [
         [
           {
-            "node": "Окончание дневной проверки отправка отчёта",
+            "node": "Запрос к процессу сбора треков из гугл таблиц",
             "type": "main",
             "index": 0
           }
@@ -1557,17 +1557,6 @@
         ]
       ]
     },
-    "No Operation, do nothing3": {
-      "main": [
-        [
-          {
-            "node": "Получить все записи из таблицы Users4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "ПРОверяем статус подписки4": {
       "main": [
         [
@@ -1673,6 +1662,17 @@
         [
           {
             "node": "Сообщаем об окончании процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставление статусов трекам в гугл таблицу": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Users4",
             "type": "main",
             "index": 0
           }
@@ -4688,8 +4688,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -1640,
-        1140
+        -1600,
+        1300
       ]
     },
     {
@@ -4702,8 +4702,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -1420,
-        1140
+        -1380,
+        1300
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
@@ -4718,7 +4718,7 @@
       "typeVersion": 4.2,
       "position": [
         -1400,
-        1360
+        1520
       ]
     },
     {
@@ -4732,7 +4732,7 @@
       "typeVersion": 1.1,
       "position": [
         -1200,
-        1360
+        1520
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
@@ -4743,8 +4743,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -1640,
-        1360
+        -1600,
+        1520
       ]
     },
     {
@@ -4992,8 +4992,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1640,
-        1600
+        -1600,
+        1760
       ]
     },
     {
@@ -5010,8 +5010,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        -1180,
-        1600
+        -1400,
+        1760
       ]
     },
     {
@@ -5024,8 +5024,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -960,
-        1600
+        -1180,
+        1760
       ],
       "webhookId": "3671ae5f-457e-4f7b-a792-901245ff6d27"
     },
@@ -5036,8 +5036,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -740,
-        1600
+        -2060,
+        1860
       ]
     },
     {
@@ -5050,8 +5050,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -1160,
-        1820
+        -1740,
+        1120
       ]
     },
     {
@@ -5064,8 +5064,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -860,
-        1820
+        -1520,
+        1120
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
@@ -5091,7 +5091,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -2240.7992990163098,
+        -2600,
         620
       ]
     },
@@ -5626,17 +5626,6 @@
       }
     },
     {
-      "parameters": {},
-      "id": "f8a3bd88-612b-43ac-a742-b15dda8bc3f8",
-      "name": "No Operation, do nothing3",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        -4700,
-        -960
-      ]
-    },
-    {
       "parameters": {
         "operation": "executeQuery",
         "query": "SELECT * FROM Users ",
@@ -6139,6 +6128,17 @@
         -2960,
         -780
       ]
+    },
+    {
+      "parameters": {},
+      "id": "f8a3bd88-612b-43ac-a742-b15dda8bc3f8",
+      "name": "Выставление статусов трекам в гугл таблицу",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -4700,
+        -960
+      ]
     }
   ],
   "pinData": {},
@@ -6148,6 +6148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-16T15:20:36.000Z",
-  "versionId": "d70241d3-512e-4b44-90cb-a7d46ce36692"
+  "updatedAt": "2024-10-18T20:33:20.000Z",
+  "versionId": "0c39a2da-5653-41c1-84f6-6377286bdaae"
 }
