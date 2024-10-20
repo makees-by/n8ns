@@ -1,0 +1,453 @@
+{
+  "active": false,
+  "connections": {
+    "Программа - контролёр": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу проверки оплаты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск проверки оплаты": {
+      "main": [
+        [
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос к процессу проверки оплаты": {
+      "main": [
+        [
+          {
+            "node": "Получаем подтверждение об окончании проверки оплаты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем подтверждение об окончании проверки оплаты": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу выставления статусов в гугл таблицу",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос к процессу сбора треков из гугл таблиц": {
+      "main": [
+        [
+          {
+            "node": "Получаем подтверждение об окончании сбора треков из гугл таблиц",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем подтверждение об окончании сбора треков из гугл таблиц": {
+      "main": [
+        [
+          {
+            "node": "Ежедневная проверка треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос к процессу сбора треков из БД": {
+      "main": [
+        [
+          {
+            "node": "Получаем подтверждение об окончании сбора треков из БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем подтверждение об окончании сбора треков из БД": {
+      "main": [
+        [
+          {
+            "node": "Выставляем максимальное количество треков в проверке",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ежедневная проверка треков": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу сбора треков из БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставляем максимальное количество треков в проверке": {
+      "main": [
+        [
+          {
+            "node": "Получаем время окончания всех проверок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем время окончания всех проверок": {
+      "main": [
+        [
+          {
+            "node": "Ожидаем завершения всех проверок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ожидаем завершения всех проверок": {
+      "main": [
+        [
+          {
+            "node": "проверяем завершили ли проверку все сервера",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "проверяем завершили ли проверку все сервера": {
+      "main": [
+        [
+          {
+            "node": "Окончание дневной проверки отправка отчёта",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос к процессу выставления статусов в гугл таблицу": {
+      "main": [
+        [
+          {
+            "node": "Получаем подтверждение об окончании выставления статусов в гугл таблицы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем подтверждение об окончании выставления статусов в гугл таблицы": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу сбора треков из гугл таблиц",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-20T13:00:01.739Z",
+  "id": "bMvuHeBYvdHDiEIe",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Контролирующий процесс",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "eee787d6-2ce7-4d47-b2c1-e3a949570a0e",
+      "name": "Программа - контролёр",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 1
+            }
+          ]
+        }
+      },
+      "id": "0d8469d7-a7e4-4bbc-bb72-92ca31dfb728",
+      "name": "Запуск проверки оплаты",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1480,
+        460
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook/pay_check",
+        "options": {}
+      },
+      "id": "c0576e65-f18e-4f8a-88db-0e82dab7c2ab",
+      "name": "Запрос к процессу проверки оплаты",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1960,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "bcad7f53-2b41-4614-87b9-666de7d79f79",
+      "name": "Получаем подтверждение об окончании проверки оплаты",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2180,
+        500
+      ],
+      "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
+    },
+    {
+      "parameters": {
+        "url": "{{ $input.all().length /1200 }}",
+        "options": {}
+      },
+      "id": "bee8934d-1e4a-4098-bf40-ffffe41e0fa2",
+      "name": "Запрос к процессу сбора треков из гугл таблиц",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2900,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "cbbd9c51-0509-42a6-add6-8830c43bc703",
+      "name": "Получаем подтверждение об окончании сбора треков из гугл таблиц",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3120,
+        500
+      ],
+      "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
+    },
+    {
+      "parameters": {
+        "url": "{{ $input.all().length /1200 }}",
+        "options": {}
+      },
+      "id": "3ba50ae7-6504-4539-8123-fe531d13b404",
+      "name": "Запрос к процессу сбора треков из БД",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3580,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "05946688-239c-4024-8a90-f569f1b088b8",
+      "name": "Получаем подтверждение об окончании сбора треков из БД",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3880,
+        500
+      ],
+      "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
+    },
+    {
+      "parameters": {},
+      "id": "2ae0c8b5-47ca-4c8e-8824-f4ff9e0b053b",
+      "name": "Ежедневная проверка треков",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3360,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1b33bda4-ae4b-4e70-b555-176766505d90",
+              "name": "TraksInCheck",
+              "value": 15,
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5a1190a-3dd1-4b7d-8d7c-43ab603cb06b",
+      "name": "Выставляем максимальное количество треков в проверке",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4060,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $now }}",
+        "timeUnit": "minutes",
+        "duration": "={{ $json.TraksInCheck + 5 }}",
+        "outputFieldName": "=newDate",
+        "options": {}
+      },
+      "id": "a8b17c2f-4b26-4706-9f12-2ac7da550775",
+      "name": "Получаем время окончания всех проверок",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        4320,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "specificTime",
+        "dateTime": "={{ $json.newDate }}"
+      },
+      "id": "fc068e95-dfdb-44b0-8725-8854ad88cdd9",
+      "name": "Ожидаем завершения всех проверок",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4640,
+        500
+      ],
+      "webhookId": "3671ae5f-457e-4f7b-a792-901245ff6d27"
+    },
+    {
+      "parameters": {},
+      "id": "42367c75-3eae-4e09-ba16-72c3fcfd0155",
+      "name": "проверяем завершили ли проверку все сервера",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4620,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "url": "{{ $input.all().length /1200 }}",
+        "options": {}
+      },
+      "id": "892bf812-2dc1-45e5-8f9c-03d507c7b3ea",
+      "name": "Запрос к процессу выставления статусов в гугл таблицу",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2400,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "18e2ca32-fcab-4732-9b0f-a0285f6d0d8d",
+      "name": "Получаем подтверждение об окончании выставления статусов в гугл таблицы",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2640,
+        500
+      ],
+      "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
+    },
+    {
+      "parameters": {},
+      "id": "9ba85621-1421-4bc8-95ab-2d808ffd5bf6",
+      "name": "Окончание дневной проверки отправка отчёта",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4580,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Попробовать просто переход в процесс",
+        "height": 298.11700253254446,
+        "width": 352.82797389982477
+      },
+      "id": "65b240f4-ff57-4555-a2d1-a51b53cd3dd2",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Выставляет статусы за предыдущий день",
+        "height": 80,
+        "width": 302.2499166343863
+      },
+      "id": "7598100e-8b71-4927-ac3b-d2fbc7fd856c",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        720
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-10-20T13:10:02.000Z",
+  "versionId": "c59f6766-3f4c-4a30-9d28-935fafc0bdef"
+}
