@@ -34,17 +34,6 @@
         ]
       ]
     },
-    "Получаем подтверждение об окончании проверки оплаты": {
-      "main": [
-        [
-          {
-            "node": "Запрос к процессу выставления статусов в гугл таблицу",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Запрос к процессу сбора треков из гугл таблиц": {
       "main": [
         [
@@ -56,33 +45,11 @@
         ]
       ]
     },
-    "Получаем подтверждение об окончании сбора треков из гугл таблиц": {
-      "main": [
-        [
-          {
-            "node": "Ежедневная проверка треков",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Запрос к процессу сбора треков из БД": {
       "main": [
         [
           {
             "node": "Получаем подтверждение об окончании сбора треков из БД",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Получаем подтверждение об окончании сбора треков из БД": {
-      "main": [
-        [
-          {
-            "node": "Выставляем максимальное количество треков в проверке",
             "type": "main",
             "index": 0
           }
@@ -155,11 +122,55 @@
         ]
       ]
     },
-    "Получаем подтверждение об окончании выставления статусов в гугл таблицы": {
+    "When clicking ‘Test workflow’": {
       "main": [
         [
           {
-            "node": "Запрос к процессу сбора треков из гугл таблиц",
+            "node": "Ответ от сборщика треков из БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем на отсутствие ошибок": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Проверяем на отсутствие ошибок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Выставляем максимальное количество треков в проверке",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от сборщика треков из БД": {
+      "main": [
+        [
+          {
+            "node": "Проверяем на отсутствие ошибок",
             "type": "main",
             "index": 0
           }
@@ -200,8 +211,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        1480,
-        460
+        1560,
+        500
       ],
       "disabled": true
     },
@@ -229,14 +240,14 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2180,
+        2160,
         500
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
     {
       "parameters": {
-        "url": "{{ $input.all().length /1200 }}",
+        "url": "https://n8n.makees.online/webhook/Take_traks_from_google_sheets",
         "options": {}
       },
       "id": "bee8934d-1e4a-4098-bf40-ffffe41e0fa2",
@@ -244,8 +255,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2900,
-        500
+        2940,
+        340
       ]
     },
     {
@@ -258,14 +269,23 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3120,
-        500
+        2960,
+        540
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
     {
       "parameters": {
-        "url": "{{ $input.all().length /1200 }}",
+        "url": "https://n8n.makees.online/webhook/take_traks_from_bd",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url_become",
+              "value": "={{$execution.resumeUrl}}"
+            }
+          ]
+        },
         "options": {}
       },
       "id": "3ba50ae7-6504-4539-8123-fe531d13b404",
@@ -273,13 +293,14 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3580,
-        500
+        3300,
+        540
       ]
     },
     {
       "parameters": {
         "resume": "webhook",
+        "responseMode": "lastNode",
         "options": {}
       },
       "id": "05946688-239c-4024-8a90-f569f1b088b8",
@@ -287,8 +308,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3880,
-        500
+        3540,
+        540
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
@@ -299,8 +320,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3360,
-        500
+        3280,
+        340
       ]
     },
     {
@@ -310,7 +331,7 @@
             {
               "id": "1b33bda4-ae4b-4e70-b555-176766505d90",
               "name": "TraksInCheck",
-              "value": 15,
+              "value": "={{ $json.body.max_items }}",
               "type": "number"
             }
           ]
@@ -322,8 +343,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4060,
-        500
+        3220,
+        -100
       ]
     },
     {
@@ -340,8 +361,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        4320,
-        500
+        3420,
+        -100
       ]
     },
     {
@@ -354,8 +375,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4640,
-        500
+        3620,
+        -100
       ],
       "webhookId": "3671ae5f-457e-4f7b-a792-901245ff6d27"
     },
@@ -366,13 +387,13 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4620,
-        740
+        3840,
+        -100
       ]
     },
     {
       "parameters": {
-        "url": "{{ $input.all().length /1200 }}",
+        "url": "https://n8n.makees.online/webhook/from_bd_to_google_sheets",
         "options": {}
       },
       "id": "892bf812-2dc1-45e5-8f9c-03d507c7b3ea",
@@ -380,8 +401,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2400,
-        500
+        2480,
+        360
       ]
     },
     {
@@ -394,8 +415,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2640,
-        500
+        2500,
+        560
       ],
       "webhookId": "02cc4cad-b0b0-40ae-ac55-8420ead85756"
     },
@@ -406,8 +427,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4580,
-        980
+        3860,
+        140
       ]
     },
     {
@@ -429,16 +450,144 @@
       "parameters": {
         "content": "Выставляет статусы за предыдущий день",
         "height": 80,
-        "width": 302.2499166343863
+        "width": 364.49983326877265
       },
       "id": "7598100e-8b71-4927-ac3b-d2fbc7fd856c",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2320,
+        2380,
         720
       ]
+    },
+    {
+      "parameters": {
+        "content": "Собирает треки из гугл таблиц",
+        "height": 80
+      },
+      "id": "16917ee4-ab7f-4092-b0e3-c12541bfdb4b",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2920,
+        720
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2942c44d-df28-48dc-b0aa-379a89eb31a8",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        2340,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c6ce26e1-741a-4abc-b994-f1e19d2e472e",
+              "leftValue": "={{ $json.body.Error }}",
+              "rightValue": "no",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c2c547ae-e870-4ade-a19c-54ced6e40ec6",
+      "name": "Проверяем на отсутствие ошибок",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2640,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "path": "proceses_control",
+        "options": {}
+      },
+      "id": "0ffda83f-3238-411f-b7d6-baa685a8ed83",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        2380,
+        100
+      ],
+      "webhookId": "dc16df46-9bf7-4535-9961-1fb728c88c12"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.From }}",
+                    "rightValue": "take_traks_from_bd",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "От сборщика треков из БД"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ab5e6797-9e9a-4543-8633-42c56af29328",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2920,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"129\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"max_items\": \"396\",\n      \"Error\": \"no\",\n      \"Ditales\": \"Тут будут подробности или логи\",\n      \"From\": \"take_traks_from_bd\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "974c7a92-cf00-4574-9329-57f27a9cdaa0",
+      "name": "Ответ от сборщика треков из БД",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2580,
+        -160
+      ],
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -448,6 +597,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-20T13:10:02.000Z",
-  "versionId": "c59f6766-3f4c-4a30-9d28-935fafc0bdef"
+  "updatedAt": "2024-10-21T09:26:03.000Z",
+  "versionId": "3e749b88-75d7-484f-9a03-5889d0379a98"
 }
