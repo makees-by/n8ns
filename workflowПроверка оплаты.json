@@ -80,7 +80,7 @@
             "index": 0
           },
           {
-            "node": "Тут нода, которая собирает списки на оповещение о пополнении",
+            "node": "Собираем профили со статусом НЕактивен",
             "type": "main",
             "index": 0
           }
@@ -119,6 +119,50 @@
           }
         ]
       ]
+    },
+    "тут нода в которую отправляем тех пользователей , у которых всё ок": {
+      "main": [
+        [
+          {
+            "node": "Собираем request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Тут нода, которая собирает списки на оповещение о пополнении": {
+      "main": [
+        [
+          {
+            "node": "Собираем request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем профили со статусом НЕактивен": {
+      "main": [
+        [
+          {
+            "node": "Тут нода, которая собирает списки на оповещение о пополнении",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:05:09.344Z",
@@ -146,8 +190,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1980,
-        560
+        2120,
+        700
       ]
     },
     {
@@ -349,7 +393,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2440,
+        2400,
         300
       ]
     },
@@ -357,7 +401,7 @@
       "parameters": {
         "content": "#  Проверка оплаты",
         "height": 165.41775750134093,
-        "width": 488.77262309658033,
+        "width": 390.9707681515789,
         "color": 4
       },
       "id": "28d43fa0-8893-4772-a1a3-47c63374dcf3",
@@ -416,6 +460,99 @@
       ],
       "webhookId": "3ff91d1d-8c6f-4ac2-82c2-dca7ab00fffb",
       "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook-test/proceses_control",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=max_items",
+              "value": "={{ $json.max_Items }}"
+            },
+            {
+              "name": "Error",
+              "value": "={{ $json.Error }}"
+            },
+            {
+              "name": "Ditales",
+              "value": "={{ $json.Ditales }}"
+            },
+            {
+              "name": "From",
+              "value": "={{ $json.From }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "27d7a8a4-0de0-4644-af84-4ca588a37b92",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "67797e6a-dcf6-4b16-bc97-a01c11094613",
+              "name": "Error",
+              "value": "no",
+              "type": "string"
+            },
+            {
+              "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
+              "name": "Ditales",
+              "value": "Тут будут подробности или логи",
+              "type": "string"
+            },
+            {
+              "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
+              "name": "From",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c65cb8b0-5260-4283-a096-1923ebac836d",
+      "name": "Собираем request",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2600,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "932b18de-296b-4969-b799-b8f479d908c4",
+              "name": "Status_Nok",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8a3a0df7-fd1b-465d-94cc-36642ca66777",
+      "name": "Собираем профили со статусом НЕактивен",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1520,
+        700
+      ]
     }
   ],
   "pinData": {},
@@ -425,6 +562,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-20T13:10:07.000Z",
-  "versionId": "775284d2-76ce-4e95-b4a3-f1eef2848439"
+  "updatedAt": "2024-10-21T09:25:54.000Z",
+  "versionId": "7eb2cad1-be7e-46c2-b1d8-5a06fa7c4dab"
 }
