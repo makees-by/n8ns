@@ -1,0 +1,2665 @@
+{
+  "active": true,
+  "connections": {
+    "Сбор треков из БД таблицы traks": {
+      "main": [
+        [
+          {
+            "node": "WorkflowData",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Получить все записи из таблицы Users3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Users3": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем статус подписки2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем статус подписки2": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем статус подписки3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем статус подписки3": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Tabls3": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Tabls4": {
+      "main": [
+        [
+          {
+            "node": "Разделяем BP и EP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Разделяем BP и EP": {
+      "main": [
+        [
+          {
+            "node": "Подсчёт необходимого колличества серверов",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Подсчёт необходимого колличества серверов1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Делим на 2 сервера": {
+      "main": [
+        [
+          {
+            "node": "Первая часть",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Вторая часть",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Первая часть": {
+      "main": [
+        [
+          {
+            "node": "Проверяем наличие треков в БД1",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Количество проверяемых треков BP",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обнуляем сервер на который придут треки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Вторая часть": {
+      "main": [
+        [
+          {
+            "node": "Отправка данных на проверку на 2й сервер",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Проверяем наличие треков в БД2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Делим на 3 сервера": {
+      "main": [
+        [
+          {
+            "node": "Первая часть",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Вторая часть",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Проверяем наличие треков в БД1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем наличие треков в БД1": {
+      "main": [
+        [
+          {
+            "node": "Проверяем наличие треков в БД2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем наличие треков в БД2": {
+      "main": [
+        [
+          {
+            "node": "Отправка данных на проверку на 3й сервер",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка на один сервер": {
+      "main": [
+        [
+          {
+            "node": "Делим на 2 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Делим на 2 сервера1": {
+      "main": [
+        [
+          {
+            "node": "Первая часть1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Вторая часть1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Первая часть1": {
+      "main": [
+        [
+          {
+            "node": "отправляем на один сервер",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Вторая часть1": {
+      "main": [
+        [
+          {
+            "node": "Отправка на проверка ЕР на 2й сервер",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подсчёт необходимого колличества серверов1": {
+      "main": [
+        [
+          {
+            "node": "Одного сервера хватить",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 2 сервера1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "сообщить о проблеме",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправляем на один сервер": {
+      "main": [
+        [
+          {
+            "node": "Отправка на проверка ЕР на 1й сервер",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Количество проверяемых треков EP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Количество проверяемых треков EP": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Количество проверяемых треков BP": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize": {
+      "main": [
+        [
+          {
+            "node": "Собираем request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подсчёт необходимого колличества серверов": {
+      "main": [
+        [
+          {
+            "node": "отправка на один сервер",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 2 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 3 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "сообщаем о проблеме",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "Обновление параметра в таблице Servers для BP_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обнуляем сервер на который придут треки": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в Status_Work для сервера BP_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If7": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в TrFch для сервера BP_1": {
+      "main": [
+        [
+          {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в Status_Work для сервера BP_1": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в TrFch для сервера BP_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив1": {
+      "main": [
+        [
+          {
+            "node": "Обновление параметра в таблице Servers для BP_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправка данных на проверку на 2й сервер": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в Status_Work для сервера BP_2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Объединяем все треки в один массив1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в Status_Work для сервера BP_2": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в TrFch для сервера BP_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в TrFch для сервера BP_2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив2": {
+      "main": [
+        [
+          {
+            "node": "Обновление параметра в таблице Servers для BP_3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправка данных на проверку на 3й сервер": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в Status_Work для сервера BP_3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Объединяем все треки в один массив2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в Status_Work для сервера BP_3": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в TrFch для сервера BP_3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в TrFch для сервера BP_3": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив3": {
+      "main": [
+        [
+          {
+            "node": "Обновление параметра в таблице Servers для EP_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправка на проверка ЕР на 1й сервер": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в Status_Work для сервера EP_1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Объединяем все треки в один массив3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в Status_Work для сервера EP_1": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в TrFch для сервера EP_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в TrFch для сервера EP_1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив4": {
+      "main": [
+        [
+          {
+            "node": "Обновление параметра в таблице Servers для EP_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправка на проверка ЕР на 2й сервер": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в Status_Work для сервера EP_2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Объединяем все треки в один массив4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в Status_Work для сервера EP_2": {
+      "main": [
+        [
+          {
+            "node": "Ложим 0 в TrFch для сервера EP_2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 0 в TrFch для сервера EP_2": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Summarize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновление параметра в таблице Servers для BP_1": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновление параметра в таблице Servers для BP_2": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновление параметра в таблице Servers для BP_3": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновление параметра в таблице Servers для EP_1": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновление параметра в таблице Servers для EP_2": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Summarize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Одного сервера хватить": {
+      "main": [
+        [
+          {
+            "node": "отправляем на один сервер",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WorkflowData": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Users3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Сбор треков из БД таблицы traks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Сбор треков из БД таблицы traks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-20T13:23:29.556Z",
+  "id": "5OMCiCkLN9V8Gpmw",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Сбор треков из БД",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a5b87758-2829-42d3-80dc-aa529ce72e9a",
+      "name": "Сбор треков из БД таблицы traks",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        960,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "c629cab2-4443-46cf-9158-e1078b8a6cd7",
+      "name": "Получить все записи из таблицы Users3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1420,
+        340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.Status }}",
+              "rightValue": "ok",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9d05586e-085f-4344-a422-09e184c49733",
+      "name": "ПРОверяем статус подписки2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1620,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.WorkOn }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "bd3a8c9e-4911-4694-a463-366339b3e70c",
+      "name": "ПРОверяем статус подписки3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1620,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2589ba13-0807-4db0-83c9-584a0c5e59db",
+      "name": "Получить все записи из таблицы Tabls3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1980,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "={{ $json.IdTables }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ffcad86c-6372-49fc-a3f7-383b4f6f7850",
+      "name": "Получить все записи из таблицы Tabls4",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2420,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "29bb2489-c999-4a5a-b8de-be3fd13f3696",
+              "leftValue": "={{ $json.PostProvider }}",
+              "rightValue": "BP",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cad05b76-60b2-40d1-bf6e-87fcdce8c35a",
+      "name": "Разделяем BP и EP",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2760,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5d6a5f25-4b4a-4162-a9e4-79e12cfc608f",
+              "name": "lim",
+              "value": "={{ $input.all().length / 2 +1}}",
+              "type": "number"
+            },
+            {
+              "id": "bf68eb27-f2ce-4424-af83-eb501fbe6e6f",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "78c3486e-e380-46e6-b66a-602dcf758248",
+      "name": "Делим на 2 сервера",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3280,
+        -380
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $json.lim }}"
+      },
+      "id": "7e9fc1cf-0680-433e-9e07-e02979298e76",
+      "name": "Первая часть",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        3720,
+        -380
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $json.lim }}",
+        "keep": "lastItems"
+      },
+      "id": "3b8b6702-4666-4b1a-9329-526391a25c09",
+      "name": "Вторая часть",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        3720,
+        -160
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5b8ba4f8-059c-422d-8311-049b351531d8",
+      "name": "Отправка данных на проверку на 3й сервер",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3940,
+        220
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e8c92304-736d-4b02-b4ca-3345adf97962",
+      "name": "Отправка данных на проверку на 2й сервер",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3940,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5d6a5f25-4b4a-4162-a9e4-79e12cfc608f",
+              "name": "lim",
+              "value": "={{ $input.all().length / 3 +1}}",
+              "type": "number"
+            },
+            {
+              "id": "bf68eb27-f2ce-4424-af83-eb501fbe6e6f",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "7319abf4-ac8c-4390-a951-6e71d162296e",
+      "name": "Делим на 3 сервера",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3280,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "Track",
+              "field2": "Track"
+            }
+          ]
+        },
+        "fuzzyCompare": true,
+        "options": {
+          "multipleMatches": "all"
+        }
+      },
+      "id": "d4eca796-b866-4fa0-acac-660b27882b04",
+      "name": "Проверяем наличие треков в БД1",
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2.3,
+      "position": [
+        3260,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "Track",
+              "field2": "Track"
+            }
+          ]
+        },
+        "fuzzyCompare": true,
+        "options": {
+          "multipleMatches": "all"
+        }
+      },
+      "id": "5d159c22-0a80-4c6f-b634-b4f09c5ee339",
+      "name": "Проверяем наличие треков в БД2",
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2.3,
+      "position": [
+        3640,
+        140
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "db6e54cc-42f5-44a7-859d-3e7d3172d52f",
+      "name": "сообщаем о проблеме",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        40
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8af9d4f9-7146-419d-8d05-c73551d0332a",
+      "name": "отправка на один сервер",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5d6a5f25-4b4a-4162-a9e4-79e12cfc608f",
+              "name": "lim",
+              "value": "={{ $input.all().length / 2 +1}}",
+              "type": "number"
+            },
+            {
+              "id": "bf68eb27-f2ce-4424-af83-eb501fbe6e6f",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "id": "0afa0d7c-e705-4926-878d-ef6a7225fe5a",
+      "name": "Делим на 2 сервера1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2540,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $json.lim }}"
+      },
+      "id": "acf578d5-78c0-47d9-829b-500c4f6d3cf5",
+      "name": "Первая часть1",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $json.lim }}",
+        "keep": "lastItems"
+      },
+      "id": "95f0d24e-f578-4bcb-8af6-ab1f4cee9568",
+      "name": "Вторая часть1",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1 сервер"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea77c958-d5f8-48bb-91b5-147d9b8ef117",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d92b9161-db5c-4cfb-bb78-ee9385b1314e",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "нужно больше серверов"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "21c454a6-b600-4a45-8ad0-c0ee09f31c95",
+      "name": "Подсчёт необходимого колличества серверов1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2160,
+        700
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "95e7bde0-f8d9-4910-9fc2-5994fb6af5ae",
+      "name": "Отправка на проверка ЕР на 1й сервер",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3520,
+        640
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5398d642-89ba-4a7f-8ec4-92e48566ed68",
+      "name": "сообщить о проблеме",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2140,
+        1080
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "165aee25-0042-4662-86f7-f18a2821b353",
+      "name": "отправляем на один сервер",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3080,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Сбор треков из БД и \n# разбиение на сервера",
+        "height": 161.10361848991994,
+        "width": 433.1002392815779
+      },
+      "id": "55d2d3ef-609b-4134-97e6-b6d69ebec026",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        580,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c9c593a3-398b-45f1-8dfe-bd448579ff3c",
+              "name": "PP",
+              "value": "EP",
+              "type": "string"
+            },
+            {
+              "id": "df0a38c3-0eb7-46c9-b190-6d839a90a50a",
+              "name": "Items",
+              "value": "={{ $input.all().length }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f953003a-8bf0-4975-92d6-dc25976667da",
+      "name": "Количество проверяемых треков EP",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3080,
+        400
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c9c593a3-398b-45f1-8dfe-bd448579ff3c",
+              "name": "PP",
+              "value": "BP",
+              "type": "string"
+            },
+            {
+              "id": "df0a38c3-0eb7-46c9-b190-6d839a90a50a",
+              "name": "Items",
+              "value": "={{ $input.all().length }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6bcf7ad4-e2a5-4ddb-ad7f-a956e570155c",
+      "name": "Количество проверяемых треков BP",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3080,
+        220
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "max",
+              "field": "Items"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a3a92015-0826-4198-abeb-dacfce7cf810",
+      "name": "Summarize",
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1,
+      "position": [
+        5380,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1 сервер"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea77c958-d5f8-48bb-91b5-147d9b8ef117",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6a2a60ea-3057-42d4-95a3-56483b16439f",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "3 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d92b9161-db5c-4cfb-bb78-ee9385b1314e",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "нужно больше серверов"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5dfc994a-19fe-40fe-8cc3-6c9b75640267",
+      "name": "Подсчёт необходимого колличества серверов",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2760,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "b843207e-d3a4-4013-9582-b97ee29e7ce5",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        4380,
+        -500
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook-test/proceses_control",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=max_items",
+              "value": "={{ $json.max_Items }}"
+            },
+            {
+              "name": "Error",
+              "value": "={{ $json.Error }}"
+            },
+            {
+              "name": "Ditales",
+              "value": "={{ $json.Ditales }}"
+            },
+            {
+              "name": "From",
+              "value": "={{ $json.From }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "03b04cfc-70ca-4c03-9a98-9843927b5f8d",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        5700,
+        1120
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "5fe55737-c308-493d-b133-ab66d51ec696",
+      "name": "Обнуляем сервер на который придут треки",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3580,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e2db7bd2-b66b-4345-afba-e1d96846a5bd",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0584e6e6-bd79-44af-88e6-7be4c8ca0398",
+      "name": "If7",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4080,
+        -820
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b608c17f-7542-4177-a3c4-3026e43617b3",
+      "name": "Ложим 0 в TrFch для сервера BP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3800,
+        -820
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "800ace89-48a9-4dd2-a8b8-9d33c3232b6f",
+      "name": "Ложим 0 в Status_Work для сервера BP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3840,
+        -620
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "c9b43138-4757-433e-a92f-811a0791b39d",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        700,
+        560
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4a5cf55b-abea-4dca-b5c5-f4322f2334c3",
+      "name": "Отправка на проверка ЕР на 2й сервер",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3520,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "8b6daa3a-d03c-4c64-863b-10e439ad39e7",
+      "name": "Объединяем все треки в один массив1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        4580,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e2db7bd2-b66b-4345-afba-e1d96846a5bd",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e282890a-4fa5-40ea-b5bf-fb440d54b726",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4580,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9756a53b-5548-4ef1-88cd-d15c3a1a3598",
+      "name": "Ложим 0 в Status_Work для сервера BP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4160,
+        -300
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e2956f22-bc4e-42f4-afbe-d115db3ae520",
+      "name": "Ложим 0 в TrFch для сервера BP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4380,
+        -300
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "2dcb6264-9870-452a-8d74-9ce4362dd98b",
+      "name": "Объединяем все треки в один массив2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        4760,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e2db7bd2-b66b-4345-afba-e1d96846a5bd",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "88c85d08-819a-4357-bf5f-70db50fa0392",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4600,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_3",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "45781eac-6d26-477c-83c7-4bff67ad38b6",
+      "name": "Ложим 0 в Status_Work для сервера BP_3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4160,
+        100
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_3",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1c3fd818-319a-454b-b198-01bd742e59b4",
+      "name": "Ложим 0 в TrFch для сервера BP_3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4400,
+        100
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "29c8bb9c-baa0-4e79-a1ae-5429e60a828d",
+      "name": "Объединяем все треки в один массив3",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        4480,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e2db7bd2-b66b-4345-afba-e1d96846a5bd",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c0e25245-fd08-4feb-96a7-08fb012c4e41",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4240,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0ddcac28-5bfc-47b3-a8b8-c609a265da26",
+      "name": "Ложим 0 в Status_Work для сервера EP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3840,
+        500
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5600b33d-dc8c-4eb3-a2e1-9791fde373fb",
+      "name": "Ложим 0 в TrFch для сервера EP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4060,
+        500
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "={{ JSON.stringify($input.item.json.data) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "64beb995-a5e2-4564-a6f3-e501d71f61d5",
+      "name": "Обновление параметра в таблице Servers для BP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4680,
+        -500
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "={{ JSON.stringify($input.item.json.data) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "247c1c25-30fe-4bf3-af96-fc2121b75b78",
+      "name": "Обновление параметра в таблице Servers для BP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4820,
+        -120
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_3",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "={{ JSON.stringify($input.item.json.data) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4c355bad-6fab-4cd2-9eee-777b7013f453",
+      "name": "Обновление параметра в таблице Servers для BP_3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4980,
+        220
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "={{ JSON.stringify($input.item.json.data) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ccd9f72d-cbf8-426d-bff2-1c60bcc760b2",
+      "name": "Обновление параметра в таблице Servers для EP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4720,
+        640
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "78772425-9598-4314-a27f-c0db8877d128",
+      "name": "Объединяем все треки в один массив4",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        4480,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e2db7bd2-b66b-4345-afba-e1d96846a5bd",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7213ce2a-2eca-42b5-b1a9-b122da0cd245",
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4240,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f892079-8dd7-4ea3-8f5b-89a6cae54165",
+      "name": "Ложим 0 в Status_Work для сервера EP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3840,
+        760
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c1be48da-bd06-4004-bb92-14f81643c8b4",
+      "name": "Ложим 0 в TrFch для сервера EP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4060,
+        760
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "TrFch",
+              "value": "={{ JSON.stringify($input.item.json.data) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8578510e-9d48-419f-a7c4-1a9893dfc2f8",
+      "name": "Обновление параметра в таблице Servers для EP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4720,
+        880
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "1e21910c-6e98-47f4-95d2-5c6caf6242ee",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        3480,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e2db7bd2-b66b-4345-afba-e1d96846a5bd",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a054b3a7-3b78-48e2-93af-9661550c854a",
+      "name": "If4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5300,
+        120
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "82afbeb3-d670-4efa-9bbc-3f298b06bf40",
+      "name": "Одного сервера хватить",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2600,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "04404804-1673-4ee1-930f-70a3ae741b4f",
+              "name": "url_become",
+              "value": "={{ $json.body.url_become }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6573efda-31e7-4262-b813-07fdc4e64535",
+      "name": "WorkflowData",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1040,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "289316e3-5276-45b6-91d5-726a165895d5",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3edce53d-6ce0-4ca2-a775-9ce8b47f491f",
+      "name": "If5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1420,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"65\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/429011\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/take_traks_from_bd\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "7e3868ec-2a48-4022-8a60-279e86a0e5c2",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        560
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d5f8231c-1ca0-40c7-922b-020c0d1dcbb7",
+              "name": "max_Items",
+              "value": "={{ $json.max_Items }}",
+              "type": "string"
+            },
+            {
+              "id": "67797e6a-dcf6-4b16-bc97-a01c11094613",
+              "name": "Error",
+              "value": "no",
+              "type": "string"
+            },
+            {
+              "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
+              "name": "Ditales",
+              "value": "Тут будут подробности или логи",
+              "type": "string"
+            },
+            {
+              "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
+              "name": "From",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "53cc6f65-784a-459d-a2c3-a9afb589f756",
+      "name": "Собираем request",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5200,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "path": "take_traks_from_bd",
+        "options": {}
+      },
+      "id": "952b2dbd-97ec-41ee-92ea-0fe5f286edd3",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        680,
+        340
+      ],
+      "webhookId": "7a83d8a6-7274-45bb-a9c6-93003bf3d9df"
+    },
+    {
+      "parameters": {
+        "content": "Сделать проверку на отсутствие на сервере треков ЕР или БП на проверку",
+        "height": 80,
+        "color": 3
+      },
+      "id": "1cc7b3be-aa7e-49c8-b57d-8cc45408d5ae",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        20
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-10-21T09:19:50.000Z",
+  "versionId": "29d06c43-b8d4-4797-983f-db03a628f12e"
+}
