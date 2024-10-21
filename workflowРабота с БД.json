@@ -5773,8 +5773,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -3440,
-        -1400
+        -2340,
+        -1500
       ],
       "credentials": {
         "mySql": {
@@ -5873,8 +5873,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        -3000,
-        -1520
+        -2360,
+        -1200
       ]
     },
     {
@@ -6148,6 +6148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-20T12:59:38.000Z",
-  "versionId": "0b734d0b-7773-421b-b432-d5911577c247"
+  "updatedAt": "2024-10-20T14:45:14.000Z",
+  "versionId": "1f715aba-82b6-46a5-bc51-013e96a81f89"
 }
