@@ -100,17 +100,6 @@
         ]
       ]
     },
-    "ZsForAnn 04.00": {
-      "main": [
-        [
-          {
-            "node": "ZsForAnn json для записи",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "ForVika 20.00": {
       "main": [
         [
@@ -449,27 +438,6 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 4,
-              "triggerAtMinute": 7
-            }
-          ]
-        }
-      },
-      "id": "5b54780c-e45b-4423-bd00-c486fea8de7a",
-      "name": "ZsForAnn 04.00",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        400,
-        -320
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
               "triggerAtHour": 20,
               "triggerAtMinute": 3
             }
@@ -729,6 +697,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2024-09-05T09:24:21.000Z",
-  "versionId": "d811f0e7-2450-45a8-99ad-c250c880cc07"
+  "updatedAt": "2024-10-22T06:59:56.000Z",
+  "versionId": "ae23cca3-31bb-48e0-ad6b-2ff1e45d7d74"
 }
