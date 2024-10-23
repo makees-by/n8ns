@@ -38,7 +38,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Users",
+            "node": "Получить все записи из таблицы Users1",
             "type": "main",
             "index": 0
           }
@@ -50,17 +50,6 @@
         [
           {
             "node": "Данные для добавления",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "n8n Form Trigger1": {
-      "main": [
-        [
-          {
-            "node": "Параметры запроса для замены",
             "type": "main",
             "index": 0
           }
@@ -93,7 +82,51 @@
       "main": [
         [
           {
-            "node": "HTML",
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "HTML1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Форма замена значения параметра по значению параметра": {
+      "main": [
+        [
+          {
+            "node": "Параметры запроса для замены",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Форма удаления записи по параметру и его значению в таблице user": {
+      "main": [
+        [
+          {
+            "node": "Параметр и его значение для удаления",
             "type": "main",
             "index": 0
           }
@@ -102,7 +135,13 @@
     },
     "Webhook": {
       "main": [
-        []
+        [
+          {
+            "node": "Получить все записи из таблицы Users1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -124,7 +163,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        740,
+        780,
         300
       ],
       "credentials": {
@@ -183,7 +222,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        560,
+        540,
         300
       ]
     },
@@ -212,8 +251,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1200,
-        460
+        780,
+        680
       ],
       "credentials": {
         "mySql": {
@@ -229,13 +268,13 @@
             {
               "id": "797f5835-c47a-480d-9409-182e9c6d320f",
               "name": "prm",
-              "value": "DateLastPay",
+              "value": "={{ $json['Введите параметр, по которому нужно произвести поиски удаления'] }}",
               "type": "string"
             },
             {
               "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
               "name": "data",
-              "value": "2024-10-08",
+              "value": "={{ $json['Введите значение параметра для поиска и удаления'] }}",
               "type": "string"
             }
           ]
@@ -247,8 +286,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1040,
-        460
+        540,
+        680
       ]
     },
     {
@@ -288,8 +327,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        560,
-        620
+        540,
+        500
       ]
     },
     {
@@ -319,8 +358,40 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        760,
-        620
+        780,
+        500
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "2cef2cb1-a8aa-4fb6-849c-a6aa64264002",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        40,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "6914ff19-b08e-4072-aa52-df43cf61de66",
+      "name": "Получить все записи из таблицы Users",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        60,
+        420
       ],
       "credentials": {
         "mySql": {
@@ -331,8 +402,211 @@
     },
     {
       "parameters": {
+        "path": "user_add_new",
+        "formTitle": "Добавление нового пользователя",
+        "formDescription": "Для уточнения параметров можно перейти по ссылке https://n8n.makees.online/webhook/all_user_fromDB",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Введи ID",
+              "placeholder": "ZsTest",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введи дату последней оплаты",
+              "fieldType": "date",
+              "formatDate": "e.g. yyyy/mm/dd",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введите дату следующей оплаты",
+              "fieldType": "date",
+              "formatDate": "e.g. yyyy/mm/dd",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введи сумму ежемесячного платежа",
+              "fieldType": "number",
+              "placeholder": "100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введи статус подписки",
+              "placeholder": "ok/Nok",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введи рабочий статус",
+              "fieldType": "number",
+              "placeholder": "0 or 1",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "respondWithOptions": {
+            "values": {
+              "respondWith": "redirect",
+              "redirectUrl": "https://n8n.makees.online/webhook/all_user_fromDB"
+            }
+          }
+        }
+      },
+      "id": "5a195292-69d6-463f-8316-e55e37307040",
+      "name": "Форма для создания нового пользователя в БД user",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.1,
+      "position": [
+        320,
+        300
+      ],
+      "webhookId": "a3775185-996a-4ab8-88bf-c5cddbda5ea9"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "52ff1cc7-9c57-4a28-a8a2-dad8b6ef80a0",
+      "name": "Получить все записи из таблицы Users1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        860
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "28dccebe-6bb7-4ae6-b487-3bbedb2db8c7",
+              "name": "ID",
+              "value": "={{ $json.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "4a48e8df-276d-49dd-90af-e0776a6667f9",
+              "name": "DateLastPay",
+              "value": "={{ $json.DateLastPay }}",
+              "type": "string"
+            },
+            {
+              "id": "b52949c0-1090-427d-bb67-e10787990613",
+              "name": "DateNextPay",
+              "value": "={{ $json.DateNextPay }}",
+              "type": "string"
+            },
+            {
+              "id": "6d9bbeae-5624-4617-92d2-1c3619a1252d",
+              "name": "Summa",
+              "value": "={{ $json.Summa }}",
+              "type": "number"
+            },
+            {
+              "id": "4a3f89eb-9430-483f-b557-7445fb081539",
+              "name": "Status",
+              "value": "={{ $json.Status }}",
+              "type": "string"
+            },
+            {
+              "id": "e5c5198e-6d01-48fd-9429-b2b7423d0430",
+              "name": "WorkOn",
+              "value": "={{ $json.WorkOn }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0b7b703c-4bb3-43bd-a89e-bf4782ef0d3c",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "d1052a28-2d6a-4cd6-ae5c-98300706daee",
+      "name": "Объединяем все треки в один массив2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        600,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "517629b7-4e94-4669-bbaf-5e77c551d014",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1160,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "id": "e4b5989b-2c92-418f-a547-4e169e46c463",
+      "name": "HTML1",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        980,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00fd7f5e-933b-43fa-b8ae-9ba448cfd74d",
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Список из JSON</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: #f0f0f0;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 5px;\n        }\n        .key {\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n    <h1>Все пользователи из таблицы User</h1>\n    <div id=\"output\"></div>\n\n    <script>\n        const jsonData = [\n            {\n                \"data\": {{ JSON.stringify($json.data) }}\n            }\n        ];\n\n        // Извлекаем массив данных\n        const dataList = jsonData[0].data;\n\n        // Создаем список элементов\n        const list = document.createElement('ul');\n\n        dataList.forEach(item => {\n            const listItem = document.createElement('li');\n            listItem.innerHTML = `\n                <span class=\"key\">ID:</span> ${item.ID}<br>\n                <span class=\"key\">Last Payment Date:</span> ${item.DateLastPay}<br>\n                <span class=\"key\">Next Payment Date:</span> ${item.DateNextPay}<br>\n                <span class=\"key\">Sum:</span> ${item.Summa}<br>\n                <span class=\"key\">Status:</span> ${item.Status}<br>\n                <span class=\"key\">Work On:</span> ${item.WorkOn}\n            `;\n            list.appendChild(listItem);\n        });\n\n        // Добавляем список на страницу\n        document.getElementById('output').appendChild(list);\n    </script>\n</body>\n</html>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "109cb102-41fb-4e8e-a02f-90907c185da7",
+      "name": "Edit Fields3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        860
+      ]
+    },
+    {
+      "parameters": {
         "path": "user_change",
         "formTitle": "Изменение данных о записи по параметру для таблицы User",
+        "formDescription": "Для уточнения параметров можно перейти по ссылке https://n8n.makees.online/webhook/all_user_fromDB",
         "formFields": {
           "values": [
             {
@@ -402,242 +676,102 @@
           ]
         },
         "options": {
-          "appendAttribution": false
+          "appendAttribution": false,
+          "respondWithOptions": {
+            "values": {
+              "respondWith": "redirect",
+              "redirectUrl": "https://n8n.makees.online/webhook/all_user_fromDB"
+            }
+          }
         }
       },
       "id": "289239cc-0b69-482d-8829-be103a95e6cf",
-      "name": "n8n Form Trigger1",
+      "name": "Форма замена значения параметра по значению параметра",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.1,
       "position": [
-        340,
-        620
+        320,
+        500
       ],
       "webhookId": "5fcc9781-8f05-4da1-8dcc-915490a161f4"
     },
     {
-      "parameters": {},
-      "id": "2cef2cb1-a8aa-4fb6-849c-a6aa64264002",
-      "name": "When clicking ‘Test workflow’",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        340,
-        80
-      ]
-    },
-    {
       "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT * FROM Users ",
-        "options": {}
-      },
-      "id": "6914ff19-b08e-4072-aa52-df43cf61de66",
-      "name": "Получить все записи из таблицы Users",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        600,
-        80
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "path": "user_add_new",
-        "formTitle": "Добавление нового пользователя",
+        "path": "user_delete",
+        "formTitle": "Удаление записи в таблице user по параметру и его значению",
+        "formDescription": "Для уточнения параметров можно перейти по ссылке https://n8n.makees.online/webhook/all_user_fromDB",
         "formFields": {
           "values": [
             {
-              "fieldLabel": "Введи ID",
-              "placeholder": "ZsTest",
+              "fieldLabel": "Введите параметр, по которому нужно произвести поиски удаления",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "ID"
+                  },
+                  {
+                    "option": "DateLastPay"
+                  },
+                  {
+                    "option": "DateNextPay"
+                  },
+                  {
+                    "option": "Summa"
+                  },
+                  {
+                    "option": "Status"
+                  },
+                  {
+                    "option": "WorkOn"
+                  }
+                ]
+              },
               "requiredField": true
             },
             {
-              "fieldLabel": "Введи дату последней оплаты",
-              "fieldType": "date",
-              "formatDate": "e.g. yyyy/mm/dd",
-              "requiredField": true
-            },
-            {
-              "fieldLabel": "Введите дату следующей оплаты",
-              "fieldType": "date",
-              "formatDate": "e.g. yyyy/mm/dd",
-              "requiredField": true
-            },
-            {
-              "fieldLabel": "Введи сумму ежемесячного платежа",
-              "fieldType": "number",
-              "placeholder": "100",
-              "requiredField": true
-            },
-            {
-              "fieldLabel": "Введи статус проверки",
-              "placeholder": "ok/Nok",
-              "requiredField": true
-            },
-            {
-              "fieldLabel": "Введи рабочий статус",
-              "fieldType": "number",
-              "placeholder": "0 or 1",
+              "fieldLabel": "Введите значение параметра для поиска и удаления",
+              "placeholder": "ZsTTest",
               "requiredField": true
             }
           ]
         },
-        "options": {}
+        "options": {
+          "respondWithOptions": {
+            "values": {
+              "respondWith": "redirect",
+              "redirectUrl": "https://n8n.makees.online/webhook/all_user_fromDB"
+            }
+          }
+        }
       },
-      "id": "5a195292-69d6-463f-8316-e55e37307040",
-      "name": "Форма для создания нового пользователя в БД user",
+      "id": "ebca40e4-3d82-4be7-8792-d402cfdb2ce8",
+      "name": "Форма удаления записи по параметру и его значению в таблице user",
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.1,
       "position": [
-        340,
-        300
+        320,
+        680
       ],
-      "webhookId": "a3775185-996a-4ab8-88bf-c5cddbda5ea9"
+      "webhookId": "7b74e706-84c6-4c45-82cc-9266b865cafd"
     },
     {
       "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT * FROM Users ",
-        "options": {}
+        "content": "## Формы для работы с таблицей user\nСоздание - https://n8n.makees.online/form/user_add_new\nИзменение - https://n8n.makees.online/form/user_change\nУдаление - https://n8n.makees.online/form/user_delete\nПолучение всех записей - https://n8n.makees.online/webhook/all_user_fromDB",
+        "width": 550.7417369223512
       },
-      "id": "52ff1cc7-9c57-4a28-a8a2-dad8b6ef80a0",
-      "name": "Получить все записи из таблицы Users1",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        -160,
-        580
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "queryPath": "process.trigers.Triger3",
-        "filePath": "=root/n8n/sborTraks.json"
-      },
-      "id": "2138fe30-e1d6-4f43-970d-6d020163a354",
-      "name": "достаём тригер 3",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "id": "b939f56b-fb73-472a-b997-fe77ee6521dc",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        520,
-        1000
-      ],
-      "executeOnce": true
-    },
-    {
-      "parameters": {
-        "operation": "opWrite",
-        "queryPath": "process.trigers",
-        "sourceType": "sourceTypeJson",
-        "sourceData": "{  \"Triger1\":  1, \"Triger2\":  1, \"Triger3\":  1, \"Triger4\":  1 } ",
-        "filePath": "=root/n8n/sborTraks.json"
-      },
-      "id": "69233c5f-bfbd-4a10-b241-5277b536240f",
-      "name": "JsonDatabase",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        460,
-        860
+        -340,
+        240
       ]
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "28dccebe-6bb7-4ae6-b487-3bbedb2db8c7",
-              "name": "ID",
-              "value": "={{ $json.ID }}",
-              "type": "string"
-            },
-            {
-              "id": "4a48e8df-276d-49dd-90af-e0776a6667f9",
-              "name": "DateLastPay",
-              "value": "={{ $json.DateLastPay }}",
-              "type": "string"
-            },
-            {
-              "id": "b52949c0-1090-427d-bb67-e10787990613",
-              "name": "DateNextPay",
-              "value": "={{ $json.DateNextPay }}",
-              "type": "string"
-            },
-            {
-              "id": "6d9bbeae-5624-4617-92d2-1c3619a1252d",
-              "name": "Summa",
-              "value": "={{ $json.Summa }}",
-              "type": "number"
-            },
-            {
-              "id": "4a3f89eb-9430-483f-b557-7445fb081539",
-              "name": "Status",
-              "value": "={{ $json.Status }}",
-              "type": "string"
-            },
-            {
-              "id": "e5c5198e-6d01-48fd-9429-b2b7423d0430",
-              "name": "WorkOn",
-              "value": "={{ $json.WorkOn }}",
-              "type": "number"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "0b7b703c-4bb3-43bd-a89e-bf4782ef0d3c",
-      "name": "Edit Fields",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        20,
-        580
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "concatenateItems",
-        "aggregate": "aggregateAllItemData",
-        "options": {}
-      },
-      "id": "d1052a28-2d6a-4cd6-ae5c-98300706daee",
-      "name": "Объединяем все треки в один массив2",
-      "type": "n8n-nodes-base.itemLists",
-      "typeVersion": 3,
-      "position": [
-        -320,
-        860
-      ]
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "id": "517629b7-4e94-4669-bbaf-5e77c551d014",
-      "name": "Respond to Webhook",
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.1,
-      "position": [
-        -80,
-        860
-      ]
-    },
-    {
-      "parameters": {
-        "path": "=ca216d35-2139-4723-9178-7b8c97b9675c",
+        "path": "=all_user_fromDB",
         "responseMode": "responseNode",
         "options": {}
       },
@@ -646,23 +780,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -340,
-        580
+        0,
+        860
       ],
       "webhookId": "ca216d35-2139-4723-9178-7b8c97b9675c"
-    },
-    {
-      "parameters": {
-        "html": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Список из JSON</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: #f0f0f0;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 5px;\n        }\n    </style>\n</head>\n<body>\n    <h1>Данные из JSON</h1>\n    <div id=\"output\"></div>\n\n    <script>\n        const jsonData = [\n            {\n                \"data\":  {{ $json.data }}\n                    \n        ;\n\n        // Извлекаем массив данных\n        const dataList = jsonData[0].data;\n\n        // Создаем список элементов\n        const list = document.createElement('ul');\n\n        dataList.forEach(item => {\n            const listItem = document.createElement('li');\n            listItem.textContent = `ID: ${item.ID}, Last Payment Date: ${item.DateLastPay}, Next Payment Date: ${item.DateNextPay}, Sum: ${item.Summa}, Status: ${item.Status}, Work On: ${item.WorkOn}`;\n            list.appendChild(listItem);\n        });\n\n        // Добавляем список на страницу\n        document.getElementById('output').appendChild(list);\n    </script>\n</body>\n</html>"
-      },
-      "id": "0779dc36-91cd-48b0-8126-3c8f2f1d2741",
-      "name": "HTML",
-      "type": "n8n-nodes-base.html",
-      "typeVersion": 1.2,
-      "position": [
-        -280,
-        1140
-      ]
     }
   ],
   "pinData": {},
@@ -671,7 +792,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 5,
-  "updatedAt": "2024-10-22T07:35:59.000Z",
-  "versionId": "4fd35a99-5e56-437b-b04a-454b80302e7e"
+  "triggerCount": 7,
+  "updatedAt": "2024-10-23T12:06:09.000Z",
+  "versionId": "1c01359e-4037-465c-bea0-bd40cc590a9a"
 }
