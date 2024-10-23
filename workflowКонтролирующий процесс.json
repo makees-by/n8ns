@@ -144,7 +144,29 @@
         ]
       ]
     },
+    "Ответ от сборщика треков из БД": {
+      "main": [
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Проверяем на отсутствие ошибок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей": {
       "main": [
         [
           {
@@ -160,17 +182,6 @@
         [
           {
             "node": "Выставляем максимальное количество треков в проверке",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ответ от сборщика треков из БД": {
-      "main": [
-        [
-          {
-            "node": "Проверяем на отсутствие ошибок",
             "type": "main",
             "index": 0
           }
@@ -482,7 +493,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        2340,
+        2100,
         -160
       ]
     },
@@ -522,6 +533,20 @@
     },
     {
       "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"129\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"max_items\": \"396\",\n      \"Error\": \"no\",\n      \"Ditales\": \"Тут будут подробности или логи\",\n      \"From\": \"take_traks_from_bd\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "974c7a92-cf00-4574-9329-57f27a9cdaa0",
+      "name": "Ответ от сборщика треков из БД",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2340,
+        -160
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
         "path": "proceses_control",
         "options": {}
       },
@@ -534,6 +559,19 @@
         100
       ],
       "webhookId": "dc16df46-9bf7-4535-9961-1fb728c88c12"
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"106\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"InfoUserData:[object Object],[object Object],[object Object]\",\n      \"From\": \"pay_check\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "ba063af3-bca5-4052-91b5-35b06c927b19",
+      "name": "Ответ от проверки оплаты пользователей",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2520,
+        -160
+      ]
     },
     {
       "parameters": {
@@ -561,6 +599,31 @@
               },
               "renameOutput": true,
               "outputKey": "От сборщика треков из БД"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b8b0c703-8177-42bc-a4dd-cfc386bc65da",
+                    "leftValue": "={{ $json.body.From }}",
+                    "rightValue": "pay_check",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Проверка оплаты"
             }
           ]
         },
@@ -574,20 +637,6 @@
         2920,
         80
       ]
-    },
-    {
-      "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"129\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"max_items\": \"396\",\n      \"Error\": \"no\",\n      \"Ditales\": \"Тут будут подробности или логи\",\n      \"From\": \"take_traks_from_bd\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
-      },
-      "id": "974c7a92-cf00-4574-9329-57f27a9cdaa0",
-      "name": "Ответ от сборщика треков из БД",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        2580,
-        -160
-      ],
-      "disabled": true
     }
   ],
   "pinData": {},
@@ -597,6 +646,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-21T09:26:03.000Z",
-  "versionId": "3e749b88-75d7-484f-9a03-5889d0379a98"
+  "updatedAt": "2024-10-23T12:24:34.000Z",
+  "versionId": "1b8c2a87-0633-4523-8c6e-f510da62fa83"
 }
