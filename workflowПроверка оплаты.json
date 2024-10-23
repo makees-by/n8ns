@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Проверка оплаты": {
       "main": [
@@ -23,7 +23,7 @@
         ],
         [
           {
-            "node": "Тут нода, которая собирает списки на оповещение о пополнении",
+            "node": "Собираем тех, у кого остаётся менее 3х дней до оплаты",
             "type": "main",
             "index": 0
           }
@@ -57,7 +57,7 @@
             "index": 0
           },
           {
-            "node": "Тут нода, которая собирает списки на оповещение о пополнении",
+            "node": "Собираем всех с истёкшим сроком оплаты",
             "type": "main",
             "index": 0
           }
@@ -80,7 +80,7 @@
             "index": 0
           },
           {
-            "node": "Собираем профили со статусом НЕактивен",
+            "node": "Собираем тех, у кого WorkOn выставлен 0",
             "type": "main",
             "index": 0
           }
@@ -103,17 +103,6 @@
         [
           {
             "node": "ПРОверяем статус подписки",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Проверка оплаты",
             "type": "main",
             "index": 0
           }
@@ -146,18 +135,84 @@
       "main": [
         [
           {
-            "node": "Собираем request",
+            "node": "If",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Собираем профили со статусом НЕактивен": {
+    "Собираем тех, у кого WorkOn выставлен 0": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Собираем всех с истёкшим сроком оплаты": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Собираем тех, у кого остаётся менее 3х дней до оплаты": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Все пользователи с проблемами",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "тут нода в которую отправляем тех пользователей , у которых всё ок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Все пользователи с проблемами": {
       "main": [
         [
           {
             "node": "Тут нода, которая собирает списки на оповещение о пополнении",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Проверка оплаты",
             "type": "main",
             "index": 0
           }
@@ -190,8 +245,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2120,
-        700
+        2200,
+        -140
       ]
     },
     {
@@ -393,7 +448,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2400,
+        2380,
         300
       ]
     },
@@ -447,30 +502,10 @@
     },
     {
       "parameters": {
-        "path": "pay_check",
-        "options": {}
-      },
-      "id": "af9e07c9-4791-4e55-bbcd-cbb3720c0273",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        640,
-        260
-      ],
-      "webhookId": "3ff91d1d-8c6f-4ac2-82c2-dca7ab00fffb",
-      "disabled": true
-    },
-    {
-      "parameters": {
         "url": "https://n8n.makees.online/webhook-test/proceses_control",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
-            {
-              "name": "=max_items",
-              "value": "={{ $json.max_Items }}"
-            },
             {
               "name": "Error",
               "value": "={{ $json.Error }}"
@@ -509,13 +544,13 @@
             {
               "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
               "name": "Ditales",
-              "value": "Тут будут подробности или логи",
+              "value": "=InfoUserData:{{ $('Все пользователи с проблемами').first().json.InfoAboutUserCheckStatus }}",
               "type": "string"
             },
             {
               "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
               "name": "From",
-              "value": "take_traks_from_bd",
+              "value": "pay_check",
               "type": "string"
             }
           ]
@@ -527,32 +562,135 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2600,
+        2580,
         300
       ]
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "WorkOn_0",
+        "options": {}
+      },
+      "id": "ec42b91d-1bd6-4c5d-8fe0-eeb3a2a9a056",
+      "name": "Собираем тех, у кого WorkOn выставлен 0",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1440,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "LastPay_InPast",
+        "options": {}
+      },
+      "id": "325bb810-a27e-4f0e-b7d8-b396d56ad50f",
+      "name": "Собираем всех с истёкшим сроком оплаты",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1660,
+        -180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "3daysTOpay",
+        "options": {}
+      },
+      "id": "74c65c24-498d-4377-98ed-53fe50712210",
+      "name": "Собираем тех, у кого остаётся менее 3х дней до оплаты",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1940,
+        -140
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "id": "3a360f6e-3ad6-4717-b19e-586ef9339f47",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        2000,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
             {
-              "id": "932b18de-296b-4969-b799-b8f479d908c4",
-              "name": "Status_Nok",
-              "value": "",
-              "type": "string"
+              "id": "c0d39e9f-91c2-42d4-af50-1fc03f7dbc47",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
             }
-          ]
+          ],
+          "combinator": "and"
         },
         "options": {}
       },
-      "id": "8a3a0df7-fd1b-465d-94cc-36642ca66777",
-      "name": "Собираем профили со статусом НЕактивен",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "id": "dc8c83a6-3601-4bda-9b3b-905bf1c2d5ac",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
       "position": [
-        1520,
-        700
+        2380,
+        -140
       ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "InfoAboutUserCheckStatus",
+        "options": {}
+      },
+      "id": "e7833b50-58e2-4083-bdd9-87efd6387076",
+      "name": "Все пользователи с проблемами",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        2160,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "path": "pay_check",
+        "options": {}
+      },
+      "id": "af9e07c9-4791-4e55-bbcd-cbb3720c0273",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        640,
+        260
+      ],
+      "webhookId": "3ff91d1d-8c6f-4ac2-82c2-dca7ab00fffb"
     }
   ],
   "pinData": {},
@@ -561,7 +699,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-10-21T09:25:54.000Z",
-  "versionId": "7eb2cad1-be7e-46c2-b1d8-5a06fa7c4dab"
+  "triggerCount": 1,
+  "updatedAt": "2024-10-23T12:24:22.000Z",
+  "versionId": "b684579f-f50f-4b7f-a677-3128bfb03305"
 }
