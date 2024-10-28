@@ -432,13 +432,32 @@
             },
             {
               "fieldLabel": "Введи статус подписки",
-              "placeholder": "ok/Nok",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "ok"
+                  },
+                  {
+                    "option": "Nok"
+                  }
+                ]
+              },
               "requiredField": true
             },
             {
               "fieldLabel": "Введи рабочий статус",
-              "fieldType": "number",
-              "placeholder": "0 or 1",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "0"
+                  },
+                  {
+                    "option": "1"
+                  }
+                ]
+              },
               "requiredField": true
             }
           ]
@@ -793,6 +812,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 7,
-  "updatedAt": "2024-10-23T12:06:09.000Z",
-  "versionId": "1c01359e-4037-465c-bea0-bd40cc590a9a"
+  "updatedAt": "2024-10-28T10:43:39.000Z",
+  "versionId": "c351d102-1859-4dca-b319-d8138427eaf5"
 }
