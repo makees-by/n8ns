@@ -1,0 +1,654 @@
+{
+  "active": true,
+  "connections": {
+    "СЗПЦ4": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все собранные треки BP из JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подтягиваем все собранные треки BP из JSON": {
+      "main": [
+        [
+          {
+            "node": "Распаковываем массив с треками",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Распаковываем массив с треками": {
+      "main": [
+        [
+          {
+            "node": "Соединяем имеющиеся треки с полученными",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Соединяем имеющиеся треки с полученными": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "Обновляем значение переменной",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Соединяем имеющиеся треки с полученными",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Вход в запись переменной": {
+      "main": [
+        [
+          {
+            "node": "СЗПЦ4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DATA": {
+      "main": [
+        [
+          {
+            "node": "Вход в запись переменной",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DATA1": {
+      "main": [
+        [
+          {
+            "node": "Обновляем значение переменной1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DATA2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив1": {
+      "main": [
+        [
+          {
+            "node": "Обновляем значение переменной2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "DATA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DATA1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DATA2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-27T18:21:29.809Z",
+  "id": "KLOTYwG7rXVfZCKr",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Запись переменной",
+  "nodes": [
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "f137d63e-4259-45e2-be72-dc479bf5a25d",
+      "name": "СЗПЦ4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        540,
+        540
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "queryPath": "data",
+        "filePath": "=root/n8n/{{ $('DATA').item.json.var_name }}.json"
+      },
+      "id": "a7f58f17-cd14-4042-885e-b17f41fd384b",
+      "name": "Подтягиваем все собранные треки BP из JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        820,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "9f8ee13b-2353-4876-8d7d-7e52f8dbbf65",
+      "name": "Распаковываем массив с треками",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1100,
+        540
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {},
+      "id": "cf4b55cb-c6eb-41b1-8350-29d4ac838f52",
+      "name": "Соединяем имеющиеся треки с полученными",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        1200,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "e3f68e15-88e4-48b9-a99b-e367737161b5",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1500,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a533ea13-ee86-4292-82e7-3314de607333",
+              "name": "={{ $json.parametr }}",
+              "value": "={{ $input.item.json.values().first() }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4fa3d9b8-6d34-487b-911b-01f4050384db",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        760
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c9b321cb-e352-429e-9047-90aaf2f54f26",
+      "name": "Вход в запись переменной",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        480,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "path": "variable_work",
+        "options": {}
+      },
+      "id": "519bbd8c-d3fe-4ae6-93f0-ab76acc1ef62",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -400,
+        780
+      ],
+      "webhookId": "80343635-087b-4a49-910f-e76ae5161b42"
+    },
+    {
+      "parameters": {},
+      "id": "51d016d6-97a4-4e18-8dbb-0a073355e3b5",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"data\": [\n      {\n        \"ID\": \"ZsTestNok\",\n        \"DateLastPay\": \"2024-10-08\",\n        \"DateNextPay\": \"2024-11-04\",\n        \"Summa\": 100,\n        \"Status\": \"Nok\",\n        \"WorkOn\": 0\n      },\n      {\n        \"ID\": \"Zstrasd\",\n        \"DateLastPay\": \"2024-10-24\",\n        \"DateNextPay\": \"2024-11-23\",\n        \"Summa\": 10,\n        \"Status\": \"Nok\",\n        \"WorkOn\": 0\n      }\n    ],\n    \"var_name\": \"user_trabls\",\n    \"operation\": \"add\",\n    \"parametr\": \"WorkOn_0\"\n  }\n]\n);"
+      },
+      "id": "e80dc532-0479-434b-bc16-87a730ebf937",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        1060
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4ae4cbcc-6899-4bbb-9046-3f41b5ffc2c2",
+              "name": "=data",
+              "value": "={{ $json.data }}",
+              "type": "array"
+            },
+            {
+              "id": "5127ccfd-b094-4a1b-910b-12c3a5e55272",
+              "name": "var_name",
+              "value": "={{ $json.var_name }}",
+              "type": "string"
+            },
+            {
+              "id": "36de665e-5b77-4278-8afc-6edc1f577c75",
+              "name": "parametr",
+              "value": "={{ $json.parametr }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e901f720-ae87-45f6-8c8c-55df778f34ba",
+      "name": "DATA",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5127ccfd-b094-4a1b-910b-12c3a5e55272",
+              "name": "var_name",
+              "value": "={{ $json.var_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "58887663-dc76-4ebf-815f-c445f7ce7d06",
+      "name": "DATA1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cc88a440-226b-4533-b348-b18b93a28ebd",
+              "name": "data",
+              "value": "={{ $json.data }}",
+              "type": "array"
+            },
+            {
+              "id": "13b6a0bb-6f54-4ec3-bbf4-cf7c461f5ca9",
+              "name": "parametr",
+              "value": "={{ $json.parametr }}",
+              "type": "string"
+            },
+            {
+              "id": "a5aa9a04-aba3-4d61-a266-018b58a68f3e",
+              "name": "var_name",
+              "value": "={{ $json.var_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e3c9936b-1af2-4c28-86cd-eae16115371f",
+      "name": "DATA2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "data",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($input.item.json.data) }}",
+        "filePath": "=root/n8n/{{ $('DATA').item.json.var_name }}.json"
+      },
+      "id": "52a35943-1dcf-425d-91b3-b945a868888c",
+      "name": "Обновляем значение переменной",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "data",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=[]",
+        "filePath": "=root/n8n/{{ $json.var_name }}.json"
+      },
+      "id": "e4477d2f-99df-4426-96c0-825da973738c",
+      "name": "Обновляем значение переменной1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        480,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "data",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($input.item.json.data) }}",
+        "filePath": "=root/n8n/{{ $('DATA2').item.json.var_name }}.json"
+      },
+      "id": "ad84149d-cc63-428d-bed9-7f50323dff67",
+      "name": "Обновляем значение переменной2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        900,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4ae4cbcc-6899-4bbb-9046-3f41b5ffc2c2",
+              "name": "WorkOn_0",
+              "value": "=[{\"{{ $json.keys().first() }}\":{{ $json.WorkOn_0 }}}]",
+              "type": "object"
+            },
+            {
+              "id": "5127ccfd-b094-4a1b-910b-12c3a5e55272",
+              "name": "var_name",
+              "value": "={{ $json.var_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7ab7e25d-c417-40ab-b8a5-36433f869a94",
+      "name": "DATA3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        1080
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a533ea13-ee86-4292-82e7-3314de607333",
+              "name": "={{ $json.parametr }}",
+              "value": "={{ $input.item.json.values().first() }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "13d6b9ef-c716-4146-8f1e-7c0e285447a8",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "d25ff03b-9877-4860-97c1-1e32c88a6f10",
+      "name": "Объединяем все треки в один массив1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        680,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.operation }}",
+                    "rightValue": "add",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Добавить значение"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4b71c9c9-5c34-46a5-8d34-b91f3f9aa53b",
+                    "leftValue": "={{ $json.operation }}",
+                    "rightValue": "null",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Обнулить "
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "71d72766-afd0-4f4e-a54a-1857d1ab3624",
+                    "leftValue": "={{ $json.operation }}",
+                    "rightValue": "update",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Добавить новое Обнулив старое"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "59d6b5d4-fa4c-4ce4-953e-3d530f1aeab6",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -80,
+        1060
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-10-28T11:49:31.000Z",
+  "versionId": "f15f65c7-74ad-4b3b-9f51-4a71428e2f2d"
+}
