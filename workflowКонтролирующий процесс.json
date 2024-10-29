@@ -155,7 +155,7 @@
         ]
       ]
     },
-    "Webhook": {
+    "Ответ от проверки оплаты пользователей": {
       "main": [
         [
           {
@@ -166,7 +166,7 @@
         ]
       ]
     },
-    "Ответ от проверки оплаты пользователей": {
+    "Webhook": {
       "main": [
         [
           {
@@ -182,6 +182,35 @@
         [
           {
             "node": "Выставляем максимальное количество треков в проверке",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
             "type": "main",
             "index": 0
           }
@@ -354,7 +383,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3220,
+        3880,
         -100
       ]
     },
@@ -372,7 +401,7 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        3420,
+        4080,
         -100
       ]
     },
@@ -386,7 +415,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3620,
+        4280,
         -100
       ],
       "webhookId": "3671ae5f-457e-4f7b-a792-901245ff6d27"
@@ -398,7 +427,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3840,
+        4500,
         -100
       ]
     },
@@ -438,7 +467,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3860,
+        4520,
         140
       ]
     },
@@ -547,6 +576,19 @@
     },
     {
       "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"1064\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"InfoUserData:[{\\\"3daysTOpay\\\":[{\\\"ID\\\":\\\"Zstest11\\\",\\\"DateLastPay\\\":\\\"2024-09-30\\\",\\\"DateNextPay\\\":\\\"2024-10-30\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1,\\\"timeDifference\\\":{\\\"days\\\":2.125}}]},{\\\"LastPay_InPast\\\":[{\\\"ID\\\":\\\"ZStest3d\\\",\\\"DateLastPay\\\":\\\"2024-09-25\\\",\\\"DateNextPay\\\":\\\"2024-10-25\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1},{\\\"ID\\\":\\\"ZsTestMin3\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-09\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestMinD\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-06\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestnewf\\\",\\\"DateLastPay\\\":\\\"2024-10-22\\\",\\\"DateNextPay\\\":\\\"2024-10-22\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0}]},{\\\"WorkOn_0\\\":[{\\\"ID\\\":\\\"ZsTestNok\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-11-04\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"Zstrasd\\\",\\\"DateLastPay\\\":\\\"2024-10-24\\\",\\\"DateNextPay\\\":\\\"2024-11-23\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0}]}]\",\n      \"From\": \"pay_check\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "ba063af3-bca5-4052-91b5-35b06c927b19",
+      "name": "Ответ от проверки оплаты пользователей",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2520,
+        -160
+      ]
+    },
+    {
+      "parameters": {
         "path": "proceses_control",
         "options": {}
       },
@@ -560,19 +602,6 @@
       ],
       "webhookId": "dc16df46-9bf7-4535-9961-1fb728c88c12",
       "disabled": true
-    },
-    {
-      "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"106\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"InfoUserData:[object Object],[object Object],[object Object]\",\n      \"From\": \"pay_check\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
-      },
-      "id": "ba063af3-bca5-4052-91b5-35b06c927b19",
-      "name": "Ответ от проверки оплаты пользователей",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        2520,
-        -160
-      ]
     },
     {
       "parameters": {
@@ -638,6 +667,107 @@
         2920,
         80
       ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "Ditales.InfoUserData",
+        "options": {}
+      },
+      "id": "d3d885d8-ae38-49d6-836d-482f97413fbf",
+      "name": "Split Out",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f233ba40-e3ff-49bf-a81f-46b9445b184f",
+              "name": "Ditales",
+              "value": "={ {{ $json.body.Ditales }} }",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8d04111d-3f23-425c-b57d-ff4f2cbe12cd",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3420,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "517cea59-43f1-4104-bc03-a13edd65a8ce",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        3800,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"1064\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"InfoUserData:[{\\\"3daysTOpay\\\":[{\\\"ID\\\":\\\"Zstest11\\\",\\\"DateLastPay\\\":\\\"2024-09-30\\\",\\\"DateNextPay\\\":\\\"2024-10-30\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1,\\\"timeDifference\\\":{\\\"days\\\":2.125}}]},{\\\"LastPay_InPast\\\":[{\\\"ID\\\":\\\"ZStest3d\\\",\\\"DateLastPay\\\":\\\"2024-09-25\\\",\\\"DateNextPay\\\":\\\"2024-10-25\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1},{\\\"ID\\\":\\\"ZsTestMin3\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-09\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestMinD\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-06\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestnewf\\\",\\\"DateLastPay\\\":\\\"2024-10-22\\\",\\\"DateNextPay\\\":\\\"2024-10-22\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0}]},{\\\"WorkOn_0\\\":[{\\\"ID\\\":\\\"ZsTestNok\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-11-04\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"Zstrasd\\\",\\\"DateLastPay\\\":\\\"2024-10-24\\\",\\\"DateNextPay\\\":\\\"2024-11-23\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0}]}]\",\n      \"From\": \"pay_check\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "bb1418df-f85b-470b-9f68-ec8050388831",
+      "name": "Ответ от проверки оплаты пользователей1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n  {{}}\n);"
+      },
+      "id": "d2a16095-188b-459e-a6b3-0b393151cb2e",
+      "name": "Ответ от проверки оплаты пользователей2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3120,
+        160
+      ]
     }
   ],
   "pinData": {},
@@ -647,6 +777,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-27T14:07:50.000Z",
-  "versionId": "9b38d0e7-3bd4-4966-bf5c-01a23230abbc"
+  "updatedAt": "2024-10-28T20:42:12.000Z",
+  "versionId": "bab9e78f-76df-4a61-bc39-28f3ad69d3f6"
 }
