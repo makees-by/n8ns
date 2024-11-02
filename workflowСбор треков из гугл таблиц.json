@@ -76,7 +76,7 @@
             "index": 0
           },
           {
-            "node": "Меняем triger1 на 0",
+            "node": "Подготовка перед работай с переменной2",
             "type": "main",
             "index": 0
           }
@@ -99,7 +99,12 @@
             "index": 0
           },
           {
-            "node": "JsonDatabase",
+            "node": "Подготовка перед работай с переменной1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Подготовка перед работай с переменной10",
             "type": "main",
             "index": 0
           }
@@ -125,22 +130,17 @@
             "index": 0
           },
           {
-            "node": "Достаём тригер1",
+            "node": "Подготовка перед работай с переменной4",
             "type": "main",
             "index": 0
           },
           {
-            "node": "достаём тригер2",
+            "node": "Подготовка перед работай с переменной6",
             "type": "main",
             "index": 0
           },
           {
-            "node": "достаём тригер 3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "достаём тригер4",
+            "node": "Подготовка перед работай с переменной8",
             "type": "main",
             "index": 0
           }
@@ -167,7 +167,7 @@
             "index": 0
           },
           {
-            "node": "Меняем triger2 на 0",
+            "node": "Подготовка перед работай с переменной5",
             "type": "main",
             "index": 0
           }
@@ -219,7 +219,7 @@
             "index": 0
           },
           {
-            "node": "Меняем triger3 на ",
+            "node": "Подготовка перед работай с переменной9",
             "type": "main",
             "index": 0
           }
@@ -257,7 +257,7 @@
             "index": 1
           },
           {
-            "node": "Меняем triger3 на 0",
+            "node": "Подготовка перед работай с переменной7",
             "type": "main",
             "index": 0
           }
@@ -269,28 +269,6 @@
         [
           {
             "node": "Добавление записи в таблицу traks2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "JsonDatabase": {
-      "main": [
-        [
-          {
-            "node": "If2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Меняем triger1 на 0": {
-      "main": [
-        [
-          {
-            "node": "If3",
             "type": "main",
             "index": 0
           }
@@ -374,44 +352,11 @@
         ]
       ]
     },
-    "Меняем triger2 на 0": {
-      "main": [
-        [
-          {
-            "node": "If4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "достаём тригер2": {
-      "main": [
-        [
-          {
-            "node": "проверяем тригер 2к 1це",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "проверяем тригер 2к 1це": {
       "main": [
         [
           {
             "node": "пустой1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Достаём тригер1": {
-      "main": [
-        [
-          {
-            "node": "If1",
             "type": "main",
             "index": 0
           }
@@ -451,17 +396,6 @@
         ]
       ]
     },
-    "Меняем triger3 на 0": {
-      "main": [
-        [
-          {
-            "node": "If5",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "If6": {
       "main": [
         [
@@ -473,44 +407,11 @@
         ]
       ]
     },
-    "Меняем triger3 на ": {
-      "main": [
-        [
-          {
-            "node": "If6",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "пустой3": {
       "main": [
         [
           {
             "node": "No Operation, do nothing1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "достаём тригер4": {
-      "main": [
-        [
-          {
-            "node": "проверяем тригер 4к 1це",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "достаём тригер 3": {
-      "main": [
-        [
-          {
-            "node": "проверяем тригер 2к 1це1",
             "type": "main",
             "index": 0
           }
@@ -533,6 +434,259 @@
         [
           {
             "node": "Сбор треков из гугл таблиц",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной3": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной3": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной1": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной2": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной2": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной4": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной4": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной5": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной5": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной6": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной6": {
+      "main": [
+        [
+          {
+            "node": "проверяем тригер 2к 1це",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной7": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной7": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной8": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной8": {
+      "main": [
+        [
+          {
+            "node": "проверяем тригер 2к 1це1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной9": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной9": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной10": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной10": {
+      "main": [
+        [
+          {
+            "node": "проверяем тригер 4к 1це",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Собираем request",
             "type": "main",
             "index": 0
           }
@@ -932,7 +1086,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4320,
+        4680,
         1400
       ],
       "credentials": {
@@ -1037,8 +1191,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        4160,
-        360
+        4220,
+        400
       ]
     },
     {
@@ -1048,8 +1202,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3700,
-        -140
+        4160,
+        -160
       ]
     },
     {
@@ -1101,8 +1255,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3680,
-        340
+        3840,
+        1020
       ]
     },
     {
@@ -1116,8 +1270,8 @@
       "type": "n8n-nodes-base.removeDuplicates",
       "typeVersion": 1.1,
       "position": [
-        4240,
-        780
+        4680,
+        740
       ]
     },
     {
@@ -1133,8 +1287,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2380,
-        100
+        740,
+        920
       ]
     },
     {
@@ -1150,8 +1304,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2860,
-        100
+        560,
+        900
       ],
       "executeOnce": true
     },
@@ -1218,8 +1372,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2540,
-        100
+        2560,
+        20
       ]
     },
     {
@@ -1253,7 +1407,7 @@
       "typeVersion": 2.2,
       "position": [
         3200,
-        100
+        80
       ]
     },
     {
@@ -1313,8 +1467,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3460,
-        960
+        3200,
+        980
       ],
       "alwaysOutputData": true
     },
@@ -1325,8 +1479,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3460,
-        340
+        3500,
+        860
       ]
     },
     {
@@ -1342,8 +1496,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2740,
-        660
+        1160,
+        1140
       ],
       "executeOnce": true
     },
@@ -1357,8 +1511,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2500,
-        980
+        1140,
+        1340
       ],
       "executeOnce": true
     },
@@ -1392,7 +1546,7 @@
       "typeVersion": 2.2,
       "position": [
         2940,
-        980
+        1000
       ]
     },
     {
@@ -1405,8 +1559,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2740,
-        500
+        1140,
+        960
       ],
       "executeOnce": true
     },
@@ -1440,8 +1594,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4000,
-        580
+        4240,
+        1220
       ]
     },
     {
@@ -1453,8 +1607,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3720,
-        1140
+        3340,
+        1200
       ],
       "alwaysOutputData": true
     },
@@ -1487,8 +1641,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3080,
-        1160
+        3060,
+        1200
       ]
     },
     {
@@ -1504,8 +1658,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3680,
-        580
+        1140,
+        1520
       ],
       "executeOnce": true
     },
@@ -1539,7 +1693,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4500,
+        4780,
         520
       ]
     },
@@ -1556,8 +1710,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4480,
-        300
+        960,
+        920
       ],
       "executeOnce": true
     },
@@ -1585,8 +1739,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2240,
-        1340
+        1140,
+        1880
       ],
       "executeOnce": true
     },
@@ -1600,8 +1754,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2440,
-        1160
+        1140,
+        1720
       ],
       "executeOnce": true
     },
@@ -1667,21 +1821,6 @@
     },
     {
       "parameters": {
-        "path": "Take_traks_from_google_sheets",
-        "options": {}
-      },
-      "id": "9675b605-a0ce-4dc3-9f8e-d180d8726a84",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        720,
-        160
-      ],
-      "webhookId": "cecdef11-5f8c-4a7f-b584-750bff36ab0b"
-    },
-    {
-      "parameters": {
         "content": "Посмотреть приведение всех треков к одному виду с удалением пробелов и т.д.",
         "height": 80
       },
@@ -1707,6 +1846,771 @@
         1840,
         620
       ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "={{ $json.data }}",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "user_trabls",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "WorkOn_0",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2027bf0d-8108-48cf-a1c4-aca4d90dfb82",
+      "name": "Подготовка перед работай с переменной",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        460,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "a0187fcb-a4d0-4934-987c-79b99591adfd",
+      "name": "отправка в процесс работы с переменной",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        720,
+        1460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "user_trabls",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "null",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "471689ab-5b8c-44da-a834-42260f638dd7",
+      "name": "Подготовка перед работай с переменной3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        380,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "c121aeaf-0c55-4a8e-b3ad-2c2e71e80393",
+      "name": "отправка в процесс работы с переменной3",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        580,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c0d39e9f-91c2-42d4-af50-1fc03f7dbc47",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9fa3d545-e7e6-4b01-a5f7-515b7ad368b8",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        780,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Модули для работы с переменными",
+        "height": 561.2383792615451,
+        "width": 745.1304596060522,
+        "color": 5
+      },
+      "id": "1141ff90-ada6-4c01-bbb5-da838ca20cef",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        1140
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[{  \"Triger1\":  1, \"Triger2\":  1, \"Triger3\":  1, \"Triger4\":  1 } ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d7df08a6-45bd-495a-ab6b-1feefd047d91",
+      "name": "Подготовка перед работай с переменной1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2200,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "9172c049-3db2-481e-be49-273e7ecf3024",
+      "name": "отправка в процесс работы с переменной1",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2380,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[ 0 ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "af5e362b-fc51-4f6b-896d-32e83154f696",
+      "name": "Подготовка перед работай с переменной2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2840,
+        80
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "c8b7f259-53a0-43ce-872c-719a16c34561",
+      "name": "отправка в процесс работы с переменной2",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3020,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "31ff89bc-aa65-464a-8c3f-d08bfa98c6d8",
+      "name": "Подготовка перед работай с переменной4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2620,
+        520
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "8533c7f1-cc45-4546-ae70-2dd497980fc7",
+      "name": "отправка в процесс работы с переменной4",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2800,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[ 0 ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8d46b009-7a99-4384-aa09-6aebdf11a6ba",
+      "name": "Подготовка перед работай с переменной5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2640,
+        660
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "64963cc0-f263-4ce3-8a19-d482afa725f9",
+      "name": "отправка в процесс работы с переменной5",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2820,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4bf6e5fa-5c67-42c1-a988-ad5a189513d2",
+      "name": "Подготовка перед работай с переменной6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2540,
+        1000
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "aed796b4-b086-4355-a2f5-2a8010b14293",
+      "name": "отправка в процесс работы с переменной6",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2760,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[ 0 ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger3",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "982edf2b-30b9-41ed-bb84-e2dd60c51112",
+      "name": "Подготовка перед работай с переменной7",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3680,
+        1220
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "e48f6d7d-2b78-45c7-a59f-fd751ca1a405",
+      "name": "отправка в процесс работы с переменной7",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3920,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger3",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51c44a54-675d-4051-8e49-cf3e68d763b8",
+      "name": "Подготовка перед работай с переменной8",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2400,
+        1200
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "65c7584e-862b-4280-8427-8747fba2b1ad",
+      "name": "отправка в процесс работы с переменной8",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2740,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[ 0 ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger4",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d75d9344-e9e7-437b-a444-ef1725aa19ff",
+      "name": "Подготовка перед работай с переменной9",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4680,
+        300
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "0faefdaf-63f5-44eb-a334-321276f619ce",
+      "name": "отправка в процесс работы с переменной9",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4980,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger4",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5d54c31b-f693-46bb-a3ee-44e30128c51c",
+      "name": "Подготовка перед работай с переменной10",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2060,
+        1340
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "11d83966-bce7-43e0-a749-75e4b0454246",
+      "name": "отправка в процесс работы с переменной10",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2340,
+        1340
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook-test/proceses_control",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "Error",
+              "value": "={{ $json.Error }}"
+            },
+            {
+              "name": "Ditales",
+              "value": "={{ $json.Ditales }}"
+            },
+            {
+              "name": "From",
+              "value": "={{ $json.From }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bb7057fe-d2a2-4c3e-918f-d5bf91f6eb60",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2560,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "67797e6a-dcf6-4b16-bc97-a01c11094613",
+              "name": "Error",
+              "value": "no",
+              "type": "string"
+            },
+            {
+              "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
+              "name": "Ditales",
+              "value": "=Тут приколы из этого процесса",
+              "type": "string"
+            },
+            {
+              "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
+              "name": "From",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "956fd56a-c7a5-4b2c-9def-4b1c6ec1e74f",
+      "name": "Собираем request",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2360,
+        -240
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "path": "Take_traks_from_google_sheets",
+        "options": {}
+      },
+      "id": "9675b605-a0ce-4dc3-9f8e-d180d8726a84",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        720,
+        160
+      ],
+      "webhookId": "cecdef11-5f8c-4a7f-b584-750bff36ab0b",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -1716,6 +2620,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-20T13:25:50.000Z",
-  "versionId": "6cde9378-45e4-4637-b277-bc2bcccf4b10"
+  "updatedAt": "2024-11-02T09:30:45.000Z",
+  "versionId": "d3fb30b8-5f0c-4f0e-ba9e-9bdb531440b9"
 }
