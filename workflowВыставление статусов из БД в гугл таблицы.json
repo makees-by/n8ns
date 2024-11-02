@@ -49,7 +49,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets2",
+            "node": "Собираем строки из таблиц, в которые нужно выставить статус",
             "type": "main",
             "index": 0
           },
@@ -61,33 +61,11 @@
         ]
       ]
     },
-    "Google Sheets2": {
-      "main": [
-        [
-          {
-            "node": "Отсеиваем записи без треков1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Получить все записи из таблицы Tabls7": {
-      "main": [
-        [
-          {
-            "node": "Добавляем link к записям",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Отсеиваем записи без треков1": {
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Tabls7",
+            "node": "Получаем записи о нужных треках в БД",
             "type": "main",
             "index": 0
           }
@@ -112,17 +90,6 @@
         ]
       ]
     },
-    "Добавляем link к записям": {
-      "main": [
-        [
-          {
-            "node": "Google Sheets3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Выставление статусов трекам в гугл таблицу": {
       "main": [
         [
@@ -139,6 +106,72 @@
         [
           {
             "node": "Выставление статусов трекам в гугл таблицу",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем строки из таблиц, в которые нужно выставить статус": {
+      "main": [
+        [
+          {
+            "node": "Отсеиваем записи без треков1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем записи о нужных треках в БД": {
+      "main": [
+        [
+          {
+            "node": "Добавляем link к записям",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавляем link к записям": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Сообщаем об окончании процесса": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Собираем request",
             "type": "main",
             "index": 0
           }
@@ -255,7 +288,7 @@
       "typeVersion": 2.2,
       "position": [
         680,
-        340
+        360
       ]
     },
     {
@@ -319,78 +352,6 @@
       "position": [
         960,
         340
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.Link }}",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.Link }}",
-          "mode": "url"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "Отметка о доставке",
-              "lookupValue": "Не доставлено"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "27e6365b-7412-40c7-badf-4d54bd569431",
-      "name": "Google Sheets2",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        1220,
-        340
-      ],
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "Traks",
-          "mode": "list",
-          "cachedResultName": "Traks"
-        },
-        "returnAll": true,
-        "where": {
-          "values": [
-            {
-              "column": "Track",
-              "value": "={{ $json['трек'] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "3e5d70dd-15a3-4b26-ba50-a3c2881b3e5c",
-      "name": "Получить все записи из таблицы Tabls7",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1760,
-        320
       ],
       "credentials": {
         "mySql": {
@@ -615,13 +576,121 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2240,
+        2280,
         420
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
           "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "c630bfe5-db90-4db8-8865-15b448977a06",
+      "name": "Сообщаем об окончании процесса",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        680
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "af74dbe7-2252-431c-bee4-1a9fb4de9be0",
+      "name": "Выставление статусов трекам в гугл таблицу",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        260,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Сделать проверку на мэтч поразному написаных треков",
+        "height": 82.08354203394998
+      },
+      "id": "6df581b2-8dbe-4472-bf4e-1fa7048d11cc",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        260,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "Не доставлено"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "27e6365b-7412-40c7-badf-4d54bd569431",
+      "name": "Собираем строки из таблиц, в которые нужно выставить статус",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1220,
+        340
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Track",
+              "value": "={{ $json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3e5d70dd-15a3-4b26-ba50-a3c2881b3e5c",
+      "name": "Получаем записи о нужных треках в БД",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1760,
+        320
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
         }
       }
     },
@@ -641,26 +710,84 @@
       ]
     },
     {
-      "parameters": {},
-      "id": "c630bfe5-db90-4db8-8865-15b448977a06",
-      "name": "Сообщаем об окончании процесса",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
+      "parameters": {
+        "url": "https://n8n.makees.online/webhook/proceses_control",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "Error",
+              "value": "={{ $json.Error }}"
+            },
+            {
+              "name": "Ditales",
+              "value": "={{ $json.Ditales }}"
+            },
+            {
+              "name": "From",
+              "value": "={{ $json.From }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c18bf494-0bf5-4bb7-a60f-5211e2639c1b",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
       "position": [
-        2000,
-        720
+        2880,
+        680
       ]
     },
     {
-      "parameters": {},
-      "id": "af74dbe7-2252-431c-bee4-1a9fb4de9be0",
-      "name": "Выставление статусов трекам в гугл таблицу",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "67797e6a-dcf6-4b16-bc97-a01c11094613",
+              "name": "Error",
+              "value": "no",
+              "type": "string"
+            },
+            {
+              "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
+              "name": "Ditales",
+              "value": "=тут будет информация по процессу и ошибки, если возникнут",
+              "type": "string"
+            },
+            {
+              "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
+              "name": "From",
+              "value": "from_bd_to_google_sheets",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "79ce9ed6-7a29-41aa-b248-fc3a89740d33",
+      "name": "Собираем request",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        260,
-        540
+        2700,
+        680
       ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "e8676b72-eca4-4001-afbd-c59c0064ea8f",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2460,
+        680
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -675,21 +802,8 @@
         40,
         360
       ],
-      "webhookId": "7a805f01-3479-4f94-850c-5db240030c7d"
-    },
-    {
-      "parameters": {
-        "content": "Сделать проверку на мэтч поразному написаных треков",
-        "height": 82.08354203394998
-      },
-      "id": "6df581b2-8dbe-4472-bf4e-1fa7048d11cc",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        260,
-        260
-      ]
+      "webhookId": "7a805f01-3479-4f94-850c-5db240030c7d",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -699,6 +813,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-23T11:56:00.000Z",
-  "versionId": "6e5a53fa-f36b-4f45-9909-e700340fa518"
+  "updatedAt": "2024-11-01T14:30:56.000Z",
+  "versionId": "049d42b0-4220-4d03-ae5b-2a65a0ede4dd"
 }
