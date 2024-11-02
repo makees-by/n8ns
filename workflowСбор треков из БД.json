@@ -68,6 +68,21 @@
             "node": "Разделяем BP и EP",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Подготовка перед работай с переменной1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Подготовка перед работай с переменной4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Подготовка перед работай с переменной5",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -79,11 +94,21 @@
             "node": "Подсчёт необходимого колличества серверов",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Подготовка перед работай с переменной2",
+            "type": "main",
+            "index": 0
           }
         ],
         [
           {
             "node": "Подсчёт необходимого колличества серверов1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Подготовка перед работай с переменной",
             "type": "main",
             "index": 0
           }
@@ -308,38 +333,6 @@
         [
           {
             "node": "Собираем request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Подсчёт необходимого колличества серверов": {
-      "main": [
-        [
-          {
-            "node": "отправка на один сервер",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Делим на 2 сервера",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Делим на 3 сервера",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "сообщаем о проблеме",
             "type": "main",
             "index": 0
           }
@@ -652,17 +645,6 @@
         ]
       ]
     },
-    "Merge1": {
-      "main": [
-        [
-          {
-            "node": "Summarize",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Обновление параметра в таблице Servers для BP_1": {
       "main": [
         [
@@ -791,6 +773,236 @@
             "node": "Сбор треков из БД таблицы traks",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Подсчёт необходимого колличества серверов": {
+      "main": [
+        [
+          {
+            "node": "отправка на один сервер",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 2 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 3 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "сообщаем о проблеме",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Summarize",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной1": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной1": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If6": {
+      "main": [
+        [
+          {
+            "node": "Разделяем BP и EP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной2": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной2": {
+      "main": [
+        [
+          {
+            "node": "If8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If8": {
+      "main": [
+        [
+          {
+            "node": "Подсчёт необходимого колличества серверов",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной4": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной4": {
+      "main": [
+        [
+          {
+            "node": "If9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If9": {
+      "main": [
+        [
+          {
+            "node": "Количество проверяемых треков BP1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Количество проверяемых треков BP1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной": {
+      "main": [
+        [
+          {
+            "node": "If10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If10": {
+      "main": [
+        [
+          {
+            "node": "Подсчёт необходимого колличества серверов1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной5": {
+      "main": [
+        [
+          {
+            "node": "отправка в процесс работы с переменной5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "отправка в процесс работы с переменной5": {
+      "main": [
+        [
+          {
+            "node": "If11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If11": {
+      "main": [
+        [
+          {
+            "node": "Количество проверяемых треков EP1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Количество проверяемых треков EP1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -1170,8 +1382,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2480,
-        40
+        2520,
+        -380
       ]
     },
     {
@@ -1348,8 +1560,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2140,
-        1080
+        2120,
+        1240
       ]
     },
     {
@@ -1403,8 +1615,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3080,
-        400
+        3040,
+        1500
       ],
       "executeOnce": true
     },
@@ -1433,8 +1645,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3080,
-        220
+        3060,
+        1080
       ],
       "executeOnce": true
     },
@@ -1455,120 +1667,8 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
       "position": [
-        5380,
-        380
-      ]
-    },
-    {
-      "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 1,
-                    "operator": {
-                      "type": "number",
-                      "operation": "lte"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "1 сервер"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "ea77c958-d5f8-48bb-91b5-147d9b8ef117",
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 2,
-                    "operator": {
-                      "type": "number",
-                      "operation": "lte"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "2 сервера"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "6a2a60ea-3057-42d4-95a3-56483b16439f",
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 3,
-                    "operator": {
-                      "type": "number",
-                      "operation": "lte"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "3 сервера"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "d92b9161-db5c-4cfb-bb78-ee9385b1314e",
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 3,
-                    "operator": {
-                      "type": "number",
-                      "operation": "gt"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "нужно больше серверов"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "5dfc994a-19fe-40fe-8cc3-6c9b75640267",
-      "name": "Подсчёт необходимого колличества серверов",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
-      "position": [
-        2760,
-        -240
+        5000,
+        1380
       ]
     },
     {
@@ -1617,8 +1717,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        5700,
-        1120
+        5520,
+        1380
       ]
     },
     {
@@ -1761,7 +1861,7 @@
       "typeVersion": 1,
       "position": [
         3520,
-        880
+        920
       ]
     },
     {
@@ -2303,7 +2403,7 @@
       "typeVersion": 3,
       "position": [
         4480,
-        880
+        920
       ]
     },
     {
@@ -2443,8 +2543,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4720,
-        880
+        4740,
+        920
       ],
       "executeOnce": true,
       "credentials": {
@@ -2453,17 +2553,6 @@
           "name": "MySQL account"
         }
       }
-    },
-    {
-      "parameters": {},
-      "id": "1e21910c-6e98-47f4-95d2-5c6caf6242ee",
-      "name": "Merge1",
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3,
-      "position": [
-        3480,
-        380
-      ]
     },
     {
       "parameters": {
@@ -2495,8 +2584,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        5300,
-        120
+        5360,
+        -160
       ]
     },
     {
@@ -2618,8 +2707,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        5200,
-        1120
+        5260,
+        1380
       ]
     },
     {
@@ -2651,6 +2740,650 @@
         1040,
         20
       ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1 сервер"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea77c958-d5f8-48bb-91b5-147d9b8ef117",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6a2a60ea-3057-42d4-95a3-56483b16439f",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "3 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d92b9161-db5c-4cfb-bb78-ee9385b1314e",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "нужно больше серверов"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5dfc994a-19fe-40fe-8cc3-6c9b75640267",
+      "name": "Подсчёт необходимого колличества серверов",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2760,
+        -240
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "1e21910c-6e98-47f4-95d2-5c6caf6242ee",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        3520,
+        1400
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[{  \"Triger1\":  1, \"Triger2\":  1 } ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f6e84981-4c76-45fb-a478-d7a3eb4767da",
+      "name": "Подготовка перед работай с переменной1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2340,
+        20
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "41c179dc-9ee1-4b69-bdef-59a70be253e1",
+      "name": "отправка в процесс работы с переменной1",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2560,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5d98fda7-8123-48ae-bdcc-4bc53a2d09a8",
+      "name": "If6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2780,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[ 0 ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "82425f36-f3ed-4e68-9b16-65eefa34d3a0",
+      "name": "Подготовка перед работай с переменной2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2660,
+        -720
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "8902ce55-1d59-4cd7-ad21-c6e62f8945b9",
+      "name": "отправка в процесс работы с переменной2",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2840,
+        -720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b0a62871-9f2d-46a3-8a3e-636304408294",
+      "name": "If8",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3020,
+        -720
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "44524005-e170-4359-93e8-1332062b2748",
+      "name": "Подготовка перед работай с переменной4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2460,
+        1280
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Работа с переменными"
+        },
+        "options": {}
+      },
+      "id": "a7669072-a51b-4dc7-b302-4b698efc2f76",
+      "name": "отправка в процесс работы с переменной4",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2640,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5806f3d0-eb1d-450b-a4f7-c794960b93a3",
+      "name": "If9",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2820,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c9c593a3-398b-45f1-8dfe-bd448579ff3c",
+              "name": "PP",
+              "value": "BP",
+              "type": "string"
+            },
+            {
+              "id": "df0a38c3-0eb7-46c9-b190-6d839a90a50a",
+              "name": "Items",
+              "value": "=1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "354fad6e-30d6-4a31-874e-af1ba809febb",
+      "name": "Количество проверяемых треков BP1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3060,
+        1260
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
+              "name": "data",
+              "value": "[ 0 ]",
+              "type": "array"
+            },
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "update",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "465705fa-685d-48f0-bd8b-48aabc9b2894",
+      "name": "Подготовка перед работай с переменной",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3060,
+        320
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Работа с переменными"
+        },
+        "options": {}
+      },
+      "id": "811581e2-49b5-45c0-b49f-e84c5d013e63",
+      "name": "отправка в процесс работы с переменной",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3260,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a2fadfa9-eacf-46b1-b0da-a2db39b14d70",
+      "name": "If10",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3460,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "183e4a0a-cbd6-43c9-9a0c-a9ee05c37546",
+      "name": "Подготовка перед работай с переменной5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2420,
+        1740
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "KLOTYwG7rXVfZCKr",
+          "mode": "list",
+          "cachedResultName": "Запись переменной"
+        },
+        "options": {}
+      },
+      "id": "b3983862-5a5c-498c-851b-28d5e9c8a5cc",
+      "name": "отправка в процесс работы с переменной5",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2600,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "93969579-c2d3-4266-8219-a1351b73f394",
+      "name": "If11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2780,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c9c593a3-398b-45f1-8dfe-bd448579ff3c",
+              "name": "PP",
+              "value": "EP",
+              "type": "string"
+            },
+            {
+              "id": "df0a38c3-0eb7-46c9-b190-6d839a90a50a",
+              "name": "Items",
+              "value": "=1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0724cf66-8897-4218-afed-36dd17d00548",
+      "name": "Количество проверяемых треков EP1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3040,
+        1720
+      ],
+      "executeOnce": true
     }
   ],
   "pinData": {},
@@ -2660,6 +3393,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-10-21T09:19:50.000Z",
-  "versionId": "29d06c43-b8d4-4797-983f-db03a628f12e"
+  "updatedAt": "2024-11-02T09:30:55.000Z",
+  "versionId": "ebf1169b-418f-4171-a204-75aa7999495a"
 }
