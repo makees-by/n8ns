@@ -70,17 +70,17 @@
             "index": 0
           },
           {
-            "node": "Подготовка перед работай с переменной1",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Подготовка перед работай с переменной4",
             "type": "main",
             "index": 0
           },
           {
             "node": "Подготовка перед работай с переменной5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase1",
             "type": "main",
             "index": 0
           }
@@ -766,17 +766,6 @@
         ]
       ]
     },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Сбор треков из БД таблицы traks",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Подсчёт необходимого колличества серверов": {
       "main": [
         [
@@ -814,28 +803,6 @@
         [
           {
             "node": "Summarize",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Подготовка перед работай с переменной1": {
-      "main": [
-        [
-          {
-            "node": "отправка в процесс работы с переменной1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "отправка в процесс работы с переменной1": {
-      "main": [
-        [
-          {
-            "node": "If6",
             "type": "main",
             "index": 0
           }
@@ -1003,6 +970,28 @@
             "node": "Merge1",
             "type": "main",
             "index": 1
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Сбор треков из БД таблицы traks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -2713,21 +2702,6 @@
     },
     {
       "parameters": {
-        "path": "take_traks_from_bd",
-        "options": {}
-      },
-      "id": "952b2dbd-97ec-41ee-92ea-0fe5f286edd3",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        680,
-        340
-      ],
-      "webhookId": "7a83d8a6-7274-45bb-a9c6-93003bf3d9df"
-    },
-    {
-      "parameters": {
         "content": "Сделать проверку на отсутствие на сервере треков ЕР или БП на проверку",
         "height": 80,
         "color": 3
@@ -2862,67 +2836,6 @@
       "position": [
         3520,
         1400
-      ]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "e42c85c3-ac65-4414-bcd4-ad1697231710",
-              "name": "data",
-              "value": "[{  \"Triger1\":  1, \"Triger2\":  1 } ]",
-              "type": "array"
-            },
-            {
-              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
-              "name": "var_name",
-              "value": "traks_from_bd",
-              "type": "string"
-            },
-            {
-              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
-              "name": "operation",
-              "value": "update",
-              "type": "string"
-            },
-            {
-              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
-              "name": "parametr",
-              "value": "process.trigers",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "f6e84981-4c76-45fb-a478-d7a3eb4767da",
-      "name": "Подготовка перед работай с переменной1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        2340,
-        20
-      ],
-      "executeOnce": true
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "KLOTYwG7rXVfZCKr",
-          "mode": "list",
-          "cachedResultName": "Запись переменной"
-        },
-        "options": {}
-      },
-      "id": "41c179dc-9ee1-4b69-bdef-59a70be253e1",
-      "name": "отправка в процесс работы с переменной1",
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.1,
-      "position": [
-        2560,
-        20
       ]
     },
     {
@@ -3384,6 +3297,56 @@
         1720
       ],
       "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  1, \"Triger2\":  1 } ",
+        "filePath": "=root/n8n/take_traks_from_bd.json"
+      },
+      "id": "20ae09f9-c029-41ca-99a8-8e494be1a8f7",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2460,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "0",
+        "filePath": "=root/n8n/take_traks_from_bd.json"
+      },
+      "id": "43c2d897-742b-4e2f-9759-3fc0c6524da7",
+      "name": "Меняем triger1 на ",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2420,
+        -700
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "path": "take_traks_from_bd",
+        "options": {}
+      },
+      "id": "952b2dbd-97ec-41ee-92ea-0fe5f286edd3",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        680,
+        340
+      ],
+      "webhookId": "7a83d8a6-7274-45bb-a9c6-93003bf3d9df"
     }
   ],
   "pinData": {},
@@ -3393,6 +3356,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-02T09:30:55.000Z",
-  "versionId": "ebf1169b-418f-4171-a204-75aa7999495a"
+  "updatedAt": "2024-11-03T10:57:53.000Z",
+  "versionId": "a1c635db-aadb-4680-b54f-06f53feefaa0"
 }
