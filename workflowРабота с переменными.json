@@ -127,28 +127,6 @@
         ]
       ]
     },
-    "DATA2": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields1": {
-      "main": [
-        [
-          {
-            "node": "Объединяем все треки в один массив1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Объединяем все треки в один массив1": {
       "main": [
         [
@@ -263,6 +241,28 @@
         [
           {
             "node": "Обновляем значение переменной6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DATA2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
@@ -469,41 +469,6 @@
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "cc88a440-226b-4533-b348-b18b93a28ebd",
-              "name": "data",
-              "value": "={{ $json.data }}",
-              "type": "array"
-            },
-            {
-              "id": "13b6a0bb-6f54-4ec3-bbf4-cf7c461f5ca9",
-              "name": "parametr",
-              "value": "={{ $json.parametr }}",
-              "type": "string"
-            },
-            {
-              "id": "a5aa9a04-aba3-4d61-a266-018b58a68f3e",
-              "name": "var_name",
-              "value": "={{ $json.var_name }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "e3c9936b-1af2-4c28-86cd-eae16115371f",
-      "name": "DATA2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        240,
-        1260
-      ]
-    },
-    {
-      "parameters": {
         "operation": "opWrite",
         "queryPath": "data",
         "sourceType": "sourceTypeJson",
@@ -550,29 +515,6 @@
       "typeVersion": 1,
       "position": [
         900,
-        1260
-      ]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "a533ea13-ee86-4292-82e7-3314de607333",
-              "name": "={{ $json.parametr }}",
-              "value": "={{ $input.item.json.values().first() }}",
-              "type": "array"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "13d6b9ef-c716-4146-8f1e-7c0e285447a8",
-      "name": "Edit Fields1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        480,
         1260
       ]
     },
@@ -963,6 +905,64 @@
         1940,
         780
       ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a533ea13-ee86-4292-82e7-3314de607333",
+              "name": "={{ $json.parametr }}",
+              "value": "={{ $input.item.json.values().first() }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1f4d884-81ee-40a0-b227-8b0ff3cf24ec",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cc88a440-226b-4533-b348-b18b93a28ebd",
+              "name": "data",
+              "value": "={{ $json.data }}",
+              "type": "array"
+            },
+            {
+              "id": "13b6a0bb-6f54-4ec3-bbf4-cf7c461f5ca9",
+              "name": "parametr",
+              "value": "={{ $json.parametr }}",
+              "type": "string"
+            },
+            {
+              "id": "a5aa9a04-aba3-4d61-a266-018b58a68f3e",
+              "name": "var_name",
+              "value": "={{ $json.var_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "46b7a63e-3d80-41e0-afb7-28c6690962e9",
+      "name": "DATA2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        260,
+        1260
+      ]
     }
   ],
   "pinData": {},
@@ -972,6 +972,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-02T09:34:20.000Z",
-  "versionId": "683d9fdb-d295-4d47-8037-eb61eb21b411"
+  "updatedAt": "2024-11-03T10:45:05.000Z",
+  "versionId": "c7d0cdad-0ba7-489e-98cb-d85e714e6e72"
 }
