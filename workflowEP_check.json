@@ -442,11 +442,6 @@
       "main": [
         [
           {
-            "node": "Отправка данных в модуль статистики",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "IF",
             "type": "main",
             "index": 0
@@ -500,13 +495,7 @@
     },
     "Убираем пустые значения": {
       "main": [
-        [
-          {
-            "node": "IF",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "получаем трек и отправляем только один1": {
@@ -1186,8 +1175,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        140,
-        586.484375
+        840,
+        340
       ]
     },
     {
@@ -1230,8 +1219,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        160,
-        700
+        860,
+        454
       ],
       "disabled": true,
       "continueOnFail": true
@@ -1738,8 +1727,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        120,
-        500
+        820,
+        254
       ]
     },
     {
@@ -1876,8 +1865,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        -100,
-        780
+        -120,
+        740
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -1918,8 +1907,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        80,
-        940
+        260,
+        760
       ],
       "executeOnce": true
     },
@@ -2011,8 +2000,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        440,
-        700
+        1140,
+        454
       ]
     },
     {
@@ -2130,8 +2119,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        -100,
-        1240
+        -140,
+        1360
       ],
       "retryOnFail": true,
       "onError": "continueErrorOutput"
@@ -2341,6 +2330,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-07-25T20:56:07.000Z",
-  "versionId": "153184b1-8b4e-4603-a150-b8d4f7a0da56"
+  "updatedAt": "2024-11-04T13:02:41.000Z",
+  "versionId": "c4507310-548f-46ad-879f-58ba58759aca"
 }
