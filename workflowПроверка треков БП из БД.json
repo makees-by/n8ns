@@ -1,0 +1,1278 @@
+{
+  "active": false,
+  "connections": {
+    "Распаковываем массив с треками": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Произведём логические расчёты для Servers в БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Закидываем колличество треков в таблицу Servers для сервера BP_2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Трэк в цикле",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Трэк в цикле": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные по трекам с сайта Белпочты",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF3": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено отправителю",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing3": {
+      "main": [
+        [
+          {
+            "node": "разница",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "разница": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные по трекам с сайта Белпочты": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставляем в БД табл Traks статус Доставлено отправителю": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставляем в БД табл Traks статус Доставлено": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставляем в БД табл Traks статус Доставлено1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные по трекам с сайта Белпочты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Servers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Произведём логические расчёты для Servers в БД": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Закидываем колличество треков в таблицу Servers для сервера BP_1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Закидываем колличество треков в таблицу Servers для сервера BP_1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Servers": {
+      "main": [
+        [
+          {
+            "node": "Уменьшаем на 1 количество оставшихся треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Уменьшаем на 1 количество оставшихся треков": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Servers для BP_X": {
+      "main": [
+        [
+          {
+            "node": "Получаем треки в массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем треки в массив": {
+      "main": [
+        [
+          {
+            "node": "Распаковываем массив с треками",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные процесса": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Servers для BP_X",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Данные процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Данные процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Закидываем колличество треков в таблицу Servers для сервера BP_2": {
+      "main": [
+        [
+          {
+            "node": "Отправляем уведомление об окончании проверки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-11T13:49:20.450Z",
+  "id": "YmijBbofjG27z5Tx",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Проверка треков БП из БД",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "bf36efa6-5d66-4b12-8f96-99a4ad8d61bd",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        660,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "body",
+        "options": {}
+      },
+      "id": "872df514-088c-4c46-9a40-a35762a9e219",
+      "name": "Распаковываем массив с треками",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1200,
+        340
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5666f47b-0463-46fd-8e4e-03a8c3860b57",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1620,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.Track }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "10111386-7319-46e1-9930-54236cd63c39",
+      "name": "Получаем данные по трекам с сайта Белпочты",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2160,
+        360
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9bab58ba-391d-4429-bd78-258a475469a8",
+              "name": "Track",
+              "value": "={{ $json.Track }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "548b15c9-a4a8-4a9b-be86-c4729595ec58",
+      "name": "Трэк в цикле",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1900,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.data[0].steps[0].event }}",
+              "operation": "contains",
+              "value2": "Вручено"
+            }
+          ]
+        }
+      },
+      "id": "9ac951e7-7432-477c-9416-e669cbbbe77a",
+      "name": "IF3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2660,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.data[0].steps[0].event }}",
+              "operation": "contains",
+              "value2": "Вручено отправителю"
+            }
+          ]
+        }
+      },
+      "id": "f0bc9b4b-77fe-4afa-aef9-8fa9c6918f15",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2960,
+        260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4526b361-4834-4739-a5aa-11efccdb881e",
+      "name": "No Operation, do nothing3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3240,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getTimeBetweenDates",
+        "startDate": "={{ $('Date & Time').first().json.currentDate }}",
+        "endDate": "={{ $now }}",
+        "units": [
+          "second"
+        ],
+        "options": {}
+      },
+      "id": "f08439a3-e8fb-4ce2-8b7d-e082e155c42d",
+      "name": "разница",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        3100,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "e79248ef-02b4-4d93-8c40-2e478a3bac34",
+              "leftValue": "={{ 35 - $json.timeDifference.seconds }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9f7c0f0b-2f3f-43d3-991c-65e8e5791713",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        3340,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
+              "name": "timer",
+              "value": "={{42- $json.timeDifference.seconds }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "787a9cb3-b023-48f3-9ab5-dff26eff460d",
+      "name": "Edit Fields3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        3560,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
+              "name": "timer",
+              "value": "=1",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "89cb96ba-9ef8-44d3-921a-f9b791aeeefe",
+      "name": "Edit Fields4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        3560,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.random()*10 + $json[\"timer\"] }}",
+        "unit": "seconds"
+      },
+      "id": "de12d33b-37bb-45ba-a6e7-74fa10772256",
+      "name": "Wait3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        3760,
+        1100
+      ],
+      "webhookId": "4ea94f44-9cef-4c88-a1d6-8e2289dbcf32"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c4537afc-1288-4793-90e5-dc1192e4b985",
+              "name": "data[0].number",
+              "value": "={{ $json.data[0].number }}",
+              "type": "string"
+            },
+            {
+              "id": "694bfdba-5419-46ac-af61-233d9dee5316",
+              "name": "data[0].steps[0].event",
+              "value": "={{ $json.data[0].steps[0].event }}",
+              "type": "string"
+            },
+            {
+              "id": "5a20f685-f36c-46c2-b690-f5ff0a9d49fc",
+              "name": "data[0].steps",
+              "value": "={{ $json.data[0].steps }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "40cd5e1f-1974-48d3-aeab-308810f0dc4d",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2380,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Track",
+        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "=Доставлено"
+            },
+            {
+              "column": "DateLastUpd",
+              "value": "={{ $now.format('yyyy-MM-dd') }}"
+            },
+            {
+              "column": "History",
+              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0ec3152b-4843-4283-b2a6-924065e608b9",
+      "name": "Выставляем в БД табл Traks статус Доставлено",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2920,
+        540
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Track",
+        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "=Доставлено отправителю"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3fb7a91f-3b56-410d-ae62-b60e426700f8",
+      "name": "Выставляем в БД табл Traks статус Доставлено отправителю",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3300,
+        240
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Track",
+        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "={{ $json.data[0].steps[0].event }}"
+            },
+            {
+              "column": "DateLastUpd",
+              "value": "={{ $now.format('yyyy-MM-dd') }}"
+            },
+            {
+              "column": "History",
+              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2261c629-6a37-4fb4-a5fc-7b11806d79d6",
+      "name": "Выставляем в БД табл Traks статус Доставлено1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2720,
+        800
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "06bdfc80-aba2-4424-a938-3264d1957b9d",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1940,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "130997e0-9937-4e87-ac6b-a30e673b0c8a",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "1efa6a2f-c7c2-4cf0-bb5b-fcd3d8ad3c58",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2140,
+        140
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "02d8e653-90c8-45b9-9ba0-d57d5b32f92e",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3760,
+        880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b06c0af0-84a3-4f72-baf9-56694ec7c11b",
+      "name": "Отправляем уведомление об окончании проверки",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        -260
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "be76c49d-530f-489a-a210-f3d28caa1004",
+      "name": "Произведём логические расчёты для Servers в БД",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b78f8de6-4c96-4704-a9a2-d80d429f48f0",
+              "name": "items",
+              "value": "={{ $input.all().length }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9d90812b-6e55-475e-bfb8-bc1f4c26f9a4",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1080,
+        -80
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "All_traks",
+              "value": "={{ $json.items }}"
+            },
+            {
+              "column": "Traks_left",
+              "value": "={{ $json.items }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7db82eec-055a-4e9d-b6b0-fc7d018f9592",
+      "name": "Закидываем колличество треков в таблицу Servers для сервера BP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1320,
+        -80
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ae808ddb-2e36-49bd-a7de-e5826056fac8",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "584c8b9f-fc97-4fe7-86af-e35b545379be",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1520,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Traks_left",
+              "value": "={{ $json.items }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "af1d1af0-0763-4cea-b675-c32374027652",
+      "name": "Закидываем колличество треков в таблицу Servers для сервера BP_",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        880,
+        -240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## меняем счётчик оставшихся треков",
+        "height": 80,
+        "width": 494.0052728237823
+      },
+      "id": "103176fb-3d47-49e2-afd4-7a323a2727a0",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Server_name",
+              "value": "={{ $('Данные процесса').item.json.Server }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d10fe99d-2531-4959-8774-c874a62f6a2d",
+      "name": "Получить все записи из таблицы Servers",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1720,
+        1020
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Traks_left",
+              "value": "={{ $json.Traks_left - 1}}"
+            },
+            {
+              "column": "All_traks",
+              "value": "={{ $json.All_traks - 1 }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fcbae19b-a373-45ab-a3f4-59c764b96d61",
+      "name": "Уменьшаем на 1 количество оставшихся треков",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2120,
+        1020
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Server_name",
+              "value": "={{ $json.Server }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fd95aa3b-af22-40f7-88c1-2faa98331882",
+      "name": "Получить все записи из таблицы Servers для BP_X",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        820,
+        340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e68fd29a-2217-4dde-b045-ab192fb6faa5",
+              "name": "body",
+              "value": "={{ $json.TrFch }}",
+              "type": "array"
+            },
+            {
+              "id": "a30fdad0-ff52-4362-be0a-c75f6e2d6294",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "60261606-2c0b-4945-9a78-5432dfbcbd64",
+      "name": "Получаем треки в массив",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1000,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a30fdad0-ff52-4362-be0a-c75f6e2d6294",
+              "name": "Server",
+              "value": "BP_1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1ca6f9b-f733-4fdb-a486-f0f11664d013",
+      "name": "Данные процесса",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        620,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "path": "check_trackBP",
+        "options": {}
+      },
+      "id": "b3d9f9b0-8a34-4bc2-93e6-17b19ad062a5",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        320,
+        340
+      ],
+      "webhookId": "0be951ee-3f27-49dc-9632-4596eb88b470"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3e39371d-7967-4811-83c4-6fb4b4348fab",
+      "name": "Закидываем колличество треков в таблицу Servers для сервера BP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1720,
+        -260
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-03T16:36:21.000Z",
+  "versionId": "d929ceff-c9b1-4ef1-908c-bfb50e05ca68"
+}
