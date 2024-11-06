@@ -32,7 +32,7 @@
             "index": 0
           },
           {
-            "node": "No Operation, do nothing",
+            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
             "type": "main",
             "index": 0
           }
@@ -66,17 +66,6 @@
         [
           {
             "node": "Окончание дневной проверки отправка отчёта",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "When clicking ‘Test workflow’": {
-      "main": [
-        [
-          {
-            "node": "Ответ от сборщика треков из БД",
             "type": "main",
             "index": 0
           }
@@ -288,27 +277,22 @@
         ]
       ]
     },
-    "No Operation, do nothing": {
+    "Отправляем на запуск всем серверам, у которых workOn - 1": {
       "main": [
         [
           {
-            "node": "Следующий процесс. Запукаем ежедневную проверку треков.",
+            "node": "Получаем все сервера с workOn - 1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Следующий процесс. Запукаем ежедневную проверку треков.": {
+    "Получаем все сервера с workOn - 1": {
       "main": [
         [
           {
-            "node": "Запрос к процессу проверки треков БП",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Запрос к процессу проверки треков ЕП",
+            "node": "Отправляем запрос по webhook из БД servers",
             "type": "main",
             "index": 0
           }
@@ -548,8 +532,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        2100,
-        -160
+        2540,
+        -620
       ]
     },
     {
@@ -1036,29 +1020,54 @@
     },
     {
       "parameters": {},
-      "id": "2ae0c8b5-47ca-4c8e-8824-f4ff9e0b053b",
-      "name": "Следующий процесс. Запукаем ежедневную проверку треков.",
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        1860,
-        820
-      ]
-    },
-    {
-      "parameters": {},
       "id": "55750f48-4afd-40a9-9ab9-be9e7087caa9",
-      "name": "No Operation, do nothing",
+      "name": "Отправляем на запуск всем серверам, у которых workOn - 1",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3200,
-        560
+        2920,
+        -640
       ]
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/take_traks_from_bd",
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "725e98eb-312c-4681-a132-46f9b31ac4f4",
+      "name": "Получаем все сервера с workOn - 1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3200,
+        -640
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.Webhook }}",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1071,35 +1080,12 @@
         "options": {}
       },
       "id": "e977bd88-fe2f-42f3-b363-907724394d94",
-      "name": "Запрос к процессу проверки треков БП",
+      "name": "Отправляем запрос по webhook из БД servers",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2260,
-        1100
-      ]
-    },
-    {
-      "parameters": {
-        "url": "https://n8n.makees.online/webhook/take_traks_from_bd",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "url_become",
-              "value": "={{$execution.resumeUrl}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "24eefc5b-a0b8-44c0-80b5-e631e7871dfa",
-      "name": "Запрос к процессу проверки треков ЕП",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        2320,
-        1320
+        3460,
+        -640
       ]
     }
   ],
@@ -1110,6 +1096,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-11-03T15:41:17.000Z",
-  "versionId": "93d21df0-b356-47db-8e86-ac112924e4f5"
+  "updatedAt": "2024-11-06T09:15:16.000Z",
+  "versionId": "9c8eef00-0298-41ac-a99e-280413b54050"
 }
