@@ -691,38 +691,6 @@
         ]
       ]
     },
-    "Подсчёт необходимого колличества серверов": {
-      "main": [
-        [
-          {
-            "node": "отправка на один сервер",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Делим на 2 сервера",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Делим на 3 сервера",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "сообщаем о проблеме",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Merge1": {
       "main": [
         [
@@ -973,6 +941,38 @@
         [
           {
             "node": "Получить все записи из таблицы Tabls4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подсчёт необходимого колличества серверов": {
+      "main": [
+        [
+          {
+            "node": "отправка на один сервер",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 2 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Делим на 3 сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "сообщаем о проблеме",
             "type": "main",
             "index": 0
           }
@@ -2441,118 +2441,6 @@
       ]
     },
     {
-      "parameters": {
-        "rules": {
-          "values": [
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 1,
-                    "operator": {
-                      "type": "number",
-                      "operation": "lte"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "1 сервер"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "ea77c958-d5f8-48bb-91b5-147d9b8ef117",
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 2,
-                    "operator": {
-                      "type": "number",
-                      "operation": "lte"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "2 сервера"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "6a2a60ea-3057-42d4-95a3-56483b16439f",
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 3,
-                    "operator": {
-                      "type": "number",
-                      "operation": "lte"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "3 сервера"
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 2
-                },
-                "conditions": [
-                  {
-                    "id": "d92b9161-db5c-4cfb-bb78-ee9385b1314e",
-                    "leftValue": "={{ $input.all().length /1200 }}",
-                    "rightValue": 3,
-                    "operator": {
-                      "type": "number",
-                      "operation": "gt"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              },
-              "renameOutput": true,
-              "outputKey": "нужно больше серверов"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "5dfc994a-19fe-40fe-8cc3-6c9b75640267",
-      "name": "Подсчёт необходимого колличества серверов",
-      "type": "n8n-nodes-base.switch",
-      "typeVersion": 3.2,
-      "position": [
-        2760,
-        -240
-      ]
-    },
-    {
       "parameters": {},
       "id": "1e21910c-6e98-47f4-95d2-5c6caf6242ee",
       "name": "Merge1",
@@ -3242,6 +3130,118 @@
         2360,
         -560
       ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1 сервер"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "ea77c958-d5f8-48bb-91b5-147d9b8ef117",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 2,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "2 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6a2a60ea-3057-42d4-95a3-56483b16439f",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "3 сервера"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d92b9161-db5c-4cfb-bb78-ee9385b1314e",
+                    "leftValue": "={{ $input.all().length /1200 }}",
+                    "rightValue": 3,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "нужно больше серверов"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5dfc994a-19fe-40fe-8cc3-6c9b75640267",
+      "name": "Подсчёт необходимого колличества серверов",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2760,
+        -240
+      ]
     }
   ],
   "pinData": {},
@@ -3251,6 +3251,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-03T15:19:28.000Z",
-  "versionId": "7df54e0b-85a1-4d54-8ef8-d6cf975550ce"
+  "updatedAt": "2024-11-06T09:15:33.000Z",
+  "versionId": "07f9ed37-4b31-4893-82b0-2b7758f8900d"
 }
