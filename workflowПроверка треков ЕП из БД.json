@@ -21,7 +21,7 @@
       "main": [
         [
           {
-            "node": "Закидываем колличество треков в таблицу Servers для сервера BP_2",
+            "node": "выставляем status work - 0",
             "type": "main",
             "index": 0
           }
@@ -45,42 +45,6 @@
           },
           {
             "node": "HTTP Request1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF3": {
-      "main": [
-        [
-          {
-            "node": "IF",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Выставляем в БД табл Traks статус Доставлено1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF": {
-      "main": [
-        [
-          {
-            "node": "Выставляем в БД табл Traks статус Доставлено отправителю",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Выставляем в БД табл Traks статус Доставлено",
             "type": "main",
             "index": 0
           }
@@ -143,17 +107,6 @@
         [
           {
             "node": "No Operation, do nothing",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields1": {
-      "main": [
-        [
-          {
-            "node": "IF3",
             "type": "main",
             "index": 0
           }
@@ -347,120 +300,11 @@
         ]
       ]
     },
-    "Закидываем колличество треков в таблицу Servers для сервера BP_2": {
-      "main": [
-        [
-          {
-            "node": "Отправляем уведомление об окончании проверки",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Webhook": {
       "main": [
         [
           {
             "node": "Данные процесса",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF1": {
-      "main": [
-        [
-          {
-            "node": "С отметкой доставлено мэтч по индексу (по ID) еп1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Без отметки доставлено мэтч по индексу (по ID) еп",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "data_in_cicle": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "сброс значений после цикла3": {
-      "main": [
-        [
-          {
-            "node": "Структурируем http ответ1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Структурируем http ответ1": {
-      "main": [
-        [
-          {
-            "node": "IF2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "получаем трек и отправляем только один1": {
-      "main": [
-        [
-          {
-            "node": "Отправляем данные на вспомогательный сервер",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request": {
-      "main": [
-        [
-          {
-            "node": "сброс значений после цикла3",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "получаем трек и отправляем только один1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "IF2": {
-      "main": [
-        [
-          {
-            "node": "С отметкой доставлено мэтч по индексу (по ID) еп",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "IF1",
             "type": "main",
             "index": 0
           }
@@ -476,18 +320,7 @@
             "index": 0
           },
           {
-            "node": "Aggregate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate": {
-      "main": [
-        [
-          {
-            "node": "Merge",
+            "node": "Sort",
             "type": "main",
             "index": 0
           }
@@ -522,7 +355,109 @@
           {
             "node": "Merge",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
             "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "выставляем status work - 0": {
+      "main": [
+        [
+          {
+            "node": "Отправляем уведомление об окончании проверки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено отправителю",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -576,43 +511,6 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.belpost.by/api/v1/tracking",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "authorization",
-              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $json.Track }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "5fb8fc75-3de5-421c-81ff-ef649cdbb611",
-      "name": "Получаем данные по трекам с сайта Белпочты",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        2280,
-        -420
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 3000,
-      "continueOnFail": true,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
         "assignments": {
           "assignments": [
             {
@@ -630,50 +528,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1900,
-        380
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.data[0].steps[0].event }}",
-              "operation": "contains",
-              "value2": "Вручено"
-            }
-          ]
-        }
-      },
-      "id": "914b0351-7647-4b6e-8689-7324ecc5ccdb",
-      "name": "IF3",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2880,
-        280
-      ]
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.data[0].steps[0].event }}",
-              "operation": "contains",
-              "value2": "Вручено отправителю"
-            }
-          ]
-        }
-      },
-      "id": "a3efe06d-d4b7-45d0-8357-61913277adfe",
-      "name": "IF",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        3180,
-        260
+        1880,
+        440
       ]
     },
     {
@@ -683,8 +539,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3460,
-        540
+        3980,
+        940
       ]
     },
     {
@@ -702,8 +558,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        3320,
-        860
+        4200,
+        940
       ]
     },
     {
@@ -735,8 +591,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        3560,
-        860
+        4380,
+        940
       ]
     },
     {
@@ -758,8 +614,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3780,
-        700
+        4640,
+        780
       ]
     },
     {
@@ -781,8 +637,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3780,
-        880
+        4640,
+        960
       ]
     },
     {
@@ -795,45 +651,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3980,
-        1100
+        2920,
+        1200
       ],
       "webhookId": "ba4a9966-c43b-4b8d-8fdc-211899cf3077"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "c4537afc-1288-4793-90e5-dc1192e4b985",
-              "name": "data[0].number",
-              "value": "={{ $json.data[0].number }}",
-              "type": "string"
-            },
-            {
-              "id": "694bfdba-5419-46ac-af61-233d9dee5316",
-              "name": "data[0].steps[0].event",
-              "value": "={{ $json.data[0].steps[0].event }}",
-              "type": "string"
-            },
-            {
-              "id": "5a20f685-f36c-46c2-b690-f5ff0a9d49fc",
-              "name": "data[0].steps",
-              "value": "={{ $json.data[0].steps }}",
-              "type": "array"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "78f33f6c-492f-4949-b2fd-9a91ab408eda",
-      "name": "Edit Fields1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        2680,
-        400
-      ]
     },
     {
       "parameters": {
@@ -870,8 +691,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3140,
-        540
+        4140,
+        380
       ],
       "credentials": {
         "mySql": {
@@ -896,7 +717,7 @@
           "values": [
             {
               "column": "Status",
-              "value": "=Доставлено отправителю"
+              "value": "=Вручено отправителю"
             }
           ]
         },
@@ -907,8 +728,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3520,
-        240
+        3980,
+        620
       ],
       "credentials": {
         "mySql": {
@@ -933,7 +754,7 @@
           "values": [
             {
               "column": "Status",
-              "value": "={{ $json.data[0].steps[0].event }}"
+              "value": "=Не доставлено"
             },
             {
               "column": "DateLastUpd",
@@ -952,8 +773,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2940,
-        800
+        3700,
+        940
       ],
       "credentials": {
         "mySql": {
@@ -971,8 +792,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1940,
-        140
+        1840,
+        220
       ]
     },
     {
@@ -1005,8 +826,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2140,
-        140
+        2100,
+        220
       ]
     },
     {
@@ -1016,8 +837,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3980,
-        880
+        4880,
+        960
       ]
     },
     {
@@ -1169,8 +990,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        880,
-        -240
+        740,
+        -280
       ],
       "executeOnce": true,
       "credentials": {
@@ -1361,44 +1182,6 @@
     },
     {
       "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Servers",
-          "mode": "list",
-          "cachedResultName": "Servers"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "0"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "dddef527-d9f8-4885-939c-ae9be4881f01",
-      "name": "Закидываем колличество треков в таблицу Servers для сервера BP_2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1720,
-        -260
-      ],
-      "executeOnce": true,
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "path": "check_trackEP",
         "options": {}
       },
@@ -1412,846 +1195,6 @@
       ],
       "webhookId": "9511889c-228b-4775-bd00-c430f4161789",
       "disabled": true
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.table }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.page }}",
-          "mode": "id"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Отметка о доставке": "Доставлено",
-            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }} европочта",
-            "Индекс": "={{ $json.Индекс }}",
-            "Актуальный статус": "={{ $('Структурируем http ответ1').first().json['Трек номер'] }}: {{ $json.status }} "
-          },
-          "matchingColumns": [
-            "Индекс"
-          ],
-          "schema": [
-            {
-              "id": "число",
-              "displayName": "число",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио менеджера",
-              "displayName": "фио менеджера",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио покупателя",
-              "displayName": "фио покупателя",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "продажа",
-              "displayName": "продажа",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "без накрута",
-              "displayName": "без накрута",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "накрут",
-              "displayName": "накрут",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "трек",
-              "displayName": "трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "невостреб",
-              "displayName": "невостреб",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "наличие",
-              "displayName": "наличие",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "личный",
-              "displayName": "личный",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Отметка о доставке",
-              "displayName": "Отметка о доставке",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Актуальный статус",
-              "displayName": "Актуальный статус",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Индекс",
-              "displayName": "Индекс",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Дата последнего обновления",
-              "displayName": "Дата последнего обновления",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "14a255c1-fa55-4af7-af6f-ae368a1fd521",
-      "name": "С отметкой доставлено мэтч по индексу (по ID) еп",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [
-        3900,
-        -280
-      ],
-      "alwaysOutputData": true,
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.table }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.page }}",
-          "mode": "id"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }} европочта",
-            "Индекс": "={{ $json.Индекс }}",
-            "Актуальный статус": "={{ $('Структурируем http ответ1').first().json['Трек номер'] }}: {{ $json.status }}"
-          },
-          "matchingColumns": [
-            "Индекс"
-          ],
-          "schema": [
-            {
-              "id": "число",
-              "displayName": "число",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио менеджера",
-              "displayName": "фио менеджера",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио покупателя",
-              "displayName": "фио покупателя",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "продажа",
-              "displayName": "продажа",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "без накрута",
-              "displayName": "без накрута",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "накрут",
-              "displayName": "накрут",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "трек",
-              "displayName": "трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "невостреб",
-              "displayName": "невостреб",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "наличие",
-              "displayName": "наличие",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "личный",
-              "displayName": "личный",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Отметка о доставке",
-              "displayName": "Отметка о доставке",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Актуальный статус",
-              "displayName": "Актуальный статус",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Индекс",
-              "displayName": "Индекс",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Дата последнего обновления",
-              "displayName": "Дата последнего обновления",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "5680ca45-3bd9-4037-8387-e13b977d7292",
-      "name": "Без отметки доставлено мэтч по индексу (по ID) еп",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [
-        3600,
-        60
-      ],
-      "alwaysOutputData": true,
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.status }}",
-              "operation": "contains",
-              "value2": "возвращено отправителю"
-            },
-            {
-              "value1": "={{ $json.status }}",
-              "operation": "notContains",
-              "value2": "будет"
-            }
-          ]
-        }
-      },
-      "id": "26089677-3a2c-42df-b891-dde917ef5925",
-      "name": "IF1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        3420,
-        -20
-      ]
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.table }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.page }}",
-          "mode": "id"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "Отметка о доставке": "Вручено отправителю",
-            "Дата последнего обновления": "={{ $now.toISO().slice(0,19) }} европочта",
-            "Индекс": "={{ $json.Индекс }}",
-            "Актуальный статус": "={{ $('Структурируем http ответ1').first().json['Трек номер'] }}: {{ $json.status }}"
-          },
-          "matchingColumns": [
-            "Индекс"
-          ],
-          "schema": [
-            {
-              "id": "число",
-              "displayName": "число",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио менеджера",
-              "displayName": "фио менеджера",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "фио покупателя",
-              "displayName": "фио покупателя",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "продажа",
-              "displayName": "продажа",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "без накрута",
-              "displayName": "без накрута",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "накрут",
-              "displayName": "накрут",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "трек",
-              "displayName": "трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "невостреб",
-              "displayName": "невостреб",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "наличие",
-              "displayName": "наличие",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "личный",
-              "displayName": "личный",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
-              "id": "Отметка о доставке",
-              "displayName": "Отметка о доставке",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Актуальный статус",
-              "displayName": "Актуальный статус",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Индекс",
-              "displayName": "Индекс",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
-            },
-            {
-              "id": "Дата последнего обновления",
-              "displayName": "Дата последнего обновления",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "d6a6c911-f19e-441d-909f-a0b86320a9be",
-      "name": "С отметкой доставлено мэтч по индексу (по ID) еп1",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4,
-      "position": [
-        3620,
-        -140
-      ],
-      "alwaysOutputData": true,
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      },
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "number": [
-            {
-              "name": "treck",
-              "value": "={{ $json.трек }}"
-            }
-          ],
-          "string": [
-            {
-              "name": "page",
-              "value": "={{ $json.page }}"
-            },
-            {
-              "name": "table",
-              "value": "={{ $json.table }}"
-            },
-            {
-              "name": "индекс",
-              "value": "={{ $json.индекс }}"
-            }
-          ]
-        },
-        "options": {
-          "dotNotation": false
-        }
-      },
-      "id": "e367dad8-9b76-4625-a3c4-80cbd4d25fb7",
-      "name": "data_in_cicle",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        2540,
-        -400
-      ],
-      "executeOnce": true
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "options": {
-          "dotNotation": false
-        }
-      },
-      "id": "f1611c36-6b75-4f7a-b2cf-077e31a0341c",
-      "name": "сброс значений после цикла3",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        2800,
-        -600
-      ],
-      "executeOnce": true,
-      "alwaysOutputData": true
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "status",
-              "value": "={{ $('HTTP Request').last().json.client_info }}"
-            },
-            {
-              "name": "table",
-              "value": "={{ $('data_in_cicle').first().json.table }}"
-            },
-            {
-              "name": "Трек номер",
-              "value": "={{ $('data_in_cicle').first().json.treck }}"
-            },
-            {
-              "name": "Индекс",
-              "value": "={{ $('data_in_cicle').first().json.индекс }}"
-            }
-          ],
-          "number": [
-            {
-              "name": "page",
-              "value": "={{ $('data_in_cicle').first().json.page }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c9bc95c6-fa84-42dd-9bc8-c506cbe0777d",
-      "name": "Структурируем http ответ1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        3200,
-        -500
-      ],
-      "executeOnce": true
-    },
-    {
-      "parameters": {
-        "values": {
-          "string": [
-            {
-              "name": "=processID",
-              "value": "={{ $('Ввод id статичных таблиц').first().json.processID }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "b734b593-87d6-46f9-9bcf-0334c3e718d1",
-      "name": "получаем трек и отправляем только один1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        2600,
-        -100
-      ],
-      "executeOnce": true
-    },
-    {
-      "parameters": {
-        "url": "https://n8n.makees.ru/webhook/EPrtt",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "treck",
-              "value": "={{ $json.treck }}"
-            },
-            {
-              "name": "page",
-              "value": "={{ $json.page }}"
-            },
-            {
-              "name": "table",
-              "value": "={{ $json.table }}"
-            },
-            {
-              "name": "=индекс",
-              "value": "={{ $json.индекс }}"
-            },
-            {
-              "name": "processID",
-              "value": "={{ $json.processID }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "a0c2cafd-3521-45c8-b9d4-de3d14c21a44",
-      "name": "Отправляем данные на вспомогательный сервер",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2820,
-        -60
-      ],
-      "retryOnFail": true,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "url": "=https://api-kassa.evropochta.by/api/ops/postal/tracking/{{ $json.treck }}",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "authority",
-              "value": "api-kassa.evropochta.by"
-            },
-            {
-              "name": "accept",
-              "value": "application/json, text/plain, */*"
-            },
-            {
-              "name": "accept-language",
-              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
-            },
-            {
-              "name": "operatoropstoken",
-              "value": "DzjvfymAsXmy2LGMJy0KK6e84ZKbh1FZ"
-            },
-            {
-              "name": "origin",
-              "value": "https://evropochta.by"
-            },
-            {
-              "name": "referer",
-              "value": "https://evropochta.by/"
-            },
-            {
-              "name": "sec-ch-ua",
-              "value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
-            },
-            {
-              "name": "sec-ch-ua-mobile",
-              "value": "?0"
-            },
-            {
-              "name": "sec-ch-ua-platform",
-              "value": "\"Windows\""
-            },
-            {
-              "name": "sec-fetch-dest",
-              "value": "empty"
-            },
-            {
-              "name": "sec-fetch-mode",
-              "value": "cors"
-            },
-            {
-              "name": "sec-fetch-site",
-              "value": "same-site"
-            },
-            {
-              "name": "user-agent",
-              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "3da86bb5-4848-4713-99f7-a16a23717da6",
-      "name": "HTTP Request",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        2760,
-        -400
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.status }}",
-              "operation": "contains",
-              "value2": "выдано"
-            }
-          ]
-        }
-      },
-      "id": "b7bbac1f-5447-4594-83d0-238ec47b5e74",
-      "name": "IF2",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        3420,
-        -260
-      ]
     },
     {
       "parameters": {
@@ -2321,7 +1264,7 @@
       "typeVersion": 4.1,
       "position": [
         2180,
-        380
+        440
       ],
       "retryOnFail": true,
       "waitBetweenTries": 2000,
@@ -2337,8 +1280,8 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2420,
-        400
+        3320,
+        300
       ]
     },
     {
@@ -2360,8 +1303,8 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2300,
-        20
+        2280,
+        40
       ]
     },
     {
@@ -2375,8 +1318,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2460,
-        40
+        2440,
+        180
       ]
     },
     {
@@ -2389,22 +1332,212 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2400,
-        240
+        2760,
+        180
       ]
     },
     {
       "parameters": {
-        "mode": "combine",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "938e218a-ed37-4303-b047-10be5128b7bb",
+              "name": "last_status",
+              "value": "={{ $json.client_info }}",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
+      "id": "7e670ca4-4540-47cf-974b-00a1a3b2bc48",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2880,
+        420
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "timeX",
+              "order": "descending"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cf4c8872-dadb-4b06-b1e4-7cced1f42733",
+      "name": "Sort",
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        2560,
+        420
+      ]
+    },
+    {
+      "parameters": {},
       "id": "f6a51b46-8864-4509-a8cd-f154374a2f63",
       "name": "Merge",
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        2580,
-        300
+        3160,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $('Данные процесса').item.json.Server }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dddef527-d9f8-4885-939c-ae9be4881f01",
+      "name": "выставляем status work - 0",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1720,
+        -260
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c4537afc-1288-4793-90e5-dc1192e4b985",
+              "name": "number",
+              "value": "={{ $('Трэк в цикле').item.json.Track }}",
+              "type": "string"
+            },
+            {
+              "id": "694bfdba-5419-46ac-af61-233d9dee5316",
+              "name": "last_event",
+              "value": "={{ $json.data[1].last_status }}",
+              "type": "string"
+            },
+            {
+              "id": "5a20f685-f36c-46c2-b690-f5ff0a9d49fc",
+              "name": "steps",
+              "value": "={{ $json.data[0].data }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "092aa735-15da-4f37-a366-7519aa6e1564",
+      "name": "Edit Fields5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3480,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0225f2ec-c831-4bf4-b315-4e10c39bd1b0",
+              "leftValue": "={{ $json.last_event }}",
+              "rightValue": "выдано",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "739c90fc-dde7-4f83-af30-41a978610c37",
+      "name": "If4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3680,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "eb922e4d-d3d6-4771-bdaf-4dc42fa33eea",
+              "leftValue": "={{ $json.last_event }}",
+              "rightValue": "возвращено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "db6ee1ec-e11c-4b77-900c-a86f6e7d0067",
+              "leftValue": "={{ $json.last_event }}",
+              "rightValue": "будет возвращено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "b79102a3-1b1b-428c-aed4-1cd70ffc985d",
+      "name": "If5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3720,
+        640
       ]
     }
   ],
@@ -2415,6 +1548,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-11-04T13:02:37.000Z",
-  "versionId": "9add0eb3-eee8-42ec-95a9-71e590d5aacc"
+  "updatedAt": "2024-11-07T15:35:05.000Z",
+  "versionId": "e51f0a1c-e8e4-4faf-998c-d6aec44eed4a"
 }
