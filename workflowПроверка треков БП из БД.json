@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Распаковываем массив с треками": {
       "main": [
@@ -358,22 +358,22 @@
         ]
       ]
     },
-    "Webhook": {
+    "Закидываем колличество треков в таблицу Servers для сервера BP_2": {
       "main": [
         [
           {
-            "node": "Данные процесса",
+            "node": "Отправляем уведомление об окончании проверки",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Закидываем колличество треков в таблицу Servers для сервера BP_2": {
+    "Webhook": {
       "main": [
         [
           {
-            "node": "Отправляем уведомление об окончании проверки",
+            "node": "Данные процесса",
             "type": "main",
             "index": 0
           }
@@ -1214,21 +1214,6 @@
     },
     {
       "parameters": {
-        "path": "check_trackBP",
-        "options": {}
-      },
-      "id": "b3d9f9b0-8a34-4bc2-93e6-17b19ad062a5",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        320,
-        340
-      ],
-      "webhookId": "0be951ee-3f27-49dc-9632-4596eb88b470"
-    },
-    {
-      "parameters": {
         "operation": "update",
         "table": {
           "__rl": true,
@@ -1264,6 +1249,21 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "path": "check_trackBP1",
+        "options": {}
+      },
+      "id": "b3d9f9b0-8a34-4bc2-93e6-17b19ad062a5",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        320,
+        340
+      ],
+      "webhookId": "0be951ee-3f27-49dc-9632-4596eb88b470"
     }
   ],
   "pinData": {},
@@ -1272,7 +1272,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-11-03T16:36:21.000Z",
-  "versionId": "d929ceff-c9b1-4ef1-908c-bfb50e05ca68"
+  "triggerCount": 1,
+  "updatedAt": "2024-11-09T11:35:25.000Z",
+  "versionId": "c351ffc4-407a-447e-9180-470bda0b3bc1"
 }
