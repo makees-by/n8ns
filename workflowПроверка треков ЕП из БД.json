@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Распаковываем массив с треками": {
       "main": [
@@ -300,17 +300,6 @@
         ]
       ]
     },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Данные процесса",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "HTTP Request1": {
       "main": [
         [
@@ -456,6 +445,17 @@
         [
           {
             "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Данные процесса",
             "type": "main",
             "index": 0
           }
@@ -1182,22 +1182,6 @@
     },
     {
       "parameters": {
-        "path": "check_trackEP",
-        "options": {}
-      },
-      "id": "25676d0c-bf95-42f2-b512-9e065285ea42",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        320,
-        340
-      ],
-      "webhookId": "9511889c-228b-4775-bd00-c430f4161789",
-      "disabled": true
-    },
-    {
-      "parameters": {
         "url": "=https://api-kassa.evropochta.by/api/ops/postal/tracking/{{ $json.Track }}",
         "sendHeaders": true,
         "headerParameters": {
@@ -1539,6 +1523,21 @@
         3720,
         640
       ]
+    },
+    {
+      "parameters": {
+        "path": "check_trackEP1",
+        "options": {}
+      },
+      "id": "25676d0c-bf95-42f2-b512-9e065285ea42",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        320,
+        340
+      ],
+      "webhookId": "9511889c-228b-4775-bd00-c430f4161789"
     }
   ],
   "pinData": {},
@@ -1547,7 +1546,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-11-07T15:35:05.000Z",
-  "versionId": "e51f0a1c-e8e4-4faf-998c-d6aec44eed4a"
+  "triggerCount": 1,
+  "updatedAt": "2024-11-09T11:35:21.000Z",
+  "versionId": "570e8441-b43b-438a-a0ab-30522e19bdfd"
 }
