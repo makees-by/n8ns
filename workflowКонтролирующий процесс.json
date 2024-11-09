@@ -50,16 +50,11 @@
         ]
       ]
     },
-    "Ожидаем завершения всех проверок": {
-      "main": [
-        []
-      ]
-    },
     "проверяем завершили ли проверку все сервера": {
       "main": [
         [
           {
-            "node": "Окончание дневной проверки отправка отчёта",
+            "node": "Получаем все сервера с workOn - ",
             "type": "main",
             "index": 0
           }
@@ -297,6 +292,17 @@
       "main": [
         [
           {
+            "node": "Находим максимальный traks_left",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Находим максимальный traks_left": {
+      "main": [
+        [
+          {
             "node": "If",
             "type": "main",
             "index": 0
@@ -304,11 +310,40 @@
         ]
       ]
     },
-    "When clicking ‘Test workflow’": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Окончание дневной проверки отправка отчёта",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
       "main": [
         [
           {
             "node": "Получаем все сервера с workOn - ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ожидаем завершения всех проверок": {
+      "main": [
+        [
+          {
+            "node": "проверяем завершили ли проверку все сервера",
             "type": "main",
             "index": 0
           }
@@ -468,8 +503,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4140,
-        -380
+        3700,
+        -860
       ]
     },
     {
@@ -493,8 +528,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4380,
-        -380
+        4840,
+        -880
       ]
     },
     {
@@ -548,8 +583,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        3540,
-        -800
+        3340,
+        -900
       ]
     },
     {
@@ -1114,14 +1149,6 @@
           "cachedResultName": "Servers"
         },
         "returnAll": true,
-        "where": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "1"
-            }
-          ]
-        },
         "options": {}
       },
       "id": "8754b592-b6b9-44a3-a7bf-3461a5866dc2",
@@ -1129,10 +1156,11 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3940,
-        -700
+        3960,
+        -860
       ],
       "executeOnce": true,
+      "alwaysOutputData": true,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -1152,12 +1180,11 @@
           "conditions": [
             {
               "id": "286bdc80-7e78-418f-9096-337290046e46",
-              "leftValue": "",
-              "rightValue": "",
+              "leftValue": "={{ $json.max_Traks_left }}",
+              "rightValue": 0,
               "operator": {
-                "type": "string",
-                "operation": "equals",
-                "name": "filter.operator.equals"
+                "type": "number",
+                "operation": "equals"
               }
             }
           ],
@@ -1170,9 +1197,45 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4200,
-        -700
+        4460,
+        -860
       ]
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "max",
+              "field": "Traks_left"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "55fc37ac-f691-4875-81e8-2ce93eff4d93",
+      "name": "Находим максимальный traks_left",
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1,
+      "position": [
+        4200,
+        -860
+      ]
+    },
+    {
+      "parameters": {
+        "amount": "={{ $json.max_Traks_left }}",
+        "unit": "minutes"
+      },
+      "id": "bda688f6-2810-4e1c-bbeb-94cf90c78270",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4080,
+        -600
+      ],
+      "webhookId": "ecb3c123-d18d-4f4b-93eb-f5260dff1c36"
     }
   ],
   "pinData": {},
@@ -1182,6 +1245,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-11-07T15:42:16.000Z",
-  "versionId": "9efd506d-ff91-43aa-a86d-925cb29f2cdf"
+  "updatedAt": "2024-11-09T10:22:35.000Z",
+  "versionId": "49e61c50-2f27-43bd-9d89-4efe71c2f966"
 }
