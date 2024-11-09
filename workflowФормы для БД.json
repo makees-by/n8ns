@@ -38,7 +38,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Users1",
+            "node": "Получить все записи из таблицы Users2",
             "type": "main",
             "index": 0
           }
@@ -133,11 +133,99 @@
         ]
       ]
     },
+    "Параметры запроса для замены1": {
+      "main": [
+        [
+          {
+            "node": "Изменение  строки в таблице Users по заданному параметру1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Users2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Webhook": {
       "main": [
         [
           {
             "node": "Получить все записи из таблицы Users1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Форма замена значения параметра по значению параметра DB_Servers": {
+      "main": [
+        [
+          {
+            "node": "Параметры запроса для замены1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос всех записей из таблицы servers": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Users2",
             "type": "main",
             "index": 0
           }
@@ -327,7 +415,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        540,
+        520,
         500
       ]
     },
@@ -358,7 +446,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        780,
+        760,
         500
       ],
       "credentials": {
@@ -375,8 +463,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        40,
-        660
+        -40,
+        1040
       ]
     },
     {
@@ -709,7 +797,7 @@
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.1,
       "position": [
-        320,
+        300,
         500
       ],
       "webhookId": "5fcc9781-8f05-4da1-8dcc-915490a161f4"
@@ -776,16 +864,235 @@
     },
     {
       "parameters": {
-        "content": "## Формы для работы с таблицей user\nСоздание - https://n8n.makees.online/form/user_add_new\nИзменение - https://n8n.makees.online/form/user_change\nУдаление - https://n8n.makees.online/form/user_delete\nПолучение всех записей - https://n8n.makees.online/webhook/all_user_fromDB",
-        "width": 550.7417369223512
+        "content": "## Формы для работы с таблицей user\nСоздание - https://n8n.makees.online/form/user_add_new\nИзменение - https://n8n.makees.online/form/user_change\nУдаление - https://n8n.makees.online/form/user_delete\nПолучение всех записей - https://n8n.makees.online/webhook/all_user_fromDB\n\n## Формы для работы с таблицей servers\nИзменение - https://n8n.makees.online/form/servers_change\nПолучение всех записей - https://n8n.makees.online/webhook/all_fromDBserver",
+        "height": 272.59950009339764,
+        "width": 561.538949260074
       },
       "id": "b939f56b-fb73-472a-b997-fe77ee6521dc",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -340,
+        -720,
         240
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "prmFmatch",
+              "value": "={{ $json['Введи параметр, по которому необходимо найти пользователя'] }}",
+              "type": "string"
+            },
+            {
+              "id": "ab9d10cc-5ff3-4b35-9b9a-a7b9454e9088",
+              "name": "dataFmatch",
+              "value": "={{ $json['Введи данные, по которым нужно найти запись для изменения'] }}",
+              "type": "string"
+            },
+            {
+              "id": "1c7c9c85-0e29-4786-8a4b-9ee36ea6cf36",
+              "name": "prmFchange",
+              "value": "={{ $json['Введи параметр для изменения'] }}",
+              "type": "string"
+            },
+            {
+              "id": "d34c6735-4050-4629-adcd-3f6110411b3a",
+              "name": "dataFchange",
+              "value": "={{ $json['Введите данные для изменения'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5796b336-4bbc-45f4-92ad-41fec5aac4d9",
+      "name": "Параметры запроса для замены1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1340,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "={{ $json.prmFmatch }}",
+        "valueToMatchOn": "={{ $json.dataFmatch }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "={{ $json.prmFchange }}",
+              "value": "={{ $json.dataFchange }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "268c9106-92c9-4bb2-8446-0e19b2099331",
+      "name": "Изменение  строки в таблице Users по заданному параметру1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1580,
+        320
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Servers ",
+        "options": {}
+      },
+      "id": "6591789e-4eb6-4df9-b0f9-967a477549c4",
+      "name": "Получить все записи из таблицы Users2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        1100
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8640714d-b1b0-4529-a7e6-a8918130cb22",
+              "name": "Server_name",
+              "value": "={{ $json.Server_name }}",
+              "type": "string"
+            },
+            {
+              "id": "23883583-e38c-46ea-be8a-6500c2c4a551",
+              "name": "PP",
+              "value": "={{ $json.PP }}",
+              "type": "string"
+            },
+            {
+              "id": "d017be4c-3d21-4311-b8e5-8ddbe98148b3",
+              "name": "Webhook",
+              "value": "={{ $json.Webhook }}",
+              "type": "string"
+            },
+            {
+              "id": "c7580fe1-10cf-46cd-80b2-fcac91904ae7",
+              "name": "All_traks",
+              "value": "={{ $json.All_traks }}",
+              "type": "number"
+            },
+            {
+              "id": "18ad0757-9324-49b4-9c16-80462e5d7290",
+              "name": "Traks_left",
+              "value": "={{ $json.Traks_left }}",
+              "type": "number"
+            },
+            {
+              "id": "d1045508-52d7-4351-9d83-4396ed1f6ca3",
+              "name": "Status_Work",
+              "value": "={{ $json.Status_Work }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5c2764e7-8f8b-4fdf-a7e9-849a228a8b07",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "b34fc950-67e1-4d64-a738-458b3e3cc95c",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        600,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "id": "1e29e18d-8a19-4f80-8ffe-5b6238c80b89",
+      "name": "HTML",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        980,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00fd7f5e-933b-43fa-b8ae-9ba448cfd74d",
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Список из JSON</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: #f0f0f0;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 5px;\n        }\n        .key {\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n    <h1>Все записи из таблицы Servers</h1>\n    <div id=\"output\"></div>\n\n    <script>\n        const jsonData = [\n            {\n                \"data\": {{ JSON.stringify($json.data) }}\n            }\n        ];\n\n        // Извлекаем массив данных\n        const dataList = jsonData[0].data;\n\n        // Создаем список элементов\n        const list = document.createElement('ul');\n\n        dataList.forEach(item => {\n            const listItem = document.createElement('li');\n            listItem.innerHTML = `\n                <span class=\"key\">Server_name:</span> ${item.Server_name}<br>\n                <span class=\"key\">PP:</span> ${item.PP}<br>\n                <span class=\"key\">Webhook:</span> ${item.Webhook}<br>\n                <span class=\"key\">Status_Work:</span> ${item.Status_Work}<br>\n                <span class=\"key\">All_traks:</span> ${item.All_traks}<br>\n                <span class=\"key\">Traks_left:</span> ${item.Traks_left}\n            `;\n            list.appendChild(listItem);\n        });\n\n        // Добавляем список на страницу\n        document.getElementById('output').appendChild(list);\n    </script>\n</body>\n</html>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d168478f-8aaa-4871-8d62-c57ddadd730b",
+      "name": "Edit Fields4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "ac933de9-cb01-4e9e-9178-0ef7969d13e6",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1160,
+        1100
       ]
     },
     {
@@ -803,6 +1110,109 @@
         860
       ],
       "webhookId": "ca216d35-2139-4723-9178-7b8c97b9675c"
+    },
+    {
+      "parameters": {
+        "path": "servers_change",
+        "formTitle": "Изменение данных о записи по параметру для таблицы Servers",
+        "formDescription": "Для уточнения параметров можно перейти по ссылке https://n8n.makees.online/webhook/all_fromDBserver",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Введи параметр, по которому необходимо найти пользователя",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Server_name"
+                  },
+                  {
+                    "option": "PP"
+                  },
+                  {
+                    "option": "Webhook"
+                  },
+                  {
+                    "option": "Status_Work"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введи данные, по которым нужно найти запись для изменения",
+              "placeholder": "=BP-1",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введи параметр для изменения",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "PP"
+                  },
+                  {
+                    "option": "Webhook"
+                  },
+                  {
+                    "option": "Status_Work"
+                  },
+                  {
+                    "option": "TrFch"
+                  },
+                  {
+                    "option": "All_traks"
+                  },
+                  {
+                    "option": "Traks_left"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Введите данные для изменения",
+              "placeholder": "2024/10/22",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "respondWithOptions": {
+            "values": {
+              "respondWith": "redirect",
+              "redirectUrl": "https://n8n.makees.online/webhook/all_fromDBserver"
+            }
+          }
+        }
+      },
+      "id": "2b1ed774-a3ef-41c4-b758-77bf908dc038",
+      "name": "Форма замена значения параметра по значению параметра DB_Servers",
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.1,
+      "position": [
+        1120,
+        320
+      ],
+      "webhookId": "7911637d-48be-480a-88ec-e9129b5075a5"
+    },
+    {
+      "parameters": {
+        "path": "=all_fromDBserver",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "8cf3e895-7f19-41ce-ac22-06e0b6da2a61",
+      "name": "Запрос всех записей из таблицы servers",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        1200
+      ],
+      "webhookId": "ca216d35-2139-4723-9178-7b8c97b9675c"
     }
   ],
   "pinData": {},
@@ -811,7 +1221,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 7,
-  "updatedAt": "2024-10-28T10:43:39.000Z",
-  "versionId": "c351d102-1859-4dca-b319-d8138427eaf5"
+  "triggerCount": 10,
+  "updatedAt": "2024-11-09T09:57:49.000Z",
+  "versionId": "9e519a78-e057-44a0-aab6-8886b70ed937"
 }
