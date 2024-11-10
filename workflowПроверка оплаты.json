@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Проверка оплаты": {
       "main": [
@@ -706,7 +706,7 @@
         540,
         260
       ],
-      "webhookId": "3ff91d1d-8c6f-4ac2-82c2-dca7ab00fffb"
+      "webhookId": "2218d07b-c262-4d8d-9b12-3b2be0366db4"
     },
     {
       "parameters": {
@@ -1058,6 +1058,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-10-28T15:12:33.000Z",
-  "versionId": "a43df5e5-13f4-4fa9-99e3-bdac75c3681f"
+  "updatedAt": "2024-11-09T19:12:56.000Z",
+  "versionId": "20b0b725-a8f2-4f64-9a46-3a1215de225f"
 }
