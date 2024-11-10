@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Сбор треков из гугл таблиц": {
       "main": [
@@ -1747,7 +1747,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook-test/proceses_control",
+        "url": "https://n8n.makees.online/webhook/proceses_control",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1825,7 +1825,7 @@
         720,
         160
       ],
-      "webhookId": "cecdef11-5f8c-4a7f-b584-750bff36ab0b"
+      "webhookId": "9b306f36-4dda-4f07-8b5c-fc42363926dc"
     },
     {
       "parameters": {
@@ -1852,7 +1852,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-11-03T10:55:58.000Z",
-  "versionId": "2d61b365-0892-4208-9931-fc0b3a00738e"
+  "triggerCount": 1,
+  "updatedAt": "2024-11-09T19:22:30.000Z",
+  "versionId": "8a41a731-9852-49c4-b378-166e08ebe28c"
 }
