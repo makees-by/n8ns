@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "выделяем idTables с соответствующим link": {
       "main": [
@@ -802,7 +802,7 @@
         40,
         360
       ],
-      "webhookId": "7a805f01-3479-4f94-850c-5db240030c7d"
+      "webhookId": "c901303c-d3fd-44b0-9f5e-dd7f816473c0"
     }
   ],
   "pinData": {},
@@ -811,7 +811,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-11-09T11:35:38.000Z",
-  "versionId": "f37f639e-b3ee-4a70-a3df-0599ef3518b8"
+  "triggerCount": 1,
+  "updatedAt": "2024-11-09T19:13:00.000Z",
+  "versionId": "f503276b-7908-490d-83be-db171109d5b0"
 }
