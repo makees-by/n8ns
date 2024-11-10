@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Программа - контролёр": {
       "main": [
@@ -153,6 +153,11 @@
             "node": "Запрос к процессу выставления статусов в гугл таблицу",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Запрос к процессу сбора треков из гугл таблиц",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -194,7 +199,7 @@
       "main": [
         [
           {
-            "node": "Проверяем на отсутствие ошибок",
+            "node": "Wait1",
             "type": "main",
             "index": 0
           }
@@ -349,6 +354,50 @@
           }
         ]
       ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Проверяем на отсутствие ошибок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем запрос по webhook из БД servers": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Ожидаем завершения всех проверок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:00:01.739Z",
@@ -374,7 +423,8 @@
         "rule": {
           "interval": [
             {
-              "triggerAtMinute": 1
+              "triggerAtHour": 22,
+              "triggerAtMinute": 41
             }
           ]
         }
@@ -386,8 +436,7 @@
       "position": [
         1320,
         -100
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -459,7 +508,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3140,
+        3360,
         -360
       ]
     },
@@ -477,7 +526,7 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        3400,
+        3620,
         -360
       ]
     },
@@ -491,10 +540,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3620,
+        3840,
         -360
       ],
-      "webhookId": "3671ae5f-457e-4f7b-a792-901245ff6d27"
+      "webhookId": "26c4804e-84da-4fa3-8127-8005bf36d2c7"
     },
     {
       "parameters": {},
@@ -503,7 +552,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3700,
+        3920,
         -860
       ]
     },
@@ -519,7 +568,8 @@
       "position": [
         1980,
         380
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {},
@@ -528,7 +578,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4840,
+        5060,
         -880
       ]
     },
@@ -543,8 +593,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1780,
-        100
+        1900,
+        220
       ]
     },
     {
@@ -558,8 +608,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1880,
-        340
+        2000,
+        460
       ]
     },
     {
@@ -572,8 +622,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2020,
-        580
+        2140,
+        700
       ]
     },
     {
@@ -583,8 +633,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        3340,
-        -900
+        1340,
+        -320
       ]
     },
     {
@@ -617,7 +667,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2640,
+        2860,
         100
       ]
     },
@@ -658,8 +708,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        460,
-        460
+        1740,
+        -400
       ]
     },
     {
@@ -749,7 +799,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        3840,
+        4060,
         20
       ]
     },
@@ -772,7 +822,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3240,
+        3460,
         -120
       ]
     },
@@ -786,7 +836,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        3580,
+        3800,
         20
       ]
     },
@@ -800,7 +850,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        4120,
+        4340,
         -160
       ]
     },
@@ -814,7 +864,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        4120,
+        4340,
         20
       ]
     },
@@ -828,7 +878,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        4120,
+        4340,
         200
       ]
     },
@@ -876,7 +926,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3240,
+        3460,
         100
       ]
     },
@@ -904,7 +954,7 @@
         2380,
         100
       ],
-      "webhookId": "dc16df46-9bf7-4535-9961-1fb728c88c12"
+      "webhookId": "0869e3bb-f3d3-4a40-9654-fac237d485fd"
     },
     {
       "parameters": {
@@ -939,7 +989,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3260,
+        3480,
         360
       ]
     },
@@ -1065,7 +1115,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        2920,
+        3140,
         80
       ]
     },
@@ -1076,7 +1126,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2920,
+        3140,
         -640
       ]
     },
@@ -1105,7 +1155,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3200,
+        3340,
         -640
       ],
       "executeOnce": true,
@@ -1135,7 +1185,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3460,
+        3580,
         -640
       ]
     },
@@ -1156,7 +1206,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3960,
+        4180,
         -860
       ],
       "executeOnce": true,
@@ -1197,7 +1247,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4460,
+        4680,
         -860
       ]
     },
@@ -1218,7 +1268,7 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
       "position": [
-        4200,
+        4420,
         -860
       ]
     },
@@ -1232,19 +1282,71 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4080,
+        4300,
         -600
       ],
-      "webhookId": "ecb3c123-d18d-4f4b-93eb-f5260dff1c36"
+      "webhookId": "c192b566-5b3e-4acb-bcf3-eee223b659c9"
+    },
+    {
+      "parameters": {
+        "amount": 35
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2600,
+        100
+      ],
+      "id": "d965c829-ceca-4eba-b682-2114a38ab378",
+      "name": "Wait1",
+      "webhookId": "0d54bcf4-6553-4ee3-bb76-3c1b1bd30af0"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c80774ba-faae-4726-8b14-d381b1825fb8",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3760,
+        -640
+      ],
+      "id": "73a6f86b-754f-4136-a7de-f28b7cd4ef2b",
+      "name": "If1"
     }
   ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Запуск проверки оплаты": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-11-09T10:22:35.000Z",
-  "versionId": "49e61c50-2f27-43bd-9d89-4efe71c2f966"
+  "triggerCount": 2,
+  "updatedAt": "2024-11-09T20:31:06.000Z",
+  "versionId": "fb9ddd81-28b9-41d5-8565-390c03a5fc18"
 }
