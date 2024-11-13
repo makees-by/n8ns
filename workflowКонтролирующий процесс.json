@@ -27,11 +27,6 @@
       "main": [
         [
           {
-            "node": "Получаем время окончания всех проверок",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
             "type": "main",
             "index": 0
@@ -151,11 +146,6 @@
         [
           {
             "node": "Запрос к процессу выставления статусов в гугл таблицу",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Запрос к процессу сбора треков из гугл таблиц",
             "type": "main",
             "index": 0
           }
@@ -346,13 +336,7 @@
     },
     "Ожидаем завершения всех проверок": {
       "main": [
-        [
-          {
-            "node": "проверяем завершили ли проверку все сервера",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "When clicking ‘Test workflow’": {
@@ -381,7 +365,7 @@
       "main": [
         [
           {
-            "node": "If1",
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -393,6 +377,17 @@
         [
           {
             "node": "Ожидаем завершения всех проверок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "проверяем завершили ли проверку все сервера",
             "type": "main",
             "index": 0
           }
@@ -423,8 +418,8 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 22,
-              "triggerAtMinute": 41
+              "triggerAtHour": 12,
+              "triggerAtMinute": 9
             }
           ]
         }
@@ -543,7 +538,7 @@
         3840,
         -360
       ],
-      "webhookId": "26c4804e-84da-4fa3-8127-8005bf36d2c7"
+      "webhookId": "aa2cf9e1-ef83-4f86-aba2-2d111e4c03b1"
     },
     {
       "parameters": {},
@@ -568,8 +563,7 @@
       "position": [
         1980,
         380
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {},
@@ -954,7 +948,7 @@
         2380,
         100
       ],
-      "webhookId": "0869e3bb-f3d3-4a40-9654-fac237d485fd"
+      "webhookId": "a175fa42-2f13-4621-8517-4efb5f19da62"
     },
     {
       "parameters": {
@@ -1185,7 +1179,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3580,
+        3560,
         -640
       ]
     },
@@ -1285,7 +1279,7 @@
         4300,
         -600
       ],
-      "webhookId": "c192b566-5b3e-4acb-bcf3-eee223b659c9"
+      "webhookId": "a3e11fcf-b0bb-41ff-a6c7-e29a372506f2"
     },
     {
       "parameters": {
@@ -1299,7 +1293,7 @@
       ],
       "id": "d965c829-ceca-4eba-b682-2114a38ab378",
       "name": "Wait1",
-      "webhookId": "0d54bcf4-6553-4ee3-bb76-3c1b1bd30af0"
+      "webhookId": "35f34c56-213f-431c-a8e0-5972ee8b9db7"
     },
     {
       "parameters": {
@@ -1334,6 +1328,21 @@
       ],
       "id": "73a6f86b-754f-4136-a7de-f28b7cd4ef2b",
       "name": "If1"
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3700,
+        -860
+      ],
+      "id": "65358157-a658-41f5-b600-2b245eaadcf4",
+      "name": "Edit Fields",
+      "executeOnce": true
     }
   ],
   "pinData": {},
@@ -1347,6 +1356,6 @@
   },
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-11-09T20:31:06.000Z",
-  "versionId": "fb9ddd81-28b9-41d5-8565-390c03a5fc18"
+  "updatedAt": "2024-11-13T09:08:36.000Z",
+  "versionId": "5a5b83a6-d94e-4fa8-b86d-1135b7e796a7"
 }
