@@ -651,7 +651,7 @@
         3760,
         1100
       ],
-      "webhookId": "7b27e8d4-9e89-48d3-bfb1-462c6b12baa0"
+      "webhookId": "7380fbd5-8abb-46b4-a5ef-416ffc7dbf1d"
     },
     {
       "parameters": {
@@ -786,7 +786,7 @@
           "values": [
             {
               "column": "Status",
-              "value": "={{ $json.data[0].steps[0].event }}"
+              "value": "=Доставлено"
             },
             {
               "column": "DateLastUpd",
@@ -1263,7 +1263,7 @@
         320,
         340
       ],
-      "webhookId": "e5d874c7-1957-475d-be9b-59f2b88bf678"
+      "webhookId": "bc2208f1-4537-47ca-8636-0185be5e7c43"
     }
   ],
   "pinData": {},
@@ -1273,6 +1273,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-09T19:13:28.000Z",
-  "versionId": "58d8a3a6-1a3a-450e-a4ff-e3b149cab217"
+  "updatedAt": "2024-11-13T14:59:24.000Z",
+  "versionId": "3d017c57-fc67-42ac-b1a7-69d02554eaf2"
 }
