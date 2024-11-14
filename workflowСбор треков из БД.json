@@ -43,49 +43,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Tabls3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Получить все записи из таблицы Tabls3": {
-      "main": [
-        [
-          {
-            "node": "Получить все записи из таблицы Tabls4",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Ложим 0 в Status_Work для сервера BP_",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Получить все записи из таблицы Tabls4": {
-      "main": [
-        [
-          {
-            "node": "Разделяем BP и EP",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "JsonDatabase1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Достаём тригер1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Достаём тригер",
+            "node": "Получить все записи из таблицы Tabls",
             "type": "main",
             "index": 0
           }
@@ -940,7 +898,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Tabls4",
+            "node": "Получить все записи из таблицы traks",
             "type": "main",
             "index": 0
           }
@@ -977,6 +935,60 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Получить все записи из таблицы Tabls": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы traks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ложим 0 в Status_Work для сервера BP_",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы traks": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Достаём тригер1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Достаём тригер",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If13": {
+      "main": [
+        [
+          {
+            "node": "Разделяем BP и EP",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
       ]
     }
   },
@@ -1088,76 +1100,6 @@
     },
     {
       "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "Tabls",
-          "mode": "list",
-          "cachedResultName": "Tabls"
-        },
-        "returnAll": true,
-        "where": {
-          "values": [
-            {
-              "column": "ID",
-              "value": "={{ $json.ID }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "2589ba13-0807-4db0-83c9-584a0c5e59db",
-      "name": "Получить все записи из таблицы Tabls3",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        1980,
-        280
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "Traks",
-          "mode": "list",
-          "cachedResultName": "Traks"
-        },
-        "returnAll": true,
-        "where": {
-          "values": [
-            {
-              "column": "IdTables",
-              "value": "={{ $json.IdTables }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "ffcad86c-6372-49fc-a3f7-383b4f6f7850",
-      "name": "Получить все записи из таблицы Tabls4",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        2420,
-        280
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -1186,8 +1128,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2760,
-        280
+        2980,
+        260
       ]
     },
     {
@@ -1216,7 +1158,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3280,
+        3500,
         -380
       ]
     },
@@ -1229,7 +1171,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        3720,
+        3940,
         -380
       ]
     },
@@ -1243,7 +1185,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        3720,
+        3940,
         -160
       ]
     },
@@ -1254,7 +1196,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3940,
+        4160,
         220
       ]
     },
@@ -1265,7 +1207,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3940,
+        4160,
         -120
       ]
     },
@@ -1295,7 +1237,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3280,
+        3500,
         -160
       ]
     },
@@ -1319,7 +1261,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        3260,
+        3480,
         80
       ]
     },
@@ -1343,7 +1285,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        3640,
+        3860,
         140
       ]
     },
@@ -1365,7 +1307,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2820,
+        3040,
         -500
       ]
     },
@@ -1395,7 +1337,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2540,
+        2760,
         800
       ]
     },
@@ -1408,7 +1350,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        2820,
+        3040,
         720
       ]
     },
@@ -1422,7 +1364,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        2820,
+        3040,
         920
       ]
     },
@@ -1433,7 +1375,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3520,
+        3740,
         640
       ]
     },
@@ -1455,7 +1397,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3080,
+        3300,
         640
       ]
     },
@@ -1499,8 +1441,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3040,
-        1500
+        3260,
+        1580
       ],
       "executeOnce": true
     },
@@ -1529,8 +1471,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3060,
-        1080
+        3260,
+        1420
       ],
       "executeOnce": true
     },
@@ -1551,7 +1493,7 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
       "position": [
-        5000,
+        5220,
         1380
       ]
     },
@@ -1566,7 +1508,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4380,
+        4600,
         -500
       ]
     },
@@ -1601,7 +1543,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        5520,
+        5740,
         1380
       ]
     },
@@ -1612,7 +1554,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3580,
+        3800,
         -620
       ]
     },
@@ -1646,7 +1588,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4080,
+        4300,
         -820
       ]
     },
@@ -1681,7 +1623,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3820,
+        4040,
         -740
       ],
       "executeOnce": true,
@@ -1710,7 +1652,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3520,
+        3740,
         920
       ]
     },
@@ -1725,7 +1667,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4580,
+        4800,
         -120
       ]
     },
@@ -1759,7 +1701,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4580,
+        4800,
         -300
       ]
     },
@@ -1794,7 +1736,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4040,
+        4260,
         -300
       ],
       "executeOnce": true,
@@ -1816,7 +1758,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4760,
+        4980,
         220
       ]
     },
@@ -1850,7 +1792,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4660,
+        4880,
         60
       ]
     },
@@ -1885,7 +1827,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4040,
+        4260,
         60
       ],
       "executeOnce": true,
@@ -1907,7 +1849,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4480,
+        4700,
         640
       ]
     },
@@ -1941,7 +1883,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4240,
+        4460,
         500
       ]
     },
@@ -1976,7 +1918,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3840,
+        4060,
         500
       ],
       "executeOnce": true,
@@ -2014,7 +1956,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4680,
+        4900,
         -500
       ],
       "executeOnce": true,
@@ -2052,7 +1994,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4820,
+        5040,
         -120
       ],
       "executeOnce": true,
@@ -2090,7 +2032,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4980,
+        5200,
         220
       ],
       "executeOnce": true,
@@ -2128,7 +2070,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4720,
+        4940,
         640
       ],
       "executeOnce": true,
@@ -2150,7 +2092,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        4480,
+        4700,
         920
       ]
     },
@@ -2184,7 +2126,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4180,
+        4400,
         760
       ]
     },
@@ -2219,7 +2161,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3840,
+        4060,
         760
       ],
       "executeOnce": true,
@@ -2257,7 +2199,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4740,
+        4960,
         920
       ],
       "executeOnce": true,
@@ -2298,7 +2240,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        5360,
+        5580,
         -160
       ]
     },
@@ -2309,7 +2251,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2600,
+        2820,
         520
       ]
     },
@@ -2421,7 +2363,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        5260,
+        5480,
         1380
       ]
     },
@@ -2447,7 +2389,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3520,
+        3740,
         1400
       ]
     },
@@ -2481,7 +2423,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2780,
+        3000,
         20
       ]
     },
@@ -2522,7 +2464,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2660,
+        2880,
         -720
       ],
       "executeOnce": true
@@ -2557,7 +2499,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3020,
+        3240,
         -720
       ]
     },
@@ -2590,7 +2532,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2820,
+        3040,
         1280
       ]
     },
@@ -2619,7 +2561,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3060,
+        3280,
         1260
       ],
       "executeOnce": true
@@ -2654,7 +2596,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3460,
+        3680,
         300
       ]
     },
@@ -2687,7 +2629,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2780,
+        3000,
         1740
       ]
     },
@@ -2716,7 +2658,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3040,
+        3260,
         1720
       ],
       "executeOnce": true
@@ -2734,7 +2676,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2460,
+        2680,
         20
       ]
     },
@@ -2751,7 +2693,7 @@
         680,
         340
       ],
-      "webhookId": "b92fbc88-4573-4e5c-b046-2be3aceee41d"
+      "webhookId": "f907d763-d395-493c-8e1a-5e4ca9d34062"
     },
     {
       "parameters": {
@@ -2766,8 +2708,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3200,
-        300
+        3420,
+        280
       ],
       "executeOnce": true
     },
@@ -2784,7 +2726,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2840,
+        3060,
         -720
       ],
       "executeOnce": true
@@ -2799,7 +2741,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2500,
+        2720,
         1280
       ],
       "executeOnce": true
@@ -2814,7 +2756,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2420,
+        2640,
         1740
       ],
       "executeOnce": true
@@ -3239,9 +3181,112 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        2760,
+        2980,
         -240
       ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2589ba13-0807-4db0-83c9-584a0c5e59db",
+      "name": "Получить все записи из таблицы Tabls",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1980,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "={{ $json.IdTables }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ffcad86c-6372-49fc-a3f7-383b4f6f7850",
+      "name": "Получить все записи из таблицы traks",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2420,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "47528b94-6348-44e2-ada3-34472ae775cf",
+              "leftValue": "={{ $json.DateLastUpd.toDateTime() }}",
+              "rightValue": "={{ $today }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2640,
+        280
+      ],
+      "id": "f44a35ea-1d34-430f-81b7-910b2d16a7a6",
+      "name": "If13"
     }
   ],
   "pinData": {},
@@ -3251,6 +3296,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-09T19:40:06.000Z",
-  "versionId": "a486dfa7-b74a-4c3e-b954-26a9a89846a2"
+  "updatedAt": "2024-11-13T15:13:08.000Z",
+  "versionId": "ab9108dc-593f-416a-af06-d91dd5b6462b"
 }
