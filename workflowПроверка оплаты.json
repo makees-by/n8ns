@@ -42,6 +42,11 @@
             "node": "Проверяем что до оплаты больше 3 дней",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "JsonDatabase2",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -151,7 +156,7 @@
       "main": [
         [
           {
-            "node": "Подтягиваем все значения переменной user_trabls",
+            "node": "JsonDatabase1",
             "type": "main",
             "index": 0
           }
@@ -242,6 +247,11 @@
             "node": "отправка в процесс работы с переменной3",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "JsonDatabase",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -306,6 +316,72 @@
         [
           {
             "node": "Собираем request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все значения переменной user_trabls1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все значения переменной user_trabls",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подтягиваем все значения переменной user_trabls1": {
+      "main": [
+        [
+          {
+            "node": "Собираем request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем request1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
@@ -530,7 +606,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2380,
+        2440,
         300
       ]
     },
@@ -609,8 +685,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3220,
-        300
+        3560,
+        480
       ]
     },
     {
@@ -644,8 +720,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3000,
-        300
+        3340,
+        400
       ]
     },
     {
@@ -706,7 +782,7 @@
         540,
         260
       ],
-      "webhookId": "2218d07b-c262-4d8d-9b12-3b2be0366db4"
+      "webhookId": "9cdeb5eb-6166-46f8-bd90-b0973578ec93"
     },
     {
       "parameters": {
@@ -720,7 +796,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2580,
+        2640,
         300
       ],
       "executeOnce": true,
@@ -990,7 +1066,9 @@
     },
     {
       "parameters": {
+        "operation": "opWrite",
         "queryPath": "data",
+        "sourceType": "sourceTypeJson",
         "filePath": "=root/n8n/user_trabls.json"
       },
       "id": "a0044c88-b86f-4b53-acb5-f0e9dfe8acac",
@@ -999,7 +1077,7 @@
       "typeVersion": 1,
       "position": [
         680,
-        -280
+        -360
       ]
     },
     {
@@ -1032,8 +1110,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2380,
-        -540
+        2360,
+        -560
       ]
     },
     {
@@ -1046,8 +1124,138 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2780,
+        3120,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  0 } ",
+        "filePath": "=root/n8n/sbor_pay.json"
+      },
+      "id": "c5258850-c53c-4433-a07a-855ff78b4bc6",
+      "name": "JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        980,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  1 } ",
+        "filePath": "=root/n8n/sbor_pay.json"
+      },
+      "id": "bbb26c92-c0ed-4078-a1ce-4adcd42349ee",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2840,
         300
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers",
+        "filePath": "=root/n8n/sbor_pay.json"
+      },
+      "id": "10f04dc8-698b-4d1c-8e82-e2038a835bcc",
+      "name": "JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "41239446-30c9-41b2-8d17-6265eab22947",
+              "leftValue": "={{ $json.data.Triger1 }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2380,
+        620
+      ],
+      "id": "43db4fa9-3396-4522-a0c5-4b2adfd8f1d0",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "67797e6a-dcf6-4b16-bc97-a01c11094613",
+              "name": "Error",
+              "value": "no",
+              "type": "string"
+            },
+            {
+              "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
+              "name": "Ditales",
+              "value": "=message: \"Нет оплаченных и допущенных к проверке пользователей.\" InfoUserData:{{ JSON.stringify($json.data) }}",
+              "type": "string"
+            },
+            {
+              "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
+              "name": "From",
+              "value": "pay_check",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7061107e-d399-41ec-ad43-e0c649aa1835",
+      "name": "Собираем request1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3360,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "data",
+        "filePath": "=root/n8n/user_trabls.json"
+      },
+      "id": "70b5faa6-ecde-446c-9e41-564798ad2104",
+      "name": "Подтягиваем все значения переменной user_trabls1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3140,
+        600
       ]
     }
   ],
@@ -1058,6 +1266,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-09T19:12:56.000Z",
-  "versionId": "20b0b725-a8f2-4f64-9a46-3a1215de225f"
+  "updatedAt": "2024-11-15T09:22:35.000Z",
+  "versionId": "52447f41-7ea1-4d73-a156-a4240242de5a"
 }
