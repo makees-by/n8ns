@@ -546,7 +546,7 @@
         -480,
         860
       ],
-      "webhookId": "80343635-087b-4a49-910f-e76ae5161b42"
+      "webhookId": "96eea229-ed27-46d3-b95c-dad4dc4e46b4"
     },
     {
       "parameters": {
@@ -960,7 +960,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        260,
+        240,
         1260
       ]
     }
@@ -972,6 +972,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-03T10:45:05.000Z",
-  "versionId": "c7d0cdad-0ba7-489e-98cb-d85e714e6e72"
+  "updatedAt": "2024-11-15T14:42:48.000Z",
+  "versionId": "38d5a501-2607-4054-897d-9a9b70dca2de"
 }
