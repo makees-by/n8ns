@@ -1,18 +1,394 @@
 {
-  "active": false,
-  "connections": {},
+  "active": true,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей1": {
+      "main": [
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Создаем новую запись выставляем время старта poroc control",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Создаем новую запись выставляем время старта poroc control2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Создаем новую запись выставляем время старта poroc control2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Создаем новую запись выставляем время старта poroc control1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "createdAt": "2024-11-15T13:04:14.102Z",
   "id": "lOtPJcL6AitkSaoP",
   "meta": null,
   "name": "Лог в БД",
-  "nodes": [],
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        0
+      ],
+      "id": "b0ff236d-44b0-40f6-afbe-6c4999dbfc8f",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8ada4fb1-8dd2-4d28-b5fc-41b7340d01da",
+                    "leftValue": "={{ $json.poc_name }}",
+                    "rightValue": "proceses_control",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": " proceses_control"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        240,
+        0
+      ],
+      "id": "b02d70ef-5b95-487f-b0e6-251a1ba75dc3",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            },
+            {
+              "column": "proceses_control",
+              "value": "=Start: {{ $now.format('HH.mm.ss') }}\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        800,
+        -260
+      ],
+      "id": "b7adc1ce-41c5-4604-9ac8-442616fa3367",
+      "name": "Создаем новую запись выставляем время старта poroc control",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "16e72813-df27-48b5-919d-3598ef546671",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        -220
+      ],
+      "id": "0a76d17a-c7bf-4c75-acb6-a33066027ea8",
+      "name": "Webhook",
+      "webhookId": "7dc97ce0-1d35-4a22-9ff1-d9f03433e0b5"
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"new\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"null\"\n  }\n]\n);"
+      },
+      "id": "803cefb5-ca21-4d61-bb53-f92596938071",
+      "name": "Ответ от проверки оплаты пользователей1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        40,
+        -120
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"add\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"13:42:17 : Отправлен запрос на выставление статуса треков из БД в гугл таблицы.\\n\"\n  }\n]\n);"
+      },
+      "id": "8c66adfb-8056-4d57-ad06-d1eea345fbc3",
+      "name": "Ответ от проверки оплаты пользователей",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        40,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.opr }}",
+                    "rightValue": "new",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "new"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "eb22547f-6efa-4186-a39c-a7159911affb",
+                    "leftValue": "={{ $json.opr }}",
+                    "rightValue": "add",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "add"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        500,
+        -60
+      ],
+      "id": "99dcea07-962e-4006-9d64-058d5e46bd11",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        740,
+        60
+      ],
+      "id": "c49b810c-8e2e-49b3-9f23-f3eef19cffd2",
+      "name": "Создаем новую запись выставляем время старта poroc control2",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        960,
+        -20
+      ],
+      "id": "e3bb6b85-9908-4674-8002-db8de00b34e2",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Id",
+        "valueToMatchOn": "={{ $json.Id }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "proceses_control",
+              "value": "={{ $json.proceses_control }}\n{{ $json.message }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1180,
+        -20
+      ],
+      "id": "8edc9fb8-cfd4-4487-84aa-f36e51cffa88",
+      "name": "Создаем новую запись выставляем время старта poroc control1",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    }
+  ],
   "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-11-15T13:04:14.102Z",
-  "versionId": "6957031b-4396-427f-89c6-29c4489e5111"
+  "triggerCount": 1,
+  "updatedAt": "2024-11-16T11:10:23.000Z",
+  "versionId": "f78aad78-d677-4d24-82eb-1e08375ca15a"
 }
