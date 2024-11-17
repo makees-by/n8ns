@@ -38,7 +38,7 @@
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "Ответ от проверки оплаты пользователей2",
             "type": "main",
             "index": 0
           }
@@ -65,6 +65,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Создаем новую запись выставляем время старта poroc control3",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -84,6 +91,28 @@
         [
           {
             "node": "Создаем новую запись выставляем время старта poroc control1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей2": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Создаем новую запись выставляем время старта poroc control3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -200,7 +229,7 @@
       ],
       "id": "0a76d17a-c7bf-4c75-acb6-a33066027ea8",
       "name": "Webhook",
-      "webhookId": "7dc97ce0-1d35-4a22-9ff1-d9f03433e0b5"
+      "webhookId": "115fb3be-5a91-4fea-ace7-a7006a58bd79"
     },
     {
       "parameters": {
@@ -227,7 +256,8 @@
       "position": [
         40,
         80
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -280,6 +310,31 @@
               },
               "renameOutput": true,
               "outputKey": "add"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a5ce2059-7cde-4215-b1df-815d0232aab7",
+                    "leftValue": "={{ $json.opr }}",
+                    "rightValue": "get",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "get"
             }
           ]
         },
@@ -380,6 +435,78 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"get\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"\"\n  }\n]\n);"
+      },
+      "id": "048813f3-19d2-4a04-8fbe-638b332a2345",
+      "name": "Ответ от проверки оплаты пользователей2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        180
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        560,
+        240
+      ],
+      "id": "29d60d2c-4f66-4774-a822-7b4db7854576",
+      "name": "Создаем новую запись выставляем время старта poroc control3",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c1b9dd58-7185-46f8-8ab7-ea1495342f13",
+              "name": "proceses_control",
+              "value": "={{ $json.proceses_control }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        880,
+        240
+      ],
+      "id": "9e83e982-5a9e-45ea-b4a2-68287a2d5da1",
+      "name": "Edit Fields"
     }
   ],
   "pinData": {},
@@ -389,6 +516,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-16T11:10:23.000Z",
-  "versionId": "f78aad78-d677-4d24-82eb-1e08375ca15a"
+  "updatedAt": "2024-11-17T07:55:57.000Z",
+  "versionId": "b45b2d23-4f51-404d-8446-8d7db99c4470"
 }
