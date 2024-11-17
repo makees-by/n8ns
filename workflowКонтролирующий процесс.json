@@ -186,6 +186,11 @@
             "node": "Запрос к процессу сбора треков из гугл таблиц",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию2",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -228,6 +233,11 @@
         [
           {
             "node": "Запрос к процессу сбора треков из БД",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию3",
             "type": "main",
             "index": 0
           }
@@ -281,6 +291,11 @@
       "main": [
         [
           {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
             "node": "Отправляем запрос по webhook из БД servers",
             "type": "main",
             "index": 0
@@ -317,11 +332,21 @@
             "node": "Окончание дневной проверки отправка отчёта",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию6",
+            "type": "main",
+            "index": 0
           }
         ],
         [
           {
             "node": "Wait",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию7",
             "type": "main",
             "index": 0
           }
@@ -343,7 +368,17 @@
       "main": [
         [
           {
-            "node": "Программа - контролёр",
+            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "проверяем завершили ли проверку все сервера",
             "type": "main",
             "index": 0
           }
@@ -394,17 +429,6 @@
         ]
       ]
     },
-    "Запуск выставления статуса трека в гугл таблицы": {
-      "main": [
-        [
-          {
-            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "формируем запрос к логированию": {
       "main": [
         [
@@ -421,6 +445,106 @@
         [
           {
             "node": "Запрос в процесс логирования1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию3": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск выставления статуса трека в гугл таблицы": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию4": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию5": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "формируем запрос к логированию5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию6": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию7": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования7",
             "type": "main",
             "index": 0
           }
@@ -464,7 +588,8 @@
       "position": [
         1140,
         -300
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -490,8 +615,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1980,
-        380
+        1440,
+        460
       ]
     },
     {
@@ -513,8 +638,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2000,
-        700
+        1760,
+        780
       ]
     },
     {
@@ -571,7 +696,7 @@
         3840,
         -360
       ],
-      "webhookId": "3ba8f22f-3927-44e1-8899-26e2b14f81ec"
+      "webhookId": "8a220766-ec2e-4587-ad90-bea499c69b63"
     },
     {
       "parameters": {},
@@ -580,7 +705,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3920,
+        4140,
         -860
       ]
     },
@@ -605,7 +730,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5060,
+        5280,
         -880
       ]
     },
@@ -635,8 +760,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2140,
-        380
+        1820,
+        200
       ]
     },
     {
@@ -660,8 +785,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        1140,
-        -520
+        2820,
+        -640
       ]
     },
     {
@@ -737,7 +862,8 @@
       "position": [
         2660,
         -520
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -964,8 +1090,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1660,
-        380
+        1120,
+        460
       ]
     },
     {
@@ -981,7 +1107,8 @@
         2380,
         100
       ],
-      "webhookId": "267ce78b-554f-4b90-8a01-bd4fbfd6efee"
+      "webhookId": "21ccbf69-4bd9-401a-bc2f-8ef88a69a707",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1027,8 +1154,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1640,
-        700
+        1400,
+        780
       ]
     },
     {
@@ -1153,7 +1280,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3140,
+        3280,
         -640
       ]
     },
@@ -1182,7 +1309,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3340,
+        3540,
         -640
       ],
       "executeOnce": true,
@@ -1212,7 +1339,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3560,
+        3860,
         -640
       ]
     },
@@ -1233,7 +1360,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4180,
+        4400,
         -860
       ],
       "executeOnce": true,
@@ -1274,7 +1401,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4680,
+        4900,
         -860
       ]
     },
@@ -1295,7 +1422,7 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
       "position": [
-        4420,
+        4640,
         -860
       ]
     },
@@ -1309,10 +1436,10 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4300,
+        4520,
         -600
       ],
-      "webhookId": "7b069555-5c78-4bda-abdb-fbedad829a15"
+      "webhookId": "8a4b1048-dc5c-49f3-9c56-d5d2245d8e1a"
     },
     {
       "parameters": {
@@ -1326,7 +1453,7 @@
       ],
       "id": "d965c829-ceca-4eba-b682-2114a38ab378",
       "name": "Wait1",
-      "webhookId": "d8e127c1-4fd3-4821-a3dd-c2c395ca64c4"
+      "webhookId": "6aea803c-9587-4e61-a0c7-5a938e0a4f08"
     },
     {
       "parameters": {
@@ -1357,7 +1484,7 @@
       "typeVersion": 2.2,
       "position": [
         3760,
-        -640
+        -160
       ],
       "id": "73a6f86b-754f-4136-a7de-f28b7cd4ef2b",
       "name": "If1"
@@ -1370,30 +1497,12 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3700,
+        3920,
         -860
       ],
       "id": "65358157-a658-41f5-b600-2b245eaadcf4",
       "name": "Edit Fields",
       "executeOnce": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {}
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        1100,
-        120
-      ],
-      "id": "22140bf1-25f3-4ca5-912d-968c3e32b0dd",
-      "name": "Запуск выставления статуса трека в гугл таблицы",
-      "disabled": true
     },
     {
       "parameters": {
@@ -1502,6 +1611,361 @@
       ],
       "id": "1ac964d2-51e5-499e-b2f5-ec1031d67391",
       "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на сбор треков из гугл таблиц в БД",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1360,
+        300
+      ],
+      "id": "cf86d068-e3ba-4993-97d5-20eaaf66aa96",
+      "name": "формируем запрос к логированию2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1640,
+        300
+      ],
+      "id": "33c94f77-488d-4dc0-947d-2f44c7d16853",
+      "name": "Запрос в процесс логирования2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на сбор треков на проверку из БД.\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1600,
+        620
+      ],
+      "id": "d23e5264-6491-4c03-be95-219c65bc8e57",
+      "name": "формируем запрос к логированию3"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1880,
+        620
+      ],
+      "id": "46c74138-dc9b-4817-8fcf-670d82b1d32f",
+      "name": "Запрос в процесс логирования3"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1100,
+        120
+      ],
+      "id": "22140bf1-25f3-4ca5-912d-968c3e32b0dd",
+      "name": "Запуск выставления статуса трека в гугл таблицы",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2480,
+        -860
+      ],
+      "id": "37ec60fd-1b05-4581-ba34-f8de827f1a67",
+      "name": "формируем запрос к логированию4"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2760,
+        -860
+      ],
+      "id": "024c7f63-c6f7-4b5d-ab89-2af02cea3fdf",
+      "name": "Запрос в процесс логирования4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку треков на сервер {{ $json.Server_name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3340,
+        -980
+      ],
+      "id": "3e3a66f3-6b5c-4ddc-9744-792295e57d3c",
+      "name": "формируем запрос к логированию5"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3600,
+        -1000
+      ],
+      "id": "d3be57f6-69a2-4b1c-bd18-d9d58202cb1f",
+      "name": "Запрос в процесс логирования5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        3080,
+        -960
+      ],
+      "id": "891773a5-fcba-40f7-b8f7-ddc0cf6d7a22",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Все процессы выполнены проверка окончена.\nFinish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4900,
+        -1120
+      ],
+      "id": "fd8206a8-e5e7-4ba2-97b6-1d9fa8dbf7f6",
+      "name": "формируем запрос к логированию6"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        5140,
+        -1120
+      ],
+      "id": "9a3b53ad-3a99-414b-98f7-43f89af89260",
+      "name": "Запрос в процесс логирования6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Остался хотябы один незаконченый процесс. Перепроверка через {{ $json.max_Traks_left }} мин. ",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4280,
+        -1120
+      ],
+      "id": "e8dafb5c-4ca2-4807-bb43-ddeaa2c4ae72",
+      "name": "формируем запрос к логированию7"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4520,
+        -1120
+      ],
+      "id": "b25eb9ad-b18a-43a3-b0fb-0890b905d29b",
+      "name": "Запрос в процесс логирования7"
     }
   ],
   "pinData": {},
@@ -1514,7 +1978,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 2,
-  "updatedAt": "2024-11-16T11:11:36.000Z",
-  "versionId": "e45a2f16-609f-4192-a640-2da389a84ecd"
+  "triggerCount": 0,
+  "updatedAt": "2024-11-17T08:24:10.000Z",
+  "versionId": "e1bce8c1-d683-4ea9-b6d3-7632251c22e8"
 }
