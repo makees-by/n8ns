@@ -5,40 +5,7 @@
       "main": [
         [
           {
-            "node": "Ответ от проверки оплаты пользователей1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Switch": {
-      "main": [
-        [
-          {
-            "node": "Switch1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ответ от проверки оплаты пользователей1": {
-      "main": [
-        [
-          {
-            "node": "Ответ от проверки оплаты пользователей",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ответ от проверки оплаты пользователей": {
-      "main": [
-        [
-          {
-            "node": "Ответ от проверки оплаты пользователей2",
+            "node": "new",
             "type": "main",
             "index": 0
           }
@@ -49,14 +16,14 @@
       "main": [
         [
           {
-            "node": "Создаем новую запись выставляем время старта poroc control",
+            "node": "Создаем новую запись выставляем время старта в БД",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Создаем новую запись выставляем время старта poroc control2",
+            "node": "Получаем текущее значение из бд",
             "type": "main",
             "index": 0
           },
@@ -68,14 +35,58 @@
         ],
         [
           {
-            "node": "Создаем новую запись выставляем время старта poroc control3",
+            "node": "Получаем данные изз БД",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Создаем новую запись выставляем время старта poroc control2": {
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Дополняем запись в БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "new": {
+      "main": [
+        [
+          {
+            "node": "add",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add": {
+      "main": [
+        [
+          {
+            "node": "get",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
       "main": [
         [
           {
@@ -86,33 +97,22 @@
         ]
       ]
     },
-    "Merge": {
+    "Получаем текущее значение из бд": {
       "main": [
         [
           {
-            "node": "Создаем новую запись выставляем время старта poroc control1",
+            "node": "Aggregate",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Ответ от проверки оплаты пользователей2": {
+    "Получаем данные изз БД": {
       "main": [
         [
           {
-            "node": "Switch",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Создаем новую запись выставляем время старта poroc control3": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
+            "node": "Aggregate1",
             "type": "main",
             "index": 0
           }
@@ -173,48 +173,10 @@
       "typeVersion": 3.2,
       "position": [
         240,
-        0
+        -220
       ],
       "id": "b02d70ef-5b95-487f-b0e6-251a1ba75dc3",
       "name": "Switch"
-    },
-    {
-      "parameters": {
-        "table": {
-          "__rl": true,
-          "value": "Logs",
-          "mode": "list",
-          "cachedResultName": "Logs"
-        },
-        "dataMode": "defineBelow",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Id",
-              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
-            },
-            {
-              "column": "proceses_control",
-              "value": "=Start: {{ $now.format('HH.mm.ss') }}\n"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        800,
-        -260
-      ],
-      "id": "b7adc1ce-41c5-4604-9ac8-442616fa3367",
-      "name": "Создаем новую запись выставляем время старта poroc control",
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
     },
     {
       "parameters": {
@@ -229,35 +191,7 @@
       ],
       "id": "0a76d17a-c7bf-4c75-acb6-a33066027ea8",
       "name": "Webhook",
-      "webhookId": "115fb3be-5a91-4fea-ace7-a7006a58bd79"
-    },
-    {
-      "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"opr\": \"new\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"null\"\n  }\n]\n);"
-      },
-      "id": "803cefb5-ca21-4d61-bb53-f92596938071",
-      "name": "Ответ от проверки оплаты пользователей1",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        40,
-        -120
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"opr\": \"add\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"13:42:17 : Отправлен запрос на выставление статуса треков из БД в гугл таблицы.\\n\"\n  }\n]\n);"
-      },
-      "id": "8c66adfb-8056-4d57-ad06-d1eea345fbc3",
-      "name": "Ответ от проверки оплаты пользователей",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        40,
-        80
-      ],
-      "disabled": true
+      "webhookId": "1688b730-73f0-4a05-8700-d123c6774504"
     },
     {
       "parameters": {
@@ -351,6 +285,108 @@
     },
     {
       "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1220,
+        -40
+      ],
+      "id": "e3bb6b85-9908-4674-8002-db8de00b34e2",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c1b9dd58-7185-46f8-8ab7-ea1495342f13",
+              "name": "proceses_control",
+              "value": "={{ $json.proceses_control }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1040,
+        280
+      ],
+      "id": "9e83e982-5a9e-45ea-b4a2-68287a2d5da1",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"new\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"null\"\n  }\n]\n);"
+      },
+      "id": "803cefb5-ca21-4d61-bb53-f92596938071",
+      "name": "new",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        40,
+        -120
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"add\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"13:42:17 : Отправлен запрос на выставление статуса треков из БД в гугл таблицы.\\n\"\n  }\n]\n);"
+      },
+      "id": "8c66adfb-8056-4d57-ad06-d1eea345fbc3",
+      "name": "add",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        40,
+        80
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"get\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"\"\n  }\n]\n);"
+      },
+      "id": "048813f3-19d2-4a04-8fbe-638b332a2345",
+      "name": "get",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        180
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "={{ $('Switch1').item.json.poc_name }}",
+              "renameField": true,
+              "outputFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        80
+      ],
+      "id": "2fe4fe64-ca12-4cbb-9eb3-c5f56db07f43",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
         "operation": "select",
         "table": {
           "__rl": true,
@@ -367,37 +403,23 @@
             }
           ]
         },
+        "combineConditions": "=AND",
         "options": {}
       },
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        740,
-        60
+        800,
+        80
       ],
       "id": "c49b810c-8e2e-49b3-9f23-f3eef19cffd2",
-      "name": "Создаем новую запись выставляем время старта poroc control2",
+      "name": "Получаем текущее значение из бд",
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
           "name": "MySQL account"
         }
       }
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "combineBy": "combineAll",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3,
-      "position": [
-        960,
-        -20
-      ],
-      "id": "e3bb6b85-9908-4674-8002-db8de00b34e2",
-      "name": "Merge"
     },
     {
       "parameters": {
@@ -410,12 +432,12 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Id",
-        "valueToMatchOn": "={{ $json.Id }}",
+        "valueToMatchOn": "={{ $('Получаем текущее значение из бд').item.json.Id }}",
         "valuesToSend": {
           "values": [
             {
-              "column": "proceses_control",
-              "value": "={{ $json.proceses_control }}\n{{ $json.message }}"
+              "column": "={{ $json.poc_name }}",
+              "value": "={{ $json.data[0] }}\n{{ $json.message }}"
             }
           ]
         },
@@ -424,11 +446,11 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1180,
-        -20
+        1420,
+        -40
       ],
       "id": "8edc9fb8-cfd4-4487-84aa-f36e51cffa88",
-      "name": "Создаем новую запись выставляем время старта poroc control1",
+      "name": "Дополняем запись в БД",
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -438,17 +460,41 @@
     },
     {
       "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"opr\": \"get\",\n    \"poc_name\": \"proceses_control\",\n    \"message\": \"\"\n  }\n]\n);"
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            },
+            {
+              "column": "={{ $json.poc_name }}",
+              "value": "=Start: {{ $now.format('HH.mm.ss') }}\n"
+            }
+          ]
+        },
+        "options": {}
       },
-      "id": "048813f3-19d2-4a04-8fbe-638b332a2345",
-      "name": "Ответ от проверки оплаты пользователей2",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
       "position": [
-        220,
-        180
+        800,
+        -260
       ],
-      "disabled": true
+      "id": "b7adc1ce-41c5-4604-9ac8-442616fa3367",
+      "name": "Создаем новую запись выставляем время старта в БД",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     },
     {
       "parameters": {
@@ -477,7 +523,7 @@
         240
       ],
       "id": "29d60d2c-4f66-4774-a822-7b4db7854576",
-      "name": "Создаем новую запись выставляем время старта poroc control3",
+      "name": "Получаем данные изз БД",
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -487,26 +533,25 @@
     },
     {
       "parameters": {
-        "assignments": {
-          "assignments": [
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
             {
-              "id": "c1b9dd58-7185-46f8-8ab7-ea1495342f13",
-              "name": "proceses_control",
-              "value": "={{ $json.proceses_control }}",
-              "type": "string"
+              "fieldToAggregate": "={{ $('Switch1').item.json.poc_name }}",
+              "renameField": true,
+              "outputFieldName": "={{ $('Switch1').item.json.poc_name }}"
             }
           ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
       "position": [
-        880,
-        240
+        780,
+        260
       ],
-      "id": "9e83e982-5a9e-45ea-b4a2-68287a2d5da1",
-      "name": "Edit Fields"
+      "id": "083965a6-1131-4388-966f-79ecf688996e",
+      "name": "Aggregate1"
     }
   ],
   "pinData": {},
@@ -516,6 +561,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-17T07:55:57.000Z",
-  "versionId": "b45b2d23-4f51-404d-8446-8d7db99c4470"
+  "updatedAt": "2024-11-17T15:22:29.000Z",
+  "versionId": "2a07f7a9-d314-4691-ab0c-ba34a07ae0d8"
 }
