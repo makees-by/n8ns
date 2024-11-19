@@ -58,6 +58,11 @@
             "node": "Считаем оставшееся колличество дней до оплаты",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "JsonDatabase4",
+            "type": "main",
+            "index": 0
           }
         ],
         [
@@ -68,6 +73,11 @@
           },
           {
             "node": "Собираем всех с истёкшим сроком оплаты",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase3",
             "type": "main",
             "index": 0
           }
@@ -102,6 +112,11 @@
         [
           {
             "node": "Проверка оплаты",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию",
             "type": "main",
             "index": 0
           }
@@ -148,6 +163,11 @@
             "node": "Проверка оплаты",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -167,7 +187,7 @@
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "No Operation, do nothing",
             "type": "main",
             "index": 0
           }
@@ -381,7 +401,89 @@
       "main": [
         [
           {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
             "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию1": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase3": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все значения переменной user_trabls1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase4": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Считаем оставшееся колличество дней до оплаты",
             "type": "main",
             "index": 0
           }
@@ -622,8 +724,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        440,
-        -80
+        80,
+        20
       ]
     },
     {
@@ -685,8 +787,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3560,
-        480
+        3780,
+        500
       ]
     },
     {
@@ -782,7 +884,7 @@
         540,
         260
       ],
-      "webhookId": "8662d435-69e9-4eb6-b8b2-84d692b87edc"
+      "webhookId": "cd1a416c-375d-4a65-815c-0d2d944b9447"
     },
     {
       "parameters": {
@@ -1076,8 +1178,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        680,
-        -360
+        160,
+        -240
       ]
     },
     {
@@ -1126,14 +1228,15 @@
       "position": [
         3120,
         400
-      ]
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
         "operation": "opWrite",
         "queryPath": "process.trigers",
         "sourceType": "sourceTypeJson",
-        "sourceData": "{  \"Triger1\":  0 } ",
+        "sourceData": "{  \"Triger1\":  0, \"Triger2\":  0 } ",
         "filePath": "=root/n8n/sbor_pay.json"
       },
       "id": "c5258850-c53c-4433-a07a-855ff78b4bc6",
@@ -1174,7 +1277,8 @@
       "position": [
         2020,
         620
-      ]
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -1256,7 +1360,227 @@
       "position": [
         3140,
         600
-      ]
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "new",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "pay_check",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "null",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        540,
+        -220
+      ],
+      "id": "f5ae8398-d7a3-4186-9342-d7e03d6a86b1",
+      "name": "формируем запрос к логированию"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        840,
+        -220
+      ],
+      "id": "6c48d2c5-492c-44ec-9ac8-7bc611c7bc7d",
+      "name": "Запрос в процесс логирования"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3540,
+        500
+      ],
+      "id": "41ab80bc-010b-4691-a6c3-79ffbe6b7598",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "pay_check",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Данные по прецесам на сегодня:  {{ $json.Ditales }}\nFinish: {{ $now.format('HH-mm-ss') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3540,
+        240
+      ],
+      "id": "cec16c07-83a5-4217-a4e4-f5699a15085a",
+      "name": "формируем запрос к логированию1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        240
+      ],
+      "id": "ae9fe357-bf38-4a1e-a5ff-8f95abfafa6f",
+      "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers",
+        "filePath": "=root/n8n/sbor_pay.json"
+      },
+      "id": "b161ff6c-1f26-4507-bb8c-30643203b8eb",
+      "name": "JsonDatabase3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        780
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "41239446-30c9-41b2-8d17-6265eab22947",
+              "leftValue": "={{ $json.data.Triger2 }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2220,
+        780
+      ],
+      "id": "36b58ff9-92e6-4be1-8220-842dfe36dd87",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger2\":  1 } ",
+        "filePath": "=root/n8n/sbor_pay.json"
+      },
+      "id": "1e2223d1-7960-4c87-84f0-192e7f256350",
+      "name": "JsonDatabase4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        180
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "af474031-69af-4b3c-a813-aef88c419691",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2100,
+        180
+      ],
+      "id": "b5fda2f3-b91f-4d1e-bc48-8b95da92d39f",
+      "name": "If4"
     }
   ],
   "pinData": {},
@@ -1266,6 +1590,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-16T11:11:55.000Z",
-  "versionId": "7ee43591-c950-4ae3-a46e-14fa67d1d2aa"
+  "updatedAt": "2024-11-18T13:57:14.000Z",
+  "versionId": "0ff0a1c9-bd17-469c-8fe7-3b8763cd0599"
 }
