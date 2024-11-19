@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Создаем новую запись выставляем время старта в БД",
+            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -79,7 +79,7 @@
       "main": [
         [
           {
-            "node": "Switch1",
+            "node": "get1",
             "type": "main",
             "index": 0
           }
@@ -113,6 +113,68 @@
         [
           {
             "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Создаем новую запись выставляем время старта в БД",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Дополняем запись в БД1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Создаем новую запись выставляем время старта в БД": {
+      "main": [
+        [
+          {
+            "node": "Получаем текущее значение из бд1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Дополняем запись в БД1": {
+      "main": [
+        [
+          {
+            "node": "Получаем текущее значение из бд2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Дополняем запись в БД": {
+      "main": [
+        [
+          {
+            "node": "Получаем текущее значение из бд3",
             "type": "main",
             "index": 0
           }
@@ -191,7 +253,7 @@
       ],
       "id": "0a76d17a-c7bf-4c75-acb6-a33066027ea8",
       "name": "Webhook",
-      "webhookId": "1688b730-73f0-4a05-8700-d123c6774504"
+      "webhookId": "21f40662-acb1-47e2-9cf4-975a56812ebd"
     },
     {
       "parameters": {
@@ -292,7 +354,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        1220,
+        1440,
         -40
       ],
       "id": "e3bb6b85-9908-4674-8002-db8de00b34e2",
@@ -315,8 +377,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1040,
-        280
+        620,
+        400
       ],
       "id": "9e83e982-5a9e-45ea-b4a2-68287a2d5da1",
       "name": "Edit Fields"
@@ -379,7 +441,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1020,
+        1240,
         80
       ],
       "id": "2fe4fe64-ca12-4cbb-9eb3-c5f56db07f43",
@@ -409,7 +471,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        800,
+        1020,
         80
       ],
       "id": "c49b810c-8e2e-49b3-9f23-f3eef19cffd2",
@@ -446,7 +508,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1420,
+        1640,
         -40
       ],
       "id": "8edc9fb8-cfd4-4487-84aa-f36e51cffa88",
@@ -484,8 +546,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        800,
-        -260
+        920,
+        -400
       ],
       "id": "b7adc1ce-41c5-4604-9ac8-442616fa3367",
       "name": "Создаем новую запись выставляем время старта в БД",
@@ -519,7 +581,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        560,
+        780,
         240
       ],
       "id": "29d60d2c-4f66-4774-a822-7b4db7854576",
@@ -547,11 +609,204 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        780,
+        1000,
         260
       ],
       "id": "083965a6-1131-4388-966f-79ecf688996e",
       "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "378feb27-feff-4062-834c-e2bbcf45dbe2",
+              "leftValue": "={{ $json.poc_name }}",
+              "rightValue": "proceses_control",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        -180
+      ],
+      "id": "bbecdd01-66c0-4423-84cb-501886314e46",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Id",
+        "valueToMatchOn": "=TC{{ $today.format('dd.MM.yyyy') }}BD",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "={{ $json.poc_name }}",
+              "value": "=Start: {{ $now.format('HH.mm.ss') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        980,
+        -180
+      ],
+      "id": "de6f24a6-a8e4-4d78-a446-e841c2cbaef2",
+      "name": "Дополняем запись в БД1",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"opr\": \"new\",\n    \"poc_name\": \"pay_check\",\n    \"message\": \"null\"\n  }\n]\n);"
+      },
+      "id": "633ac2fd-c8db-4d9e-96ab-76ef0e4c2079",
+      "name": "get1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        -20
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            }
+          ]
+        },
+        "combineConditions": "=AND",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1140,
+        -400
+      ],
+      "id": "8ea15853-0473-4ecb-9f8c-93fb06fed4f2",
+      "name": "Получаем текущее значение из бд1",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            }
+          ]
+        },
+        "combineConditions": "=AND",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1220,
+        -180
+      ],
+      "id": "3217d943-9b85-4abc-962c-f224ab34e587",
+      "name": "Получаем текущее значение из бд2",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            }
+          ]
+        },
+        "combineConditions": "=AND",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1860,
+        -40
+      ],
+      "id": "08ef9244-6187-4870-b166-f8672fda93eb",
+      "name": "Получаем текущее значение из бд3",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -561,6 +816,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-17T15:22:29.000Z",
-  "versionId": "2a07f7a9-d314-4691-ab0c-ba34a07ae0d8"
+  "updatedAt": "2024-11-18T13:34:36.000Z",
+  "versionId": "901a4b1b-2f67-48ee-973f-7e1047fdcc91"
 }
