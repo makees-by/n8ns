@@ -381,6 +381,11 @@
             "node": "проверяем завершили ли проверку все сервера",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -696,7 +701,7 @@
         3840,
         -360
       ],
-      "webhookId": "0eb3d2e1-7624-4176-b11b-f5aef00d3598"
+      "webhookId": "38bb5229-fed0-4cab-832f-06115c02cc63"
     },
     {
       "parameters": {},
@@ -1107,7 +1112,7 @@
         2380,
         100
       ],
-      "webhookId": "168763f4-8759-4516-beb4-fe52f5f0268d",
+      "webhookId": "7feb283a-8db7-4c29-9a22-c1c0fde4008e",
       "disabled": true
     },
     {
@@ -1439,7 +1444,7 @@
         4520,
         -600
       ],
-      "webhookId": "d13ba0b2-5cc6-4013-8d35-1724f5e3c3bc"
+      "webhookId": "f257cd9a-c98f-46c7-904b-ca18e2274bdb"
     },
     {
       "parameters": {
@@ -1453,7 +1458,7 @@
       ],
       "id": "d965c829-ceca-4eba-b682-2114a38ab378",
       "name": "Wait1",
-      "webhookId": "0fa3a957-b999-4dc5-a217-e23477c99744"
+      "webhookId": "d6b18c72-fb02-4ab0-9e03-26a14a416d67"
     },
     {
       "parameters": {
@@ -1979,6 +1984,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-11-17T15:22:57.000Z",
-  "versionId": "75c49d5d-44c2-4d73-8edf-d4f545690448"
+  "updatedAt": "2024-11-18T13:25:36.000Z",
+  "versionId": "6b482066-597c-4537-9e71-8e70e26644db"
 }
