@@ -83,7 +83,7 @@
       "main": [
         [
           {
-            "node": "Сообщаем об окончании процесса",
+            "node": "Wait",
             "type": "main",
             "index": 0
           }
@@ -138,7 +138,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets3",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -183,6 +183,35 @@
         [
           {
             "node": "Выставление статусов трекам в гугл таблицу",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Сообщаем об окончании процесса",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -576,8 +605,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2280,
-        420
+        2500,
+        440
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -593,8 +622,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2240,
-        680
+        2440,
+        200
       ]
     },
     {
@@ -736,8 +765,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2880,
-        680
+        3080,
+        200
       ]
     },
     {
@@ -771,8 +800,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2700,
-        680
+        2900,
+        200
       ]
     },
     {
@@ -784,8 +813,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2460,
-        680
+        2660,
+        200
       ],
       "executeOnce": true
     },
@@ -802,7 +831,34 @@
         40,
         360
       ],
-      "webhookId": "c901303c-d3fd-44b0-9f5e-dd7f816473c0"
+      "webhookId": "357a0593-dbd1-4875-827b-4a2b75a63410"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2240,
+        420
+      ],
+      "id": "247db668-21cf-4604-8c0c-4d4161bf6dbc",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2720,
+        440
+      ],
+      "id": "aedf621b-0932-427c-adb2-020a170fe0a1",
+      "name": "Wait",
+      "webhookId": "9e73ee2c-2b75-478f-990e-af7f71fc5e06"
     }
   ],
   "pinData": {},
@@ -812,6 +868,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-09T19:13:00.000Z",
-  "versionId": "f503276b-7908-490d-83be-db171109d5b0"
+  "updatedAt": "2024-11-18T14:44:08.000Z",
+  "versionId": "c46a7052-1671-4aee-a7f6-77dca87c588d"
 }
