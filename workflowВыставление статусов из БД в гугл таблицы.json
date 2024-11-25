@@ -49,12 +49,12 @@
       "main": [
         [
           {
-            "node": "Собираем строки из таблиц, в которые нужно выставить статус",
+            "node": "выделяем idTables с соответствующим link",
             "type": "main",
             "index": 0
           },
           {
-            "node": "выделяем idTables с соответствующим link",
+            "node": "Loop Over Items1",
             "type": "main",
             "index": 0
           }
@@ -65,7 +65,7 @@
       "main": [
         [
           {
-            "node": "Получаем записи о нужных треках в БД",
+            "node": "No Operation, do nothing",
             "type": "main",
             "index": 0
           }
@@ -87,6 +87,18 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ошибка при выставлении статусов треков из БД в таблицы",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -95,6 +107,11 @@
         [
           {
             "node": "Получить все записи из таблицы Users4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию",
             "type": "main",
             "index": 0
           }
@@ -138,7 +155,7 @@
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Sort",
             "type": "main",
             "index": 0
           }
@@ -161,6 +178,11 @@
         [
           {
             "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию3",
             "type": "main",
             "index": 0
           }
@@ -217,6 +239,111 @@
           }
         ]
       ]
+    },
+    "Sort": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "-",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Собираем строки из таблиц, в которые нужно выставить статус",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "-": {
+      "main": [
+        [
+          {
+            "node": "Получаем записи о нужных треках в БД",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию1": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию3": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:10:59.187Z",
@@ -233,8 +360,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        40,
-        540
+        300,
+        1000
       ]
     },
     {
@@ -262,8 +389,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1020,
-        780
+        980,
+        900
       ]
     },
     {
@@ -278,7 +405,7 @@
       "typeVersion": 2.4,
       "position": [
         460,
-        540
+        760
       ],
       "credentials": {
         "mySql": {
@@ -350,8 +477,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        680,
-        540
+        700,
+        760
       ]
     },
     {
@@ -427,8 +554,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1480,
-        340
+        1680,
+        360
       ]
     },
     {
@@ -438,8 +565,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1180,
-        560
+        1920,
+        380
       ]
     },
     {
@@ -605,15 +732,18 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2500,
-        440
+        2960,
+        900
       ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {},
@@ -622,8 +752,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2440,
-        200
+        2680,
+        640
       ]
     },
     {
@@ -634,7 +764,7 @@
       "typeVersion": 1,
       "position": [
         260,
-        540
+        760
       ]
     },
     {
@@ -647,8 +777,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        260,
-        260
+        -200,
+        580
       ]
     },
     {
@@ -678,8 +808,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1220,
-        340
+        1420,
+        360
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -702,6 +832,7 @@
           "values": [
             {
               "column": "Track",
+              "condition": "LIKE",
               "value": "={{ $json['трек'] }}"
             }
           ]
@@ -713,8 +844,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1760,
-        320
+        1980,
+        180
       ],
       "credentials": {
         "mySql": {
@@ -734,8 +865,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        2020,
-        420
+        1940,
+        880
       ]
     },
     {
@@ -765,8 +896,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3080,
-        200
+        3300,
+        640
       ]
     },
     {
@@ -800,8 +931,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2900,
-        200
+        3120,
+        640
       ]
     },
     {
@@ -813,8 +944,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2660,
-        200
+        2900,
+        640
       ],
       "executeOnce": true
     },
@@ -828,20 +959,22 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        40,
-        360
+        0,
+        760
       ],
-      "webhookId": "357a0593-dbd1-4875-827b-4a2b75a63410"
+      "webhookId": "808c526c-252e-4524-b869-082e946e1b57",
+      "disabled": true
     },
     {
       "parameters": {
+        "batchSize": 30,
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2240,
-        420
+        2640,
+        880
       ],
       "id": "247db668-21cf-4604-8c0c-4d4161bf6dbc",
       "name": "Loop Over Items"
@@ -853,12 +986,310 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2720,
-        440
+        3260,
+        900
       ],
       "id": "aedf621b-0932-427c-adb2-020a170fe0a1",
       "name": "Wait",
-      "webhookId": "9e73ee2c-2b75-478f-990e-af7f71fc5e06"
+      "webhookId": "92fb88bb-3195-4292-be47-532b44879948"
+    },
+    {
+      "parameters": {
+        "sortFieldsUi": {
+          "sortField": [
+            {
+              "fieldName": "IdTables"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.sort",
+      "typeVersion": 1,
+      "position": [
+        2240,
+        880
+      ],
+      "id": "8c7bbe23-7454-49c6-8ec2-518a52cd0b20",
+      "name": "Sort"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1180,
+        340
+      ],
+      "id": "3a811df2-0587-40e4-b818-0ad8ec818fef",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        680
+      ],
+      "id": "66880164-2994-4904-8183-c88c449066ae",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "new",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "from_bd_to_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "null",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        160,
+        560
+      ],
+      "id": "3eb0b6c8-0756-4e16-b887-101706e25069",
+      "name": "формируем запрос к логированию",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        560
+      ],
+      "id": "9c09c90a-dcb2-4a45-b003-d96a227c852a",
+      "name": "Запрос в процесс логирования"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        180
+      ],
+      "id": "e1e560fa-1ecf-4b74-9858-b3e5dc68c878",
+      "name": "-"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "from_bd_to_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : {{ $input.all().length }} треков из таблиц для которых нужно обновление\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1160,
+        -20
+      ],
+      "id": "a883459c-27b3-4a35-a090-33a4f6f10fe1",
+      "name": "формируем запрос к логированию1",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1400,
+        -20
+      ],
+      "id": "bf88097e-d59c-42bc-a7bb-48447d085e78",
+      "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "from_bd_to_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : {{ $input.all().length }} треков, по которым нашлись совпадения в БД.",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2180,
+        660
+      ],
+      "id": "d9d0a07e-f191-4d90-8fa6-142de8e2c848",
+      "name": "формируем запрос к логированию2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        560
+      ],
+      "id": "5d85efde-3f01-42ba-aafb-6c91616065e1",
+      "name": "Запрос в процесс логирования2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "from_bd_to_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Finish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2680,
+        380
+      ],
+      "id": "1c5f863e-69a4-4e7b-88c3-cf41e252d803",
+      "name": "формируем запрос к логированию3",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2920,
+        380
+      ],
+      "id": "a5e55c83-9357-456e-993c-296169be3c14",
+      "name": "Запрос в процесс логирования3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2880,
+        60
+      ],
+      "id": "5550c3c2-08e5-45d3-979f-63cb321ebea1",
+      "name": "Ошибка при выставлении статусов треков из БД в таблицы"
     }
   ],
   "pinData": {},
@@ -867,7 +1298,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2024-11-18T14:44:08.000Z",
-  "versionId": "c46a7052-1671-4aee-a7f6-77dca87c588d"
+  "triggerCount": 0,
+  "updatedAt": "2024-11-25T12:12:57.000Z",
+  "versionId": "33e5ea95-c6d9-46fc-8230-48ba9a7dbe49"
 }
