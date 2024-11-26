@@ -1,0 +1,62 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-11-25T14:07:05.838Z",
+  "id": "NnYaRfobATrSzVYN",
+  "meta": null,
+  "name": "братцы кролики",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "rabits",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        0
+      ],
+      "id": "fa0765f4-cbb3-41be-a09b-482f8b521e1f",
+      "name": "Webhook",
+      "webhookId": "1d320a4e-3ce4-4bf7-ad77-a12d625854e4"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"myField\": \"да\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        120,
+        0
+      ],
+      "id": "7fce4422-41ac-4074-ae95-350a8608614b",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-11-25T14:46:18.000Z",
+  "versionId": "86fc1e77-760d-40f4-b00e-96d2662391a1"
+}
