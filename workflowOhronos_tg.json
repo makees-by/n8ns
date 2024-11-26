@@ -103,8 +103,7 @@
             "type": "main",
             "index": 0
           }
-        ],
-        []
+        ]
       ]
     },
     "есть ли свойство data в query": {
@@ -152,7 +151,7 @@
         880,
         380
       ],
-      "webhookId": "02e64839-c3ad-414a-b161-634e08373eec",
+      "webhookId": "2bb5bbea-65e8-404a-8cfe-bf06e30074ad",
       "credentials": {
         "telegramApi": {
           "id": "GNDPLmexphpeDDyV",
@@ -615,6 +614,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-06-23T06:44:00.000Z",
-  "versionId": "90024b70-1630-4810-bbb2-e97adcf08ba0"
+  "updatedAt": "2024-11-25T15:07:35.000Z",
+  "versionId": "63774a37-94b1-4918-9050-11b9b14e4f3f"
 }
