@@ -1,0 +1,636 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "есть ли свойство text1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "есть ли свойство calbackQuery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "есть ли свойство text1": {
+      "main": [
+        [
+          {
+            "node": "начинается ли команда с символа /1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "начинается ли команда с символа /1": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Start1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "help",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Menu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "есть ли свойство calbackQuery": {
+      "main": [
+        [
+          {
+            "node": "есть ли свойство data в query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "есть ли свойство data в query": {
+      "main": [
+        [
+          {
+            "node": "Начинается с",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Начинается с": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-11-25T14:51:20.773Z",
+  "id": "t4qcOrqEJ2rAwahc",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Напоминальщик",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "*"
+        ],
+        "additionalFields": {}
+      },
+      "id": "96c868b4-e712-464d-9c4d-a482686eff39",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        380
+      ],
+      "webhookId": "d59e4cb5-78e0-4cc2-8d5f-390253f99ca0",
+      "credentials": {
+        "telegramApi": {
+          "id": "GNDPLmexphpeDDyV",
+          "name": "ohronos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "chat",
+        "operation": "leave",
+        "chatId": "={{ $json.message.chat.id }}"
+      },
+      "id": "422199cc-b940-4fb3-900e-f7d8e5428ed1",
+      "name": "Telegram1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        -40
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "GNDPLmexphpeDDyV",
+          "name": "ohronos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.hasOwnProperty(\"my_chat_member\")}}",
+              "value2": true
+            },
+            {
+              "value1": "={{$json[\"my_chat_member\"][\"new_chat_member\"][\"user\"][\"id\"]==5810332003}}",
+              "value2": true
+            },
+            {
+              "value1": "={{$json[\"my_chat_member\"][\"new_chat_member\"][\"status\"]==\"member\"}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "ef231f59-4335-4008-b2f5-e4f996dd1a2e",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        680,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "1ae07971-1965-412a-b1ad-d81dbefd09c9",
+              "leftValue": "={{$json.message.hasOwnProperty(\"new_chat_member\")}}",
+              "rightValue": "=",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f82d4879-f3ee-41ad-b55c-ff4f53f77aca",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        940,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "a77a8fbb-a5a6-4b06-8c93-bdc0570b1d62",
+              "leftValue": "={{ $json.message }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "eec1e39e-1e34-48dd-bff0-57a3e8190a3a",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.message.hasOwnProperty(\"text\") }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "31b7d279-afb5-4b48-bac0-806763aeebac",
+      "name": "есть ли свойство text1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.message.text }}",
+              "operation": "startsWith",
+              "value2": "/"
+            }
+          ]
+        }
+      },
+      "id": "c8ae3967-7c5d-496f-ad5c-778854ebeed7",
+      "name": "начинается ли команда с символа /1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! Добро пожаловать к боту Охронос. Тут ты сможешь настроить напоминания или события. Для этого перейти в /menu .</b>",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "id": "d660a8cd-0121-40eb-835d-7d9dfc9b3d1a",
+      "name": "Start1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        -180
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "GNDPLmexphpeDDyV",
+          "name": "ohronos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "endsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "start"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "b49d8337-fc46-4f14-a860-2feddea48e59",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "help",
+                    "operator": {
+                      "type": "string",
+                      "operation": "endsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "help"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "f1370b7c-9b84-43cb-ad63-331b576d120b",
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "menu",
+                    "operator": {
+                      "type": "string",
+                      "operation": "endsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "menu"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ee56ce6f-82c0-4ed2-824a-8dda08e2b481",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1620,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! Ты нажал help и рано или поздно здесь буде описание всего функционала бота. Но а пока здесь то, что есть и это хорошо).</b>",
+        "replyMarkup": "inlineKeyboard",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "id": "75f589fe-ca2c-464e-b942-3b3127dec383",
+      "name": "help",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        -80
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "GNDPLmexphpeDDyV",
+          "name": "ohronos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.message.chat.id }}",
+        "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! Ты нажалд меню.</b>",
+        "replyMarkup": "inlineKeyboard",
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Создать охрон.",
+                    "additionalFields": {
+                      "callback_data": "menu_create"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Проверить уже имеющиеся охроны.",
+                    "additionalFields": {
+                      "callback_data": "menu_check"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "id": "c41a6a30-4c9e-4352-8f30-1cef9aaec420",
+      "name": "Menu",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        80
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "GNDPLmexphpeDDyV",
+          "name": "ohronos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.hasOwnProperty(\"callback_query\") }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "1818c4ee-fffd-4250-bea4-16a9fa0f3bcc",
+      "name": "есть ли свойство calbackQuery",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.callback_query.hasOwnProperty(\"data\") }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "bde36096-a6ec-44e1-9576-5817becbaac0",
+      "name": "есть ли свойство data в query",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.callback_query.data }}",
+                    "rightValue": "menu",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "menu"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a3ee99ef-bb5a-4a90-baac-70789d4089c0",
+      "name": "Начинается с",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1400,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "sendChatAction",
+        "chatId": "={{ $json.callback_query.from.id }}"
+      },
+      "id": "350648e9-9aaf-4614-9acf-d064e7445752",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "position": [
+        1640,
+        420
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "GNDPLmexphpeDDyV",
+          "name": "ohronos"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "8dda5fc5-60b6-48af-979f-b113b9f25a3e",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-06-16T07:01:41.755Z",
+      "updatedAt": "2024-06-16T07:01:41.755Z",
+      "id": "eUkZw1ElfnLKRNRp",
+      "name": "ohronus"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-11-26T07:18:23.000Z",
+  "versionId": "8c961027-1921-4940-a5d0-4af12c42ad02"
+}
