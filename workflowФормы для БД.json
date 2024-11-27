@@ -38,7 +38,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Users2",
+            "node": "Edit Fields6",
             "type": "main",
             "index": 0
           }
@@ -226,6 +226,392 @@
         [
           {
             "node": "Получить все записи из таблицы Users2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Date & Time1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Date & Time6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "HTML2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновляем значение BP_tracks1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Date & Time3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Date & Time2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Date & Time1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 4
+          }
+        ]
+      ]
+    },
+    "Date & Time4": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 5
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time5": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 6
+          }
+        ]
+      ]
+    },
+    "Date & Time6": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 7
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все собранные треки BP из JSON",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Соединяем имеющиеся треки с полученными",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Date & Time7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time7": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подтягиваем все собранные треки BP из JSON": {
+      "main": [
+        [
+          {
+            "node": "Split Out2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив1": {
+      "main": [
+        []
+      ]
+    },
+    "Соединяем имеющиеся треки с полученными": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Распаковываем массив с треками": {
+      "main": [
+        []
+      ]
+    },
+    "Обновляем значение BP_tracks1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Aggregate1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновляем значение BP_tracks": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Подтягиваем все собранные треки BP из JSON1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подтягиваем все собранные треки BP из JSON1": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Split Out1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out2": {
+      "main": [
+        [
+          {
+            "node": "Соединяем имеющиеся треки с полученными",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate1": {
+      "main": [
+        [
+          {
+            "node": "Обновляем значение BP_tracks",
             "type": "main",
             "index": 0
           }
@@ -463,8 +849,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -40,
-        1040
+        -700,
+        -600
       ]
     },
     {
@@ -567,7 +953,7 @@
         320,
         300
       ],
-      "webhookId": "a8840416-f48d-4cd1-a579-ec0c5cc3b52a"
+      "webhookId": "e8dc7fae-2e77-4a29-bd3e-6b07506bb789"
     },
     {
       "parameters": {
@@ -800,7 +1186,7 @@
         300,
         500
       ],
-      "webhookId": "ea64bc64-8f35-4f98-b565-cb5be33c1824"
+      "webhookId": "8e9bc972-40cc-4ff4-b7b4-920e3a030c53"
     },
     {
       "parameters": {
@@ -860,7 +1246,7 @@
         320,
         680
       ],
-      "webhookId": "b70adbc0-90c3-446a-83b9-6f0f62efa18f"
+      "webhookId": "3e37aa32-b6b5-4125-b797-4da885bf52bc"
     },
     {
       "parameters": {
@@ -1109,7 +1495,7 @@
         0,
         860
       ],
-      "webhookId": "e7ddd3bd-49f9-43b0-ac52-356494ed4a05"
+      "webhookId": "2df84c8d-5736-42a6-ba8c-fa714a8466db"
     },
     {
       "parameters": {
@@ -1196,7 +1582,7 @@
         1120,
         320
       ],
-      "webhookId": "c5c7baa5-d770-459d-96d8-bb1bb1e6a3b7"
+      "webhookId": "619fbc71-2fc3-4b03-9277-b840ba1210ae"
     },
     {
       "parameters": {
@@ -1212,7 +1598,660 @@
         -40,
         1200
       ],
-      "webhookId": "4cea73dc-b0cb-4c7b-8f8a-e85c2c76495a"
+      "webhookId": "3ec280fa-c430-4cd5-bf78-06f34133df9c"
+    },
+    {
+      "parameters": {
+        "path": "calendar",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        -40
+      ],
+      "id": "243120a6-ee79-40ab-bade-0c140a7a7bf6",
+      "name": "Webhook1",
+      "webhookId": "b98d61a0-15c0-41ab-aab0-5196c991af9c"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f57b9ab6-cf49-4026-b2e3-04624486cac6",
+              "name": "Start_Days",
+              "value": "={{ $json['1-й день'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -200,
+        -600
+      ],
+      "id": "47a72759-c1ba-4bb8-ac92-80ce97d8f130",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "id": "80ea593a-7689-4839-8666-3d9dde4762e7",
+      "name": "HTML2",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        -580,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "0dd15a56-1982-429c-8109-cbf510637e4a",
+      "name": "Respond to Webhook3",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -340,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "53b12aee-2302-4a1b-8735-201e1f7dd9e5",
+              "name": "html",
+              "value": "\n<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8' />\n\n\n  <title>\n    Initialize Globals Demo - Demos | FullCalendar\n  </title>\n\n\n<link href='/docs/dist/demo-to-codepen.css' rel='stylesheet' />\n\n\n  <style>\n\n    html, body {\n      margin: 0;\n      padding: 0;\n      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;\n      font-size: 14px;\n    }\n\n    #calendar {\n      max-width: 1100px;\n      margin: 40px auto;\n    }\n\n  </style>\n\n\n\n  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>\n\n\n<script src='/docs/dist/demo-to-codepen.js'></script>\n\n\n  \n<script>\n\n  document.addEventListener('DOMContentLoaded', function() {\n    var calendarEl = document.getElementById('calendar');\n\n    var calendar = new FullCalendar.Calendar(calendarEl, {\n      initialView: 'dayGridMonth',\n      initialDate: '2024-11-07',\n      headerToolbar: {\n        left: 'prev,next today',\n        center: 'title',\n        right: 'dayGridMonth,timeGridWeek,timeGridDay'\n      },\n      events: [\n        {\n          title: 'All Day Event',\n          start: '2024-11-01'\n        },\n        {\n          title: 'Long Event',\n          start: '2024-11-07',\n          end: '2024-11-10'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-09T16:00:00'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-16T16:00:00'\n        },\n        {\n          title: 'Conference',\n          start: '2024-11-11',\n          end: '2024-11-13'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T10:30:00',\n          end: '2024-11-12T12:30:00'\n        },\n        {\n          title: 'Lunch',\n          start: '2024-11-12T12:00:00'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T14:30:00'\n        },\n        {\n          title: 'Birthday Party',\n          start: '2024-11-13T07:00:00'\n        },\n        {\n          title: 'Click for Google',\n          url: 'https://google.com/',\n          start: '2024-11-28'\n        }\n      ]\n    });\n\n    calendar.render();\n  });\n\n</script>\n\n</head>\n<body>\n  <div class='demo-topbar'>\n  <button data-codepen class='codepen-button'>Edit in CodePen</button>\n\n  \n\n  \n    initialization of calendar with browser globals\n  \n</div>\n\n  <div id='calendar'></div>\n</body>\n\n</html>\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -800,
+        -80
+      ],
+      "id": "8b103d08-3e5d-4453-9b9b-892bed0823ad",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "jsCode": "events: [\n        {\n          title: 'All Day Event',\n          start: '2024-11-01'\n        },\n        {\n          title: 'Long Event',\n          start: '2024-11-07',\n          end: '2024-11-10'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-09T16:00:00'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-16T16:00:00'\n        },\n        {\n          title: 'Conference',\n          start: '2024-11-11',\n          end: '2024-11-13'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T10:30:00',\n          end: '2024-11-12T12:30:00'\n        },\n        {\n          title: 'Lunch',\n          start: '2024-11-12T12:00:00'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T14:30:00'\n        },\n        {\n          title: 'Birthday Party',\n          start: '2024-11-13T07:00:00'\n        },\n        {\n          title: 'Click for Google',\n          url: 'https://google.com/',\n          start: '2024-11-28'\n        }\n      ]\n    })"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        -440
+      ],
+      "id": "f568f3a0-b0fb-4728-b5f1-8c05f7d6521d",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 6,
+        "outputFieldName": "start_night",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        180,
+        -600
+      ],
+      "id": "58c3ebf1-7b24-4513-aa9f-c3715dcba2c2",
+      "name": "Date & Time1"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 5,
+        "outputFieldName": "end_weekend",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        160,
+        -760
+      ],
+      "id": "a300ba5a-fdd0-4631-a81e-f5d88290aff9",
+      "name": "Date & Time"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 3,
+        "outputFieldName": "start_wekend",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        160,
+        -920
+      ],
+      "id": "2ca02431-2548-4764-b428-2dacfe742503",
+      "name": "Date & Time2"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 2,
+        "outputFieldName": "end_days",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        160,
+        -1100
+      ],
+      "id": "04b878fc-4b32-4049-8f33-2131998dfb7f",
+      "name": "Date & Time3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f57b9ab6-cf49-4026-b2e3-04624486cac6",
+              "name": "1-й день",
+              "value": "=2024-10-29",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -460,
+        -600
+      ],
+      "id": "cfa97a6e-76d4-4d1f-96e5-b43159f0d4c4",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 8,
+        "outputFieldName": "end_night",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        180,
+        -440
+      ],
+      "id": "e196f572-7f01-4354-8af0-1c5157575890",
+      "name": "Date & Time4"
+    },
+    {
+      "parameters": {
+        "numberInputs": 8
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        560,
+        -720
+      ],
+      "id": "07f96d35-40f7-4169-8da8-a17db01bc9d0",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "events",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -620
+      ],
+      "id": "fd925794-8465-42e5-abfc-d1eb2e99247f",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 9,
+        "outputFieldName": "start_wekend2",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        180,
+        -280
+      ],
+      "id": "857aefdd-f89f-4125-8a7e-01d5caa15fd1",
+      "name": "Date & Time5"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.Start_Days }}",
+        "duration": 11,
+        "outputFieldName": "end_wekend2",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        180,
+        -120
+      ],
+      "id": "b07d6384-0ad6-4415-b9d2-516b4b703e54",
+      "name": "Date & Time6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1eacecf-467f-445b-b1f0-9a276758b5da",
+              "name": "Дневная",
+              "value": "={\n title: 'Дневная',\n start: '{{ $json.events[0].Start_Days.toDateTime().format('yyyy-MM-dd') }}',\n end: '{{ $json.events[1].end_days.toDateTime().format('yyyy-MM-dd') }}T23:59:59'\n}",
+              "type": "object"
+            },
+            {
+              "id": "474b5982-1b87-44cd-aef7-c3f35196cac6",
+              "name": "Выходные_1",
+              "value": "={  title: 'Выходные1',  start: '{{ $json.events[2].start_wekend.toDateTime().format('yyyy-MM-dd') }}',  end: '{{ $json.events[3].end_weekend.toDateTime().format('yyyy-MM-dd') }}T23:59:59' }",
+              "type": "object"
+            },
+            {
+              "id": "3b8b3a1f-2111-4086-90d5-4a67d1923a84",
+              "name": "Ночные",
+              "value": "={  title: 'Ночные',  start: '{{ $json.events[4].start_night.toDateTime().format('yyyy-MM-dd') }}',  end: '{{ $json.events[5].end_night.toDateTime().format('yyyy-MM-dd') }}T23:59:59' }",
+              "type": "object"
+            },
+            {
+              "id": "fb2ef1f0-8778-46fc-8730-3ffa0ddad698",
+              "name": "Выходные2",
+              "value": "={  title: 'Ночные',  start: '{{ $json.events[6].start_wekend2.toDateTime().format('yyyy-MM-dd') }}',  end: '{{ $json.events[7].end_wekend2.toDateTime().format('yyyy-MM-dd') }}T23:59:59' }",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1060,
+        -620
+      ],
+      "id": "135dfd6b-2e8f-430e-be18-0191b8f83fca",
+      "name": "Edit Fields7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "81f4ba90-416f-4914-9b75-83c92f07e043",
+              "leftValue": "={{ $json['Выходные2'].end.toDateTime().format('MM').toNumber() }}",
+              "rightValue": "={{ $now.format('MM').toNumber() + 1 }}",
+              "operator": {
+                "type": "number",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        980,
+        -260
+      ],
+      "id": "1e41a52d-1d7b-4f45-83f8-9565200a19bd",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json['Выходные2'].end.toDateTime().format('yyyy-MM-dd') }}",
+        "duration": 1,
+        "outputFieldName": "1-й день",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        -220,
+        -320
+      ],
+      "id": "5394bee5-be1a-4bc5-abec-24b3f8ba67d5",
+      "name": "Date & Time7"
+    },
+    {
+      "parameters": {
+        "queryPath": "shuduler",
+        "filePath": "=root/n8n/work_calender.json"
+      },
+      "id": "f6b15ed5-7bc4-4666-b7f7-cf861a42119f",
+      "name": "Подтягиваем все собранные треки BP из JSON",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        840,
+        -900
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "id": "58bc6d12-8f9e-43c9-ad9d-45ae6015349f",
+      "name": "Распаковываем массив с треками",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1060,
+        -1180
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "shuduler",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($json[''][0]) }}",
+        "filePath": "=root/n8n/work_calender.json"
+      },
+      "id": "7d4b867a-567b-4356-aca8-fee88f720d4d",
+      "name": "Обновляем значение BP_tracks",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        -880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "Дневная"
+            },
+            {
+              "fieldToAggregate": "Выходные_1"
+            },
+            {
+              "fieldToAggregate": "Ночные"
+            },
+            {
+              "fieldToAggregate": "Выходные2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d7cd4332-3d13-419c-8860-7edac5a04ad2",
+      "name": "Объединяем все треки в один массив1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1420,
+        -1140
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "f38f7b65-627f-40a1-937e-1d44acb4ddee",
+      "name": "Соединяем имеющиеся треки с полученными",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        1320,
+        -640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "shuduler",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=",
+        "filePath": "=root/n8n/work_calender.json"
+      },
+      "id": "c3335713-1ad2-481d-9a13-afbfbdf5f379",
+      "name": "Обновляем значение BP_tracks1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        -800
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "23749c71-1f6d-48b1-a4ea-bd9439d5d400",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        -800
+      ],
+      "id": "bf1153c7-81b5-44ae-be40-d524be3a01c3",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        -240
+      ],
+      "id": "5b80032f-76e1-468f-a831-bc8d450c9927",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e0a84186-8578-49c1-bcc0-66420475ca8b",
+              "leftValue": "={{ $json['Дневная'].title }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        -640
+      ],
+      "id": "12af9c32-e664-4e6e-af90-2be5c5b5d90a",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fa8b33ed-bbf9-41c4-8f7c-4f4d179fbeb9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1820,
+        -640
+      ],
+      "id": "0957d7b8-909a-4c4d-abd7-2fe369b015b1",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "queryPath": "shuduler",
+        "filePath": "=root/n8n/work_calender.json"
+      },
+      "id": "6fe95bd9-4e84-49c4-b5ef-a41efb45d969",
+      "name": "Подтягиваем все собранные треки BP из JSON1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        -240
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        -240
+      ],
+      "id": "8b7825ff-fea9-425a-b0bb-3fdfc7c07b10",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        -880
+      ],
+      "id": "b3e78cb1-dfc7-4d2d-ab3f-ba455834d529",
+      "name": "Aggregate1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        -240
+      ],
+      "id": "aed01ab4-f150-48e1-852a-8985767513d4",
+      "name": "Split Out1"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        -900
+      ],
+      "id": "ea131d03-388f-430b-bb29-b6e0d305525c",
+      "name": "Split Out2",
+      "alwaysOutputData": true
     }
   ],
   "pinData": {},
@@ -1221,7 +2260,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 10,
-  "updatedAt": "2024-11-25T09:48:28.000Z",
-  "versionId": "9877486b-5614-42a1-8360-0862af74089c"
+  "triggerCount": 11,
+  "updatedAt": "2024-11-27T11:43:34.000Z",
+  "versionId": "5f16850b-9a57-44a2-a402-79286d365307"
 }
