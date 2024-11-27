@@ -151,7 +151,7 @@
         880,
         380
       ],
-      "webhookId": "2bb5bbea-65e8-404a-8cfe-bf06e30074ad",
+      "webhookId": "6b76351c-c6de-422e-b32a-613cb1b8b99e",
       "credentials": {
         "telegramApi": {
           "id": "GNDPLmexphpeDDyV",
@@ -614,6 +614,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-25T15:07:35.000Z",
-  "versionId": "63774a37-94b1-4918-9050-11b9b14e4f3f"
+  "updatedAt": "2024-11-26T14:13:53.000Z",
+  "versionId": "78e28f88-d012-45fd-a766-e81899add71e"
 }
