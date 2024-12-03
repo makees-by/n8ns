@@ -38,7 +38,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Tabls2",
+            "node": "Loop Over Items1",
             "type": "main",
             "index": 0
           }
@@ -466,7 +466,7 @@
       "main": [
         [
           {
-            "node": "Собираем request",
+            "node": "Loop Over Items1",
             "type": "main",
             "index": 0
           }
@@ -582,6 +582,29 @@
           }
         ]
       ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Собираем request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2024-10-20T13:19:04.007Z",
@@ -654,7 +677,7 @@
       "typeVersion": 2.2,
       "position": [
         1380,
-        440
+        460
       ]
     },
     {
@@ -715,7 +738,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1620,
+        1860,
         300
       ],
       "credentials": {
@@ -754,7 +777,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1880,
+        2100,
         300
       ],
       "executeOnce": false
@@ -786,7 +809,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2880,
+        3100,
         300
       ],
       "credentials": {
@@ -805,7 +828,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2200,
+        2420,
         280
       ]
     },
@@ -816,8 +839,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1980,
-        -240
+        1700,
+        580
       ]
     },
     {
@@ -857,7 +880,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2540,
+        2760,
         300
       ]
     },
@@ -910,7 +933,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3200,
+        3420,
         300
       ]
     },
@@ -945,7 +968,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2580,
+        2840,
         800
       ],
       "credentials": {
@@ -966,7 +989,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4680,
+        4900,
         1400
       ],
       "credentials": {
@@ -1025,7 +1048,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3200,
+        3240,
         800
       ]
     },
@@ -1040,7 +1063,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2820,
+        3060,
         -140
       ],
       "alwaysOutputData": true,
@@ -1071,7 +1094,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        4220,
+        4440,
         400
       ]
     },
@@ -1082,7 +1105,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4080,
+        4300,
         -140
       ]
     },
@@ -1093,8 +1116,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1960,
-        840
+        2380,
+        860
       ]
     },
     {
@@ -1135,7 +1158,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3980,
+        4200,
         860
       ]
     },
@@ -1150,7 +1173,7 @@
       "type": "n8n-nodes-base.removeDuplicates",
       "typeVersion": 1.1,
       "position": [
-        4780,
+        5000,
         740
       ]
     },
@@ -1167,8 +1190,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2180,
-        60
+        2620,
+        140
       ]
     },
     {
@@ -1184,7 +1207,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2880,
+        3100,
         80
       ],
       "executeOnce": true
@@ -1218,8 +1241,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2960,
-        500
+        3220,
+        480
       ]
     },
     {
@@ -1252,8 +1275,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2480,
-        60
+        2760,
+        80
       ]
     },
     {
@@ -1286,7 +1309,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3160,
+        3380,
         80
       ]
     },
@@ -1299,8 +1322,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3200,
-        480
+        3460,
+        460
       ],
       "alwaysOutputData": true
     },
@@ -1334,8 +1357,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3000,
-        680
+        3180,
+        640
       ]
     },
     {
@@ -1347,7 +1370,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3200,
+        3420,
         980
       ],
       "alwaysOutputData": true
@@ -1359,7 +1382,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3500,
+        3720,
         860
       ]
     },
@@ -1376,8 +1399,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2740,
-        680
+        2920,
+        640
       ],
       "executeOnce": true
     },
@@ -1391,8 +1414,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2520,
-        1000
+        2720,
+        980
       ],
       "executeOnce": true
     },
@@ -1425,7 +1448,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2860,
+        3080,
         1000
       ]
     },
@@ -1439,8 +1462,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2740,
-        500
+        3020,
+        480
       ],
       "executeOnce": true
     },
@@ -1474,7 +1497,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4240,
+        4460,
         1220
       ]
     },
@@ -1487,7 +1510,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3340,
+        3560,
         1200
       ],
       "alwaysOutputData": true
@@ -1521,7 +1544,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3060,
+        3280,
         1200
       ]
     },
@@ -1538,7 +1561,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3840,
+        4060,
         1220
       ],
       "executeOnce": true
@@ -1573,7 +1596,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4780,
+        5000,
         440
       ]
     },
@@ -1586,8 +1609,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2220,
-        700
+        2080,
+        1160
       ],
       "alwaysOutputData": true
     },
@@ -1601,8 +1624,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2060,
-        1340
+        2760,
+        1560
       ],
       "executeOnce": true
     },
@@ -1616,7 +1639,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2700,
+        2920,
         1200
       ],
       "executeOnce": true
@@ -1650,8 +1673,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2540,
-        1340
+        2180,
+        1380
       ]
     },
     {
@@ -1691,7 +1714,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1620,
+        1800,
         120
       ]
     },
@@ -1705,8 +1728,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1840,
-        620
+        1940,
+        600
       ]
     },
     {
@@ -1740,7 +1763,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2400,
+        2620,
         1200
       ],
       "executeOnce": true
@@ -1772,8 +1795,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        2560,
-        -240
+        1920,
+        -120
       ]
     },
     {
@@ -1807,8 +1830,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2360,
-        -240
+        1660,
+        -120
       ],
       "executeOnce": true
     },
@@ -1825,7 +1848,7 @@
         720,
         160
       ],
-      "webhookId": "485526b0-e88c-48ea-abec-6a6373797414"
+      "webhookId": "f49713e2-21ef-4f6c-b9c9-1c14be0accdb"
     },
     {
       "parameters": {
@@ -1840,10 +1863,34 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4580,
+        4800,
         440
       ],
       "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1600,
+        320
+      ],
+      "id": "150bac53-1179-430f-8a3d-9ad708ef3904",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        -260
+      ],
+      "id": "4483ff3b-2f86-4b71-a5fd-121a6690f821"
     }
   ],
   "pinData": {},
@@ -1853,6 +1900,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-27T19:00:33.000Z",
-  "versionId": "33a9f544-4804-41a0-b592-b771ff421997"
+  "updatedAt": "2024-12-02T15:18:53.000Z",
+  "versionId": "42756754-311a-466a-9354-ab0519640515"
 }
