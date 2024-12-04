@@ -36,13 +36,7 @@
     },
     "When clicking ‘Test workflow’": {
       "main": [
-        [
-          {
-            "node": "Edit Fields6",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Форма для создания нового пользователя в БД user": {
@@ -236,7 +230,7 @@
       "main": [
         [
           {
-            "node": "Edit Fields5",
+            "node": "Edit Fields6",
             "type": "main",
             "index": 0
           }
@@ -247,42 +241,7 @@
       "main": [
         [
           {
-            "node": "Date & Time1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time2",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time4",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time5",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Date & Time6",
+            "node": "Edit Fields5",
             "type": "main",
             "index": 0
           }
@@ -318,68 +277,39 @@
             "node": "Edit Fields2",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Обновляем значение BP_tracks1",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
     },
     "Date & Time": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 3
-          }
-        ]
+        []
       ]
     },
     "Date & Time3": {
       "main": [
         [
           {
-            "node": "Merge",
+            "node": "Date & Time8",
             "type": "main",
-            "index": 1
+            "index": 0
           }
         ]
       ]
     },
     "Date & Time2": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 2
-          }
-        ]
+        []
       ]
     },
     "Date & Time1": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 4
-          }
-        ]
+        []
       ]
     },
     "Date & Time4": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 5
-          }
-        ]
+        []
       ]
     },
     "Merge": {
@@ -395,24 +325,12 @@
     },
     "Date & Time5": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 6
-          }
-        ]
+        []
       ]
     },
     "Date & Time6": {
       "main": [
-        [
-          {
-            "node": "Merge",
-            "type": "main",
-            "index": 7
-          }
-        ]
+        []
       ]
     },
     "Aggregate": {
@@ -446,13 +364,7 @@
     },
     "Date & Time7": {
       "main": [
-        [
-          {
-            "node": "Edit Fields2",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Подтягиваем все собранные треки BP из JSON": {
@@ -495,13 +407,7 @@
     },
     "If1": {
       "main": [
-        [
-          {
-            "node": "Edit Fields2",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Обновляем значение BP_tracks": {
@@ -722,6 +628,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Edit Fields13": {
+      "main": [
+        []
       ]
     }
   },
@@ -955,8 +866,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -700,
-        -600
+        -1160,
+        -420
       ]
     },
     {
@@ -1059,7 +970,7 @@
         320,
         300
       ],
-      "webhookId": "6c8f43e4-3cad-4caa-b35a-0acb68205c05"
+      "webhookId": "6eceddfb-d23d-4952-b47e-a26e95c790bb"
     },
     {
       "parameters": {
@@ -1292,7 +1203,7 @@
         300,
         500
       ],
-      "webhookId": "5aea2027-0bf3-4a1e-bc5e-8806bbd81638"
+      "webhookId": "85fade85-6353-4d0c-ae78-aec86eaf4901"
     },
     {
       "parameters": {
@@ -1352,7 +1263,7 @@
         320,
         680
       ],
-      "webhookId": "80835160-e090-4bce-b2a8-207041957943"
+      "webhookId": "4bdd7467-eefa-46e1-9591-597b9dc96faf"
     },
     {
       "parameters": {
@@ -1601,7 +1512,7 @@
         0,
         860
       ],
-      "webhookId": "5e61fd22-f9bc-4ed3-9657-6d45e3cb4662"
+      "webhookId": "e2c9d6dd-b1eb-41ec-8381-5bb5f4eba7d5"
     },
     {
       "parameters": {
@@ -1688,7 +1599,7 @@
         1120,
         320
       ],
-      "webhookId": "dbdb83a1-2293-40af-a9de-8229bb7ae106"
+      "webhookId": "526ed6e3-819e-4b6a-8dca-38ff0f52092a"
     },
     {
       "parameters": {
@@ -1704,7 +1615,7 @@
         -40,
         1200
       ],
-      "webhookId": "7fdef5f0-dddf-429b-b822-b3f65e211b36"
+      "webhookId": "cbf86971-a6c3-49c6-aedf-f9bd3326f52a"
     },
     {
       "parameters": {
@@ -1715,32 +1626,34 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -1000,
-        -40
+        -1020,
+        -80
       ],
       "id": "243120a6-ee79-40ab-bade-0c140a7a7bf6",
       "name": "Webhook1",
-      "webhookId": "e2fd8247-7ec0-421e-a9ce-e9c6c2a6cf15"
+      "webhookId": "d89aa174-577d-4417-bd49-a7d8cc50dd0d"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "f57b9ab6-cf49-4026-b2e3-04624486cac6",
-              "name": "Start_Days",
-              "value": "={{ $json['1-й день'] }}",
-              "type": "string"
+              "id": "1a0d728c-106a-4c3b-901b-65694da464e7",
+              "name": "events",
+              "value": "=[\n{\ntitle:'Дневная',\nstart:'{{ $json['1-й день']}}',\nend:'{{ $json['1-й день'].toDateTime().plus(2, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Выходной',\nstart:'{{ $json['1-й день'].toDateTime().plus(3, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(5, 'days').format('yyyy-MM-dd') }}'\n},\n{title:'Ночная',\nstart:'{{ $json['1-й день'].toDateTime().plus(6, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(8, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Выходной',\nstart:'{{ $json['1-й день'].toDateTime().plus(9, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(11, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Дневная',\nstart:'{{ $json['1-й день'].toDateTime().plus(12, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(14, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Выходной',\nstart:'{{ $json['1-й день'].toDateTime().plus(15, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(17, 'days').format('yyyy-MM-dd') }}'},\n{\ntitle:'Ночная',\nstart:'{{ $json['1-й день'].toDateTime().plus(18, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(20, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Выходной',\nstart:'{{ $json['1-й день'].toDateTime().plus(21, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(23, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Дневная',\nstart:'{{ $json['1-й день'].toDateTime().plus(24, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(26, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Выходной',\nstart:'{{ $json['1-й день'].toDateTime().plus(27, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(29, 'days').format('yyyy-MM-dd') }}'},\n{\ntitle:'Ночная',\nstart:'{{ $json['1-й день'].toDateTime().plus(30, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(32, 'days').format('yyyy-MM-dd') }}'\n},\n{\ntitle:'Выходной',\nstart:'{{ $json['1-й день'].toDateTime().plus(33, 'days').format('yyyy-MM-dd') }}',\nend:'{{ $json['1-й день'].toDateTime().plus(35, 'days').format('yyyy-MM-dd') }}'\n}\n]",
+              "type": "array"
             }
           ]
         },
-        "options": {}
+        "options": {
+          "ignoreConversionErrors": true
+        }
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        20,
-        -600
+        -760,
+        -320
       ],
       "id": "47a72759-c1ba-4bb8-ac92-80ce97d8f130",
       "name": "Edit Fields2"
@@ -1780,7 +1693,7 @@
             {
               "id": "53b12aee-2302-4a1b-8735-201e1f7dd9e5",
               "name": "html",
-              "value": "\n<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8' />\n\n\n  <title>\n    Initialize Globals Demo - Demos | FullCalendar\n  </title>\n\n\n<link href='/docs/dist/demo-to-codepen.css' rel='stylesheet' />\n\n\n  <style>\n\n    html, body {\n      margin: 0;\n      padding: 0;\n      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;\n      font-size: 14px;\n    }\n\n    #calendar {\n      max-width: 1100px;\n      margin: 40px auto;\n    }\n\n  </style>\n\n\n\n  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>\n\n\n<script src='/docs/dist/demo-to-codepen.js'></script>\n\n\n  \n<script>\n\n  document.addEventListener('DOMContentLoaded', function() {\n    var calendarEl = document.getElementById('calendar');\n\n    var calendar = new FullCalendar.Calendar(calendarEl, {\n      initialView: 'dayGridMonth',\n      initialDate: '2024-11-07',\n      headerToolbar: {\n        left: 'prev,next today',\n        center: 'title',\n        right: 'dayGridMonth,timeGridWeek,timeGridDay'\n      },\n      events: [\n        {\n          title: 'All Day Event',\n          start: '2024-11-01'\n        },\n        {\n          title: 'Long Event',\n          start: '2024-11-07',\n          end: '2024-11-10'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-09T16:00:00'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-16T16:00:00'\n        },\n        {\n          title: 'Conference',\n          start: '2024-11-11',\n          end: '2024-11-13'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T10:30:00',\n          end: '2024-11-12T12:30:00'\n        },\n        {\n          title: 'Lunch',\n          start: '2024-11-12T12:00:00'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T14:30:00'\n        },\n        {\n          title: 'Birthday Party',\n          start: '2024-11-13T07:00:00'\n        },\n        {\n          title: 'Click for Google',\n          url: 'https://google.com/',\n          start: '2024-11-28'\n        }\n      ]\n    });\n\n    calendar.render();\n  });\n\n</script>\n\n</head>\n<body>\n  <div class='demo-topbar'>\n  <button data-codepen class='codepen-button'>Edit in CodePen</button>\n\n  \n\n  \n    initialization of calendar with browser globals\n  \n</div>\n\n  <div id='calendar'></div>\n</body>\n\n</html>\n",
+              "value": "=\n<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8' />\n\n\n  <title>\n    Initialize Globals Demo - Demos | FullCalendar\n  </title>\n\n\n<link href='/docs/dist/demo-to-codepen.css' rel='stylesheet' />\n\n\n  <style>\n\n    html, body {\n      margin: 0;\n      padding: 0;\n      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;\n      font-size: 14px;\n    }\n\n    #calendar {\n      max-width: 1100px;\n      margin: 40px auto;\n    }\n\n  </style>\n\n\n\n  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>\n\n\n<script src='/docs/dist/demo-to-codepen.js'></script>\n\n\n  \n<script>\n\n  document.addEventListener('DOMContentLoaded', function() {\n    var calendarEl = document.getElementById('calendar');\n\n    var calendar = new FullCalendar.Calendar(calendarEl, {\n      initialView: 'dayGridMonth',\n      initialDate: '2024-11-07',\n      headerToolbar: {\n        left: 'prev,next today',\n        center: 'title',\n        right: 'dayGridMonth,timeGridWeek,timeGridDay'\n      },\n      {{ $json.events }}\n    });\n\n    calendar.render();\n  });\n\n</script>\n\n</head>\n<body>\n  <div class='demo-topbar'>\n  <button data-codepen class='codepen-button'>Edit in CodePen</button>\n\n  \n\n  \n    initialization of calendar with browser globals\n  \n</div>\n\n  <div id='calendar'></div>\n</body>\n\n</html>\n",
               "type": "string"
             }
           ]
@@ -1790,21 +1703,21 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -800,
-        -80
+        -520,
+        -280
       ],
       "id": "8b103d08-3e5d-4453-9b9b-892bed0823ad",
       "name": "Edit Fields5"
     },
     {
       "parameters": {
-        "jsCode": "events: [\n        {\n          title: 'All Day Event',\n          start: '2024-11-01'\n        },\n        {\n          title: 'Long Event',\n          start: '2024-11-07',\n          end: '2024-11-10'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-09T16:00:00'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-16T16:00:00'\n        },\n        {\n          title: 'Conference',\n          start: '2024-11-11',\n          end: '2024-11-13'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T10:30:00',\n          end: '2024-11-12T12:30:00'\n        },\n        {\n          title: 'Lunch',\n          start: '2024-11-12T12:00:00'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T14:30:00'\n        },\n        {\n          title: 'Birthday Party',\n          start: '2024-11-13T07:00:00'\n        },\n        {\n          title: 'Click for Google',\n          url: 'https://google.com/',\n          start: '2024-11-28'\n        }\n      ]"
+        "jsCode": "events: [\n        {\n          title: '1смена',\n          start: '{{ $}}',\n          end: '2024-11-10'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-09T16:00:00'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-16T16:00:00'\n        },\n        {\n          title: 'Conference',\n          start: '2024-11-11',\n          end: '2024-11-13'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T10:30:00',\n          end: '2024-11-12T12:30:00'\n        },\n        {\n          title: 'Lunch',\n          start: '2024-11-12T12:00:00'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T14:30:00'\n        },\n        {\n          title: 'Birthday Party',\n          start: '2024-11-13T07:00:00'\n        },\n        {\n          title: 'Click for Google',\n          url: 'https://google.com/',\n          start: '2024-11-28'\n        }\n      ]"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        540,
-        -920
+        -160,
+        -460
       ],
       "id": "f568f3a0-b0fb-4728-b5f1-8c05f7d6521d",
       "name": "Code"
@@ -1820,8 +1733,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        400,
-        -600
+        120,
+        -340
       ],
       "id": "58c3ebf1-7b24-4513-aa9f-c3715dcba2c2",
       "name": "Date & Time1"
@@ -1837,8 +1750,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        380,
-        -760
+        -120,
+        -240
       ],
       "id": "a300ba5a-fdd0-4631-a81e-f5d88290aff9",
       "name": "Date & Time"
@@ -1854,8 +1767,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        380,
-        -920
+        80,
+        -160
       ],
       "id": "2ca02431-2548-4764-b428-2dacfe742503",
       "name": "Date & Time2"
@@ -1871,8 +1784,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        380,
-        -1100
+        720,
+        -520
       ],
       "id": "04b878fc-4b32-4049-8f33-2131998dfb7f",
       "name": "Date & Time3"
@@ -1894,8 +1807,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -460,
-        -600
+        -960,
+        -320
       ],
       "id": "cfa97a6e-76d4-4d1f-96e5-b43159f0d4c4",
       "name": "Edit Fields6"
@@ -1911,8 +1824,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        400,
-        -440
+        580,
+        -160
       ],
       "id": "e196f572-7f01-4354-8af0-1c5157575890",
       "name": "Date & Time4"
@@ -1924,8 +1837,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        780,
-        -720
+        860,
+        -980
       ],
       "id": "07f96d35-40f7-4169-8da8-a17db01bc9d0",
       "name": "Merge"
@@ -1956,8 +1869,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        400,
-        -280
+        360,
+        -260
       ],
       "id": "857aefdd-f89f-4125-8a7e-01d5caa15fd1",
       "name": "Date & Time5"
@@ -1973,8 +1886,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        400,
-        -120
+        360,
+        -100
       ],
       "id": "b07d6384-0ad6-4415-b9d2-516b4b703e54",
       "name": "Date & Time6"
@@ -2007,7 +1920,7 @@
       "typeVersion": 2.2,
       "position": [
         1240,
-        -240
+        -180
       ],
       "id": "1e41a52d-1d7b-4f45-83f8-9565200a19bd",
       "name": "If"
@@ -2023,8 +1936,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        0,
-        -320
+        1020,
+        -40
       ],
       "id": "5394bee5-be1a-4bc5-abec-24b3f8ba67d5",
       "name": "Date & Time7"
@@ -2141,8 +2054,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -460,
-        -800
+        -880,
+        -820
       ]
     },
     {
@@ -2173,8 +2086,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -20,
-        -800
+        -660,
+        -820
       ],
       "id": "bf1153c7-81b5-44ae-be40-d524be3a01c3",
       "name": "If1"
@@ -2459,8 +2372,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -320,
-        -1040
+        -720,
+        -1160
       ],
       "id": "f943a3fb-1fbb-4b1a-973a-3ba3c27e308d",
       "name": "Code1"
@@ -2682,15 +2595,81 @@
       ],
       "id": "b0cf14d7-368b-4b8e-b206-52271ff8c3ea",
       "name": "Edit Fields9"
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $json.end_days }}",
+        "duration": 1,
+        "outputFieldName": "start_vacation",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        480,
+        -540
+      ],
+      "id": "be2c006a-c9c4-483a-b33e-803465f2ea03",
+      "name": "Date & Time8"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1a0d728c-106a-4c3b-901b-65694da464e7",
+              "name": "data",
+              "value": "=[{'title':'Дневная','start':'{{ $json['1-й день']}}','end':'{{ $json['1-й день'].toDateTime().plus(2, 'days').format('yyyy-MM-dd') }}'},{'title':'Выходной','start':'{{ $json['1-й день'].toDateTime().plus(3, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(5, 'days').format('yyyy-MM-dd') }}'},{'title':'Ночная','start':'{{ $json['1-й день'].toDateTime().plus(6, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(8, 'days').format('yyyy-MM-dd') }}'},{'title':'Выходной','start':'{{ $json['1-й день'].toDateTime().plus(9, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(11, 'days').format('yyyy-MM-dd') }}'},{'title':'Дневная','start':'{{ $json['1-й день'].toDateTime().plus(12, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(14, 'days').format('yyyy-MM-dd') }}'},{'title':'Выходной','start':'{{ $json['1-й день'].toDateTime().plus(15, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(17, 'days').format('yyyy-MM-dd') }}'},{'title':'Ночная','start':'{{ $json['1-й день'].toDateTime().plus(18, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(20, 'days').format('yyyy-MM-dd') }}'},{'title':'Выходной','start':'{{ $json['1-й день'].toDateTime().plus(21, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(23, 'days').format('yyyy-MM-dd') }}'},{'title':'Дневная','start':'{{ $json['1-й день'].toDateTime().plus(24, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(26, 'days').format('yyyy-MM-dd') }}'},{'title':'Выходной','start':'{{ $json['1-й день'].toDateTime().plus(27, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(29, 'days').format('yyyy-MM-dd') }}'},{'title':'Ночная','start':'{{ $json['1-й день'].toDateTime().plus(30, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(32, 'days').format('yyyy-MM-dd') }}'},{'title':'Выходной','start':'{{ $json['1-й день'].toDateTime().plus(33, 'days').format('yyyy-MM-dd') }}','end':'{{ $json['1-й день'].toDateTime().plus(35, 'days').format('yyyy-MM-dd') }}'}]",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -240,
+        -740
+      ],
+      "id": "20d371da-3176-49ad-b8a6-221525cc1d5f",
+      "name": "Edit Fields12"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "53b12aee-2302-4a1b-8735-201e1f7dd9e5",
+              "name": "html",
+              "value": "=\n<!DOCTYPE html>\n<html>\n<head>\n<meta charset='utf-8' />\n\n\n  <title>\n    Initialize Globals Demo - Demos | FullCalendar\n  </title>\n\n\n<link href='/docs/dist/demo-to-codepen.css' rel='stylesheet' />\n\n\n  <style>\n\n    html, body {\n      margin: 0;\n      padding: 0;\n      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;\n      font-size: 14px;\n    }\n\n    #calendar {\n      max-width: 1100px;\n      margin: 40px auto;\n    }\n\n  </style>\n\n\n\n  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>\n\n\n<script src='/docs/dist/demo-to-codepen.js'></script>\n\n\n  \n<script>\n\n  document.addEventListener('DOMContentLoaded', function() {\n    var calendarEl = document.getElementById('calendar');\n\n    var calendar = new FullCalendar.Calendar(calendarEl, {\n      initialView: 'dayGridMonth',\n      initialDate: '2024-11-07',\n      headerToolbar: {\n        left: 'prev,next today',\n        center: 'title',\n        right: 'dayGridMonth,timeGridWeek,timeGridDay'\n      },\n      events: [\n        {\n          title: 'All Day Event',\n          start: '2024-11-01'\n        },\n        {\n          title: 'Long Event',\n          start: '2024-11-07',\n          end: '2024-11-10'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-09T16:00:00'\n        },\n        {\n          groupId: '999',\n          title: 'Repeating Event',\n          start: '2024-11-16T16:00:00'\n        },\n        {\n          title: 'Conference',\n          start: '2024-11-11',\n          end: '2024-11-13'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T10:30:00',\n          end: '2024-11-12T12:30:00'\n        },\n        {\n          title: 'Lunch',\n          start: '2024-11-12T12:00:00'\n        },\n        {\n          title: 'Meeting',\n          start: '2024-11-12T14:30:00'\n        },\n        {\n          title: 'Birthday Party',\n          start: '2024-11-13T07:00:00'\n        },\n        {\n          title: 'Click for Google',\n          url: 'https://google.com/',\n          start: '2024-11-28'\n        }\n      ]\n    });\n\n    calendar.render();\n  });\n\n</script>\n\n</head>\n<body>\n  <div class='demo-topbar'>\n  <button data-codepen class='codepen-button'>Edit in CodePen</button>\n\n  \n\n  \n    initialization of calendar with browser globals\n  \n</div>\n\n  <div id='calendar'></div>\n</body>\n\n</html>\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -860,
+        0
+      ],
+      "id": "dcf94aa2-cf5a-4d31-8b32-7a2972e3ea9b",
+      "name": "Edit Fields13"
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 60
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 11,
-  "updatedAt": "2024-12-02T15:18:57.000Z",
-  "versionId": "5f5bbbc4-f7bd-46a2-9fff-72be7da30816"
+  "updatedAt": "2024-12-03T16:34:21.000Z",
+  "versionId": "710c69e9-f91e-403b-ac5b-9659a3c5a98a"
 }
