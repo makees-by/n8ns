@@ -214,6 +214,17 @@
           }
         ]
       ]
+    },
+    "ZsForAnn 02.00": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -236,7 +247,7 @@
         680,
         480
       ],
-      "webhookId": "aeb9ae15-31cf-4da7-8f6e-4f91e6c9beaa"
+      "webhookId": "7a899308-c68f-4a82-809b-cb4cd8f1c5bc"
     },
     {
       "parameters": {},
@@ -625,6 +636,26 @@
         320,
         120
       ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 6,
+              "triggerAtMinute": 3
+            }
+          ]
+        }
+      },
+      "id": "b39fbebb-e430-4537-8b48-8a758276ca42",
+      "name": "ZsForAnn 02.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        380,
+        -320
+      ]
     }
   ],
   "pinData": {},
@@ -680,6 +711,9 @@
     "node:ForNat 00.00": {
       "recurrencyRules": [],
       "recurrenceRules": []
+    },
+    "node:ZsForAnn 02.00": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -696,7 +730,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 4,
-  "updatedAt": "2024-11-12T03:25:28.000Z",
-  "versionId": "b2ef1c7d-2903-4f32-a2f8-fe6d9a06a264"
+  "triggerCount": 5,
+  "updatedAt": "2024-12-11T08:57:54.000Z",
+  "versionId": "56139dac-8716-4a2a-b6b3-11b3ac0e0eea"
 }
