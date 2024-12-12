@@ -247,7 +247,7 @@
         680,
         480
       ],
-      "webhookId": "7a899308-c68f-4a82-809b-cb4cd8f1c5bc"
+      "webhookId": "16a11f3b-64e1-4061-8370-c9ac2c752d72"
     },
     {
       "parameters": {},
@@ -642,8 +642,8 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 6,
-              "triggerAtMinute": 3
+              "triggerAtHour": 20,
+              "triggerAtMinute": 2
             }
           ]
         }
@@ -731,6 +731,6 @@
     }
   ],
   "triggerCount": 5,
-  "updatedAt": "2024-12-11T08:57:54.000Z",
-  "versionId": "56139dac-8716-4a2a-b6b3-11b3ac0e0eea"
+  "updatedAt": "2024-12-12T13:00:14.000Z",
+  "versionId": "a2ead3e6-6db4-4db2-8000-5e3080d8b97a"
 }
