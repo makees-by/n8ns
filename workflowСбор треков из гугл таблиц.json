@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Сбор треков из гугл таблиц": {
       "main": [
@@ -587,23 +587,29 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Tabls2",
+            "node": "Собираем request",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Собираем request",
+            "node": "DiL",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Replace Me1": {
+    "DiL": {
       "main": [
-        []
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls2",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -710,7 +716,7 @@
       "typeVersion": 2.2,
       "position": [
         1380,
-        160
+        180
       ]
     },
     {
@@ -738,7 +744,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1860,
+        2020,
         300
       ],
       "credentials": {
@@ -777,7 +783,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2100,
+        2320,
         300
       ],
       "executeOnce": false
@@ -809,7 +815,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        3100,
+        3320,
         300
       ],
       "credentials": {
@@ -828,7 +834,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2420,
+        2640,
         280
       ]
     },
@@ -839,7 +845,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1700,
+        1920,
         580
       ]
     },
@@ -880,7 +886,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2760,
+        2980,
         300
       ]
     },
@@ -933,7 +939,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3420,
+        3640,
         300
       ]
     },
@@ -968,7 +974,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2840,
+        3060,
         800
       ],
       "credentials": {
@@ -989,7 +995,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4900,
+        5120,
         1400
       ],
       "credentials": {
@@ -1048,7 +1054,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3240,
+        3460,
         800
       ]
     },
@@ -1063,7 +1069,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3060,
+        3280,
         -140
       ],
       "alwaysOutputData": true,
@@ -1094,7 +1100,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        4440,
+        4660,
         400
       ]
     },
@@ -1105,7 +1111,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4300,
+        4520,
         -140
       ]
     },
@@ -1116,7 +1122,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2380,
+        2600,
         860
       ]
     },
@@ -1158,7 +1164,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4200,
+        4420,
         860
       ]
     },
@@ -1173,7 +1179,7 @@
       "type": "n8n-nodes-base.removeDuplicates",
       "typeVersion": 1.1,
       "position": [
-        5000,
+        5220,
         740
       ]
     },
@@ -1190,7 +1196,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2620,
+        2820,
         140
       ]
     },
@@ -1207,7 +1213,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3100,
+        3320,
         80
       ],
       "executeOnce": true
@@ -1241,7 +1247,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3220,
+        3440,
         480
       ]
     },
@@ -1275,7 +1281,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2760,
+        2980,
         80
       ]
     },
@@ -1309,7 +1315,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3380,
+        3600,
         80
       ]
     },
@@ -1322,7 +1328,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3460,
+        3680,
         460
       ],
       "alwaysOutputData": true
@@ -1357,7 +1363,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3180,
+        3400,
         640
       ]
     },
@@ -1370,7 +1376,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3420,
+        3640,
         980
       ],
       "alwaysOutputData": true
@@ -1382,7 +1388,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3720,
+        3940,
         860
       ]
     },
@@ -1399,7 +1405,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2920,
+        3140,
         640
       ],
       "executeOnce": true
@@ -1414,7 +1420,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2720,
+        2940,
         980
       ],
       "executeOnce": true
@@ -1448,7 +1454,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3080,
+        3300,
         1000
       ]
     },
@@ -1462,7 +1468,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3020,
+        3240,
         480
       ],
       "executeOnce": true
@@ -1497,7 +1503,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4460,
+        4680,
         1220
       ]
     },
@@ -1510,7 +1516,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3560,
+        3780,
         1200
       ],
       "alwaysOutputData": true
@@ -1544,7 +1550,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3280,
+        3500,
         1200
       ]
     },
@@ -1561,7 +1567,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4060,
+        4280,
         1220
       ],
       "executeOnce": true
@@ -1596,7 +1602,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        5000,
+        5220,
         440
       ]
     },
@@ -1609,7 +1615,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2080,
+        2300,
         1160
       ],
       "alwaysOutputData": true
@@ -1624,7 +1630,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2760,
+        2980,
         1560
       ],
       "executeOnce": true
@@ -1639,7 +1645,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2920,
+        3140,
         1200
       ],
       "executeOnce": true
@@ -1673,7 +1679,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2180,
+        2400,
         1380
       ]
     },
@@ -1728,8 +1734,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1940,
-        600
+        1980,
+        640
       ]
     },
     {
@@ -1763,7 +1769,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2620,
+        2840,
         1200
       ],
       "executeOnce": true
@@ -1795,7 +1801,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1920,
+        2140,
         -120
       ]
     },
@@ -1830,7 +1836,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1660,
+        1880,
         -120
       ],
       "executeOnce": true
@@ -1848,7 +1854,8 @@
         720,
         160
       ],
-      "webhookId": "f49713e2-21ef-4f6c-b9c9-1c14be0accdb"
+      "webhookId": "1f071056-1756-4ea9-8e57-167bea14c978",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1863,7 +1870,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4800,
+        5020,
         440
       ],
       "executeOnce": true
@@ -1876,7 +1883,7 @@
       "typeVersion": 3,
       "position": [
         1600,
-        320
+        280
       ],
       "id": "150bac53-1179-430f-8a3d-9ad708ef3904",
       "name": "Loop Over Items1"
@@ -1891,6 +1898,41 @@
         -260
       ],
       "id": "4483ff3b-2f86-4b71-a5fd-121a6690f821"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bca70e1a-ae1f-4f8d-b139-5a9509b29cc0",
+              "name": "ID",
+              "value": "={{ $json.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "e4ac46cc-4fd7-4efb-9d98-fc07f4cfe0df",
+              "name": "Traks_lim",
+              "value": "={{ $json.Traks_lim }}",
+              "type": "number"
+            },
+            {
+              "id": "6c9ffbaf-784b-4372-91be-45e15c7a7663",
+              "name": "Traks_now",
+              "value": "={{ $json.Traks_now }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1800,
+        300
+      ],
+      "id": "f07df8b5-89a1-4dfe-9be2-3d93300275cf",
+      "name": "DiL"
     }
   ],
   "pinData": {},
@@ -1900,6 +1942,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-02T15:18:53.000Z",
-  "versionId": "42756754-311a-466a-9354-ab0519640515"
+  "updatedAt": "2024-12-15T13:10:29.000Z",
+  "versionId": "259c960d-5368-4648-b1db-cacda059de91"
 }
