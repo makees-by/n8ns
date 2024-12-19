@@ -100,17 +100,6 @@
         ]
       ]
     },
-    "ForVika 20.00": {
-      "main": [
-        [
-          {
-            "node": "zsForvika json для записи",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "main JSON": {
       "main": [
         [
@@ -215,7 +204,18 @@
         ]
       ]
     },
-    "ZsForAnn 02.00": {
+    "ForVika 06:00": {
+      "main": [
+        [
+          {
+            "node": "zsForvika json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAnn 20:00": {
       "main": [
         [
           {
@@ -247,7 +247,7 @@
         680,
         480
       ],
-      "webhookId": "b64b435b-b15b-4aec-90b4-17eee6e2c0f7"
+      "webhookId": "5624678a-350e-4e6a-8fd2-cbc277a8d75d"
     },
     {
       "parameters": {},
@@ -446,26 +446,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 6,
-              "triggerAtMinute": 3
-            }
-          ]
-        }
-      },
-      "id": "8d09b088-bda4-41af-a4f1-05183b74e380",
-      "name": "ForVika 20.00",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        360,
-        -100
-      ]
-    },
-    {
-      "parameters": {
         "filePath": "=root/n8n/main.json"
       },
       "id": "84b6167d-6d3d-42d3-9a44-af26367fd42d",
@@ -600,7 +580,8 @@
       "position": [
         340,
         320
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -642,6 +623,26 @@
         "rule": {
           "interval": [
             {
+              "triggerAtHour": 6,
+              "triggerAtMinute": 3
+            }
+          ]
+        }
+      },
+      "id": "8d09b088-bda4-41af-a4f1-05183b74e380",
+      "name": "ForVika 06:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
               "triggerAtHour": 20,
               "triggerAtMinute": 2
             }
@@ -649,7 +650,7 @@
         }
       },
       "id": "b39fbebb-e430-4537-8b48-8a758276ca42",
-      "name": "ZsForAnn 02.00",
+      "name": "ZsForAnn 20:00",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
@@ -714,6 +715,12 @@
     },
     "node:ZsForAnn 02.00": {
       "recurrenceRules": []
+    },
+    "node:ForVika 06:00": {
+      "recurrenceRules": []
+    },
+    "node:ZsForAnn 20:00": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -730,7 +737,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 5,
-  "updatedAt": "2024-12-12T13:29:18.000Z",
-  "versionId": "9b1a0ee1-60f7-4aca-9e03-8fcf6c412f76"
+  "triggerCount": 4,
+  "updatedAt": "2024-12-19T05:16:42.000Z",
+  "versionId": "af128fed-7ef2-424c-a6d3-08618db43bd6"
 }
