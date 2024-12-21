@@ -962,7 +962,7 @@
         0,
         760
       ],
-      "webhookId": "7511be4e-da50-4c1a-b08b-58b904c79465",
+      "webhookId": "defc5705-49ad-4201-a4a0-f67a8798444b",
       "disabled": true
     },
     {
@@ -991,7 +991,7 @@
       ],
       "id": "aedf621b-0932-427c-adb2-020a170fe0a1",
       "name": "Wait",
-      "webhookId": "ab6dd7c9-91b5-45a2-9a9d-478bf6d9fc7e"
+      "webhookId": "8e39c37c-5de8-445e-a4e9-80174b004eb1"
     },
     {
       "parameters": {
@@ -1299,6 +1299,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-11-26T17:27:16.000Z",
-  "versionId": "0f775f7b-0190-4ed4-ab3c-77b8e6f83f6f"
+  "updatedAt": "2024-12-20T20:04:24.000Z",
+  "versionId": "fdf6721b-89c9-4dcb-a537-9634ed5887cb"
 }
