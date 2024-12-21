@@ -612,6 +612,11 @@
             "node": "If5",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -986,9 +991,57 @@
             "node": "Разделяем BP и EP",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию1",
+            "type": "main",
+            "index": 0
           }
-        ],
-        []
+        ]
+      ]
+    },
+    "формируем запрос к логированию": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию1": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования1": {
+      "main": [
+        [
+          {
+            "node": "Разделяем BP и EP",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -1128,7 +1181,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2980,
+        2960,
         260
       ]
     },
@@ -2378,8 +2431,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1040,
-        20
+        660,
+        160
       ]
     },
     {
@@ -2596,8 +2649,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3680,
-        300
+        3580,
+        340
       ]
     },
     {
@@ -2693,7 +2746,7 @@
         680,
         340
       ],
-      "webhookId": "f907d763-d395-493c-8e1a-5e4ca9d34062"
+      "webhookId": "3ccfe304-d4eb-4105-95a4-f3d57c0a5bab"
     },
     {
       "parameters": {
@@ -2708,8 +2761,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3420,
-        280
+        3300,
+        340
       ],
       "executeOnce": true
     },
@@ -3287,6 +3340,116 @@
       ],
       "id": "f44a35ea-1d34-430f-81b7-910b2d16a7a6",
       "name": "If13"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "new",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "null",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1100,
+        -80
+      ],
+      "id": "72a62211-d6b1-4da3-b9bd-ea46cf80ca5a",
+      "name": "формируем запрос к логированию",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1380,
+        -80
+      ],
+      "id": "d2c212b8-7feb-4cb6-88c3-66f8fadc99e4",
+      "name": "Запрос в процесс логирования"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Всего треков в проверке - {{ $input.all().length }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2620,
+        -160
+      ],
+      "id": "87cacc5d-5dd2-4d28-bd57-c95195d8fd95",
+      "name": "формируем запрос к логированию1",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2820,
+        -160
+      ],
+      "id": "e78d4d49-0bae-428d-b4b0-b83ef78151af",
+      "name": "Запрос в процесс логирования1"
     }
   ],
   "pinData": {},
@@ -3296,6 +3459,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-13T15:13:08.000Z",
-  "versionId": "ab9108dc-593f-416a-af06-d91dd5b6462b"
+  "updatedAt": "2024-12-21T10:49:34.000Z",
+  "versionId": "4745a9fd-f144-426b-8a1f-3a3a8d76e563"
 }
