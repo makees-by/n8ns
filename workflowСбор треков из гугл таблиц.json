@@ -446,6 +446,11 @@
             "node": "HTTP Request",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию3",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -742,6 +747,28 @@
         [
           {
             "node": "DiL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию3": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
             "type": "main",
             "index": 0
           }
@@ -1917,7 +1944,7 @@
       "typeVersion": 4.2,
       "position": [
         2360,
-        -120
+        -100
       ]
     },
     {
@@ -2414,6 +2441,67 @@
       ],
       "id": "178595f5-9816-4a18-8afe-5d268f4df15a",
       "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Finish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2160,
+        -340
+      ],
+      "id": "8a9c45bd-172f-4c3d-9067-7e8dba167e7c",
+      "name": "формируем запрос к логированию3",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        -340
+      ],
+      "id": "a4838c04-d706-479e-9337-387804f9f6a7",
+      "name": "Запрос в процесс логирования3"
     }
   ],
   "pinData": {},
@@ -2423,6 +2511,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-21T10:41:41.000Z",
-  "versionId": "2f8522e5-3db0-4cf2-93f7-e333ab6ac7ab"
+  "updatedAt": "2024-12-21T15:01:12.000Z",
+  "versionId": "3bdb0df2-2015-43ed-b669-9f549597494c"
 }
