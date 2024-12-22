@@ -62,6 +62,11 @@
             "node": "Подготовка перед работай с переменной2",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию2",
+            "type": "main",
+            "index": 0
           }
         ],
         [
@@ -72,6 +77,11 @@
           },
           {
             "node": "Меняем triger2 на 0",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию3",
             "type": "main",
             "index": 0
           }
@@ -292,7 +302,7 @@
       "main": [
         [
           {
-            "node": "Ложим 0 в Status_Work для сервера BP_1",
+            "node": "Ложим 1 в Status_Work для сервера BP_1",
             "type": "main",
             "index": 0
           }
@@ -304,17 +314,6 @@
         [
           {
             "node": "Объединяем все треки в один массив",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ложим 0 в Status_Work для сервера BP_1": {
-      "main": [
-        [
-          {
-            "node": "If7",
             "type": "main",
             "index": 0
           }
@@ -358,23 +357,12 @@
       "main": [
         [
           {
-            "node": "Ложим 0 в Status_Work для сервера BP_2",
+            "node": "Ложим 1 в Status_Work для сервера BP_2",
             "type": "main",
             "index": 0
           },
           {
             "node": "Объединяем все треки в один массив1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ложим 0 в Status_Work для сервера BP_2": {
-      "main": [
-        [
-          {
-            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -407,23 +395,12 @@
       "main": [
         [
           {
-            "node": "Ложим 0 в Status_Work для сервера BP_3",
+            "node": "Ложим 1 в Status_Work для сервера BP_3",
             "type": "main",
             "index": 0
           },
           {
             "node": "Объединяем все треки в один массив2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ложим 0 в Status_Work для сервера BP_3": {
-      "main": [
-        [
-          {
-            "node": "If1",
             "type": "main",
             "index": 0
           }
@@ -456,23 +433,12 @@
       "main": [
         [
           {
-            "node": "Ложим 0 в Status_Work для сервера EP_1",
+            "node": "Ложим 1 в Status_Work для сервера EP_1",
             "type": "main",
             "index": 0
           },
           {
             "node": "Объединяем все треки в один массив3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ложим 0 в Status_Work для сервера EP_1": {
-      "main": [
-        [
-          {
-            "node": "If2",
             "type": "main",
             "index": 0
           }
@@ -505,23 +471,12 @@
       "main": [
         [
           {
-            "node": "Ложим 0 в Status_Work для сервера EP_2",
+            "node": "Ложим 1 в Status_Work для сервера EP_2",
             "type": "main",
             "index": 0
           },
           {
             "node": "Объединяем все треки в один массив4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Ложим 0 в Status_Work для сервера EP_2": {
-      "main": [
-        [
-          {
-            "node": "If3",
             "type": "main",
             "index": 0
           }
@@ -648,6 +603,11 @@
         [
           {
             "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию5",
             "type": "main",
             "index": 0
           }
@@ -1038,6 +998,273 @@
         [
           {
             "node": "Разделяем BP и EP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования2": {
+      "main": [
+        [
+          {
+            "node": "Подсчёт необходимого колличества серверов",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию3": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования3": {
+      "main": [
+        [
+          {
+            "node": "Подсчёт необходимого колличества серверов1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию4": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию5": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования5": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 1 в Status_Work для сервера BP_3": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 1 в Status_Work для сервера BP_2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 1 в Status_Work для сервера EP_1": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 1 в Status_Work для сервера EP_2": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию6": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования6": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию7": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования7": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ложим 1 в Status_Work для сервера BP_1": {
+      "main": [
+        [
+          {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию8": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования8": {
+      "main": [
+        [
+          {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию9": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования9": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию10": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования10": {
+      "main": [
+        [
+          {
+            "node": "If3",
             "type": "main",
             "index": 0
           }
@@ -1562,7 +1789,7 @@
       "typeVersion": 3,
       "position": [
         4600,
-        -500
+        -600
       ]
     },
     {
@@ -1646,48 +1873,6 @@
       ]
     },
     {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Servers",
-          "mode": "list",
-          "cachedResultName": "Servers"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "BP_1",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "1"
-            },
-            {
-              "column": "TrFch",
-              "value": "0"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "800ace89-48a9-4dd2-a8b8-9d33c3232b6f",
-      "name": "Ложим 0 в Status_Work для сервера BP_1",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        4040,
-        -740
-      ],
-      "executeOnce": true,
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
       "parameters": {},
       "id": "c9b43138-4757-433e-a92f-811a0791b39d",
       "name": "When clicking ‘Test workflow’",
@@ -1706,7 +1891,7 @@
       "typeVersion": 1,
       "position": [
         3740,
-        920
+        1120
       ]
     },
     {
@@ -1760,48 +1945,6 @@
     },
     {
       "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Servers",
-          "mode": "list",
-          "cachedResultName": "Servers"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "BP_2",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "1"
-            },
-            {
-              "column": "TrFch",
-              "value": "0"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "9756a53b-5548-4ef1-88cd-d15c3a1a3598",
-      "name": "Ложим 0 в Status_Work для сервера BP_2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        4260,
-        -300
-      ],
-      "executeOnce": true,
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "operation": "concatenateItems",
         "aggregate": "aggregateAllItemData",
         "options": {}
@@ -1848,48 +1991,6 @@
         4880,
         60
       ]
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Servers",
-          "mode": "list",
-          "cachedResultName": "Servers"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "BP_3",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "1"
-            },
-            {
-              "column": "TrFch",
-              "value": "0"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "45781eac-6d26-477c-83c7-4bff67ad38b6",
-      "name": "Ложим 0 в Status_Work для сервера BP_3",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        4260,
-        60
-      ],
-      "executeOnce": true,
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
     },
     {
       "parameters": {
@@ -1951,48 +2052,6 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "EP_1",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "1"
-            },
-            {
-              "column": "TrFch",
-              "value": "0"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "0ddcac28-5bfc-47b3-a8b8-c609a265da26",
-      "name": "Ложим 0 в Status_Work для сервера EP_1",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        4060,
-        500
-      ],
-      "executeOnce": true,
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Servers",
-          "mode": "list",
-          "cachedResultName": "Servers"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Server_name",
         "valueToMatchOn": "BP_1",
         "valuesToSend": {
           "values": [
@@ -2010,7 +2069,7 @@
       "typeVersion": 2.4,
       "position": [
         4900,
-        -500
+        -560
       ],
       "executeOnce": true,
       "credentials": {
@@ -2146,7 +2205,7 @@
       "typeVersion": 3,
       "position": [
         4700,
-        920
+        1100
       ]
     },
     {
@@ -2179,51 +2238,9 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4400,
-        760
+        4440,
+        920
       ]
-    },
-    {
-      "parameters": {
-        "operation": "update",
-        "table": {
-          "__rl": true,
-          "value": "Servers",
-          "mode": "list",
-          "cachedResultName": "Servers"
-        },
-        "dataMode": "defineBelow",
-        "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "EP_2",
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "Status_Work",
-              "value": "1"
-            },
-            {
-              "column": "TrFch",
-              "value": "0"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "6f892079-8dd7-4ea3-8f5b-89a6cae54165",
-      "name": "Ложим 0 в Status_Work для сервера EP_2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        4060,
-        760
-      ],
-      "executeOnce": true,
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
     },
     {
       "parameters": {
@@ -2253,7 +2270,7 @@
       "typeVersion": 2.4,
       "position": [
         4960,
-        920
+        1100
       ],
       "executeOnce": true,
       "credentials": {
@@ -2476,7 +2493,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3000,
+        2960,
         20
       ]
     },
@@ -2746,7 +2763,7 @@
         680,
         340
       ],
-      "webhookId": "3ccfe304-d4eb-4105-95a4-f3d57c0a5bab"
+      "webhookId": "4fd7dd7d-e9e3-408f-a836-6754eee194cf"
     },
     {
       "parameters": {
@@ -3425,8 +3442,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2620,
-        -160
+        2520,
+        -120
       ],
       "id": "87cacc5d-5dd2-4d28-bd57-c95195d8fd95",
       "name": "формируем запрос к логированию1",
@@ -3445,11 +3462,728 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        2820,
-        -160
+        2740,
+        -120
       ],
       "id": "e78d4d49-0bae-428d-b4b0-b83ef78151af",
       "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Треков БП - {{ $input.all().length }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3200,
+        -80
+      ],
+      "id": "dbbc626c-e68c-4d56-8899-a8fe29d7f3b4",
+      "name": "формируем запрос к логированию2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3240,
+        120
+      ],
+      "id": "10359770-2bfb-4398-a4e0-f1e026184751",
+      "name": "Запрос в процесс логирования2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Треков ЕП - {{ $input.all().length }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1880,
+        460
+      ],
+      "id": "b89bca4a-e8e0-4ec0-a606-bb723d61f6c9",
+      "name": "формируем запрос к логированию3",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1940,
+        620
+      ],
+      "id": "6ffd25a5-996d-4aa1-9fd1-7e372c1ff323",
+      "name": "Запрос в процесс логирования3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "from_bd_to_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Finish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3220,
+        500
+      ],
+      "id": "774c3bfa-7f8f-439a-96f5-4a63b9b101c8",
+      "name": "формируем запрос к логированию4",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3460,
+        500
+      ],
+      "id": "053b0211-b39d-4dd3-a540-b90306df771a",
+      "name": "Запрос в процесс логирования4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Максимальная проверка - {{ $json.max_Items }} треков\nFinish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5540,
+        1120
+      ],
+      "id": "fe08850b-6f5d-4142-9e7e-18aa7e5865c7",
+      "name": "формируем запрос к логированию5",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        5780,
+        1120
+      ],
+      "id": "f1f6c3ac-842d-4c47-9cbb-5df5e82c25a2",
+      "name": "Запрос в процесс логирования5"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_3",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            },
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "45781eac-6d26-477c-83c7-4bff67ad38b6",
+      "name": "Ложим 1 в Status_Work для сервера BP_3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4260,
+        60
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            },
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9756a53b-5548-4ef1-88cd-d15c3a1a3598",
+      "name": "Ложим 1 в Status_Work для сервера BP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4260,
+        -300
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            },
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0ddcac28-5bfc-47b3-a8b8-c609a265da26",
+      "name": "Ложим 1 в Status_Work для сервера EP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4060,
+        500
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "EP_2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            },
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6f892079-8dd7-4ea3-8f5b-89a6cae54165",
+      "name": "Ложим 1 в Status_Work для сервера EP_2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3920,
+        920
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер BP_2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4420,
+        -440
+      ],
+      "id": "dbb752fc-8042-4478-8f0c-3956a3bb16bb",
+      "name": "формируем запрос к логированию6",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4640,
+        -440
+      ],
+      "id": "e898052b-98a1-43b0-8492-67df836dec87",
+      "name": "Запрос в процесс логирования6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер BP_3",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4400,
+        -60
+      ],
+      "id": "c696e367-1aa0-46aa-9ecd-851e4ae0abb9",
+      "name": "формируем запрос к логированию7",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4620,
+        -60
+      ],
+      "id": "1c302bf8-2e0f-428c-8b96-bd786fb4b2a3",
+      "name": "Запрос в процесс логирования7"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "BP_1",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            },
+            {
+              "column": "TrFch",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "800ace89-48a9-4dd2-a8b8-9d33c3232b6f",
+      "name": "Ложим 1 в Status_Work для сервера BP_1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4040,
+        -740
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер BP_1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4120,
+        -1020
+      ],
+      "id": "04cc3132-f8e8-4123-91e5-fdbb724ed2e4",
+      "name": "формируем запрос к логированию8",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4340,
+        -1020
+      ],
+      "id": "9193f5bb-c5a1-47be-b314-6e825ac92b22",
+      "name": "Запрос в процесс логирования8"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер EP_1",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4220,
+        360
+      ],
+      "id": "2c3d2188-c018-43e3-b21d-d9a9e1e4e1d3",
+      "name": "формируем запрос к логированию9",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4440,
+        360
+      ],
+      "id": "342ca347-e5db-4c1b-82cf-17013fc95950",
+      "name": "Запрос в процесс логирования9"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер EP_2",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4040,
+        740
+      ],
+      "id": "fa1a5718-c439-4e9f-8ce4-3d3fc37f7d7d",
+      "name": "формируем запрос к логированию10",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4320,
+        740
+      ],
+      "id": "8844d780-9074-414f-93f0-b9a3871ac188",
+      "name": "Запрос в процесс логирования10"
     }
   ],
   "pinData": {},
@@ -3459,6 +4193,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-21T10:49:34.000Z",
-  "versionId": "4745a9fd-f144-426b-8a1f-3a3a8d76e563"
+  "updatedAt": "2024-12-22T07:31:45.000Z",
+  "versionId": "eaf7c2ed-7867-43db-95d0-2cdc7f1a664f"
 }
