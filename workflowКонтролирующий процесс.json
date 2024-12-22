@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Программа - контролёр": {
       "main": [
@@ -701,7 +701,7 @@
         3840,
         -360
       ],
-      "webhookId": "351e03bd-1398-487f-839d-a25e0f1ef10d"
+      "webhookId": "9743a2e5-175f-479d-a34b-af3b655d22af"
     },
     {
       "parameters": {},
@@ -1112,7 +1112,7 @@
         2380,
         100
       ],
-      "webhookId": "9b30f2b7-c4c8-43a6-b4e4-2bf301b5fedf",
+      "webhookId": "745952a8-e592-452e-85f0-a10e99236135",
       "disabled": true
     },
     {
@@ -1444,7 +1444,7 @@
         4520,
         -600
       ],
-      "webhookId": "66e855bc-be45-4c2a-83c8-f183ee8c6f57"
+      "webhookId": "e0f80fd3-c1e4-4f8c-b8f8-5e812c62bf99"
     },
     {
       "parameters": {
@@ -1458,7 +1458,7 @@
       ],
       "id": "d965c829-ceca-4eba-b682-2114a38ab378",
       "name": "Wait1",
-      "webhookId": "a921e160-b628-4a2e-93fa-ca253e9714ec"
+      "webhookId": "1d922b26-45c0-4faf-99d6-5e5c21afce93"
     },
     {
       "parameters": {
@@ -1827,7 +1827,7 @@
       "typeVersion": 3.4,
       "position": [
         3340,
-        -980
+        -940
       ],
       "id": "3e3a66f3-6b5c-4ddc-9744-792295e57d3c",
       "name": "формируем запрос к логированию5"
@@ -1845,8 +1845,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3600,
-        -1000
+        3640,
+        -1040
       ],
       "id": "d3be57f6-69a2-4b1c-bd18-d9d58202cb1f",
       "name": "Запрос в процесс логирования5"
@@ -1984,6 +1984,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-20T13:13:23.000Z",
-  "versionId": "167ed408-a16f-42f7-b444-e89805d48bbe"
+  "updatedAt": "2024-12-22T07:42:03.000Z",
+  "versionId": "56e08751-e889-461c-ac92-6d3ea95bd1be"
 }
