@@ -447,6 +447,11 @@
             "node": "If4",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Google Docs",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -456,6 +461,28 @@
         [
           {
             "node": "Данные процесса",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "If4",
             "type": "main",
             "index": 0
           }
@@ -1538,6 +1565,68 @@
         340
       ],
       "webhookId": "400121bc-af80-4bbb-b8eb-ad7bee45be3c"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "={{ $('Получить все записи из таблицы Servers для BP_X').item.json.Log_ID }}",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "={{ $now.format('HH:mm:ss') }} - {{ $json.number }}:{{ $json.last_event }}({{ $if($json.steps.toJsonString().search(/[Вв]ыдан*/)>0, \"Отправление вручено\", 0) }})\n"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        3560,
+        140
+      ],
+      "id": "72d0ef90-9d7c-47eb-80cc-dcfade8b714c",
+      "name": "Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "IChkHNpLaUZfm6R4",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "130997e0-9937-4e87-ac6b-a30e673b0c8a",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a12f35ef-3855-49cf-839f-c44e28ec315c",
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3840,
+        140
+      ]
     }
   ],
   "pinData": {},
@@ -1547,6 +1636,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-16T11:12:04.000Z",
-  "versionId": "d7580c61-4cf1-483c-b8ec-89a9e511a33d"
+  "updatedAt": "2024-12-27T10:23:47.000Z",
+  "versionId": "e6cbc201-3697-4f37-b079-7c7218fb338b"
 }
