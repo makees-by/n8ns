@@ -378,11 +378,6 @@
             "index": 0
           },
           {
-            "node": "проверяем завершили ли проверку все сервера",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Программа - контролёр",
             "type": "main",
             "index": 0
@@ -417,17 +412,6 @@
         [
           {
             "node": "Ожидаем завершения всех проверок",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "проверяем завершили ли проверку все сервера",
             "type": "main",
             "index": 0
           }
@@ -524,10 +508,21 @@
     },
     "Loop Over Items": {
       "main": [
-        [],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "формируем запрос к логированию5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Docs",
             "type": "main",
             "index": 0
           }
@@ -550,6 +545,50 @@
         [
           {
             "node": "Запрос в процесс логирования7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs": {
+      "main": [
+        [
+          {
+            "node": "Получаем все сервера с workOn - 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "проверяем завершили ли проверку все сервера",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем все сервера с workOn - 2": {
+      "main": [
+        [
+          {
+            "node": "If2",
             "type": "main",
             "index": 0
           }
@@ -710,7 +749,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4140,
+        4100,
         -860
       ]
     },
@@ -1307,7 +1346,12 @@
             }
           ]
         },
-        "options": {}
+        "options": {
+          "outputColumns": [
+            "Server_name",
+            "Webhook"
+          ]
+        }
       },
       "id": "725e98eb-312c-4681-a132-46f9b31ac4f4",
       "name": "Получаем все сервера с workOn - 1",
@@ -1344,7 +1388,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3860,
+        3940,
         -640
       ]
     },
@@ -1493,21 +1537,6 @@
       ],
       "id": "73a6f86b-754f-4136-a7de-f28b7cd4ef2b",
       "name": "If1"
-    },
-    {
-      "parameters": {
-        "includeOtherFields": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        3920,
-        -860
-      ],
-      "id": "65358157-a658-41f5-b600-2b245eaadcf4",
-      "name": "Edit Fields",
-      "executeOnce": true
     },
     {
       "parameters": {
@@ -1826,8 +1855,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3340,
-        -940
+        3360,
+        -1040
       ],
       "id": "3e3a66f3-6b5c-4ddc-9744-792295e57d3c",
       "name": "формируем запрос к логированию5"
@@ -1840,7 +1869,9 @@
           "mode": "list",
           "cachedResultName": "Лог в БД"
         },
-        "options": {}
+        "options": {
+          "waitForSubWorkflow": false
+        }
       },
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
@@ -1858,8 +1889,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        3080,
-        -960
+        3060,
+        -1020
       ],
       "id": "891773a5-fcba-40f7-b8f7-ddc0cf6d7a22",
       "name": "Loop Over Items"
@@ -1971,6 +2002,124 @@
       ],
       "id": "b25eb9ad-b18a-43a3-b0fb-0890b905d29b",
       "name": "Запрос в процесс логирования7"
+    },
+    {
+      "parameters": {
+        "folderId": "1fWyuHqxIO2MR6vhyYu2ZVJYoztAaw6CZ",
+        "title": "={{ $json.Server_name }}-{{ $now.format('dd.MM.yy') }}"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        3360,
+        -1220
+      ],
+      "id": "b0754914-b755-48c1-850d-dd7834a036ce",
+      "name": "Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "IChkHNpLaUZfm6R4",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2980,
+        -1260
+      ],
+      "id": "3bd7b667-aee1-477f-ab92-be82349a52c5",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "43a2772f-22a6-43a9-98a5-7e3d9b26291c",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3680,
+        -1220
+      ],
+      "id": "43247080-06e8-42f6-8812-49b19d054624",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3880,
+        -860
+      ],
+      "id": "65358157-a658-41f5-b600-2b245eaadcf4",
+      "name": "Edit Fields",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $json.name.slice(0,4) }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Log_ID",
+              "value": "={{ $json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1f81f388-e0eb-456c-9ee1-f069d402b162",
+      "name": "Получаем все сервера с workOn - 2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3520,
+        -1220
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -1984,6 +2133,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-25T21:21:52.000Z",
-  "versionId": "d100485e-f90c-42a3-93fa-20b7ecfeb8db"
+  "updatedAt": "2024-12-27T09:49:17.000Z",
+  "versionId": "5408b380-2b01-49ca-a259-5b57b94ac34b"
 }
