@@ -2521,7 +2521,7 @@
     },
     {
       "parameters": {
-        "url": "=https://n8ns.makees.ru/webhook/bp_check_balance",
+        "url": "=https://n8ns.makeesn8n.online/webhook/bp_check_balance",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2535,7 +2535,7 @@
             },
             {
               "name": "url_offBalancer",
-              "value": "https://n8n.makees.online/webhook/balancer_ru"
+              "value": "https://n8n.makeesn8n.online/webhook/balancer_ru"
             }
           ]
         },
@@ -3159,6 +3159,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-07-25T20:56:23.000Z",
-  "versionId": "5dfc5037-eb48-44eb-b294-597ccac0a7b6"
+  "updatedAt": "2024-12-31T07:33:02.000Z",
+  "versionId": "0f9d60a7-8bc3-4b83-bc65-ab7e887da135"
 }
