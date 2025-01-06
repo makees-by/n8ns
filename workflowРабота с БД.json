@@ -1932,19 +1932,19 @@
             {
               "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
               "name": "Link",
-              "value": "WWW.leningrad1.spb.ru",
+              "value": "https://docs.google.com/spreadsheets/d/1-iGpVjad04yZMcTBlnuWEL1TQ37sNC885PDaMva3cdI/edit?gid=1275538573#gid=1275538573",
               "type": "string"
             },
             {
               "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
               "name": "IdTables",
-              "value": "ZsForIra003",
+              "value": "ZsForIra001",
               "type": "string"
             },
             {
               "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
               "name": "NeedCheck",
-              "value": 0,
+              "value": 1,
               "type": "number"
             }
           ]
@@ -6148,6 +6148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-20T14:45:14.000Z",
-  "versionId": "1f715aba-82b6-46a5-bc51-013e96a81f89"
+  "updatedAt": "2024-12-30T11:57:02.000Z",
+  "versionId": "d96564f7-4337-4f7f-9a61-aefa81177c6b"
 }
