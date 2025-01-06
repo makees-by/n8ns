@@ -321,43 +321,43 @@
           "values": [
             {
               "name": "Стартовая колбаса всего процесса",
-              "stringValue": "https://n8n.makees.online/webhook/modul_Start"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/modul_Start"
             },
             {
               "name": "Сбор треков_(1из2х)",
-              "stringValue": "https://n8n.makees.online/webhook/modul_trackCollect"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/modul_trackCollect"
             },
             {
               "name": "Сбор треков_глубина2_(2й из 2х)",
-              "stringValue": "https://n8n.makees.online/webhook/deep_TC"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/deep_TC"
             },
             {
               "name": "Проверка Белпочты",
-              "stringValue": "https://n8n.makees.online/webhook/bp_check"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/bp_check"
             },
             {
               "name": "Проверка Европочты",
-              "stringValue": "https://n8n.makees.online/webhook/ep_check"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/ep_check"
             },
             {
               "name": "Статистика (только на сервере online)",
-              "stringValue": "https://n8n.makees.online/webhook/Statistic"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/Statistic"
             },
             {
               "name": "Проверка промахов",
-              "stringValue": "https://n8n.makees.online/webhook/CPN"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/CPN"
             },
             {
               "name": "Исправление промахов",
-              "stringValue": "https://n8n.makees.online/webhook/reCheck"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/reCheck"
             },
             {
               "name": "Чат бот телеги",
-              "stringValue": "https://n8n.makees.online/webhook/Potap_TrackChack"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/Potap_TrackChack"
             },
             {
               "name": "Таймер",
-              "stringValue": "https://n8n.makees.online/webhook/timer"
+              "stringValue": "https://n8n.makeesn8n.online/webhook/timer"
             }
           ]
         },
@@ -378,43 +378,43 @@
           "values": [
             {
               "name": "Стартовая колбаса всего процесса",
-              "stringValue": "https://n8n.makees.online/workflow/QJuQGKgAzSJyxmPS"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/QJuQGKgAzSJyxmPS"
             },
             {
               "name": "Сбор треков_(1из2х)",
-              "stringValue": "https://n8n.makees.online/workflow/pwofnTe8IYGRQZrS"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/pwofnTe8IYGRQZrS"
             },
             {
               "name": "Сбор треков_глубина2_(2й из 2х)",
-              "stringValue": "https://n8n.makees.online/workflow/AH0rdp23A5bNlc6a"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/AH0rdp23A5bNlc6a"
             },
             {
               "name": "Проверка Белпочты",
-              "stringValue": "https://n8n.makees.online/workflow/z1ebLdFwBMuXHUut"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/z1ebLdFwBMuXHUut"
             },
             {
               "name": "Проверка Европочты",
-              "stringValue": "https://n8n.makees.online/workflow/OJeMfeqoYo3vhJqU"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/OJeMfeqoYo3vhJqU"
             },
             {
               "name": "Статистика (только на сервере online)",
-              "stringValue": "https://n8n.makees.online/workflow/RWZ1VyvD7GhmW3Gc"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/RWZ1VyvD7GhmW3Gc"
             },
             {
               "name": "Проверка промахов",
-              "stringValue": "https://n8n.makees.ru/workflow/2cZCyuD9bFRKrXMC"
+              "stringValue": "https://n8n.makeesn8n.ru/workflow/2cZCyuD9bFRKrXMC"
             },
             {
               "name": "Исправление промахов",
-              "stringValue": "https://n8n.makees.online/workflow/9wJKOHskCm7q6kvo"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/9wJKOHskCm7q6kvo"
             },
             {
               "name": "Чат бот телеги",
-              "stringValue": "https://n8n.makees.online/workflow/X47e4ESkdsBlGbNR"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/X47e4ESkdsBlGbNR"
             },
             {
               "name": "Таймер",
-              "stringValue": "https://n8n.makees.online/workflow/NzDOgWMv6KgJnLSo"
+              "stringValue": "https://n8n.makeesn8n.online/workflow/NzDOgWMv6KgJnLSo"
             }
           ]
         },
@@ -867,6 +867,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-26T14:16:35.000Z",
-  "versionId": "f7fc2e9f-7549-47c6-b0f1-5f881798426f"
+  "updatedAt": "2024-12-29T11:52:04.000Z",
+  "versionId": "6284a6df-8a6b-4910-8916-39d6a2d972bd"
 }
