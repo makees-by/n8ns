@@ -762,7 +762,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/proceses_control",
+        "url": "https://n8n.makeesn8n.online/webhook/proceses_control",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1447,7 +1447,7 @@
             {
               "id": "e953757c-1e36-4772-9860-f255d33f2d81",
               "name": "message",
-              "value": "=Данные по прецесам на сегодня:  {{ $json.Ditales }}\nFinish: {{ $now.format('HH-mm-ss') }}",
+              "value": "=Данные по прецесам на сегодня:\nВ проверке: {{ $('Получить все записи из таблицы Users').all().toJsonString().replaceAll('[{','').replaceAll('{','').replaceAll('\"','').replaceAll('json:','')  }}\nПроблемы:{{ $json.Ditales }}\nFinish: {{ $now.format('HH-mm-ss') }}",
               "type": "string"
             }
           ]
@@ -1590,6 +1590,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-11-25T14:50:14.000Z",
-  "versionId": "bdf27f17-1d1e-4826-8512-a8a4b62969e1"
+  "updatedAt": "2024-12-30T12:45:51.000Z",
+  "versionId": "5d436004-0444-47ed-8a72-3d4fe9b68a46"
 }
