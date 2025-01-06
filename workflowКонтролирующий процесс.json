@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Программа - контролёр": {
       "main": [
@@ -124,6 +124,11 @@
         [
           {
             "node": "Разбиваем по категориям",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Отправляемся на следующий шаг сбор треков из гугл таблиц в БД",
             "type": "main",
             "index": 0
           }
@@ -594,6 +599,28 @@
           }
         ]
       ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook3": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:00:01.739Z",
@@ -619,8 +646,9 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 12,
-              "triggerAtMinute": 9
+              "daysInterval": 0,
+              "triggerAtHour": 10,
+              "triggerAtMinute": 42
             }
           ]
         }
@@ -632,12 +660,11 @@
       "position": [
         1140,
         -300
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/pay_check",
+        "url": "https://n8n.makeesn8n.online/webhook/pay_check",
         "options": {}
       },
       "id": "c0576e65-f18e-4f8a-88db-0e82dab7c2ab",
@@ -651,7 +678,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/Take_traks_from_google_sheets",
+        "url": "https://n8n.makeesn8n.online/webhook/Take_traks_from_google_sheets",
         "options": {}
       },
       "id": "bee8934d-1e4a-4098-bf40-ffffe41e0fa2",
@@ -665,7 +692,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/take_traks_from_bd",
+        "url": "https://n8n.makeesn8n.online/webhook/take_traks_from_bd",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -755,7 +782,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/from_bd_to_google_sheets",
+        "url": "https://n8n.makeesn8n.online/webhook/from_bd_to_google_sheets",
         "options": {}
       },
       "id": "892bf812-2dc1-45e5-8f9c-03d507c7b3ea",
@@ -804,8 +831,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        1820,
-        200
+        1780,
+        180
       ]
     },
     {
@@ -818,8 +845,8 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        2140,
-        700
+        1660,
+        480
       ]
     },
     {
@@ -904,8 +931,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2660,
-        -520
+        2180,
+        -760
       ],
       "disabled": true
     },
@@ -1151,8 +1178,7 @@
         2380,
         100
       ],
-      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
-      "disabled": true
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
     },
     {
       "parameters": {
@@ -1314,7 +1340,7 @@
       "typeVersion": 3.2,
       "position": [
         3140,
-        80
+        60
       ]
     },
     {
@@ -1590,7 +1616,8 @@
         -500
       ],
       "id": "b20c1488-29bb-42fa-ba9e-3b7b58f056b9",
-      "name": "Запрос в процесс логирования"
+      "name": "Запрос в процесс логирования",
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -2120,6 +2147,51 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "path": "start_checkBD",
+        "options": {}
+      },
+      "id": "821eabee-5a3a-47c6-a853-855defb29176",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        -500
+      ],
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
+    },
+    {
+      "parameters": {
+        "path": "start_checkBD",
+        "options": {}
+      },
+      "id": "4e1882c4-9099-403d-a1ee-37d87ec05cc0",
+      "name": "Webhook2",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
+    },
+    {
+      "parameters": {
+        "path": "start_status_from_BD",
+        "options": {}
+      },
+      "id": "29f6c5b9-c244-4f21-9e84-f5a38ae84a80",
+      "name": "Webhook3",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        820,
+        140
+      ],
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
     }
   ],
   "pinData": {},
@@ -2132,7 +2204,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2024-12-28T03:11:12.000Z",
-  "versionId": "0a8c2290-33ab-470f-baf0-bf09aadcd011"
+  "triggerCount": 5,
+  "updatedAt": "2025-01-06T10:43:00.000Z",
+  "versionId": "60397fe0-fade-4054-a4dd-7497aa084cd9"
 }
