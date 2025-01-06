@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Сбор треков из гугл таблиц": {
       "main": [
@@ -768,6 +768,17 @@
       "main": [
         [
           {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If7": {
+      "main": [
+        [
+          {
             "node": "HTTP Request",
             "type": "main",
             "index": 0
@@ -981,6 +992,8 @@
         3760,
         300
       ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -1338,8 +1351,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3120,
-        60
+        2920,
+        40
       ]
     },
     {
@@ -1563,7 +1576,7 @@
       "typeVersion": 1,
       "position": [
         3380,
-        980
+        1000
       ],
       "executeOnce": true
     },
@@ -1693,7 +1706,7 @@
       "typeVersion": 2.2,
       "position": [
         3940,
-        1200
+        1220
       ]
     },
     {
@@ -1788,7 +1801,7 @@
       "typeVersion": 1,
       "position": [
         3580,
-        1200
+        1220
       ],
       "executeOnce": true
     },
@@ -1912,13 +1925,13 @@
       "typeVersion": 3.4,
       "position": [
         3280,
-        1200
+        1220
       ],
       "executeOnce": true
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/proceses_control",
+        "url": "https://n8n.makeesn8n.online/webhook/proceses_control",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1945,7 +1958,8 @@
       "position": [
         2360,
         -100
-      ]
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -1996,8 +2010,7 @@
         720,
         160
       ],
-      "webhookId": "537264d9-4db6-4ab1-8431-f9376c204917",
-      "disabled": true
+      "webhookId": "537264d9-4db6-4ab1-8431-f9376c204917"
     },
     {
       "parameters": {
@@ -2502,6 +2515,40 @@
       ],
       "id": "a4838c04-d706-479e-9337-387804f9f6a7",
       "name": "Запрос в процесс логирования3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0a40a6e3-4b6a-492d-8785-7e2d2f2cc2c5",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2620,
+        -340
+      ],
+      "id": "4a098a2c-d9d3-4d50-85a6-4a608ebeaf6b",
+      "name": "If7"
     }
   ],
   "pinData": {},
@@ -2511,6 +2558,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-21T15:01:12.000Z",
-  "versionId": "3bdb0df2-2015-43ed-b669-9f549597494c"
+  "updatedAt": "2025-01-06T14:52:19.000Z",
+  "versionId": "78c9fdf1-a43e-4007-8c21-f92cbd67daf0"
 }
