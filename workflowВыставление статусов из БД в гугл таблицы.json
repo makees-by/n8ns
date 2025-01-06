@@ -798,6 +798,10 @@
             {
               "lookupColumn": "Отметка о доставке",
               "lookupValue": "Не доставлено"
+            },
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "=*"
             }
           ]
         },
@@ -871,7 +875,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makees.online/webhook/proceses_control",
+        "url": "https://n8n.makeesn8n.online/webhook/proceses_control",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1286,7 +1290,7 @@
       "typeVersion": 1,
       "position": [
         2880,
-        60
+        80
       ],
       "id": "5550c3c2-08e5-45d3-979f-63cb321ebea1",
       "name": "Ошибка при выставлении статусов треков из БД в таблицы"
@@ -1299,6 +1303,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-21T15:14:21.000Z",
-  "versionId": "e9036cff-8e71-488b-8c31-3d04771fb81b"
+  "updatedAt": "2025-01-06T14:55:18.000Z",
+  "versionId": "2039eb7f-0211-4dd8-90bf-9914ff5f960e"
 }
