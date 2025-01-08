@@ -522,11 +522,6 @@
         ],
         [
           {
-            "node": "формируем запрос к логированию5",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "Google Docs",
             "type": "main",
             "index": 0
@@ -561,6 +556,11 @@
         [
           {
             "node": "Получаем все сервера с workOn - 2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию5",
             "type": "main",
             "index": 0
           }
@@ -621,6 +621,17 @@
           }
         ]
       ]
+    },
+    "Окончание дневной проверки отправка отчёта": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:00:01.739Z",
@@ -660,7 +671,8 @@
       "position": [
         1140,
         -300
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -932,7 +944,7 @@
       "typeVersion": 2,
       "position": [
         2180,
-        -760
+        -920
       ],
       "disabled": true
     },
@@ -1113,7 +1125,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1340,
+        660,
         120
       ]
     },
@@ -1178,7 +1190,8 @@
         2380,
         100
       ],
-      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1558,8 +1571,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3760,
-        -160
+        3940,
+        -180
       ],
       "id": "73a6f86b-754f-4136-a7de-f28b7cd4ef2b",
       "name": "If1"
@@ -1594,7 +1607,7 @@
       "typeVersion": 3.4,
       "position": [
         1400,
-        -500
+        -440
       ],
       "id": "e5ab3835-c6cc-4731-8a3d-658f8cd357c4",
       "name": "формируем запрос к логированию"
@@ -1612,8 +1625,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        1700,
-        -500
+        1680,
+        -480
       ],
       "id": "b20c1488-29bb-42fa-ba9e-3b7b58f056b9",
       "name": "Запрос в процесс логирования",
@@ -1792,8 +1805,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        1100,
-        120
+        380,
+        -60
       ],
       "id": "22140bf1-25f3-4ca5-912d-968c3e32b0dd",
       "name": "Запуск выставления статуса трека в гугл таблицы",
@@ -1872,7 +1885,7 @@
             {
               "id": "e953757c-1e36-4772-9860-f255d33f2d81",
               "name": "message",
-              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку треков на сервер {{ $json.Server_name }}",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку треков на сервер {{ $json.name.slice(0,4) }}, докумен с логами по трекам: https://docs.google.com/document/d/{{ $json.id }}",
               "type": "string"
             }
           ]
@@ -1882,7 +1895,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3360,
+        3340,
         -1040
       ],
       "id": "3e3a66f3-6b5c-4ddc-9744-792295e57d3c",
@@ -2038,8 +2051,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        3360,
-        -1220
+        3300,
+        -1240
       ],
       "id": "b0754914-b755-48c1-850d-dd7834a036ce",
       "name": "Google Docs",
@@ -2089,8 +2102,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3680,
-        -1220
+        3760,
+        -1240
       ],
       "id": "43247080-06e8-42f6-8812-49b19d054624",
       "name": "If2"
@@ -2138,7 +2151,7 @@
       "typeVersion": 2.4,
       "position": [
         3520,
-        -1220
+        -1240
       ],
       "executeOnce": true,
       "credentials": {
@@ -2158,25 +2171,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        1100,
+        960,
         -500
       ],
-      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
-    },
-    {
-      "parameters": {
-        "path": "start_checkBD",
-        "options": {}
-      },
-      "id": "4e1882c4-9099-403d-a1ee-37d87ec05cc0",
-      "name": "Webhook2",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        0,
-        0
-      ],
-      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
+      "disabled": true
     },
     {
       "parameters": {
@@ -2188,10 +2187,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        820,
-        140
+        400,
+        120
       ],
-      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8"
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -2204,7 +2204,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 5,
-  "updatedAt": "2025-01-06T10:43:00.000Z",
-  "versionId": "60397fe0-fade-4054-a4dd-7497aa084cd9"
+  "triggerCount": 0,
+  "updatedAt": "2025-01-08T12:33:46.000Z",
+  "versionId": "f6afb669-a8db-46f9-b7fc-195e0a30d07b"
 }
