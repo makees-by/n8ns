@@ -72,22 +72,6 @@
         ]
       ]
     },
-    "Google Sheets": {
-      "main": [
-        [
-          {
-            "node": "Данные для добавления3",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Меняем triger1 на 0",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Loop Over Items": {
       "main": [
         [
@@ -130,7 +114,7 @@
             "index": 0
           },
           {
-            "node": "Google Sheets",
+            "node": "Получаем записи со статусом нет в БД",
             "type": "main",
             "index": 0
           },
@@ -785,6 +769,38 @@
           }
         ]
       ]
+    },
+    "Изменяем статус нет в БД на  Не доставлено": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем записи со статусом нет в БД": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger1 на 0",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Изменяем статус нет в БД на  Не доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:19:04.007Z",
@@ -961,45 +977,6 @@
         300
       ],
       "executeOnce": false
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.Link }}",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.Link }}",
-          "mode": "url"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "Отметка о доставке",
-              "lookupValue": "нет в БД"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "e74a8eda-e5ce-4e0d-88e4-11b8ad3d8e5c",
-      "name": "Google Sheets",
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        3760,
-        300
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 2000,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      }
     },
     {
       "parameters": {
@@ -1368,8 +1345,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3760,
-        80
+        3720,
+        40
       ],
       "executeOnce": true
     },
@@ -1403,7 +1380,7 @@
       "typeVersion": 2.2,
       "position": [
         3880,
-        480
+        500
       ]
     },
     {
@@ -1470,8 +1447,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4040,
-        80
+        4080,
+        40
       ]
     },
     {
@@ -1484,7 +1461,7 @@
       "typeVersion": 3.4,
       "position": [
         4120,
-        460
+        480
       ],
       "alwaysOutputData": true
     },
@@ -1624,7 +1601,7 @@
       "typeVersion": 1,
       "position": [
         3680,
-        480
+        500
       ],
       "executeOnce": true
     },
@@ -2549,6 +2526,221 @@
       ],
       "id": "4a098a2c-d9d3-4d50-85a6-4a608ebeaf6b",
       "name": "If7"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Данные в цикле').item.json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Данные в цикле').item.json.Link }}",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $json.row_number }}",
+            "Отметка о доставке": "Не доставлено",
+            "Актуальный статус": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }}: изменен статус при добавлениее в БД"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "дата",
+              "displayName": "дата",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ФИО и адрес",
+              "displayName": "ФИО и адрес",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Моя цена",
+              "displayName": "Моя цена",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "С доставкой",
+              "displayName": "С доставкой",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "цана",
+              "displayName": "цана",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "НАЛОГ 20%",
+              "displayName": "НАЛОГ 20%",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ИТОГО ЗП 15%",
+              "displayName": "ИТОГО ЗП 15%",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "прим.",
+              "displayName": "прим.",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8be5d5e8-bd65-4bf4-89ca-294a072f4d21",
+      "name": "Изменяем статус нет в БД на  Не доставлено",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3900,
+        140
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "нет в БД"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e74a8eda-e5ce-4e0d-88e4-11b8ad3d8e5c",
+      "name": "Получаем записи со статусом нет в БД",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3760,
+        300
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -2558,6 +2750,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-06T14:52:19.000Z",
-  "versionId": "78c9fdf1-a43e-4007-8c21-f92cbd67daf0"
+  "updatedAt": "2025-01-08T12:15:22.000Z",
+  "versionId": "507e1b1f-0e4c-4376-a4b6-ded6b2d4fd1b"
 }
