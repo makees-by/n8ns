@@ -966,8 +966,7 @@
         0,
         760
       ],
-      "webhookId": "0abf857e-d988-4d0f-af16-a37579d4465c",
-      "disabled": true
+      "webhookId": "0abf857e-d988-4d0f-af16-a37579d4465c"
     },
     {
       "parameters": {
@@ -1302,7 +1301,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-01-06T14:55:18.000Z",
-  "versionId": "2039eb7f-0211-4dd8-90bf-9914ff5f960e"
+  "triggerCount": 1,
+  "updatedAt": "2025-01-08T11:49:46.000Z",
+  "versionId": "56639927-54ec-47fa-a393-5219d405be22"
 }
