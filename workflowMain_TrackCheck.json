@@ -600,10 +600,9 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        140,
-        100
-      ],
-      "disabled": true
+        180,
+        120
+      ]
     },
     {
       "parameters": {
@@ -724,7 +723,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 3,
-  "updatedAt": "2025-01-17T19:47:47.000Z",
-  "versionId": "fba02c59-7f09-4afa-a3f8-7d80f8a5d3bc"
+  "triggerCount": 4,
+  "updatedAt": "2025-01-19T10:00:25.000Z",
+  "versionId": "05671e52-33e3-4955-a886-59976c857a54"
 }
