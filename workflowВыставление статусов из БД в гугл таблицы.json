@@ -1293,6 +1293,21 @@
       ],
       "id": "5550c3c2-08e5-45d3-979f-63cb321ebea1",
       "name": "Ошибка при выставлении статусов треков из БД в таблицы"
+    },
+    {
+      "parameters": {
+        "content": "## Список всех связанных процессов\n\nКонтролирующий процесс: https://n8n.makeesn8n.online/workflow/bMvuHeBYvdHDiEIe\nПроверка оплаты: https://n8n.makeesn8n.online/workflow/aumuEuypCPDeduJl\nВыставление статусов из БД в гугл таблицы: https://n8n.makeesn8n.online/workflow/h5YM9whrOFCP3UOu\nСбор треков из гугл таблиц: https://n8n.makeesn8n.online/workflow/cFIhZIUCa83nOqy2\nСбор треков из БД: https://n8n.makeesn8n.online/workflow/5OMCiCkLN9V8Gpmw\nПроверка треков БП из БД: https://n8n.makeesn8n.online/workflow/YmijBbofjG27z5Tx\nПроверка треков ЕП из БД: https://n8n.makeesn8n.online/workflow/UC7sB9OYqdYSVdln\n\n## Дополнительные процессы:\nДобавление треков на  проверку в сервера (сбор треков из БД): https://n8n.makeesn8n.online/workflow/4BkOIQhV62y7mbvD\nЛог в БД: https://n8n.makeesn8n.online/workflow/lOtPJcL6AitkSaoP\nРабота с переменными: https://n8n.makeesn8n.online/workflow/KLOTYwG7rXVfZCKr\n\n## Служебные процессы:\nРабота с БД: https://n8n.makeesn8n.online/workflow/BN33z2RD9BacyBSt\nФормы для БД: https://n8n.makeesn8n.online/workflow/bUJavMgjLppjbo49\n",
+        "height": 700,
+        "width": 500
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -760,
+        400
+      ],
+      "typeVersion": 1,
+      "id": "7020a908-8150-4bc5-b86d-a741f39e4ab4",
+      "name": "Sticky Note3"
     }
   ],
   "pinData": {},
@@ -1302,6 +1317,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-08T11:49:46.000Z",
-  "versionId": "56639927-54ec-47fa-a393-5219d405be22"
+  "updatedAt": "2025-01-19T13:30:18.000Z",
+  "versionId": "a5e7cd24-fccc-48c3-a396-1865504a912a"
 }
