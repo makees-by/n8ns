@@ -119,7 +119,7 @@
       "main": [
         [
           {
-            "node": "Входящие данные",
+            "node": "Входящие данные1",
             "type": "main",
             "index": 0
           }
@@ -1004,6 +1004,17 @@
           }
         ]
       ]
+    },
+    "Входящие данные1": {
+      "main": [
+        [
+          {
+            "node": "Ввод отрибутов процесс",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-03-24T15:52:10.628Z",
@@ -1160,7 +1171,8 @@
         -2140,
         1040
       ],
-      "webhookId": "89dd9002-773a-498f-bc2d-7eae14045ffa"
+      "webhookId": "89dd9002-773a-498f-bc2d-7eae14045ffa",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1577,7 +1589,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -2140,
+        -2460,
         1240
       ]
     },
@@ -3131,6 +3143,19 @@
         1060,
         1660
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"92\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"1f3353e3b88e\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8n.makeesn8n.online/webhook-waiting/442436\",\n      \"processID\": \"zsForvika\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/bp_check\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+      },
+      "id": "a4fbc492-917f-4853-ac28-a06a1c900139",
+      "name": "Входящие данные1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2180,
+        1260
+      ]
     }
   ],
   "pinData": {},
@@ -3158,7 +3183,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2024-12-31T07:33:02.000Z",
-  "versionId": "0f9d60a7-8bc3-4b83-bc65-ab7e887da135"
+  "triggerCount": 0,
+  "updatedAt": "2025-01-21T09:12:31.000Z",
+  "versionId": "db78fbad-dca2-4954-835e-1407ba81e3cb"
 }
