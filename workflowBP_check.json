@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "IF3": {
       "main": [
@@ -23,11 +23,6 @@
       "main": [
         [
           {
-            "node": "Отправка данных в модуль статистики",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "IF3",
             "type": "main",
             "index": 0
@@ -39,7 +34,7 @@
       "main": [
         [
           {
-            "node": "Получаем данные по трекам с сайта Белпочты",
+            "node": "Отправка запроса на другой сервер который отправит запрос на БП",
             "type": "main",
             "index": 0
           }
@@ -189,24 +184,6 @@
         [
           {
             "node": "45db",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Получаем данные по трекам с сайта Белпочты": {
-      "main": [
-        [
-          {
-            "node": "Структурируем http ответ",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "ошибка при получении данных по треку",
             "type": "main",
             "index": 0
           }
@@ -400,17 +377,6 @@
         [
           {
             "node": "IF2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Отправка данных в модуль статистики": {
-      "main": [
-        [
-          {
-            "node": "Тупик лог 3",
             "type": "main",
             "index": 0
           }
@@ -910,17 +876,6 @@
         ]
       ]
     },
-    "Тупик лог 3": {
-      "main": [
-        [
-          {
-            "node": "IF3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Date & Time": {
       "main": [
         [
@@ -1010,6 +965,24 @@
         [
           {
             "node": "Ввод отрибутов процесс",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправка запроса на другой сервер который отправит запрос на БП": {
+      "main": [
+        [
+          {
+            "node": "Структурируем http ответ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ошибка при получении данных по треку",
             "type": "main",
             "index": 0
           }
@@ -1171,8 +1144,7 @@
         -2140,
         1040
       ],
-      "webhookId": "89dd9002-773a-498f-bc2d-7eae14045ffa",
-      "disabled": true
+      "webhookId": "89dd9002-773a-498f-bc2d-7eae14045ffa"
     },
     {
       "parameters": {
@@ -1568,21 +1540,6 @@
       ]
     },
     {
-      "parameters": {
-        "content": "## Отправка данных в модуль статистики (отправляем на другой сервер)",
-        "height": 319.835896535163,
-        "width": 398.53641770154377
-      },
-      "id": "3d14f380-c482-4446-8d8d-fab3c999daae",
-      "name": "Sticky Note4",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        580,
-        920
-      ]
-    },
-    {
       "parameters": {},
       "id": "10eb28f8-a942-4304-bbeb-bb816dc69875",
       "name": "When clicking \"Execute Workflow\"",
@@ -1816,22 +1773,6 @@
     },
     {
       "parameters": {
-        "content": "https://n8n.makees.online/workflow/RWZ1VyvD7GhmW3Gc",
-        "height": 80,
-        "width": 397.1777493963409,
-        "color": 4
-      },
-      "id": "98556f96-d6ee-46bd-9486-71cc9abc5ce0",
-      "name": "Sticky Note",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        1000,
-        980
-      ]
-    },
-    {
-      "parameters": {
         "conditions": {
           "string": [
             {
@@ -1872,43 +1813,6 @@
         1540
       ],
       "executeOnce": false
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.belpost.by/api/v1/tracking",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "authorization",
-              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $json.трек }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "dfd51ae3-0918-42ee-8f12-745e4d435d09",
-      "name": "Получаем данные по трекам с сайта Белпочты",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        340,
-        1060
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 3000,
-      "continueOnFail": true,
-      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -2212,52 +2116,6 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "={{ $('main JSON').first().json.data.endPoints['Статистика (только на сервере online)'] }}",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "=table",
-              "value": "={{ $json.table }}"
-            },
-            {
-              "name": "page",
-              "value": "={{ $json.page }}"
-            },
-            {
-              "name": "Трек номер",
-              "value": "={{ $json['Трек номер'] }}"
-            },
-            {
-              "name": "Статус и дата обновления",
-              "value": "={{ $json['Статус и дата обновления'] }}"
-            },
-            {
-              "name": "индекс",
-              "value": "={{ $json.индекс }}"
-            },
-            {
-              "name": "=processID",
-              "value": "={{ $('Ввод отрибутов процесс').first().json.processID }}_ru"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "cafbcc1a-f083-4f4f-aecd-c54a219f7d73",
-      "name": "Отправка данных в модуль статистики",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        1060,
-        1040
-      ],
-      "disabled": true,
-      "continueOnFail": true
-    },
-    {
-      "parameters": {
         "operation": "opWrite",
         "queryPath": "process.workProcess.BP_check",
         "sourceType": "sourceTypeJson",
@@ -2355,7 +2213,7 @@
     },
     {
       "parameters": {
-        "maxItems": 250
+        "maxItems": 500
       },
       "id": "cfe76665-dc19-4e87-810f-0cd3b3c53908",
       "name": "Limit",
@@ -2561,6 +2419,7 @@
         -420,
         740
       ],
+      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -2991,25 +2850,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "boolean": [
-            {
-              "value2": true
-            }
-          ]
-        }
-      },
-      "id": "93ab9279-ce96-4e86-b7b8-05946173be8d",
-      "name": "Тупик лог 3",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        1300,
-        1040
-      ]
-    },
-    {
-      "parameters": {
         "options": {}
       },
       "id": "259a5768-da1f-4139-bcca-5f0853a0bb78",
@@ -3046,12 +2886,13 @@
           "options": {
             "caseSensitive": true,
             "leftValue": "",
-            "typeValidation": "strict"
+            "typeValidation": "strict",
+            "version": 1
           },
           "conditions": [
             {
               "id": "e79248ef-02b4-4d93-8c40-2e478a3bac34",
-              "leftValue": "={{ 35 - $json.timeDifference.seconds }}",
+              "leftValue": "={{ 85 - $json.timeDifference.seconds }}",
               "rightValue": 0,
               "operator": {
                 "type": "number",
@@ -3094,7 +2935,7 @@
             {
               "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
               "name": "timer",
-              "value": "={{42- $json.timeDifference.seconds }}",
+              "value": "={{84- $json.timeDifference.seconds }}",
               "type": "number"
             }
           ]
@@ -3155,7 +2996,138 @@
       "position": [
         -2180,
         1260
-      ]
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "=PC305209006BY"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a026325b-103d-4168-bbd4-34bba566ffc4",
+      "name": "Получаем данные по трекам с сайта Белпочты1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        240,
+        80
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.трек }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "25f44d5d-3033-44e4-842c-60bef05e61a6",
+      "name": "Получаем данные по трекам с сайта Белпочты2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        500,
+        140
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://n8nby2.makeesn8n.ru/webhook/bp2",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.трек }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dfd51ae3-0918-42ee-8f12-745e4d435d09",
+      "name": "Отправка запроса на другой сервер который отправит запрос на БП",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        340,
+        1060
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://n8nby2.makeesn8n.ru/webhook/bp2",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.трек }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "39db6363-68e4-48ce-a4c7-f7f902115751",
+      "name": "Отправка запроса на другой сервер который отправит запрос на БП1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        1000
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
     }
   ],
   "pinData": {},
@@ -3183,7 +3155,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-01-21T13:24:33.000Z",
-  "versionId": "db78fbad-dca2-4954-835e-1407ba81e3cb"
+  "triggerCount": 1,
+  "updatedAt": "2025-01-23T10:18:37.000Z",
+  "versionId": "5e028d54-2756-4662-81b5-afc64f87ab25"
 }
