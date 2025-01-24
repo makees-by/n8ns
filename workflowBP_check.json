@@ -2213,7 +2213,8 @@
     },
     {
       "parameters": {
-        "maxItems": 500
+        "maxItems": 1000,
+        "keep": "lastItems"
       },
       "id": "cfe76665-dc19-4e87-810f-0cd3b3c53908",
       "name": "Limit",
@@ -2892,7 +2893,7 @@
           "conditions": [
             {
               "id": "e79248ef-02b4-4d93-8c40-2e478a3bac34",
-              "leftValue": "={{ 85 - $json.timeDifference.seconds }}",
+              "leftValue": "={{ 20 - $json.timeDifference.seconds }}",
               "rightValue": 0,
               "operator": {
                 "type": "number",
@@ -2935,7 +2936,7 @@
             {
               "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
               "name": "timer",
-              "value": "={{84- $json.timeDifference.seconds }}",
+              "value": "={{20- $json.timeDifference.seconds }}",
               "type": "number"
             }
           ]
@@ -2987,7 +2988,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"92\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"1f3353e3b88e\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8n.makeesn8n.online/webhook-waiting/442436\",\n      \"processID\": \"zsForvika\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/bp_check\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"92\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"1f3353e3b88e\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8n.makeesn8n.online/webhook-waiting/442436\",\n      \"processID\": \"ZsForAnn\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/bp_check\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
       },
       "id": "a4fbc492-917f-4853-ac28-a06a1c900139",
       "name": "Входящие данные1",
@@ -3075,8 +3076,7 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://n8nby2.makeesn8n.ru/webhook/bp2",
+        "url": "https://n8n.makeesn8n.online/webhook/balancing",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -3156,6 +3156,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-23T10:18:37.000Z",
-  "versionId": "5e028d54-2756-4662-81b5-afc64f87ab25"
+  "updatedAt": "2025-01-24T09:36:44.000Z",
+  "versionId": "1baac1d7-4f1e-407d-b200-43ee91822b81"
 }
