@@ -1,0 +1,418 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Входные данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Входные данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Входные данные": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-24T08:19:27.790Z",
+  "id": "IO7u4qYcGZJ3Q3LR",
+  "meta": null,
+  "name": "Балансировщик БП серверов",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "balancing",
+        "responseMode": "lastNode",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -340,
+        -20
+      ],
+      "id": "d4dce4c2-f96c-4b30-ae62-cc4f18a9d37d",
+      "name": "Webhook",
+      "webhookId": "00261fc4-07fb-4e4b-b161-9b93bea184f2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "free",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        40,
+        -280
+      ],
+      "id": "a2f349d9-c4a6-4777-9cb0-7deaacbfa25b",
+      "name": "MySQL",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "ServerName",
+              "value": "n8nBy3"
+            },
+            {
+              "column": "url",
+              "value": "https://n8nby3.makeesn8n.ru/webhook/bp3"
+            },
+            {
+              "column": "free",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -720,
+        -220
+      ],
+      "id": "c32e632f-6306-4bc9-8b70-120cd06aebf7",
+      "name": "Вставка новых значений",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.data[0].url }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=number",
+              "value": "={{ $json.data[1].body.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        -40
+      ],
+      "id": "320d1850-7a29-4561-bd6c-0486a4477042",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"26\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"1f3353e3b88e\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"number\": \"PC312009844BY\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook-test/balancing\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        0,
+        200
+      ],
+      "id": "384cbf09-964b-4006-a20a-3291ddf008a1",
+      "name": "Code",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        200
+      ],
+      "id": "034ca6e3-89e3-489b-80cc-46344f252308",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        580,
+        -40
+      ],
+      "id": "feaa6245-6060-4730-9739-e3639a178cbf",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "n8nBy2",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "free",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -720,
+        -420
+      ],
+      "id": "7401a87f-e041-4421-b97d-1acc1db5ef7c",
+      "name": "замена значения",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9d46dec3-0af2-4559-8745-a058448fda73",
+              "leftValue": "={{ $json.ServerName }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        -280
+      ],
+      "id": "3948efcc-c9e8-4dfa-80d7-08adb9033015",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -20
+      ],
+      "id": "05b5c7ff-e2e3-4712-bca5-388c33057d3a",
+      "name": "Входные данные"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -240,
+        -280
+      ],
+      "id": "1a2a1480-ecc8-4002-ba17-851248f2bc1e",
+      "name": "Wait",
+      "webhookId": "a02400b5-ab20-435b-a1e0-a38badb29e9b"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        800,
+        -40
+      ],
+      "id": "d6e1ee11-bc60-4001-9898-761a22e8107e",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        500,
+        -300
+      ],
+      "id": "31610231-1bb1-454b-a28e-e0c01c4f1b2e",
+      "name": "Limit"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-24T10:04:39.000Z",
+  "versionId": "5bb027d9-65f3-4776-8d37-db0ec6fc48dc"
+}
