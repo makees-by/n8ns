@@ -108,6 +108,11 @@
             "node": "HTTP Request",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -117,6 +122,23 @@
         [
           {
             "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [],
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Входные данные",
             "type": "main",
             "index": 0
           }
@@ -246,7 +268,10 @@
         -40
       ],
       "id": "320d1850-7a29-4561-bd6c-0486a4477042",
-      "name": "HTTP Request"
+      "name": "HTTP Request",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -368,7 +393,7 @@
     },
     {
       "parameters": {
-        "amount": 20
+        "amount": "={{Math.random()*9.85 + 15.241 }}"
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -404,15 +429,42 @@
       ],
       "id": "31610231-1bb1-454b-a28e-e0c01c4f1b2e",
       "name": "Limit"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fafe5476-f768-4e5b-bfa7-8a7c618a6663",
+              "name": "body",
+              "value": "={{ $('Входные данные').item.json.body }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        180
+      ],
+      "id": "f21a54e9-31df-4e62-97b2-34baf8b9389c",
+      "name": "Edit Fields",
+      "executeOnce": true
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 1800
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-24T10:04:39.000Z",
-  "versionId": "5bb027d9-65f3-4776-8d37-db0ec6fc48dc"
+  "updatedAt": "2025-01-26T10:03:03.000Z",
+  "versionId": "77ed2913-df99-425e-a246-341ec6ce9c3a"
 }
