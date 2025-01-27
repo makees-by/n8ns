@@ -108,11 +108,6 @@
             "node": "HTTP Request",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -131,7 +126,13 @@
     "HTTP Request": {
       "main": [
         [],
-        []
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Edit Fields": {
@@ -465,6 +466,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-26T10:03:03.000Z",
-  "versionId": "77ed2913-df99-425e-a246-341ec6ce9c3a"
+  "updatedAt": "2025-01-26T19:00:34.000Z",
+  "versionId": "05047bec-6ba8-4b78-b293-0ba7cbdf49da"
 }
