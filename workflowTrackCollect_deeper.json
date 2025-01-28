@@ -1135,12 +1135,15 @@
         3640,
         860
       ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -2525,6 +2528,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-11-27T17:44:12.000Z",
-  "versionId": "d38db8cc-924c-4cc9-a7ac-810b91292d61"
+  "updatedAt": "2025-01-27T20:26:44.000Z",
+  "versionId": "8e253be2-5d3d-4c44-beff-70adb48bf269"
 }
