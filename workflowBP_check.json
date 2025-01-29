@@ -34,7 +34,7 @@
       "main": [
         [
           {
-            "node": "Отправка запроса на другой сервер который отправит запрос на БП",
+            "node": "Отправка запроса на другой сервер который отправит запрос на БП1",
             "type": "main",
             "index": 0
           }
@@ -972,6 +972,12 @@
       ]
     },
     "Отправка запроса на другой сервер который отправит запрос на БП": {
+      "main": [
+        [],
+        []
+      ]
+    },
+    "Отправка запроса на другой сервер который отправит запрос на БП1": {
       "main": [
         [
           {
@@ -2213,7 +2219,7 @@
     },
     {
       "parameters": {
-        "maxItems": 1000,
+        "maxItems": 350,
         "keep": "lastItems"
       },
       "id": "cfe76665-dc19-4e87-810f-0cd3b3c53908",
@@ -2420,7 +2426,6 @@
         -420,
         740
       ],
-      "disabled": true,
       "continueOnFail": true
     },
     {
@@ -3093,8 +3098,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        340,
-        1060
+        840,
+        1000
       ],
       "retryOnFail": true,
       "waitBetweenTries": 3000,
@@ -3110,7 +3115,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "={{ $json.трек }}"
+              "value": "=PC314252339BY"
             }
           ]
         },
@@ -3121,8 +3126,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        1120,
-        1000
+        420,
+        1100
       ],
       "retryOnFail": true,
       "waitBetweenTries": 3000,
@@ -3156,6 +3161,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-24T09:36:44.000Z",
-  "versionId": "1baac1d7-4f1e-407d-b200-43ee91822b81"
+  "updatedAt": "2025-01-28T20:52:28.000Z",
+  "versionId": "082d4b65-b4b5-4d69-8230-079794053cf3"
 }
