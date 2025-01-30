@@ -2398,7 +2398,7 @@
     },
     {
       "parameters": {
-        "url": "=https://n8ns.makeesn8n.online/webhook/bp_check_balance",
+        "url": "=https://n8n.makeesn8n.online/webhook/bp_check_3",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -2898,7 +2898,7 @@
           "conditions": [
             {
               "id": "e79248ef-02b4-4d93-8c40-2e478a3bac34",
-              "leftValue": "={{ 20 - $json.timeDifference.seconds }}",
+              "leftValue": "={{ 37 - $json.timeDifference.seconds }}",
               "rightValue": 0,
               "operator": {
                 "type": "number",
@@ -2941,7 +2941,7 @@
             {
               "id": "5f9f64ef-8fab-4fc7-a42b-31640b614086",
               "name": "timer",
-              "value": "={{20- $json.timeDifference.seconds }}",
+              "value": "={{37- $json.timeDifference.seconds }}",
               "type": "number"
             }
           ]
@@ -3115,7 +3115,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "=PC314252339BY"
+              "value": "={{ $json['трек'] }}"
             }
           ]
         },
@@ -3137,7 +3137,8 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": null,
   "tags": [
@@ -3161,6 +3162,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-28T20:52:28.000Z",
-  "versionId": "082d4b65-b4b5-4d69-8230-079794053cf3"
+  "updatedAt": "2025-01-30T11:32:15.000Z",
+  "versionId": "29201f89-772c-48ed-8ca2-1919ebe4430a"
 }
