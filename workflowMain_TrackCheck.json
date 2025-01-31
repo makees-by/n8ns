@@ -225,6 +225,138 @@
           }
         ]
       ]
+    },
+    "zsForHel04.00": {
+      "main": [
+        [
+          {
+            "node": "zsForHel json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForVika2 05.03": {
+      "main": [
+        [
+          {
+            "node": "ZsForVika2 json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForAleks 22.00": {
+      "main": [
+        [
+          {
+            "node": "zsForAleks json для записи1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra 00.00": {
+      "main": [
+        [
+          {
+            "node": "ForIra json для записи",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForAleks json для записи1": {
+      "main": [
+        [
+          {
+            "node": "ZsForAleks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAleks": {
+      "main": [
+        [
+          {
+            "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra json для записи": {
+      "main": [
+        [
+          {
+            "node": "ForIra",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra": {
+      "main": [
+        [
+          {
+            "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForHel json для записи": {
+      "main": [
+        [
+          {
+            "node": "zsForHel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForVika2 json для записи": {
+      "main": [
+        [
+          {
+            "node": "zsForHel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForHel": {
+      "main": [
+        [
+          {
+            "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForHel1": {
+      "main": [
+        [
+          {
+            "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -244,8 +376,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
       "position": [
-        680,
-        480
+        1180,
+        500
       ],
       "webhookId": "5624678a-350e-4e6a-8fd2-cbc277a8d75d"
     },
@@ -256,8 +388,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        680,
-        660
+        1180,
+        680
       ]
     },
     {
@@ -300,8 +432,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        800,
-        -100
+        780,
+        480
       ]
     },
     {
@@ -343,8 +475,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        600,
-        -100
+        580,
+        480
       ]
     },
     {
@@ -364,8 +496,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        800,
-        -320
+        780,
+        -600
       ]
     },
     {
@@ -380,8 +512,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        620,
-        -320
+        580,
+        -600
       ]
     },
     {
@@ -393,8 +525,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1060,
-        660
+        1560,
+        680
       ],
       "disabled": true
     },
@@ -426,8 +558,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1060,
-        480
+        1560,
+        500
       ]
     },
     {
@@ -507,8 +639,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        800,
-        120
+        780,
+        -240
       ]
     },
     {
@@ -523,8 +655,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        580,
-        320
+        560,
+        1060
       ]
     },
     {
@@ -545,7 +677,7 @@
       "typeVersion": 3.2,
       "position": [
         800,
-        320
+        1060
       ]
     },
     {
@@ -564,8 +696,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        340,
-        320
+        300,
+        1060
       ],
       "disabled": true
     },
@@ -581,8 +713,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        560,
-        120
+        580,
+        -240
       ]
     },
     {
@@ -600,8 +732,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        320,
-        120
+        340,
+        -240
       ]
     },
     {
@@ -620,8 +752,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        360,
-        -100
+        340,
+        480
       ]
     },
     {
@@ -640,8 +772,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        380,
-        -320
+        340,
+        -600
       ]
     },
     {
@@ -658,6 +790,249 @@
       "position": [
         -40,
         -120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ForIra.json"
+      },
+      "id": "0b09fc84-f7e7-4fa4-9a17-bab9add74d3b",
+      "name": "ForIra json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        580,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForHel\",\n          \"start_tableID\": \"1n3nX5v-VPKJ1UKhidUuZptp6qWaK_h578srAILPywI8\",\n          \"start_pageID\": 1401389950,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/zsForHel.json"
+      },
+      "id": "988c716a-afd3-42c5-9ad0-59d2510e883e",
+      "name": "zsForHel json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        580,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsTest\",\n          \"start_tableID\": \"1E2_AUgkcpy0BrVZotmTyCH2Uy8ShDSkNZCpCddFwL-A\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n     \"Balancer\": {\n        \"balance_BP\":\"Off\"\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/{{ $json.query.procID }}.json"
+      },
+      "id": "0b941aa2-524c-4648-a8a2-0f2621e0c086",
+      "name": "ZsTest json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAleks\",\n          \"start_tableID\": \"1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls\",\n          \"start_pageID\": 690413794,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForAleks.json"
+      },
+      "id": "3040e45f-c7f0-4a0f-bc53-df63aa341578",
+      "name": "zsForAleks json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        580,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 4,
+              "triggerAtMinute": 3
+            }
+          ]
+        }
+      },
+      "id": "2672ca81-62eb-420e-ac76-114d08620c3b",
+      "name": "zsForHel04.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        340,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForVika2\",\n          \"start_tableID\": \"1HL9c5S_w9k61gt4o64zVGXBVtrj_NjrMwA2ttS_ifvw\",\n          \"start_pageID\": 672397081,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n     \"Balancer\": {\n        \"balance_BP\":\"Off\"\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForVika2.json"
+      },
+      "id": "638fddc5-2a6d-4929-abc2-5081684458dd",
+      "name": "ZsForVika2 json для записи",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        580,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 5,
+              "triggerAtMinute": 3
+            }
+          ]
+        }
+      },
+      "id": "c73ac8a5-a038-44ee-a2ca-e214cbd65443",
+      "name": "ZsForVika2 05.03",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        340,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 22,
+              "triggerAtMinute": 2
+            }
+          ]
+        }
+      },
+      "id": "4520c00d-eada-4254-8e65-5bb66821a441",
+      "name": "zsForAleks 22.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        340,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "id": "a9ae4710-7eac-4f90-8106-97a15c517ebf",
+      "name": "ForIra 00.00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        340,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForAleks"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "34aedf32-158a-4c77-bbdf-5d1e442dd284",
+      "name": "ZsForAleks",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        780,
+        -420
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForIra"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "069ad3f6-cd91-4eed-8982-485c41e57de4",
+      "name": "ForIra",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        780,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "zsForHel"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7584ec57-bc4a-442a-8eb4-5996c39eed5e",
+      "name": "zsForHel",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        780,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForVika2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e2da2845-2104-4db5-805d-6c108410b99e",
+      "name": "zsForHel1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        780,
+        280
       ]
     }
   ],
@@ -723,6 +1098,18 @@
     },
     "node:ZsForAnn 20:00": {
       "recurrenceRules": []
+    },
+    "node:zsForHel04.00": {
+      "recurrenceRules": []
+    },
+    "node:ZsForVika2 05.03": {
+      "recurrenceRules": []
+    },
+    "node:zsForAleks 22.00": {
+      "recurrenceRules": []
+    },
+    "node:ForIra 00.00": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -739,7 +1126,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 4,
-  "updatedAt": "2025-01-23T09:58:36.000Z",
-  "versionId": "12a102b0-076f-43c0-8477-cd0abdb64e81"
+  "triggerCount": 8,
+  "updatedAt": "2025-01-31T13:02:56.000Z",
+  "versionId": "4d605ae3-2343-4d8a-8c82-f5bdf6921e2d"
 }
