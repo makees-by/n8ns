@@ -1,0 +1,602 @@
+{
+  "active": false,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Фильтр по действию",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Фильтр по действию": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные о процессе с сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Получаем данные о процессе с сервера2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные о процессе с сервера": {
+      "main": [
+        [
+          {
+            "node": "Проверяем занят ли сервер чем-то",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "запускаем таймер до освобождения сервера",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные о процессе с сервера2": {
+      "main": [
+        [
+          {
+            "node": "Изменяем запись для сервера (убираем выполненный процесс)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем занят ли сервер чем-то": {
+      "main": [
+        [
+          {
+            "node": "Обновляем данные сервера",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Обновляем данные сервера1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Изменяем запись для сервера (убираем выполненный процесс)": {
+      "main": [
+        [
+          {
+            "node": "Проверяем остались ли на сервере активные процессы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем остались ли на сервере активные процессы": {
+      "main": [
+        [
+          {
+            "node": "Обновляем данные сервера2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Обновляем данные сервера3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-30T14:22:29.655Z",
+  "id": "yJiLnQFd2T17sd6c",
+  "meta": null,
+  "name": "Бп проверщики (работа со статусами в БД)",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"processID\": \"ZsForLena\",\n    \"doo\": \"off\",\n    \"items_qount\": \"240\",\n    \"server_name\": \"n8nBy2\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -200,
+        120
+      ],
+      "id": "4eecd766-e29e-4d78-937a-2620ffe1a0f8",
+      "name": "Code",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        120
+      ],
+      "id": "af7ee0a8-1029-4744-b447-62c1b5485862",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.doo }}",
+                    "rightValue": "start",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "start"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a17cc378-4ca5-40fb-a89b-22896869fd99",
+                    "leftValue": "={{ $json.doo }}",
+                    "rightValue": "off",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "off"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        40,
+        120
+      ],
+      "id": "3f3df2ed-fd23-4302-9f45-1a204b4d5a80",
+      "name": "Фильтр по действию"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ServerName",
+              "value": "={{ $json.server_name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        260,
+        0
+      ],
+      "id": "1631f8cd-3a65-44d8-b663-9d1973491982",
+      "name": "Получаем данные о процессе с сервера",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ServerName",
+              "value": "={{ $json.server_name }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        260,
+        260
+      ],
+      "id": "07b0d8d1-6c3a-4d5d-b311-6e81b294f4d5",
+      "name": "Получаем данные о процессе с сервера2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "19c7009a-6b56-44a0-bfdc-fa7344e6ce61",
+              "leftValue": "={{ $json.occupy_proc }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        0
+      ],
+      "id": "ef4534d4-61cf-4a53-b982-f5ede88c8316",
+      "name": "Проверяем занят ли сервер чем-то"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e13d095b-6365-4bf3-83b2-46924941edf2",
+              "name": "occupy_proc",
+              "value": "={{ $json.occupy_proc.replaceAll($('Фильтр по действию').item.json.processID, \" \").replaceAll('/', \"\").replaceAll(\" \", '') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        260
+      ],
+      "id": "07a24c9e-6be6-4e78-825d-ce7d20e64047",
+      "name": "Изменяем запись для сервера (убираем выполненный процесс)"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "19c7009a-6b56-44a0-bfdc-fa7344e6ce61",
+              "leftValue": "={{ $json.occupy_proc }}",
+              "rightValue": "/",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        840,
+        260
+      ],
+      "id": "17b09e02-290b-42a0-8d5b-01f77938e2fd",
+      "name": "Проверяем остались ли на сервере активные процессы"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "={{ $('Фильтр по действию').item.json.server_name }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "occupy_proc",
+              "value": "={{ $('Фильтр по действию').item.json.processID }}"
+            },
+            {
+              "column": "Tracks_count",
+              "value": "={{ $('Фильтр по действию').item.json.items_qount }}/"
+            },
+            {
+              "column": "timer",
+              "value": "240"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        640,
+        -120
+      ],
+      "id": "8c93d391-dc68-49ae-9f1a-bae8d74129a2",
+      "name": "Обновляем данные сервера",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "={{ $('Фильтр по действию').item.json.server_name }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "occupy_proc",
+              "value": "={{ $json.occupy_proc }}/{{ $('Фильтр по действию').item.json.processID }}"
+            },
+            {
+              "column": "Tracks_count",
+              "value": "={{ $json.Tracks_count + $('Фильтр по действию').item.json.items_qount.toNumber() }}"
+            },
+            {
+              "column": "timer",
+              "value": "240"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        660,
+        80
+      ],
+      "id": "b9ec124a-8d50-4e3d-85f5-4eda1a87205b",
+      "name": "Обновляем данные сервера1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "={{ $('Фильтр по действию').item.json.server_name }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "occupy_proc",
+              "value": "=0"
+            },
+            {
+              "column": "Tracks_count",
+              "value": "0"
+            },
+            {
+              "column": "timer",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1100,
+        160
+      ],
+      "id": "46d72c66-8513-4569-b41d-0e3b0833d21e",
+      "name": "Обновляем данные сервера2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "={{ $('Фильтр по действию').item.json.server_name }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "occupy_proc",
+              "value": "={{ $json.occupy_proc }}/"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1100,
+        380
+      ],
+      "id": "faf37db5-8ab1-4379-825e-07cd5336f876",
+      "name": "Обновляем данные сервера3",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Таймер на отключение всех процессов от сервера https://n8n.makeesn8n.online/workflow/2XSW5mEC8MWQeKfP",
+        "height": 80,
+        "width": 460
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -340,
+        -200
+      ],
+      "typeVersion": 1,
+      "id": "2a898453-b685-47ad-9bf1-1224b3b56e74",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "2XSW5mEC8MWQeKfP",
+          "mode": "list",
+          "cachedResultName": "timerr"
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        -180
+      ],
+      "id": "06ef2963-74f4-44cd-b532-c57c8e0d74fc",
+      "name": "запускаем таймер до освобождения сервера"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 1800
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-31T07:35:53.000Z",
+  "versionId": "895495c5-faa9-4890-a128-99d5c6c0c644"
+}
