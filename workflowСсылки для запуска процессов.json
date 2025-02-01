@@ -1,0 +1,263 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "HTML1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все треки в один массив2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-01-31T14:35:47.075Z",
+  "id": "Odi4t6u7qHk4vERI",
+  "meta": null,
+  "name": "Ссылки для запуска процессов",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "=all_user_tracking",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "ede5e6bb-1b91-4760-896b-fbaf51b77fec",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        100,
+        40
+      ],
+      "webhookId": "ea0fe53b-cf88-4d86-8e45-f9aec865e04b"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00fd7f5e-933b-43fa-b8ae-9ba448cfd74d",
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Список из JSON</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            font-size: 1.2rem;\n            font-family: sans-serif;\ncolor: #C5C6C7;\nbackground: #0B0C10;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: #1F2833;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 5px;\n        }\n        p {\n            line-height: 1.4;\n          }\n        a {\n             outline: none;\n             text-decoration: none;\n             padding: 2px 1px 0;\n        }\n   a:link {\n              color: #C5C6C7;\n          }\na:visited {\n  color: #C5C6C7;\n}\n\na:focus {\n  border-bottom: 1px solid;\n  background: #66FCF1;\n}\n\na:hover {\n  border-bottom: 1px solid;\n  color: #0B0C10;\n  background: #cdfeaa;\n}\n\na:active {\n  background: #45A29E;\n  color: #C5C6C7;\n}\n        .key {\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n    <h1>Работа с процессами User</h1>\n    <div id=\"output\"></div>\n\n    <script>\n        const jsonData = [\n            {\n                \"data\": {{ JSON.stringify($json.data) }}\n            }\n        ];\n\n        // Извлекаем массив данных\n        const dataList = jsonData[0].data;\n\n        // Создаем список элементов\n        const list = document.createElement('ul');\n\n        dataList.forEach(item => {\n            const listItem = document.createElement('li');\n            listItem.innerHTML = `\n                <span class=\"key\">ID:</span> ${item.ID}<br>\n                <span class=\"key\"><a href=\"${item.UrlStart}\" >Запустить с места остановки</a></span><br>\n                <span class=\"key\"><a href=\"${item.UrlReStart}\" >Перезапустить заново</a></span><br>\n                           `;\n            list.appendChild(listItem);\n        });\n\n        // Добавляем список на страницу\n        document.getElementById('output').appendChild(list);\n    </script>\n</body>\n</html>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c9e80b86-06da-4a67-985c-b3e1657c8cc8",
+      "name": "Edit Fields3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1080,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "id": "93527581-4ae2-4ecf-a4ef-3952fdbd751d",
+      "name": "HTML1",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        1280,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "702c8b44-4586-4dd7-a613-e965318f0633",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1460,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "1e0c9c63-8515-43d0-a918-b8152fb373fa",
+      "name": "Объединяем все треки в один массив2",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        880,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d60efb2a-4c38-41dc-aa7b-40f16264634c",
+              "name": "ID",
+              "value": "={{ $json.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "e677f378-f115-4fd6-96f2-3c3b7c62102c",
+              "name": "UrlStart",
+              "value": "=https://n8n.makeesn8n.online/webhook/check_start?ProcessID={{ $json.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "10624f4c-d464-4daf-937a-ebe7e3bede48",
+              "name": "UrlReStart",
+              "value": "=https://n8n.makeesn8n.online/webhook/check_ReStart?ProcessID={{ $json.ID }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "077dda22-4d97-4a24-bdf2-b0bd3ca63928",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        680,
+        40
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n  [\n  {\n    \"data\": [\n      {\n        \"ID\": \"ZsForIra\",\n        \"UrlStart\": \"ZsForIra\",\n        \"UrlReStart\": \"ZsForIra\"\n      },\n      {\n        \"ID\": \"ZsForAleks\",\n        \"UrlStart\": \"ZsForAleks\",\n        \"UrlReStart\": \"ZsForAleks\"\n      },\n      {\n        \"ID\": \"zsForHel\",\n        \"UrlStart\": \"zsForHel\",\n        \"UrlReStart\": \"zsForHel\"\n      },\n      {\n        \"ID\": \"ZsForVika2\",\n        \"UrlStart\": \"ZsForVika2\",\n        \"UrlReStart\": \"ZsForVika2\"\n      },\n      {\n        \"ID\": \"ZsForAnn\",\n        \"UrlStart\": \"ZsForAnn\",\n        \"UrlReStart\": \"ZsForAnn\"\n      },\n      {\n        \"ID\": \"ForNat\",\n        \"UrlStart\": \"ForNat\",\n        \"UrlReStart\": \"ForNat\"\n      },\n      {\n        \"ID\": \"zsForvika\",\n        \"UrlStart\": \"zsForvika\",\n        \"UrlReStart\": \"zsForvika\"\n      },\n      {\n        \"ID\": \"ZsTest\",\n        \"UrlStart\": \"zstest\",\n        \"UrlReStart\": \"zstest\"\n      }\n    ]\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        280,
+        40
+      ],
+      "id": "db86be28-91dd-44b3-b8e0-c7cacb523b61",
+      "name": "Code"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        -140
+      ],
+      "id": "39533ee6-19c0-4b12-a172-53ecb9555ff4",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        500,
+        40
+      ],
+      "id": "4d556a5c-9260-427d-91eb-4a19d14a35e5",
+      "name": "Split Out"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-31T20:06:14.000Z",
+  "versionId": "80ae1518-6c64-454f-bf6a-316e237f8c1a"
+}
