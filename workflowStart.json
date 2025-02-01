@@ -210,7 +210,7 @@
       "main": [
         [
           {
-            "node": "БП запуск модуля проверки треков",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -835,6 +835,77 @@
           }
         ]
       ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "БП запуск модуля проверки треков2": {
+      "main": [
+        [
+          {
+            "node": "2 сек",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-28T17:07:16.465Z",
@@ -1171,22 +1242,6 @@
     },
     {
       "parameters": {
-        "content": "https://n8n.makees.online/workflow/VRyRwVTCmpPchy3Y",
-        "height": 80,
-        "width": 260.3911486622204,
-        "color": 5
-      },
-      "id": "793589be-39df-4373-8718-6b975daeac5c",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        2820,
-        200
-      ]
-    },
-    {
-      "parameters": {
         "include": "none",
         "options": {}
       },
@@ -1195,8 +1250,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        2840,
-        -260
+        2700,
+        -220
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -1245,8 +1300,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2800,
-        300
+        3000,
+        440
       ],
       "webhookId": "0c0baebd-5e33-4d1e-a59b-ec65d7f4b6b8"
     },
@@ -1773,8 +1828,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2900,
-        0
+        3000,
+        200
       ],
       "continueOnFail": true
     },
@@ -2497,6 +2552,249 @@
         220,
         -20
       ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "ZsTest",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ZsTest"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1c528f5d-8d8e-4b68-94d0-1d8b0d5eb49b",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "ZsForAleks",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ZsForAleks"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2bc78532-4e16-435f-b32a-2671563339f9",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "zsForHel",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "zsForHel"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "68b12de8-dbee-4990-b5cb-5b15a9598ed9",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "ForIra",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ForIra"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0ab87056-fd09-414a-b3af-1e5cf944cfdd",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": " ZsForVika2",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ZsForVika2"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fcd1f76d-c6b3-4ebc-9f93-e076ad1e7bb8",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "ZsForAnn",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ZsForAnn"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b7399408-b49a-4b46-b9d9-3d838e3caf52",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "ForNat",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ForNat"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8e8648b5-0f3d-4473-a2e5-fc1c63cbbcb9",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "zsForvika",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "zsForvika"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2720,
+        20
+      ],
+      "id": "d2f9073f-857f-46eb-8fb9-95ff5d61c365",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('main JSON').first().json.data.endPoints['Проверка Белпочты2'] }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url_become",
+              "value": "={{ $('Ввод статичных значений').item.json.url_become }}"
+            },
+            {
+              "name": "processID",
+              "value": "={{ $('Ввод статичных значений').first().json.processID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dcf41c06-fdd5-4000-8ac4-e415e9cf5235",
+      "name": "БП запуск модуля проверки треков2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2980,
+        -200
+      ],
+      "continueOnFail": true
     }
   ],
   "pinData": {},
@@ -2528,6 +2826,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-04-29T18:46:35.000Z",
-  "versionId": "c26ef8a1-321c-4ac1-a476-df46da3a3048"
+  "updatedAt": "2025-01-31T19:43:57.000Z",
+  "versionId": "ac0cc052-48d8-4350-89ee-7560d5f2ba80"
 }
