@@ -123,7 +123,7 @@
   "nodes": [
     {
       "parameters": {
-        "jsCode": "return(\n[\n  {\n    \"processID\": \"ZsForLena\",\n    \"doo\": \"off\",\n    \"items_qount\": \"240\",\n    \"server_name\": \"n8nBy2\"\n  }\n]\n);"
+        "jsCode": "return(\n[\n  {\n    \"processID\": \"ZsTest\",\n    \"doo\": \"off\",\n    \"items_qount\": \"240\",\n    \"server_name\": \"n8nBy2\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -597,6 +597,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-01-31T07:35:53.000Z",
-  "versionId": "895495c5-faa9-4890-a128-99d5c6c0c644"
+  "updatedAt": "2025-01-31T21:13:02.000Z",
+  "versionId": "bb3a65c9-0da6-480f-af3d-781d5640e4e0"
 }
