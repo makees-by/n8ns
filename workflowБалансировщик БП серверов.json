@@ -96,7 +96,7 @@
         ],
         [
           {
-            "node": "MySQL1",
+            "node": "MySQL2",
             "type": "main",
             "index": 0
           }
@@ -177,6 +177,64 @@
           }
         ]
       ]
+    },
+    "MySQL2": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Нет свободных серверовсерверов",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "MySQL1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Нет свободных серверовсерверов",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Нет свободных серверовсерверов": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-01-24T08:19:27.790Z",
@@ -207,8 +265,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        400,
-        -20
+        380,
+        -140
       ],
       "id": "a2f349d9-c4a6-4777-9cb0-7deaacbfa25b",
       "name": "MySQL",
@@ -280,8 +338,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        660,
-        -360
+        -700,
+        -580
       ],
       "id": "320d1850-7a29-4561-bd6c-0486a4477042",
       "name": "HTTP Request",
@@ -296,8 +354,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -240,
-        -20
+        -260,
+        -140
       ],
       "id": "384cbf09-964b-4006-a20a-3291ddf008a1",
       "name": "Code",
@@ -308,8 +366,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -460,
-        -20
+        -480,
+        -140
       ],
       "id": "034ca6e3-89e3-489b-80cc-46344f252308",
       "name": "When clicking ‘Test workflow’"
@@ -461,8 +519,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        660,
-        -20
+        640,
+        -140
       ],
       "id": "4f451fe3-0f07-4c07-b2a1-31f8651bbb87",
       "name": "If1"
@@ -561,8 +619,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -220,
-        -320
+        -740,
+        0
       ],
       "id": "4d12e07c-1739-4274-87f9-8741e281571f",
       "name": "Обновляем данные сервера",
@@ -655,8 +713,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -20,
-        -20
+        -40,
+        -140
       ],
       "id": "66807922-9eb8-495c-a22d-e884a037538f",
       "name": "Входные данные"
@@ -691,6 +749,120 @@
       "retryOnFail": true,
       "waitBetweenTries": 5000,
       "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ServerName",
+              "condition": "!=",
+              "value": "n8nby3"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -300,
+        100
+      ],
+      "id": "2336259f-e4f6-47b5-a65b-933c2dddef65",
+      "name": "MySQL2",
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7e56e191-24cc-474b-ba74-35a8ac85d125",
+              "leftValue": "={{ $json.Tracks_count }}",
+              "rightValue": 10,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -40,
+        100
+      ],
+      "id": "215ed66f-9d71-46f6-8b97-7287aa0892f5",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7e56e191-24cc-474b-ba74-35a8ac85d125",
+              "leftValue": "={{ $json.timer }}",
+              "rightValue": 10,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        360,
+        80
+      ],
+      "id": "8a2f6f35-6991-4d5f-91cf-848ec65fc466",
+      "name": "If5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        360,
+        -420
+      ],
+      "id": "67f07f60-e9cc-4886-8881-49ceb355bd68",
+      "name": "Нет свободных серверовсерверов"
     }
   ],
   "pinData": {},
@@ -703,6 +875,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-01-31T11:25:11.000Z",
-  "versionId": "95efba90-4dcc-4798-af96-b1a5dc216ff6"
+  "updatedAt": "2025-01-31T21:01:51.000Z",
+  "versionId": "779d1c87-3cd6-42f6-9a82-6163ef6392db"
 }
