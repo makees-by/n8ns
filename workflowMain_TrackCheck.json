@@ -264,17 +264,6 @@
         ]
       ]
     },
-    "ForIra 00.00": {
-      "main": [
-        [
-          {
-            "node": "ForIra json для записи",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "zsForAleks json для записи1": {
       "main": [
         [
@@ -483,6 +472,17 @@
         [
           {
             "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra 00.30": {
+      "main": [
+        [
+          {
+            "node": "ForIra json для записи",
             "type": "main",
             "index": 0
           }
@@ -1065,25 +1065,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtMinute": 5
-            }
-          ]
-        }
-      },
-      "id": "a9ae4710-7eac-4f90-8106-97a15c517ebf",
-      "name": "ForIra 00.00",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        320,
-        -80
-      ]
-    },
-    {
-      "parameters": {
         "fields": {
           "values": [
             {
@@ -1482,6 +1463,25 @@
         800,
         -780
       ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "a9ae4710-7eac-4f90-8106-97a15c517ebf",
+      "name": "ForIra 00.30",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        320,
+        -80
+      ]
     }
   ],
   "pinData": {},
@@ -1558,6 +1558,9 @@
     },
     "node:ForIra 00.00": {
       "recurrenceRules": []
+    },
+    "node:ForIra 00.30": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1575,6 +1578,6 @@
     }
   ],
   "triggerCount": 9,
-  "updatedAt": "2025-01-31T21:50:38.000Z",
-  "versionId": "6307a006-5015-4aca-821c-00183b862aa5"
+  "updatedAt": "2025-02-04T14:16:34.000Z",
+  "versionId": "8ece64e9-c876-4472-a45d-faba37de725a"
 }
