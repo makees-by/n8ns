@@ -678,6 +678,11 @@
             "node": "Чтение переменной балансировщика",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -1215,7 +1220,8 @@
         -2140,
         1040
       ],
-      "webhookId": "560d538c-bf61-410c-83a6-0c252080a81c"
+      "webhookId": "560d538c-bf61-410c-83a6-0c252080a81c",
+      "disabled": true
     },
     {
       "parameters": {
@@ -2285,7 +2291,7 @@
     {
       "parameters": {
         "maxItems": 350,
-        "keep": "lastItems"
+        "keep": "={{ $if($today.format('dd').toNumber().isEven(), \"Last Items\", \"First Items\" ) }}\nlastItems"
       },
       "id": "5b600d56-8c2c-4b3b-85d4-352196334798",
       "name": "Limit",
@@ -2294,7 +2300,9 @@
       "position": [
         -160,
         1520
-      ]
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -3054,10 +3062,9 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 1,
       "position": [
-        -2180,
-        1260
-      ],
-      "disabled": true
+        -2140,
+        1280
+      ]
     },
     {
       "parameters": {
@@ -3449,6 +3456,19 @@
       "typeVersion": 1,
       "id": "32ae68dc-b7a5-4675-8d60-840c339d794c",
       "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        740
+      ],
+      "id": "6cdc507e-35b8-4c7b-8a5d-8c34a3824433",
+      "name": "Limit1"
     }
   ],
   "pinData": {},
@@ -3477,7 +3497,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-01-31T13:51:22.000Z",
-  "versionId": "023fbf6f-03ba-4230-83a0-e3ab030cb1d7"
+  "triggerCount": 0,
+  "updatedAt": "2025-02-04T15:20:10.000Z",
+  "versionId": "686a4808-1b42-45c3-bc90-997373118e7e"
 }
