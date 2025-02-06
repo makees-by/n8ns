@@ -133,7 +133,14 @@
       "main": [
         [
           {
-            "node": "Отсеиваем записи без треков1",
+            "node": "Проверяем есть ли соотв записи из таблицы",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Отправить сообщение про проблему с таблицей",
             "type": "main",
             "index": 0
           }
@@ -300,12 +307,12 @@
       "main": [
         [
           {
-            "node": "Получаем записи о нужных треках в БД",
+            "node": "формируем запрос к логированию1",
             "type": "main",
             "index": 0
           },
           {
-            "node": "формируем запрос к логированию1",
+            "node": "Проверяем есть ли соотв записи из таблицы1",
             "type": "main",
             "index": 0
           }
@@ -339,6 +346,46 @@
         [
           {
             "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправить сообщение про проблему с таблицей": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем есть ли соотв записи из таблицы": {
+      "main": [
+        [
+          {
+            "node": "Отсеиваем записи без треков1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Отправить сообщение про проблему с таблицей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем есть ли соотв записи из таблицы1": {
+      "main": [
+        [
+          {
+            "node": "Получаем записи о нужных треках в БД",
             "type": "main",
             "index": 0
           }
@@ -390,7 +437,7 @@
       "typeVersion": 3.4,
       "position": [
         980,
-        900
+        1040
       ]
     },
     {
@@ -554,8 +601,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1680,
-        360
+        1920,
+        320
       ]
     },
     {
@@ -565,8 +612,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1920,
-        380
+        1760,
+        720
       ]
     },
     {
@@ -587,7 +634,7 @@
           "value": {
             "трек": "={{ $json.Track }}",
             "Отметка о доставке": "={{ $json.Status }}",
-            "Дата последнего обновления": "={{ $now.format('dd-MM-yy') }}",
+            "Дата последнего обновления": "={{ $now.format('dd.MM.yy HH-mm-ss') }}",
             "Актуальный статус": "={{ $json.Track }}: {{ $json.History }}"
           },
           "matchingColumns": [
@@ -732,8 +779,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2960,
-        900
+        3200,
+        920
       ],
       "retryOnFail": true,
       "waitBetweenTries": 2000,
@@ -752,8 +799,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2680,
-        640
+        2920,
+        660
       ]
     },
     {
@@ -798,10 +845,6 @@
             {
               "lookupColumn": "Отметка о доставке",
               "lookupValue": "Не доставлено"
-            },
-            {
-              "lookupColumn": "трек",
-              "lookupValue": "=*"
             }
           ]
         },
@@ -812,15 +855,19 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1420,
+        1400,
         360
       ],
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -848,8 +895,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1980,
-        180
+        2180,
+        160
       ],
       "credentials": {
         "mySql": {
@@ -869,8 +916,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        1940,
-        880
+        2140,
+        1040
       ]
     },
     {
@@ -900,8 +947,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3300,
-        640
+        3540,
+        660
       ]
     },
     {
@@ -935,8 +982,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3120,
-        640
+        3360,
+        660
       ]
     },
     {
@@ -948,8 +995,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2900,
-        640
+        3140,
+        660
       ],
       "executeOnce": true
     },
@@ -970,27 +1017,27 @@
     },
     {
       "parameters": {
-        "batchSize": 30,
+        "batchSize": 100,
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2640,
-        880
+        2880,
+        900
       ],
       "id": "247db668-21cf-4604-8c0c-4d4161bf6dbc",
       "name": "Loop Over Items"
     },
     {
       "parameters": {
-        "amount": 1
+        "amount": 10
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3260,
-        900
+        3500,
+        920
       ],
       "id": "aedf621b-0932-427c-adb2-020a170fe0a1",
       "name": "Wait",
@@ -1010,8 +1057,8 @@
       "type": "n8n-nodes-base.sort",
       "typeVersion": 1,
       "position": [
-        2240,
-        880
+        2560,
+        1040
       ],
       "id": "8c7bbe23-7454-49c6-8ec2-518a52cd0b20",
       "name": "Sort"
@@ -1023,7 +1070,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1180,
+        1200,
         340
       ],
       "id": "3a811df2-0587-40e4-b818-0ad8ec818fef",
@@ -1034,8 +1081,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1200,
-        680
+        1240,
+        880
       ],
       "id": "66880164-2994-4904-8183-c88c449066ae",
       "name": "No Operation, do nothing"
@@ -1196,8 +1243,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2180,
-        660
+        2320,
+        680
       ],
       "id": "d9d0a07e-f191-4d90-8fa6-142de8e2c848",
       "name": "формируем запрос к логированию2",
@@ -1216,8 +1263,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        2400,
-        560
+        2640,
+        580
       ],
       "id": "5d85efde-3f01-42ba-aafb-6c91616065e1",
       "name": "Запрос в процесс логирования2"
@@ -1257,8 +1304,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2680,
-        380
+        2920,
+        400
       ],
       "id": "1c5f863e-69a4-4e7b-88c3-cf41e252d803",
       "name": "формируем запрос к логированию3",
@@ -1277,8 +1324,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        2920,
-        380
+        3160,
+        400
       ],
       "id": "a5e55c83-9357-456e-993c-296169be3c14",
       "name": "Запрос в процесс логирования3"
@@ -1288,8 +1335,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2880,
-        80
+        3120,
+        100
       ],
       "id": "5550c3c2-08e5-45d3-979f-63cb321ebea1",
       "name": "Ошибка при выставлении статусов треков из БД в таблицы"
@@ -1308,6 +1355,85 @@
       "typeVersion": 1,
       "id": "7020a908-8150-4bc5-b86d-a741f39e4ab4",
       "name": "Sticky Note3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        680
+      ],
+      "id": "1e5c7bb0-94b4-44a2-98fa-0007872afdb2",
+      "name": "Отправить сообщение про проблему с таблицей"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "87c92809-3571-4ada-b751-9bf96702cbc5",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+              "operator": {
+                "type": "number",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "ce0be129-9d02-4d7f-a1ec-012fc5c7336e",
+      "name": "Проверяем есть ли соотв записи из таблицы",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1660,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "87c92809-3571-4ada-b751-9bf96702cbc5",
+              "leftValue": "={{ $json.row_number }}",
+              "rightValue": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+              "operator": {
+                "type": "number",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "dea54bd1-9544-41c9-9bd6-d92aa547db6e",
+      "name": "Проверяем есть ли соотв записи из таблицы1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1600,
+        180
+      ]
     }
   ],
   "pinData": {},
@@ -1315,8 +1441,15 @@
     "executionOrder": "v1"
   },
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "createdAt": "2025-02-05T16:24:37.889Z",
+      "updatedAt": "2025-02-05T16:24:37.889Z",
+      "id": "vsUr1hQQVG3ZP6Nk",
+      "name": "BDCheck"
+    }
+  ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-19T13:30:18.000Z",
-  "versionId": "a5e7cd24-fccc-48c3-a396-1865504a912a"
+  "updatedAt": "2025-02-05T16:57:09.000Z",
+  "versionId": "4f32d775-f841-478d-9dd6-a686b352bae8"
 }
