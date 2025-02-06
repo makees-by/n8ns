@@ -458,11 +458,6 @@
       "main": [
         [
           {
-            "node": "Limit",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "СЗПЦ2",
             "type": "main",
             "index": 0
@@ -481,22 +476,16 @@
             "node": "Отправляем сообщение в телеграмм",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "No Operation, do nothing7",
+            "type": "main",
+            "index": 0
           }
         ],
         [
           {
             "node": "до 250 треков",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Limit": {
-      "main": [
-        [
-          {
-            "node": "No Operation, do nothing6",
             "type": "main",
             "index": 0
           }
@@ -580,7 +569,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "No Operation, do nothing7",
             "type": "main",
             "index": 0
           }
@@ -591,7 +580,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "No Operation, do nothing7",
             "type": "main",
             "index": 0
           }
@@ -786,7 +775,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "No Operation, do nothing7",
             "type": "main",
             "index": 0
           }
@@ -1054,6 +1043,28 @@
         [
           {
             "node": "Execute Workflow1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing7": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
             "type": "main",
             "index": 0
           }
@@ -2284,20 +2295,6 @@
     },
     {
       "parameters": {
-        "maxItems": 350,
-        "keep": "lastItems"
-      },
-      "id": "cfe76665-dc19-4e87-810f-0cd3b3c53908",
-      "name": "Limit",
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        -160,
-        1520
-      ]
-    },
-    {
-      "parameters": {
         "queryPath": "Balancer.balance_BP",
         "filePath": "=root/n8n/{{ $('Ввод отрибутов процесс').first().json.processID }}.json "
       },
@@ -3449,6 +3446,33 @@
       "typeVersion": 1,
       "id": "136fc33d-d56f-4384-9f7c-c45cad069bfe",
       "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "maxItems": 350,
+        "keep": "={{ $if($today.format('dd').toNumber().isEven(), \"Last Items\", \"First Items\" ) }}\nlastItems"
+      },
+      "id": "33815f59-b1c5-47d2-a67b-72990f654e65",
+      "name": "Limit1",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        1320
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        1480
+      ],
+      "id": "a1d76ac0-c14d-4109-88cc-4ba7d09e7075",
+      "name": "No Operation, do nothing7"
     }
   ],
   "pinData": {},
@@ -3478,6 +3502,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-31T07:36:17.000Z",
-  "versionId": "4fe8cca7-62d7-4570-bd10-f7a70fb13b10"
+  "updatedAt": "2025-02-05T14:50:20.000Z",
+  "versionId": "e0b08d57-64bf-45b3-b252-a42343bc7f44"
 }
