@@ -592,7 +592,8 @@
       "position": [
         1520,
         -60
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1005,7 +1006,8 @@
       "position": [
         340,
         100
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1291,7 +1293,7 @@
                   {
                     "id": "0ab87056-fd09-414a-b3af-1e5cf944cfdd",
                     "leftValue": "={{ $json.query.ProcessID }}",
-                    "rightValue": " ZsForVika2",
+                    "rightValue": "ZsForVika2",
                     "operator": {
                       "type": "string",
                       "operation": "equals",
@@ -1577,7 +1579,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 9,
-  "updatedAt": "2025-02-04T14:16:34.000Z",
-  "versionId": "8ece64e9-c876-4472-a45d-faba37de725a"
+  "triggerCount": 8,
+  "updatedAt": "2025-02-05T14:54:18.000Z",
+  "versionId": "d1620965-9b20-44ed-a10e-2f9356964e1a"
 }
