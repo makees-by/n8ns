@@ -215,12 +215,12 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "items",
             "type": "main",
             "index": 0
           },
           {
-            "node": "items",
+            "node": "If2",
             "type": "main",
             "index": 0
           }
@@ -330,7 +330,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "If2",
             "type": "main",
             "index": 0
           }
@@ -339,13 +339,7 @@
     },
     "Limit": {
       "main": [
-        [
-          {
-            "node": "IF2",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "IF5": {
@@ -520,6 +514,46 @@
           }
         ]
       ]
+    },
+    "Limit2": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Limit2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Limit3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit3": {
+      "main": [
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-01-30T11:30:38.592Z",
@@ -653,8 +687,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1240,
-        740
+        -1220,
+        840
       ],
       "alwaysOutputData": false
     },
@@ -674,8 +708,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -1240,
-        960
+        -1220,
+        1120
       ]
     },
     {
@@ -1383,16 +1417,16 @@
     },
     {
       "parameters": {
-        "maxItems": "={{ $('items').first().json.items_calc -250 }}",
-        "keep": "lastItems"
+        "maxItems": "={{ $('items').first().json.items_calc -350 }}",
+        "keep": "={{ $if($today.format('dd').toNumber().isEven(), \"First Items\", \"Last Items\" ) }}"
       },
       "id": "d8606d3d-380e-451b-a063-da42de9e3e07",
       "name": "Limit",
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -1220,
-        560
+        -1780,
+        1220
       ]
     },
     {
@@ -1473,7 +1507,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        -940,
+        -980,
         720
       ]
     },
@@ -1484,8 +1518,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -940,
-        960
+        -920,
+        1140
       ]
     },
     {
@@ -1925,6 +1959,82 @@
       "retryOnFail": true,
       "waitBetweenTries": 2000,
       "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $('items').first().json.items_calc -350 }}",
+        "keep": "lastItems"
+      },
+      "id": "2a4dbe99-2010-454b-805a-65ef8dbe6896",
+      "name": "Limit2",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        820
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f5e44951-6f9c-4dc6-9f68-7a4b9cd2edcb",
+              "leftValue": "={{ $now.format('dd').toNumber().isEven() }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1240,
+        560
+      ],
+      "id": "c6627621-9984-49b9-ba6f-6184a6b97efa",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "maxItems": "={{ $('items').first().json.items_calc -350 }}"
+      },
+      "id": "754a7a24-66b4-4494-9ecc-e318526b10a2",
+      "name": "Limit3",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -1500,
+        980
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1080,
+        1300
+      ],
+      "id": "86f37176-30f4-4233-95d4-00af7f3217a3",
+      "name": "No Operation, do nothing2"
     }
   ],
   "pinData": {},
@@ -1953,6 +2063,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-31T11:35:54.000Z",
-  "versionId": "aa9c5edb-cb87-4537-8d85-3f8755a3e053"
+  "updatedAt": "2025-02-07T13:56:16.000Z",
+  "versionId": "69f4fef1-d925-41e1-bf26-202e5fd4a9c6"
 }
