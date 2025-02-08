@@ -13,6 +13,16 @@
             "node": "Google Sheets5",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Google Sheets6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets7",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -35,6 +45,11 @@
             "node": "If",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "JsonDatabase",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -44,6 +59,18 @@
         [
           {
             "node": "Отсеиваем записи без треков1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на 1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер1",
             "type": "main",
             "index": 0
           }
@@ -77,7 +104,7 @@
       "main": [
         [
           {
-            "node": "Wait",
+            "node": "Edit Fields2",
             "type": "main",
             "index": 0
           }
@@ -177,7 +204,7 @@
       "main": [
         [
           {
-            "node": "Wait1",
+            "node": "Edit Fields3",
             "type": "main",
             "index": 0
           }
@@ -222,6 +249,705 @@
         [
           {
             "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets6": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Limit2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Limit3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit3": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit2": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 1": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Отсеиваем записи без треков1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на ": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If6": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер1": {
+      "main": [
+        [
+          {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If7": {
+      "main": [
+        [
+          {
+            "node": "пустые таблицы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер": {
+      "main": [
+        [
+          {
+            "node": "If8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If8": {
+      "main": [
+        [
+          {
+            "node": "пустые таблицы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "пустые таблицы": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets7": {
+      "main": [
+        [
+          {
+            "node": "Limit4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Получаем имеющиеся треки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets8": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Отсеиваем записи без треков",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на 2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Датос1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отсеиваем записи без треков": {
+      "main": [
+        [
+          {
+            "node": "Меняем triger0 на 3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "If9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 2": {
+      "main": [
+        [
+          {
+            "node": "If10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If9": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If10": {
+      "main": [
+        [
+          {
+            "node": "Отсеиваем записи без треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 3": {
+      "main": [
+        [
+          {
+            "node": "If11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If11": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер2": {
+      "main": [
+        [
+          {
+            "node": "If12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If12": {
+      "main": [
+        [
+          {
+            "node": "пустые таблицы1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "пустые таблицы1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер3": {
+      "main": [
+        [
+          {
+            "node": "If13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If13": {
+      "main": [
+        [
+          {
+            "node": "пустые таблицы1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Ищем новые треки",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Получаем имеющиеся треки": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Remove Duplicates": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase2": {
+      "main": [
+        [
+          {
+            "node": "If14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If14": {
+      "main": [
+        [
+          {
+            "node": "Limit4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase3": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Ищем новые треки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields6": {
+      "main": [
+        [
+          {
+            "node": "Корректируем трек в исходной таблице",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Добавляем новые треки в общую таблицу",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Датос1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Корректируем трек в исходной таблице": {
+      "main": [
+        [
+          {
+            "node": "If17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавляем новые треки в общую таблицу": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ищем новые треки": {
+      "main": [
+        [],
+        [],
+        [],
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на 4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Достаём тригер4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase4": {
+      "main": [
+        [
+          {
+            "node": "Replace Me2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 4": {
+      "main": [
+        [
+          {
+            "node": "If15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If15": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер4": {
+      "main": [
+        [
+          {
+            "node": "If16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If16": {
+      "main": [
+        [
+          {
+            "node": "пустые таблицы1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If17": {
+      "main": [
+        [
+          {
+            "node": "Добавляем новые треки в общую таблицу",
             "type": "main",
             "index": 0
           }
@@ -312,6 +1038,7 @@
       ],
       "id": "fa56497d-bc5e-43e2-be3e-b8c0197c796a",
       "name": "Google Sheets1",
+      "alwaysOutputData": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -348,7 +1075,7 @@
       "typeVersion": 2.2,
       "position": [
         1120,
-        -40
+        -60
       ],
       "id": "6fc49081-3325-4ede-9ede-f2c80e51140c",
       "name": "If"
@@ -435,8 +1162,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1660,
-        -80
+        1680,
+        -100
       ],
       "id": "c7cce018-70e2-4cb4-bad0-bfcf85d56882",
       "name": "Google Sheets2",
@@ -466,8 +1193,8 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        920,
-        -260
+        540,
+        -240
       ],
       "id": "e5852f34-3d52-4385-846e-6896a130b53a"
     },
@@ -479,7 +1206,7 @@
       "typeVersion": 1.1,
       "position": [
         1940,
-        -40
+        360
       ],
       "id": "916dd538-e541-4fec-b76e-0bf5955a9d91",
       "name": "Wait",
@@ -487,18 +1214,17 @@
     },
     {
       "parameters": {
-        "maxItems": 50,
+        "maxItems": 4,
         "keep": "lastItems"
       },
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        440,
+        320,
         -80
       ],
       "id": "3f9bbacb-9f79-44e4-bffe-000cb70c05b5",
-      "name": "Limit",
-      "disabled": true
+      "name": "Limit"
     },
     {
       "parameters": {
@@ -518,8 +1244,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1580,
-        300
+        -1000,
+        280
       ],
       "id": "f6184d27-6204-4711-9169-1d034974db5e",
       "name": "Edit Fields"
@@ -541,8 +1267,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -340,
-        380
+        -2920,
+        360
       ],
       "id": "a86f8ee7-19a8-4ef9-bf18-85ae286fff01",
       "name": "Edit Fields1"
@@ -564,8 +1290,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1120,
-        320
+        -1460,
+        300
       ],
       "id": "11081a5d-345d-49f3-8c6d-d516fc85d0a0",
       "name": "Google Sheets3",
@@ -604,8 +1330,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1320,
-        320
+        -1260,
+        300
       ],
       "id": "0419d496-ec89-45bb-a9c8-c7062c3fa3df",
       "name": "If1"
@@ -800,8 +1526,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1840,
-        300
+        -800,
+        280
       ],
       "id": "4b4616a1-02a3-4c54-a343-79150c1f1743",
       "name": "Google Sheets4",
@@ -817,8 +1543,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        880,
-        320
+        -1700,
+        300
       ],
       "id": "874881b1-43c4-4cd3-b81a-d4f3ea2822c3",
       "name": "Датос"
@@ -830,8 +1556,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        640,
-        300
+        -1940,
+        280
       ],
       "id": "86848349-42e0-4554-aa11-9b2e8b57fe4a",
       "name": "Loop Over Items1"
@@ -842,20 +1568,20 @@
       "name": "Replace Me1",
       "typeVersion": 1,
       "position": [
-        300,
-        580
+        -2280,
+        560
       ],
       "id": "f0e2461a-cbb0-4fe5-93c8-4e48e25809ae"
     },
     {
       "parameters": {
-        "amount": 30
+        "amount": 10
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2060,
-        300
+        -460,
+        480
       ],
       "id": "be2f9b34-cc84-4174-ad77-fdd8f2f44cd0",
       "name": "Wait1",
@@ -869,8 +1595,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        320,
-        300
+        -2260,
+        280
       ],
       "id": "1e2498cf-6ae2-4c2d-ade9-e216f84ed042",
       "name": "Limit1",
@@ -880,16 +1606,508 @@
       "parameters": {
         "content": "# Редактирование треков",
         "height": 520,
-        "width": 2740
+        "width": 2900
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -500,
-        220
+        -3080,
+        200
       ],
       "typeVersion": 1,
       "id": "41cc1e7a-eff1-4137-a44f-1fc8acbf2e36",
       "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls",
+          "mode": "list",
+          "cachedResultName": "ЗС Алексей",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1600679549,
+          "mode": "list",
+          "cachedResultName": "Список проверок(main1)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls/edit#gid=1600679549"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -2540,
+        280
+      ],
+      "id": "165d037d-8a1a-4e65-af80-52aece517881",
+      "name": "Google Sheets5",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Сбор треков в одну таблицу первичный",
+        "height": 1080,
+        "width": 2420
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -40,
+        -500
+      ],
+      "typeVersion": 1,
+      "id": "53d4a775-4b28-4ec1-b4bb-b8879891071d",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f1f5304e-e789-437b-9ac1-1fc050eeb007",
+              "leftValue": "={{ $json['трек'].toString() }}",
+              "rightValue": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]B|bY|y",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            },
+            {
+              "id": "87c92809-3571-4ada-b751-9bf96702cbc5",
+              "leftValue": "={{ $json['трек'].toString() }}",
+              "rightValue": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
+              "operator": {
+                "type": "string",
+                "operation": "regex"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "e97ef70c-9991-46d6-8e56-67b2dd970e8c",
+      "name": "Отсеиваем записи без треков1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1400,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1900,
+        -100
+      ],
+      "id": "10888fa5-c08b-44ab-842b-9dc2fa51d80a",
+      "name": "Edit Fields2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -620,
+        280
+      ],
+      "id": "b3798485-21ed-415d-bec7-9b0b5414a070",
+      "name": "Edit Fields3",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -400,
+        -780
+      ],
+      "id": "02dd7474-611c-40b3-8178-5992ac3d62d5",
+      "name": "Google Sheets6",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": 350
+      },
+      "id": "73a2f5b8-cfe1-4de8-bc55-401b5290fd26",
+      "name": "Limit2",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        120,
+        -860
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f5e44951-6f9c-4dc6-9f68-7a4b9cd2edcb",
+              "leftValue": "={{ $now.format('dd').toNumber().isEven() }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -120,
+        -780
+      ],
+      "id": "5eb006bb-6ac8-4414-aa2b-c07a111a050f",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "maxItems": 350,
+        "keep": "lastItems"
+      },
+      "id": "012ea859-e3c2-4901-91e5-1222e5a7e7ea",
+      "name": "Limit3",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        120,
+        -680
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        400,
+        -760
+      ],
+      "id": "389048e9-9b1c-4ce8-867c-73e5d8a64559",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  0, \"Triger2\":  0 } ",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "23baf881-3189-40fb-8d2d-e6a0d7a84673",
+      "name": "JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        900,
+        -260
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "c74e2ba5-02a2-4e03-9adf-e4eb27fd597d",
+      "name": "Меняем triger0 на 1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        -280
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "24f24e03-7829-44cb-9b6f-e219c595c3cd",
+      "name": "If4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1000,
+        -440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "342c8dfa-d2d4-4323-98c6-cd70613123e8",
+      "name": "If5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        -460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger2",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "32a91150-2a7a-4b5f-ad13-157ebad8f3f7",
+      "name": "Меняем triger0 на ",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        -300
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "04cf5786-6acb-4d87-ae12-e278050cc1da",
+      "name": "If6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1600,
+        -460
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "07881210-82b4-46c0-88b6-551ec5df293d",
+      "name": "Достаём тригер1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        140
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "506d4f65-b75f-4888-ac2a-d16ec5f479c0",
+      "name": "If7",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1140,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        780,
+        200
+      ],
+      "id": "fb1858fc-f851-4171-be6b-01831b2161c1",
+      "name": "пустые таблицы"
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger2",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "4bfd1191-1d0e-45d2-9a56-00462a29fbab",
+      "name": "Достаём тригер",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        140
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0fa2e1b9-298f-4298-84b0-3695b865df0e",
+      "name": "If8",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1400,
+        320
+      ]
     },
     {
       "parameters": {
@@ -922,11 +2140,11 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        60,
-        340
+        0,
+        1060
       ],
-      "id": "165d037d-8a1a-4e65-af80-52aece517881",
-      "name": "Google Sheets5",
+      "id": "c49f1f09-a38a-4044-9c86-fcdd36f22755",
+      "name": "Google Sheets7",
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -936,18 +2154,137 @@
     },
     {
       "parameters": {
-        "content": "# Сбор треков в одну таблицу",
-        "height": 520,
-        "width": 2260
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1080,
+        1080
+      ],
+      "id": "316e3251-0257-4c85-a1f5-a421d0db12f5",
+      "name": "Google Sheets8",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "673119e7-8c40-4dd3-9087-70570b888312",
+              "leftValue": "={{ $json['трек'].toString() }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1340,
+        1080
+      ],
+      "id": "1781b257-1260-40c8-8c22-c59daa8ee82f",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        660,
+        1060
+      ],
+      "id": "8c36cdf1-975c-45aa-be67-8e52f1345992",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me2",
+      "typeVersion": 1,
+      "position": [
+        920,
+        760
+      ],
+      "id": "7ac73ff1-9128-404b-916e-92ac4445a58c"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3040,
+        1500
+      ],
+      "id": "20e63569-43b7-4c06-8509-c248a33a9ca9",
+      "name": "Wait2",
+      "webhookId": "e3fb1c0c-3fea-4b84-ba0d-6c588691c912"
+    },
+    {
+      "parameters": {
+        "maxItems": 4,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1060
+      ],
+      "id": "bb980c3c-180b-4e8d-b093-7fa6c6eb6532",
+      "name": "Limit4",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "# Сбор треков в одну таблицу с добавлением и проверкой на наличие\n",
+        "height": 1100,
+        "width": 3520
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -20,
-        -340
+        -160,
+        660
       ],
       "typeVersion": 1,
-      "id": "53d4a775-4b28-4ec1-b4bb-b8879891071d",
-      "name": "Sticky Note1"
+      "id": "9f93dda0-60c9-437b-9955-479910b060f3",
+      "name": "Sticky Note2"
     },
     {
       "parameters": {
@@ -961,7 +2298,7 @@
           "conditions": [
             {
               "id": "f1f5304e-e789-437b-9ac1-1fc050eeb007",
-              "leftValue": "={{ $json['трек'] }}",
+              "leftValue": "={{ $json['трек'].toString() }}",
               "rightValue": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]B|bY|y",
               "operator": {
                 "type": "string",
@@ -970,7 +2307,7 @@
             },
             {
               "id": "87c92809-3571-4ada-b751-9bf96702cbc5",
-              "leftValue": "={{ $json['трек'] }}",
+              "leftValue": "={{ $json['трек'].toString() }}",
               "rightValue": "[A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]",
               "operator": {
                 "type": "string",
@@ -982,13 +2319,1140 @@
         },
         "options": {}
       },
-      "id": "e97ef70c-9991-46d6-8e56-67b2dd970e8c",
-      "name": "Отсеиваем записи без треков1",
+      "id": "46f370ff-14e3-4605-9359-d0d9e5d339cc",
+      "name": "Отсеиваем записи без треков",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1400,
-        -60
+        1620,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3080,
+        1060
+      ],
+      "id": "cd7cfe7d-1a6c-421d-b924-d5cd8a52cb25",
+      "name": "Edit Fields4",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  0, \"Triger2\":  0, \"Triger3\":  0 } ",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "744a6a62-5d70-4b14-b5f9-56d23323d305",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        880
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "4afcf116-9aa9-4e74-93bc-ef841e30e2e7",
+      "name": "Меняем triger0 на 2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        860
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0f491a5e-2d6c-4684-af45-f89ad7bee448",
+      "name": "If9",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "372d56c1-af6a-4b4f-be1f-02590790db9c",
+      "name": "If10",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger2",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "78ac75b0-8a2e-49db-90f9-bf4b608d1356",
+      "name": "Меняем triger0 на 3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        840
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cbb15a24-fe8f-4bba-99a5-8726b31c000f",
+      "name": "If11",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1820,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "19ed20a6-e986-4548-bc9a-cb28154ceb1c",
+      "name": "Достаём тригер2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        1280
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8cd6a5f1-39ff-4afc-a32d-c23456d2dde7",
+      "name": "If12",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1360,
+        1440
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        1340
+      ],
+      "id": "f2dc82e6-498b-44a5-b3e2-2e83d42e3819",
+      "name": "пустые таблицы1"
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger2",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "b04e3fb1-ac5f-4369-91b0-0831a009dc8c",
+      "name": "Достаём тригер3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        1280
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4b723f20-c29d-41cb-be98-89b4dd4bfafd",
+      "name": "If13",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1840,
+        1460
+      ]
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        1040
+      ],
+      "id": "f4ded4f1-5702-40a9-a221-98c078ed6349",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        80,
+        740
+      ],
+      "id": "3b3be56c-347a-4c39-adb1-b732002a559f",
+      "name": "Получаем имеющиеся треки",
+      "alwaysOutputData": false,
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "['трек']",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        0,
+        1600
+      ],
+      "id": "6d1542d0-fc3b-4205-8a3c-cf95e37170ab",
+      "name": "Remove Duplicates"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 621163429,
+          "mode": "list",
+          "cachedResultName": "Все треки (копия)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=621163429"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата добавления",
+              "displayName": "Дата добавления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "штраф",
+              "displayName": "штраф",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "наличие",
+              "displayName": "наличие",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "личный",
+              "displayName": "личный",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "col_9",
+              "displayName": "col_9",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Индекс",
+              "displayName": "Индекс",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        220,
+        1600
+      ],
+      "id": "912ddd4f-c4c1-4e9a-91d7-527e11f9eb9a",
+      "name": "Google Sheets10",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.tracks",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ JSON.stringify($json['трек']) }}",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "c1f1bad9-ee52-4ff7-bf35-27a73d26d2b2",
+      "name": "JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        480,
+        740
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d2338e17-1e46-420c-865b-a3b851e54d0a",
+      "name": "If14",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "21c3cb73-3e9e-46dc-9aaf-8f6f0718cda6",
+              "name": "трек",
+              "value": "={{ $json['трек'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        100,
+        940
+      ],
+      "id": "56ea30eb-b038-41c1-b851-cf336027ff1e",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "трек"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        300,
+        740
+      ],
+      "id": "f69aaf1e-0e06-4eb6-930d-1980bff4b981",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "queryPath": "process.tracks",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "9beb53d8-34a1-4f53-b88e-f3b96a3dbc79",
+      "name": "JsonDatabase3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        860
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2180,
+        700
+      ],
+      "id": "ccd0b30a-a9ec-420d-9727-686c804891dc",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d20d3a77-f5f3-4d9c-a42b-09e28be8b4c0",
+              "name": "трек",
+              "value": "={{ $json['трек'].toString().replace(/[^a-zA-Z0-9]/g, '').toUpperCase().replaceAll('О','0').replaceAll('O','0').replaceAll('Р','P').replaceAll('С','C').replaceAll('В','B') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2620,
+        1060
+      ],
+      "id": "841bbc30-df13-47f2-9282-21c4ff5adabf",
+      "name": "Edit Fields6"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1080
+      ],
+      "id": "8f18b2cf-420e-48fe-9f37-5b92884e6a94",
+      "name": "Датос1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Датос1').item.json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Датос1').item.json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $json.row_number }}",
+            "трек": "={{ $json['трек'] }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "%",
+              "displayName": "%",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "фио покупателя",
+              "displayName": "фио покупателя",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "продажа",
+              "displayName": "продажа",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "таблица",
+              "displayName": "таблица",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "накрут",
+              "displayName": "накрут",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "штраф",
+              "displayName": "штраф",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "наличие",
+              "displayName": "наличие",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ЛИЧНЫЙ",
+              "displayName": "ЛИЧНЫЙ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Росс",
+              "displayName": "Росс",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Индекс",
+              "displayName": "Индекс",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "col_1",
+              "displayName": "col_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2700,
+        860
+      ],
+      "id": "421cac54-dcd8-42c1-905a-57c3bf9719c0",
+      "name": "Корректируем трек в исходной таблице",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "трек": "={{ $json['трек'] }}",
+            "Отметка о доставке": "={{ $json['Отметка о доставке'] }}",
+            "Дата добавления": "={{ $now.format('dd.mm.yy HH-mm-ss') }}",
+            "Дата последнего обновления": "={{ $json['Дата последнего обновления'] }}",
+            "Актуальный статус": "={{ $json['Актуальный статус'] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата добавления",
+              "displayName": "Дата добавления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "useAppend": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2880,
+        1060
+      ],
+      "id": "df68227c-6bee-45e5-bbba-9fb8f236bc84",
+      "name": "Добавляем новые треки в общую таблицу",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "data",
+              "field2": "трек"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2.3,
+      "position": [
+        2180,
+        1000
+      ],
+      "id": "91fca76f-1cc1-43c9-bcb1-09f5835a5fd7",
+      "name": "Ищем новые треки"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.tracks",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "=0",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "63488f95-4457-47b2-857b-201dafadf7dd",
+      "name": "JsonDatabase4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        720,
+        800
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger3",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "36b07b60-1bb8-4d63-be04-3985305cf94d",
+      "name": "Меняем triger0 на 4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        800
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f1be6a6b-0b35-4b7d-9b12-42302fcd23a5",
+      "name": "If15",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2540,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger3",
+        "filePath": "=root/n8n/sborTreck.json"
+      },
+      "id": "7cba098e-38a7-40db-81f2-6828fc8723ad",
+      "name": "Достаём тригер4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        1280
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6d19d57b-fd4a-4397-a676-2da28204affb",
+      "name": "If16",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2380,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6a158a56-0ba8-4ae4-8a14-37e0e8b5ac2b",
+      "name": "If17",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2880,
+        860
       ]
     }
   ],
@@ -999,6 +3463,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-06T12:43:23.000Z",
-  "versionId": "273c1355-85bf-4ae2-a062-e6818d8f35d6"
+  "updatedAt": "2025-02-07T18:41:45.000Z",
+  "versionId": "19e4cc5e-bb71-4bfc-96f3-61998745a4fc"
 }
