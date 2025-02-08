@@ -1051,6 +1051,40 @@
     },
     "Limit1": {
       "main": [
+        []
+      ]
+    },
+    "No Operation, do nothing7": {
+      "main": [
+        [
+          {
+            "node": "Определяем чётная дата ли нет",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Определяем чётная дата ли нет": {
+      "main": [
+        [
+          {
+            "node": "По чётным 1е 350",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "По нечётным последние 350",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "По чётным 1е 350": {
+      "main": [
         [
           {
             "node": "No Operation, do nothing6",
@@ -1060,11 +1094,11 @@
         ]
       ]
     },
-    "No Operation, do nothing7": {
+    "По нечётным последние 350": {
       "main": [
         [
           {
-            "node": "Limit1",
+            "node": "No Operation, do nothing6",
             "type": "main",
             "index": 0
           }
@@ -2278,7 +2312,7 @@
             {
               "value1": "={{ $input.all().length }}",
               "operation": "larger",
-              "value2": 250
+              "value2": 350
             }
           ]
         }
@@ -3450,15 +3484,15 @@
     {
       "parameters": {
         "maxItems": 350,
-        "keep": "={{ $if($today.format('dd').toNumber().isEven(), \"Last Items\", \"First Items\" ) }}\nlastItems"
+        "keep": "={{ $if($today.format('dd').toNumber().isEven(), \"Last Items\", \"First Items\" ) }}"
       },
       "id": "33815f59-b1c5-47d2-a67b-72990f654e65",
       "name": "Limit1",
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -140,
-        1320
+        40,
+        2080
       ],
       "retryOnFail": true,
       "onError": "continueRegularOutput"
@@ -3473,6 +3507,71 @@
       ],
       "id": "a1d76ac0-c14d-4109-88cc-4ba7d09e7075",
       "name": "No Operation, do nothing7"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f5e44951-6f9c-4dc6-9f68-7a4b9cd2edcb",
+              "leftValue": "={{ $now.format('dd').toNumber().isEven() }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -420,
+        1380
+      ],
+      "id": "115bbbbf-c07d-4453-a0a4-1d44c15483ae",
+      "name": "Определяем чётная дата ли нет"
+    },
+    {
+      "parameters": {
+        "maxItems": 350
+      },
+      "id": "d27c14f0-11bd-4bb0-b638-580a683cd943",
+      "name": "По чётным 1е 350",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        1260
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "maxItems": 350,
+        "keep": "lastItems"
+      },
+      "id": "f7d152ab-e785-4968-8dc0-4311deb1c3b0",
+      "name": "По нечётным последние 350",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        1520
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -3502,6 +3601,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-05T14:50:20.000Z",
-  "versionId": "e0b08d57-64bf-45b3-b252-a42343bc7f44"
+  "updatedAt": "2025-02-07T07:35:23.000Z",
+  "versionId": "f35f3ee1-944c-4e1a-b2c1-819db39b02db"
 }
