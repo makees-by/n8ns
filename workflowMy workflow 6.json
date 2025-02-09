@@ -1589,7 +1589,7 @@
     },
     {
       "parameters": {
-        "maxItems": 47,
+        "maxItems": 18,
         "keep": "lastItems"
       },
       "type": "n8n-nodes-base.limit",
@@ -1599,8 +1599,7 @@
         280
       ],
       "id": "1e2498cf-6ae2-4c2d-ade9-e216f84ed042",
-      "name": "Limit1",
-      "disabled": true
+      "name": "Limit1"
     },
     {
       "parameters": {
@@ -1621,17 +1620,25 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls",
+          "value": "1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM",
           "mode": "list",
-          "cachedResultName": "ЗС Алексей",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls/edit?usp=drivesdk"
+          "cachedResultName": "Засотку Анна",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
-          "value": 1600679549,
+          "value": 1932436979,
           "mode": "list",
           "cachedResultName": "Список проверок(main1)",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_84W5K2Y0OQIV3sQ_3-slXomzwg9quNEJX3DCMafrls/edit#gid=1600679549"
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1a49-ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM/edit#gid=1932436979"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Чек-бокс",
+              "lookupValue": "true"
+            }
+          ]
         },
         "options": {}
       },
@@ -3463,6 +3470,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-07T18:41:45.000Z",
-  "versionId": "19e4cc5e-bb71-4bfc-96f3-61998745a4fc"
+  "updatedAt": "2025-02-08T20:30:55.000Z",
+  "versionId": "679c9be2-4100-41eb-ba1f-325fe214aa5c"
 }
