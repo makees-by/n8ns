@@ -1265,7 +1265,8 @@
         -2140,
         1040
       ],
-      "webhookId": "560d538c-bf61-410c-83a6-0c252080a81c"
+      "webhookId": "560d538c-bf61-410c-83a6-0c252080a81c",
+      "disabled": true
     },
     {
       "parameters": {
@@ -3108,8 +3109,7 @@
       "position": [
         -2140,
         1280
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -3193,7 +3193,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "={{ $json.трек }}"
+              "value": "=PC312015685BY"
             }
           ]
         },
@@ -3215,7 +3215,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://n8nby2.makeesn8n.ru/webhook/bp2",
+        "url": "https://n8ns.makeesn8n.ru/webhook/bbp2",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -3629,7 +3629,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-02-07T07:38:04.000Z",
-  "versionId": "7ddd4224-aa1f-4f5b-b340-352a2e1c2180"
+  "triggerCount": 0,
+  "updatedAt": "2025-02-11T10:24:38.000Z",
+  "versionId": "70577839-e536-4368-b933-ab78bcd89171"
 }
