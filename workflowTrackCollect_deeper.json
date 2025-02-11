@@ -752,29 +752,6 @@
         ]
       ]
     },
-    "проверяем есть ли трек1": {
-      "main": [
-        [
-          {
-            "node": "СЗПЦ",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "проверяем есть ли трек",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "СЗПЦ",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Switch": {
       "main": [
         [
@@ -821,7 +798,7 @@
             "index": 0
           },
           {
-            "node": "проверяем есть ли трек1",
+            "node": "проверка на пустую запись",
             "type": "main",
             "index": 0
           }
@@ -902,6 +879,29 @@
         [
           {
             "node": "Заново получаем данные проверяемой страницы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "проверка на пустую запись": {
+      "main": [
+        [
+          {
+            "node": "СЗПЦ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "проверяем есть ли трек",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "СЗПЦ",
             "type": "main",
             "index": 0
           }
@@ -2257,27 +2257,6 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $json.row_number }}",
-              "operation": "isEmpty"
-            }
-          ]
-        }
-      },
-      "id": "a79cc93c-d0ab-4750-9fcb-1271ca399485",
-      "name": "проверяем есть ли трек1",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        2860,
-        420
-      ],
-      "alwaysOutputData": false
-    },
-    {
-      "parameters": {
         "dataType": "string",
         "value1": "={{ $json.трек }}",
         "rules": {
@@ -2385,7 +2364,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.6.7\",\n      \"content-length\": \"176\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"87d4e31c242f\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"ForNat\",\n      \"check_tableID\": \"1VWDxpvvv9VuReicAkVduADKZOn9N8KTeB7ako_PRMNs\",\n      \"check_pageID\": \"668068338\",\n      \"url_become\": \"https://n8n.makees.online/webhook-waiting/421023\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook/deep_TC\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"181\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.19.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"1f3353e3b88e\",\n      \"x-real-ip\": \"172.19.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"zsForHel\",\n      \"check_tableID\": \"10Vubjm_1wRx_LAaDWlYsZkYrJaBZsPF9yetpplv01kQ\",\n      \"check_pageID\": \"692697150\",\n      \"url_become\": \"https://n8n.makeesn8n.online/webhook-waiting/487553\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/deep_TC\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
       },
       "id": "7cfba37c-5dd5-4e49-ae0e-5140be6db40e",
       "name": "Code1",
@@ -2503,6 +2482,27 @@
         260
       ],
       "webhookId": "4267f6ac-16a7-4c28-b2bf-085ddf4c1e57"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.row_number }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "a79cc93c-d0ab-4750-9fcb-1271ca399485",
+      "name": "проверка на пустую запись",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2860,
+        420
+      ],
+      "alwaysOutputData": false
     }
   ],
   "pinData": {},
@@ -2528,6 +2528,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-27T20:26:44.000Z",
-  "versionId": "8e253be2-5d3d-4c44-beff-70adb48bf269"
+  "updatedAt": "2025-02-11T09:39:38.000Z",
+  "versionId": "3db05e8b-1cb7-46e5-8511-260e15f94cd1"
 }
