@@ -722,7 +722,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://n8nby3.makeesn8n.ru/webhook/bp3",
+        "url": "=https://n8n.makeesn8n.ru/webhook/bbp3",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -875,6 +875,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-01-31T21:01:51.000Z",
-  "versionId": "779d1c87-3cd6-42f6-9a82-6163ef6392db"
+  "updatedAt": "2025-02-11T11:29:00.000Z",
+  "versionId": "308cff92-7ece-4ef9-b73e-2ea9e5fe0760"
 }
