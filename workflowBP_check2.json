@@ -492,11 +492,6 @@
         ]
       ]
     },
-    "Limit": {
-      "main": [
-        []
-      ]
-    },
     "Чтение данных всего файла в JsonDatabase2": {
       "main": [
         [
@@ -1265,8 +1260,7 @@
         -2140,
         1040
       ],
-      "webhookId": "560d538c-bf61-410c-83a6-0c252080a81c",
-      "disabled": true
+      "webhookId": "560d538c-bf61-410c-83a6-0c252080a81c"
     },
     {
       "parameters": {
@@ -2335,22 +2329,6 @@
     },
     {
       "parameters": {
-        "maxItems": 350,
-        "keep": "={{ $if($today.format('dd').toNumber().isEven(), \"Last Items\", \"First Items\" ) }}\nlastItems"
-      },
-      "id": "5b600d56-8c2c-4b3b-85d4-352196334798",
-      "name": "Limit",
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        560,
-        1860
-      ],
-      "retryOnFail": true,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
         "queryPath": "Balancer.balance_BP",
         "filePath": "=root/n8n/{{ $('Ввод отрибутов процесс').first().json.processID }}.json "
       },
@@ -2432,30 +2410,6 @@
         540
       ],
       "alwaysOutputData": false
-    },
-    {
-      "parameters": {
-        "url": "={{ $('main JSON').first().json.data.endPoints.Таймер }}",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "timer",
-              "value": "={{ $('Таймер тут').first().json.timer }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "a4da932d-bd97-43fa-a6d0-19f37d958737",
-      "name": "Таймер 65 сек",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
-      "position": [
-        320,
-        360
-      ],
-      "disabled": true
     },
     {
       "parameters": {
@@ -3113,80 +3067,6 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://api.belpost.by/api/v1/tracking",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "authorization",
-              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "=PC305209006BY"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "7eb1124a-25d6-4d59-9013-842f548d4ce8",
-      "name": "Получаем данные по трекам с сайта Белпочты1",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        600,
-        100
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 3000,
-      "continueOnFail": true,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.belpost.by/api/v1/tracking",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "authorization",
-              "value": "=Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM0OTk3NDI4OTE1MjNjYzgxMTM5OTVlMGQwNWRjNDkyZGQ2NTBmM2Y2MTM4ZDA0ZGY4YTY2M2UxYmNlOTM4NTgyMWE4M2Y0NmFmYWYwYjMxIn0.eyJhdWQiOiIyIiwianRpIjoiMzQ5OTc0Mjg5MTUyM2NjODExMzk5NWUwZDA1ZGM0OTJkZDY1MGYzZjYxMzhkMDRkZjhhNjYzZTFiY2U5Mzg1ODIxYTgzZjQ2YWZhZjBiMzEiLCJpYXQiOjE2NzcwOTkyNzgsIm5iZiI6MTY3NzA5OTI3OCwiZXhwIjoxNzA4NjM1Mjc4LCJzdWIiOiIxMjAwNzY3Iiwic2NvcGVzIjpbXX0.JHJc9aEnNpWFzxJ6P-XvJsrgp6yrXe3mI39dsGmTBKD1gGubNJnIsJoUuke0nYP7bUjRYIwDmWYTQgWRJUCZPw42UeHgdQroce4K9QOXIE39r0z3jVgNIvsJCKb36Oy-1ZKwYxiaLBohlPohDrX--BYoq0Il8dl61CIa6BlxFxkqd27IkZ-6YZ45zbpFDexWXpLWhWJZ3-IuUXkz7Es_oa6ujRLBVyWxjwMuzpGZQFom1Kxh2gAimBgUEiXhRBd_Fe-hpNmQ0Gw5h_N-udtXGbGrHxaARriUhPd70pFJ-Ns_4ucbvgfDqo3MP_XzxYct898S2dPZyro0FCTGePy-4i9JKUAB_tjEutfj60N9mKVlTB9642lJ81lJkXNsxOeXunkUSk53pVcHxHwv8v4NneWQ2KlhbTOUzS5exvBb6At1NWuNV_6FRjYlkIv_Aqii76K-sZfKmGMqkuK0Abb8ygh86xIu3O-MiacDQvsaUpbMl_MY2Xm-XMb13phHD6LL2yPuHIWGUp6i9DDgOxAzBFQqrDwqRkcIhwS_aYXqiuvupY7rv5RrP3lzv9FR_WWF57Q3Z2HmP98KA2xRoVLt7m1ARC1Tr7Ucmanm57XFfwdRZUP7L2lW1TsMWcgJPqmD5SCQJlg50_BZopwh0aVO5BzsiBISxFoaGXMPJ96KbLs"
-            }
-          ]
-        },
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "number",
-              "value": "={{ $json.трек }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "c3e30391-fc35-4f88-9887-887177f663bf",
-      "name": "Получаем данные по трекам с сайта Белпочты2",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 3,
-      "position": [
-        860,
-        160
-      ],
-      "retryOnFail": true,
-      "waitBetweenTries": 3000,
-      "continueOnFail": true,
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
         "url": "https://n8n.makeesn8n.online/webhook/balancing",
         "sendBody": true,
         "bodyParameters": {
@@ -3465,8 +3345,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        1140,
-        2000
+        1340,
+        2020
       ],
       "typeVersion": 1,
       "id": "9ac10b06-2e76-4ed5-a6fd-a6e315c0382a",
@@ -3480,8 +3360,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        60,
-        840
+        280,
+        780
       ],
       "typeVersion": 1,
       "id": "2141d38a-82de-4888-b479-8f6409e41fa9",
@@ -3495,8 +3375,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -160,
-        -20
+        40,
+        0
       ],
       "typeVersion": 1,
       "id": "32ae68dc-b7a5-4675-8d60-840c339d794c",
@@ -3514,17 +3394,6 @@
       ],
       "id": "6cdc507e-35b8-4c7b-8a5d-8c34a3824433",
       "name": "Limit1"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        560,
-        2100
-      ],
-      "id": "cf303833-8bc2-4a56-b8b5-4eefa2bf8dd5",
-      "name": "No Operation, do nothing7"
     },
     {
       "parameters": {},
@@ -3629,7 +3498,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-02-11T10:24:38.000Z",
-  "versionId": "70577839-e536-4368-b933-ab78bcd89171"
+  "triggerCount": 1,
+  "updatedAt": "2025-02-12T06:50:00.000Z",
+  "versionId": "ab1caa02-00f1-4f4e-ade0-2d6a786c4949"
 }
