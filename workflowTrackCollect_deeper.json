@@ -2388,7 +2388,7 @@
             },
             {
               "name": "send",
-              "value": "=Процесс trackCollectDiper Проблема с таблицей  {{ $('Статичные данные процесса').item.json['Таблица'].slice(39) }} {{ $('Статичные данные процесса').item.json['Страница'] }}."
+              "value": "=Процесс trackCollectDiper Проблема с таблицей  {{ $('Статичные данные процесса').item.json['Таблица'].slice(39) }} {{ $('Статичные данные процесса').item.json['Страница'] }}. Ссылка на логи https://n8n.makeesn8n.online/workflow/AH0rdp23A5bNlc6a/executions/{{ $execution.id }}"
             }
           ]
         },
@@ -2528,6 +2528,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-11T09:39:38.000Z",
-  "versionId": "3db05e8b-1cb7-46e5-8511-260e15f94cd1"
+  "updatedAt": "2025-02-12T07:19:47.000Z",
+  "versionId": "c42afd62-43a5-44d0-95bd-d540729aa022"
 }
