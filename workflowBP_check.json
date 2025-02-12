@@ -3194,7 +3194,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://n8nby2.makeesn8n.ru/webhook/bp2",
+        "url": "https://n8nby1.makeesn8n.ru/webhook/bbp1",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -3285,7 +3285,7 @@
             {
               "id": "1bf6e772-d0d4-4a30-9256-b248326bbde3",
               "name": "server_name",
-              "value": "n8nBy2",
+              "value": "n8nBy1",
               "type": "string"
             }
           ]
@@ -3313,7 +3313,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "ServerName",
-        "valueToMatchOn": "n8nBy2",
+        "valueToMatchOn": "n8nBy1",
         "valuesToSend": {
           "values": [
             {
@@ -3353,7 +3353,7 @@
           "values": [
             {
               "column": "ServerName",
-              "value": "n8nBy2"
+              "value": "n8nBy1"
             }
           ]
         },
@@ -3419,7 +3419,7 @@
             {
               "id": "1bf6e772-d0d4-4a30-9256-b248326bbde3",
               "name": "server_name",
-              "value": "n8nBy2",
+              "value": "n8nBy1",
               "type": "string"
             }
           ]
@@ -3601,6 +3601,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-07T07:35:23.000Z",
-  "versionId": "f35f3ee1-944c-4e1a-b2c1-819db39b02db"
+  "updatedAt": "2025-02-12T06:48:45.000Z",
+  "versionId": "b2c24a66-ba7a-4fd6-99af-ab67431c1700"
 }
