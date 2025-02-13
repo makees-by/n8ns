@@ -1,0 +1,2609 @@
+{
+  "active": false,
+  "connections": {
+    "Сбор треков из гугл таблиц": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Users2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Users2": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем статус подписки1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем статус подписки1": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем workOn",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем workOn": {
+      "main": [
+        [
+          {
+            "node": "DiL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Tabls2": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ПРОверяем NeedCheck": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Завершена работа всех циклов",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Данные в цикле",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные в цикле": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные для добавления3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger2 на 0",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные для добавления4": {
+      "main": [
+        [
+          {
+            "node": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "пустой",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        []
+      ]
+    },
+    "пустой": {
+      "main": [
+        []
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "пустой1": {
+      "main": [
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        []
+      ]
+    },
+    "проверяем тригер 2к 1це": {
+      "main": [
+        [
+          {
+            "node": "пустой1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "пустой2": {
+      "main": [
+        []
+      ]
+    },
+    "проверяем тригер 2к 1це1": {
+      "main": [
+        [
+          {
+            "node": "пустой2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "пустой3": {
+      "main": [
+        []
+      ]
+    },
+    "проверяем тригер 4к 1це": {
+      "main": [
+        [
+          {
+            "node": "пустой3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Сбор треков из гугл таблиц",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Подготовка перед работай с переменной8": {
+      "main": [
+        [
+          {
+            "node": "достаём тригер 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Собираем request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Сбор треков из гугл таблиц",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger1 на 0": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger2 на 0": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "достаём тригер2": {
+      "main": [
+        [
+          {
+            "node": "проверяем тригер 2к 1це",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "достаём тригер 3": {
+      "main": [
+        [
+          {
+            "node": "проверяем тригер 2к 1це1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "достаём тригер4": {
+      "main": [
+        [
+          {
+            "node": "проверяем тригер 4к 1це",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DiL": {
+      "main": [
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks2": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу traks3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks3": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу traks4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks4": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу traks5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks5": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing2": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Данные в цикле",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию1": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования1": {
+      "main": [
+        []
+      ]
+    },
+    "формируем запрос к логированию3": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования3": {
+      "main": [
+        [
+          {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If7": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Изменяем статус нет в БД на  Не доставлено": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем записи со статусом нет в БД": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger1 на 0",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Изменяем статус нет в БД на  Не доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Завершена работа всех циклов": {
+      "main": [
+        [
+          {
+            "node": "Собираем request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks6": {
+      "main": [
+        [
+          {
+            "node": "Remove Duplicates1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу traks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Добавление записи в таблицу traks7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "ПРОверяем NeedCheck",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу traks1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Добавление записи в таблицу traks7": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Всё хорошо треки можно добавлять",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "формируем запрос к логированию2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Всё хорошо треки можно добавлять": {
+      "main": [
+        [
+          {
+            "node": "Добавление записи в таблицу traks2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-13T09:18:32.256Z",
+  "id": "jglcmeozEjX2pXrR",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Сбор треков из гугл таблиц проще",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3f4c69fc-2f09-431e-89da-368298aeb3cc",
+      "name": "Сбор треков из гугл таблиц",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Users ",
+        "options": {}
+      },
+      "id": "955046bb-b2bf-465c-bccf-e6c9ffb2b834",
+      "name": "Получить все записи из таблицы Users2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1120,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.Status }}",
+              "rightValue": "ok",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "24de4b78-6b68-4607-b364-9c056baf420a",
+      "name": "ПРОверяем статус подписки1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1380,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.WorkOn }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "11fd01be-161b-4a51-9e93-4a0b64da772f",
+      "name": "ПРОверяем workOn",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1380,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cce5cecb-86d0-48d7-8b4a-3fd299766993",
+      "name": "Получить все записи из таблицы Tabls2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        2240,
+        320
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5ea1652c-f08e-4b32-abdc-b376482ed786",
+              "leftValue": "={{ $json.NeedCheck }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "eb8b7549-cff5-47eb-a5d3-2e48ea9c3664",
+      "name": "ПРОверяем NeedCheck",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2840,
+        320
+      ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b47a9a9a-8c40-41b1-a690-c2255e75b65b",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        3120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8c48ff9e-4fce-4900-9986-0c03a1242984",
+              "name": "IdTables",
+              "value": "={{ $json.IdTables }}",
+              "type": "string"
+            },
+            {
+              "id": "13f1e269-6cb5-4c50-b329-939de93422bc",
+              "name": "ID",
+              "value": "={{ $json.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "4fefd33e-02f7-45a2-9b2f-f5c4123b3a0e",
+              "name": "Link",
+              "value": "={{ $json.Link }}",
+              "type": "string"
+            },
+            {
+              "id": "25080ef7-a4a4-4fce-aba6-c55b29097354",
+              "name": "NeedCheck",
+              "value": "={{ $json.NeedCheck }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dfe05fe0-fa19-4f74-a0ca-7c09da65db97",
+      "name": "Данные в цикле",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3540,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "Track",
+              "value": "={{ $json['трек'] }}",
+              "type": "string"
+            },
+            {
+              "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
+              "name": "IdTables",
+              "value": "={{ $('Данные в цикле').item.json.IdTables }}",
+              "type": "string"
+            },
+            {
+              "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
+              "name": "DateLastUpd",
+              "value": "={{ $today.format('yyyy-MM-dd') }}",
+              "type": "string"
+            },
+            {
+              "id": "254da46e-9ba3-478a-8cce-f57701a04171",
+              "name": "History",
+              "value": "Этот трек впервые попал в БД",
+              "type": "string"
+            },
+            {
+              "id": "4b12692a-202d-4235-ae5a-7d2c8865500f",
+              "name": "PP",
+              "value": "={{ $if($json['трек'].endsWith('BY') 'BP', 'EP') }}",
+              "type": "string"
+            },
+            {
+              "id": "2631a270-2360-4005-bace-c640688a37f2",
+              "name": "Status",
+              "value": "Не доставлено",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9bcb9e3b-634e-4f54-9127-4f37a9c069cb",
+      "name": "Данные для добавления3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4080,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "Не доставлено"
+            },
+            {
+              "lookupColumn": "Дата последнего обновления",
+              "lookupValue": "="
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2edfc243-1afe-4a84-a614-264d0f8df1b3",
+      "name": "Google Sheets1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3900,
+        780
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "797f5835-c47a-480d-9409-182e9c6d320f",
+              "name": "Track",
+              "value": "={{ $json['трек'] }}",
+              "type": "string"
+            },
+            {
+              "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
+              "name": "IdTables",
+              "value": "={{ $('Данные в цикле').item.json.IdTables }}",
+              "type": "string"
+            },
+            {
+              "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
+              "name": "DateLastUpd",
+              "value": "={{ $today.format('yyyy-MM-dd') }}",
+              "type": "string"
+            },
+            {
+              "id": "254da46e-9ba3-478a-8cce-f57701a04171",
+              "name": "History",
+              "value": "Этот трек впервые попал в БД",
+              "type": "string"
+            },
+            {
+              "id": "4b12692a-202d-4235-ae5a-7d2c8865500f",
+              "name": "PP",
+              "value": "={{ $if($json['трек'].endsWith('BY') 'BP', 'EP') }}",
+              "type": "string"
+            },
+            {
+              "id": "2631a270-2360-4005-bace-c640688a37f2",
+              "name": "Status",
+              "value": "Не доставлено",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8e6a876f-5b38-4eb7-bcf3-6e62e6e7fbe4",
+      "name": "Данные для добавления4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4200,
+        780
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "efc88238-8481-4475-91de-b84822d1d3a3",
+      "name": "No Operation, do nothing1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2980,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  1, \"Triger2\":  1, \"Triger3\":  1, \"Triger4\":  1 } ",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "e605fd28-b483-4da5-a6f6-755283ae7a05",
+      "name": "JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3140,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "0",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "790f462a-cb0e-4b7b-be11-ffc3c278ad0a",
+      "name": "Меняем triger1 на 0",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3840,
+        -220
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3edcd1ef-bed2-4e1f-b0e1-2303844f4498",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2200,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "0a0bd2eb-5811-47f8-9472-fca17e2b26f0",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3540,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "88dbb496-141d-4835-bd5d-ebb0d4288404",
+      "name": "If3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4300,
+        -60
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "c4aac4e9-9060-4608-a3bb-5b317d44eb47",
+      "name": "пустой",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2400,
+        760
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e329794c-112d-45cc-b214-7e755c2b6b3b",
+      "name": "If4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4140,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "c85532a7-59fe-4fd6-ae10-6645dfcb9225",
+      "name": "пустой1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4080,
+        980
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {},
+      "id": "e3f57fe7-393c-46ba-80cb-d32e62ad433d",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        4300,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger2",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "0",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "5f474410-b4e3-472c-aa02-51ba5bd86c0b",
+      "name": "Меняем triger2 на 0",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3780,
+        560
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger2",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "773a93e4-bac9-4999-bb6c-10c342b49f8e",
+      "name": "достаём тригер2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3380,
+        1000
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e24c07d5-e923-40db-b059-e5e11de79d9a",
+      "name": "проверяем тригер 2к 1це",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3740,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger1",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "f859cb86-6bdd-4c4d-96d6-214dd64fce1e",
+      "name": "Достаём тригер1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        720
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "015da08a-3f83-4f12-98cc-876aeb8fe5eb",
+      "name": "пустой2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4220,
+        1200
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "e8f2cda7-1b1b-4ef1-be71-fdafa6e284d9",
+      "name": "проверяем тригер 2к 1це1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3940,
+        1220
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6630ce51-5405-4d1b-a35f-e776d36a78d5",
+      "name": "пустой3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2220,
+        1180
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger4",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "c8333c39-ca00-46b5-a34c-8e31d475114f",
+      "name": "достаём тригер4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        2360,
+        1920
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger3",
+        "filePath": "=root/n8n/sborTraks.json"
+      },
+      "id": "aa4ffc96-da10-41ee-b047-c80b77fdc623",
+      "name": "достаём тригер 3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3580,
+        1220
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a33c690b-0940-4d0f-8d36-db1435982e4a",
+      "name": "проверяем тригер 4к 1це",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2280,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Сбор треков из гугл таблиц",
+        "height": 135.50798475376394,
+        "width": 545.4322015238225,
+        "color": 5
+      },
+      "id": "9ffdec5a-7d5f-4306-9d0f-0e50893de9ab",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        120,
+        -160
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "40b5dbc4-dd2f-4065-b047-9565b8679bb8",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Посмотреть приведение всех треков к одному виду с удалением пробелов и т.д.",
+        "height": 80
+      },
+      "id": "ac97f12d-41f4-487d-ab34-945d9c89b56a",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Может надо добавить таймер что бы не перегружать гугл акк",
+        "height": 80
+      },
+      "id": "1f554779-c30d-4bed-a240-61cf8aeb6453",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c458ee7-e6a0-4781-898d-2656f2d1e637",
+              "name": "var_name",
+              "value": "sborTraks",
+              "type": "string"
+            },
+            {
+              "id": "b32c4a00-5acb-421a-85d4-d01c4470798a",
+              "name": "operation",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "8a87e6d8-15a5-4199-9daf-106a8e88ba34",
+              "name": "parametr",
+              "value": "process.trigers.Triger3",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1eb06773-fd38-4fe0-921c-44c763dc9600",
+      "name": "Подготовка перед работай с переменной8",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3280,
+        1220
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/proceses_control",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "Error",
+              "value": "={{ $json.Error }}"
+            },
+            {
+              "name": "Ditales",
+              "value": "={{ $json.Ditales }}"
+            },
+            {
+              "name": "From",
+              "value": "={{ $json.From }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "18f1b6d4-dd3f-42b8-a07d-2e9bce17e3da",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4080,
+        -520
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "67797e6a-dcf6-4b16-bc97-a01c11094613",
+              "name": "Error",
+              "value": "no",
+              "type": "string"
+            },
+            {
+              "id": "cf26a33d-0781-4a07-a7df-b756f3703858",
+              "name": "Ditales",
+              "value": "=Тут приколы из этого процесса",
+              "type": "string"
+            },
+            {
+              "id": "85fd636e-edfe-4d59-b17c-1c2d08edfc53",
+              "name": "From",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5e27def-274f-4148-8a4a-286c4944ea67",
+      "name": "Собираем request",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3680,
+        -520
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "path": "938cde9c-49c8-42a6-b685-8bf31fa84fd7",
+        "options": {}
+      },
+      "id": "054443a5-ce40-49b1-81f5-f2aefaef6476",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        720,
+        160
+      ],
+      "webhookId": "938cde9c-49c8-42a6-b685-8bf31fa84fd7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bca70e1a-ae1f-4f8d-b139-5a9509b29cc0",
+              "name": "ID",
+              "value": "={{ $json.ID }}",
+              "type": "string"
+            },
+            {
+              "id": "e4ac46cc-4fd7-4efb-9d98-fc07f4cfe0df",
+              "name": "Traks_lim",
+              "value": "={{ $json.Traks_lim }}",
+              "type": "number"
+            },
+            {
+              "id": "6c9ffbaf-784b-4372-91be-45e15c7a7663",
+              "name": "Traks_now",
+              "value": "={{ $json.Traks_now }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1920,
+        320
+      ],
+      "id": "87c32f42-f4db-48ed-a683-0aef49ca97b6",
+      "name": "DiL"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT IGNORE INTO Traks (Track, IdTables, Status, DateLastUpd, History, PostProvider)\nVALUE ('{{ $json.Track }}', '{{ $json.IdTables }}', '{{ $json.Status }}', '{{ $json.DateLastUpd }}','{{ $json.History }}', '{{ $json.PP }}') ; ",
+        "options": {}
+      },
+      "id": "7cdf307e-a3ac-488d-8c72-c358e82c904d",
+      "name": "Добавление записи в таблицу traks2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        5820,
+        780
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        860
+      ],
+      "id": "f9338527-312f-4578-9290-47acfaa4b5b5",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $('Данные в цикле').item.json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2e85325a-0515-4581-bd17-f8b823b0db66",
+      "name": "Добавление записи в таблицу traks3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4900,
+        1220
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "={{ $json.IdTables }}"
+            },
+            {
+              "column": "Status",
+              "value": "Не доставлено"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a934ab08-771b-42a1-b52f-e6e2958c04f0",
+      "name": "Добавление записи в таблицу traks4",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        5140,
+        1220
+      ],
+      "executeOnce": false,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": {
+          "__rl": true,
+          "value": "Users",
+          "mode": "list",
+          "cachedResultName": "Users"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ID",
+        "valueToMatchOn": "={{ $('Добавление записи в таблицу traks3').item.json.ID }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Traks_now",
+              "value": "={{ $input.all().length }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c665e879-b69a-4073-8e24-ea4761f7171e",
+      "name": "Добавление записи в таблицу traks5",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        5360,
+        1220
+      ],
+      "executeOnce": false,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Обновляем колличество активных треков в БД USER",
+        "height": 400,
+        "width": 740
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4840,
+        1120
+      ],
+      "typeVersion": 1,
+      "id": "247d7c85-ddab-466c-871c-72dc866fe7cb",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "new",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "null",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        980,
+        0
+      ],
+      "id": "8462096a-e7f7-4804-983c-b9eb2dde2ec0",
+      "name": "формируем запрос к логированию",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1160,
+        20
+      ],
+      "id": "e48a8ef4-d882-4daf-9e9e-ac6d08fcde8f",
+      "name": "Запрос в процесс логирования"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : {{ $('Remove Duplicates').all().length }} ноых треков собрано из таблицы {{ $('Данные в цикле').item.json.IdTables }}, при этом акт. кол-во треков для пользователя {{ $('Добавление записи в таблицу traks').item.json.Traks_now }} из {{ $('Добавление записи в таблицу traks').item.json.Traks_lim }}, в БД поступит {{ $json.lim }} трек(ов)",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        6080,
+        440
+      ],
+      "id": "2ece139f-3bbb-4708-a035-d9ea5be333bc",
+      "name": "формируем запрос к логированию1",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        6380,
+        340
+      ],
+      "id": "6dd4ad4a-0bee-4533-b732-8fd00cf098fb",
+      "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Finish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3660,
+        -800
+      ],
+      "id": "2bbfcf21-298e-4e1a-9b18-afb8be94900e",
+      "name": "формируем запрос к логированию3",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3900,
+        -800
+      ],
+      "id": "6438d6f8-f11a-4d44-9e36-5d933e2b8110",
+      "name": "Запрос в процесс логирования3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0a40a6e3-4b6a-492d-8785-7e2d2f2cc2c5",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4140,
+        -780
+      ],
+      "id": "28fce9ca-8098-4288-be04-ea3244388ab8",
+      "name": "If7"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Данные в цикле').item.json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Данные в цикле').item.json.Link }}",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $json.row_number }}",
+            "Отметка о доставке": "Не доставлено",
+            "Актуальный статус": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }}: изменен статус при добавлениее в БД"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "дата",
+              "displayName": "дата",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ФИО и адрес",
+              "displayName": "ФИО и адрес",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Моя цена",
+              "displayName": "Моя цена",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "С доставкой",
+              "displayName": "С доставкой",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "цана",
+              "displayName": "цана",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "НАЛОГ 20%",
+              "displayName": "НАЛОГ 20%",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ИТОГО ЗП 15%",
+              "displayName": "ИТОГО ЗП 15%",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "прим.",
+              "displayName": "прим.",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0abbf36d-bbf3-4e72-971f-95ba482eed74",
+      "name": "Изменяем статус нет в БД на  Не доставлено",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3980,
+        40
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Отметка о доставке",
+              "lookupValue": "нет в БД"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ba2d4722-b58b-4728-93b2-2b7d0d5bab89",
+      "name": "Получаем записи со статусом нет в БД",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3760,
+        300
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Список всех связанных процессов\n\nКонтролирующий процесс: https://n8n.makeesn8n.online/workflow/bMvuHeBYvdHDiEIe\nПроверка оплаты: https://n8n.makeesn8n.online/workflow/aumuEuypCPDeduJl\nВыставление статусов из БД в гугл таблицы: https://n8n.makeesn8n.online/workflow/h5YM9whrOFCP3UOu\nСбор треков из гугл таблиц: https://n8n.makeesn8n.online/workflow/cFIhZIUCa83nOqy2\nСбор треков из БД: https://n8n.makeesn8n.online/workflow/5OMCiCkLN9V8Gpmw\nПроверка треков БП из БД: https://n8n.makeesn8n.online/workflow/YmijBbofjG27z5Tx\nПроверка треков ЕП из БД: https://n8n.makeesn8n.online/workflow/UC7sB9OYqdYSVdln\n\n## Дополнительные процессы:\nДобавление треков на  проверку в сервера (сбор треков из БД): https://n8n.makeesn8n.online/workflow/4BkOIQhV62y7mbvD\nЛог в БД: https://n8n.makeesn8n.online/workflow/lOtPJcL6AitkSaoP\nРабота с переменными: https://n8n.makeesn8n.online/workflow/KLOTYwG7rXVfZCKr\n\n## Служебные процессы:\nРабота с БД: https://n8n.makeesn8n.online/workflow/BN33z2RD9BacyBSt\nФормы для БД: https://n8n.makeesn8n.online/workflow/bUJavMgjLppjbo49\n",
+        "height": 700,
+        "width": 500
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -120,
+        120
+      ],
+      "typeVersion": 1,
+      "id": "94533cbf-3f61-42b3-a414-0b0570900fcd",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3500,
+        -160
+      ],
+      "id": "25aded2c-2c44-48c4-88c9-42242eb6d15c",
+      "name": "Завершена работа всех циклов"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "5f6ae330-5593-47b6-9bfe-a82fa24075fd",
+      "name": "Добавление записи в таблицу traks6",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        1600,
+        1060
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "compare": "selectedFields",
+        "fieldsToCompare": "Track",
+        "options": {
+          "disableDotNotation": false
+        }
+      },
+      "type": "n8n-nodes-base.removeDuplicates",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        1060
+      ],
+      "id": "17bd2f7a-edac-48d9-894c-e847c4655c6e",
+      "name": "Remove Duplicates1"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Tabls",
+          "mode": "list",
+          "cachedResultName": "Tabls"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $('Данные в цикле').item.json.ID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4744a2df-bffb-4c5a-a77f-cd58677cd2d4",
+      "name": "Добавление записи в таблицу traks",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4880,
+        480
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4940,
+        780
+      ],
+      "id": "9a2d9ca0-94b4-49b9-aea0-322115ae50eb",
+      "name": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ"
+    },
+    {
+      "parameters": {
+        "maxItems": 3,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        2540,
+        320
+      ],
+      "id": "a0212a6e-759a-45ea-b70f-453533b36c0d",
+      "name": "Limit",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "IdTables",
+              "value": "={{ $json.IdTables }}"
+            },
+            {
+              "column": "Status",
+              "value": "Не доставлено"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9fac9969-b322-4e12-b74e-fe2cf391bc96",
+      "name": "Добавление записи в таблицу traks1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        5120,
+        480
+      ],
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "16e640f8-785c-486d-a4d4-7608637f2323",
+              "leftValue": "={{ $input.all().length }}",
+              "rightValue": "={{ $json.Traks_lim }}",
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5380,
+        520
+      ],
+      "id": "58f6bf62-b28b-4a86-bcbc-5879c500a53c",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Users",
+          "mode": "list",
+          "cachedResultName": "Users"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "ID",
+              "value": "={{ $('Данные в цикле').item.json.ID }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "Traks_lim"
+          ]
+        }
+      },
+      "id": "bfd34bcb-e5b6-49ba-8444-f6d16c94fb1f",
+      "name": "Добавление записи в таблицу traks7",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4840,
+        280
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        5140,
+        300
+      ],
+      "id": "8c1cf997-c4ef-4dbd-bd85-4e5cf10e1da0",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5400,
+        760
+      ],
+      "id": "efa9cb06-d3cf-4bb5-998b-ed59f76d4f23",
+      "name": "Всё хорошо треки можно добавлять"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "Take_traks_from_google_sheets",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : для пользователя {{ $('Данные в цикле').first().json.ID }} достигнут лимит {{ $json.Traks_lim }} треков на проверку. Новые треки добавлены не будут.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5660,
+        240
+      ],
+      "id": "688c7c85-0144-4815-aa06-97ec8a0c621c",
+      "name": "формируем запрос к логированию2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        5960,
+        140
+      ],
+      "id": "0b790ba1-bf25-4a07-94a7-69c0a6b6501e",
+      "name": "Запрос в процесс логирования2"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-02-05T16:24:37.889Z",
+      "updatedAt": "2025-02-05T16:24:37.889Z",
+      "id": "vsUr1hQQVG3ZP6Nk",
+      "name": "BDCheck"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-02-13T10:37:15.000Z",
+  "versionId": "ff3e9251-92b8-48b5-ab97-330ec9175009"
+}
