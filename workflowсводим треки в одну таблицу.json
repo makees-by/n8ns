@@ -383,12 +383,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets9",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Google Sheets",
+            "node": "Google Sheets10",
             "type": "main",
             "index": 0
           }
@@ -411,6 +406,84 @@
         [
           {
             "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets10": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets11": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        []
+      ]
+    },
+    "Google Sheets15": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
             "type": "main",
             "index": 0
           }
@@ -703,8 +776,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -340,
-        520
+        -800,
+        680
       ],
       "id": "ffd20457-edde-4165-9817-a539a9578ded",
       "name": "When clicking ‘Test workflow’"
@@ -1862,6 +1935,318 @@
       ],
       "id": "2cbb6619-ea55-44cc-b9e5-5eb3860a84cd",
       "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -960,
+        240
+      ],
+      "id": "c73998f0-29a1-480b-8275-4f319aac947e",
+      "name": "Google Sheets10",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "={{ $json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -300,
+        260
+      ],
+      "id": "8f8962ce-208e-4330-b1e5-78cea719a047",
+      "name": "Google Sheets11",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "maxItems": 3601,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        240
+      ],
+      "id": "a7e26130-ec6d-49af-ac68-6ebad598b0ad",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "трек": "={{ $json['трек'] }}",
+            "Отметка о доставке": "={{ $json['Отметка о доставке'] }}"
+          },
+          "matchingColumns": [
+            "трек"
+          ],
+          "schema": [
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата добавления",
+              "displayName": "Дата добавления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url таблицы из которой трек",
+              "displayName": "url таблицы из которой трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "штраф",
+              "displayName": "штраф",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "наличие",
+              "displayName": "наличие",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "личный",
+              "displayName": "личный",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "col_9",
+              "displayName": "col_9",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Индекс",
+              "displayName": "Индекс",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -80,
+        260
+      ],
+      "id": "63ac6ad0-0b4b-461e-8d82-1b65eef364e3",
+      "name": "Google Sheets15",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -520,
+        240
+      ],
+      "id": "a5ef5d54-1c76-4743-b54a-ddb90c8a07fa",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        -20
+      ],
+      "id": "e16af4bf-0f26-4f09-b8a6-ac73caf0fa64"
+    },
+    {
+      "parameters": {
+        "amount": 4
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -120,
+        500
+      ],
+      "id": "2ac12521-36c1-4eb2-8f8e-400cc3089395",
+      "name": "Wait1",
+      "webhookId": "6c877796-9885-4bc3-b8f8-be5a0fc1ae75"
     }
   ],
   "pinData": {},
@@ -1871,6 +2256,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-12T13:15:20.000Z",
-  "versionId": "5b6c9861-c2e1-487e-8dd3-40ad729b44c5"
+  "updatedAt": "2025-02-13T13:11:48.000Z",
+  "versionId": "2d8640da-8a7e-41a0-b768-018ec5790679"
 }
