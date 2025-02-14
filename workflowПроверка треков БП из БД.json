@@ -1450,6 +1450,21 @@
       "typeVersion": 1,
       "id": "154eee8f-e323-4e36-ab4f-8a16d10a09e1",
       "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Проверка треков БП из БД 1",
+        "height": 80,
+        "width": 540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        700,
+        -540
+      ],
+      "typeVersion": 1,
+      "id": "ada7bdba-d804-448a-bb71-994b87dda072",
+      "name": "Sticky Note1"
     }
   ],
   "pinData": {},
@@ -1466,6 +1481,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-05T16:26:41.000Z",
-  "versionId": "285a5fbb-deda-4aab-bc22-0db9925f358d"
+  "updatedAt": "2025-02-14T12:41:33.000Z",
+  "versionId": "4a8bff30-896c-4797-8fb3-19ae36dc16e3"
 }
