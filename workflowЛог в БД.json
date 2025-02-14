@@ -180,6 +180,33 @@
           }
         ]
       ]
+    },
+    "new1": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-11-15T13:04:14.102Z",
@@ -234,15 +261,16 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        240,
-        -220
+        460,
+        -440
       ],
       "id": "b02d70ef-5b95-487f-b0e6-251a1ba75dc3",
       "name": "Switch"
     },
     {
       "parameters": {
-        "path": "16e72813-df27-48b5-919d-3598ef546671",
+        "httpMethod": "POST",
+        "path": "logBD",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
@@ -807,6 +835,55 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"74\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"46.243.183.159\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"eca78b643184\",\n      \"x-real-ip\": \"46.243.183.159\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"opr\": \"add\",\n      \"poc_name\": \"check_trackBP\",\n      \"message\": \"БП2 Start: 15-16-05\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/logBD\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+      },
+      "id": "b29e400f-52f0-41ea-a504-5d4080547323",
+      "name": "new1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        20,
+        -340
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "78e50d87-5cf9-46d1-9ddc-53aa61595b6c",
+              "name": "opr",
+              "value": "={{ $json.body.opr }}",
+              "type": "string"
+            },
+            {
+              "id": "4baf8d1d-aa66-47f2-8f4c-a84036b74e9b",
+              "name": "poc_name",
+              "value": "={{ $json.body.poc_name }}",
+              "type": "string"
+            },
+            {
+              "id": "3312073f-9291-4c59-9d1e-f5f4227d7afa",
+              "name": "message",
+              "value": "={{ $json.body.message }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        -220
+      ],
+      "id": "7194560e-7183-4afe-9282-b07c0f208134",
+      "name": "Edit Fields1"
     }
   ],
   "pinData": {},
@@ -816,6 +893,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-12-30T13:59:22.000Z",
-  "versionId": "35a2af9d-1dac-4897-85e7-e2ac9d426144"
+  "updatedAt": "2025-02-14T12:32:07.000Z",
+  "versionId": "1d0645eb-0c08-4e94-8bb7-5a624715a6d2"
 }
