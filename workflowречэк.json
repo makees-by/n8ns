@@ -1,0 +1,490 @@
+{
+  "active": false,
+  "connections": {
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "HTML2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "data_in_cicle": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные по трекам с сайта Белпочты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Входящие данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML1": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Входящие данные": {
+      "main": [
+        [
+          {
+            "node": "data_in_cicle",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные по трекам с сайта Белпочты": {
+      "main": [
+        [
+          {
+            "node": "HTML1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-14T09:11:47.341Z",
+  "id": "wef8JPIUQjC9zR86",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "речэк",
+  "nodes": [
+    {
+      "parameters": {
+        "fieldToSplitOut": "ivents",
+        "options": {}
+      },
+      "id": "f2a21d00-7f2f-4476-8ba2-c593a0441a17",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2.1,
+      "position": [
+        1580,
+        1780
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "number": [
+            {
+              "name": "treck",
+              "value": "={{ $json.трек }}"
+            }
+          ]
+        },
+        "options": {
+          "dotNotation": false
+        }
+      },
+      "id": "a5c07ed0-d1ea-4700-8925-563ce6830e4b",
+      "name": "data_in_cicle",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        960,
+        1580
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "id": "e5d0ee4c-1299-4c67-9d41-fdc59dbfffaf",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "ivents",
+              "cssSelector": ".tracking-widget__list",
+              "returnValue": "html",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "668ff68c-f130-4c3f-9ec7-9ecd18964d79",
+      "name": "HTML1",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        1560
+      ],
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"трек\": \"BY080042344840\"\n  }\n]\n);"
+      },
+      "id": "8cf46519-5ec0-4a24-a6b6-c5ff7893f6f7",
+      "name": "Входящие данные",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1580
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "dataPropertyName": "ivents",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "subject",
+              "cssSelector": ".tracking-widget__list-box",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a5b02770-1b5b-4668-ada9-b57ae2ff8159",
+      "name": "HTML2",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        1660
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "url": "https://track.global/ru/ajax-track",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "track",
+              "value": "={{ $json.treck }}"
+            },
+            {
+              "name": "client_id",
+              "value": "0"
+            },
+            {
+              "name": "not_frame",
+              "value": "true"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authority",
+              "value": "track.global"
+            },
+            {
+              "name": "accept",
+              "value": "*/*"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "cookie",
+              "value": "tracks=%5B%22BY080028428116%22%2C%22PC154421327BY%22%2C%22BV332984352BY%22%2C%22PC154411965BY%22%2C%22BY080028659934%22%2C%22BY080029760778%22%2C%22BY080027481631%22%2C%22BY080030642656%22%2C%22PC164513677BY%22%5D; _csrf-frontend=6eaa32de65eb41ea1be345eb63366880144dc80a9dd5c27da0a8d12271a94e31a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22YJLRs6_V2U4hTgAnEZr3E5s295xYwOxU%22%3B%7D; _ym_uid=1694546323544847004; _ym_d=1694546323; advanced-frontend=0p51np5o2j2vhegkq0ijeg0ij9; tracks=%5B%22BY080028428116%22%2C%22PC154421327BY%22%2C%22BV332984352BY%22%2C%22PC154411965BY%22%2C%22BY080028659934%22%2C%22BY080029760778%22%5D; _language=3fde6720ef4098bda6248d39cd80da12475548c9c47d003f754e9fd059bb6117a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22ru%22%3B%7D; timezoneOffset=3; _ym_isad=2"
+            },
+            {
+              "name": "referer",
+              "value": "https://track.global/tracking/PC164513677BY"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-origin"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+            },
+            {
+              "name": "x-requested-with",
+              "value": "XMLHttpRequest"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1baefda4-af66-4c8f-ad38-3ad5ff019867",
+      "name": "Получаем данные по трекам с сайта Белпочты",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1260,
+        1580
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        2060
+      ],
+      "id": "30cf2ef7-4811-40fa-b420-80966e1c58f4",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3fe3230a-7632-4837-9e98-60d3d3778c12",
+              "name": "err_status",
+              "value": "=Ошибка  -  {{ $json.subject[0].toTitleCase().replaceAll(\"  \",\"\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3000,
+        2040
+      ],
+      "id": "36b7a9d9-b10e-4260-9e40-8cfecf8bba4b",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "29d5cf6f-588f-4494-b0a4-70b68e9103e7",
+              "leftValue": "={{ $json.subject[0] }}",
+              "rightValue": "Нет информации для данного отправления",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2160,
+        1560
+      ],
+      "id": "5b93b742-7b62-41de-8c6e-49aebedcc35c",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c4537afc-1288-4793-90e5-dc1192e4b985",
+              "name": "number",
+              "value": "={{ $('data_in_cicle').item.json.treck }}",
+              "type": "string"
+            },
+            {
+              "id": "694bfdba-5419-46ac-af61-233d9dee5316",
+              "name": "last_event",
+              "value": "={{ $json.subject[0].toTitleCase().replaceAll('  ', '') }}",
+              "type": "string"
+            },
+            {
+              "id": "5a20f685-f36c-46c2-b690-f5ff0a9d49fc",
+              "name": "steps",
+              "value": "={{ $json.subject }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "75e289ec-3f38-4be7-ad35-886ae6b546e6",
+      "name": "Edit Fields5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2780,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Речэк - https://n8n.makeesn8n.online/workflow/wef8JPIUQjC9zR86\nСводим треки в одну таблицу - https://n8n.makeesn8n.online/workflow/jRcCg8hrLQbQdEfE\n",
+        "width": 440
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        1260
+      ],
+      "typeVersion": 1,
+      "id": "546a0a59-5550-4c46-9ea4-3f200a57b3f1",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-12-29T05:49:12.607Z",
+      "updatedAt": "2023-12-29T05:49:12.607Z",
+      "id": "2F2JpICiTQCMNk1Q",
+      "name": "treck_check"
+    },
+    {
+      "createdAt": "2023-12-29T05:48:03.050Z",
+      "updatedAt": "2023-12-29T05:48:03.050Z",
+      "id": "AgzDK5Bx0yz5Db7h",
+      "name": "json"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-02-14T12:44:10.000Z",
+  "versionId": "5cece0d5-7133-471b-9e60-2ff91afa3219"
+}
