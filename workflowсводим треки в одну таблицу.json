@@ -557,7 +557,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets19",
+            "node": "Limit2",
             "type": "main",
             "index": 0
           }
@@ -569,6 +569,17 @@
         [
           {
             "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets19",
             "type": "main",
             "index": 0
           }
@@ -2544,8 +2555,8 @@
         "filtersUI": {
           "values": [
             {
-              "lookupColumn": "Отметка о доставке",
-              "lookupValue": "Не доставлено"
+              "lookupColumn": "трек",
+              "lookupValue": "={{ regexp(^(?!\\s*$).+) }}"
             }
           ]
         },
@@ -2554,7 +2565,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -540,
+        -440,
         1240
       ],
       "id": "b99f9806-295a-47eb-928c-b7480913bed4",
@@ -2615,11 +2626,24 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -280,
+        -60,
         1240
       ],
       "id": "060d5737-cb7b-4bd8-aeb7-81e952dde40c",
       "name": "If1"
+    },
+    {
+      "parameters": {
+        "maxItems": 10
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        1240
+      ],
+      "id": "c5449109-495c-4e27-94bf-4128ceb6f6d2",
+      "name": "Limit2"
     }
   ],
   "pinData": {},
@@ -2629,6 +2653,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-14T13:02:52.000Z",
-  "versionId": "8af944c1-71ff-4001-a599-0ae7cd93bf40"
+  "updatedAt": "2025-02-14T15:09:40.000Z",
+  "versionId": "ed6b4ed5-9729-44c3-b961-b7acb04dfdd1"
 }
