@@ -386,6 +386,11 @@
             "node": "Google Sheets18",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Google Sheets20",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -580,6 +585,28 @@
         [
           {
             "node": "Google Sheets19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets20": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets1",
             "type": "main",
             "index": 0
           }
@@ -1030,11 +1057,11 @@
       "parameters": {
         "content": "# Исправляем треки и ставим в поле актуальный статус 1\n\n",
         "height": 1120,
-        "width": 3520
+        "width": 3380
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        180,
+        320,
         700
       ],
       "typeVersion": 1,
@@ -2480,8 +2507,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        -400,
-        840
+        -240,
+        1000
       ],
       "id": "7f3ee838-1bc3-44f4-9f4e-0b3df36be352",
       "name": "Compare Datasets"
@@ -2552,20 +2579,12 @@
           "value": "={{ $json['Ссылка полностью'] }}",
           "mode": "url"
         },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "трек",
-              "lookupValue": "={{ regexp(^(?!\\s*$).+) }}"
-            }
-          ]
-        },
         "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -440,
+        -460,
         1240
       ],
       "id": "b99f9806-295a-47eb-928c-b7480913bed4",
@@ -2592,8 +2611,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        -520,
-        1480
+        -240,
+        1500
       ],
       "id": "967e8785-229d-4491-8aa0-776e3e1bcad8",
       "name": "Compare Datasets1"
@@ -2626,7 +2645,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -60,
+        -220,
         1240
       ],
       "id": "060d5737-cb7b-4bd8-aeb7-81e952dde40c",
@@ -2644,6 +2663,41 @@
       ],
       "id": "c5449109-495c-4e27-94bf-4128ceb6f6d2",
       "name": "Limit2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
+          "mode": "list",
+          "cachedResultName": "За сотку Вика",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -720,
+        1540
+      ],
+      "id": "21dab2da-74ac-4d8f-a489-ed61302cd193",
+      "name": "Google Sheets20",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -2653,6 +2707,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-14T15:09:40.000Z",
-  "versionId": "ed6b4ed5-9729-44c3-b961-b7acb04dfdd1"
+  "updatedAt": "2025-02-15T19:43:36.000Z",
+  "versionId": "b3b7dfd7-fd49-465c-be6d-7f527617aa3f"
 }
