@@ -1,0 +1,569 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "входные данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "входные данные": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные по трекам с сайта Белпочты1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "входные данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Вставка новых значений",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Получаем данные по трекам с сайта Белпочты1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Вставка новых значений": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные по трекам с сайта Белпочты2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные по трекам с сайта Белпочты2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Вставка новых значений2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-17T14:00:06.440Z",
+  "id": "gROCULjS77Hly86n",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "bbp4",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1720,
+        760
+      ],
+      "id": "edb4607d-e9b6-4f88-a912-8d1ac9ca5e1f",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "bbp4",
+        "responseMode": "lastNode",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1840,
+        500
+      ],
+      "id": "8dbfa8d5-2935-43c2-80c1-0c7e8d02896b",
+      "name": "Webhook",
+      "webhookId": "8ef36a00-ec53-462a-8a2b-99cb1fdf2155"
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8nby1.makeesn8n.ru\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"39\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"94.241.170.202\",\n      \"x-forwarded-host\": \"n8nby1.makeesn8n.ru\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"adc0ad365f09\",\n      \"x-real-ip\": \"94.241.170.202\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"number\": \"PC312009844BY\",\n      \"bp3\": \"true\"\n    },\n    \"webhookUrl\": \"https://n8nby1.makeesn8n.ru/webhook/bbp1\",\n    \"executionMode\": \"production\"\n  }\n]\n  );"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1440,
+        780
+      ],
+      "id": "73e3486a-3a6b-4a69-9aac-9294f31a68b7",
+      "name": "Code",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "439643b6-1771-40cd-858b-df98c82a5a99",
+              "name": "eror",
+              "value": "ошибка",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -500,
+        1040
+      ],
+      "id": "ecf6d1f1-47b4-4742-aaca-a323d72a99d1",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1280,
+        500
+      ],
+      "id": "449097fb-c82c-413c-ba14-33be5c59007a",
+      "name": "входные данные"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "hl",
+              "value": "ru"
+            },
+            {
+              "name": "origin",
+              "value": "https://belpost.by"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://belpost.by/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.body.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2561ee2a-1295-4c5f-9d24-955b54098706",
+      "name": "Получаем данные по трекам с сайта Белпочты1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -340,
+        520
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8nby1.makeesn8n.ru\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"26\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"94.241.170.202\",\n      \"x-forwarded-host\": \"n8nby1.makeesn8n.ru\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"adc0ad365f09\",\n      \"x-real-ip\": \"94.241.170.202\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"number\": \"PC312016227BY\"\n    },\n    \"webhookUrl\": \"https://n8nby1.makeesn8n.ru/webhook-test/bp1\",\n    \"executionMode\": \"test\"\n  }\n]\n  );"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1160,
+        720
+      ],
+      "id": "5717ed6e-dbb5-4a3c-af97-481fde86ccfc",
+      "name": "Code1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        500
+      ],
+      "id": "7e832425-bce2-47ad-9f44-11fd900bb0a8",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3345bda4-36cd-4c98-84c8-117bd634bcf0",
+              "leftValue": "={{ $json.body.bp3 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1060,
+        500
+      ],
+      "id": "9e94e2fd-d472-4e3f-a069-f46d54779879",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "n8nBy4",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "occupy_proc",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1040,
+        240
+      ],
+      "id": "0a012e29-0ecf-4deb-8bc4-0ea16848ada1",
+      "name": "Вставка новых значений",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{22+Math.random()*10 }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -560,
+        240
+      ],
+      "id": "c420f60f-cd4d-43b6-88f9-02236dcb2a31",
+      "name": "Wait1",
+      "webhookId": "1e9bfe4b-5c3d-4cd6-a510-182b7050af6e"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "hl",
+              "value": "ru"
+            },
+            {
+              "name": "origin",
+              "value": "https://belpost.by"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://belpost.by/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $('входные данные').first().json.body.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cf6f532d-5fed-40fb-9fa5-30bea97aa639",
+      "name": "Получаем данные по трекам с сайта Белпочты2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -180,
+        240
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        220
+      ],
+      "id": "08c54bec-6f03-4132-b463-d183fb5618f0",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "BpServers",
+          "mode": "list",
+          "cachedResultName": "BpServers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "ServerName",
+        "valueToMatchOn": "n8nBy4",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "occupy_proc",
+              "value": "0"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "22333ff7-faff-40e2-88ce-c65c4e9399fe",
+      "name": "Вставка новых значений2",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-02-17T14:01:49.000Z",
+  "versionId": "7087d7a6-d7e2-4aa6-b9b7-4a28ca2118dd"
+}
