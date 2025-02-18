@@ -437,8 +437,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        620,
-        260
+        600,
+        300
       ],
       "id": "3948efcc-c9e8-4dfa-80d7-08adb9033015",
       "name": "If"
@@ -450,8 +450,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        60,
-        260
+        220,
+        340
       ],
       "id": "1a2a1480-ecc8-4002-ba17-851248f2bc1e",
       "name": "Wait",
@@ -581,8 +581,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        360,
-        260
+        580,
+        80
       ],
       "id": "ee36bee3-f094-4582-a815-8b382e4ba7ea",
       "name": "MySQL1",
@@ -690,8 +690,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        820,
-        240
+        840,
+        360
       ],
       "id": "ada2dee5-046d-4064-bcdc-0c87c4337726",
       "name": "If3"
@@ -775,7 +775,7 @@
       "typeVersion": 2.4,
       "position": [
         -300,
-        100
+        120
       ],
       "id": "2336259f-e4f6-47b5-a65b-933c2dddef65",
       "name": "MySQL2",
@@ -815,7 +815,7 @@
       "typeVersion": 2.2,
       "position": [
         -40,
-        100
+        120
       ],
       "id": "215ed66f-9d71-46f6-8b97-7287aa0892f5",
       "name": "If4"
@@ -847,8 +847,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        360,
-        80
+        220,
+        100
       ],
       "id": "8a2f6f35-6991-4d5f-91cf-848ec65fc466",
       "name": "If5"
@@ -858,8 +858,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        360,
-        -420
+        -40,
+        -460
       ],
       "id": "67f07f60-e9cc-4886-8881-49ceb355bd68",
       "name": "Нет свободных серверовсерверов"
@@ -875,6 +875,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-11T11:29:00.000Z",
-  "versionId": "308cff92-7ece-4ef9-b73e-2ea9e5fe0760"
+  "updatedAt": "2025-02-17T19:59:08.000Z",
+  "versionId": "53a80122-d243-4f48-a5a3-5386f0aea860"
 }
