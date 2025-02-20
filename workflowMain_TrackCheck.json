@@ -961,7 +961,7 @@
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
         "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsTest\",\n          \"start_tableID\": \"1E2_AUgkcpy0BrVZotmTyCH2Uy8ShDSkNZCpCddFwL-A\",\n          \"start_pageID\": 690413794,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n     \"Balancer\": {\n        \"balance_BP\":\"Off\"\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
-        "filePath": "=root/n8n/{{ $json.query.procID }}.json"
+        "filePath": "=root/n8n/ZsTest.json"
       },
       "id": "0b941aa2-524c-4648-a8a2-0f2621e0c086",
       "name": "ZsTest json для записи1",
@@ -1579,6 +1579,6 @@
     }
   ],
   "triggerCount": 9,
-  "updatedAt": "2025-02-10T19:35:45.000Z",
-  "versionId": "29f18459-4f4f-46c5-ad2b-68000b8279a4"
+  "updatedAt": "2025-02-19T18:54:30.000Z",
+  "versionId": "7cd9c6a9-64ee-417f-8a0e-33930caffee3"
 }
