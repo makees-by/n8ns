@@ -1223,9 +1223,14 @@
             {
               "value1": "={{ $json.трек }}",
               "operation": "isNotEmpty"
+            },
+            {
+              "value1": "={{ $json.Трек }}",
+              "operation": "isNotEmpty"
             }
           ]
-        }
+        },
+        "combineOperation": "any"
       },
       "id": "c3a533d4-70ba-4020-be0e-6cd0ef2c065c",
       "name": "проверяем есть ли трек",
@@ -2528,6 +2533,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-12T07:19:47.000Z",
-  "versionId": "c42afd62-43a5-44d0-95bd-d540729aa022"
+  "updatedAt": "2025-02-19T19:41:09.000Z",
+  "versionId": "c95298ab-c8e0-41e2-8c88-f4f3fe0a5b8f"
 }
