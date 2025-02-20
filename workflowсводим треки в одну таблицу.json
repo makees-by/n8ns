@@ -3244,13 +3244,17 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?gid=75948859#gid=75948859",
-          "mode": "url"
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
         },
         "sheetName": {
           "__rl": true,
-          "value": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?gid=75948859#gid=75948859",
-          "mode": "url"
+          "value": 75948859,
+          "mode": "list",
+          "cachedResultName": "Список проверок(main1)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=75948859"
         },
         "filtersUI": {
           "values": [
@@ -3692,7 +3696,7 @@
         "mergeByFields": {
           "values": [
             {
-              "field1": "Трек",
+              "field1": "трек",
               "field2": "Трек"
             }
           ]
@@ -3854,6 +3858,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-18T12:59:57.000Z",
-  "versionId": "bdc1e3a9-2eb2-4558-8a55-1c7a31359dde"
+  "updatedAt": "2025-02-19T19:50:14.000Z",
+  "versionId": "25047650-b604-4f56-a7ed-1a6b28f95280"
 }
