@@ -1,0 +1,1183 @@
+{
+  "active": false,
+  "connections": {
+    "Google Sheets21": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets23": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets24": {
+      "main": [
+        [
+          {
+            "node": "If4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If4": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets25": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Датос1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets21",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Sheets24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets26": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Объединяем треки из обоих диапазонов",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Объединяем треки из обоих диапазонов",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "Выбираем только уникальные треки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [
+          {
+            "node": "Replace Me2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Меняем triger0 на 3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Датос1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing2": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "If27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If27": {
+      "main": [
+        [
+          {
+            "node": "Датос1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер1": {
+      "main": [
+        [
+          {
+            "node": "If31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If31": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 1": {
+      "main": [
+        [
+          {
+            "node": "If32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If32": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем треки из обоих диапазонов": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выбираем только уникальные треки": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets26",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на 1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Меняем triger0 на 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 2": {
+      "main": [
+        [
+          {
+            "node": "If33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If33": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 3": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Выбираем только уникальные треки",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-20T19:28:33.911Z",
+  "id": "zn5JTyUll3Jg1DhU",
+  "meta": null,
+  "name": "Сбор треков в одну таблицу",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRangeA1",
+              "range": "A:J"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        580,
+        140
+      ],
+      "id": "953fa825-5793-48ac-b8d5-fb527d9c286e",
+      "name": "Google Sheets21",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 538648616,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=538648616"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -800,
+        -40
+      ],
+      "id": "34a98924-f30e-47df-8c57-468d57664681",
+      "name": "Google Sheets23",
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRangeA1",
+              "range": "Q:U"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        580,
+        320
+      ],
+      "id": "379ba688-5ee4-49cc-8c1f-a8d7b2670cea",
+      "name": "Google Sheets24",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8708f01f-5367-46cd-a89c-12a0d374e503",
+              "leftValue": "={{ $json['Трек'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        140
+      ],
+      "id": "fc4834f7-d94c-464f-826c-21383199e0bb",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8708f01f-5367-46cd-a89c-12a0d374e503",
+              "leftValue": "={{ $json['Трек'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        320
+      ],
+      "id": "4190565d-d3b6-4b42-85c3-adc13e447d93",
+      "name": "If4"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 75948859,
+          "mode": "list",
+          "cachedResultName": "Список проверок(main1)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=75948859"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Чек-бокс",
+              "lookupValue": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -840,
+        240
+      ],
+      "id": "512e0733-2f32-4dcd-96d6-d81c02e12fef",
+      "name": "Google Sheets25",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        200,
+        260
+      ],
+      "id": "af722071-5707-424a-9bdc-f40b0f037d95",
+      "name": "Датос1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 538648616,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=538648616"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Дата добавления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
+            "Дата последнего обновления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
+            "Актуальный статус": "Нет в БД",
+            "url таблицы из которой трек": "={{ $('Датос1').first().json['Ссылка полностью'] }}",
+            "Трек": "={{ $json['Трек'] }}",
+            "Отметка о доставке": "Не доставлено"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Трек",
+              "displayName": "Трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Дата добавления",
+              "displayName": "Дата добавления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url таблицы из которой трек",
+              "displayName": "url таблицы из которой трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1740,
+        680
+      ],
+      "id": "f802f024-f426-4f43-9ddc-97ccd2e64e50",
+      "name": "Google Sheets26",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fd3c81e8-11ec-46ec-a44c-43ec276fb6be",
+              "name": "Трек",
+              "value": "={{ $json['Трек'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1080,
+        120
+      ],
+      "id": "8d007f96-7d6c-4698-baf5-5596a960d853",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fd3c81e8-11ec-46ec-a44c-43ec276fb6be",
+              "name": "Трек",
+              "value": "={{ $json['Трек'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1080,
+        300
+      ],
+      "id": "492eef55-644e-4721-ab84-93019e44dc93",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8708f01f-5367-46cd-a89c-12a0d374e503",
+              "leftValue": "={{ $json['Трек'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1500,
+        220
+      ],
+      "id": "09adf878-d7de-4cf2-96b0-6eccf4b749ad",
+      "name": "If5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -160,
+        240
+      ],
+      "id": "87b0dc24-7431-4134-8ce7-1c1d36e0cb96",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me2",
+      "typeVersion": 1,
+      "position": [
+        20,
+        -200
+      ],
+      "id": "292be08e-0438-41d6-9727-be5f6fbc4040"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        1040
+      ],
+      "id": "0a89369d-1511-4946-a81e-80fa9814908b",
+      "name": "No Operation, do nothing2"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "{  \"Triger1\":  0, \"Triger2\":  0 } ",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "9fe8a605-d0ee-4dda-ab01-213c06f1d20c",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        60,
+        80
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "d7dcf145-85fd-4e51-8b49-cc673128acce",
+      "name": "If27",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        200,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger1",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "cfebf0f3-659b-45b8-b07f-99b9252a82d5",
+      "name": "Достаём тригер1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        960,
+        980
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "88dd669b-8ff1-41ad-a915-6669c6048018",
+      "name": "If31",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1240,
+        1020
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "3012ef55-5a35-4851-9153-754e3590a798",
+      "name": "Меняем triger0 на 1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        440
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "630ae34e-faba-4131-8a50-f506020d168d",
+      "name": "If32",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1680,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Сбор треков в одну таблицу для Алины",
+        "width": 460
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1420,
+        -120
+      ],
+      "typeVersion": 1,
+      "id": "f10bd779-a06e-42c8-9973-5654b47b3286",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1280,
+        220
+      ],
+      "id": "ef0e5873-e122-4c83-9428-7825e1e7457e",
+      "name": "Объединяем треки из обоих диапазонов"
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "трек",
+              "field2": "Трек"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2.3,
+      "position": [
+        1300,
+        700
+      ],
+      "id": "539ba4dc-0b11-481b-9f55-f551cd178694",
+      "name": "Выбираем только уникальные треки"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6435343e-4316-40ef-909b-6298b7df4871",
+              "name": "Трек",
+              "value": "={{ $json['Трек'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -640,
+        -40
+      ],
+      "id": "df5e95d3-1cab-48c1-bb8b-0401fdaf8986",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "Трек"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        140
+      ],
+      "id": "31bb0786-a8bd-4fba-a58b-af29520fa77c",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.AllTracks",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ $json['Трек'].toJsonString() }}",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "580dd0b5-4b1b-4e2a-9102-78d5691383f1",
+      "name": "Меняем triger0 на 2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        140
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b1d653a2-97a4-4a7c-9920-2ae011fdefdd",
+      "name": "If33",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -280,
+        -40
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.AllTracks",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "0b32a86f-2902-4efb-b3a8-da25a8e95d33",
+      "name": "Меняем triger0 на 3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        580
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data",
+        "options": {
+          "destinationFieldName": "Трек"
+        }
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        360,
+        560
+      ],
+      "id": "3e763e72-ac02-4a4c-9818-3a8bac57ecf5",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        60,
+        860
+      ],
+      "id": "c94e1b74-ebda-4a3e-a6a9-c2b32839207e",
+      "name": "Wait4",
+      "webhookId": "06f5c54a-1003-4f4b-9cf5-48fee409f732"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        240
+      ],
+      "id": "1c3fdec6-1e86-4f93-981e-4b3360f7cb5b",
+      "name": "When clicking ‘Test workflow’"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-02-20T19:28:33.911Z",
+  "versionId": "5c8a013b-6ae2-4ded-8676-7bd49b8c9db5"
+}
