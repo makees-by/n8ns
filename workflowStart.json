@@ -893,6 +893,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -1227,6 +1234,7 @@
         2860,
         -680
       ],
+      "webhookId": "b62c0554-2ba8-441e-9cd6-8255f7779c0f",
       "disabled": true
     },
     {
@@ -1487,6 +1495,7 @@
         3180,
         -1120
       ],
+      "webhookId": "28c18de5-b589-4c56-af8c-42f8908e236a",
       "disabled": true
     },
     {
@@ -1504,6 +1513,7 @@
         4080,
         -700
       ],
+      "webhookId": "5078820b-9d98-411c-aa9f-bab2982311e4",
       "disabled": true
     },
     {
@@ -1657,6 +1667,7 @@
         4640,
         180
       ],
+      "webhookId": "beab2e18-2bd4-4eb6-91c1-4d861497b481",
       "disabled": true
     },
     {
@@ -1674,6 +1685,7 @@
         4980,
         -600
       ],
+      "webhookId": "baa30ebf-602f-4fab-8878-33683e5b30e1",
       "disabled": true
     },
     {
@@ -2754,6 +2766,31 @@
               },
               "renameOutput": true,
               "outputKey": "zsForvika"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "125f555b-b91f-4018-91d9-8dd1b98e7867",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "zsAli",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "zsAli"
             }
           ]
         },
@@ -2826,6 +2863,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-11T09:46:17.000Z",
-  "versionId": "570463b1-555f-4d0f-a468-4f14a7a825cb"
+  "updatedAt": "2025-02-20T20:13:58.000Z",
+  "versionId": "9e17ee4b-2e10-441a-bafe-99db775d07e4"
 }
