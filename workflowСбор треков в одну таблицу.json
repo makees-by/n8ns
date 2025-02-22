@@ -128,6 +128,18 @@
             "node": "Выбираем только уникальные треки",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Меняем triger0 на ",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -365,6 +377,50 @@
           }
         ]
       ]
+    },
+    "Меняем triger0 на ": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Выбираем только уникальные треки",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер": {
+      "main": [
+        [
+          {
+            "node": "If34",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If34": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-02-20T19:28:33.911Z",
@@ -513,7 +569,8 @@
         140
       ],
       "id": "fc4834f7-d94c-464f-826c-21383199e0bb",
-      "name": "If3"
+      "name": "If3",
+      "disabled": true
     },
     {
       "parameters": {
@@ -547,7 +604,8 @@
         320
       ],
       "id": "4190565d-d3b6-4b42-85c3-adc13e447d93",
-      "name": "If4"
+      "name": "If4",
+      "disabled": true
     },
     {
       "parameters": {
@@ -706,7 +764,8 @@
           "id": "GsKpjBhTzM4aUjza",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -729,7 +788,8 @@
         120
       ],
       "id": "8d007f96-7d6c-4698-baf5-5596a960d853",
-      "name": "Edit Fields1"
+      "name": "Edit Fields1",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -752,7 +812,8 @@
         300
       ],
       "id": "492eef55-644e-4721-ab84-93019e44dc93",
-      "name": "Edit Fields2"
+      "name": "Edit Fields2",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -920,7 +981,7 @@
       "typeVersion": 2.2,
       "position": [
         1240,
-        1020
+        1060
       ]
     },
     {
@@ -1169,6 +1230,106 @@
       ],
       "id": "1c3fdec6-1e86-4f93-981e-4b3360f7cb5b",
       "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger2",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "5d2a31a3-0b35-46e7-8991-70f64cb910d4",
+      "name": "Меняем triger0 на ",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        0
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "946ecd97-144f-4509-8861-d17268e32a17",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger2",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "671ef920-607c-4964-bb55-b9c8bc1d74db",
+      "name": "Достаём тригер",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        240
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c233468f-82d6-47d9-a567-7dc766430aa6",
+      "name": "If34",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1880,
+        240
+      ]
     }
   ],
   "pinData": {},
@@ -1178,6 +1339,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-20T19:28:33.911Z",
-  "versionId": "5c8a013b-6ae2-4ded-8676-7bd49b8c9db5"
+  "updatedAt": "2025-02-21T20:01:51.000Z",
+  "versionId": "e1f5bd04-a0f7-415b-a58c-06cafe7bb94c"
 }
