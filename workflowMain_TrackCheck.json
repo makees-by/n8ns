@@ -500,7 +500,7 @@
       "main": [
         [
           {
-            "node": "Execute Workflow",
+            "node": "Отправка запроса на сбор треков в одну таблицу",
             "type": "main",
             "index": 0
           }
@@ -529,7 +529,7 @@
         ]
       ]
     },
-    "Execute Workflow": {
+    "ZsAli1": {
       "main": [
         [
           {
@@ -538,6 +538,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Отправка запроса на сбор треков в одну таблицу": {
+      "main": [
+        []
       ]
     }
   },
@@ -1586,8 +1591,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 8,
-              "triggerAtMinute": 3
+              "triggerAtMinute": 30
             }
           ]
         }
@@ -1597,8 +1601,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -280,
-        680
+        260,
+        860
       ]
     },
     {
@@ -1614,6 +1618,26 @@
       "typeVersion": 1,
       "position": [
         580,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8,
+              "triggerAtMinute": 3
+            }
+          ]
+        }
+      },
+      "id": "e1d9ede4-4b91-4f6f-8532-97cdc969774c",
+      "name": "ZsAli1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        280,
         680
       ]
     },
@@ -1638,11 +1662,11 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        40,
-        680
+        580,
+        860
       ],
       "id": "83097688-c6e9-46ea-9172-cbcd8e1e35a4",
-      "name": "Execute Workflow"
+      "name": "Отправка запроса на сбор треков в одну таблицу"
     }
   ],
   "pinData": {},
@@ -1725,6 +1749,9 @@
     },
     "node:ZsAli": {
       "recurrenceRules": []
+    },
+    "node:ZsAli1": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1741,7 +1768,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 10,
-  "updatedAt": "2025-02-20T20:19:28.000Z",
-  "versionId": "c00a7fa9-f78b-4e71-ba75-92edd3311a15"
+  "triggerCount": 11,
+  "updatedAt": "2025-02-23T07:22:14.000Z",
+  "versionId": "6e90af51-e7ce-4468-b866-9487a6aa0f81"
 }
