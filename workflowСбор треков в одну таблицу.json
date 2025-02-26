@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "If3",
+            "node": "Забираем только нужные поля",
             "type": "main",
             "index": 0
           }
@@ -17,39 +17,6 @@
         [
           {
             "node": "Edit Fields3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Google Sheets24": {
-      "main": [
-        [
-          {
-            "node": "If4",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If3": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If4": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -79,11 +46,6 @@
             "node": "Google Sheets21",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Google Sheets24",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -93,17 +55,6 @@
         [
           {
             "node": "No Operation, do nothing2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields1": {
-      "main": [
-        [
-          {
-            "node": "Объединяем треки из обоих диапазонов",
             "type": "main",
             "index": 0
           }
@@ -225,7 +176,7 @@
       "main": [
         [
           {
-            "node": "If32",
+            "node": "If37",
             "type": "main",
             "index": 0
           }
@@ -237,17 +188,6 @@
         [
           {
             "node": "No Operation, do nothing",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Объединяем треки из обоих диапазонов": {
-      "main": [
-        [
-          {
-            "node": "If5",
             "type": "main",
             "index": 0
           }
@@ -416,27 +356,11 @@
         ]
       ]
     },
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "Объединяем треки из обоих диапазонов",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
     "Редактируем и исправляем все ошибки с треком": {
       "main": [
         [
           {
-            "node": "No Operation, do nothing",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Обновляем исправленый трек в исходной таблице",
+            "node": "If1",
             "type": "main",
             "index": 0
           }
@@ -464,6 +388,100 @@
           }
         ]
       ]
+    },
+    "Забираем только нужные поля": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Обновляем исправленый трек в исходной таблице",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на 4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Достаём тригер2": {
+      "main": [
+        [
+          {
+            "node": "If35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If35": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Меняем triger0 на 4": {
+      "main": [
+        [
+          {
+            "node": "If36",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If36": {
+      "main": [
+        [
+          {
+            "node": "Обновляем исправленый трек в исходной таблице",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If37": {
+      "main": [
+        [
+          {
+            "node": "Редактируем и исправляем все ошибки с треком",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-02-20T19:28:33.911Z",
@@ -483,20 +501,13 @@
           "value": "={{ $json['Ссылка полностью'] }}",
           "mode": "url"
         },
-        "options": {
-          "dataLocationOnSheet": {
-            "values": {
-              "rangeDefinition": "specifyRangeA1",
-              "range": "A:J"
-            }
-          }
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        860,
-        0
+        600,
+        100
       ],
       "id": "953fa825-5793-48ac-b8d5-fb527d9c286e",
       "name": "Google Sheets21",
@@ -547,113 +558,6 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "={{ $json['Ссылка полностью'] }}",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json['Ссылка полностью'] }}",
-          "mode": "url"
-        },
-        "options": {
-          "dataLocationOnSheet": {
-            "values": {
-              "rangeDefinition": "specifyRangeA1",
-              "range": "Q:U"
-            }
-          }
-        }
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        860,
-        180
-      ],
-      "id": "379ba688-5ee4-49cc-8c1f-a8d7b2670cea",
-      "name": "Google Sheets24",
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "8708f01f-5367-46cd-a89c-12a0d374e503",
-              "leftValue": "={{ $json['Трек'] }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "notEmpty",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1080,
-        0
-      ],
-      "id": "fc4834f7-d94c-464f-826c-21383199e0bb",
-      "name": "If3",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "8708f01f-5367-46cd-a89c-12a0d374e503",
-              "leftValue": "={{ $json['Трек'] }}",
-              "rightValue": "",
-              "operator": {
-                "type": "string",
-                "operation": "notEmpty",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1080,
-        180
-      ],
-      "id": "4190565d-d3b6-4b42-85c3-adc13e447d93",
-      "name": "If4",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
           "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
           "mode": "list",
           "cachedResultName": "Зс Алина",
@@ -696,8 +600,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        480,
-        120
+        460,
+        260
       ],
       "id": "af722071-5707-424a-9bdc-f40b0f037d95",
       "name": "Датос1"
@@ -807,8 +711,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2640,
-        660
+        2560,
+        620
       ],
       "id": "f802f024-f426-4f43-9ddc-97ccd2e64e50",
       "name": "Google Sheets26",
@@ -820,36 +724,6 @@
         }
       },
       "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "fd3c81e8-11ec-46ec-a44c-43ec276fb6be",
-              "name": "Трек",
-              "value": "={{ $json['Трек'] }}",
-              "type": "string"
-            },
-            {
-              "id": "daff95df-44bf-4f63-950e-d4d01be97ee9",
-              "name": "row_number",
-              "value": "={{ $json.row_number }}",
-              "type": "number"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        1580,
-        -20
-      ],
-      "id": "8d007f96-7d6c-4698-baf5-5596a960d853",
-      "name": "Edit Fields1",
-      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -887,12 +761,21 @@
           "conditions": [
             {
               "id": "8708f01f-5367-46cd-a89c-12a0d374e503",
-              "leftValue": "={{ $json['Трек'] }}",
+              "leftValue": "={{ $json['трек'] }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
                 "operation": "notEmpty",
                 "singleValue": true
+              }
+            },
+            {
+              "id": "2c348da0-6768-4cb8-8e57-dda2da0c659c",
+              "leftValue": "={{ $json['трек'] }}",
+              "rightValue": "сумма",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
               }
             }
           ],
@@ -903,8 +786,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2220,
-        80
+        1040,
+        240
       ],
       "id": "09adf878-d7de-4cf2-96b0-6eccf4b749ad",
       "name": "If5"
@@ -938,7 +821,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2540,
+        1980,
         1040
       ],
       "id": "0a89369d-1511-4946-a81e-80fa9814908b",
@@ -949,7 +832,7 @@
         "operation": "opWrite",
         "queryPath": "process.trigers",
         "sourceType": "sourceTypeJson",
-        "sourceData": "{  \"Triger1\":  0, \"Triger2\":  0 } ",
+        "sourceData": "{  \"Triger1\":  0, \"Triger2\":  0, \"Triger3\":  0 } ",
         "filePath": "=root/n8n/sborTreckAli.json"
       },
       "id": "9fe8a605-d0ee-4dda-ab01-213c06f1d20c",
@@ -957,8 +840,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        60,
-        80
+        80,
+        -20
       ],
       "executeOnce": true
     },
@@ -992,8 +875,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        480,
-        -140
+        400,
+        -20
       ]
     },
     {
@@ -1057,8 +940,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1780,
-        360
+        1220,
+        460
       ],
       "executeOnce": true
     },
@@ -1111,23 +994,12 @@
       "name": "Sticky Note4"
     },
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3,
-      "position": [
-        1780,
-        80
-      ],
-      "id": "ef0e5873-e122-4c83-9428-7825e1e7457e",
-      "name": "Объединяем треки из обоих диапазонов"
-    },
-    {
       "parameters": {
         "mergeByFields": {
           "values": [
             {
               "field1": "трек",
-              "field2": "Трек"
+              "field2": "трек"
             }
           ]
         },
@@ -1136,8 +1008,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        1300,
-        680
+        1040,
+        660
       ],
       "id": "539ba4dc-0b11-481b-9f55-f551cd178694",
       "name": "Выбираем только уникальные треки"
@@ -1262,8 +1134,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        360,
-        560
+        440,
+        580
       ],
       "id": "3e763e72-ac02-4a4c-9818-3a8bac57ecf5",
       "name": "Split Out"
@@ -1304,8 +1176,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2320,
-        -140
+        1140,
+        20
       ],
       "executeOnce": true
     },
@@ -1339,8 +1211,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2480,
-        -140
+        1300,
+        20
       ]
     },
     {
@@ -1353,8 +1225,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2420,
-        100
+        1240,
+        260
       ],
       "executeOnce": true
     },
@@ -1387,39 +1259,9 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2600,
-        100
+        1460,
+        200
       ]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "fd3c81e8-11ec-46ec-a44c-43ec276fb6be",
-              "name": "Трек1",
-              "value": "={{ $json['Трек1'] }}",
-              "type": "string"
-            },
-            {
-              "id": "daff95df-44bf-4f63-950e-d4d01be97ee9",
-              "name": "row_number",
-              "value": "={{ $json.row_number }}",
-              "type": "number"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        1580,
-        160
-      ],
-      "id": "f781f237-ef07-4bb3-9ac0-bd3b240c8f83",
-      "name": "Edit Fields",
-      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -1428,7 +1270,7 @@
             {
               "id": "d20d3a77-f5f3-4d9c-a42b-09e28be8b4c0",
               "name": "трек",
-              "value": "={{ $json['Трек'].toString().replace(/[^a-zA-Z0-9]/g, '').toUpperCase().replaceAll('О','0').replaceAll('O','0').replaceAll('Р','P').replaceAll('С','C').replaceAll('В','B') }}",
+              "value": "={{ $json['трек'].toString().replace(/[^a-zA-Z0-9]/g, '').toUpperCase().replaceAll('О','0').replaceAll('O','0').replaceAll('Р','P').replaceAll('С','C').replaceAll('В','B') }}",
               "type": "string"
             }
           ]
@@ -1439,8 +1281,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1880,
-        660
+        1400,
+        640
       ],
       "id": "426de4d0-8da1-4aae-8779-d790841a5352",
       "name": "Редактируем и исправляем все ошибки с треком"
@@ -1462,8 +1304,9 @@
           "mappingMode": "defineBelow",
           "value": {
             "row_number": "={{ $json.row_number }}",
-            "Трек": "={{ $json['трек'] }}",
-            "Отметка о доставке": "={{ '=ВПР(G'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)' }}"
+            "трек": "={{ $json['трек'] }}",
+            "Отметка о доставке": "={{ \"=ЕСЛИ(ЕОШИБКА(ВПР(H\"}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)) '}}",
+            "Актуальный статус": "={{ '=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ))'}}"
           },
           "matchingColumns": [
             "row_number"
@@ -1480,8 +1323,28 @@
               "removed": true
             },
             {
+              "id": "Тип ЗАКАЗА",
+              "displayName": "Тип ЗАКАЗА",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
               "id": "Фамилия",
               "displayName": "Фамилия",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RUB",
+              "displayName": "RUB",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1510,16 +1373,6 @@
               "removed": true
             },
             {
-              "id": "-20%",
-              "displayName": "-20%",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": true
-            },
-            {
               "id": "Продажа",
               "displayName": "Продажа",
               "required": false,
@@ -1530,14 +1383,14 @@
               "removed": true
             },
             {
-              "id": "Трек",
-              "displayName": "Трек",
+              "id": "трек",
+              "displayName": "трек",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
-              "removed": true
+              "removed": false
             },
             {
               "id": "Итог",
@@ -1550,8 +1403,18 @@
               "removed": true
             },
             {
-              "id": "RUB",
-              "displayName": "RUB",
+              "id": "% от цены в зависимости от типа заказа",
+              "displayName": "% от цены в зависимости от типа заказа",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "% от накрутов зависимости от типа заказа",
+              "displayName": "% от накрутов зависимости от типа заказа",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1577,61 +1440,27 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Доставлено byn",
+              "displayName": "Доставлено byn",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
               "removed": true
             },
             {
-              "id": "Заказ",
-              "displayName": "Заказ",
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Фамилия",
-              "displayName": "Фамилия",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Продажа",
-              "displayName": "Продажа",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Итог",
-              "displayName": "Итог",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Трек",
-              "displayName": "Трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Отметка о доставке",
-              "displayName": "Отметка о доставке",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
               "id": "row_number",
@@ -1654,7 +1483,7 @@
       "typeVersion": 4.5,
       "position": [
         2020,
-        480
+        520
       ],
       "id": "cb2ac86b-a89f-4e5f-a2d5-f2ed4a0a70a8",
       "name": "Обновляем исправленый трек в исходной таблице",
@@ -1673,10 +1502,223 @@
       "typeVersion": 1,
       "position": [
         2320,
-        660
+        620
       ],
       "id": "5331309c-d438-4ace-a6df-7493a2e6b2fc",
       "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fd3c81e8-11ec-46ec-a44c-43ec276fb6be",
+              "name": "трек",
+              "value": "={{ $json['трек'] }}",
+              "type": "string"
+            },
+            {
+              "id": "daff95df-44bf-4f63-950e-d4d01be97ee9",
+              "name": "row_number",
+              "value": "={{ $json.row_number }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        800,
+        240
+      ],
+      "id": "8d007f96-7d6c-4698-baf5-5596a960d853",
+      "name": "Забираем только нужные поля",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a9babe98-4379-4c6e-bb90-a9f9d0cb19b8",
+              "leftValue": "={{ $json['трек'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1640,
+        640
+      ],
+      "id": "8dd0f329-bebf-46c5-82ea-895183d02f7a",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "content": "Еженедельная проверка актуальности треков: https://n8n.makeesn8n.online/workflow/iuEDDrMBBeFpXKK8\n",
+        "height": 80,
+        "width": 420
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1620,
+        60
+      ],
+      "typeVersion": 1,
+      "id": "e8b03849-f074-4250-b68f-c13f2f5f8421",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "queryPath": "process.trigers.Triger3",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "0185fd7b-a6b3-40ff-ab23-f1e91992bdb9",
+      "name": "Достаём тригер2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        860
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ce3316d8-b3a4-465d-ad20-ca8014b7a501",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6ee8056a-f91b-4e04-9743-ff36e0b7d71b",
+      "name": "If35",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1660,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "process.trigers.Triger3",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "1",
+        "filePath": "=root/n8n/sborTreckAli.json"
+      },
+      "id": "ea78a7ab-048a-4c2c-aa90-a05968cb1495",
+      "name": "Меняем triger0 на 4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        400
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "31d7e38f-158f-45fe-8fdb-ba5a4c2b292f",
+      "name": "If36",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1960,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "35da34d4-5f4d-4c9b-8b8e-f212cdbbe1c9",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "58419c4e-b336-41c5-97ae-992e3b23a574",
+      "name": "If37",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1480,
+        460
+      ]
     }
   ],
   "pinData": {},
@@ -1686,6 +1728,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-23T13:43:48.000Z",
-  "versionId": "afc1e3a3-b100-41fd-8a66-c8147fc456fc"
+  "updatedAt": "2025-02-26T13:04:54.000Z",
+  "versionId": "a64e3ed4-c31e-466a-89dc-24b8c87428a1"
 }
