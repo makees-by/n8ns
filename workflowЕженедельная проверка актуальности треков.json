@@ -1,0 +1,577 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Обновляем исправленый трек в исходной таблице1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Обновляем исправленый трек в исходной таблице",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновляем исправленый трек в исходной таблице1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "получаем соотв собраные треки": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "получаем все треки из соотв таблицы": {
+      "main": [
+        [
+          {
+            "node": "Compare Datasets",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Compare Datasets": {
+      "main": [
+        [
+          {
+            "node": "получаем соотв собраные треки1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        [],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "получаем соотв собраные треки",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "получаем все треки из соотв таблицы",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        []
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "получаем соотв собраные треки1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-02-25T14:21:22.345Z",
+  "id": "iuEDDrMBBeFpXKK8",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Еженедельная проверка актуальности треков",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -360,
+        -200
+      ],
+      "id": "27ef4ad5-f8c4-41d9-aa43-4af689d4fc7e",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 538648616,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=538648616"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        280,
+        560
+      ],
+      "id": "5dbeb6ff-fa60-4dc8-934d-2194d19fdc4b",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "={{ $json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        360
+      ],
+      "id": "79ace231-1fe2-4932-949a-918acf36c4a4",
+      "name": "Обновляем исправленый трек в исходной таблице",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "maxItems": 10
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        240,
+        360
+      ],
+      "id": "00dff7d4-d4d3-4f0b-aa57-a94479265460",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 75948859,
+          "mode": "list",
+          "cachedResultName": "Список проверок(main1)",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=75948859"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Чек-бокс",
+              "lookupValue": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -40,
+        -200
+      ],
+      "id": "1c8ca6b8-06a8-4136-a36f-68266d49eb3b",
+      "name": "Обновляем исправленый трек в исходной таблице1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "трек",
+              "field2": "трек"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.compareDatasets",
+      "typeVersion": 2.3,
+      "position": [
+        960,
+        -260
+      ],
+      "id": "b4ca3bf7-bed5-4039-981b-dfdcd496ae87",
+      "name": "Compare Datasets"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 538648616,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=538648616"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "url таблицы из которой трек",
+              "lookupValue": "={{ $json['Ссылка полностью'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        -340
+      ],
+      "id": "3bcba7c5-ba30-4064-b701-7041358f489f",
+      "name": "получаем соотв собраные треки",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['Таблица'] }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['Страница'] }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        -140
+      ],
+      "id": "49873146-2524-4638-9342-7fbf2eb91f44",
+      "name": "получаем все треки из соотв таблицы",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY",
+          "mode": "list",
+          "cachedResultName": "Зс Алина",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 538648616,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY/edit#gid=538648616"
+        },
+        "startIndex": "={{ $json.row_number }}",
+        "numberToDelete": "=1"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1100,
+        -460
+      ],
+      "id": "54212f55-b90e-4141-8e45-d76932207303",
+      "name": "получаем соотв собраные треки1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        20
+      ],
+      "id": "fffd09ce-7f58-48b0-8490-4ca010911bdc",
+      "name": "No Operation, do nothing",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        260,
+        -200
+      ],
+      "id": "5a5c42d7-f72c-4bba-8368-dd044d2430e7",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        400,
+        -420
+      ],
+      "id": "b8d04220-d0c7-41c2-9cc3-90cd14784f95"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f8a92bf9-71ef-45af-824a-824f75271956",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1300,
+        -300
+      ],
+      "id": "9603eaf0-c100-4813-9394-2602c3bcb97b",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        620,
+        60
+      ],
+      "id": "9318ccd9-0ed1-4917-a19c-7b81654f069d",
+      "name": "Wait",
+      "webhookId": "6936403d-9988-43f6-9ff4-aeb7e0acf6fb"
+    },
+    {
+      "parameters": {
+        "content": "бор треков в одну таблицу Алина https://n8n.makeesn8n.online/workflow/zn5JTyUll3Jg1DhU",
+        "height": 80,
+        "width": 440
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -440,
+        -360
+      ],
+      "typeVersion": 1,
+      "id": "d96e0c18-e354-4513-81e6-d3fecdae5ed6",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Еженедельная проверка актуальности треков",
+        "width": 540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -580,
+        -600
+      ],
+      "typeVersion": 1,
+      "id": "c855dc1e-5bea-4373-b9df-2acfba67fc24",
+      "name": "Sticky Note1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-02-26T09:12:27.000Z",
+  "versionId": "8850aab2-684f-48ad-a67d-343e79b0592b"
+}
