@@ -533,21 +533,6 @@
     },
     {
       "parameters": {
-        "content": "бор треков в одну таблицу Алина https://n8n.makeesn8n.online/workflow/zn5JTyUll3Jg1DhU",
-        "height": 80,
-        "width": 440
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -440,
-        -360
-      ],
-      "typeVersion": 1,
-      "id": "d96e0c18-e354-4513-81e6-d3fecdae5ed6",
-      "name": "Sticky Note"
-    },
-    {
-      "parameters": {
         "content": "# Еженедельная проверка актуальности треков",
         "width": 540
       },
@@ -559,6 +544,21 @@
       "typeVersion": 1,
       "id": "c855dc1e-5bea-4373-b9df-2acfba67fc24",
       "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "Еженедельная проверка актуальности треков: https://n8n.makeesn8n.online/workflow/iuEDDrMBBeFpXKK8\nСбор треков в одну таблицу глубже: https://n8n.makeesn8n.online/workflow/tOhDVVYOBjamLSwH\nПеренос доставленых в отдельную таблицу:\nhttps://n8n.makeesn8n.online/workflow/EXGqCFtpn87dq5w8",
+        "height": 140,
+        "width": 500
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -940,
+        -260
+      ],
+      "typeVersion": 1,
+      "id": "7cbcf8dc-d6dc-4ba5-94e5-1ef5e348aa82",
+      "name": "Sticky Note"
     }
   ],
   "pinData": {},
@@ -572,6 +572,6 @@
   },
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-26T09:12:27.000Z",
-  "versionId": "8850aab2-684f-48ad-a67d-343e79b0592b"
+  "updatedAt": "2025-02-28T09:31:18.000Z",
+  "versionId": "aca62177-c367-45d0-87f5-5bb7f6f9f576"
 }
