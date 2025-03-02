@@ -185,7 +185,8 @@
         -200
       ],
       "id": "27ef4ad5-f8c4-41d9-aa43-4af689d4fc7e",
-      "name": "Schedule Trigger"
+      "name": "Schedule Trigger",
+      "disabled": true
     },
     {
       "parameters": {
@@ -571,7 +572,7 @@
     }
   },
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2025-02-28T09:31:18.000Z",
-  "versionId": "aca62177-c367-45d0-87f5-5bb7f6f9f576"
+  "triggerCount": 0,
+  "updatedAt": "2025-03-02T10:01:36.000Z",
+  "versionId": "42ca77dc-5985-4cbe-83f7-8fb4aafe25e7"
 }
