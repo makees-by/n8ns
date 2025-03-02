@@ -843,8 +843,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        560,
-        1060
+        1700,
+        1280
       ]
     },
     {
@@ -864,8 +864,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        800,
-        1060
+        1940,
+        1280
       ]
     },
     {
@@ -884,8 +884,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        300,
-        1060
+        1440,
+        1280
       ],
       "disabled": true
     },
@@ -1601,8 +1601,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        260,
-        860
+        -300,
+        660
       ]
     },
     {
@@ -1662,8 +1662,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        580,
-        860
+        20,
+        660
       ],
       "id": "83097688-c6e9-46ea-9172-cbcd8e1e35a4",
       "name": "Отправка запроса на сбор треков в одну таблицу"
@@ -1769,6 +1769,6 @@
     }
   ],
   "triggerCount": 11,
-  "updatedAt": "2025-02-28T22:28:53.000Z",
-  "versionId": "4b1f04c9-b7eb-4e8b-ae03-2d7a19219fd3"
+  "updatedAt": "2025-03-02T09:55:00.000Z",
+  "versionId": "879f38de-258c-4061-8be0-08e2c709d9f6"
 }
