@@ -544,6 +544,28 @@
       "main": [
         []
       ]
+    },
+    "zsForvika json для записи2": {
+      "main": [
+        [
+          {
+            "node": "zsForHel2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsForHel2": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -1667,6 +1689,70 @@
       ],
       "id": "83097688-c6e9-46ea-9172-cbcd8e1e35a4",
       "name": "Отправка запроса на сбор треков в одну таблицу"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsForvika\",\n          \"start_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n          \"start_pageID\": 672397081,\n          \"statistic_tableID\": \"видемоненужен\",\n          \"statistic_pageID\": 111111,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/zsForvika.json"
+      },
+      "id": "7789213b-f856-416d-82de-d9540e7a05c1",
+      "name": "zsForvika json для записи2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForVika2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dc6959dc-2cd3-41dd-84a7-b9825478849a",
+      "name": "zsForHel2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -160,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cVC6t8mW8i9zazSD",
+          "mode": "list",
+          "cachedResultName": "Сбор треков в одну таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        40,
+        940
+      ],
+      "id": "46f59b94-4b65-48e3-b6af-3017d8b9239f",
+      "name": "Отправка запроса на сбор треков в одну таблицу1"
     }
   ],
   "pinData": {},
@@ -1769,6 +1855,6 @@
     }
   ],
   "triggerCount": 11,
-  "updatedAt": "2025-03-02T09:55:00.000Z",
-  "versionId": "879f38de-258c-4061-8be0-08e2c709d9f6"
+  "updatedAt": "2025-03-02T20:09:19.000Z",
+  "versionId": "9364108a-c0c9-4e12-bf51-2b60c0045185"
 }
