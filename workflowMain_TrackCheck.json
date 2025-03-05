@@ -964,7 +964,8 @@
       "position": [
         340,
         480
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1120,7 +1121,8 @@
       "position": [
         340,
         280
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1639,7 +1641,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        580,
+        560,
         680
       ]
     },
@@ -1854,7 +1856,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 11,
-  "updatedAt": "2025-03-02T20:09:19.000Z",
-  "versionId": "9364108a-c0c9-4e12-bf51-2b60c0045185"
+  "triggerCount": 9,
+  "updatedAt": "2025-03-05T07:25:34.000Z",
+  "versionId": "e683bb97-f985-4dc8-835e-df89fce4e9c0"
 }
