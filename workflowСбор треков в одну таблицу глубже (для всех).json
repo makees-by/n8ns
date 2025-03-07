@@ -55,17 +55,6 @@
         ]
       ]
     },
-    "Google Sheets26": {
-      "main": [
-        [
-          {
-            "node": "No Operation, do nothing2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Edit Fields2": {
       "main": [
         []
@@ -342,7 +331,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets26",
+            "node": "Google Sheets",
             "type": "main",
             "index": 0
           }
@@ -491,6 +480,22 @@
           }
         ]
       ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets26": {
+      "main": [
+        []
+      ]
     }
   },
   "createdAt": "2025-03-02T17:24:48.292Z",
@@ -614,120 +619,6 @@
       ],
       "id": "6ff35cc3-31e9-49e9-8b63-896d1bc97f90",
       "name": "Датос1"
-    },
-    {
-      "parameters": {
-        "operation": "append",
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": 1749143586,
-          "mode": "list",
-          "cachedResultName": "Все треки",
-          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
-        },
-        "columns": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "трек": "={{ $json['трек'] }}",
-            "Отметка о доставке": "Не доставлено",
-            "Дата добавления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
-            "Дата последнего обновления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
-            "url таблицы из которой трек": "={{ $('Датос1').first().json['Ссылка полностью'] }}",
-            "Индекс": "={{ $json['трек'].slice(0,2)+$now.format('mmss')+ (Math.random()*10).round(3)+$('Датос1').item.json.processID.slice(2,7) }}",
-            "Актуальный статус": "Нет в БД"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "трек",
-              "displayName": "трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Отметка о доставке",
-              "displayName": "Отметка о доставке",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Дата добавления",
-              "displayName": "Дата добавления",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Дата последнего обновления",
-              "displayName": "Дата последнего обновления",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "url таблицы из которой трек",
-              "displayName": "url таблицы из которой трек",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Индекс",
-              "displayName": "Индекс",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            },
-            {
-              "id": "Актуальный статус",
-              "displayName": "Актуальный статус",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": false
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        2340,
-        660
-      ],
-      "id": "335530cb-56e6-4148-82f7-8d662a32be20",
-      "name": "Google Sheets26",
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      },
-      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -1711,7 +1602,7 @@
             {
               "id": "43637266-275f-4fdf-9f41-e7f6664e39f2",
               "name": "процесс окончен для таблицы",
-              "value": "={{ $('Датос1').item.json['Ссылка полностью'] }}",
+              "value": "={{ $('Датос1').first().json['Ссылка полностью'] }}",
               "type": "string"
             }
           ]
@@ -1744,7 +1635,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"row_number\": 3,\n    \"Ссылка полностью\": \"https://docs.google.com/spreadsheets/d/1uvCEYqUQmdfiQtq9sBNUS9jzxWGpAyzts1v_6wXEUYw/edit#gid=0\",\n    \"Таблица\": \"1avcQ7p1GHq5mASKgEmLOtQIDqlPsPVT38xvXaOILcxk\",\n    \"Страница\": \"0\",\n    \"Чек-бокс\": true,\n    \"Доп чек\": true,\n    \"col_6\": \"\",\n    \"col_7\": \"\",\n    \"processID\": \"zsForvika\"\n  }\n]\n);"
+        "jsCode": "return (\n  [\n  {\n    \"row_number\": 3,\n    \"Ссылка полностью\": \"https://docs.google.com/spreadsheets/d/1uvCEYqUQmdfiQtq9sBNUS9jzxWGpAyzts1v_6wXEUYw/edit#gid=0\",\n    \"Таблица\": \"1avcQ7p1GHq5mASKgEmLOtQIDqlPsPVT38xvXaOILcxk\",\n    \"Страница\": \"0\",\n    \"Чек-бокс\": true,\n    \"Доп чек\": true,\n    \"col_6\": \"\",\n    \"col_7\": \"\",\n    \"processID\": \"ForIra\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1769,6 +1660,232 @@
         -560,
         -40
       ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Чтение данных из workProcess').first().json.data.variebles.allTraks_pageID }}",
+          "mode": "id"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "трек": "={{ $json['трек'] }}",
+            "Отметка о доставке": "Не доставлено",
+            "Дата добавления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
+            "Дата последнего обновления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
+            "url таблицы из которой трек": "={{ $('Датос1').first().json['Ссылка полностью'] }}",
+            "Индекс": "={{ $json['трек'].slice(0,2)+$now.format('mmss')+ (Math.random()*10).round(3)+$('Датос1').item.json.processID.slice(2,7) }}",
+            "Актуальный статус": "Нет в БД"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата добавления",
+              "displayName": "Дата добавления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url таблицы из которой трек",
+              "displayName": "url таблицы из которой трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Индекс",
+              "displayName": "Индекс",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2420,
+        660
+      ],
+      "id": "3cac809a-685f-46aa-af8f-1f212716b344",
+      "name": "Google Sheets",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1749143586,
+          "mode": "list",
+          "cachedResultName": "Все треки",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE/edit#gid=1749143586"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "трек": "={{ $json['трек'] }}",
+            "Отметка о доставке": "Не доставлено",
+            "Дата добавления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
+            "Дата последнего обновления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
+            "url таблицы из которой трек": "={{ $('Датос1').first().json['Ссылка полностью'] }}",
+            "Индекс": "={{ $json['трек'].slice(0,2)+$now.format('mmss')+ (Math.random()*10).round(3)+$('Датос1').item.json.processID.slice(2,7) }}",
+            "Актуальный статус": "Нет в БД"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата добавления",
+              "displayName": "Дата добавления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Дата последнего обновления",
+              "displayName": "Дата последнего обновления",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "url таблицы из которой трек",
+              "displayName": "url таблицы из которой трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Индекс",
+              "displayName": "Индекс",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2500,
+        460
+      ],
+      "id": "335530cb-56e6-4148-82f7-8d662a32be20",
+      "name": "Google Sheets26",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -1778,6 +1895,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-03T12:38:44.000Z",
-  "versionId": "157a0314-9a5b-401e-b05f-e6dda9b56990"
+  "updatedAt": "2025-03-07T12:52:43.000Z",
+  "versionId": "08c799db-1d1c-4c60-a8f3-d974afc5660f"
 }
