@@ -549,18 +549,34 @@
       "main": [
         [
           {
-            "node": "zsForHel2",
+            "node": "ZsForVika2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "zsForHel2": {
+    "ZsForVika2": {
       "main": [
         [
           {
             "node": "Отправка запроса на сбор треков в одну таблицу1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra json для записи1": {
+      "main": [
+        []
+      ]
+    },
+    "ForIra1": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу2",
             "type": "main",
             "index": 0
           }
@@ -964,8 +980,7 @@
       "position": [
         340,
         480
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -1121,8 +1136,7 @@
       "position": [
         340,
         280
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -1710,27 +1724,6 @@
     },
     {
       "parameters": {
-        "fields": {
-          "values": [
-            {
-              "name": "ProcessID",
-              "stringValue": "ZsForVika2"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "dc6959dc-2cd3-41dd-84a7-b9825478849a",
-      "name": "zsForHel2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.2,
-      "position": [
-        -160,
-        940
-      ]
-    },
-    {
-      "parameters": {
         "workflowId": {
           "__rl": true,
           "value": "cVC6t8mW8i9zazSD",
@@ -1755,6 +1748,91 @@
       ],
       "id": "46f59b94-4b65-48e3-b6af-3017d8b9239f",
       "name": "Отправка запроса на сбор треков в одну таблицу1"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForVika2"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "dc6959dc-2cd3-41dd-84a7-b9825478849a",
+      "name": "ZsForVika2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -160,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\" : 645009985,\n          \"allTraks_pageID\" : 208083408,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ForIra.json"
+      },
+      "id": "69b5a5f4-a841-4764-a6ea-991502790735",
+      "name": "ForIra json для записи1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForIra"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1f413cc2-1885-4fa1-8eb6-de9c08b2e65e",
+      "name": "ForIra1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -180,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cVC6t8mW8i9zazSD",
+          "mode": "list",
+          "cachedResultName": "Сбор треков в одну таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        40,
+        1160
+      ],
+      "id": "ebea4c00-99aa-4fdb-8a85-97220f912e0b",
+      "name": "Отправка запроса на сбор треков в одну таблицу2"
     }
   ],
   "pinData": {},
@@ -1856,7 +1934,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 9,
-  "updatedAt": "2025-03-05T07:25:34.000Z",
-  "versionId": "e683bb97-f985-4dc8-835e-df89fce4e9c0"
+  "triggerCount": 11,
+  "updatedAt": "2025-03-07T12:59:08.000Z",
+  "versionId": "be4d0b23-5e34-4798-9628-f9131e4c2cb2"
 }
