@@ -361,7 +361,7 @@
         "queryPath": "=process.AllTracks.{{ $('Чтение данных из workProcess').first().json.data.variebles.processID }}",
         "sourceType": "sourceTypeJson",
         "sourceData": "={{ $json['трек'].toJsonString() }}",
-        "filePath": "=root/n8n/sborTreckAli.json"
+        "filePath": "=root/n8n/sborTreckAll.json"
       },
       "id": "9f9d2d07-9450-46c7-a28e-073463c53083",
       "name": "Меняем triger0 на 2",
@@ -594,6 +594,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-07T12:58:15.000Z",
-  "versionId": "79c76e63-9b6d-474e-aa04-7aed7909c0ee"
+  "updatedAt": "2025-03-07T13:37:21.000Z",
+  "versionId": "ac451ce2-0851-4056-b63f-6f889f90c17b"
 }
