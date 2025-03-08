@@ -8,6 +8,11 @@
             "node": "Забираем только нужные поля",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Достаём список со всеми треками",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -44,11 +49,6 @@
           },
           {
             "node": "JsonDatabase1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Достаём список со всеми треками",
             "type": "main",
             "index": 0
           }
@@ -614,7 +614,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -220,
+        -260,
         280
       ],
       "id": "6ff35cc3-31e9-49e9-8b63-896d1bc97f90",
@@ -1582,15 +1582,15 @@
     },
     {
       "parameters": {
-        "queryPath": "process.AllTracks",
-        "filePath": "=root/n8n/sborTreckAli.json"
+        "queryPath": "=process.AllTracks.{{ $('Датос1').item.json.processID }}",
+        "filePath": "=root/n8n/sborTreckAll.json"
       },
       "id": "3765b861-8814-40e5-8eda-71ab1489f9e6",
       "name": "Достаём список со всеми треками",
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -320,
+        -60,
         680
       ],
       "executeOnce": true
@@ -1895,6 +1895,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-07T12:52:43.000Z",
-  "versionId": "08c799db-1d1c-4c60-a8f3-d974afc5660f"
+  "updatedAt": "2025-03-07T13:37:36.000Z",
+  "versionId": "73138094-8bb4-4d61-9a52-d15b0546363c"
 }
