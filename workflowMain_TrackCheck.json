@@ -569,7 +569,13 @@
     },
     "ForIra json для записи1": {
       "main": [
-        []
+        [
+          {
+            "node": "ForIra1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "ForIra1": {
@@ -577,6 +583,17 @@
         [
           {
             "node": "Отправка запроса на сбор треков в одну таблицу2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ира": {
+      "main": [
+        [
+          {
+            "node": "ForIra json для записи1",
             "type": "main",
             "index": 0
           }
@@ -1601,7 +1618,8 @@
       "position": [
         320,
         -80
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1639,8 +1657,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -300,
-        660
+        -440,
+        940
       ]
     },
     {
@@ -1700,8 +1718,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        20,
-        660
+        -120,
+        940
       ],
       "id": "83097688-c6e9-46ea-9172-cbcd8e1e35a4",
       "name": "Отправка запроса на сбор треков в одну таблицу"
@@ -1719,7 +1737,7 @@
       "typeVersion": 1,
       "position": [
         -360,
-        940
+        1360
       ]
     },
     {
@@ -1744,7 +1762,7 @@
       "typeVersion": 1.2,
       "position": [
         40,
-        940
+        1360
       ],
       "id": "46f59b94-4b65-48e3-b6af-3017d8b9239f",
       "name": "Отправка запроса на сбор треков в одну таблицу1"
@@ -1767,7 +1785,7 @@
       "typeVersion": 3.2,
       "position": [
         -160,
-        940
+        1360
       ]
     },
     {
@@ -1782,8 +1800,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -620,
-        1000
+        -380,
+        1160
       ]
     },
     {
@@ -1833,6 +1851,26 @@
       ],
       "id": "ebea4c00-99aa-4fdb-8a85-97220f912e0b",
       "name": "Отправка запроса на сбор треков в одну таблицу2"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 23,
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "5d7f73eb-0126-4755-977a-2afd381f6ec8",
+      "name": "Ира",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -580,
+        1160
+      ]
     }
   ],
   "pinData": {},
@@ -1918,6 +1956,12 @@
     },
     "node:ZsAli1": {
       "recurrenceRules": []
+    },
+    "node:ZsAli2": {
+      "recurrenceRules": []
+    },
+    "node:Ира": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1935,6 +1979,6 @@
     }
   ],
   "triggerCount": 11,
-  "updatedAt": "2025-03-07T12:59:08.000Z",
-  "versionId": "be4d0b23-5e34-4798-9628-f9131e4c2cb2"
+  "updatedAt": "2025-03-07T18:48:42.000Z",
+  "versionId": "85f6c405-9797-46c8-8ad0-1a0266af7b12"
 }
