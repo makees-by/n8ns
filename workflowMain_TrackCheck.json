@@ -589,7 +589,40 @@
         ]
       ]
     },
-    "Ира": {
+    "ForIra json для записи2": {
+      "main": [
+        [
+          {
+            "node": "ForIra2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra2": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ира запуск переноса доставленых 00:00 - 01:30": {
+      "main": [
+        [
+          {
+            "node": "ForIra json для записи2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ира запуск сбора треков во все треки": {
       "main": [
         [
           {
@@ -1618,8 +1651,7 @@
       "position": [
         320,
         -80
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -1736,8 +1768,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -360,
-        1360
+        -460,
+        720
       ]
     },
     {
@@ -1761,8 +1793,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        40,
-        1360
+        -60,
+        720
       ],
       "id": "46f59b94-4b65-48e3-b6af-3017d8b9239f",
       "name": "Отправка запроса на сбор треков в одну таблицу1"
@@ -1784,8 +1816,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        -160,
-        1360
+        -260,
+        720
       ]
     },
     {
@@ -1854,6 +1886,89 @@
     },
     {
       "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\" : 645009985,\n          \"allTraks_pageID\" : 208083408,\n          \"allTraksDone_pageID\" : 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ForIra.json"
+      },
+      "id": "aad5cf42-b9b9-4ddd-aef8-a8dc5297ca7c",
+      "name": "ForIra json для записи2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        1340
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForIra"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f8713a8d-f056-41d1-806f-578d69c96fb2",
+      "name": "ForIra2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -180,
+        1340
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "yzGni57zMlaAsGzq",
+          "mode": "list",
+          "cachedResultName": "Перенос доставленых в отдельную таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        40,
+        1340
+      ],
+      "id": "517e2a01-4ea1-4d0a-845e-c7fb5914b21b",
+      "name": "Отправка запроса на сбор треков в одну таблицу3"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "287e13e6-7be3-4e8a-aed0-bba8732b4d25",
+      "name": "Ира запуск переноса доставленых 00:00 - 01:30",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -580,
+        1340
+      ]
+    },
+    {
+      "parameters": {
         "rule": {
           "interval": [
             {
@@ -1864,7 +1979,7 @@
         }
       },
       "id": "5d7f73eb-0126-4755-977a-2afd381f6ec8",
-      "name": "Ира",
+      "name": "Ира запуск сбора треков во все треки",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
@@ -1962,6 +2077,12 @@
     },
     "node:Ира": {
       "recurrenceRules": []
+    },
+    "node:Ира запуск переноса доставленых 00:00 - 01:30": {
+      "recurrenceRules": []
+    },
+    "node:Ира запуск сбора треков во все треки": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1978,7 +2099,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 11,
-  "updatedAt": "2025-03-07T18:48:42.000Z",
-  "versionId": "85f6c405-9797-46c8-8ad0-1a0266af7b12"
+  "triggerCount": 13,
+  "updatedAt": "2025-03-09T08:15:54.000Z",
+  "versionId": "d2354e71-3228-46b2-a456-7d4c6cb7c010"
 }
