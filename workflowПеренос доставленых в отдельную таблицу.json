@@ -161,18 +161,7 @@
       "main": [
         [
           {
-            "node": "Получаем данные по треку в исходной таблице в исходной таблице",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Получаем данные по треку в исходной таблице в исходной таблице": {
-      "main": [
-        [
-          {
-            "node": "Подменяем формулы в исходной таблице",
+            "node": "Получаем данные по треку в исходной таблице",
             "type": "main",
             "index": 0
           }
@@ -206,6 +195,17 @@
         [
           {
             "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные по треку в исходной таблице": {
+      "main": [
+        [
+          {
+            "node": "Подменяем формулы в исходной таблице",
             "type": "main",
             "index": 0
           }
@@ -743,7 +743,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -940,
+        -980,
         340
       ],
       "id": "20044c54-8e4b-4318-a929-1bfd5ca2e7ae",
@@ -866,45 +866,6 @@
           "name": "Google Sheets account"
         }
       }
-    },
-    {
-      "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json['url таблицы из которой трек'] }}",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json['url таблицы из которой трек'] }}",
-          "mode": "url"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "трек",
-              "lookupValue": "={{ $json['трек'] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        -40,
-        360
-      ],
-      "id": "b0671593-6c18-441e-b66c-628f9519ada8",
-      "name": "Получаем данные по треку в исходной таблице в исходной таблице",
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "GsKpjBhTzM4aUjza",
-          "name": "Google Sheets account"
-        }
-      },
-      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -1186,6 +1147,45 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "={{ $json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -40,
+        360
+      ],
+      "id": "b0671593-6c18-441e-b66c-628f9519ada8",
+      "name": "Получаем данные по треку в исходной таблице",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -1195,6 +1195,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-28T09:35:42.000Z",
-  "versionId": "839689a9-33e0-4ac0-b4c9-1502109ded1b"
+  "updatedAt": "2025-03-09T07:16:50.000Z",
+  "versionId": "8240d81b-f6c4-4fca-96cd-99c1d6f5ea49"
 }
