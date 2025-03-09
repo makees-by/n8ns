@@ -331,8 +331,8 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        960,
-        -260
+        940,
+        -240
       ],
       "id": "b4ca3bf7-bed5-4039-981b-dfdcd496ae87",
       "name": "Compare Datasets"
@@ -398,7 +398,7 @@
       "typeVersion": 4.5,
       "position": [
         720,
-        -140
+        -100
       ],
       "id": "49873146-2524-4638-9342-7fbf2eb91f44",
       "name": "получаем все треки из соотв таблицы",
@@ -573,6 +573,6 @@
   },
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-02T10:01:36.000Z",
-  "versionId": "42ca77dc-5985-4cbe-83f7-8fb4aafe25e7"
+  "updatedAt": "2025-03-09T07:15:28.000Z",
+  "versionId": "b8e748ce-9c0d-446c-8cd9-5fe2684dcd35"
 }
