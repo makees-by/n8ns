@@ -1953,6 +1953,7 @@
         "rule": {
           "interval": [
             {
+              "triggerAtHour": 14,
               "triggerAtMinute": 30
             }
           ]
@@ -2100,6 +2101,6 @@
     }
   ],
   "triggerCount": 13,
-  "updatedAt": "2025-03-09T08:15:54.000Z",
-  "versionId": "d2354e71-3228-46b2-a456-7d4c6cb7c010"
+  "updatedAt": "2025-03-09T18:09:47.000Z",
+  "versionId": "9d4af729-9626-4058-9eb2-04f5f906c3ce"
 }
