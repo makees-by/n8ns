@@ -254,7 +254,7 @@
       "main": [
         [
           {
-            "node": "Code1",
+            "node": "Code2",
             "type": "main",
             "index": 0
           }
@@ -574,6 +574,17 @@
           }
         ],
         []
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -1095,7 +1106,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -820,
+        -780,
         280
       ],
       "id": "382045e0-ebc3-4112-87c1-8985c3768323",
@@ -1719,7 +1730,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -560,
+        -500,
         280
       ],
       "id": "5897a32a-6783-49f7-a96e-56d4d61d71eb",
@@ -2114,6 +2125,20 @@
         500
       ],
       "executeOnce": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n [\n  {\n    \"row_number\": 2,\n    \"Ссылка полностью\": \"https://docs.google.com/spreadsheets/d/10NU4RLKPG8LwBoxL_qZyaeUXy6KRwq6901duTA5Hbpo/edit?gid=299525223#gid=299525223\",\n    \"Таблица\": \"10NU4RLKPG8LwBoxL_qZyaeUXy6KRwq6901duTA5Hbpo\",\n    \"Страница\": \"299525223\",\n    \"Чек-бокс\": true,\n    \"processID\": \"zsAli\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -720,
+        520
+      ],
+      "id": "659392c9-ff80-4e76-a8b3-6d9701b897f0",
+      "name": "Code2",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -2123,6 +2148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-09T08:11:22.000Z",
-  "versionId": "346c0435-9f5f-4f2c-9d21-8fe12b00016f"
+  "updatedAt": "2025-03-14T10:02:30.000Z",
+  "versionId": "5427f1bc-fca2-4917-93ed-15e9fc1e9150"
 }
