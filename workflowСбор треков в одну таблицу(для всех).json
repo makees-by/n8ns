@@ -100,7 +100,7 @@
       "main": [
         [
           {
-            "node": "Code1",
+            "node": "Code2",
             "type": "main",
             "index": 0
           }
@@ -180,6 +180,11 @@
     },
     "Code1": {
       "main": [
+        []
+      ]
+    },
+    "Code2": {
+      "main": [
         [
           {
             "node": "ВД",
@@ -212,8 +217,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -880,
-        -60
+        -900,
+        -80
       ],
       "id": "2a1128f6-3b9b-4d1d-8b56-1adb083fa7d4",
       "name": "Google Sheets23",
@@ -482,8 +487,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1600,
-        140
+        -1520,
+        100
       ],
       "id": "e3a25b08-61c9-4546-ae97-90652200806e",
       "name": "Code",
@@ -579,11 +584,25 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1620,
-        280
+        -1740,
+        80
       ],
       "id": "1134d39d-3262-449b-b529-3cfd56db245f",
       "name": "Code1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAli\",\n          \"start_tableID\": \"1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY\",\n          \"start_pageID\": 0,\n          \"allTables_pageID\": 75948859,\n          \"allTraks_pageID\": 538648616,\n          \"allTraksDone_pageID\": 111638545,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"zsAli\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1600,
+        280
+      ],
+      "id": "18155cd1-4878-4d71-abdb-8e5474104212",
+      "name": "Code2",
       "disabled": true
     }
   ],
@@ -594,6 +613,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-07T13:37:21.000Z",
-  "versionId": "ac451ce2-0851-4056-b63f-6f889f90c17b"
+  "updatedAt": "2025-03-14T10:02:47.000Z",
+  "versionId": "3f8cab17-9993-48fa-9bd1-168d6b8001a0"
 }
