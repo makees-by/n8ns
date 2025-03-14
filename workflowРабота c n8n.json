@@ -1,0 +1,139 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-13T17:28:08.107Z",
+  "id": "iE3zmaI3HxE2uxYa",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Работа c n8n",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        -60
+      ],
+      "id": "5c4ac6dd-80ad-43c4-b22c-ade285806d1c",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "returnAll": true,
+        "filters": {
+          "status": "waiting"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        -60
+      ],
+      "id": "bff821ca-9cb1-454f-ac14-6ca86545adf9",
+      "name": "n8n",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1932c277-a881-461f-a0c4-815a9ce14575",
+              "leftValue": "={{ $json.startedAt }}",
+              "rightValue": "={{ $now.minus(2, 'days') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        140,
+        -60
+      ],
+      "id": "3886da44-f67a-4851-ba2d-f0ce9ddc5643",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "workflowId": {
+          "__rl": true,
+          "value": "Dwnq6af1Trt9YncD",
+          "mode": "list",
+          "cachedResultName": "Sova_save (#Dwnq6af1Trt9YncD)"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        120
+      ],
+      "id": "6682b1e5-427b-4115-9a4f-f79e6bbe5b17",
+      "name": "n8n1",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-13T17:46:16.000Z",
+  "versionId": "4e32e1e1-ba10-4f75-a0ca-248531cacb1e"
+}
