@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Запрос к процессу проверки оплаты",
+            "node": "Проверки оплаты",
             "type": "main",
             "index": 0
           },
@@ -669,22 +669,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        1140,
-        -300
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "url": "https://n8n.makeesn8n.online/webhook/pay_check",
-        "options": {}
-      },
-      "id": "c0576e65-f18e-4f8a-88db-0e82dab7c2ab",
-      "name": "Запрос к процессу проверки оплаты",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1680,
+        1040,
         -300
       ]
     },
@@ -1607,7 +1592,7 @@
       "typeVersion": 3.4,
       "position": [
         1400,
-        -440
+        -460
       ],
       "id": "e5ab3835-c6cc-4731-8a3d-658f8cd357c4",
       "name": "формируем запрос к логированию"
@@ -1625,8 +1610,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        1560,
-        -480
+        1640,
+        -460
       ],
       "id": "b20c1488-29bb-42fa-ba9e-3b7b58f056b9",
       "name": "Запрос в процесс логирования",
@@ -2207,6 +2192,20 @@
       "typeVersion": 1,
       "id": "fd284c55-426f-4c53-aaa2-8939a3e6105d",
       "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/pay_check",
+        "options": {}
+      },
+      "id": "c0576e65-f18e-4f8a-88db-0e82dab7c2ab",
+      "name": "Проверки оплаты",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1820,
+        -300
+      ]
     }
   ],
   "pinData": {},
@@ -2226,7 +2225,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-02-14T15:09:47.000Z",
-  "versionId": "161fb304-33c1-40ec-a129-0b0343eeee37"
+  "triggerCount": 1,
+  "updatedAt": "2025-03-19T10:20:58.000Z",
+  "versionId": "4bbd0577-a265-4d1d-b6dc-f7060ef29f1f"
 }
