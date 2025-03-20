@@ -1841,7 +1841,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        380,
+        280,
         840
       ],
       "credentials": {
@@ -1916,7 +1916,7 @@
       "typeVersion": 1,
       "position": [
         760,
-        440
+        400
       ]
     },
     {
@@ -1926,19 +1926,19 @@
             {
               "id": "797f5835-c47a-480d-9409-182e9c6d320f",
               "name": "ID",
-              "value": "ZsForIra",
+              "value": "ForIra",
               "type": "string"
             },
             {
               "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
               "name": "Link",
-              "value": "https://docs.google.com/spreadsheets/d/1-iGpVjad04yZMcTBlnuWEL1TQ37sNC885PDaMva3cdI/edit?gid=1275538573#gid=1275538573",
+              "value": "https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit?gid=208083408#gid=208083408",
               "type": "string"
             },
             {
               "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
               "name": "IdTables",
-              "value": "ZsForIra001",
+              "value": "ForIra001",
               "type": "string"
             },
             {
@@ -6148,6 +6148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-30T11:57:02.000Z",
-  "versionId": "d96564f7-4337-4f7f-9a61-aefa81177c6b"
+  "updatedAt": "2025-03-19T20:35:29.000Z",
+  "versionId": "7cc36753-dbb7-49eb-ba06-37787996fc93"
 }
