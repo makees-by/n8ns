@@ -1770,7 +1770,6 @@
             "трек": "={{ $json['трек'] }}",
             "Отметка о доставке": "Не доставлено",
             "Дата добавления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
-            "Дата последнего обновления": "={{ $now.format('dd.MM.yy HH:mm:ss') }}",
             "url таблицы из которой трек": "={{ $('Датос1').first().json['Ссылка полностью'] }}",
             "Индекс": "={{ $json['трек'].slice(0,2)+$now.format('mmss')+ (Math.random()*10).round(3)+$('Датос1').item.json.processID.slice(2,7) }}",
             "Актуальный статус": "Нет в БД"
@@ -1811,7 +1810,8 @@
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": true
             },
             {
               "id": "url таблицы из которой трек",
@@ -2148,6 +2148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-14T10:02:30.000Z",
-  "versionId": "5427f1bc-fca2-4917-93ed-15e9fc1e9150"
+  "updatedAt": "2025-03-20T10:12:38.000Z",
+  "versionId": "fa0dca10-a8e0-41b0-a48b-d41b26122f33"
 }
