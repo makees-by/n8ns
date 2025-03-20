@@ -133,17 +133,6 @@
         ]
       ]
     },
-    "Получить все записи из таблицы Users2": {
-      "main": [
-        [
-          {
-            "node": "Edit Fields1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Edit Fields1": {
       "main": [
         [
@@ -214,7 +203,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Users2",
+            "node": "Получить все записи из таблицы Servers",
             "type": "main",
             "index": 0
           }
@@ -579,6 +568,17 @@
         [
           {
             "node": "Обновляем значение BP_tracks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Servers": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
@@ -1310,27 +1310,6 @@
     },
     {
       "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT * FROM Servers ",
-        "options": {}
-      },
-      "id": "6591789e-4eb6-4df9-b0f9-967a477549c4",
-      "name": "Получить все записи из таблицы Users2",
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        220,
-        1100
-      ],
-      "credentials": {
-        "mySql": {
-          "id": "8aCpW2vOoONBz7HE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "assignments": {
           "assignments": [
             {
@@ -1562,8 +1541,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -40,
-        1200
+        0,
+        1100
       ],
       "webhookId": "b92d9ed5-d112-42a9-8825-e9750b975894"
     },
@@ -2608,6 +2587,27 @@
       ],
       "id": "dcf94aa2-cf5a-4d31-8b32-7a2972e3ea9b",
       "name": "Edit Fields13"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Servers ",
+        "options": {}
+      },
+      "id": "6591789e-4eb6-4df9-b0f9-967a477549c4",
+      "name": "Получить все записи из таблицы Servers",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        220,
+        1100
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -2620,6 +2620,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 11,
-  "updatedAt": "2024-12-21T15:14:10.000Z",
-  "versionId": "66ee796f-bfcd-42ab-beab-5678759cab83"
+  "updatedAt": "2025-03-19T20:35:06.000Z",
+  "versionId": "28334ae1-d53a-49c0-843f-d27cfb7e7161"
 }
