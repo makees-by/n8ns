@@ -207,14 +207,9 @@
       "main": [
         [
           {
-            "node": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ",
+            "node": "If8",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Выжидаем подсчёта лимитов по трекам",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
@@ -487,6 +482,11 @@
             "node": "Получаем лимит по трекам по id",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Выжидаем подсчёта лимитов по трекам",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -695,6 +695,17 @@
         [
           {
             "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If8": {
+      "main": [
+        [
+          {
+            "node": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ",
             "type": "main",
             "index": 0
           }
@@ -1008,6 +1019,7 @@
             }
           ]
         },
+        "combineFilters": "OR",
         "options": {}
       },
       "id": "2edfc243-1afe-4a84-a614-264d0f8df1b3",
@@ -1119,7 +1131,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4060,
+        3940,
         -160
       ],
       "executeOnce": true
@@ -1189,7 +1201,7 @@
       "typeVersion": 2.2,
       "position": [
         4340,
-        -80
+        -160
       ]
     },
     {
@@ -1264,7 +1276,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        4020,
+        3900,
         560
       ],
       "executeOnce": true
@@ -1340,8 +1352,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        720,
-        380
+        700,
+        340
       ]
     },
     {
@@ -2012,8 +2024,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4920,
-        560
+        5100,
+        540
       ],
       "id": "9a2d9ca0-94b4-49b9-aea0-322115ae50eb",
       "name": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ"
@@ -2445,8 +2457,41 @@
       "typeVersion": 2.2,
       "position": [
         3940,
-        380
+        360
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a7a63dc8-97e4-42ee-bb76-ea37d3152847",
+              "leftValue": "={{ $json.Track.length }}",
+              "rightValue": 11,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4820,
+        560
+      ],
+      "id": "9ec372a3-714f-4742-9d31-5bbd42c0b80f",
+      "name": "If8"
     }
   ],
   "pinData": {},
@@ -2463,6 +2508,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-14T11:57:06.000Z",
-  "versionId": "851d4771-3d91-458a-8902-1c175d200219"
+  "updatedAt": "2025-03-20T11:36:59.000Z",
+  "versionId": "474500a9-b084-4a87-a82a-79c6169fddb0"
 }
