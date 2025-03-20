@@ -367,7 +367,7 @@
       "main": [
         [
           {
-            "node": "Отсеиваем записи без треков1",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -386,6 +386,17 @@
         [
           {
             "node": "Получаем записи о нужных треках в БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Отсеиваем записи без треков1",
             "type": "main",
             "index": 0
           }
@@ -601,7 +612,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1920,
+        2120,
         320
       ]
     },
@@ -612,7 +623,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1760,
+        1980,
         720
       ]
     },
@@ -779,7 +790,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        3200,
+        3420,
         920
       ],
       "retryOnFail": true,
@@ -799,7 +810,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2920,
+        3140,
         660
       ]
     },
@@ -895,9 +906,10 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2180,
+        2400,
         160
       ],
+      "alwaysOutputData": true,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -916,9 +928,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        2140,
+        2360,
         1040
-      ]
+      ],
+      "alwaysOutputData": true
     },
     {
       "parameters": {
@@ -947,7 +960,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3540,
+        3760,
         660
       ]
     },
@@ -982,7 +995,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3360,
+        3580,
         660
       ]
     },
@@ -995,7 +1008,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3140,
+        3360,
         660
       ],
       "executeOnce": true
@@ -1013,7 +1026,8 @@
         0,
         760
       ],
-      "webhookId": "0abf857e-d988-4d0f-af16-a37579d4465c"
+      "webhookId": "0abf857e-d988-4d0f-af16-a37579d4465c",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1023,7 +1037,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2880,
+        3100,
         900
       ],
       "id": "247db668-21cf-4604-8c0c-4d4161bf6dbc",
@@ -1036,7 +1050,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3500,
+        3720,
         920
       ],
       "id": "aedf621b-0932-427c-adb2-020a170fe0a1",
@@ -1057,7 +1071,7 @@
       "type": "n8n-nodes-base.sort",
       "typeVersion": 1,
       "position": [
-        2560,
+        2780,
         1040
       ],
       "id": "8c7bbe23-7454-49c6-8ec2-518a52cd0b20",
@@ -1243,7 +1257,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2320,
+        2540,
         680
       ],
       "id": "d9d0a07e-f191-4d90-8fa6-142de8e2c848",
@@ -1263,7 +1277,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        2640,
+        2860,
         580
       ],
       "id": "5d85efde-3f01-42ba-aafb-6c91616065e1",
@@ -1304,7 +1318,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2920,
+        3140,
         400
       ],
       "id": "1c5f863e-69a4-4e7b-88c3-cf41e252d803",
@@ -1324,7 +1338,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3160,
+        3380,
         400
       ],
       "id": "a5e55c83-9357-456e-993c-296169be3c14",
@@ -1335,7 +1349,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3120,
+        3340,
         100
       ],
       "id": "5550c3c2-08e5-45d3-979f-63cb321ebea1",
@@ -1432,8 +1446,22 @@
       "typeVersion": 2.2,
       "position": [
         1600,
-        180
+        100
       ]
+    },
+    {
+      "parameters": {
+        "maxItems": 247
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        320
+      ],
+      "id": "1579291c-3f7c-480f-af96-3c2dd008a9d0",
+      "name": "Limit",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -1449,7 +1477,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-02-05T16:57:09.000Z",
-  "versionId": "4f32d775-f841-478d-9dd6-a686b352bae8"
+  "triggerCount": 0,
+  "updatedAt": "2025-03-19T20:35:37.000Z",
+  "versionId": "e54ca821-143e-4a76-8dd8-a703ead5d468"
 }
