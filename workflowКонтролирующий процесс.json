@@ -5,12 +5,12 @@
       "main": [
         [
           {
-            "node": "Проверки оплаты",
+            "node": "формируем запрос к логированию",
             "type": "main",
             "index": 0
           },
           {
-            "node": "формируем запрос к логированию",
+            "node": "Проверка оплаты",
             "type": "main",
             "index": 0
           }
@@ -632,6 +632,17 @@
           }
         ]
       ]
+    },
+    "Проверка оплаты": {
+      "main": [
+        [
+          {
+            "node": "Проверки оплаты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:00:01.739Z",
@@ -671,7 +682,8 @@
       "position": [
         1040,
         -300
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -787,8 +799,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1620,
-        120
+        1460,
+        100
       ]
     },
     {
@@ -1591,7 +1603,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1400,
+        1620,
         -460
       ],
       "id": "e5ab3835-c6cc-4731-8a3d-658f8cd357c4",
@@ -1610,7 +1622,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        1640,
+        1860,
         -460
       ],
       "id": "b20c1488-29bb-42fa-ba9e-3b7b58f056b9",
@@ -2203,9 +2215,37 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1820,
-        -300
-      ]
+        2220,
+        -420
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "aumuEuypCPDeduJl",
+          "mode": "list",
+          "cachedResultName": "Проверка оплаты"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1740,
+        -280
+      ],
+      "id": "35ddfb20-5a94-456f-bf7e-7a7b1bb271e4",
+      "name": "Проверка оплаты"
     }
   ],
   "pinData": {},
@@ -2225,7 +2265,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-03-19T10:20:58.000Z",
-  "versionId": "4bbd0577-a265-4d1d-b6dc-f7060ef29f1f"
+  "triggerCount": 0,
+  "updatedAt": "2025-03-19T20:35:25.000Z",
+  "versionId": "e91a8356-1861-4111-b8aa-f8aa612ba5d3"
 }
