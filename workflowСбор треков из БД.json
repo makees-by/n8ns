@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Сбор треков из БД таблицы traks": {
       "main": [
@@ -1817,7 +1817,8 @@
       "position": [
         2440,
         220
-      ]
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -1832,7 +1833,8 @@
         680,
         340
       ],
-      "webhookId": "4fd7dd7d-e9e3-408f-a836-6754eee194cf"
+      "webhookId": "4fd7dd7d-e9e3-408f-a836-6754eee194cf",
+      "disabled": true
     },
     {
       "parameters": {
@@ -2606,7 +2608,8 @@
         360
       ],
       "id": "f44a35ea-1d34-430f-81b7-910b2d16a7a6",
-      "name": "Ищем треки не обработанные сегодня"
+      "name": "Ищем треки не обработанные сегодня",
+      "disabled": true
     },
     {
       "parameters": {
@@ -2912,6 +2915,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-14T12:30:42.000Z",
-  "versionId": "f797569a-129c-4cbd-9426-b574ef974afe"
+  "updatedAt": "2025-03-20T11:18:53.000Z",
+  "versionId": "b4dbef4c-92a8-4d33-bfd8-77a194b24d1c"
 }
