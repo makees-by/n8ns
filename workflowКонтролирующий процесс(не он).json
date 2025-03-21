@@ -1,0 +1,2271 @@
+{
+  "active": true,
+  "connections": {
+    "Программа - контролёр": {
+      "main": [
+        [
+          {
+            "node": "формируем запрос к логированию",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Проверка оплаты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск проверки оплаты": {
+      "main": [
+        [
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выставляем максимальное количество треков в проверке": {
+      "main": [
+        [
+          {
+            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем время окончания всех проверок": {
+      "main": [
+        [
+          {
+            "node": "Ожидаем завершения всех проверок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "проверяем завершили ли проверку все сервера": {
+      "main": [
+        [
+          {
+            "node": "Получаем все сервера с workOn - ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем на отсутствие ошибок": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от сборщика треков из БД": {
+      "main": [
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей": {
+      "main": [
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Разбиваем окончание оплаты в течении 3 дней",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Разбиваем просрочка платежа",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Разбиваем выключен work_on",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Структурируем данные от проверки оплаты": {
+      "main": [
+        [
+          {
+            "node": "Разбиваем по категориям",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Отправляемся на следующий шаг сбор треков из гугл таблиц в БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Разбиваем по категориям": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу выставления статусов в гугл таблицу",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей2": {
+      "main": [
+        [
+          {
+            "node": "Ответ от проверки оплаты пользователей3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Структурируем данные от процесса выставления статусов в гугл таблицы из БД": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг сбор треков из гугл таблиц в БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляемся на следующий шаг сбор треков из гугл таблиц в БД": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу сбора треков из гугл таблиц",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ответ от проверки оплаты пользователей3": {
+      "main": [
+        [
+          {
+            "node": "Проверяем на отсутствие ошибок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Структурируем данные от процесса процесса сбора треков из гугл таблиц в БД": {
+      "main": [
+        [
+          {
+            "node": "Следующий шаг сбор треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Следующий шаг сбор треков": {
+      "main": [
+        [
+          {
+            "node": "Запрос к процессу сбора треков из БД",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Выставляем максимальное количество треков в проверке",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Структурируем данные от проверки оплаты",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Структурируем данные от процесса выставления статусов в гугл таблицы из БД",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Структурируем данные от процесса процесса сбора треков из гугл таблиц в БД",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем на запуск всем серверам, у которых workOn - 1": {
+      "main": [
+        [
+          {
+            "node": "Получаем все сервера с workOn - 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем все сервера с workOn - 1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Отправляем запрос по webhook из БД servers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем все сервера с workOn - ": {
+      "main": [
+        [
+          {
+            "node": "Находим максимальный traks_left",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Находим максимальный traks_left": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Окончание дневной проверки отправка отчёта",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию6",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Получаем все сервера с workOn - ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Проверяем на отсутствие ошибок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отправляем запрос по webhook из БД servers": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Ожидаем завершения всех проверок",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию1": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию3": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск выставления статуса трека в гугл таблицы": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию4": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию5": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования5": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Docs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию6": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию7": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Docs": {
+      "main": [
+        [
+          {
+            "node": "Получаем все сервера с workOn - 2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "проверяем завершили ли проверку все сервера",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем все сервера с workOn - 2": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Программа - контролёр",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook3": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Окончание дневной проверки отправка отчёта": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверка оплаты": {
+      "main": [
+        [
+          {
+            "node": "Проверки оплаты",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-10-20T13:00:01.739Z",
+  "id": "bMvuHeBYvdHDiEIe",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Контролирующий процесс(не он)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "eee787d6-2ce7-4d47-b2c1-e3a949570a0e",
+      "name": "Программа - контролёр",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "daysInterval": 0,
+              "triggerAtHour": 10,
+              "triggerAtMinute": 42
+            }
+          ]
+        }
+      },
+      "id": "0d8469d7-a7e4-4bbc-bb72-92ca31dfb728",
+      "name": "Запуск проверки оплаты",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1040,
+        -300
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/Take_traks_from_google_sheets_mod",
+        "options": {}
+      },
+      "id": "bee8934d-1e4a-4098-bf40-ffffe41e0fa2",
+      "name": "Запрос к процессу сбора треков из гугл таблиц",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1440,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/take_traks_from_bd",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url_become",
+              "value": "={{$execution.resumeUrl}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3ba50ae7-6504-4539-8123-fe531d13b404",
+      "name": "Запрос к процессу сбора треков из БД",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1b33bda4-ae4b-4e70-b555-176766505d90",
+              "name": "TraksInCheck",
+              "value": "={{ $json.body.max_items }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b5a1190a-3dd1-4b7d-8d7c-43ab603cb06b",
+      "name": "Выставляем максимальное количество треков в проверке",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3340,
+        -320
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "addToDate",
+        "magnitude": "={{ $now }}",
+        "timeUnit": "minutes",
+        "duration": "={{ $json.TraksInCheck + 5 }}",
+        "outputFieldName": "=newDate",
+        "options": {}
+      },
+      "id": "a8b17c2f-4b26-4706-9f12-2ac7da550775",
+      "name": "Получаем время окончания всех проверок",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        3620,
+        -360
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "specificTime",
+        "dateTime": "={{ $json.newDate }}"
+      },
+      "id": "fc068e95-dfdb-44b0-8725-8854ad88cdd9",
+      "name": "Ожидаем завершения всех проверок",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3840,
+        -360
+      ],
+      "webhookId": "969e1e5f-158a-4a1b-92ba-c4fa6fcd603d"
+    },
+    {
+      "parameters": {},
+      "id": "42367c75-3eae-4e09-ba16-72c3fcfd0155",
+      "name": "проверяем завершили ли проверку все сервера",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4100,
+        -860
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/from_bd_to_google_sheets",
+        "options": {}
+      },
+      "id": "892bf812-2dc1-45e5-8f9c-03d507c7b3ea",
+      "name": "Запрос к процессу выставления статусов в гугл таблицу",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1460,
+        100
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9ba85621-1421-4bc8-95ab-2d808ffd5bf6",
+      "name": "Окончание дневной проверки отправка отчёта",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5280,
+        -880
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Попробовать просто переход в процесс",
+        "height": 83,
+        "width": 353
+      },
+      "id": "65b240f4-ff57-4555-a2d1-a51b53cd3dd2",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Выставляет статусы за предыдущий день",
+        "height": 80,
+        "width": 364.49983326877265
+      },
+      "id": "7598100e-8b71-4927-ac3b-d2fbc7fd856c",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Собирает треки из гугл таблиц",
+        "height": 80
+      },
+      "id": "16917ee4-ab7f-4092-b0e3-c12541bfdb4b",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        480
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2942c44d-df28-48dc-b0aa-379a89eb31a8",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        2820,
+        -640
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c6ce26e1-741a-4abc-b994-f1e19d2e472e",
+              "leftValue": "={{ $json.body.Error }}",
+              "rightValue": "no",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "c2c547ae-e870-4ade-a19c-54ced6e40ec6",
+      "name": "Проверяем на отсутствие ошибок",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2860,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"129\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"max_items\": \"396\",\n      \"Error\": \"no\",\n      \"Ditales\": \"Тут будут подробности или логи\",\n      \"From\": \"take_traks_from_bd\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "974c7a92-cf00-4574-9329-57f27a9cdaa0",
+      "name": "Ответ от сборщика треков из БД",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2340,
+        -160
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"1064\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"InfoUserData:[{\\\"3daysTOpay\\\":[{\\\"ID\\\":\\\"Zstest11\\\",\\\"DateLastPay\\\":\\\"2024-09-30\\\",\\\"DateNextPay\\\":\\\"2024-10-30\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1,\\\"timeDifference\\\":{\\\"days\\\":2.125}}]},{\\\"LastPay_InPast\\\":[{\\\"ID\\\":\\\"ZStest3d\\\",\\\"DateLastPay\\\":\\\"2024-09-25\\\",\\\"DateNextPay\\\":\\\"2024-10-25\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1},{\\\"ID\\\":\\\"ZsTestMin3\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-09\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestMinD\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-06\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestnewf\\\",\\\"DateLastPay\\\":\\\"2024-10-22\\\",\\\"DateNextPay\\\":\\\"2024-10-22\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0}]},{\\\"WorkOn_0\\\":[{\\\"ID\\\":\\\"ZsTestNok\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-11-04\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"Zstrasd\\\",\\\"DateLastPay\\\":\\\"2024-10-24\\\",\\\"DateNextPay\\\":\\\"2024-11-23\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0}]}]\",\n      \"From\": \"pay_check\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "ba063af3-bca5-4052-91b5-35b06c927b19",
+      "name": "Ответ от проверки оплаты пользователей",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2340,
+        -360
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"1064\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"InfoUserData:[{\\\"3daysTOpay\\\":[{\\\"ID\\\":\\\"Zstest11\\\",\\\"DateLastPay\\\":\\\"2024-09-30\\\",\\\"DateNextPay\\\":\\\"2024-10-30\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1,\\\"timeDifference\\\":{\\\"days\\\":2.125}}]},{\\\"LastPay_InPast\\\":[{\\\"ID\\\":\\\"ZStest3d\\\",\\\"DateLastPay\\\":\\\"2024-09-25\\\",\\\"DateNextPay\\\":\\\"2024-10-25\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":1},{\\\"ID\\\":\\\"ZsTestMin3\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-09\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestMinD\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-10-06\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"ZsTestnewf\\\",\\\"DateLastPay\\\":\\\"2024-10-22\\\",\\\"DateNextPay\\\":\\\"2024-10-22\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"ok\\\",\\\"WorkOn\\\":0}]},{\\\"WorkOn_0\\\":[{\\\"ID\\\":\\\"ZsTestNok\\\",\\\"DateLastPay\\\":\\\"2024-10-08\\\",\\\"DateNextPay\\\":\\\"2024-11-04\\\",\\\"Summa\\\":100,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0},{\\\"ID\\\":\\\"Zstrasd\\\",\\\"DateLastPay\\\":\\\"2024-10-24\\\",\\\"DateNextPay\\\":\\\"2024-11-23\\\",\\\"Summa\\\":10,\\\"Status\\\":\\\"Nok\\\",\\\"WorkOn\\\":0}]}]\",\n      \"From\": \"pay_check\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "bb1418df-f85b-470b-9f68-ec8050388831",
+      "name": "Ответ от проверки оплаты пользователей1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2180,
+        -920
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json['3daysTOpay'] }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "array",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "До оплаты менее 3 дней"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "890acd4f-37c0-473d-a415-c56a6bf09a13",
+                    "leftValue": "={{ $json.LastPay_InPast }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "array",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Просрочена оплата"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e1538697-4967-482d-ab8e-f35d2bf2c76f",
+                    "leftValue": "={{ $json.WorkOn_0 }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "array",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Выключен work_on"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "517cea59-43f1-4104-bc03-a13edd65a8ce",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        4060,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f233ba40-e3ff-49bf-a81f-46b9445b184f",
+              "name": "Ditales",
+              "value": "={ {{ $json.body.Ditales }} }",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8d04111d-3f23-425c-b57d-ff4f2cbe12cd",
+      "name": "Структурируем данные от проверки оплаты",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3460,
+        -120
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "Ditales.InfoUserData",
+        "options": {}
+      },
+      "id": "d3d885d8-ae38-49d6-836d-482f97413fbf",
+      "name": "Разбиваем по категориям",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        3800,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "['3daysTOpay']",
+        "options": {}
+      },
+      "id": "ed3a1a11-5cb3-4bbc-bdbc-d90d0be3dbb4",
+      "name": "Разбиваем окончание оплаты в течении 3 дней",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        4340,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "LastPay_InPast",
+        "options": {}
+      },
+      "id": "ef481d17-3a9e-48b8-9838-1f24a42e3fc8",
+      "name": "Разбиваем просрочка платежа",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        4340,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "WorkOn_0",
+        "options": {}
+      },
+      "id": "18aae664-d09e-44b7-af99-bf56f0e4815a",
+      "name": "Разбиваем выключен work_on",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        4340,
+        200
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b393dd60-8cd5-4985-a17a-0787904618bf",
+      "name": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        660,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"166\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"тут будет информация по процессу и ошибки, если возникнут\",\n      \"From\": \"from_bd_to_google_sheets\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "1bad0b5a-b4f8-4f06-9848-17980bb73a13",
+      "name": "Ответ от проверки оплаты пользователей2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2540,
+        -360
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b94753c6-c557-4e2a-ab92-b1a9590794be",
+              "name": "body.Ditales",
+              "value": "={{ $json.body.Ditales }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "15a3ce1d-695f-47a7-a5b8-d18011d2030a",
+      "name": "Структурируем данные от процесса выставления статусов в гугл таблицы из БД",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3460,
+        100
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "652c0294-d492-4da5-858a-d66de375d96a",
+      "name": "Отправляемся на следующий шаг сбор треков из гугл таблиц в БД",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "path": "proceses_control",
+        "options": {}
+      },
+      "id": "0ffda83f-3238-411f-b7d6-baa685a8ed83",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        2380,
+        100
+      ],
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makees.online\",\n      \"user-agent\": \"axios/1.7.4\",\n      \"content-length\": \"120\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makees.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"95e7a8ea3679\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"Error\": \"no\",\n      \"Ditales\": \"Тут приколы из этого процесса\",\n      \"From\": \"Take_traks_from_google_sheets\"\n    },\n    \"webhookUrl\": \"https://n8n.makees.online/webhook-test/proceses_control\",\n    \"executionMode\": \"test\"\n  }\n]\n);"
+      },
+      "id": "bcafb4ff-ca63-4eb1-8620-3fce948871c1",
+      "name": "Ответ от проверки оплаты пользователей3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2560,
+        -140
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b94753c6-c557-4e2a-ab92-b1a9590794be",
+              "name": "body.Ditales",
+              "value": "={{ $json.body.Ditales }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8efd78c9-fa5d-4b0a-a17c-0ba588bdb188",
+      "name": "Структурируем данные от процесса процесса сбора треков из гугл таблиц в БД",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3480,
+        360
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "3dd633bb-59e7-4b57-beb1-b566c83471fc",
+      "name": "Следующий шаг сбор треков",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.From }}",
+                    "rightValue": "take_traks_from_bd",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "От сборщика треков из БД"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b8b0c703-8177-42bc-a4dd-cfc386bc65da",
+                    "leftValue": "={{ $json.body.From }}",
+                    "rightValue": "pay_check",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "От проверка оплаты"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "7cbc7e99-1715-4bc9-98d9-fed766ccca20",
+                    "leftValue": "={{ $json.body.From }}",
+                    "rightValue": "from_bd_to_google_sheets",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "От выставление статусов в гугл таблицы из БД"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "a15bab8d-7e8d-4825-850e-e4dbd41117f8",
+                    "leftValue": "={{ $json.body.From }}",
+                    "rightValue": "Take_traks_from_google_sheets",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "От процесса сбора треков из гугл таблиц в БД"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ab5e6797-9e9a-4543-8633-42c56af29328",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        3140,
+        60
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "55750f48-4afd-40a9-9ab9-be9e7087caa9",
+      "name": "Отправляем на запуск всем серверам, у которых workOn - 1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        -640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Status_Work",
+              "value": "1"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "Server_name",
+            "Webhook"
+          ]
+        }
+      },
+      "id": "725e98eb-312c-4681-a132-46f9b31ac4f4",
+      "name": "Получаем все сервера с workOn - 1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3540,
+        -640
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.Webhook }}",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "url_become",
+              "value": "={{$execution.resumeUrl}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e977bd88-fe2f-42f3-b363-907724394d94",
+      "name": "Отправляем запрос по webhook из БД servers",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3940,
+        -640
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "8754b592-b6b9-44a3-a7bf-3461a5866dc2",
+      "name": "Получаем все сервера с workOn - ",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4400,
+        -860
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "286bdc80-7e78-418f-9096-337290046e46",
+              "leftValue": "={{ $json.max_Traks_left }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8cac23a7-2efc-4244-91b6-b5e52305930f",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4900,
+        -860
+      ]
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "max",
+              "field": "Traks_left"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "55fc37ac-f691-4875-81e8-2ce93eff4d93",
+      "name": "Находим максимальный traks_left",
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1,
+      "position": [
+        4640,
+        -860
+      ]
+    },
+    {
+      "parameters": {
+        "amount": "={{ $json.max_Traks_left }}",
+        "unit": "minutes"
+      },
+      "id": "bda688f6-2810-4e1c-bbeb-94cf90c78270",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4520,
+        -600
+      ],
+      "webhookId": "8c0bf22e-1b5a-4d72-8e24-6587952f4b3f"
+    },
+    {
+      "parameters": {
+        "amount": 35
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2600,
+        100
+      ],
+      "id": "d965c829-ceca-4eba-b682-2114a38ab378",
+      "name": "Wait1",
+      "webhookId": "0193046a-769a-44ae-99dc-414a84299573"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c80774ba-faae-4726-8b14-d381b1825fb8",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3940,
+        -180
+      ],
+      "id": "73a6f86b-754f-4136-a7de-f28b7cd4ef2b",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "new",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "null",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1620,
+        -460
+      ],
+      "id": "e5ab3835-c6cc-4731-8a3d-658f8cd357c4",
+      "name": "формируем запрос к логированию"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1860,
+        -460
+      ],
+      "id": "b20c1488-29bb-42fa-ba9e-3b7b58f056b9",
+      "name": "Запрос в процесс логирования",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на выставление статуса треков из БД в гугл таблицы.\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1340,
+        -100
+      ],
+      "id": "9eb45a21-3e12-425c-879f-7970af1795fc",
+      "name": "формируем запрос к логированию1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1620,
+        -100
+      ],
+      "id": "1ac964d2-51e5-499e-b2f5-ec1031d67391",
+      "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на сбор треков из гугл таблиц в БД",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1360,
+        300
+      ],
+      "id": "cf86d068-e3ba-4993-97d5-20eaaf66aa96",
+      "name": "формируем запрос к логированию2"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1640,
+        300
+      ],
+      "id": "33c94f77-488d-4dc0-947d-2f44c7d16853",
+      "name": "Запрос в процесс логирования2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на сбор треков на проверку из БД.\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1600,
+        620
+      ],
+      "id": "d23e5264-6491-4c03-be95-219c65bc8e57",
+      "name": "формируем запрос к логированию3"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1880,
+        620
+      ],
+      "id": "46c74138-dc9b-4817-8fcf-670d82b1d32f",
+      "name": "Запрос в процесс логирования3"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        -60
+      ],
+      "id": "22140bf1-25f3-4ca5-912d-968c3e32b0dd",
+      "name": "Запуск выставления статуса трека в гугл таблицы",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "get",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2480,
+        -860
+      ],
+      "id": "37ec60fd-1b05-4581-ba34-f8de827f1a67",
+      "name": "формируем запрос к логированию4"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        2760,
+        -860
+      ],
+      "id": "024c7f63-c6f7-4b5d-ab89-2af02cea3fdf",
+      "name": "Запрос в процесс логирования4"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку треков на сервер {{ $json.name.slice(0,4) }}, докумен с логами по трекам: https://docs.google.com/document/d/{{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3340,
+        -1040
+      ],
+      "id": "3e3a66f3-6b5c-4ddc-9744-792295e57d3c",
+      "name": "формируем запрос к логированию5"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3640,
+        -1040
+      ],
+      "id": "d3be57f6-69a2-4b1c-bd18-d9d58202cb1f",
+      "name": "Запрос в процесс логирования5"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        3060,
+        -1020
+      ],
+      "id": "891773a5-fcba-40f7-b8f7-ddc0cf6d7a22",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Все процессы выполнены проверка окончена.\nFinish: {{ $now.format('HH:mm:ss') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4900,
+        -1120
+      ],
+      "id": "fd8206a8-e5e7-4ba2-97b6-1d9fa8dbf7f6",
+      "name": "формируем запрос к логированию6"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        5140,
+        -1120
+      ],
+      "id": "9a3b53ad-3a99-414b-98f7-43f89af89260",
+      "name": "Запрос в процесс логирования6"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Остался хотябы один незаконченый процесс. Перепроверка через {{ $json.max_Traks_left }} мин. ",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4280,
+        -1120
+      ],
+      "id": "e8dafb5c-4ca2-4807-bb43-ddeaa2c4ae72",
+      "name": "формируем запрос к логированию7"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        4520,
+        -1120
+      ],
+      "id": "b25eb9ad-b18a-43a3-b0fb-0890b905d29b",
+      "name": "Запрос в процесс логирования7"
+    },
+    {
+      "parameters": {
+        "folderId": "1fWyuHqxIO2MR6vhyYu2ZVJYoztAaw6CZ",
+        "title": "={{ $json.Server_name }}-{{ $now.format('dd.MM.yy') }}"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        3300,
+        -1240
+      ],
+      "id": "b0754914-b755-48c1-850d-dd7834a036ce",
+      "name": "Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "IChkHNpLaUZfm6R4",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2980,
+        -1260
+      ],
+      "id": "3bd7b667-aee1-477f-ab92-be82349a52c5",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "43a2772f-22a6-43a9-98a5-7e3d9b26291c",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3760,
+        -1240
+      ],
+      "id": "43247080-06e8-42f6-8812-49b19d054624",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3880,
+        -860
+      ],
+      "id": "65358157-a658-41f5-b600-2b245eaadcf4",
+      "name": "Edit Fields",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Servers",
+          "mode": "list",
+          "cachedResultName": "Servers"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Server_name",
+        "valueToMatchOn": "={{ $json.name.slice(0,4) }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Log_ID",
+              "value": "={{ $json.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1f81f388-e0eb-456c-9ee1-f069d402b162",
+      "name": "Получаем все сервера с workOn - 2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3520,
+        -1240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "start_checkBD",
+        "options": {}
+      },
+      "id": "821eabee-5a3a-47c6-a853-855defb29176",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        960,
+        -500
+      ],
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "path": "start_status_from_BD",
+        "options": {}
+      },
+      "id": "29f6c5b9-c244-4f21-9e84-f5a38ae84a80",
+      "name": "Webhook3",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        400,
+        120
+      ],
+      "webhookId": "4c15fbcf-7233-41b7-8c81-db76831c17f8",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Список всех связанных процессов\n\nКонтролирующий процесс: https://n8n.makeesn8n.online/workflow/bMvuHeBYvdHDiEIe\nПроверка оплаты: https://n8n.makeesn8n.online/workflow/aumuEuypCPDeduJl\nВыставление статусов из БД в гугл таблицы: https://n8n.makeesn8n.online/workflow/h5YM9whrOFCP3UOu\nСбор треков из гугл таблиц: https://n8n.makeesn8n.online/workflow/cFIhZIUCa83nOqy2\nСбор треков из БД: https://n8n.makeesn8n.online/workflow/5OMCiCkLN9V8Gpmw\nПроверка треков БП из БД: https://n8n.makeesn8n.online/workflow/YmijBbofjG27z5Tx\nПроверка треков ЕП из БД: https://n8n.makeesn8n.online/workflow/UC7sB9OYqdYSVdln\n\n## Дополнительные процессы:\nДобавление треков на  проверку в сервера (сбор треков из БД): https://n8n.makeesn8n.online/workflow/4BkOIQhV62y7mbvD\nЛог в БД: https://n8n.makeesn8n.online/workflow/lOtPJcL6AitkSaoP\nРабота с переменными: https://n8n.makeesn8n.online/workflow/KLOTYwG7rXVfZCKr\n\n## Служебные процессы:\nРабота с БД: https://n8n.makeesn8n.online/workflow/BN33z2RD9BacyBSt\nФормы для БД: https://n8n.makeesn8n.online/workflow/bUJavMgjLppjbo49\n",
+        "height": 700,
+        "width": 500
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        -840
+      ],
+      "typeVersion": 1,
+      "id": "fd284c55-426f-4c53-aaa2-8939a3e6105d",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/pay_check",
+        "options": {}
+      },
+      "id": "c0576e65-f18e-4f8a-88db-0e82dab7c2ab",
+      "name": "Проверки оплаты",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2220,
+        -420
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "aumuEuypCPDeduJl",
+          "mode": "list",
+          "cachedResultName": "Проверка оплаты"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1740,
+        -280
+      ],
+      "id": "35ddfb20-5a94-456f-bf7e-7a7b1bb271e4",
+      "name": "Проверка оплаты"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Запуск проверки оплаты": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-02-05T16:24:37.889Z",
+      "updatedAt": "2025-02-05T16:24:37.889Z",
+      "id": "vsUr1hQQVG3ZP6Nk",
+      "name": "BDCheck"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-03-20T17:09:27.000Z",
+  "versionId": "1999df3f-5176-4307-99a8-c94953f76de0"
+}
