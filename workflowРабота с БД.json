@@ -1678,6 +1678,23 @@
           }
         ]
       ]
+    },
+    "Получить все записи из таблицы Traks": {
+      "main": [
+        []
+      ]
+    },
+    "If8": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Удаление строки в таблице traks по заданному параметру1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-04T12:27:38.434Z",
@@ -2030,7 +2047,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1080,
+        -1260,
         40
       ],
       "credentials": {
@@ -2177,7 +2194,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -120,
+        -80,
         -40
       ],
       "credentials": {
@@ -5183,7 +5200,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -120,
+        -60,
         -240
       ],
       "credentials": {
@@ -6139,6 +6156,74 @@
         -4700,
         -960
       ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a7a63dc8-97e4-42ee-bb76-ea37d3152847",
+              "leftValue": "={{ $json.Track.length }}",
+              "rightValue": 11,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1400,
+        -240
+      ],
+      "id": "c687799b-eaa1-4d0d-838b-ccd64a161f7e",
+      "name": "If8"
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "deleteCommand": "delete",
+        "where": {
+          "values": [
+            {
+              "column": "Track",
+              "value": "={{ $json.Track }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6b6fb540-8541-41a9-8a7f-dc2c386fb0ba",
+      "name": "Удаление строки в таблице traks по заданному параметру1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1140,
+        -180
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -6148,6 +6233,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-19T20:35:29.000Z",
-  "versionId": "7cc36753-dbb7-49eb-ba06-37787996fc93"
+  "updatedAt": "2025-03-20T17:10:16.000Z",
+  "versionId": "d5396856-5fda-4b38-bf91-6a9ead783f4f"
 }
