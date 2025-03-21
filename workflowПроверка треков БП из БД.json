@@ -5,12 +5,12 @@
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Произведём логические расчёты для Servers в БД",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Произведём логические расчёты для Servers в БД",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -39,12 +39,12 @@
       "main": [
         [
           {
-            "node": "Получаем данные по трекам с сайта Белпочты",
+            "node": "Date & Time",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Date & Time",
+            "node": "Получаем данные по трекам с сайта Белпочты2",
             "type": "main",
             "index": 0
           }
@@ -151,13 +151,7 @@
     },
     "Получаем данные по трекам с сайта Белпочты": {
       "main": [
-        [
-          {
-            "node": "Edit Fields1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Edit Fields1": {
@@ -224,7 +218,7 @@
       "main": [
         [
           {
-            "node": "Получаем данные по трекам с сайта Белпочты",
+            "node": "Получаем данные по трекам с сайта Белпочты2",
             "type": "main",
             "index": 0
           }
@@ -345,12 +339,12 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Servers для BP_X",
+            "node": "формируем запрос к логированию",
             "type": "main",
             "index": 0
           },
           {
-            "node": "формируем запрос к логированию",
+            "node": "Получить все записи из таблицы Servers для BP_X",
             "type": "main",
             "index": 0
           }
@@ -433,6 +427,51 @@
           }
         ]
       ]
+    },
+    "Получаем данные по трекам с сайта Белпочты2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ошибочка по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ошибочка по треку": {
+      "main": [
+        [
+          {
+            "node": "Google Docs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-11T13:49:20.450Z",
@@ -449,7 +488,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        380,
+        160,
         580
       ]
     },
@@ -510,8 +549,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 3,
       "position": [
-        2160,
-        360
+        2260,
+        -140
       ],
       "retryOnFail": true,
       "waitBetweenTries": 3000,
@@ -1262,7 +1301,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        600,
+        540,
         340
       ]
     },
@@ -1314,7 +1353,7 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        320,
+        280,
         340
       ],
       "webhookId": "141d616a-1733-4f1e-979f-a7cca1f70d3c"
@@ -1348,8 +1387,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        580,
-        100
+        520,
+        120
       ],
       "id": "e50bdbc4-2039-47f8-83a8-90094f282800",
       "name": "формируем запрос к логированию",
@@ -1368,8 +1407,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        860,
-        100
+        820,
+        120
       ],
       "id": "da80339b-5ab2-491e-9c03-001bbb23d676",
       "name": "Запрос в процесс логирования"
@@ -1465,6 +1504,140 @@
       "typeVersion": 1,
       "id": "ada7bdba-d804-448a-bb71-994b87dda072",
       "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "hl",
+              "value": "ru"
+            },
+            {
+              "name": "origin",
+              "value": "https://belpost.by"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://belpost.by/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.Track }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d42ad8b9-9050-4c67-9720-14edc3b02604",
+      "name": "Получаем данные по трекам с сайта Белпочты2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2140,
+        360
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c4537afc-1288-4793-90e5-dc1192e4b985",
+              "name": "data[0].number",
+              "value": "={{ $json.Track }}",
+              "type": "string"
+            },
+            {
+              "id": "694bfdba-5419-46ac-af61-233d9dee5316",
+              "name": "data[0].steps[0].event",
+              "value": "=Н\\д ошибка по треку",
+              "type": "string"
+            },
+            {
+              "id": "5a20f685-f36c-46c2-b690-f5ff0a9d49fc",
+              "name": "data[0].steps",
+              "value": "=н\\д ошибка по треку",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0f8fe8a3-940a-4a82-8683-2766c697e3e4",
+      "name": "ошибочка по треку",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2200,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "maxItems": 240,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1420,
+        340
+      ],
+      "id": "32a34d94-8ac8-41f9-b8e5-2716baaae75c",
+      "name": "Limit"
     }
   ],
   "pinData": {},
@@ -1481,6 +1654,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-20T11:44:45.000Z",
-  "versionId": "65b40259-f406-40be-83d6-f712e11b1af4"
+  "updatedAt": "2025-03-20T14:42:04.000Z",
+  "versionId": "5e8b93f7-bedf-4394-8351-0fd071505a07"
 }
