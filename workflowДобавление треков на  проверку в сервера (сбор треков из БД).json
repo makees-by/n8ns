@@ -87,7 +87,7 @@
             "index": 0
           },
           {
-            "node": "Ложим 1 в Status_Work для сервера",
+            "node": "Лог Треков создаем",
             "type": "main",
             "index": 0
           }
@@ -104,6 +104,17 @@
           },
           {
             "node": "формируем запрос к логированию8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Лог Треков создаем": {
+      "main": [
+        [
+          {
+            "node": "Ложим 1 в Status_Work для сервера",
             "type": "main",
             "index": 0
           }
@@ -234,7 +245,7 @@
             {
               "id": "e953757c-1e36-4772-9860-f255d33f2d81",
               "name": "message",
-              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер {{ $('Входные данные').item.json.server }}",
+              "value": "={{ $now.format('HH:mm:ss') }} : Включен сервер {{ $('Входные данные').item.json.server }}\nЛог треков: https://docs.google.com/document/d/{{ $('Лог Треков создаем').item.json.id }}",
               "type": "string"
             }
           ]
@@ -281,8 +292,7 @@
         660
       ],
       "id": "3f11d198-6f1f-4b63-bbe5-e98faf970b84",
-      "name": "Code",
-      "disabled": true
+      "name": "Code"
     },
     {
       "parameters": {},
@@ -316,7 +326,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Server_name",
-        "valueToMatchOn": "={{ $json.server }}",
+        "valueToMatchOn": "={{ $('Входные данные').item.json.server }}",
         "valuesToSend": {
           "values": [
             {
@@ -326,6 +336,10 @@
             {
               "column": "TrFch",
               "value": "0"
+            },
+            {
+              "column": "Log_ID",
+              "value": "={{ $json.id }}"
             }
           ]
         },
@@ -346,6 +360,27 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "folderId": "1fWyuHqxIO2MR6vhyYu2ZVJYoztAaw6CZ",
+        "title": "={{ $now.format('dd-MM-yy') }}{{ $json.server }}"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        -840,
+        160
+      ],
+      "id": "0cf1e08b-d069-402d-9a2f-057d078677d0",
+      "name": "Лог Треков создаем",
+      "executeOnce": true,
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "IChkHNpLaUZfm6R4",
+          "name": "Google Docs account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -355,6 +390,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-01-06T12:08:23.000Z",
-  "versionId": "08ee3849-e32e-46d1-820a-ade7c58b8f83"
+  "updatedAt": "2025-03-20T14:19:57.000Z",
+  "versionId": "e01bbb6b-a9df-45d0-9f51-274f78bb8e34"
 }
