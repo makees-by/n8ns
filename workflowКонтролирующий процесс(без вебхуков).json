@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "Программа - контролёр": {
       "main": [
@@ -30,13 +30,7 @@
     },
     "Выставляем максимальное количество треков в проверке": {
       "main": [
-        [
-          {
-            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Получаем время окончания всех проверок": {
@@ -213,25 +207,19 @@
     },
     "Структурируем данные от процесса процесса сбора треков из гугл таблиц в БД": {
       "main": [
-        [
-          {
-            "node": "Следующий шаг сбор треков",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Следующий шаг сбор треков": {
       "main": [
         [
           {
-            "node": "Запрос к процессу сбора треков из БД",
+            "node": "формируем запрос к логированию3",
             "type": "main",
             "index": 0
           },
           {
-            "node": "формируем запрос к логированию3",
+            "node": "Сбор треков из БД",
             "type": "main",
             "index": 0
           }
@@ -361,11 +349,6 @@
     "When clicking ‘Test workflow’": {
       "main": [
         [
-          {
-            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
-            "type": "main",
-            "index": 0
-          },
           {
             "node": "формируем запрос к логированию4",
             "type": "main",
@@ -604,6 +587,28 @@
           }
         ]
       ]
+    },
+    "Сбор треков из ГТ в БД": {
+      "main": [
+        [
+          {
+            "node": "Следующий шаг сбор треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Сбор треков из БД": {
+      "main": [
+        [
+          {
+            "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-20T09:50:31.458Z",
@@ -630,8 +635,7 @@
           "interval": [
             {
               "daysInterval": 0,
-              "triggerAtHour": 10,
-              "triggerAtMinute": 42
+              "triggerAtMinute": 33
             }
           ]
         }
@@ -643,30 +647,6 @@
       "position": [
         980,
         -300
-      ],
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "url": "https://n8n.makeesn8n.online/webhook/take_traks_from_bd",
-        "sendBody": true,
-        "bodyParameters": {
-          "parameters": [
-            {
-              "name": "url_become",
-              "value": "={{$execution.resumeUrl}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "2e116f70-7eee-418c-bfeb-e71bfc21fe0e",
-      "name": "Запрос к процессу сбора треков из БД",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1760,
-        780
       ]
     },
     {
@@ -688,8 +668,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3340,
-        -320
+        4880,
+        2800
       ]
     },
     {
@@ -706,8 +686,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        3620,
-        -360
+        5160,
+        2760
       ]
     },
     {
@@ -720,8 +700,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3840,
-        -360
+        5380,
+        2760
       ],
       "webhookId": "840b1804-f479-49e2-aa9f-06d5889397d1"
     },
@@ -732,8 +712,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4100,
-        -860
+        3520,
+        280
       ]
     },
     {
@@ -743,8 +723,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5280,
-        -880
+        4700,
+        260
       ]
     },
     {
@@ -798,8 +778,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        2820,
-        -640
+        1980,
+        -920
       ]
     },
     {
@@ -832,8 +812,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2860,
-        100
+        4400,
+        3220
       ]
     },
     {
@@ -845,8 +825,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2740,
-        -180
+        4280,
+        2940
       ],
       "disabled": true
     },
@@ -859,8 +839,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2740,
-        -380
+        4280,
+        2740
       ],
       "disabled": true
     },
@@ -873,8 +853,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2180,
-        -920
+        1860,
+        -1200
       ],
       "disabled": true
     },
@@ -965,8 +945,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        4060,
-        20
+        5600,
+        3140
       ]
     },
     {
@@ -988,8 +968,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3460,
-        -120
+        5000,
+        3000
       ]
     },
     {
@@ -1002,8 +982,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        3800,
-        20
+        5340,
+        3140
       ]
     },
     {
@@ -1016,8 +996,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        4340,
-        -160
+        5880,
+        2960
       ]
     },
     {
@@ -1030,8 +1010,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        4340,
-        20
+        5880,
+        3140
       ]
     },
     {
@@ -1044,8 +1024,8 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        4340,
-        200
+        5880,
+        3320
       ]
     },
     {
@@ -1068,8 +1048,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2940,
-        -380
+        4480,
+        2740
       ],
       "disabled": true
     },
@@ -1092,8 +1072,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3460,
-        100
+        5000,
+        3220
       ]
     },
     {
@@ -1117,8 +1097,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        2380,
-        100
+        3920,
+        3220
       ],
       "webhookId": "7f9b3334-d965-45ad-9f84-4eca76acdcc9",
       "disabled": true
@@ -1132,8 +1112,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2960,
-        -160
+        4500,
+        2960
       ],
       "disabled": true
     },
@@ -1156,8 +1136,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3480,
-        360
+        5020,
+        3480
       ]
     },
     {
@@ -1167,8 +1147,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1400,
-        780
+        1420,
+        540
       ]
     },
     {
@@ -1282,8 +1262,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        3140,
-        60
+        4680,
+        3180
       ]
     },
     {
@@ -1293,8 +1273,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3280,
-        -640
+        2560,
+        500
       ]
     },
     {
@@ -1327,8 +1307,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3540,
-        -640
+        2960,
+        500
       ],
       "executeOnce": true,
       "credentials": {
@@ -1357,8 +1337,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3940,
-        -640
+        3360,
+        500
       ]
     },
     {
@@ -1378,8 +1358,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4400,
-        -860
+        3820,
+        280
       ],
       "executeOnce": true,
       "alwaysOutputData": true,
@@ -1419,8 +1399,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4900,
-        -860
+        4320,
+        280
       ]
     },
     {
@@ -1440,8 +1420,8 @@
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
       "position": [
-        4640,
-        -860
+        4060,
+        280
       ]
     },
     {
@@ -1454,8 +1434,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        4520,
-        -600
+        3940,
+        540
       ],
       "webhookId": "64bb9c88-fa59-46f8-adab-6256b62550c8"
     },
@@ -1466,8 +1446,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2600,
-        100
+        4140,
+        3220
       ],
       "id": "d6b028e8-b7c4-4265-bdad-f59765fc7868",
       "name": "Wait1",
@@ -1501,8 +1481,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3940,
-        -180
+        5480,
+        2940
       ],
       "id": "3940f43d-076e-40d5-aae9-a77e4555e0cb",
       "name": "If1"
@@ -1700,7 +1680,7 @@
       "typeVersion": 3.4,
       "position": [
         1600,
-        620
+        360
       ],
       "id": "db676e8a-dd5e-4b36-a593-8a76a464f483",
       "name": "формируем запрос к логированию3"
@@ -1719,7 +1699,7 @@
       "typeVersion": 1.1,
       "position": [
         1880,
-        620
+        320
       ],
       "id": "fbf7993b-e787-4a3c-b525-1b6a1d91a0c3",
       "name": "Запрос в процесс логирования3"
@@ -1728,7 +1708,10 @@
       "parameters": {
         "rule": {
           "interval": [
-            {}
+            {
+              "triggerAtHour": 6,
+              "triggerAtMinute": 2
+            }
           ]
         }
       },
@@ -1771,8 +1754,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2480,
-        -860
+        2160,
+        -1140
       ],
       "id": "038371d4-d3bb-4d60-abe6-2643df105c5e",
       "name": "формируем запрос к логированию4"
@@ -1790,8 +1773,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        2760,
-        -860
+        2440,
+        -1140
       ],
       "id": "609fcd82-7884-4928-b59d-2e41d6185be6",
       "name": "Запрос в процесс логирования4"
@@ -1815,7 +1798,7 @@
             {
               "id": "e953757c-1e36-4772-9860-f255d33f2d81",
               "name": "message",
-              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку треков на сервер {{ $json.name.slice(0,4) }}, докумен с логами по трекам: https://docs.google.com/document/d/{{ $json.id }}",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку треков на сервер {{ $json.name.slice(0,4) }}",
               "type": "string"
             }
           ]
@@ -1825,8 +1808,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3340,
-        -1040
+        2760,
+        100
       ],
       "id": "61192d20-b187-499c-a725-13127ad0a9ea",
       "name": "формируем запрос к логированию5"
@@ -1846,8 +1829,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3640,
-        -1040
+        3060,
+        100
       ],
       "id": "8f50b37f-70b8-4f87-9d17-89904686dd16",
       "name": "Запрос в процесс логирования5"
@@ -1859,8 +1842,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        3060,
-        -1020
+        2480,
+        120
       ],
       "id": "23d43173-721f-4820-9b35-909ca4c03887",
       "name": "Loop Over Items"
@@ -1894,8 +1877,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4900,
-        -1120
+        4320,
+        20
       ],
       "id": "c41d14f9-59ae-4540-aa33-2438526f6853",
       "name": "формируем запрос к логированию6"
@@ -1913,8 +1896,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        5140,
-        -1120
+        4560,
+        20
       ],
       "id": "41b53f31-6a68-4711-9e09-944d0aa12dbd",
       "name": "Запрос в процесс логирования6"
@@ -1948,8 +1931,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4280,
-        -1120
+        3700,
+        20
       ],
       "id": "815e5d6d-9147-4012-b8d5-844167da7300",
       "name": "формируем запрос к логированию7"
@@ -1967,8 +1950,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        4520,
-        -1120
+        3940,
+        20
       ],
       "id": "29ae6f7a-20dd-4a75-be0a-74dd349d432f",
       "name": "Запрос в процесс логирования7"
@@ -1981,8 +1964,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        3300,
-        -1240
+        2720,
+        -100
       ],
       "id": "76532a07-9405-4872-980f-76d7fa1288a2",
       "name": "Google Docs",
@@ -1991,15 +1974,16 @@
           "id": "IChkHNpLaUZfm6R4",
           "name": "Google Docs account"
         }
-      }
+      },
+      "disabled": true
     },
     {
       "parameters": {},
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2980,
-        -1260
+        2400,
+        -120
       ],
       "id": "ccb4ccd8-c721-4f9e-8c8d-03d7b9726cc2",
       "name": "No Operation, do nothing"
@@ -2032,8 +2016,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3760,
-        -1240
+        3180,
+        -100
       ],
       "id": "e6ffe848-fc5f-48d0-b357-8773ef2c8969",
       "name": "If2"
@@ -2046,8 +2030,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3880,
-        -860
+        3300,
+        280
       ],
       "id": "99f3b92b-3db1-41c6-a1cb-7694284f6247",
       "name": "Edit Fields",
@@ -2080,8 +2064,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3520,
-        -1240
+        2940,
+        -100
       ],
       "executeOnce": true,
       "credentials": {
@@ -2101,8 +2085,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        680,
-        -700
+        1760,
+        -1000
       ],
       "webhookId": "bf8892ae-2fce-401f-9e50-463319029b0c",
       "disabled": true
@@ -2209,6 +2193,33 @@
       ],
       "id": "28c0feb1-11d7-4bd0-a996-085a28ab363a",
       "name": "Сбор треков из ГТ в БД"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "5OMCiCkLN9V8Gpmw",
+          "mode": "list",
+          "cachedResultName": "Сбор треков из БД"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1920,
+        540
+      ],
+      "id": "5797b482-b763-47af-a4a1-cd1c23b63454",
+      "name": "Сбор треков из БД"
     }
   ],
   "pinData": {},
@@ -2228,7 +2239,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-03-20T10:14:30.000Z",
-  "versionId": "17db0dbc-00f1-430c-b57d-97a361a577ee"
+  "triggerCount": 1,
+  "updatedAt": "2025-03-20T17:18:53.000Z",
+  "versionId": "84d11576-fbaa-44a2-a338-fbd53020d5c0"
 }
