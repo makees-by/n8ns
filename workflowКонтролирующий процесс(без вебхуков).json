@@ -5,12 +5,12 @@
       "main": [
         [
           {
-            "node": "формируем запрос к логированию",
+            "node": "Проверка оплаты",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Проверка оплаты",
+            "node": "формируем запрос к логированию",
             "type": "main",
             "index": 0
           }
@@ -634,7 +634,6 @@
         "rule": {
           "interval": [
             {
-              "daysInterval": 0,
               "triggerAtMinute": 33
             }
           ]
@@ -1516,7 +1515,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1580,
+        1320,
         -560
       ],
       "id": "84b35c0c-5c65-402b-92cd-87d3e73af090",
@@ -1535,7 +1534,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        1820,
+        1560,
         -560
       ],
       "id": "9e2af513-48b1-4357-9e0c-8072eb5707c2",
@@ -1722,8 +1721,7 @@
         320
       ],
       "id": "08881033-199f-4ae0-9a76-6089444438e3",
-      "name": "Запуск выставления статуса трека в гугл таблицы",
-      "disabled": true
+      "name": "Запуск выставления статуса трека в гугл таблицы"
     },
     {
       "parameters": {
@@ -2122,7 +2120,9 @@
           "attemptToConvertTypes": false,
           "convertFieldsToString": true
         },
-        "options": {}
+        "options": {
+          "waitForSubWorkflow": true
+        }
       },
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
@@ -2131,7 +2131,8 @@
         -300
       ],
       "id": "a6b571b8-dfbe-4615-8852-8cb9e83ed73a",
-      "name": "Проверка оплаты"
+      "name": "Проверка оплаты",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -2183,7 +2184,9 @@
           "attemptToConvertTypes": false,
           "convertFieldsToString": true
         },
-        "options": {}
+        "options": {
+          "waitForSubWorkflow": true
+        }
       },
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
@@ -2192,7 +2195,8 @@
         120
       ],
       "id": "28c0feb1-11d7-4bd0-a996-085a28ab363a",
-      "name": "Сбор треков из ГТ в БД"
+      "name": "Сбор треков из ГТ в БД",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -2210,7 +2214,9 @@
           "attemptToConvertTypes": false,
           "convertFieldsToString": true
         },
-        "options": {}
+        "options": {
+          "waitForSubWorkflow": true
+        }
       },
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
@@ -2219,7 +2225,8 @@
         540
       ],
       "id": "5797b482-b763-47af-a4a1-cd1c23b63454",
-      "name": "Сбор треков из БД"
+      "name": "Сбор треков из БД",
+      "executeOnce": true
     }
   ],
   "pinData": {},
@@ -2228,6 +2235,9 @@
   },
   "staticData": {
     "node:Запуск проверки оплаты": {
+      "recurrenceRules": []
+    },
+    "node:Запуск выставления статуса трека в гугл таблицы": {
       "recurrenceRules": []
     }
   },
@@ -2239,7 +2249,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-03-20T17:18:53.000Z",
-  "versionId": "84d11576-fbaa-44a2-a338-fbd53020d5c0"
+  "triggerCount": 2,
+  "updatedAt": "2025-03-22T09:28:36.000Z",
+  "versionId": "85e35823-5d5a-4c3d-bf3e-1306b96edd95"
 }
