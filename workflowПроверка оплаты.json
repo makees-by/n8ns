@@ -489,6 +489,39 @@
           }
         ]
       ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос в процесс логирования1": {
+      "main": [
+        [
+          {
+            "node": "If5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If5": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-10-20T13:05:09.344Z",
@@ -787,9 +820,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3780,
-        500
-      ]
+        3220,
+        1340
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1422,8 +1456,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3540,
-        500
+        2980,
+        1340
       ],
       "id": "41ab80bc-010b-4691-a6c3-79ffbe6b7598",
       "name": "No Operation, do nothing"
@@ -1457,8 +1491,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3540,
-        240
+        2980,
+        1080
       ],
       "id": "cec16c07-83a5-4217-a4e4-f5699a15085a",
       "name": "формируем запрос к логированию1"
@@ -1476,8 +1510,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3840,
-        240
+        3280,
+        1080
       ],
       "id": "ae9fe357-bf38-4a1e-a5ff-8f95abfafa6f",
       "name": "Запрос в процесс логирования1"
@@ -1596,6 +1630,51 @@
       "typeVersion": 1,
       "id": "a7b05eed-4a2f-474b-9781-26bc6993768f",
       "name": "Sticky Note3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3240,
+        1640
+      ],
+      "id": "30f6fe3d-0e47-4fb5-9eea-d6813636c76f",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7141b5b3-6d65-4e41-a3ed-707203ce2ae0",
+              "leftValue": true,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3500,
+        1080
+      ],
+      "id": "1551d4c0-05ff-49e5-a942-62a03682a7c0",
+      "name": "If5"
     }
   ],
   "pinData": {},
@@ -1612,6 +1691,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-19T20:35:32.000Z",
-  "versionId": "5f805f95-3fdd-42d1-a412-026c8b2468e2"
+  "updatedAt": "2025-03-22T09:26:22.000Z",
+  "versionId": "df65e388-85b6-49bc-9910-4c1294cc7979"
 }
