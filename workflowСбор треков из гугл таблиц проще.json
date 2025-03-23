@@ -86,11 +86,6 @@
             "node": "Данные в цикле",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "JsonDatabase",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -99,22 +94,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Получаем записи со статусом нет в БД",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "достаём тригер",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "достаём тригер2",
+            "node": "Execute Workflow",
             "type": "main",
             "index": 0
           }
@@ -333,11 +313,6 @@
       "main": [
         [
           {
-            "node": "No Operation, do nothing2",
-            "type": "main",
-            "index": 0
-          },
-          {
             "node": "формируем запрос к логированию1",
             "type": "main",
             "index": 0
@@ -358,13 +333,7 @@
     },
     "If2": {
       "main": [
-        [
-          {
-            "node": "Данные в цикле",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "формируем запрос к логированию": {
@@ -722,6 +691,28 @@
           }
         ]
       ]
+    },
+    "Execute Workflow": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-02-13T09:18:32.256Z",
@@ -949,7 +940,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3400,
+        3420,
         320
       ]
     },
@@ -1125,8 +1116,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3140,
-        100
+        3320,
+        -120
       ]
     },
     {
@@ -1408,8 +1399,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        4080,
-        -520
+        3060,
+        1960
       ],
       "executeOnce": true,
       "disabled": true
@@ -1445,8 +1436,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3680,
-        -520
+        2660,
+        1960
       ],
       "executeOnce": true
     },
@@ -1463,7 +1454,8 @@
         720,
         160
       ],
-      "webhookId": "938cde9c-49c8-42a6-b685-8bf31fa84fd7"
+      "webhookId": "938cde9c-49c8-42a6-b685-8bf31fa84fd7",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1526,8 +1518,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2920,
-        1100
+        3600,
+        1160
       ],
       "id": "f9338527-312f-4578-9290-47acfaa4b5b5",
       "name": "No Operation, do nothing2"
@@ -1730,8 +1722,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3660,
-        -800
+        2640,
+        1680
       ],
       "id": "2bbfcf21-298e-4e1a-9b18-afb8be94900e",
       "name": "формируем запрос к логированию3",
@@ -1750,8 +1742,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3900,
-        -800
+        2880,
+        1680
       ],
       "id": "6438d6f8-f11a-4d44-9e36-5d933e2b8110",
       "name": "Запрос в процесс логирования3"
@@ -1784,8 +1776,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4120,
-        -800
+        3100,
+        1680
       ],
       "id": "28fce9ca-8098-4288-be04-ea3244388ab8",
       "name": "If7"
@@ -2025,8 +2017,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3500,
-        -160
+        2180,
+        1960
       ],
       "id": "25aded2c-2c44-48c4-88c9-42242eb6d15c",
       "name": "Завершена работа всех циклов"
@@ -2510,11 +2502,50 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3740,
-        2500
+        3480,
+        2000
       ],
       "id": "125d9bf1-16c8-4a8b-9898-a75303673ec7",
       "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "VOgqj7sMFFFH6q7a",
+          "mode": "list",
+          "cachedResultName": "Сбор треков из гугл таблиц (глубже)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        3460,
+        640
+      ],
+      "id": "89911f23-8512-47eb-bf5c-2b79d517efc8",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3540,
+        880
+      ],
+      "id": "75ed035c-171c-4c52-9820-ad402e9b0deb",
+      "name": "Wait",
+      "webhookId": "3ff344fa-6574-4666-b23d-7ed786c9d98c"
     }
   ],
   "pinData": {},
@@ -2530,7 +2561,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-03-22T09:24:35.000Z",
-  "versionId": "85f142dd-bc5c-40fc-ba5e-e75c1a24a998"
+  "triggerCount": 0,
+  "updatedAt": "2025-03-23T07:06:09.000Z",
+  "versionId": "18f36cd2-29ee-415d-a883-12d5ae52d2fe"
 }
