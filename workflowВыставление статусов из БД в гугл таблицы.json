@@ -367,7 +367,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "If8",
             "type": "main",
             "index": 0
           }
@@ -412,6 +412,18 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "If8": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
       ]
     }
   },
@@ -624,7 +636,7 @@
       "typeVersion": 2.2,
       "position": [
         2120,
-        320
+        300
       ]
     },
     {
@@ -1424,7 +1436,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1660,
+        1600,
         340
       ]
     },
@@ -1469,8 +1481,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        1900,
-        320
+        1940,
+        300
       ],
       "id": "1579291c-3f7c-480f-af96-3c2dd008a9d0",
       "name": "Limit",
@@ -1486,6 +1498,39 @@
       ],
       "id": "6d8795f1-085f-4dc1-8e8f-8ed5380d001c",
       "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a7a63dc8-97e4-42ee-bb76-ea37d3152847",
+              "leftValue": "={{ $json['трек'].length }}",
+              "rightValue": 11,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        320
+      ],
+      "id": "d8950d1d-1eae-43f1-b0d2-3bf41dae3d72",
+      "name": "If8"
     }
   ],
   "pinData": {},
@@ -1502,6 +1547,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-22T09:24:27.000Z",
-  "versionId": "227eaeaf-f78e-4586-a4d8-9260b4ff1223"
+  "updatedAt": "2025-03-23T06:54:18.000Z",
+  "versionId": "5979c24c-942f-4f32-821c-dabe2edb7b24"
 }
