@@ -372,6 +372,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -521,6 +528,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        []
       ]
     }
   },
@@ -741,8 +753,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2440,
-        300
+        2960,
+        340
       ]
     },
     {
@@ -820,8 +832,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        3220,
-        1340
+        4580,
+        500
       ],
       "disabled": true
     },
@@ -856,8 +868,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3340,
-        400
+        3860,
+        440
       ]
     },
     {
@@ -932,8 +944,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        2640,
-        300
+        3160,
+        340
       ],
       "executeOnce": true,
       "alwaysOutputData": true
@@ -1260,8 +1272,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3120,
-        400
+        3640,
+        440
       ],
       "executeOnce": true
     },
@@ -1295,8 +1307,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        2840,
-        300
+        3360,
+        340
       ]
     },
     {
@@ -1378,8 +1390,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3360,
-        600
+        3880,
+        640
       ]
     },
     {
@@ -1392,8 +1404,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3140,
-        600
+        3660,
+        640
       ],
       "executeOnce": true
     },
@@ -1456,8 +1468,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2980,
-        1340
+        4340,
+        500
       ],
       "id": "41ab80bc-010b-4691-a6c3-79ffbe6b7598",
       "name": "No Operation, do nothing"
@@ -1491,8 +1503,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2980,
-        1080
+        4340,
+        240
       ],
       "id": "cec16c07-83a5-4217-a4e4-f5699a15085a",
       "name": "формируем запрос к логированию1"
@@ -1510,8 +1522,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3280,
-        1080
+        4640,
+        240
       ],
       "id": "ae9fe357-bf38-4a1e-a5ff-8f95abfafa6f",
       "name": "Запрос в процесс логирования1"
@@ -1636,8 +1648,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3240,
-        1640
+        4600,
+        800
       ],
       "id": "30f6fe3d-0e47-4fb5-9eea-d6813636c76f",
       "name": "No Operation, do nothing1"
@@ -1670,11 +1682,34 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3500,
-        1080
+        4860,
+        240
       ],
       "id": "1551d4c0-05ff-49e5-a942-62a03682a7c0",
       "name": "If5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5b2416a8-02bb-447a-ad9f-7e5873adc833",
+              "name": "status",
+              "value": "end",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2380,
+        1220
+      ],
+      "id": "ccd3a560-41f0-4592-8176-58e006d12136",
+      "name": "Edit Fields"
     }
   ],
   "pinData": {},
@@ -1691,6 +1726,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-22T09:26:22.000Z",
-  "versionId": "df65e388-85b6-49bc-9910-4c1294cc7979"
+  "updatedAt": "2025-03-22T14:50:14.000Z",
+  "versionId": "e5b26dfb-0b01-48f3-9545-cf8f2b75b156"
 }
