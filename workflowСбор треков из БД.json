@@ -243,7 +243,8 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Одного сервера хватить": {
@@ -352,7 +353,8 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Количество проверяемых треков BP1": {
@@ -385,7 +387,8 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Количество проверяемых треков EP1": {
@@ -676,13 +679,7 @@
     },
     "Запрос в процесс логирования5": {
       "main": [
-        [
-          {
-            "node": "HTTP Request",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Получаем все сервера": {
@@ -920,6 +917,32 @@
         [
           {
             "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Нет больше ни одного трека для обработки сегодня": {
+      "main": [
+        []
+      ]
+    },
+    "сообщить о проблеме": {
+      "main": [
+        []
+      ]
+    },
+    "сообщаем о проблеме": {
+      "main": [
+        []
+      ]
+    },
+    "No Operation, do nothing2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
@@ -1358,7 +1381,7 @@
     },
     {
       "parameters": {
-        "url": "https://n8n.makeesn8n.online/webhook/proceses_control",
+        "url": "https://n8n.makeesn8n.online/webhook/100",
         "sendBody": true,
         "bodyParameters": {
           "parameters": [
@@ -1389,8 +1412,7 @@
       "position": [
         5120,
         1480
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {},
@@ -2814,7 +2836,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        4640,
+        4560,
         -160
       ],
       "id": "338402cb-8498-485e-b737-fb4a829130f5",
@@ -2916,16 +2938,41 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5060,
-        3580
+        5340,
+        1480
       ],
       "id": "bf5700e2-f51d-4121-8c65-12fe5e920096",
-      "name": "No Operation, do nothing2"
+      "name": "No Operation, do nothing2",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d33df0e2-0b0f-41c7-a7ca-871b9eab9db1",
+              "name": "Konec",
+              "value": "yes",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        5080,
+        -420
+      ],
+      "id": "b184df9c-6e08-4fbe-8e5b-81d0e41604ea",
+      "name": "Edit Fields"
     }
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": null,
   "tags": [
@@ -2937,6 +2984,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-22T09:24:49.000Z",
-  "versionId": "62499733-35d0-4d73-9b56-e82d2d96271b"
+  "updatedAt": "2025-03-23T14:50:16.000Z",
+  "versionId": "3bced15a-750e-4d28-9bdf-311c38a362b2"
 }
