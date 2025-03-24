@@ -386,6 +386,11 @@
     },
     "Сбор треков из БД": {
       "main": [
+        []
+      ]
+    },
+    "Webhook": {
+      "main": [
         [
           {
             "node": "Отправляем на запуск всем серверам, у которых workOn - 1",
@@ -506,8 +511,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        660,
-        -200
+        700,
+        -140
       ]
     },
     {
@@ -552,7 +557,8 @@
       "position": [
         2560,
         500
-      ]
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -1374,6 +1380,7 @@
           "attemptToConvertTypes": false,
           "convertFieldsToString": true
         },
+        "mode": "each",
         "options": {
           "waitForSubWorkflow": true
         }
@@ -1387,6 +1394,21 @@
       "id": "5797b482-b763-47af-a4a1-cd1c23b63454",
       "name": "Сбор треков из БД",
       "executeOnce": true
+    },
+    {
+      "parameters": {
+        "path": "100",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        2220,
+        500
+      ],
+      "id": "5f3fcb81-ab1d-4da7-85b6-53eec8c47e50",
+      "name": "Webhook",
+      "webhookId": "b8ba6d1d-1dde-48a4-b5ff-ad90edab52a6"
     }
   ],
   "pinData": {},
@@ -1409,7 +1431,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 2,
-  "updatedAt": "2025-03-23T07:07:30.000Z",
-  "versionId": "06b85cbc-f24c-4859-9b8f-445cdcce1870"
+  "triggerCount": 3,
+  "updatedAt": "2025-03-23T14:51:44.000Z",
+  "versionId": "0bab9bab-b0c3-4865-a0e7-025417da8051"
 }
