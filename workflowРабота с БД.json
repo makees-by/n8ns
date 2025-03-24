@@ -6185,7 +6185,7 @@
       "typeVersion": 2.2,
       "position": [
         -1400,
-        -240
+        -180
       ],
       "id": "c687799b-eaa1-4d0d-838b-ccd64a161f7e",
       "name": "If8"
@@ -6215,8 +6215,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1140,
-        -180
+        -1120,
+        -160
       ],
       "credentials": {
         "mySql": {
@@ -6233,6 +6233,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-20T17:10:16.000Z",
-  "versionId": "d5396856-5fda-4b38-bf91-6a9ead783f4f"
+  "updatedAt": "2025-03-24T08:12:09.000Z",
+  "versionId": "c35fef60-9ba1-46f3-ab6a-09f2f8f79fea"
 }
