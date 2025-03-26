@@ -879,7 +879,7 @@
           "values": [
             {
               "column": "Status",
-              "value": "=Доставлено"
+              "value": "=Не доставлено"
             },
             {
               "column": "DateLastUpd",
@@ -1655,6 +1655,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-24T08:12:04.000Z",
-  "versionId": "29c01bb9-7034-46a9-a19c-55fc690635da"
+  "updatedAt": "2025-03-25T15:29:54.000Z",
+  "versionId": "3eb10274-601c-4611-bdc3-d06fc36bdf1e"
 }
