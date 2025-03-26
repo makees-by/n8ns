@@ -1681,7 +1681,13 @@
     },
     "Получить все записи из таблицы Traks": {
       "main": [
-        []
+        [
+          {
+            "node": "If9",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "If8": {
@@ -1690,6 +1696,52 @@
         [
           {
             "node": "Удаление строки в таблице traks по заданному параметру1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If9": {
+      "main": [
+        [
+          {
+            "node": "If10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If10": {
+      "main": [
+        [
+          {
+            "node": "If11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If11": {
+      "main": [
+        [],
+        [
+          {
+            "node": "If12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If12": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Обновление параметра в таблице Traks1",
             "type": "main",
             "index": 0
           }
@@ -2047,8 +2099,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -1260,
-        40
+        -1820,
+        60
       ],
       "credentials": {
         "mySql": {
@@ -6224,6 +6276,177 @@
           "name": "MySQL account"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a229b858-44d3-4c4c-a9a5-9c80a0f4fcb1",
+              "leftValue": "={{ $json.Status }}",
+              "rightValue": "Доставлено",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1620,
+        60
+      ],
+      "id": "62636ab6-4ada-4264-bed5-e5dfa5ac8cf3",
+      "name": "If9"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b3abb3dc-97ea-443d-99ff-8883134352c1",
+              "leftValue": "={{ $json.PostProvider }}",
+              "rightValue": "BP",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1440,
+        0
+      ],
+      "id": "a9d50330-72e0-4fb2-8093-5423586842b7",
+      "name": "If10"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8062d1d9-a5a8-4b46-87ab-b35a8697bd0c",
+              "leftValue": "={{ $json.History }}",
+              "rightValue": "Вручено",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1180,
+        40
+      ],
+      "id": "b44a5a56-c376-4039-a38e-15fe128862fa",
+      "name": "If11"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "dataMode": "defineBelow",
+        "columnToMatchOn": "Track",
+        "valueToMatchOn": "={{ $json.Track }}",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "Status",
+              "value": "Не доставлено"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36da2773-d717-4534-a5d4-3b66537b4750",
+      "name": "Обновление параметра в таблице Traks1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1240,
+        380
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a70b959e-e07b-4838-a141-78ab7352275a",
+              "leftValue": "={{ $json.History }}",
+              "rightValue": "Вручено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1560,
+        360
+      ],
+      "id": "b13f3ff6-7894-478e-9040-c08617a9c1c0",
+      "name": "If12"
     }
   ],
   "pinData": {},
@@ -6233,6 +6456,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-24T08:12:09.000Z",
-  "versionId": "c35fef60-9ba1-46f3-ab6a-09f2f8f79fea"
+  "updatedAt": "2025-03-25T15:29:58.000Z",
+  "versionId": "4a028cb8-def2-4250-b679-179d931efe2b"
 }
