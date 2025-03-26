@@ -1,0 +1,333 @@
+{
+  "active": true,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        []
+      ]
+    },
+    "Объединяем все треки в один массив": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос всех записей из таблицы servers": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получить все записи из таблицы Servers": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все треки в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-03-26T11:58:15.196Z",
+  "id": "4tXEm9rfth2eWKOQ",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 8",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        -100
+      ],
+      "id": "e98ec042-1f82-41fa-9980-415e2ec5a9b5",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "filters": {
+          "tags": "BDCheck"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        -300
+      ],
+      "id": "819eed7c-affe-4d4e-9a66-9228074614c7",
+      "name": "n8n",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "47ddc8ca-55bb-4be9-a609-cb7901ad4ac2",
+              "name": "name",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "d31aa0d3-f579-4ba9-842b-ba31c2f2ffb1",
+              "name": "url",
+              "value": "=https://n8n.makeesn8n.online/workflow/{{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        -300
+      ],
+      "id": "ba61cb84-a970-4d49-aedd-74d5d8eb7f2c",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8640714d-b1b0-4529-a7e6-a8918130cb22",
+              "name": "Server_name",
+              "value": "={{ $json.Server_name }}",
+              "type": "string"
+            },
+            {
+              "id": "23883583-e38c-46ea-be8a-6500c2c4a551",
+              "name": "PP",
+              "value": "={{ $json.PP }}",
+              "type": "string"
+            },
+            {
+              "id": "d017be4c-3d21-4311-b8e5-8ddbe98148b3",
+              "name": "Webhook",
+              "value": "={{ $json.Webhook }}",
+              "type": "string"
+            },
+            {
+              "id": "c7580fe1-10cf-46cd-80b2-fcac91904ae7",
+              "name": "All_traks",
+              "value": "={{ $json.All_traks }}",
+              "type": "number"
+            },
+            {
+              "id": "18ad0757-9324-49b4-9c16-80462e5d7290",
+              "name": "Traks_left",
+              "value": "={{ $json.Traks_left }}",
+              "type": "number"
+            },
+            {
+              "id": "d1045508-52d7-4351-9d83-4396ed1f6ca3",
+              "name": "Status_Work",
+              "value": "={{ $json.Status_Work }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7ebfbf64-c78b-4c72-b85f-2af8590751ce",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        -760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "96bdb4a9-a61c-4c59-b3ec-1b6b60eaf448",
+      "name": "Объединяем все треки в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        400,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "id": "77858465-ea72-45db-97fd-1acdeac89df1",
+      "name": "HTML",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        780,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00fd7f5e-933b-43fa-b8ae-9ba448cfd74d",
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Список из JSON</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: #f0f0f0;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 5px;\n        }\n        .key {\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n    <h1>Все записи из таблицы Servers</h1>\n    <div id=\"output\"></div>\n\n    <script>\n        const jsonData = [\n            {\n                \"data\": {{ JSON.stringify($json.data) }}\n            }\n        ];\n\n        // Извлекаем массив данных\n        const dataList = jsonData[0].data;\n\n        // Создаем список элементов\n        const list = document.createElement('ul');\n\n        dataList.forEach(item => {\n            const listItem = document.createElement('li');\n            listItem.innerHTML = `\n                <span class=\"key\">Название:</span> ${item.name}<br>\n                <span class=\"key\">Ссылка:</span> ${item.url}<br>\n                <span class=\"key\"><a href=\"${item.url}\" >${item.url}</a></span><br>\n            `;\n            list.appendChild(listItem);\n        });\n\n        // Добавляем список на страницу\n        document.getElementById('output').appendChild(list);\n    </script>\n</body>\n</html>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "82e89997-0715-4e4b-bb1b-165db5a0e355",
+      "name": "Edit Fields4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        580,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "8bde930e-436d-4baf-8205-352c75c1546b",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        -300
+      ]
+    },
+    {
+      "parameters": {
+        "path": "=all_BDCheck",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "36cf11f4-6c84-4494-af34-fbc295d054a6",
+      "name": "Запрос всех записей из таблицы servers",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -340,
+        -300
+      ],
+      "webhookId": "b92d9ed5-d112-42a9-8825-e9750b975894"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT * FROM Servers ",
+        "options": {}
+      },
+      "id": "c256047f-ad3c-4c0f-a49e-e504062a9860",
+      "name": "Получить все записи из таблицы Servers",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        60,
+        -760
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-03-26T12:12:04.000Z",
+  "versionId": "4c4ea231-7335-4990-92fb-ab6882f9c5ea"
+}
