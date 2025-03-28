@@ -1763,8 +1763,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        340,
-        720
+        320,
+        680
       ]
     },
     {
@@ -2346,6 +2346,6 @@
     }
   ],
   "triggerCount": 12,
-  "updatedAt": "2025-03-27T09:30:28.000Z",
-  "versionId": "39d8beda-c47b-43a8-b603-5d139f5f3694"
+  "updatedAt": "2025-03-27T17:06:56.000Z",
+  "versionId": "e0f8fcb8-098f-4825-94dd-f0b86582e70d"
 }
