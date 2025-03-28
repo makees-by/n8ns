@@ -5,12 +5,12 @@
       "main": [
         [
           {
-            "node": "Loop Over Items",
+            "node": "Произведём логические расчёты для Servers в БД",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Произведём логические расчёты для Servers в БД",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -520,6 +520,17 @@
           }
         ]
       ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-11-03T16:36:45.367Z",
@@ -564,7 +575,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1620,
+        1840,
         340
       ]
     },
@@ -587,7 +598,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1880,
+        2100,
         440
       ]
     },
@@ -598,7 +609,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3980,
+        4200,
         940
       ]
     },
@@ -617,7 +628,7 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        4200,
+        4420,
         940
       ]
     },
@@ -650,7 +661,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        4380,
+        4600,
         940
       ]
     },
@@ -673,7 +684,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        4640,
+        4860,
         780
       ]
     },
@@ -696,7 +707,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        4640,
+        4860,
         960
       ]
     },
@@ -710,7 +721,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        2920,
+        3140,
         1200
       ],
       "webhookId": "69a385b3-03fb-478c-bc34-3f18427977d8"
@@ -726,7 +737,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Track",
-        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valueToMatchOn": "={{ $json.number }}",
         "valuesToSend": {
           "values": [
             {
@@ -739,7 +750,7 @@
             },
             {
               "column": "History",
-              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+              "value": "={{ $json.steps.toJsonString().replaceAll('},{','/') }}"
             }
           ]
         },
@@ -750,7 +761,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4140,
+        4360,
         380
       ],
       "credentials": {
@@ -771,7 +782,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Track",
-        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valueToMatchOn": "={{ $json.number }}",
         "valuesToSend": {
           "values": [
             {
@@ -787,8 +798,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3980,
-        620
+        4240,
+        640
       ],
       "credentials": {
         "mySql": {
@@ -808,7 +819,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Track",
-        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valueToMatchOn": "={{ $json.number }}",
         "valuesToSend": {
           "values": [
             {
@@ -821,7 +832,7 @@
             },
             {
               "column": "History",
-              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+              "value": "={{ $json.steps.toJsonString().replaceAll('},{','/') }}"
             }
           ]
         },
@@ -832,7 +843,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3700,
+        3920,
         940
       ],
       "credentials": {
@@ -851,7 +862,7 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        1840,
+        2060,
         220
       ]
     },
@@ -885,7 +896,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2100,
+        2320,
         220
       ]
     },
@@ -896,7 +907,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4880,
+        5100,
         960
       ]
     },
@@ -907,7 +918,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1980,
+        2200,
         -260
       ]
     },
@@ -918,7 +929,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1220,
+        1440,
         120
       ]
     },
@@ -977,7 +988,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1320,
+        1540,
         -80
       ],
       "executeOnce": true,
@@ -1018,7 +1029,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1520,
+        1740,
         -80
       ]
     },
@@ -1100,7 +1111,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1720,
+        1940,
         1020
       ],
       "credentials": {
@@ -1141,7 +1152,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2120,
+        2340,
         1020
       ],
       "executeOnce": true,
@@ -1306,7 +1317,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
       "position": [
-        2180,
+        2400,
         440
       ],
       "retryOnFail": true,
@@ -1323,7 +1334,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        3320,
+        3540,
         300
       ]
     },
@@ -1346,7 +1357,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2280,
+        2500,
         40
       ]
     },
@@ -1361,7 +1372,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2440,
+        2660,
         180
       ]
     },
@@ -1375,7 +1386,7 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        2760,
+        2980,
         180
       ]
     },
@@ -1398,7 +1409,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2880,
+        3100,
         420
       ],
       "executeOnce": true
@@ -1420,7 +1431,7 @@
       "type": "n8n-nodes-base.sort",
       "typeVersion": 1,
       "position": [
-        2560,
+        2780,
         420
       ]
     },
@@ -1431,7 +1442,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3160,
+        3380,
         400
       ]
     },
@@ -1462,7 +1473,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1720,
+        1940,
         -260
       ],
       "executeOnce": true,
@@ -1504,7 +1515,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3480,
+        3700,
         400
       ]
     },
@@ -1537,7 +1548,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3680,
+        3900,
         400
       ]
     },
@@ -1566,11 +1577,11 @@
               "rightValue": "будет возвращено отправителю",
               "operator": {
                 "type": "string",
-                "operation": "contains"
+                "operation": "notContains"
               }
             }
           ],
-          "combinator": "or"
+          "combinator": "and"
         },
         "options": {}
       },
@@ -1579,7 +1590,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3720,
+        3940,
         640
       ]
     },
@@ -1614,7 +1625,7 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        3560,
+        3780,
         140
       ],
       "id": "72d0ef90-9d7c-47eb-80cc-dcfade8b714c",
@@ -1656,7 +1667,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3840,
+        4060,
         140
       ]
     },
@@ -1774,7 +1785,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1700,
+        1920,
         -480
       ],
       "id": "1917bc95-dc1a-4648-9c5a-1e03cccfe151",
@@ -1794,11 +1805,26 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        2000,
+        2220,
         -480
       ],
       "id": "9fb56bc8-81e0-49a4-91c2-7bb92ff0269f",
       "name": "Запрос в процесс логирования1"
+    },
+    {
+      "parameters": {
+        "maxItems": 195,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        340
+      ],
+      "id": "9bbe8250-d3c6-4885-9600-6f802680c4e9",
+      "name": "Limit",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -1815,6 +1841,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-20T17:10:00.000Z",
-  "versionId": "7e9e5d5e-1f7c-4d14-9f35-fff611aacdbb"
+  "updatedAt": "2025-03-27T18:02:45.000Z",
+  "versionId": "ba6b81de-6d68-4137-8412-f688bcc7a9d4"
 }
