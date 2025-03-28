@@ -993,8 +993,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4380,
-        120
+        5060,
+        140
       ]
     },
     {
@@ -1029,8 +1029,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        3900,
-        760
+        4580,
+        780
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -1088,8 +1088,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4360,
-        760
+        5040,
+        780
       ]
     },
     {
@@ -1133,8 +1133,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3940,
-        -160
+        4620,
+        -140
       ],
       "executeOnce": true
     },
@@ -1202,8 +1202,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4340,
-        -160
+        5020,
+        -140
       ]
     },
     {
@@ -1236,8 +1236,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4300,
-        560
+        4980,
+        580
       ]
     },
     {
@@ -1249,8 +1249,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4360,
-        980
+        5040,
+        1000
       ],
       "alwaysOutputData": true
     },
@@ -1261,8 +1261,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        4620,
-        560
+        5300,
+        580
       ]
     },
     {
@@ -1278,8 +1278,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3900,
-        560
+        4580,
+        580
       ],
       "executeOnce": true
     },
@@ -1293,8 +1293,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3800,
-        1000
+        4480,
+        1020
       ],
       "executeOnce": true
     },
@@ -1327,8 +1327,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4100,
-        1000
+        4780,
+        1020
       ]
     },
     {
@@ -1503,8 +1503,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        5940,
-        780
+        6620,
+        800
       ],
       "credentials": {
         "mySql": {
@@ -1551,8 +1551,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        5560,
-        1260
+        6240,
+        1280
       ],
       "executeOnce": false,
       "credentials": {
@@ -1570,8 +1570,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        5100,
-        1140
+        5780,
+        1160
       ],
       "typeVersion": 1,
       "id": "247d7c85-ddab-466c-871c-72dc866fe7cb",
@@ -1661,8 +1661,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        5860,
-        1100
+        6540,
+        1120
       ],
       "id": "2ece139f-3bbb-4708-a035-d9ea5be333bc",
       "name": "формируем запрос к логированию1",
@@ -1681,8 +1681,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        6080,
-        1100
+        6760,
+        1120
       ],
       "id": "6dd4ad4a-0bee-4533-b732-8fd00cf098fb",
       "name": "Запрос в процесс логирования1"
@@ -1946,8 +1946,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        4140,
-        -40
+        4820,
+        -20
       ],
       "retryOnFail": true,
       "waitBetweenTries": 2000,
@@ -1985,8 +1985,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        3940,
-        120
+        4620,
+        140
       ],
       "retryOnFail": true,
       "waitBetweenTries": 2000,
@@ -2028,8 +2028,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5100,
-        540
+        5780,
+        560
       ],
       "id": "9a2d9ca0-94b4-49b9-aea0-322115ae50eb",
       "name": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ"
@@ -2076,8 +2076,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        5520,
-        120
+        6200,
+        140
       ],
       "id": "58f6bf62-b28b-4a86-bcbc-5879c500a53c",
       "name": "If5"
@@ -2091,8 +2091,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        5100,
-        120
+        5780,
+        140
       ],
       "id": "8c1cf997-c4ef-4dbd-bd85-4e5cf10e1da0",
       "name": "Merge1"
@@ -2102,8 +2102,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        5440,
-        580
+        6120,
+        600
       ],
       "id": "efa9cb06-d3cf-4bb5-998b-ed59f76d4f23",
       "name": "Всё хорошо треки можно добавлять"
@@ -2137,8 +2137,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        5720,
-        360
+        6400,
+        380
       ],
       "id": "688c7c85-0144-4815-aa06-97ec8a0c621c",
       "name": "формируем запрос к логированию2",
@@ -2157,8 +2157,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        6060,
-        360
+        6740,
+        380
       ],
       "id": "0b790ba1-bf25-4a07-94a7-69c0a6b6501e",
       "name": "Запрос в процесс логирования2"
@@ -2168,8 +2168,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4600,
-        1560
+        5280,
+        1580
       ],
       "id": "cf437f46-589e-4634-b9ba-fc6aa2029dd2",
       "name": "на след круг"
@@ -2203,8 +2203,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4800,
-        100
+        5480,
+        120
       ],
       "executeOnce": true,
       "credentials": {
@@ -2239,8 +2239,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4840,
-        300
+        5520,
+        320
       ],
       "executeOnce": true,
       "credentials": {
@@ -2279,8 +2279,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        5080,
-        300
+        5760,
+        320
       ],
       "executeOnce": false,
       "alwaysOutputData": true,
@@ -2314,8 +2314,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        5300,
-        120
+        5980,
+        140
       ],
       "id": "da9a5724-c3c6-4ebb-869f-16677e9472f4",
       "name": "Треки до добавления",
@@ -2329,8 +2329,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        4800,
-        1260
+        5480,
+        1280
       ],
       "id": "e7c399cc-5cfb-4500-a7a4-102c1560e9d0",
       "name": "Ждём добавления треков в БД, после этого выбираем 2. ветку с данными с таблицами по id"
@@ -2343,8 +2343,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        5500,
-        780
+        6180,
+        800
       ],
       "id": "7a99568a-bfc0-4eb1-a242-50f60bdd9efe",
       "name": "Выжидаем подсчёта лимитов по трекам"
@@ -2356,8 +2356,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        5700,
-        780
+        6380,
+        800
       ],
       "id": "8bad3593-8d4a-47b4-a081-5adcdf5f60d1",
       "name": "Лимит по трекам подтягиваем динамически"
@@ -2391,8 +2391,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        5260,
-        1260
+        5940,
+        1280
       ],
       "executeOnce": false,
       "credentials": {
@@ -2411,8 +2411,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4380,
-        360
+        5060,
+        380
       ],
       "alwaysOutputData": true
     },
@@ -2426,8 +2426,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        3720,
-        380
+        4400,
+        400
       ],
       "executeOnce": true
     },
@@ -2460,8 +2460,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3940,
-        360
+        4620,
+        380
       ]
     },
     {
@@ -2491,8 +2491,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4820,
-        560
+        5500,
+        580
       ],
       "id": "9ec372a3-714f-4742-9d31-5bbd42c0b80f",
       "name": "If8"
@@ -2562,6 +2562,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-23T07:06:09.000Z",
-  "versionId": "18f36cd2-29ee-415d-a883-12d5ae52d2fe"
+  "updatedAt": "2025-03-27T17:15:12.000Z",
+  "versionId": "af4c4350-e422-4558-b757-7cff1219d21e"
 }
