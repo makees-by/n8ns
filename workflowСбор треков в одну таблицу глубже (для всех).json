@@ -14,6 +14,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -586,6 +593,17 @@
           }
         ]
       ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-02T17:24:48.292Z",
@@ -611,7 +629,7 @@
       "typeVersion": 4.5,
       "position": [
         160,
-        280
+        300
       ],
       "id": "e57060b8-46c8-4565-8b0a-3c82abface47",
       "name": "Google Sheets21",
@@ -621,7 +639,8 @@
           "id": "GsKpjBhTzM4aUjza",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -762,6 +781,24 @@
                 "type": "string",
                 "operation": "notEquals"
               }
+            },
+            {
+              "id": "f19abe22-b697-400c-9639-024e5b2f815a",
+              "leftValue": "={{ $json['трек'] }}",
+              "rightValue": "PCBY",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "818180d1-3d2e-4b3b-b40f-d5b5e2755f1c",
+              "leftValue": "={{ $json['трек'] }}",
+              "rightValue": "0",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
             }
           ],
           "combinator": "and"
@@ -771,7 +808,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1040,
+        1260,
         260
       ],
       "id": "892693f5-93fd-4747-abf3-0d18abfb0c89",
@@ -782,7 +819,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1980,
+        2200,
         1080
       ],
       "id": "57777040-9dd6-49a0-b063-06de2d3a0d18",
@@ -851,7 +888,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        960,
+        1180,
         1020
       ],
       "executeOnce": true
@@ -885,7 +922,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1240,
+        1460,
         1100
       ],
       "executeOnce": true
@@ -903,7 +940,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1220,
+        1440,
         500
       ],
       "executeOnce": true
@@ -938,7 +975,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2240,
+        2460,
         400
       ]
     },
@@ -971,7 +1008,7 @@
       "type": "n8n-nodes-base.compareDatasets",
       "typeVersion": 2.3,
       "position": [
-        1020,
+        1240,
         640
       ],
       "id": "96171734-f64e-4d4e-8f98-826bb24c26c1",
@@ -1082,7 +1119,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        380,
+        600,
         680
       ],
       "id": "fee9a322-9818-4ef6-b01e-0db34bae1cb5",
@@ -1093,7 +1130,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2400,
+        2620,
         1080
       ],
       "id": "2cf13fb3-da5e-4021-93ba-90e337f85d6e",
@@ -1125,7 +1162,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1140,
+        1360,
         60
       ],
       "executeOnce": true
@@ -1160,7 +1197,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1300,
+        1520,
         60
       ],
       "executeOnce": true
@@ -1175,7 +1212,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1240,
+        1460,
         300
       ],
       "executeOnce": true
@@ -1209,7 +1246,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1460,
+        1680,
         300
       ],
       "executeOnce": true
@@ -1232,7 +1269,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1400,
+        1620,
         680
       ],
       "id": "f526aa10-fcbe-4cf8-81e4-7a092cfa0292",
@@ -1433,7 +1470,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2020,
+        2240,
         560
       ],
       "id": "323793f4-e512-438d-b7df-ea0497de4707",
@@ -1452,7 +1489,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2320,
+        2540,
         660
       ],
       "id": "839d6449-ed1f-4fa8-ab8d-b215c7f1a29b",
@@ -1481,7 +1518,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        740,
+        960,
         260
       ],
       "id": "7ea4b276-1f84-48cf-8838-56454af600e0",
@@ -1516,7 +1553,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1640,
+        1860,
         680
       ],
       "id": "581a679a-8a2d-4361-97fc-6a28f74f10d3",
@@ -1532,7 +1569,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1380,
+        1600,
         900
       ],
       "executeOnce": true
@@ -1566,7 +1603,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1660,
+        1880,
         980
       ],
       "executeOnce": true
@@ -1584,7 +1621,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1760,
+        1980,
         360
       ],
       "executeOnce": true
@@ -1619,7 +1656,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1960,
+        2180,
         360
       ],
       "executeOnce": true
@@ -1654,7 +1691,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1480,
+        1700,
         500
       ]
     },
@@ -1663,7 +1700,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3000,
+        3220,
         1080
       ],
       "id": "534fad65-3f4e-4806-8a83-ec6fdd4e3b41",
@@ -1702,7 +1739,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3320,
+        3540,
         1080
       ],
       "id": "e4e4f7f3-d29c-4035-a6ab-abcc62547d5e",
@@ -1849,7 +1886,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2640,
+        2860,
         660
       ],
       "id": "3cac809a-685f-46aa-af8f-1f212716b344",
@@ -1963,8 +2000,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2500,
-        460
+        2820,
+        260
       ],
       "id": "335530cb-56e6-4148-82f7-8d662a32be20",
       "name": "Google Sheets26",
@@ -1979,7 +2016,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"row_number\": 3,\n    \"Ссылка полностью\": \"https://docs.google.com/spreadsheets/d/1KLgk2rzUwXcUalpmx7hR-FR5OvD_3zmcL_LhfOvCjVk/edit?gid=279818685#gid=279818685\",\n    \"Таблица\": \"1avcQ7p1GHq5mASKgEmLOtQIDqlPsPVT38xvXaOILcxk\",\n    \"Страница\": \"0\",\n    \"Чек-бокс\": true,\n    \"Доп чек\": true,\n    \"col_6\": \"\",\n    \"col_7\": \"\",\n    \"processID\": \"ForIra\"\n  }\n]\n);"
+        "jsCode": "return (\n  [\n  {\n    \"row_number\": 2,\n    \"Ссылка полностью\": \"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit?pli=1#gid=655303473\",\n    \"Таблица\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n    \"Страница\": \"655303473\",\n    \"Чек-бокс\": true,\n    \"col_5\": \"\",\n    \"было\": true,\n    \"processID\": \"ForIra\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -2018,7 +2055,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        400,
+        620,
         280
       ],
       "id": "5e6c95cd-3204-4321-a187-5a27a207bcec",
@@ -2037,7 +2074,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        500,
+        720,
         40
       ],
       "executeOnce": true
@@ -2072,7 +2109,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        740,
+        960,
         40
       ],
       "executeOnce": true
@@ -2087,7 +2124,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        500,
+        720,
         500
       ],
       "executeOnce": true
@@ -2121,7 +2158,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        740,
+        960,
         500
       ],
       "executeOnce": true
@@ -2139,6 +2176,17 @@
       "id": "659392c9-ff80-4e76-a8b3-6d9701b897f0",
       "name": "Code2",
       "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        200,
+        1320
+      ],
+      "id": "a0f8b74c-48f9-4962-9268-64fdf7c36a8e",
+      "name": "No Operation, do nothing1"
     }
   ],
   "pinData": {},
@@ -2148,6 +2196,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-25T14:29:35.000Z",
-  "versionId": "95c7fc18-5466-4176-8370-419682d0bb71"
+  "updatedAt": "2025-03-27T17:53:31.000Z",
+  "versionId": "fc8fe8a4-0e94-419d-ace0-04d7ca952c6d"
 }
