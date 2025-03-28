@@ -158,12 +158,12 @@
       "main": [
         [
           {
-            "node": "IF3",
+            "node": "Google Docs",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Google Docs",
+            "node": "No Operation, do nothing1",
             "type": "main",
             "index": 0
           }
@@ -421,7 +421,7 @@
       "main": [
         [
           {
-            "node": "IF3",
+            "node": "No Operation, do nothing1",
             "type": "main",
             "index": 0
           }
@@ -455,7 +455,7 @@
             "index": 0
           },
           {
-            "node": "IF3",
+            "node": "No Operation, do nothing1",
             "type": "main",
             "index": 0
           }
@@ -467,6 +467,77 @@
         [
           {
             "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields5": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields5",
             "type": "main",
             "index": 0
           }
@@ -585,7 +656,7 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $json.data[0].steps[0].event }}",
+              "value1": "={{ $json.steps[0]['Событие'] }}",
               "operation": "contains",
               "value2": "Вручено"
             }
@@ -597,8 +668,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        2700,
-        340
+        3540,
+        320
       ]
     },
     {
@@ -606,7 +677,7 @@
         "conditions": {
           "string": [
             {
-              "value1": "={{ $json.data[0].steps[0].event }}",
+              "value1": "={{ $json.steps[0]['Событие'] }}",
               "operation": "contains",
               "value2": "Вручено отправителю"
             }
@@ -618,7 +689,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        3000,
+        3920,
         320
       ]
     },
@@ -629,8 +700,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3280,
-        600
+        4220,
+        840
       ]
     },
     {
@@ -648,8 +719,8 @@
       "type": "n8n-nodes-base.dateTime",
       "typeVersion": 2,
       "position": [
-        3140,
-        920
+        3920,
+        1100
       ]
     },
     {
@@ -681,8 +752,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2,
       "position": [
-        3380,
-        920
+        4240,
+        1100
       ]
     },
     {
@@ -704,8 +775,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3600,
-        760
+        4540,
+        1100
       ]
     },
     {
@@ -727,8 +798,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.3,
       "position": [
-        3600,
-        940
+        4540,
+        1280
       ]
     },
     {
@@ -741,8 +812,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1,
       "position": [
-        3800,
-        1160
+        4740,
+        1500
       ],
       "webhookId": "95f65756-da79-46ba-ba31-8f0a033559e6"
     },
@@ -792,7 +863,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Track",
-        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valueToMatchOn": "={{ $json.number }}",
         "valuesToSend": {
           "values": [
             {
@@ -805,7 +876,7 @@
             },
             {
               "column": "History",
-              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+              "value": "={{ $json.steps.toJsonString().replaceAll('},{','/').replaceAll('[{','').replaceAll('}]','') }}"
             }
           ]
         },
@@ -816,8 +887,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2960,
-        600
+        3960,
+        620
       ],
       "credentials": {
         "mySql": {
@@ -837,12 +908,16 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Track",
-        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valueToMatchOn": "={{ $json.number }}",
         "valuesToSend": {
           "values": [
             {
               "column": "Status",
               "value": "=Доставлено отправителю"
+            },
+            {
+              "column": "History",
+              "value": "={{ $json.steps.toJsonString().replaceAll('},{','/').replaceAll('[{','').replaceAll('}]','') }}"
             }
           ]
         },
@@ -853,7 +928,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3340,
+        4500,
         300
       ],
       "credentials": {
@@ -874,7 +949,7 @@
         },
         "dataMode": "defineBelow",
         "columnToMatchOn": "Track",
-        "valueToMatchOn": "={{ $json.data[0].number }}",
+        "valueToMatchOn": "={{ $json.number }}",
         "valuesToSend": {
           "values": [
             {
@@ -887,7 +962,7 @@
             },
             {
               "column": "History",
-              "value": "={{ JSON.stringify($json.data[0].steps) }}"
+              "value": "={{ $json.steps.toJsonString().replaceAll('},{','/').replaceAll('[{','').replaceAll('}]','') }}"
             }
           ]
         },
@@ -898,7 +973,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2760,
+        3580,
         860
       ],
       "credentials": {
@@ -962,8 +1037,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3800,
-        940
+        4740,
+        1280
       ]
     },
     {
@@ -1637,8 +1712,126 @@
         340
       ],
       "id": "32a34d94-8ac8-41f9-b8e5-2716baaae75c",
-      "name": "Limit",
-      "disabled": true
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "data[0].steps",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2960,
+        160
+      ],
+      "id": "410e82be-e956-4ce6-babc-d18ca1820949",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d103d54a-9c38-4906-981f-07d4a8f60431",
+              "name": "Дата",
+              "value": "={{ $json.created_at }}",
+              "type": "string"
+            },
+            {
+              "id": "7d6b2750-706e-4127-b650-4ab904d2b8e2",
+              "name": "Место",
+              "value": "={{ $json.place }}",
+              "type": "string"
+            },
+            {
+              "id": "5dceb646-5d62-4da8-9fce-6522701bc6f6",
+              "name": "Индекс",
+              "value": "={{ $json.place_index }}",
+              "type": "string"
+            },
+            {
+              "id": "a9f03862-7ffa-4a9b-b122-cf3ed293d2d1",
+              "name": "Событие",
+              "value": "={{ $json.event }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3100,
+        40
+      ],
+      "id": "47bd5634-7e97-4653-8d7b-7bd639c6b986",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "steps",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        3260,
+        100
+      ],
+      "id": "7d5368a3-f5ef-48b1-9d83-85839d404da6",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cdd1e321-5de9-4f2a-9ae9-e522a7784441",
+              "name": "number",
+              "value": "={{ $json.data[0].number }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3040,
+        340
+      ],
+      "id": "01a4e92a-61d5-49de-a82b-780e119622f7",
+      "name": "Edit Fields5"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        3300,
+        320
+      ],
+      "id": "b52e387c-11c2-47ef-961e-3421dd8b79fb",
+      "name": "Merge"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2660,
+        360
+      ],
+      "id": "d625f116-0d98-4d76-ae27-98728e8ec9a1",
+      "name": "No Operation, do nothing1"
     }
   ],
   "pinData": {},
@@ -1655,6 +1848,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-25T15:29:54.000Z",
-  "versionId": "3eb10274-601c-4611-bdc3-d06fc36bdf1e"
+  "updatedAt": "2025-03-27T18:20:52.000Z",
+  "versionId": "248e804c-b71a-48ef-9875-913d9b0a6c56"
 }
