@@ -103,6 +103,11 @@
             "node": "Code2",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -180,11 +185,6 @@
     },
     "Code1": {
       "main": [
-        []
-      ]
-    },
-    "Code2": {
-      "main": [
         [
           {
             "node": "ВД",
@@ -192,6 +192,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        []
       ]
     }
   },
@@ -464,7 +469,9 @@
       ],
       "id": "e3fdf87b-ba26-49c1-9ba4-7f9c0bfdac25",
       "name": "Execute Workflow",
-      "alwaysOutputData": true
+      "alwaysOutputData": true,
+      "executeOnce": false,
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {
@@ -487,8 +494,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1520,
-        100
+        -1480,
+        -20
       ],
       "id": "e3a25b08-61c9-4546-ae97-90652200806e",
       "name": "Code",
@@ -575,7 +582,8 @@
         280
       ],
       "id": "4ebe9d54-845e-4ebd-84e6-841c5c544cac",
-      "name": "Edit Fields"
+      "name": "Edit Fields",
+      "disabled": true
     },
     {
       "parameters": {
@@ -584,8 +592,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1740,
-        80
+        -1600,
+        300
       ],
       "id": "1134d39d-3262-449b-b529-3cfd56db245f",
       "name": "Code1",
@@ -598,8 +606,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1600,
-        280
+        -1780,
+        20
       ],
       "id": "18155cd1-4878-4d71-abdb-8e5474104212",
       "name": "Code2",
@@ -613,6 +621,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-20T21:14:34.000Z",
-  "versionId": "a1dbd5b4-6ada-4061-a19b-b6b7fdac542a"
+  "updatedAt": "2025-03-27T17:53:48.000Z",
+  "versionId": "24a5af2c-48b3-4cd9-bf89-28c207044249"
 }
