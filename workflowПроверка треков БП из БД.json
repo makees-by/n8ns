@@ -913,7 +913,7 @@
           "values": [
             {
               "column": "Status",
-              "value": "=Доставлено отправителю"
+              "value": "=Вручено отправителю"
             },
             {
               "column": "History",
@@ -1431,7 +1431,8 @@
         280,
         340
       ],
-      "webhookId": "141d616a-1733-4f1e-979f-a7cca1f70d3c"
+      "webhookId": "141d616a-1733-4f1e-979f-a7cca1f70d3c",
+      "disabled": true
     },
     {
       "parameters": {
@@ -1646,7 +1647,7 @@
           "parameters": [
             {
               "name": "number",
-              "value": "={{ $json.Track }}"
+              "value": "=PC312055509BY"
             }
           ]
         },
@@ -1832,6 +1833,176 @@
       ],
       "id": "d625f116-0d98-4d76-ae27-98728e8ec9a1",
       "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "hl",
+              "value": "ru"
+            },
+            {
+              "name": "origin",
+              "value": "https://belpost.by"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://belpost.by/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.Track }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5f395def-d416-4d8d-8edf-3d43e1dfb9f0",
+      "name": "Получаем данные по трекам с сайта Белпочты3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        4760,
+        -580
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.belpost.by/api/v1/tracking",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "accept-language",
+              "value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+            },
+            {
+              "name": "hl",
+              "value": "ru"
+            },
+            {
+              "name": "origin",
+              "value": "https://belpost.by"
+            },
+            {
+              "name": "priority",
+              "value": "u=1, i"
+            },
+            {
+              "name": "referer",
+              "value": "https://belpost.by/"
+            },
+            {
+              "name": "sec-ch-ua",
+              "value": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+            },
+            {
+              "name": "sec-ch-ua-mobile",
+              "value": "?0"
+            },
+            {
+              "name": "sec-ch-ua-platform",
+              "value": "\"Windows\""
+            },
+            {
+              "name": "sec-fetch-dest",
+              "value": "empty"
+            },
+            {
+              "name": "sec-fetch-mode",
+              "value": "cors"
+            },
+            {
+              "name": "sec-fetch-site",
+              "value": "same-site"
+            },
+            {
+              "name": "user-agent",
+              "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "number",
+              "value": "={{ $json.Track }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "43e83d6f-af68-471d-9bea-14e417316dab",
+      "name": "Получаем данные по трекам с сайта Белпочты4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        4840,
+        -500
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "continueOnFail": true,
+      "onError": "continueErrorOutput"
     }
   ],
   "pinData": {},
@@ -1847,7 +2018,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-03-27T18:20:52.000Z",
-  "versionId": "248e804c-b71a-48ef-9875-913d9b0a6c56"
+  "triggerCount": 0,
+  "updatedAt": "2025-03-29T20:40:04.000Z",
+  "versionId": "01e7b51a-fe10-416d-8ae2-cd94eedcf190"
 }
