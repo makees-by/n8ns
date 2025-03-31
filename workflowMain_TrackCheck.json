@@ -1065,7 +1065,8 @@
       "position": [
         340,
         -240
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1105,8 +1106,7 @@
       "position": [
         340,
         -600
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -1204,7 +1204,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        340,
+        300,
         100
       ]
     },
@@ -1705,7 +1705,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        320,
+        960,
         -60
       ],
       "disabled": true
@@ -1765,8 +1765,7 @@
       "position": [
         320,
         680
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -2152,8 +2151,7 @@
       "position": [
         -800,
         780
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -2192,8 +2190,7 @@
       "position": [
         -540,
         1660
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -2348,7 +2345,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 9,
-  "updatedAt": "2025-03-30T11:34:21.000Z",
-  "versionId": "274d35a5-7a51-4efa-87b4-47b82e768094"
+  "triggerCount": 12,
+  "updatedAt": "2025-03-31T09:46:10.000Z",
+  "versionId": "8b2cbdf2-d61f-4faf-9db2-45b24af3ccfc"
 }
