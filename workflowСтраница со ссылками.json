@@ -1,0 +1,228 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запрос всех записей из таблицы servers": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Объединяем все записи в один массив",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Объединяем все записи в один массив": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-02T16:42:43.862Z",
+  "id": "uqwidW3tbI9WSyzn",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Страница со ссылками",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        700,
+        460
+      ],
+      "id": "be2f769a-8bd6-4c81-948b-478cec1cf040",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "47ddc8ca-55bb-4be9-a609-cb7901ad4ac2",
+              "name": "name",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "d31aa0d3-f579-4ba9-842b-ba31c2f2ffb1",
+              "name": "url",
+              "value": "=https://n8n.makeesn8n.online/workflow/{{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        700,
+        0
+      ],
+      "id": "992143e1-df31-479d-bccd-f7de52c7e8a1",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "html": "{{ $json.html }}"
+      },
+      "id": "d598ae43-519e-4836-b13e-3ac7c504e9a9",
+      "name": "HTML",
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        1580,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "00fd7f5e-933b-43fa-b8ae-9ba448cfd74d",
+              "name": "html",
+              "value": "=<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Список из JSON</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n        }\n        ul {\n            list-style-type: none;\n            padding: 0;\n        }\n        li {\n            background: #f0f0f0;\n            margin: 5px 0;\n            padding: 10px;\n            border-radius: 5px;\n        }\n        .key {\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n    <h1>Все записи из таблицы Servers</h1>\n    <div id=\"output\"></div>\n\n    <script>\n        const jsonData = [\n            {\n                \"data\": {{ JSON.stringify($json.data) }}\n            }\n        ];\n\n        // Извлекаем массив данных\n        const dataList = jsonData[0].data;\n\n        // Создаем список элементов\n        const list = document.createElement('ul');\n\n        dataList.forEach(item => {\n            const listItem = document.createElement('li');\n            listItem.innerHTML = `\n                <span class=\"key\">Название:</span> ${item.name}<br>\n                <span class=\"key\">Ссылка:</span> ${item.url}<br>\n                <span class=\"key\"><a href=\"${item.url}\" >${item.url}</a></span><br>\n            `;\n            list.appendChild(listItem);\n        });\n\n        // Добавляем список на страницу\n        document.getElementById('output').appendChild(list);\n    </script>\n</body>\n</html>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "eb026320-d73a-4c4b-8680-a841f5b550c9",
+      "name": "Edit Fields4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1360,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {}
+      },
+      "id": "df4157ac-ffbf-4c13-a599-9efdd7122be0",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "path": "=links",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "ad88631c-f430-45de-8081-12d8a28a7f02",
+      "name": "Запрос всех записей из таблицы servers",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        700,
+        260
+      ],
+      "webhookId": "b92d9ed5-d112-42a9-8825-e9750b975894"
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n  [\n  {\n    \"name\": \"Точки n8n1\",\n    \"url\": \"https://n8n.makeesn8n.online/\"\n  },\n  {\n    \"name\": \"Точки n8n2\",\n    \"url\": \"https://n8nby1.makeesn8n.ru/\"\n  },\n  {\n    \"name\": \"Точки n8n3\",\n    \"url\": \"https://n8n.makeesn8n.ru/\"\n  },\n  {\n    \"name\": \"Точки n8n4+\",\n    \"url\": \"https://n8ns.makeesn8n.ru/\"\n  },\n  {\n    \"name\": \"Клиенты потап таблица\",\n    \"url\": \"https://docs.google.com/spreadsheets/d/1oOxm53NasNC_njtj_hITrzJMH7TbhC7GJoLMMBPKfr0/edit?gid=1670331981\"\n  },\n  {\n    \"name\": \"джиМаил\",\n    \"url\": \"makees.n8n@gmail.com\"\n  },\n  {\n    \"name\": \"Ноушен раз\",\n    \"url\": \"https://www.notion.so/1c2e19bd54f980c7bccec5aaf8ab1754?v=1c2e19bd54f98050a119000c0b35506e\"\n  },\n  {\n    \"name\": \"Ноушен два\",\n    \"url\": \"https://www.notion.so/66eae0f271b34fe1b9b6857e5ff8d0d2?v=96ff3ce112774eb2afe5a2fce3676c31\"\n  },\n  {\n    \"name\": \"апошни\",\n    \"url\": \"https:какой-то\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        920,
+        360
+      ],
+      "id": "f28fbb62-2c6e-4d60-9ad6-7802138d6ea9",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "operation": "concatenateItems",
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "id": "dda74335-0392-4eb6-957a-dbb0309c2429",
+      "name": "Объединяем все записи в один массив",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [
+        1140,
+        360
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-02T17:50:46.739Z",
+  "versionId": "df377f6d-fd0b-4373-bf69-c5f8fe12f514"
+}
