@@ -1,0 +1,433 @@
+{
+  "active": true,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "n8n1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "n8n2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-02T17:17:58.943Z",
+  "id": "qpu2K5qFYkkIOjTj",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Включаем страницу соссылками",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "6d3b330d-92ec-4b05-9f9c-65004b7b04ec",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -140,
+        220
+      ],
+      "id": "38731917-6d30-4f6d-bb39-a19bfaa505eb",
+      "name": "Webhook",
+      "webhookId": "6d3b330d-92ec-4b05-9f9c-65004b7b04ec"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        440
+      ],
+      "id": "019d5faf-b1fa-4e64-845a-6612e9c3fec2",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "activate",
+        "workflowId": {
+          "__rl": true,
+          "value": "uqwidW3tbI9WSyzn",
+          "mode": "list",
+          "cachedResultName": "Страница со ссылками (#uqwidW3tbI9WSyzn)"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        380,
+        80
+      ],
+      "id": "e35c9164-bca6-48d3-b05d-dee295ad0b75",
+      "name": "n8n",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "deactivate",
+        "workflowId": {
+          "__rl": true,
+          "value": "uqwidW3tbI9WSyzn",
+          "mode": "list",
+          "cachedResultName": "Страница со ссылками (#uqwidW3tbI9WSyzn)"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        380,
+        300
+      ],
+      "id": "1cfea09a-5198-447a-a0d2-b77cb6b8b797",
+      "name": "n8n1",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.text }}",
+        "options": {}
+      },
+      "id": "13add51d-3ce2-4379-ae49-0d30fc7309fd",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1140,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bc60885-b3b0-422f-8840-9bfe815eed50",
+              "name": "text",
+              "value": "Активирован на 15 мин",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        600,
+        80
+      ],
+      "id": "8a0ad099-8b1d-44d3-b0e8-55ffae4e6f10",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bc60885-b3b0-422f-8840-9bfe815eed50",
+              "name": "text",
+              "value": "Деактивирован",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        640,
+        300
+      ],
+      "id": "83a8b8ea-5a69-4499-8626-0428ca4778be",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.query.tilt }}",
+                    "rightValue": "1",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "c6f7d157-0207-45b5-a33a-e70262c5572f"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "1"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0df826e2-a6ea-40fb-93a0-2d915da6e3bf",
+                    "leftValue": "={{ $json.query.tilt }}",
+                    "rightValue": "0",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "0"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        80,
+        220
+      ],
+      "id": "33acb3fd-07b6-458e-8a66-698f67126f54",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "amount": 15,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1360,
+        220
+      ],
+      "id": "22e49aa5-6ee7-48c8-ba4f-50bfbd8cc7f7",
+      "name": "Wait",
+      "webhookId": "4a72e732-88a5-4fd6-9743-ee22032fd1fa"
+    },
+    {
+      "parameters": {
+        "operation": "deactivate",
+        "workflowId": {
+          "__rl": true,
+          "value": "uqwidW3tbI9WSyzn",
+          "mode": "list",
+          "cachedResultName": "Страница со ссылками (#uqwidW3tbI9WSyzn)"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        220
+      ],
+      "id": "1730e50b-a4da-4c31-ab04-f2c6db15eb7e",
+      "name": "n8n2",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1bc60885-b3b0-422f-8840-9bfe815eed50",
+              "name": "text",
+              "value": "Найди нужный angle tilt",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        540
+      ],
+      "id": "39235d5f-fa61-42f3-9c47-b0077d19e241",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.text }}",
+        "options": {}
+      },
+      "id": "29985e05-b9ef-4e72-9ffb-795dfab3b061",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        660,
+        540
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-04-02T17:41:47.000Z",
+  "versionId": "784d53f3-76f0-4620-bc5f-947da8ca7d49"
+}
