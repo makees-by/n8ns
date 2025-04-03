@@ -687,6 +687,72 @@
           }
         ]
       ]
+    },
+    "ForIra json для записи3": {
+      "main": [
+        [
+          {
+            "node": "ForIra5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra5": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "zsAli3": {
+      "main": [
+        [
+          {
+            "node": "ForIra6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForIra6": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "12:30 Ира запуск переноса ВрОтпр": {
+      "main": [
+        [
+          {
+            "node": "ForIra json для записи3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10:00 ZsAli запуск переноса ВрОтпр": {
+      "main": [
+        [
+          {
+            "node": "zsAli3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -1065,8 +1131,7 @@
       "position": [
         340,
         -240
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -2220,6 +2285,187 @@
       "typeVersion": 1,
       "id": "8aec9ed8-d49c-4988-8dd8-d17257dc6cc1",
       "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={  \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\" : 645009985,\n          \"allTraks_pageID\" : 208083408,\n          \"allTraksDone_pageID\" : 1070462072,\n          \"allTraksVO_pageID\" : 1679397325,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ForIra.json"
+      },
+      "id": "6fd2a7a2-7c8e-4e12-b056-59267dda1dd5",
+      "name": "ForIra json для записи3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -200,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForIra"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8045c9c1-81aa-4364-bfd7-48eb199879b0",
+      "name": "ForIra5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        0,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7fnXycgDiNJ7YWwO",
+          "mode": "list",
+          "cachedResultName": "Перенос ВрОтпр в отдельную таблицу (для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        1900
+      ],
+      "id": "23b709fd-e81b-484c-a21e-a06973707222",
+      "name": "Отправка запроса на сбор треков в одну таблицу6"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAli\",\n          \"start_tableID\": \"1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY\",\n          \"start_pageID\": 0,\n           \"allTables_pageID\" : 75948859,\n          \"allTraks_pageID\" : 538648616,\n          \"allTraksDone_pageID\" : 111638545,\n          \"allTraksVO_pageID\" : 1463532755,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/zsAli.json"
+      },
+      "id": "cea9cc11-a4e6-4f77-a24f-895354c87d6d",
+      "name": "zsAli3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        2080
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "zsAli"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "10d3e3e9-d675-4bef-bb6a-913b213e1dac",
+      "name": "ForIra6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -20,
+        2080
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7fnXycgDiNJ7YWwO",
+          "mode": "list",
+          "cachedResultName": "Перенос ВрОтпр в отдельную таблицу (для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        2080
+      ],
+      "id": "28156fc3-33a6-4eb3-bfc3-bb3e84ff400b",
+      "name": "Отправка запроса на сбор треков в одну таблицу7"
+    },
+    {
+      "parameters": {
+        "content": "# Сбор всех Врученых Отправителю",
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1020,
+        1960
+      ],
+      "typeVersion": 1,
+      "id": "57ea283c-49b7-4852-9337-f1ce85162bc1",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 12,
+              "triggerAtMinute": 30
+            }
+          ]
+        }
+      },
+      "id": "c7eee5e4-2cf0-4c70-b982-dff65eb4a44f",
+      "name": "12:30 Ира запуск переноса ВрОтпр",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 10
+            }
+          ]
+        }
+      },
+      "id": "436245b5-6af4-40b6-bf17-549227395185",
+      "name": "10:00 ZsAli запуск переноса ВрОтпр",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        2080
+      ]
     }
   ],
   "pinData": {},
@@ -2329,6 +2575,12 @@
     },
     "node:17:00 ZsAli": {
       "recurrenceRules": []
+    },
+    "node:12:30 Ира запуск переноса ВрОтпр": {
+      "recurrenceRules": []
+    },
+    "node:10:00 ZsAli запуск переноса ВрОтпр": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -2345,7 +2597,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 12,
-  "updatedAt": "2025-03-31T09:46:10.000Z",
-  "versionId": "8b2cbdf2-d61f-4faf-9db2-45b24af3ccfc"
+  "triggerCount": 15,
+  "updatedAt": "2025-04-03T10:08:03.000Z",
+  "versionId": "80b4221a-2207-4cfe-a152-c91a89f37949"
 }
