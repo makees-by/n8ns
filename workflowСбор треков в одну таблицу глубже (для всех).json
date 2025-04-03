@@ -1293,8 +1293,8 @@
           "value": {
             "row_number": "={{ $json.row_number }}",
             "трек": "={{ $json['трек'] }}",
-            "Отметка о доставке": "={{ \"=ЕСЛИ(ЕОШИБКА(ВПР(H\"}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{ '/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{ '/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)) '}}",
-            "Актуальный статус": "={{ \"=ЕСЛИ(ЕОШИБКА(ВПР(H\"}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{ '/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{ '/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)) '}}"
+            "Отметка о доставке": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)) '}}",
+            "Актуальный статус": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ))'}}"
           },
           "matchingColumns": [
             "row_number"
@@ -2196,6 +2196,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-27T17:53:31.000Z",
-  "versionId": "fc8fe8a4-0e94-419d-ace0-04d7ca952c6d"
+  "updatedAt": "2025-04-02T14:35:34.000Z",
+  "versionId": "dd2f4562-b015-4423-944e-18d4d142ea89"
 }
