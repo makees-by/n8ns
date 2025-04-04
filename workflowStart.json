@@ -900,6 +900,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -2584,7 +2591,8 @@
                     "operator": {
                       "type": "string",
                       "operation": "equals"
-                    }
+                    },
+                    "id": "74ec8ba4-f334-484a-bd46-4d5b534e4731"
                   }
                 ],
                 "combinator": "and"
@@ -2791,6 +2799,31 @@
               },
               "renameOutput": true,
               "outputKey": "zsAli"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "50ef66d5-9692-4c63-ad70-c53e20310140",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "zsAliTwo",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "zsAliTwo"
             }
           ]
         },
@@ -2863,6 +2896,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-20T20:13:58.000Z",
-  "versionId": "9e17ee4b-2e10-441a-bafe-99db775d07e4"
+  "updatedAt": "2025-04-04T08:38:35.000Z",
+  "versionId": "97a1d598-66f9-4042-8709-45966be27ecd"
 }
