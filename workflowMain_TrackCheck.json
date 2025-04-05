@@ -2776,7 +2776,7 @@
       "parameters": {
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
-        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAliTwo\",\n          \"start_tableID\": \"1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY\",\n          \"start_pageID\": 0,\n           \"allTables_pageID\" : 75948859,\n          \"allTraks_pageID\" : 538648616,\n          \"allTraksDone_pageID\" : 111638545,\n          \"allTraksVO_pageID\" : 1463532755,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAliTwo\",\n          \"start_tableID\": \"1pRMSau6rPW4nn0T8fCMsYmKZcmuiIjs4swdsUQsxPSw\",\n          \"start_pageID\": 0,\n           \"allTables_pageID\" : 75948859,\n          \"allTraks_pageID\" : 538648616,\n          \"allTraksDone_pageID\" : 111638545,\n          \"allTraksVO_pageID\" : 1463532755,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
         "filePath": "=root/n8n/zsAliTwo.json"
       },
       "id": "2125f079-c77a-44b7-8599-2b4808aea6d0",
@@ -3105,6 +3105,6 @@
     }
   ],
   "triggerCount": 19,
-  "updatedAt": "2025-04-04T08:37:03.000Z",
-  "versionId": "6395b3dd-3959-4d99-beb9-f0e2c9713f3d"
+  "updatedAt": "2025-04-05T07:13:54.000Z",
+  "versionId": "d3df0b9d-74e3-4c10-a7a4-3a333f10476d"
 }
