@@ -1809,12 +1809,11 @@
           "conditions": [
             {
               "id": "0edeac00-54a5-4669-a959-ea19e3f675e5",
-              "leftValue": "={{ $json.steps }}",
+              "leftValue": "={{ $json.steps.toJsonString() }}",
               "rightValue": "возвращено отправителю",
               "operator": {
-                "type": "array",
-                "operation": "contains",
-                "rightType": "any"
+                "type": "string",
+                "operation": "contains"
               }
             },
             {
@@ -2413,6 +2412,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-01-23T10:18:28.000Z",
-  "versionId": "72581f39-7322-41b7-87c1-eff073e537e5"
+  "updatedAt": "2025-04-05T15:18:40.000Z",
+  "versionId": "e4cb2ba8-bf2c-4670-a0d8-4bdc9006b563"
 }
