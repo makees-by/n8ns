@@ -465,23 +465,12 @@
       "main": [
         [
           {
-            "node": "Чтение данных из workProcess",
+            "node": "Датос1",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Датос1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Чтение данных из workProcess": {
-      "main": [
-        [
-          {
-            "node": "If27",
+            "node": "Чтение данных из workProcess",
             "type": "main",
             "index": 0
           }
@@ -712,6 +701,17 @@
         [
           {
             "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных из workProcess": {
+      "main": [
+        [
+          {
+            "node": "If27",
             "type": "main",
             "index": 0
           }
@@ -1406,8 +1406,8 @@
           "value": {
             "row_number": "={{ $json.row_number }}",
             "трек": "={{ $json['трек'] }}",
-            "Отметка о доставке": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)) '}}",
-            "Актуальный статус": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}{{'/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ))'}}"
+            "Отметка о доставке": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)) '}}",
+            "Актуальный статус": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ))'}}"
           },
           "matchingColumns": [
             "row_number"
@@ -1889,29 +1889,15 @@
     },
     {
       "parameters": {
-        "queryPath": "process",
-        "filePath": "=root/n8n/{{ $json.processID }}.json "
-      },
-      "id": "8748801a-7699-4c2b-be29-00bde0f478c4",
-      "name": "Чтение данных из workProcess",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        -560,
-        -40
-      ]
-    },
-    {
-      "parameters": {
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Чтение данных из workProcess').first().json.data.variebles.start_tableID }}",
+          "value": "={{ $('Чтение данных из workProcess').first().json.start_tableID }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Чтение данных из workProcess').first().json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $('Чтение данных из workProcess').first().json.allTraks_pageID }}",
           "mode": "id"
         },
         "columns": {
@@ -2295,8 +2281,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        200,
-        1320
+        640,
+        900
       ],
       "id": "a0f8b74c-48f9-4962-9268-64fdf7c36a8e",
       "name": "No Operation, do nothing1"
@@ -2738,6 +2724,41 @@
       "id": "21a9674c-150d-4e46-a583-bebc3c34b17c",
       "name": "Wait1",
       "webhookId": "139db114-5a42-4eb0-b3eb-a0eb5ec4f2e2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "tablsCC",
+          "mode": "list",
+          "cachedResultName": "tablsCC"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "processID",
+              "value": "={{ $json.processID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "29b42eeb-bf80-4834-bc38-4fc95ef179b2",
+      "name": "Чтение данных из workProcess",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -520,
+        -100
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -2747,6 +2768,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-05T08:37:03.000Z",
-  "versionId": "71b6d668-3df4-427c-86cd-cb92687a507a"
+  "updatedAt": "2025-04-06T20:38:52.000Z",
+  "versionId": "61c86c36-b9b5-40b2-9f61-82e8eb053f2e"
 }
