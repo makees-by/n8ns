@@ -307,7 +307,7 @@
     },
     {
       "parameters": {
-        "amount": 20
+        "amount": 25
       },
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
@@ -1024,6 +1024,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-03T14:11:15.000Z",
-  "versionId": "569f76b3-2e12-4ae3-886c-0752996f1542"
+  "updatedAt": "2025-04-07T07:42:51.000Z",
+  "versionId": "12ef092a-b4c0-408c-b594-2b5dfc1616e1"
 }
