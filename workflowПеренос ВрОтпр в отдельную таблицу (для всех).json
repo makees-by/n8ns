@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Code",
+            "node": "Code2",
             "type": "main",
             "index": 0
           }
@@ -90,28 +90,6 @@
         ]
       ]
     },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "Code1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Чтение данных из workProcess": {
-      "main": [
-        [
-          {
-            "node": "Датос",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Датос": {
       "main": [
         [
@@ -145,11 +123,33 @@
         ]
       ]
     },
-    "Code1": {
+    "ВД": {
       "main": [
         [
           {
             "node": "Чтение данных из workProcess",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных из workProcess": {
+      "main": [
+        [
+          {
+            "node": "Датос",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "ВД",
             "type": "main",
             "index": 0
           }
@@ -181,7 +181,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1580,
+        -1780,
         340
       ],
       "id": "e31ceadc-2f9a-490f-9dfd-4166f3d124d1",
@@ -229,12 +229,12 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "={{ $json.data.variebles.start_tableID }}",
+          "value": "={{ $json.start_tableID }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $json.allTraks_pageID }}",
           "mode": "id"
         },
         "filtersUI": {
@@ -267,12 +267,12 @@
         "operation": "append",
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Датос').first().json.data.variebles.start_tableID }}",
+          "value": "={{ $('Датос').first().json.start_tableID }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Датос').first().json.data.variebles.allTraksVO_pageID }}",
+          "value": "={{ $('Датос').first().json.allTraksVO_pageID }}",
           "mode": "id"
         },
         "columns": {
@@ -376,12 +376,12 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Датос').item.json.data.variebles.start_tableID }}",
+          "value": "={{ $('Датос').item.json.start_tableID }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Датос').item.json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $('Датос').item.json.allTraks_pageID }}",
           "mode": "id"
         },
         "filtersUI": {
@@ -414,12 +414,12 @@
         "operation": "delete",
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Датос').item.json.data.variebles.start_tableID }}",
+          "value": "={{ $('Датос').item.json.start_tableID }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Датос').item.json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $('Датос').item.json.allTraks_pageID }}",
           "mode": "id"
         },
         "startIndex": "={{ $json.row_number }}"
@@ -438,34 +438,6 @@
           "name": "Google Sheets account"
         }
       }
-    },
-    {
-      "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"ForIra\"\n  }\n]\n);"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        -1400,
-        340
-      ],
-      "id": "20692d61-62a6-4935-bb45-2a0e7ebba96c",
-      "name": "Code",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "queryPath": "process",
-        "filePath": "=root/n8n/{{ $json.ProcessID }}.json "
-      },
-      "id": "3858e899-cb48-4e79-94f6-36f0a281f36d",
-      "name": "Чтение данных из workProcess",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        -1220,
-        340
-      ]
     },
     {
       "parameters": {},
@@ -504,16 +476,80 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAli\",\n          \"start_tableID\": \"1LkwUx00HWCfu_oSwnH3NVeTF_QiEwytuEO37R12TkWY\",\n          \"start_pageID\": 0,\n          \"allTables_pageID\": 75948859,\n          \"allTraks_pageID\": 538648616,\n          \"allTraksDone_pageID\": 111638545,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"zsAli\"\n  }\n]\n);"
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9bdf60f9-a502-441b-96c3-fde17dfeb2ff",
+              "name": "processID",
+              "value": "={{ $json.ProcessID }}",
+              "type": "string"
+            },
+            {
+              "id": "0d45aa79-3123-4585-b1b2-3dea228564f3",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1380,
+        360
+      ],
+      "id": "15900d71-927e-4a5a-9371-4f16949a7fc2",
+      "name": "ВД"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "tablsCC",
+          "mode": "list",
+          "cachedResultName": "tablsCC"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "processID",
+              "value": "={{ $json.processID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1ad3e3e0-a532-4dbf-b380-7abfdcd4af8b",
+      "name": "Чтение данных из workProcess",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1180,
+        340
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"ProcessID\": \"ForIra\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1340,
-        560
+        -1580,
+        360
       ],
-      "id": "65cc00f2-709a-468b-af91-3e4be9077e15",
-      "name": "Code1",
+      "id": "a22d04cb-ebd8-4944-b79a-865764e99710",
+      "name": "Code2",
       "disabled": true
     }
   ],
@@ -524,6 +560,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-02T15:03:11.000Z",
-  "versionId": "36bb7bd3-2e3f-41d0-84b0-78d2975a9adb"
+  "updatedAt": "2025-04-06T20:43:00.000Z",
+  "versionId": "d54c8013-86cc-4845-987b-a177c5894b1d"
 }
