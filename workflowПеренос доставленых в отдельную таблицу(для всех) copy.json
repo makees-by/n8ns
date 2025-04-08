@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Получаем треки с отметкой доставлено2",
+            "node": "Чтение данных из workProcess1",
             "type": "main",
             "index": 0
           }
@@ -356,6 +356,112 @@
           }
         ]
       ]
+    },
+    "Чтение данных из workProcess1": {
+      "main": [
+        [
+          {
+            "node": "Получаем треки с отметкой доставлено3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем треки с отметкой доставлено3": {
+      "main": [
+        [
+          {
+            "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Датос1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем треки с отметкой доставлено4": {
+      "main": [
+        [
+          {
+            "node": "Обновляем исправленый трек в исходной таблице",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Датос1": {
+      "main": [
+        [
+          {
+            "node": "Получаем треки с отметкой доставлено4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Обновляем исправленый трек в исходной таблице": {
+      "main": [
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-25T14:19:30.299Z",
@@ -384,8 +490,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1240,
-        1240
+        -1420,
+        1940
       ],
       "id": "81f86b45-cefd-4499-8902-755510c4d728",
       "name": "When clicking ‘Test workflow’"
@@ -1423,8 +1529,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -260,
-        1460
+        -180,
+        1220
       ],
       "id": "63a72bb0-2c63-4199-9b62-f21d831d794b",
       "name": "Подменяем формулы в исходной таблице1",
@@ -1665,8 +1771,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -580,
-        1440
+        -500,
+        1300
       ]
     },
     {
@@ -1701,6 +1807,390 @@
         -840,
         1200
       ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Датос1').item.json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Датос1').item.json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $json.row_number }}",
+            "трек": "={{ $json['трек'] }}",
+            "Отметка о доставке": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:B\")); 2; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{ '; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:B\")); 2; ЛОЖЬ)) '}}",
+            "Актуальный статус": "={{'=ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ)); ЕСЛИ(ЕОШИБКА(ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ)); \"Результат не найден\";ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки ВО!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки доставлено!A:G\")); 7; ЛОЖЬ));ВПР(H'}}{{ $json.row_number }}{{'; (IMPORTRANGE(\"https://docs.google.com/spreadsheets/d/'}}{{ $('Чтение данных из workProcess1').first().json.start_tableID }}{{'/edit\"; \"Все треки!A:G\")); 7; ЛОЖЬ))'}}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "Заказ",
+              "displayName": "Заказ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Тип ЗАКАЗА",
+              "displayName": "Тип ЗАКАЗА",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Фамилия",
+              "displayName": "Фамилия",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RUB",
+              "displayName": "RUB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "BYN",
+              "displayName": "BYN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Накрут",
+              "displayName": "Накрут",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Продажа",
+              "displayName": "Продажа",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "трек",
+              "displayName": "трек",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Итог",
+              "displayName": "Итог",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "% от цены в зависимости от типа заказа",
+              "displayName": "% от цены в зависимости от типа заказа",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "% от накрутов зависимости от типа заказа",
+              "displayName": "% от накрутов зависимости от типа заказа",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Вычет",
+              "displayName": "Вычет",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Отметка о доставке",
+              "displayName": "Отметка о доставке",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Доставлено byn",
+              "displayName": "Доставлено byn",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Актуальный статус",
+              "displayName": "Актуальный статус",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        680,
+        1960
+      ],
+      "id": "96b9c956-72af-4d88-a246-d5af32d5fcf8",
+      "name": "Обновляем исправленый трек в исходной таблице",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "tablsCC",
+          "mode": "list",
+          "cachedResultName": "tablsCC"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "processID",
+              "value": "=zsAli"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "44f4f8ac-0852-4ad7-9629-2327fe527e53",
+      "name": "Чтение данных из workProcess1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1040,
+        1940
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.all_tableID }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.allTables_pageID }}",
+          "mode": "id"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Чек-бокс",
+              "lookupValue": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -760,
+        1940
+      ],
+      "id": "9a76f2f6-0dbc-4e1c-bd46-1a730028ddb0",
+      "name": "Получаем треки с отметкой доставлено3",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['Ссылка полностью'] }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        140,
+        1960
+      ],
+      "id": "ad0d8dd6-1351-4171-9ba1-54273be2707b",
+      "name": "Получаем треки с отметкой доставлено4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GsKpjBhTzM4aUjza",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -280,
+        1940
+      ],
+      "id": "18a3df84-1aaa-4d68-919b-c002ee8c1ca3",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        440,
+        2300
+      ],
+      "id": "3f5f8efd-923c-421e-b0cb-d3262417aca9"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        1960
+      ],
+      "id": "b4ad4545-ee23-44e0-bcd4-8a7d1d560b93",
+      "name": "Датос1"
+    },
+    {
+      "parameters": {
+        "maxItems": 24,
+        "keep": "lastItems"
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        1940
+      ],
+      "id": "6a2b7dd4-7756-4bde-93f6-19dcfe36acdd",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -140,
+        2260
+      ],
+      "id": "6fa9d53a-07fe-498e-9939-62021a30798c",
+      "name": "Wait",
+      "webhookId": "66ae1908-3bd6-417c-8351-fe0b8b638976"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        20,
+        1620
+      ],
+      "id": "88696c4a-baea-48af-9452-5ab8dfbfd859",
+      "name": "No Operation, do nothing"
     }
   ],
   "pinData": {},
@@ -1710,6 +2200,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-03-25T15:30:04.000Z",
-  "versionId": "b3d128f1-1598-4e48-9f65-39618d4e7a5e"
+  "updatedAt": "2025-04-08T12:10:23.000Z",
+  "versionId": "53375d91-694b-4d81-85f2-15dca155bb4b"
 }
