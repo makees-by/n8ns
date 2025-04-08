@@ -912,6 +912,15 @@
                 "type": "string",
                 "operation": "notEquals"
               }
+            },
+            {
+              "id": "903e5e49-ed6e-4579-8007-8ecc1a3acca8",
+              "leftValue": "={{ $json['трек'].length }}",
+              "rightValue": 10,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
             }
           ],
           "combinator": "and"
@@ -2768,6 +2777,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-06T20:38:52.000Z",
-  "versionId": "61c86c36-b9b5-40b2-9f61-82e8eb053f2e"
+  "updatedAt": "2025-04-08T12:03:00.000Z",
+  "versionId": "4cc61a59-d428-47f9-bd47-412a8a8d821b"
 }
