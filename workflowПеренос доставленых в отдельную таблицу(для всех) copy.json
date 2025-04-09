@@ -2147,7 +2147,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -60,
+        -100,
         1960
       ],
       "id": "b4ad4545-ee23-44e0-bcd4-8a7d1d560b93",
@@ -2155,7 +2155,7 @@
     },
     {
       "parameters": {
-        "maxItems": 24,
+        "maxItems": 22,
         "keep": "lastItems"
       },
       "type": "n8n-nodes-base.limit",
@@ -2191,6 +2191,21 @@
       ],
       "id": "88696c4a-baea-48af-9452-5ab8dfbfd859",
       "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "content": "## Раскидыввние формулы по всем трекам в таблицах",
+        "height": 80,
+        "width": 460
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1460,
+        1820
+      ],
+      "typeVersion": 1,
+      "id": "f395e234-dd79-4847-9031-96876253f4ec",
+      "name": "Sticky Note"
     }
   ],
   "pinData": {},
@@ -2200,6 +2215,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-08T12:10:23.000Z",
-  "versionId": "53375d91-694b-4d81-85f2-15dca155bb4b"
+  "updatedAt": "2025-04-08T14:47:45.000Z",
+  "versionId": "9542bf61-d56c-49e4-9c53-8b5b2490034f"
 }
