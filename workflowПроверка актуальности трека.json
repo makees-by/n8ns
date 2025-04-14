@@ -304,6 +304,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "конец акт работы цикла1",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -1379,7 +1386,8 @@
           "id": "Dw91KSbPhrbIymMx",
           "name": "n8n.by1@gmail.com"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1989,6 +1997,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-13T07:33:37.000Z",
-  "versionId": "ede478a1-6b5f-4384-adf7-162f2febddae"
+  "updatedAt": "2025-04-13T17:31:24.000Z",
+  "versionId": "58c798ef-a147-427c-bf1c-da51d13f6c66"
 }
