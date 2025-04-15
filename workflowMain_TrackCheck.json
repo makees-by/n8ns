@@ -1487,8 +1487,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        340,
-        100
+        320,
+        60
       ],
       "disabled": true
     },
@@ -2723,7 +2723,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        -1120,
+        -1140,
         2220
       ],
       "id": "91c366c2-309d-4781-93b1-49c188d02ab2",
@@ -3024,7 +3024,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        -1120,
+        -1140,
         2420
       ],
       "id": "d4a16421-2568-427c-9033-89207a1aa05c",
@@ -3273,7 +3273,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -180,
+        -160,
         2360
       ],
       "disabled": true
@@ -3290,7 +3290,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1600,
+        -1580,
         2420
       ],
       "disabled": true
@@ -3322,7 +3322,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2000,
+        1940,
         2680
       ],
       "credentials": {
@@ -3391,7 +3391,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1720,
+        1480,
         2680
       ],
       "id": "95060f58-c398-4648-940d-bdd623b5a08f",
@@ -3456,8 +3456,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1740,
-        2860
+        1720,
+        2680
       ],
       "id": "2e7f0ca9-36d8-4438-adad-6252d48f9187",
       "name": "Edit Fields5"
@@ -3478,7 +3478,7 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1820,
+        -1760,
         2420
       ]
     }
@@ -3661,6 +3661,6 @@
     }
   ],
   "triggerCount": 21,
-  "updatedAt": "2025-04-13T07:38:52.000Z",
-  "versionId": "eb42a808-4779-402a-a196-aaef59b13307"
+  "updatedAt": "2025-04-15T11:00:57.000Z",
+  "versionId": "65e04c91-1206-4dc1-94aa-ddf1d876d872"
 }
