@@ -26,17 +26,17 @@
             "index": 0
           },
           {
+            "node": "достаём тригер2",
+            "type": "main",
+            "index": 0
+          },
+          {
             "node": "Получаем записи со статусом нет в БД",
             "type": "main",
             "index": 0
           },
           {
             "node": "достаём тригер",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "достаём тригер2",
             "type": "main",
             "index": 0
           }
@@ -58,12 +58,12 @@
       "main": [
         [
           {
-            "node": "Данные для добавления4",
+            "node": "Меняем triger2 на 0",
             "type": "main",
             "index": 0
           },
           {
-            "node": "Меняем triger2 на 0",
+            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -537,6 +537,17 @@
           }
         ]
       ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Данные для добавления4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-23T06:56:26.076Z",
@@ -668,10 +679,6 @@
             {
               "lookupColumn": "Отметка о доставке",
               "lookupValue": "Не доставлено"
-            },
-            {
-              "lookupColumn": "Дата последнего обновления",
-              "lookupValue": "="
             }
           ]
         },
@@ -683,8 +690,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1960,
-        740
+        1920,
+        760
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -742,7 +749,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        2420,
+        2500,
         740
       ]
     },
@@ -879,7 +886,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2360,
+        2440,
         540
       ]
     },
@@ -904,7 +911,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        2680,
+        2900,
         540
       ]
     },
@@ -921,7 +928,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1960,
+        2020,
         540
       ],
       "executeOnce": true
@@ -1028,7 +1035,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4000,
+        4220,
         760
       ],
       "credentials": {
@@ -1065,7 +1072,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3620,
+        3840,
         1240
       ],
       "executeOnce": false,
@@ -1120,7 +1127,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3920,
+        4140,
         1240
       ],
       "id": "8a8a506c-c0c4-48e6-8e04-ceda1c76fd9e",
@@ -1140,7 +1147,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        4180,
+        4400,
         1240
       ],
       "id": "1e16e67d-2d76-4e8f-ad82-74f9288d5443",
@@ -1349,7 +1356,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2000,
+        1920,
         100
       ],
       "retryOnFail": true,
@@ -1381,8 +1388,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3160,
-        520
+        3380,
+        540
       ],
       "id": "b8b7395b-e565-4daa-981f-62fee47f3067",
       "name": "СЮДА ПРИХОДЯТ ВСЕ ТРЕКИ ОБЪЕДЕНЁННЫЕ"
@@ -1414,7 +1421,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3580,
+        3800,
         100
       ],
       "id": "cd23bae1-6789-438c-8b6a-79d9b0c69eeb",
@@ -1429,7 +1436,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3160,
+        3380,
         100
       ],
       "id": "2c37f926-b69a-42fd-aa1e-4e600d7b6d94",
@@ -1440,7 +1447,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        3500,
+        3720,
         560
       ],
       "id": "204929be-7904-4f75-a7c7-b1bd67a88c0e",
@@ -1475,7 +1482,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3780,
+        4000,
         340
       ],
       "id": "0630308a-40be-4ff4-ae47-efeb7b7f0711",
@@ -1495,7 +1502,7 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        4120,
+        4340,
         340
       ],
       "id": "dd13daaf-2415-41a7-bd49-c874cda237f3",
@@ -1506,7 +1513,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2660,
+        2880,
         1540
       ],
       "id": "148ed69f-1516-4fd7-80d1-d04b069b2be5",
@@ -1541,7 +1548,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2860,
+        3080,
         80
       ],
       "executeOnce": true,
@@ -1577,7 +1584,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        2900,
+        3120,
         280
       ],
       "executeOnce": true,
@@ -1617,7 +1624,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3140,
+        3360,
         280
       ],
       "executeOnce": false,
@@ -1652,7 +1659,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3360,
+        3580,
         100
       ],
       "id": "3e7f5311-c479-42c7-a1b5-9b76c7247103",
@@ -1667,7 +1674,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        2860,
+        3080,
         1240
       ],
       "id": "fcb9b903-31ad-4834-88e1-92fd3eee4e28",
@@ -1681,7 +1688,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3,
       "position": [
-        3560,
+        3780,
         760
       ],
       "id": "02006794-bf2e-4e02-ac92-db261fc6accd",
@@ -1694,7 +1701,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        3760,
+        3980,
         760
       ],
       "id": "b9bc1f80-88a2-4df0-a959-3fb10f5a54a3",
@@ -1729,7 +1736,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        3320,
+        3540,
         1240
       ],
       "executeOnce": false,
@@ -1764,7 +1771,7 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        1780,
+        1920,
         360
       ],
       "executeOnce": true
@@ -1798,8 +1805,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2000,
-        340
+        2160,
+        360
       ]
     },
     {
@@ -1829,7 +1836,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2880,
+        3100,
         540
       ],
       "id": "dd712010-b39a-4346-9154-612347450fb3",
@@ -1866,7 +1873,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4540,
+        4760,
         1240
       ],
       "id": "2870e3d0-f98e-484a-a398-ab16768fbe47",
@@ -1894,6 +1901,40 @@
       ],
       "id": "b67d9d37-0044-4e47-b443-7f7a474d088a",
       "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7d64c867-fbd8-4811-8da5-c7668060cb90",
+              "leftValue": "={{ $json['Дата последнего обновления'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2180,
+        760
+      ],
+      "id": "e769208c-ccd1-4ede-a443-a9fa326e032a",
+      "name": "If"
     }
   ],
   "pinData": {},
@@ -1910,6 +1951,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-23T07:06:01.000Z",
-  "versionId": "bf5e24ec-0587-45ce-abd5-4380b2e3af86"
+  "updatedAt": "2025-04-14T14:29:10.000Z",
+  "versionId": "2e14ec08-3f78-4545-a97c-bae538c1e32e"
 }
