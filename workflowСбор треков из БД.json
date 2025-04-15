@@ -777,6 +777,11 @@
             "node": "No Operation, do nothing",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Проверяем наличие треков в БД1",
+            "type": "main",
+            "index": 1
           }
         ]
       ]
@@ -2984,6 +2989,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-23T14:50:16.000Z",
-  "versionId": "3bced15a-750e-4d28-9bdf-311c38a362b2"
+  "updatedAt": "2025-04-14T14:17:43.000Z",
+  "versionId": "32b1066f-fa92-41f1-a8d5-504cb28928b7"
 }
