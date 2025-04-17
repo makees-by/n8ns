@@ -868,13 +868,13 @@
   "pinData": {},
   "settings": {
     "executionOrder": "v1",
-    "saveDataSuccessExecution": "all",
+    "saveDataSuccessExecution": "none",
     "callerPolicy": "workflowsFromSameOwner",
     "executionTimeout": 1800
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-02-17T19:59:08.000Z",
-  "versionId": "53a80122-d243-4f48-a5a3-5386f0aea860"
+  "updatedAt": "2025-04-17T08:30:58.000Z",
+  "versionId": "5b64d64f-91b6-4f29-9ea4-cf022979fb55"
 }
