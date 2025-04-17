@@ -400,7 +400,7 @@
     {
       "parameters": {
         "operation": "opWrite",
-        "queryPath": "=process.AllTracks.{{ $('Чтение данных из workProcess').first().json.data.variebles.processID }}",
+        "queryPath": "=process.AllTracks.{{ $('Чтение данных из workProcess').first().json.processID }}",
         "sourceType": "sourceTypeJson",
         "sourceData": "={{ $json['трек'].toJsonString() }}",
         "filePath": "=root/n8n/sborTreckAll.json"
@@ -619,8 +619,7 @@
         300
       ],
       "id": "1134d39d-3262-449b-b529-3cfd56db245f",
-      "name": "Code1",
-      "disabled": true
+      "name": "Code1"
     },
     {
       "parameters": {
@@ -744,6 +743,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-06T20:29:27.000Z",
-  "versionId": "379bbef8-d19f-4f66-ab20-db401a7d18ed"
+  "updatedAt": "2025-04-17T08:36:28.000Z",
+  "versionId": "ac80b212-9487-4fc0-aa84-80ce3c115e08"
 }
