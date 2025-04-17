@@ -1,0 +1,447 @@
+{
+  "active": true,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "n8n1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "n8n3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "n8n5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем Выполненые": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем в ожидании": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем ошибочные": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Получаем Выполненые",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Получаем в ожидании",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger2": {
+      "main": [
+        [
+          {
+            "node": "Получаем ошибочные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-17T08:40:16.737Z",
+  "id": "pRsdkg6kg3QOoLoy",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Чистка процессов",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -440,
+        200
+      ],
+      "id": "528e59ec-d315-46fc-9d0c-7300f44b2465",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3abb0396-b3fa-4280-abed-eaf089663832",
+              "leftValue": "={{ $json.startedAt }}",
+              "rightValue": "={{ $now.minus(2, 'days') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        380,
+        0
+      ],
+      "id": "b0ac69b7-a8b6-4aa5-ab63-c8a230fe9b49",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "operation": "delete",
+        "executionId": "={{ $json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        680,
+        -20
+      ],
+      "id": "68ffe659-30d8-40a6-ab42-c23578afdcc4",
+      "name": "n8n1",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3abb0396-b3fa-4280-abed-eaf089663832",
+              "leftValue": "={{ $json.startedAt }}",
+              "rightValue": "={{ $now.minus(1, 'days') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        380,
+        240
+      ],
+      "id": "ec71da2a-67df-4025-8166-bc68e0537082",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "operation": "delete",
+        "executionId": "={{ $json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        680,
+        220
+      ],
+      "id": "06944943-b4c0-4064-9306-b90abb16e992",
+      "name": "n8n3",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "3abb0396-b3fa-4280-abed-eaf089663832",
+              "leftValue": "={{ $json.startedAt }}",
+              "rightValue": "={{ $now.minus(2, 'week') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        380,
+        500
+      ],
+      "id": "38e98773-f85f-4a91-b991-ad5c1374a517",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "operation": "delete",
+        "executionId": "={{ $json.id }}",
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        680,
+        480
+      ],
+      "id": "195c4fda-548b-4140-ab47-0ebec8bd4f0e",
+      "name": "n8n5",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "returnAll": true,
+        "filters": {
+          "status": "success"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        180,
+        0
+      ],
+      "id": "0e376cdd-7306-4d26-81a2-cceb68afbc91",
+      "name": "Получаем Выполненые",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "returnAll": true,
+        "filters": {
+          "status": "waiting"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        180,
+        240
+      ],
+      "id": "47cee360-3073-4a2b-96ea-27ad52342ddb",
+      "name": "Получаем в ожидании",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "returnAll": true,
+        "filters": {
+          "status": "error"
+        },
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        180,
+        500
+      ],
+      "id": "c2636bfc-08a7-4598-9a4f-2f1b349936ba",
+      "name": "Получаем ошибочные",
+      "credentials": {
+        "n8nApi": {
+          "id": "cf1RmOEsyQcUkRcC",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -140,
+        0
+      ],
+      "id": "19930ce7-76ac-4eb5-85e1-0d54838cc84f",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 12,
+              "triggerAtMinute": 20
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -140,
+        240
+      ],
+      "id": "a20f1019-8fd2-4fa4-be2b-7d0838020475",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 12,
+              "triggerAtMinute": 40
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        500
+      ],
+      "id": "34297237-0bdd-48e8-80a0-00d04387b75d",
+      "name": "Schedule Trigger2"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger1": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger2": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 3,
+  "updatedAt": "2025-04-17T08:58:02.000Z",
+  "versionId": "42a31dd8-ea67-4b93-9a6d-96b5e1363395"
+}
