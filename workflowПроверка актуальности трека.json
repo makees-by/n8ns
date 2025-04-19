@@ -285,17 +285,6 @@
         ]
       ]
     },
-    "Получаем данные из таблицы все треки по треку1": {
-      "main": [
-        [
-          {
-            "node": "If3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Удаляем строку по полученному номеру строки1": {
       "main": [
         [
@@ -327,13 +316,7 @@
     },
     "Чтение данных из workProcess1": {
       "main": [
-        [
-          {
-            "node": "Датос1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Датос1": {
@@ -350,6 +333,11 @@
     "ДатосЦикл1": {
       "main": [
         [
+          {
+            "node": "Данные для гугл таблиц",
+            "type": "main",
+            "index": 0
+          },
           {
             "node": "Получаем данные из таблицы все треки по треку1",
             "type": "main",
@@ -373,7 +361,7 @@
       "main": [
         [
           {
-            "node": "Чтение данных из workProcess1",
+            "node": "Чтение данных из workProcess2",
             "type": "main",
             "index": 0
           }
@@ -474,6 +462,50 @@
         [
           {
             "node": "Limit1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Чтение данных из workProcess2": {
+      "main": [
+        [
+          {
+            "node": "Датос1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Данные для гугл таблиц": {
+      "main": [
+        [
+          {
+            "node": "If6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If6": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Получаем данные из таблицы все треки по треку1": {
+      "main": [
+        [
+          {
+            "node": "If3",
             "type": "main",
             "index": 0
           }
@@ -1176,7 +1208,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -40,
+        80,
         660
       ],
       "typeVersion": 1,
@@ -1295,12 +1327,12 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "={{ $json.data.variebles.start_tableID }}",
+          "value": "={{ $json.all_tableID }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $json.allTraksDone_pageID }}",
           "mode": "id"
         },
         "options": {}
@@ -1322,53 +1354,15 @@
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json['url таблицы из которой трек'] }}",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json['url таблицы из которой трек'] }}",
-          "mode": "url"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "трек",
-              "lookupValue": "={{ $json['трек'] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        500,
-        1380
-      ],
-      "id": "7c7cb95a-9adc-426b-85a9-8b0b9cbf4b42",
-      "name": "Получаем данные из таблицы все треки по треку1",
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
-        }
-      }
-    },
-    {
-      "parameters": {
         "operation": "delete",
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Датос1').item.json.data.variebles.start_tableID }}",
+          "value": "={{ $('Данные для гугл таблиц').first().json.Id_check_tabl }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Датос1').item.json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $('Данные для гугл таблиц').first().json.ID_check_page }}",
           "mode": "id"
         },
         "startIndex": "={{ $json.row_number }}"
@@ -1412,8 +1406,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1220,
-        1380
+        -1480,
+        1200
       ]
     },
     {
@@ -1432,7 +1426,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        260,
+        200,
         1380
       ],
       "id": "492295b9-23b2-4fba-ad5d-264e54d1ccc6",
@@ -1699,19 +1693,19 @@
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Датос1').item.json.data.variebles.start_tableID }}",
+          "value": "={{ $('Данные для гугл таблиц').first().json.Id_check_tabl }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Датос1').item.json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $('Данные для гугл таблиц').first().json.ID_check_page }}",
           "mode": "id"
         },
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "трек": "={{ $json['трек'] }}",
-            "Проверка актуальности": "={{ $now.format('dd.MM.yyyy HH-mm-ss') }}"
+            "Проверка актуальности": "={{ $now.format('dd.MM.yyyy HH-mm-ss') }}",
+            "трек": "={{ $json['трек'] }}"
           },
           "matchingColumns": [
             "трек"
@@ -1844,19 +1838,19 @@
       "parameters": {
         "documentId": {
           "__rl": true,
-          "value": "={{ $('Датос1').item.json.data.variebles.start_tableID }}",
+          "value": "={{ $('Данные для гугл таблиц').first().json.Id_check_tabl }}",
           "mode": "id"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('Датос1').item.json.data.variebles.allTraks_pageID }}",
+          "value": "={{ $('Данные для гугл таблиц').first().json.ID_check_page }}",
           "mode": "id"
         },
         "filtersUI": {
           "values": [
             {
               "lookupColumn": "трек",
-              "lookupValue": "={{ $('ДатосЦикл1').item.json['трек'] }}"
+              "lookupValue": "={{ $('ДатосЦикл1').first().json['трек'] }}"
             }
           ]
         },
@@ -1988,6 +1982,155 @@
       ],
       "id": "4b32c489-2db4-423b-95c8-5dee5091f351",
       "name": "If5"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "tablsCC",
+          "mode": "list",
+          "cachedResultName": "tablsCC"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "processID",
+              "value": "={{ $json.data.process.variebles.processID }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1897803e-1ab2-4f05-82c5-0eed8f7d7f23",
+      "name": "Чтение данных из workProcess2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -1200,
+        1380
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## проверяем доставленые треки"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -840,
+        1160
+      ],
+      "typeVersion": 1,
+      "id": "311ca834-f990-48f6-9449-f87d6ac91a66",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2f72b90e-fb37-4527-9ce0-faa5351ceeb6",
+              "name": "Id_check_tabl",
+              "value": "={{ $('Датос1').item.json.all_tableID }}",
+              "type": "string"
+            },
+            {
+              "id": "2e0c7d6c-d2a0-4472-bd56-967dfd69674e",
+              "name": "ID_check_page",
+              "value": "={{ $('Датос1').item.json.allTraksDone_pageID }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        1180
+      ],
+      "id": "d56664f6-fc38-4875-a8d4-7dfb7af34a9a",
+      "name": "Данные для гугл таблиц"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7f0e6365-133d-47bd-aa0d-187793de7958",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        700,
+        1180
+      ],
+      "id": "dfe7b0e9-e1a4-4566-a57a-fe57a120bd90",
+      "name": "If6"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json['url таблицы из которой трек'] }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "={{ $json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        540,
+        1380
+      ],
+      "id": "7c7cb95a-9adc-426b-85a9-8b0b9cbf4b42",
+      "name": "Получаем данные из таблицы все треки по треку1",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Dw91KSbPhrbIymMx",
+          "name": "n8n.by1@gmail.com"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -1997,6 +2140,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-13T17:31:24.000Z",
-  "versionId": "58c798ef-a147-427c-bf1c-da51d13f6c66"
+  "updatedAt": "2025-04-18T21:19:38.000Z",
+  "versionId": "1a356973-480a-43d1-9afa-c485bee08c96"
 }
