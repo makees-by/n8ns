@@ -1818,8 +1818,8 @@
             },
             {
               "id": "e10187dc-76bb-430b-9ab4-690e9de06cb5",
-              "leftValue": "={{ $json.last_event }}",
-              "rightValue": "будет",
+              "leftValue": "={{ $json.steps.toJsonString() }}",
+              "rightValue": "будет возвращено отправителю",
               "operator": {
                 "type": "string",
                 "operation": "notContains"
@@ -2412,6 +2412,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-05T15:18:40.000Z",
-  "versionId": "e4cb2ba8-bf2c-4670-a0d8-4bdc9006b563"
+  "updatedAt": "2025-04-19T20:15:24.000Z",
+  "versionId": "c5fe9073-81b5-4e0a-8876-59cac56c75f3"
 }
