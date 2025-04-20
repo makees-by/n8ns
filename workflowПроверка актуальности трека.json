@@ -2125,6 +2125,7 @@
       "id": "7c7cb95a-9adc-426b-85a9-8b0b9cbf4b42",
       "name": "Получаем данные из таблицы все треки по треку1",
       "alwaysOutputData": true,
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "Dw91KSbPhrbIymMx",
@@ -2140,6 +2141,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-18T21:19:38.000Z",
-  "versionId": "1a356973-480a-43d1-9afa-c485bee08c96"
+  "updatedAt": "2025-04-19T17:54:54.000Z",
+  "versionId": "0e4a1d63-70ce-4e0f-a494-fddaa3561467"
 }
