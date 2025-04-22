@@ -640,25 +640,7 @@
       "main": [
         [
           {
-            "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If": {
-      "main": [
-        [
-          {
-            "node": "Google Sheets1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "If2",
+            "node": "Ищем в шагах Возвращено отправителю",
             "type": "main",
             "index": 0
           }
@@ -710,6 +692,42 @@
         [
           {
             "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ищем в шагах Возвращено отправителю": {
+      "main": [
+        [
+          {
+            "node": "Уточняем что это НЕ БУДЕТ возвращено",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Уточняем что это НЕ БУДЕТ возвращено": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If2",
             "type": "main",
             "index": 0
           }
@@ -1808,48 +1826,6 @@
           },
           "conditions": [
             {
-              "id": "0edeac00-54a5-4669-a959-ea19e3f675e5",
-              "leftValue": "={{ $json.steps.toJsonString() }}",
-              "rightValue": "возвращено отправителю",
-              "operator": {
-                "type": "string",
-                "operation": "contains"
-              }
-            },
-            {
-              "id": "e10187dc-76bb-430b-9ab4-690e9de06cb5",
-              "leftValue": "={{ $json.steps.toJsonString() }}",
-              "rightValue": "будет возвращено отправителю",
-              "operator": {
-                "type": "string",
-                "operation": "notContains"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        700,
-        1080
-      ],
-      "id": "655e311f-92c8-40b1-8f2d-f1a68e03786d",
-      "name": "If"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
               "id": "a2d900f8-299e-4ad5-a4b7-cc282c0017cb",
               "leftValue": "={{ $json.last_event }}",
               "rightValue": "выдано",
@@ -1866,7 +1842,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        700,
+        620,
         1300
       ],
       "id": "cd7c69bc-caa8-4304-9756-284260108430",
@@ -2203,7 +2179,7 @@
       "typeVersion": 4.5,
       "position": [
         1260,
-        1060
+        1040
       ],
       "id": "d7c8f317-0adc-4649-8842-f0ba9d0b60e0",
       "name": "Google Sheets1",
@@ -2384,6 +2360,81 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0edeac00-54a5-4669-a959-ea19e3f675e5",
+              "leftValue": "={{ $json.steps.toJsonString() }}",
+              "rightValue": "возвращено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        1080
+      ],
+      "id": "655e311f-92c8-40b1-8f2d-f1a68e03786d",
+      "name": "Ищем в шагах Возвращено отправителю"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "0edeac00-54a5-4669-a959-ea19e3f675e5",
+              "leftValue": "={{ $json.last_event }}",
+              "rightValue": "возвращено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "e10187dc-76bb-430b-9ab4-690e9de06cb5",
+              "leftValue": "={{ $json.last_event }}",
+              "rightValue": "будет возвращено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "notContains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        840,
+        1060
+      ],
+      "id": "7914cb4b-0798-4a0c-be00-3fc0c2354c83",
+      "name": "Уточняем что это НЕ БУДЕТ возвращено"
     }
   ],
   "pinData": {},
@@ -2412,6 +2463,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-19T20:15:24.000Z",
-  "versionId": "c5fe9073-81b5-4e0a-8876-59cac56c75f3"
+  "updatedAt": "2025-04-22T05:07:49.000Z",
+  "versionId": "cbef88fb-d6e2-4620-b97c-df65615b0cb5"
 }
