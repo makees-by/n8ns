@@ -339,7 +339,7 @@
             "index": 0
           },
           {
-            "node": "Получаем данные из таблицы все треки по треку1",
+            "node": "Wait2",
             "type": "main",
             "index": 0
           }
@@ -506,6 +506,17 @@
         [
           {
             "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "Получаем данные из таблицы все треки по треку1",
             "type": "main",
             "index": 0
           }
@@ -1316,7 +1327,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1520,
+        1960,
         1680
       ],
       "id": "47ab8a0f-de59-4f0a-8d2b-86dd19e00103",
@@ -1347,8 +1358,8 @@
       "name": "Получаем треки с отметкой доставлено1",
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
+          "id": "UdgDFfC0AJ0LSo5o",
+          "name": "Google Sheets account 2"
         }
       }
     },
@@ -1370,7 +1381,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1260,
+        1700,
         1560
       ],
       "id": "033d7861-cf8c-4972-b3c1-12f3fa8ec44c",
@@ -1487,7 +1498,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        740,
+        1180,
         1380
       ],
       "id": "a43b1e5b-23be-4d0d-a99a-e7278ee39ae8",
@@ -1675,7 +1686,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        940,
+        1380,
         1160
       ],
       "id": "40f6b747-66cb-45bb-9a6f-46c65cc9fec6",
@@ -1810,7 +1821,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1180,
+        1620,
         1160
       ],
       "id": "353b6ab3-e537-437b-a051-71a8347f11f9",
@@ -1828,7 +1839,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1500,
+        1940,
         1360
       ],
       "id": "fcb929a5-6055-4a7e-985d-d3db8b101e0d",
@@ -1859,7 +1870,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        940,
+        1380,
         1560
       ],
       "id": "c5489baf-2833-4cfb-8652-5ce296c8e764",
@@ -1888,7 +1899,7 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1020,
+        1460,
         1380
       ],
       "id": "75fc06d1-c604-4258-a1b0-1328d0c61c8b",
@@ -1943,7 +1954,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1220,
+        1660,
         1380
       ],
       "id": "9c8c4bd5-2842-4eb6-8c24-4d0c61788e77",
@@ -2054,7 +2065,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        220,
+        660,
         1180
       ],
       "id": "d56664f6-fc38-4875-a8d4-7dfb7af34a9a",
@@ -2088,7 +2099,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        700,
+        1140,
         1180
       ],
       "id": "dfe7b0e9-e1a4-4566-a57a-fe57a120bd90",
@@ -2119,7 +2130,7 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        540,
+        980,
         1380
       ],
       "id": "7c7cb95a-9adc-426b-85a9-8b0b9cbf4b42",
@@ -2132,6 +2143,20 @@
           "name": "n8n.by1@gmail.com"
         }
       }
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        420,
+        1380
+      ],
+      "id": "59b7d28f-05a8-48f4-90d3-ac9756032817",
+      "name": "Wait2",
+      "webhookId": "35b0911e-196f-4d35-9cd9-4a8aa12c443b"
     }
   ],
   "pinData": {},
@@ -2141,6 +2166,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-22T07:32:50.000Z",
-  "versionId": "c25328de-4065-452a-813b-0a616f4b8f11"
+  "updatedAt": "2025-04-22T20:49:51.000Z",
+  "versionId": "3a09b3c3-6e43-4cd5-90a8-9bebeae8c2f1"
 }
