@@ -907,6 +907,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "БП запуск модуля проверки треков2",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -2824,6 +2831,31 @@
               },
               "renameOutput": true,
               "outputKey": "zsAliTwo"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "89ac0042-cde4-4196-aa1f-cafb8f2fe7e3",
+                    "leftValue": "={{ $('Начало').item.json.body.ProcessID }}",
+                    "rightValue": "ZsForVikux",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ZsForVikux"
             }
           ]
         },
@@ -2896,6 +2928,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-04T08:38:35.000Z",
-  "versionId": "97a1d598-66f9-4042-8709-45966be27ecd"
+  "updatedAt": "2025-04-22T19:57:04.000Z",
+  "versionId": "911dd442-515a-4c6f-86ea-1cdd2c9f1cc3"
 }
