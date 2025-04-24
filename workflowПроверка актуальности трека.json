@@ -1694,8 +1694,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
+          "id": "UdgDFfC0AJ0LSo5o",
+          "name": "Google Sheets account 2"
         }
       }
     },
@@ -1829,8 +1829,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
+          "id": "UdgDFfC0AJ0LSo5o",
+          "name": "Google Sheets account 2"
         }
       }
     },
@@ -1876,10 +1876,11 @@
       "id": "c5489baf-2833-4cfb-8652-5ce296c8e764",
       "name": "Обновляем формулы в исх табл3",
       "alwaysOutputData": true,
+      "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
+          "id": "UdgDFfC0AJ0LSo5o",
+          "name": "Google Sheets account 2"
         }
       }
     },
@@ -1906,8 +1907,8 @@
       "name": "Google Docs1",
       "credentials": {
         "googleDocsOAuth2Api": {
-          "id": "eBFLWwtM7Vn21e9r",
-          "name": "n8n.by1@gmail.com"
+          "id": "KFjdsMEX9CgQ5JE5",
+          "name": "Google Docs account 2"
         }
       }
     },
@@ -2139,8 +2140,8 @@
       "retryOnFail": true,
       "credentials": {
         "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
+          "id": "UdgDFfC0AJ0LSo5o",
+          "name": "Google Sheets account 2"
         }
       }
     },
@@ -2166,6 +2167,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-22T20:49:51.000Z",
-  "versionId": "3a09b3c3-6e43-4cd5-90a8-9bebeae8c2f1"
+  "updatedAt": "2025-04-24T12:20:00.000Z",
+  "versionId": "b0b73ccb-7531-4646-a0dc-5bba43626c4f"
 }
