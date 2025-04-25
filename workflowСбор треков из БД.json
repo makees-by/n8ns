@@ -529,7 +529,12 @@
         ],
         [
           {
-            "node": "сообщаем о проблеме",
+            "node": "Делим на 3 сервера",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "формируем запрос к логированию6",
             "type": "main",
             "index": 0
           }
@@ -948,6 +953,17 @@
         [
           {
             "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию6": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования6",
             "type": "main",
             "index": 0
           }
@@ -2972,6 +2988,67 @@
       ],
       "id": "b184df9c-6e08-4fbe-8e5b-81d0e41604ea",
       "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "take_traks_from_bd",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "=Слишком много треков для проверки, нужен ещё сервер для БП",
+              "type": "string"
+            },
+            {
+              "id": "b73b2f0a-f66a-438d-885f-221f82a57f59",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3460,
+        -420
+      ],
+      "id": "27a0fd50-d344-46d3-bb96-c89b86269c75",
+      "name": "формируем запрос к логированию6",
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        3660,
+        -420
+      ],
+      "id": "e7b5a637-9d26-41bc-abd9-6fa9d0356fc5",
+      "name": "Запрос в процесс логирования6"
     }
   ],
   "pinData": {},
@@ -2989,6 +3066,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-14T14:17:43.000Z",
-  "versionId": "32b1066f-fa92-41f1-a8d5-504cb28928b7"
+  "updatedAt": "2025-04-24T17:30:16.000Z",
+  "versionId": "440f8607-ab39-4347-935e-b16996ef971a"
 }
