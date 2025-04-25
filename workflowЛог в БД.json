@@ -702,8 +702,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        980,
-        -180
+        960,
+        -160
       ],
       "id": "de6f24a6-a8e4-4d78-a446-e841c2cbaef2",
       "name": "Дополняем запись в БД1",
@@ -893,6 +893,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-02-14T12:32:07.000Z",
-  "versionId": "1d0645eb-0c08-4e94-8bb7-5a624715a6d2"
+  "updatedAt": "2025-04-24T17:53:39.000Z",
+  "versionId": "86ae09fd-22ad-4da2-98ee-938fde9974ab"
 }
