@@ -399,6 +399,17 @@
           }
         ]
       ]
+    },
+    "Запуск отправки логов в ТГ": {
+      "main": [
+        [
+          {
+            "node": "Отправка логов в ТГ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-20T09:50:31.458Z",
@@ -1409,6 +1420,46 @@
       "id": "5f3fcb81-ab1d-4da7-85b6-53eec8c47e50",
       "name": "Webhook",
       "webhookId": "b8ba6d1d-1dde-48a4-b5ff-ad90edab52a6"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 23,
+              "triggerAtMinute": 50
+            }
+          ]
+        }
+      },
+      "id": "179e9c43-063d-4cd2-be23-356f2e6ea0cc",
+      "name": "Запуск отправки логов в ТГ",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1020,
+        -780
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "EDGNhYpZLWqy0U1R",
+          "mode": "list",
+          "cachedResultName": "Отправка лога за день"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        1300,
+        -780
+      ],
+      "id": "d67d5a61-e245-45ea-9e5b-b3176c15bf31",
+      "name": "Отправка логов в ТГ",
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -1421,6 +1472,12 @@
     },
     "node:Запуск выставления статуса трека в гугл таблицы": {
       "recurrenceRules": []
+    },
+    "node:Запуск проверки оплаты1": {
+      "recurrenceRules": []
+    },
+    "node:Запуск отправки логов в ТГ": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1431,7 +1488,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 3,
-  "updatedAt": "2025-03-23T14:51:44.000Z",
-  "versionId": "0bab9bab-b0c3-4865-a0e7-025417da8051"
+  "triggerCount": 4,
+  "updatedAt": "2025-04-24T17:53:27.000Z",
+  "versionId": "afac03de-f315-400a-80cd-65cb436da537"
 }
