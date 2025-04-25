@@ -1,0 +1,148 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение от бота мне",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-04-24T17:37:00.720Z",
+  "id": "EDGNhYpZLWqy0U1R",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Отправка лога за день",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        -20
+      ],
+      "id": "0e4e9982-6e97-42b6-8c31-3861eba11678",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list",
+          "cachedResultName": "Logs"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Id",
+              "value": "=TC{{ $today.format('dd.MM.yyyy') }}BD"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        -40,
+        -20
+      ],
+      "id": "67e0de10-e018-4641-852d-8ce49c784952",
+      "name": "MySQL",
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4395a626-37f6-4ce3-81db-d2153c8ce976",
+              "name": "Logs",
+              "value": "=proceses_control: {{ $json.proceses_control }}\npay_check: {{ $json.pay_check }}\nfrom_bd_to_google_sheets: {{ $json.from_bd_to_google_sheets }}\nTake_traks_from_google_sheets: {{ $json.Take_traks_from_google_sheets }}\ntake_traks_from_bd: {{ $json.take_traks_from_bd }}\ncheck_trackBP: {{ $json.check_trackBP }}\ncheck_trackEP: {{ $json.check_trackEP }}\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        140,
+        -20
+      ],
+      "id": "8200202e-b9d8-4f46-9d6e-a8c2dd350ca8",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "=206784276",
+        "text": "=Отчёт по процессу за {{ $today.format('dd.MM.yyyy') }}:\n{{ $json.Logs }}",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        }
+      },
+      "id": "21ad20f2-2896-4701-997c-370536b4c97d",
+      "name": "Отправляем сообщение от бота мне",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        340,
+        -20
+      ],
+      "webhookId": "d6cf4dff-f0a7-4042-9e07-2b57862e7770",
+      "credentials": {
+        "telegramApi": {
+          "id": "VTWiXBie3BtYtQ5n",
+          "name": "Bot_potap"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-04-24T17:49:53.000Z",
+  "versionId": "5318a3df-4cfd-4469-8943-ac9d104104c9"
+}
