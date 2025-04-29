@@ -2240,6 +2240,10 @@
             {
               "column": "IdTables",
               "value": "={{ $json.IdTables }}"
+            },
+            {
+              "column": "Status",
+              "value": "Не доставлено"
             }
           ]
         },
@@ -3066,6 +3070,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-04-24T17:30:16.000Z",
-  "versionId": "440f8607-ab39-4347-935e-b16996ef971a"
+  "updatedAt": "2025-04-29T05:42:58.000Z",
+  "versionId": "740b7e05-ec43-44d3-b28e-26555f91d1f8"
 }
