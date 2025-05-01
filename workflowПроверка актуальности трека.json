@@ -5,7 +5,7 @@
       "main": [
         [
           {
-            "node": "Code2",
+            "node": "JsonDatabase1",
             "type": "main",
             "index": 0
           }
@@ -314,16 +314,16 @@
         ]
       ]
     },
-    "Чтение данных из workProcess1": {
-      "main": [
-        []
-      ]
-    },
     "Датос1": {
       "main": [
         [
           {
             "node": "Получаем треки с отметкой доставлено1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "JsonDatabase3",
             "type": "main",
             "index": 0
           }
@@ -522,6 +522,128 @@
           }
         ]
       ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase2": {
+      "main": [
+        [
+          {
+            "node": "If8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JsonDatabase": {
+      "main": [
+        [
+          {
+            "node": "If7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "JsonDatabase2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If7": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If8": {
+      "main": [
+        [
+          {
+            "node": "Получаем треки с отметкой доставлено1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-02T15:04:23.920Z",
@@ -551,7 +673,7 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -1640,
+        -1920,
         1380
       ],
       "id": "b10c4653-56da-476c-8504-11a81e232334",
@@ -1318,7 +1440,8 @@
         -40,
         1020
       ],
-      "id": "6e9ab6c9-c78b-4b4d-951b-21c078e38bbb"
+      "id": "6e9ab6c9-c78b-4b4d-951b-21c078e38bbb",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -1336,6 +1459,7 @@
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "documentId": {
           "__rl": true,
           "value": "={{ $json.all_tableID }}",
@@ -1357,14 +1481,15 @@
       "id": "4c6c42d1-499c-44dd-b461-20882902e642",
       "name": "Получаем треки с отметкой доставлено1",
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "UdgDFfC0AJ0LSo5o",
-          "name": "Google Sheets account 2"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       }
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "operation": "delete",
         "documentId": {
           "__rl": true,
@@ -1387,9 +1512,9 @@
       "id": "033d7861-cf8c-4972-b3c1-12f3fa8ec44c",
       "name": "Удаляем строку по полученному номеру строки1",
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       },
       "onError": "continueErrorOutput"
@@ -1408,25 +1533,11 @@
       "name": "Code2"
     },
     {
-      "parameters": {
-        "queryPath": "process",
-        "filePath": "=root/n8n/{{ $json.ProcessID }}.json "
-      },
-      "id": "d96edcc7-9979-4137-bc88-b548ecbf5eaa",
-      "name": "Чтение данных из workProcess1",
-      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
-      "typeVersion": 1,
-      "position": [
-        -1480,
-        1200
-      ]
-    },
-    {
       "parameters": {},
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -1000,
+        -1040,
         1380
       ],
       "id": "3ea64e11-dea2-49f0-beb4-5e37283cf9f0",
@@ -1506,15 +1617,16 @@
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "operation": "update",
         "documentId": {
           "__rl": true,
-          "value": "={{ $('ДатосЦикл1').item.json['url таблицы из которой трек'] }}",
+          "value": "={{ $('ДатосЦикл1').first().json['url таблицы из которой трек'] }}",
           "mode": "url"
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $('ДатосЦикл1').item.json['url таблицы из которой трек'] }}",
+          "value": "={{ $('ДатосЦикл1').first().json['url таблицы из которой трек'] }}",
           "mode": "url"
         },
         "columns": {
@@ -1686,21 +1798,22 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1380,
+        1420,
         1160
       ],
       "id": "40f6b747-66cb-45bb-9a6f-46c65cc9fec6",
       "name": "Обновляем формулы в исх табл2",
       "alwaysOutputData": true,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "UdgDFfC0AJ0LSo5o",
-          "name": "Google Sheets account 2"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       }
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "operation": "update",
         "documentId": {
           "__rl": true,
@@ -1828,9 +1941,9 @@
       "name": "выставляем пров акт в табл со всеми треками1",
       "alwaysOutputData": true,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "UdgDFfC0AJ0LSo5o",
-          "name": "Google Sheets account 2"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       }
     },
@@ -1847,6 +1960,7 @@
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "documentId": {
           "__rl": true,
           "value": "={{ $('Данные для гугл таблиц').first().json.Id_check_tabl }}",
@@ -1878,14 +1992,15 @@
       "alwaysOutputData": true,
       "retryOnFail": true,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "UdgDFfC0AJ0LSo5o",
-          "name": "Google Sheets account 2"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       }
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "operation": "update",
         "documentURL": "1UX9N0bIGZdQ7v2TTyigGNx0QiYDsV_uvDS-lxUYwpGA",
         "actionsUi": {
@@ -1906,9 +2021,9 @@
       "id": "75fc06d1-c604-4258-a1b0-1328d0c61c8b",
       "name": "Google Docs1",
       "credentials": {
-        "googleDocsOAuth2Api": {
-          "id": "KFjdsMEX9CgQ5JE5",
-          "name": "Google Docs account 2"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       }
     },
@@ -2036,8 +2151,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -840,
-        1160
+        -760,
+        920
       ],
       "typeVersion": 1,
       "id": "311ca834-f990-48f6-9449-f87d6ac91a66",
@@ -2108,6 +2223,7 @@
     },
     {
       "parameters": {
+        "authentication": "serviceAccount",
         "documentId": {
           "__rl": true,
           "value": "={{ $json['url таблицы из которой трек'] }}",
@@ -2139,9 +2255,9 @@
       "alwaysOutputData": true,
       "retryOnFail": true,
       "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "UdgDFfC0AJ0LSo5o",
-          "name": "Google Sheets account 2"
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
         }
       }
     },
@@ -2152,12 +2268,234 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        420,
+        640,
         1380
       ],
       "id": "59b7d28f-05a8-48f4-90d3-ac9756032817",
       "name": "Wait2",
       "webhookId": "35b0911e-196f-4d35-9cd9-4a8aa12c443b"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "0vehftwNfWsuRb07",
+          "mode": "list",
+          "cachedResultName": "Проверка актуальности трека"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        940,
+        1000
+      ],
+      "id": "330ea4fc-1052-426e-8b54-8d2b793a285f",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        180,
+        1020
+      ],
+      "id": "2d6a15a5-030e-400f-8077-8171ce3359d1",
+      "name": "Wait3",
+      "webhookId": "82b0c764-8164-4d9e-bf3b-d6f3cb07b3cb"
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1640,
+        1580
+      ],
+      "id": "b6a70b61-145e-42ec-bf83-fb48fcb1aeb2",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        1000
+      ],
+      "id": "d7eda153-7ced-4b27-9a19-7b31d24a0bdc",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "queryPath": "trigers.Triger1",
+        "filePath": "=root/n8n/checkactualtreck.json"
+      },
+      "id": "6d333bb9-fd13-4db4-aaa4-0c6fe92bc190",
+      "name": "JsonDatabase",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        380,
+        1020
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "0",
+        "filePath": "=root/n8n/checkactualtreck.json"
+      },
+      "id": "0ccda3f7-4ccc-4687-8d53-bfd1e3bf0b58",
+      "name": "JsonDatabase1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1720,
+        1380
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "trigers.Triger1",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{ $json.dataNew }}",
+        "filePath": "=root/n8n/checkactualtreck.json"
+      },
+      "id": "fcdbcfac-4b60-4e03-a6b6-eb8f21dffee8",
+      "name": "JsonDatabase2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1160,
+        1160
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "queryPath": "trigers.Triger1",
+        "filePath": "=root/n8n/checkactualtreck.json"
+      },
+      "id": "c2a0e2fb-2f6c-4db7-a875-dbaaf1697b98",
+      "name": "JsonDatabase3",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        960
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "5c6c2009-3a68-4073-8ab6-a4c4c864f6a7",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 3,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        640,
+        980
+      ],
+      "id": "e1f73ec8-fa8b-4850-ab88-85f07e01433f",
+      "name": "If7"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ad08c039-8791-4b28-b3c7-93c63cb85121",
+              "name": "dataNew",
+              "value": "={{ $json.data +1}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -920,
+        960
+      ],
+      "id": "d9b37ee0-6c5c-45cc-b5c5-a6ce24257831",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f8664e65-f911-4e4b-bf70-8927ee002585",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -840,
+        1200
+      ],
+      "id": "9d8f4702-1b94-468f-b16a-ee655f5eb6f2",
+      "name": "If8"
     }
   ],
   "pinData": {},
@@ -2167,6 +2505,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-29T05:30:55.000Z",
-  "versionId": "861009b4-797d-4db0-849d-9835b88c648f"
+  "updatedAt": "2025-05-01T07:27:25.000Z",
+  "versionId": "5def86d8-4556-450f-9523-23969a00c9ed"
 }
