@@ -1511,6 +1511,7 @@
       ],
       "id": "033d7861-cf8c-4972-b3c1-12f3fa8ec44c",
       "name": "Удаляем строку по полученному номеру строки1",
+      "retryOnFail": true,
       "credentials": {
         "googleApi": {
           "id": "1FsCDh5Ew3uwW4D1",
@@ -1804,6 +1805,7 @@
       "id": "40f6b747-66cb-45bb-9a6f-46c65cc9fec6",
       "name": "Обновляем формулы в исх табл2",
       "alwaysOutputData": true,
+      "retryOnFail": true,
       "credentials": {
         "googleApi": {
           "id": "1FsCDh5Ew3uwW4D1",
@@ -1940,6 +1942,7 @@
       "id": "353b6ab3-e537-437b-a051-71a8347f11f9",
       "name": "выставляем пров акт в табл со всеми треками1",
       "alwaysOutputData": true,
+      "retryOnFail": true,
       "credentials": {
         "googleApi": {
           "id": "1FsCDh5Ew3uwW4D1",
@@ -2020,6 +2023,7 @@
       ],
       "id": "75fc06d1-c604-4258-a1b0-1328d0c61c8b",
       "name": "Google Docs1",
+      "retryOnFail": true,
       "credentials": {
         "googleApi": {
           "id": "1FsCDh5Ew3uwW4D1",
@@ -2505,6 +2509,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-01T07:27:25.000Z",
-  "versionId": "5def86d8-4556-450f-9523-23969a00c9ed"
+  "updatedAt": "2025-05-03T21:30:22.000Z",
+  "versionId": "2d56509c-2025-4f42-89ff-2b0695577522"
 }
