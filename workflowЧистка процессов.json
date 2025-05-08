@@ -44,7 +44,7 @@
       "main": [
         [
           {
-            "node": "If",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
@@ -105,6 +105,17 @@
           }
         ]
       ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-17T08:40:16.737Z",
@@ -152,7 +163,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        380,
+        600,
         0
       ],
       "id": "b0ac69b7-a8b6-4aa5-ab63-c8a230fe9b49",
@@ -168,7 +179,7 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        680,
+        900,
         -20
       ],
       "id": "68ffe659-30d8-40a6-ab42-c23578afdcc4",
@@ -303,7 +314,7 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        180,
+        140,
         0
       ],
       "id": "0e376cdd-7306-4d26-81a2-cceb68afbc91",
@@ -423,6 +434,19 @@
       ],
       "id": "34297237-0bdd-48e8-80a0-00d04387b75d",
       "name": "Schedule Trigger2"
+    },
+    {
+      "parameters": {
+        "maxItems": 2000
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        360,
+        0
+      ],
+      "id": "981c939d-b894-4a1b-9285-da7e2b498a77",
+      "name": "Limit"
     }
   ],
   "pinData": {},
@@ -442,6 +466,6 @@
   },
   "tags": [],
   "triggerCount": 3,
-  "updatedAt": "2025-04-17T08:58:02.000Z",
-  "versionId": "42a31dd8-ea67-4b93-9a6d-96b5e1363395"
+  "updatedAt": "2025-05-08T06:41:13.000Z",
+  "versionId": "c57f6b68-400f-4939-b4c8-e6b03b4e28ff"
 }
