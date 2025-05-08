@@ -1962,7 +1962,7 @@
     },
     {
       "parameters": {
-        "maxItems": "={{ $('items').first().json.items_calc -350 }}",
+        "maxItems": "={{ $if($('items').first().json.items_calc -350 > 500, 500,$('items').first().json.items_calc -350 ) }}",
         "keep": "lastItems"
       },
       "id": "2a4dbe99-2010-454b-805a-65ef8dbe6896",
@@ -2012,7 +2012,7 @@
     },
     {
       "parameters": {
-        "maxItems": "={{ $('items').first().json.items_calc -350 }}"
+        "maxItems": "={{ $if($('items').first().json.items_calc -350 > 500, 500,$('items').first().json.items_calc -350 ) }}"
       },
       "id": "754a7a24-66b4-4494-9ecc-e318526b10a2",
       "name": "Limit3",
@@ -2063,6 +2063,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-11T11:33:46.000Z",
-  "versionId": "8f9c4086-cfff-4131-a5e4-c203fc30046c"
+  "updatedAt": "2025-05-08T03:59:28.000Z",
+  "versionId": "833497ae-58a5-452c-b7dd-f85b5a314f62"
 }
