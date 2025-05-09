@@ -1522,7 +1522,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForIra\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"ForIra\"\n  }\n]\n);"
+        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAli\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"zsAli\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -2155,8 +2155,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -760,
-        920
+        -660,
+        1020
       ],
       "typeVersion": 1,
       "id": "311ca834-f990-48f6-9449-f87d6ac91a66",
@@ -2251,8 +2251,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        980,
-        1380
+        880,
+        1400
       ],
       "id": "7c7cb95a-9adc-426b-85a9-8b0b9cbf4b42",
       "name": "Получаем данные из таблицы все треки по треку1",
@@ -2263,7 +2263,8 @@
           "id": "1FsCDh5Ew3uwW4D1",
           "name": "Google Sheets account 3"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -2332,7 +2333,8 @@
         1580
       ],
       "id": "b6a70b61-145e-42ec-bf83-fb48fcb1aeb2",
-      "name": "When Executed by Another Workflow"
+      "name": "When Executed by Another Workflow",
+      "disabled": true
     },
     {
       "parameters": {},
@@ -2504,11 +2506,12 @@
   ],
   "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-03T21:30:22.000Z",
-  "versionId": "2d56509c-2025-4f42-89ff-2b0695577522"
+  "updatedAt": "2025-05-09T12:53:19.000Z",
+  "versionId": "3249dd3b-04ee-4695-859c-3ca0e9fa7432"
 }
