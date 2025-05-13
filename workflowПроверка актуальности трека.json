@@ -2333,8 +2333,7 @@
         1580
       ],
       "id": "b6a70b61-145e-42ec-bf83-fb48fcb1aeb2",
-      "name": "When Executed by Another Workflow",
-      "disabled": true
+      "name": "When Executed by Another Workflow"
     },
     {
       "parameters": {},
@@ -2512,6 +2511,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-09T12:53:19.000Z",
-  "versionId": "3249dd3b-04ee-4695-859c-3ca0e9fa7432"
+  "updatedAt": "2025-05-12T14:57:49.000Z",
+  "versionId": "4a8ff871-6a53-4b4a-8221-554860926c3d"
 }
