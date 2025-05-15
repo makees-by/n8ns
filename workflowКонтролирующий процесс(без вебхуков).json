@@ -35,6 +35,11 @@
             "node": "Получаем все сервера с workOn - ",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Запись переменной балансировщика",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -152,12 +157,12 @@
         ],
         [
           {
-            "node": "Wait",
+            "node": "формируем запрос к логированию7",
             "type": "main",
             "index": 0
           },
           {
-            "node": "формируем запрос к логированию7",
+            "node": "Запись переменной балансировщика1",
             "type": "main",
             "index": 0
           }
@@ -410,6 +415,68 @@
           }
         ]
       ]
+    },
+    "Запись переменной балансировщика": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись переменной балансировщика1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Запись переменной балансировщика2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запись переменной балансировщика2": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Получаем все сервера с workOn - ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-20T09:50:31.458Z",
@@ -522,8 +589,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        700,
-        -140
+        3320,
+        940
       ]
     },
     {
@@ -693,7 +760,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        4320,
+        4280,
         280
       ]
     },
@@ -720,7 +787,7 @@
     },
     {
       "parameters": {
-        "amount": "={{ $json.max_Traks_left }}",
+        "amount": "={{ $('Находим максимальный traks_left').first().json.max_Traks_left }}",
         "unit": "minutes"
       },
       "id": "b264ec50-1342-4ec1-8b9d-dce499f110d9",
@@ -728,8 +795,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        3940,
-        540
+        4780,
+        720
       ],
       "webhookId": "64bb9c88-fa59-46f8-adab-6256b62550c8"
     },
@@ -1068,7 +1135,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        4320,
+        4380,
         20
       ],
       "id": "c41d14f9-59ae-4540-aa33-2438526f6853",
@@ -1122,8 +1189,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        3700,
-        20
+        3520,
+        -180
       ],
       "id": "815e5d6d-9147-4012-b8d5-844167da7300",
       "name": "формируем запрос к логированию7"
@@ -1141,8 +1208,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        3940,
-        20
+        3800,
+        -200
       ],
       "id": "29ae6f7a-20dd-4a75-be0a-74dd349d432f",
       "name": "Запрос в процесс логирования7"
@@ -1460,6 +1527,135 @@
       "id": "d67d5a61-e245-45ea-9e5b-b3176c15bf31",
       "name": "Отправка логов в ТГ",
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "Items.temp",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "0",
+        "filePath": "=root/n8n/bdcheck_temp.json"
+      },
+      "id": "d38f1c77-6e70-452c-ad12-f4fcedb4a89e",
+      "name": "Запись переменной балансировщика",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3540,
+        20
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "queryPath": "Items.temp",
+        "filePath": "=root/n8n/bdcheck_temp.json"
+      },
+      "id": "b3d262a7-383f-42f8-8748-0796fae6817a",
+      "name": "Запись переменной балансировщика1",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        3960,
+        520
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "dfd0328e-acd4-4ad2-8882-43bf395a1968",
+              "leftValue": "={{ $json.data }}",
+              "rightValue": 5,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4280,
+        520
+      ],
+      "id": "4eb9839d-5ad9-4e81-a017-227b397d21d6",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "queryPath": "Items.temp",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={{JSON.stringify($json.data+1) }}",
+        "filePath": "=root/n8n/bdcheck_temp.json"
+      },
+      "id": "80dfa9af-0234-425c-99d0-88eb9adc52a9",
+      "name": "Запись переменной балансировщика2",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        4240,
+        720
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4780,
+        540
+      ],
+      "id": "2fb38e26-51a4-4fd0-8df5-c82bb47fb8a8",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8cfd4046-c03b-4c7d-9452-72f758e59bfe",
+              "leftValue": false,
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3720,
+        20
+      ],
+      "id": "77f7e7ef-4795-4884-a83c-cdc89a85d91e",
+      "name": "If3"
     }
   ],
   "pinData": {},
@@ -1489,6 +1685,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2025-04-24T17:53:27.000Z",
-  "versionId": "afac03de-f315-400a-80cd-65cb436da537"
+  "updatedAt": "2025-05-15T09:16:50.000Z",
+  "versionId": "d50fbdbf-8cf4-4a2e-a37f-0461eeb674d3"
 }
