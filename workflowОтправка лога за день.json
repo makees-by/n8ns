@@ -27,6 +27,105 @@
       "main": [
         [
           {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Отправляем сообщение от бота мне",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Edit Fields4": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
             "node": "Отправляем сообщение от бота мне",
             "type": "main",
             "index": 0
@@ -124,8 +223,8 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1,
       "position": [
-        340,
-        -20
+        1260,
+        -40
       ],
       "webhookId": "d6cf4dff-f0a7-4042-9e07-2b57862e7770",
       "credentials": {
@@ -134,6 +233,178 @@
           "name": "Bot_potap"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "77faf8bd-f9d7-42d7-8827-9e3f570cfeb7",
+              "leftValue": "={{ $json.Logs.length }}",
+              "rightValue": 999,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        340,
+        -20
+      ],
+      "id": "a14997b5-add3-41a5-b89c-0b22126c63a9",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4395a626-37f6-4ce3-81db-d2153c8ce976",
+              "name": "Logs",
+              "value": "={{ $json.Logs.slice(0,1000)}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        540,
+        120
+      ],
+      "id": "698e9bd3-4387-43ba-a0bd-d96d0bd5fbb6",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4395a626-37f6-4ce3-81db-d2153c8ce976",
+              "name": "Logs",
+              "value": "={{ $json.Logs.slice(1000,2000)}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        260
+      ],
+      "id": "581fdae7-6080-4f06-825a-21361a40e05d",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4395a626-37f6-4ce3-81db-d2153c8ce976",
+              "name": "Logs",
+              "value": "={{ $json.Logs.slice(2000,3000)}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        420
+      ],
+      "id": "99bf41cf-4924-49b6-aa93-3f05ebc7b6e7",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4395a626-37f6-4ce3-81db-d2153c8ce976",
+              "name": "Logs",
+              "value": "={{ $json.Logs.slice(3000)}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        580
+      ],
+      "id": "e9288588-9e09-494c-82a6-476683aff503",
+      "name": "Edit Fields4"
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        760,
+        300
+      ],
+      "id": "eec46614-bc7f-4889-91cb-6a9e144d1bf5",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "890b3e12-54f6-40bf-9db0-3f39e058f9eb",
+              "leftValue": "={{ $json.Logs }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        940,
+        320
+      ],
+      "id": "81007b00-52d0-403e-8d86-74c39e913194",
+      "name": "If1"
     }
   ],
   "pinData": {},
@@ -143,6 +414,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-24T17:49:53.000Z",
-  "versionId": "5318a3df-4cfd-4469-8943-ac9d104104c9"
+  "updatedAt": "2025-05-15T13:13:57.000Z",
+  "versionId": "0f083d79-4bda-43e3-ab18-ba8575d9c9cd"
 }
