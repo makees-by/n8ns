@@ -10,12 +10,18 @@
       "main": [
         [
           {
-            "node": "n8n1",
+            "node": "Limit",
             "type": "main",
             "index": 0
           }
         ],
-        []
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "If1": {
@@ -44,7 +50,7 @@
       "main": [
         [
           {
-            "node": "Limit",
+            "node": "If",
             "type": "main",
             "index": 0
           }
@@ -110,7 +116,40 @@
       "main": [
         [
           {
-            "node": "If",
+            "node": "n8n1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Получаем Выполненые",
             "type": "main",
             "index": 0
           }
@@ -130,8 +169,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -440,
-        200
+        -20,
+        -200
       ],
       "id": "528e59ec-d315-46fc-9d0c-7300f44b2465",
       "name": "When clicking ‘Test workflow’"
@@ -163,7 +202,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        600,
+        360,
         0
       ],
       "id": "b0ac69b7-a8b6-4aa5-ab63-c8a230fe9b49",
@@ -218,8 +257,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        380,
-        240
+        400,
+        440
       ],
       "id": "ec71da2a-67df-4025-8166-bc68e0537082",
       "name": "If1"
@@ -234,8 +273,8 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        680,
-        220
+        700,
+        420
       ],
       "id": "06944943-b4c0-4064-9306-b90abb16e992",
       "name": "n8n3",
@@ -273,8 +312,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        380,
-        500
+        400,
+        700
       ],
       "id": "38e98773-f85f-4a91-b991-ad5c1374a517",
       "name": "If2"
@@ -289,8 +328,8 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        680,
-        480
+        700,
+        680
       ],
       "id": "195c4fda-548b-4140-ab47-0ebec8bd4f0e",
       "name": "n8n5",
@@ -339,8 +378,8 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        180,
-        240
+        200,
+        440
       ],
       "id": "47cee360-3073-4a2b-96ea-27ad52342ddb",
       "name": "Получаем в ожидании",
@@ -364,8 +403,8 @@
       "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        180,
-        500
+        200,
+        700
       ],
       "id": "c2636bfc-08a7-4598-9a4f-2f1b349936ba",
       "name": "Получаем ошибочные",
@@ -409,8 +448,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -140,
-        240
+        -120,
+        440
       ],
       "id": "a20f1019-8fd2-4fa4-be2b-7d0838020475",
       "name": "Schedule Trigger1"
@@ -429,24 +468,61 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -120,
-        500
+        -100,
+        700
       ],
       "id": "34297237-0bdd-48e8-80a0-00d04387b75d",
       "name": "Schedule Trigger2"
     },
     {
       "parameters": {
-        "maxItems": 2000
+        "maxItems": 500
       },
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        360,
-        0
+        680,
+        -20
       ],
       "id": "981c939d-b894-4a1b-9285-da7e2b498a77",
       "name": "Limit"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        220
+      ],
+      "id": "5ab17a06-821a-4313-8105-5cb63c2b9fec",
+      "name": "Wait",
+      "webhookId": "38729c46-52c8-41bd-ac3a-a0161759f61f"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        -20
+      ],
+      "id": "e4077097-ca59-4b07-a9b3-fd5ce2fdf9e8",
+      "name": "No Operation, do nothing",
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        900,
+        240
+      ],
+      "id": "a7b6a976-b7b3-4e04-85de-48fd4a505348",
+      "name": "No Operation, do nothing1"
     }
   ],
   "pinData": {},
@@ -466,6 +542,6 @@
   },
   "tags": [],
   "triggerCount": 3,
-  "updatedAt": "2025-05-08T06:41:13.000Z",
-  "versionId": "c57f6b68-400f-4939-b4c8-e6b03b4e28ff"
+  "updatedAt": "2025-05-19T06:57:52.000Z",
+  "versionId": "a247f866-2706-436d-8ddb-e47dbfc342d9"
 }
