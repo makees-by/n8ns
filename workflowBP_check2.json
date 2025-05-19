@@ -3129,7 +3129,9 @@
           "mode": "list",
           "cachedResultName": "Бп проверщики (работа со статусами в БД)"
         },
-        "options": {}
+        "options": {
+          "waitForSubWorkflow": true
+        }
       },
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
@@ -3500,6 +3502,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-03-31T09:19:41.000Z",
-  "versionId": "6508ed35-e024-4cf0-b7bb-000da3a48218"
+  "updatedAt": "2025-05-19T06:55:49.000Z",
+  "versionId": "40a1b470-67ca-4c03-862a-e54f55e1091f"
 }
