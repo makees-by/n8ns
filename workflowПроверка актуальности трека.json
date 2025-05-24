@@ -1943,12 +1943,14 @@
       "name": "выставляем пров акт в табл со всеми треками1",
       "alwaysOutputData": true,
       "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "googleApi": {
           "id": "1FsCDh5Ew3uwW4D1",
           "name": "Google Sheets account 3"
         }
-      }
+      },
+      "onError": "continueRegularOutput"
     },
     {
       "parameters": {},
@@ -2511,6 +2513,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-12T14:57:49.000Z",
-  "versionId": "4a8ff871-6a53-4b4a-8221-554860926c3d"
+  "updatedAt": "2025-05-23T16:50:44.000Z",
+  "versionId": "10ecb44a-7034-443a-b5b2-de7ed62ae4d0"
 }
