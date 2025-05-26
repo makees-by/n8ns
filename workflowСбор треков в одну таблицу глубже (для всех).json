@@ -196,7 +196,7 @@
       "main": [
         [
           {
-            "node": "Code2",
+            "node": "Code4",
             "type": "main",
             "index": 0
           }
@@ -550,6 +550,17 @@
         [
           {
             "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code4": {
+      "main": [
+        [
+          {
+            "node": "Code2",
             "type": "main",
             "index": 0
           }
@@ -2011,6 +2022,19 @@
       ],
       "id": "11cbe0d1-ace3-4876-bb75-1c2dd77d078f",
       "name": "Редактируем и исправляем все ошибки с треком"
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"row_number\": 2,\n    \"Ссылка полностью\": \"https://docs.google.com/spreadsheets/d/1C7jboWXhCR8E7CwPQ7M-Ehyw6kZuazGwz4iy4PXVYMs/edit?gid=814738789#gid=814738789\",\n    \"Таблица\": \"1C7jboWXhCR8E7CwPQ7M-Ehyw6kZuazGwz4iy4PXVYMs\",\n    \"Страница\": \"814738789\",\n    \"Чек-бокс\": true,\n    \"Доп чек\": true,\n    \"processID\": \"ZsForVika12\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -920,
+        660
+      ],
+      "id": "82cb0fcd-2100-4c83-aeb4-22e84c30d339",
+      "name": "Code4"
     }
   ],
   "pinData": {},
@@ -2020,6 +2044,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-22T06:00:55.000Z",
-  "versionId": "ca333e79-9960-453a-a434-f4521a56f3e6"
+  "updatedAt": "2025-05-26T10:08:18.000Z",
+  "versionId": "744c13a4-16fa-4c2b-a084-e9d568622c8b"
 }
