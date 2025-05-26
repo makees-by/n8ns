@@ -922,17 +922,6 @@
         ]
       ]
     },
-    "06:05 ZsForAnn1": {
-      "main": [
-        [
-          {
-            "node": "ZsForAnn8",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "11:00 zsAliTwo запуск переноса ВрОтпр1": {
       "main": [
         [
@@ -1059,17 +1048,6 @@
         ]
       ]
     },
-    "18.40 ZsForVikux1": {
-      "main": [
-        [
-          {
-            "node": "ZsForAnn12",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "ZsForAnn13": {
       "main": [
         [
@@ -1141,6 +1119,127 @@
         [
           {
             "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAnn14": {
+      "main": [
+        [
+          {
+            "node": "ZsForVikux4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForVikux4": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "18.00 ZsForVika12": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAnn15": {
+      "main": [
+        [
+          {
+            "node": "ZsForVikux5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForVikux5": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForAnn16": {
+      "main": [
+        [
+          {
+            "node": "ZsForVikux6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsForVikux6": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "18:05 ZsForAnn1": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "20.40 ZsForVikux1": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "22.40 ZsForVika12": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "15.20 ZsForVika12": {
+      "main": [
+        [
+          {
+            "node": "ZsForAnn16",
             "type": "main",
             "index": 0
           }
@@ -1665,7 +1764,8 @@
       "position": [
         320,
         280
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3371,26 +3471,6 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 18,
-              "triggerAtMinute": 5
-            }
-          ]
-        }
-      },
-      "id": "241d5a19-9c4e-4c15-a571-c1da89970899",
-      "name": "06:05 ZsForAnn1",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -340,
-        2360
-      ]
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
               "triggerAtHour": 11
             }
           ]
@@ -3486,8 +3566,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        1920,
-        2900
+        3040,
+        3240
       ],
       "credentials": {
         "mySql": {
@@ -3555,8 +3635,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1460,
-        2900
+        2940,
+        3080
       ],
       "id": "95060f58-c398-4648-940d-bdd623b5a08f",
       "name": "Edit Fields4"
@@ -3568,49 +3648,49 @@
             {
               "id": "f88bd06e-de99-46fb-94aa-f5dbd9f14af3",
               "name": "processID",
-              "value": "ZsForVikux",
+              "value": "ZsForVika12",
               "type": "string"
             },
             {
               "id": "be53966a-3cb4-4262-abca-d989088172ca",
               "name": "start_tableID",
-              "value": "17qSPFwa1BLnAnyhXa6GvGqcR49kB7-kDkRVWSmjNQ8A",
+              "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
               "type": "string"
             },
             {
               "id": "7a7484ea-f15c-4de1-b52a-ade847bba41a",
               "name": "start_pageID",
-              "value": 0,
+              "value": 672397081,
               "type": "number"
             },
             {
               "id": "a185434b-c597-462e-bda6-3b61a231fe05",
               "name": "all_tableID",
-              "value": "17qSPFwa1BLnAnyhXa6GvGqcR49kB7-kDkRVWSmjNQ8A",
+              "value": "1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE",
               "type": "string"
             },
             {
               "id": "dc0e74ab-7fea-45d9-b24a-60f69bc4aa51",
               "name": "allTables_pageID",
-              "value": 75948859,
+              "value": 197670734,
               "type": "number"
             },
             {
               "id": "27257c1c-7829-4e77-bb2e-a3a70f65149b",
               "name": "allTraks_pageID",
-              "value": 538648616,
+              "value": 1749143586,
               "type": "number"
             },
             {
               "id": "e94aad57-fcdb-449e-afa7-04da8b11d00d",
               "name": "allTraksDone_pageID",
-              "value": 111638545,
+              "value": 616727762,
               "type": "number"
             },
             {
               "id": "87440d72-fda8-4333-9010-a1b904867e10",
               "name": "llTraksVO_pageID",
-              "value": 1463532755,
+              "value": 1275404977,
               "type": "number"
             }
           ]
@@ -3620,8 +3700,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1700,
-        2900
+        2820,
+        3240
       ],
       "id": "2e7f0ca9-36d8-4438-adad-6252d48f9187",
       "name": "Edit Fields5"
@@ -3748,26 +3828,6 @@
         2580
       ],
       "disabled": true
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 20,
-              "triggerAtMinute": 40
-            }
-          ]
-        }
-      },
-      "id": "15b0dad6-9d3e-4356-a622-90c08acaa242",
-      "name": "18.40 ZsForVikux1",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.1,
-      "position": [
-        -340,
-        2580
-      ]
     },
     {
       "parameters": {
@@ -3960,6 +4020,318 @@
         340,
         1080
       ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cVC6t8mW8i9zazSD",
+          "mode": "list",
+          "cachedResultName": "Сбор треков в одну таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -1160,
+        2840
+      ],
+      "id": "1681e813-a13d-45e5-ac59-f315047fd280",
+      "name": "Отправка запроса на сбор треков в одну таблицу17"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 0,\n           \"allTables_pageID\" : 75948859,\n          \"allTraks_pageID\" : 556008399,\n          \"allTraksDone_pageID\" : 111638545,\n          \"allTraksVO_pageID\" : 1463532755,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForAnn.json"
+      },
+      "id": "4b21da9b-1ae7-4bbf-9a32-8252349a0977",
+      "name": "ZsForAnn14",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -1600,
+        2840
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForVika12"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "1c2b15da-0b74-4105-9a5c-a1ee2dce07d6",
+      "name": "ZsForVikux4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -1400,
+        2840
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 18
+            }
+          ]
+        }
+      },
+      "id": "1fdb7413-4af6-4981-af34-c14e8d9f965e",
+      "name": "18.00 ZsForVika12",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1780,
+        2840
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 0,\n           \"allTables_pageID\" : 75948859,\n          \"allTraks_pageID\" : 556008399,\n          \"allTraksDone_pageID\" : 111638545,\n          \"allTraksVO_pageID\" : 1463532755,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForAnn.json"
+      },
+      "id": "7acdcf9c-a33b-471d-a8be-3a33f9d573e2",
+      "name": "ZsForAnn15",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        2840
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForVika12"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "7cb59ad6-0aaa-4209-acb5-8c5e140e0350",
+      "name": "ZsForVikux5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        60,
+        2840
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "yzGni57zMlaAsGzq",
+          "mode": "list",
+          "cachedResultName": "Перенос доставленых в отдельную таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        280,
+        2840
+      ],
+      "id": "9f1a0323-84e8-408f-9578-17fa57372474",
+      "name": "Отправка запроса на сбор треков в одну таблицу18"
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForAnn\",\n          \"start_tableID\": \"ZlW8jrlog9HZfwj9mmYLcV10txVpsAjEd36_3rM\",\n          \"start_pageID\": 0,\n           \"allTables_pageID\" : 75948859,\n          \"allTraks_pageID\" : 556008399,\n          \"allTraksDone_pageID\" : 111638545,\n          \"allTraksVO_pageID\" : 1463532755,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForAnn.json"
+      },
+      "id": "94d79857-5274-4664-9bb6-1ceaffdf7751",
+      "name": "ZsForAnn16",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        2880
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsForVika12"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "5d45817e-b62e-47d8-bd0f-c73af164a0f0",
+      "name": "ZsForVikux6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1660,
+        2880
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7fnXycgDiNJ7YWwO",
+          "mode": "list",
+          "cachedResultName": "Перенос ВрОтпр в отдельную таблицу (для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1880,
+        2880
+      ],
+      "id": "54530298-9f63-407c-8281-9620aab8ea4d",
+      "name": "Отправка запроса на сбор треков в одну таблицу19"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 18,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "id": "241d5a19-9c4e-4c15-a571-c1da89970899",
+      "name": "18:05 ZsForAnn1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -340,
+        2360
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20,
+              "triggerAtMinute": 40
+            }
+          ]
+        }
+      },
+      "id": "15b0dad6-9d3e-4356-a622-90c08acaa242",
+      "name": "20.40 ZsForVikux1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -340,
+        2580
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 22,
+              "triggerAtMinute": 40
+            }
+          ]
+        }
+      },
+      "id": "b19139ec-d565-49d7-a443-b1aafe92cbb2",
+      "name": "22.40 ZsForVika12",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -340,
+        2840
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 15,
+              "triggerAtMinute": 20
+            }
+          ]
+        }
+      },
+      "id": "d04cb11d-87b2-4469-a245-efc1d04ad260",
+      "name": "15.20 ZsForVika12",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        2880
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Создание записи в БД",
+        "height": 460,
+        "width": 680
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2600,
+        3040
+      ],
+      "typeVersion": 1,
+      "id": "9e301409-7728-4f5c-858b-1df93bcd0d32",
+      "name": "Sticky Note4"
     }
   ],
   "pinData": {},
@@ -4135,6 +4507,24 @@
     },
     "node:ZsForVikux3": {
       "recurrenceRules": []
+    },
+    "node:18.00 ZsForVika12": {
+      "recurrenceRules": []
+    },
+    "node:14.10 ZsForVikux": {
+      "recurrenceRules": []
+    },
+    "node:18:05 ZsForAnn1": {
+      "recurrenceRules": []
+    },
+    "node:20.40 ZsForVikux1": {
+      "recurrenceRules": []
+    },
+    "node:22.40 ZsForVika12": {
+      "recurrenceRules": []
+    },
+    "node:15.20 ZsForVika12": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -4151,7 +4541,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 25,
-  "updatedAt": "2025-05-07T20:14:23.000Z",
-  "versionId": "f97e010c-cdee-4c60-8f87-214d522f48d2"
+  "triggerCount": 27,
+  "updatedAt": "2025-05-26T10:23:29.000Z",
+  "versionId": "840f9d1f-0ffd-4baf-8f50-c72d0193bd75"
 }
