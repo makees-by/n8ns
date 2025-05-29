@@ -394,6 +394,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "конец акт работы цикла1",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -1811,7 +1818,8 @@
           "id": "1FsCDh5Ew3uwW4D1",
           "name": "Google Sheets account 3"
         }
-      }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1936,8 +1944,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1620,
-        1160
+        1640,
+        1140
       ],
       "id": "353b6ab3-e537-437b-a051-71a8347f11f9",
       "name": "выставляем пров акт в табл со всеми треками1",
@@ -2513,6 +2521,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-28T06:30:11.000Z",
-  "versionId": "6b6b5792-8c56-42f7-b3ca-aba710c3ff91"
+  "updatedAt": "2025-05-29T11:25:08.000Z",
+  "versionId": "f54dae1e-512e-4353-94a5-6be91c65cfb3"
 }
