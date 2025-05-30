@@ -27,7 +27,7 @@
       "main": [
         [
           {
-            "node": "Статичные данные процесса",
+            "node": "Code1",
             "type": "main",
             "index": 0
           }
@@ -207,13 +207,7 @@
     },
     "YGP7": {
       "main": [
-        [
-          {
-            "node": "СЗПЦ",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Ждун": {
@@ -320,6 +314,17 @@
         [
           {
             "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Статичные данные процесса",
             "type": "main",
             "index": 0
           }
@@ -544,8 +549,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4,
       "position": [
-        1740,
-        100
+        1980,
+        0
       ],
       "alwaysOutputData": true,
       "retryOnFail": true,
@@ -1109,6 +1114,20 @@
         440,
         220
       ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return(\n [\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.8.2\",\n      \"content-length\": \"179\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"2031571a90c1\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"processID\": \"zsForvika\",\n      \"main_tableID\": \"1_9LgkTKoyqjtKD4zr8yrpiS8B626zwwShptCgpfJhoE\",\n      \"main_pageID\": 1847106999,\n      \"url_become\": \"https://n8n.makeesn8n.online/webhook-waiting/890690\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/modul_trackCollect\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+      },
+      "id": "981ba3f5-7146-43ae-a6c3-671f022fb524",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        980,
+        560
+      ],
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -1140,6 +1159,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2024-02-13T13:19:27.000Z",
-  "versionId": "91975063-11b6-4d2e-9577-95b6de7b26a3"
+  "updatedAt": "2025-05-30T11:44:08.000Z",
+  "versionId": "dafd9008-3918-4b5f-96f8-5f5b2a063493"
 }
