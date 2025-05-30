@@ -432,6 +432,8 @@
       ],
       "id": "8fe6bce1-1489-418d-b455-a5d57f8932aa",
       "name": "Удаляем строку по полученному номеру строки",
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -560,6 +562,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-06T20:43:00.000Z",
-  "versionId": "d54c8013-86cc-4845-987b-a177c5894b1d"
+  "updatedAt": "2025-05-30T09:30:50.000Z",
+  "versionId": "ade96596-db0a-4fba-befa-baff25ea19dc"
 }
