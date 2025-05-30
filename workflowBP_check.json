@@ -114,7 +114,7 @@
       "main": [
         [
           {
-            "node": "Входящие данные1",
+            "node": "Входящие данные2",
             "type": "main",
             "index": 0
           }
@@ -1099,6 +1099,17 @@
         [
           {
             "node": "No Operation, do nothing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Входящие данные2": {
+      "main": [
+        [
+          {
+            "node": "Входящие данные1",
             "type": "main",
             "index": 0
           }
@@ -3572,6 +3583,20 @@
       ],
       "retryOnFail": true,
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n[\n  {\n    \"headers\": {\n      \"host\": \"n8n.makeesn8n.online\",\n      \"user-agent\": \"axios/1.8.2\",\n      \"content-length\": \"92\",\n      \"accept\": \"application/json,text/html,application/xhtml+xml,application/xml,text/*;q=0.9, image/*;q=0.8, */*;q=0.7\",\n      \"accept-encoding\": \"gzip, compress, deflate, br\",\n      \"content-type\": \"application/json\",\n      \"x-forwarded-for\": \"172.18.0.1\",\n      \"x-forwarded-host\": \"n8n.makeesn8n.online\",\n      \"x-forwarded-port\": \"443\",\n      \"x-forwarded-proto\": \"https\",\n      \"x-forwarded-server\": \"2031571a90c1\",\n      \"x-real-ip\": \"172.18.0.1\"\n    },\n    \"params\": {},\n    \"query\": {},\n    \"body\": {\n      \"url_become\": \"https://n8n.makeesn8n.online/webhook-waiting/886594\",\n      \"processID\": \"zsForvika\"\n    },\n    \"webhookUrl\": \"https://n8n.makeesn8n.online/webhook/bp_check\",\n    \"executionMode\": \"production\"\n  }\n]\n);"
+      },
+      "id": "a4814775-9985-4c19-8dc7-58b5d41bfc1c",
+      "name": "Входящие данные2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2460,
+        1440
+      ],
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -3601,6 +3626,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-02-12T06:48:45.000Z",
-  "versionId": "b2c24a66-ba7a-4fd6-99af-ab67431c1700"
+  "updatedAt": "2025-05-30T11:53:18.000Z",
+  "versionId": "0176d820-c182-4e16-92f5-29190b37c847"
 }
