@@ -376,6 +376,8 @@
       ],
       "id": "6e55b0b6-13e9-45b1-acb9-0decf4465d4c",
       "name": "Копируем запись в все треки доставлено",
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
       "credentials": {
         "googleSheetsOAuth2Api": {
           "id": "GsKpjBhTzM4aUjza",
@@ -585,6 +587,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-04-06T20:37:55.000Z",
-  "versionId": "3fbfb23a-dbf0-44ca-8608-15d05f0181e1"
+  "updatedAt": "2025-05-30T09:30:02.000Z",
+  "versionId": "f9760140-1e26-4179-ba82-a2c51b4d2b2a"
 }
