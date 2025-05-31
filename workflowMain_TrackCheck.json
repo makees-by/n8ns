@@ -2691,7 +2691,8 @@
       "position": [
         -1760,
         1880
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -2730,7 +2731,8 @@
       "position": [
         -340,
         2000
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -2944,7 +2946,8 @@
       "position": [
         1280,
         2040
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3072,7 +3075,8 @@
       "position": [
         -1760,
         2220
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3245,7 +3249,8 @@
       "position": [
         340,
         680
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3265,7 +3270,8 @@
       "position": [
         340,
         880
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3464,7 +3470,8 @@
       "position": [
         -340,
         2180
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3483,7 +3490,8 @@
       "position": [
         1280,
         2240
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -4541,7 +4549,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 27,
-  "updatedAt": "2025-05-30T11:38:24.000Z",
-  "versionId": "19934c8e-5153-4acb-8e99-39bbd6b4b4b3"
+  "triggerCount": 19,
+  "updatedAt": "2025-05-31T10:16:31.000Z",
+  "versionId": "24cad8f7-1cb7-4e97-931f-55a0c49d498d"
 }
