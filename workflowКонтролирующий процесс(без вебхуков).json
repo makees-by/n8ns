@@ -514,7 +514,8 @@
       "position": [
         980,
         -300
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {},
@@ -1022,7 +1023,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 6,
+              "triggerAtHour": 10,
               "triggerAtMinute": 2
             }
           ]
@@ -1656,6 +1657,34 @@
       ],
       "id": "77f7e7ef-4795-4884-a83c-cdc89a85d91e",
       "name": "If3"
+    },
+    {
+      "parameters": {
+        "content": "## вернуть на 6 утра\n",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        180,
+        500
+      ],
+      "typeVersion": 1,
+      "id": "713bb644-8586-4e72-bea9-8a153681d8b7",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "## Включить",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        900,
+        -100
+      ],
+      "typeVersion": 1,
+      "id": "50a3bfa7-68eb-4f0e-b88e-c2ccffe2ce82",
+      "name": "Sticky Note6"
     }
   ],
   "pinData": {},
@@ -1684,7 +1713,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 4,
-  "updatedAt": "2025-05-15T09:16:50.000Z",
-  "versionId": "d50fbdbf-8cf4-4a2e-a37f-0461eeb674d3"
+  "triggerCount": 3,
+  "updatedAt": "2025-05-31T17:59:23.000Z",
+  "versionId": "246c9b5f-7ed3-4e12-a5a9-00388e2b53ff"
 }
