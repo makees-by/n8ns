@@ -514,8 +514,7 @@
       "position": [
         980,
         -300
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {},
@@ -1023,7 +1022,7 @@
         "rule": {
           "interval": [
             {
-              "triggerAtHour": 10,
+              "triggerAtHour": 8,
               "triggerAtMinute": 2
             }
           ]
@@ -1713,7 +1712,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 3,
-  "updatedAt": "2025-05-31T17:59:23.000Z",
-  "versionId": "246c9b5f-7ed3-4e12-a5a9-00388e2b53ff"
+  "triggerCount": 4,
+  "updatedAt": "2025-06-01T20:57:05.000Z",
+  "versionId": "1b01ef04-d6a0-4fb9-b4b4-9590743b0364"
 }
