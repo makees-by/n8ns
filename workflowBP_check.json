@@ -3555,7 +3555,7 @@
     },
     {
       "parameters": {
-        "maxItems": 350
+        "maxItems": 500
       },
       "id": "d27c14f0-11bd-4bb0-b638-580a683cd943",
       "name": "По чётным 1е 350",
@@ -3570,7 +3570,7 @@
     },
     {
       "parameters": {
-        "maxItems": 350,
+        "maxItems": 500,
         "keep": "lastItems"
       },
       "id": "f7d152ab-e785-4968-8dc0-4311deb1c3b0",
@@ -3626,6 +3626,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-05-30T11:53:18.000Z",
-  "versionId": "0176d820-c182-4e16-92f5-29190b37c847"
+  "updatedAt": "2025-06-29T08:23:14.000Z",
+  "versionId": "99668a05-34ba-4f96-b5f5-274be5681575"
 }
