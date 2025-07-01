@@ -1474,7 +1474,7 @@
         },
         "sheetName": {
           "__rl": true,
-          "value": "={{ $json.allTraksVO_pageID }}",
+          "value": "={{ $json.allTraksDone_pageID }}",
           "mode": "id"
         },
         "options": {}
@@ -1529,7 +1529,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"zsAli\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"zsAli\"\n  }\n]\n);"
+        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForVika12\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"ZsForVika12\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -2185,8 +2185,14 @@
             {
               "id": "2e0c7d6c-d2a0-4472-bd56-967dfd69674e",
               "name": "ID_check_page",
-              "value": "={{ $('Датос1').item.json.allTraksVO_pageID }}",
+              "value": "={{ $('Датос1').item.json.allTraksDone_pageID }}",
               "type": "number"
+            },
+            {
+              "id": "abb86b72-e209-436f-b690-03a1f96ee4fe",
+              "name": "",
+              "value": "",
+              "type": "string"
             }
           ]
         },
@@ -2521,6 +2527,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-29T11:25:08.000Z",
-  "versionId": "f54dae1e-512e-4353-94a5-6be91c65cfb3"
+  "updatedAt": "2025-07-01T07:49:04.000Z",
+  "versionId": "927cb798-f2b4-4428-bdbb-10cb403c5923"
 }
