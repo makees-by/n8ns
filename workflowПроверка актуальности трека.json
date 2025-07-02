@@ -2015,12 +2015,12 @@
       "parameters": {
         "authentication": "serviceAccount",
         "operation": "update",
-        "documentURL": "1UX9N0bIGZdQ7v2TTyigGNx0QiYDsV_uvDS-lxUYwpGA",
+        "documentURL": "14nzvNnpGz5FZqjj9w9bUdt9408zKqavpuubPguWuwMY",
         "actionsUi": {
           "actionFields": [
             {
               "action": "insert",
-              "text": "={{ $json['трек'] }}/{{ $('Датос1').item.json.data.variebles.processID }}/{{ $json['url таблицы из которой трек'] }}/{{ $now.format(\"dd.MM.yy_HH-mm-ss\") }}\n"
+              "text": "={{ $json['трек'] }}/{{ $('Датос1').item.json.processID }}/{{ $json['url таблицы из которой трек'] }}/{{ $now.format(\"dd.MM.yy_HH-mm-ss\") }}\n"
             }
           ]
         }
@@ -2527,6 +2527,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-01T07:49:04.000Z",
-  "versionId": "927cb798-f2b4-4428-bdbb-10cb403c5923"
+  "updatedAt": "2025-07-02T09:47:50.000Z",
+  "versionId": "0f122110-8fc5-44ff-ba04-061f7f560ab4"
 }
