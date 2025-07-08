@@ -1146,6 +1146,72 @@
           }
         ]
       ]
+    },
+    "ForNat1": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat3": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "20.00 ForNat": {
+      "main": [
+        [
+          {
+            "node": "ForNat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "19.20 ForNat": {
+      "main": [
+        [
+          {
+            "node": "ForNat3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "09.00 ForNat": {
+      "main": [
+        [
+          {
+            "node": "ForNat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -2950,7 +3016,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "INSERT INTO tablsCC (processID, start_tableID, start_pageID, all_tableID, allTables_pageID, allTraks_pageID, allTraksDone_pageID, allTraksVO_pageID)\nVALUE ('{{ $json.processID }}', '{{ $json.start_tableID }}', {{ $json.start_pageID }}, '{{ $json.all_tableID }}', {{ $json.allTables_pageID }}, {{ $json.allTraks_pageID }}, {{ $json.allTraksDone_pageID }}, {{ $json.llTraksVO_pageID }}); ",
+        "query": "INSERT INTO tablsCC (processID, start_tableID, start_pageID, all_tableID, allTables_pageID, allTraks_pageID, allTraksDone_pageID, allTraksVO_pageID)\nVALUE ('{{ $json.processID }}', '{{ $json.start_tableID }}', {{ $json.start_pageID }}, '{{ $json.all_tableID }}', {{ $json.allTables_pageID }}, {{ $json.allTraks_pageID }}, {{ $json.allTraksDone_pageID }}, {{ $json.allTraksVO_pageID }}); ",
         "options": {}
       },
       "id": "719703e7-06c1-42f8-a1b0-eac3dd35f8fa",
@@ -3040,49 +3106,49 @@
             {
               "id": "f88bd06e-de99-46fb-94aa-f5dbd9f14af3",
               "name": "processID",
-              "value": "zsForHel",
+              "value": "ForNat",
               "type": "string"
             },
             {
               "id": "be53966a-3cb4-4262-abca-d989088172ca",
               "name": "start_tableID",
-              "value": "1n3nX5v-VPKJ1UKhidUuZptp6qWaK_h578srAILPywI8",
+              "value": "1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As",
               "type": "string"
             },
             {
               "id": "7a7484ea-f15c-4de1-b52a-ade847bba41a",
               "name": "start_pageID",
-              "value": 1401389950,
+              "value": 690413794,
               "type": "number"
             },
             {
               "id": "a185434b-c597-462e-bda6-3b61a231fe05",
               "name": "all_tableID",
-              "value": "1n3nX5v-VPKJ1UKhidUuZptp6qWaK_h578srAILPywI8",
+              "value": "1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As",
               "type": "string"
             },
             {
               "id": "dc0e74ab-7fea-45d9-b24a-60f69bc4aa51",
               "name": "allTables_pageID",
-              "value": 1818467831,
+              "value": 599440154,
               "type": "number"
             },
             {
               "id": "27257c1c-7829-4e77-bb2e-a3a70f65149b",
               "name": "allTraks_pageID",
-              "value": 742722388,
+              "value": 1029941645,
               "type": "number"
             },
             {
               "id": "e94aad57-fcdb-449e-afa7-04da8b11d00d",
               "name": "allTraksDone_pageID",
-              "value": 1869017338,
+              "value": 714703313,
               "type": "number"
             },
             {
               "id": "87440d72-fda8-4333-9010-a1b904867e10",
-              "name": "llTraksVO_pageID",
-              "value": 1087894597,
+              "name": "allTraksVO_pageID",
+              "value": 1692704494,
               "type": "number"
             }
           ]
@@ -3746,8 +3812,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        -1180,
-        2760
+        -1200,
+        2700
       ],
       "id": "82fa98d2-7522-4ee0-9cea-32289bd4f4fb",
       "name": "Отправка запроса на сбор треков в одну таблицу20"
@@ -3764,8 +3830,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1620,
-        2760
+        -1640,
+        2700
       ],
       "disabled": true
     },
@@ -3787,8 +3853,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.2,
       "position": [
-        -1420,
-        2760
+        -1440,
+        2700
       ]
     },
     {
@@ -3806,8 +3872,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1800,
-        2760
+        -1820,
+        2700
       ]
     },
     {
@@ -3978,6 +4044,211 @@
       "position": [
         1260,
         2740
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cVC6t8mW8i9zazSD",
+          "mode": "list",
+          "cachedResultName": "Сбор треков в одну таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -1220,
+        2920
+      ],
+      "id": "bbe15122-eda3-4ecd-895b-d35efa3927ff",
+      "name": "Отправка запроса на сбор треков в одну таблицу23"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "yzGni57zMlaAsGzq",
+          "mode": "list",
+          "cachedResultName": "Перенос доставленых в отдельную таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        260,
+        3040
+      ],
+      "id": "3718e3bb-0b79-4653-bf8e-2ac498a23809",
+      "name": "Отправка запроса на сбор треков в одну таблицу24"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7fnXycgDiNJ7YWwO",
+          "mode": "list",
+          "cachedResultName": "Перенос ВрОтпр в отдельную таблицу (для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1860,
+        3000
+      ],
+      "id": "96434781-455c-457c-a714-497c8653187a",
+      "name": "Отправка запроса на сбор треков в одну таблицу25"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForNat"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "e29fccc8-b85f-4aac-8070-1c9dc951c7e6",
+      "name": "ForNat1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -1440,
+        2920
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForNat"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "a587608a-7aeb-4f6e-afbb-e1ad33f0b2e3",
+      "name": "ForNat3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        40,
+        3040
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ForNat"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "65dcf1fc-6419-41f3-8621-0c5897673ff8",
+      "name": "ForNat",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1640,
+        3000
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20
+            }
+          ]
+        }
+      },
+      "id": "77e2cdb8-6e1c-4710-91d1-d57a6ac526e1",
+      "name": "20.00 ForNat",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1820,
+        2920
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 19,
+              "triggerAtMinute": 20
+            }
+          ]
+        }
+      },
+      "id": "26c6b993-ee88-4ec9-8b9a-e955e6ec9d6d",
+      "name": "19.20 ForNat",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -360,
+        3040
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "289a5765-f498-449f-b734-eeceea82b454",
+      "name": "09.00 ForNat",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1260,
+        3000
       ]
     }
   ],
@@ -4181,6 +4452,33 @@
     },
     "node:08.00 zsForHel": {
       "recurrenceRules": []
+    },
+    "node:02.00 zsForHel1": {
+      "recurrenceRules": []
+    },
+    "node:00.00 zsForHel1": {
+      "recurrenceRules": []
+    },
+    "node:08.00 zsForHel1": {
+      "recurrenceRules": []
+    },
+    "node:02.00 ForNat": {
+      "recurrenceRules": []
+    },
+    "node:00.00 ForNat": {
+      "recurrenceRules": []
+    },
+    "node:08.00 ForNat": {
+      "recurrenceRules": []
+    },
+    "node:20.00 ForNat": {
+      "recurrenceRules": []
+    },
+    "node:19.20 ForNat": {
+      "recurrenceRules": []
+    },
+    "node:09.00 ForNat": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -4197,7 +4495,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 22,
-  "updatedAt": "2025-06-30T06:48:13.000Z",
-  "versionId": "f0016e5a-a872-4bce-9f78-60f65624d6c6"
+  "triggerCount": 25,
+  "updatedAt": "2025-07-08T09:48:17.000Z",
+  "versionId": "40265673-9dc4-4fca-9e11-938b8ed63e07"
 }
