@@ -1784,9 +1784,27 @@
                 "type": "string",
                 "operation": "notEquals"
               }
+            },
+            {
+              "id": "59cec878-c3de-4fe8-a8a5-7c51990d69f6",
+              "leftValue": "={{ $json['Отметка о доставке'] }}",
+              "rightValue": "Вручено отправителю",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "7d48272b-24eb-4bb0-8246-c7a589e5e5bc",
+              "leftValue": "={{ $json['Отметка о доставке'] }}",
+              "rightValue": "не проверять",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
             }
           ],
-          "combinator": "and"
+          "combinator": "or"
         },
         "options": {}
       },
@@ -2045,6 +2063,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-30T09:31:38.000Z",
-  "versionId": "4a1aab7c-efb4-4768-aa0d-b38e7edd6a33"
+  "updatedAt": "2025-07-08T09:44:10.000Z",
+  "versionId": "9cc1bf27-2008-4029-8242-6698398f5102"
 }
