@@ -3,13 +3,31 @@
   "connections": {
     "When clicking ‘Test workflow’": {
       "main": [
-        []
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Loop Over Items": {
       "main": [
-        [],
-        []
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ДатосЦикл",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Replace Me": {
@@ -19,47 +37,101 @@
     },
     "Wait1": {
       "main": [
-        []
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Получаем треки с отметкой доставлено": {
       "main": [
-        []
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Копируем запись в все треки доставлено": {
       "main": [
-        []
+        [
+          {
+            "node": "Получаем данные из таблицы все треки по треку",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Получаем данные из таблицы все треки по треку": {
       "main": [
-        []
+        [
+          {
+            "node": "Удаляем строку по полученному номеру строки",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Удаляем строку по полученному номеру строки": {
       "main": [
-        []
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Code": {
       "main": [
-        []
+        [
+          {
+            "node": "ВД",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Датос": {
       "main": [
-        []
+        [
+          {
+            "node": "Получаем треки с отметкой доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "ДатосЦикл": {
       "main": [
-        []
+        [
+          {
+            "node": "Копируем запись в все треки доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Limit": {
       "main": [
-        []
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Code1": {
@@ -69,12 +141,24 @@
     },
     "Чтение данных из workProcess": {
       "main": [
-        []
+        [
+          {
+            "node": "Датос",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "ВД": {
       "main": [
-        []
+        [
+          {
+            "node": "Чтение данных из workProcess",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -351,7 +435,7 @@
       "typeVersion": 4.5,
       "position": [
         1040,
-        380
+        360
       ],
       "id": "525c6c5b-cd5e-4f8f-9ed6-8a4702a5b0d8",
       "name": "Удаляем строку по полученному номеру строки",
@@ -497,6 +581,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-01T21:12:11.000Z",
-  "versionId": "9d3e9609-0b67-4962-ad0f-3dda460f8a5e"
+  "updatedAt": "2025-07-08T09:47:58.000Z",
+  "versionId": "c5fa8f03-7446-4bf9-bd84-e4d928bc1e29"
 }
