@@ -291,6 +291,7 @@
   },
   "createdAt": "2025-04-02T14:38:09.241Z",
   "id": "1Vk8JmnhQb1I1Csn",
+  "isArchived": false,
   "meta": null,
   "name": "Перенос доставленых в отдельную таблицу(для всех) бэкап 02.04",
   "nodes": [
