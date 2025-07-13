@@ -426,6 +426,7 @@
   },
   "createdAt": "2024-02-11T12:48:58.793Z",
   "id": "9wJKOHskCm7q6kvo",
+  "isArchived": false,
   "meta": null,
   "name": "reCheck_traks_with_problem",
   "nodes": [
