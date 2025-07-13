@@ -215,6 +215,7 @@
   },
   "createdAt": "2025-02-28T08:52:24.001Z",
   "id": "EXGqCFtpn87dq5w8",
+  "isArchived": false,
   "meta": null,
   "name": "Перенос доставленых в отдельную таблицу",
   "nodes": [
