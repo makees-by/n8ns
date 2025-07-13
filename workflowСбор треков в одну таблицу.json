@@ -137,6 +137,7 @@
   },
   "createdAt": "2025-02-20T19:28:33.911Z",
   "id": "zn5JTyUll3Jg1DhU",
+  "isArchived": false,
   "meta": null,
   "name": "Сбор треков в одну таблицу",
   "nodes": [
