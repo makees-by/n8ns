@@ -1119,6 +1119,7 @@
   },
   "createdAt": "2024-03-24T15:52:10.628Z",
   "id": "z1ebLdFwBMuXHUut",
+  "isArchived": false,
   "meta": null,
   "name": "BP_check",
   "nodes": [
@@ -3379,6 +3380,8 @@
       "id": "35f4adb4-939f-4111-b279-44996df807e5",
       "name": "MySQL4",
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -3626,6 +3629,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-06-29T08:23:14.000Z",
-  "versionId": "99668a05-34ba-4f96-b5f5-274be5681575"
+  "updatedAt": "2025-07-13T08:14:43.000Z",
+  "versionId": "fe1e4e68-7e10-48e8-b92a-4453a0ff80e6"
 }
