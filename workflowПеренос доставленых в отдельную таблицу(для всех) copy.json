@@ -466,6 +466,7 @@
   },
   "createdAt": "2025-03-25T14:19:30.299Z",
   "id": "3ZdYqt72kKbOq5nO",
+  "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
