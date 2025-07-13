@@ -180,6 +180,7 @@
   },
   "createdAt": "2025-02-12T12:56:03.642Z",
   "id": "e0MBUQdUY5HTMT0S",
+  "isArchived": false,
   "meta": null,
   "name": "работа со сборами(по тригеру)",
   "nodes": [
