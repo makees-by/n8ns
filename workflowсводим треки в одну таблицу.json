@@ -980,6 +980,7 @@
   },
   "createdAt": "2025-02-12T12:25:25.128Z",
   "id": "jRcCg8hrLQbQdEfE",
+  "isArchived": false,
   "meta": null,
   "name": "сводим треки в одну таблицу",
   "nodes": [
