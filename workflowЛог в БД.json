@@ -211,6 +211,7 @@
   },
   "createdAt": "2024-11-15T13:04:14.102Z",
   "id": "lOtPJcL6AitkSaoP",
+  "isArchived": false,
   "meta": null,
   "name": "Лог в БД",
   "nodes": [
