@@ -1108,6 +1108,7 @@
   },
   "createdAt": "2025-01-31T13:13:03.159Z",
   "id": "VRaYqIk2U8RAcAjz",
+  "isArchived": false,
   "meta": null,
   "name": "BP_check2",
   "nodes": [
