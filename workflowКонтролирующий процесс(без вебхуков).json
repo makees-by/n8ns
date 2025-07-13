@@ -481,6 +481,7 @@
   },
   "createdAt": "2025-03-20T09:50:31.458Z",
   "id": "gpsFfrMXTMdpvCBY",
+  "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
