@@ -588,6 +588,7 @@
   },
   "createdAt": "2024-10-21T18:34:10.656Z",
   "id": "bUJavMgjLppjbo49",
+  "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
   },
