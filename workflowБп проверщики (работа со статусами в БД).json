@@ -118,6 +118,7 @@
   },
   "createdAt": "2025-01-30T14:22:29.655Z",
   "id": "yJiLnQFd2T17sd6c",
+  "isArchived": false,
   "meta": null,
   "name": "Бп проверщики (работа со статусами в БД)",
   "nodes": [
