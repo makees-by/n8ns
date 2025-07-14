@@ -1,0 +1,98 @@
+{
+  "active": true,
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-13T13:44:38.400Z",
+  "id": "dR9Ux5sPe4qhtp0A",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 9",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "command",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -220,
+        -160
+      ],
+      "id": "63b57040-6755-4153-b445-18fa7ffd2782",
+      "name": "Webhook",
+      "webhookId": "3c03b5fd-c79b-4618-bea6-0afffd54d6f6",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "aWSuxCmBU2IwQU5w",
+          "name": "Header Auth account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return {\n  json: {\n    command: \"notepad\" // Замените на команду из allowed_commands\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        40,
+        -160
+      ],
+      "id": "9acc7b0c-b2ee-4eae-b8b2-1f31a67bb9a8",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.command }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        240,
+        -160
+      ],
+      "id": "1143e0a0-9912-49ff-bae2-75999009d524",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-13T14:37:34.000Z",
+  "versionId": "d7dfb53c-258e-49be-83c3-1723fb96af55"
+}
