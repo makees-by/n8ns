@@ -10,7 +10,7 @@
             "index": 0
           },
           {
-            "node": "Отфильтровываем строки со статусом Доставлено",
+            "node": "Отфильтровываем строки со статусом Доставлено1",
             "type": "main",
             "index": 0
           }
@@ -430,25 +430,8 @@
     },
     "Отфильтровываем строки со статусом Доставлено": {
       "main": [
-        [
-          {
-            "node": "Забираем только нужные поля",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Меняем triger0 на 3",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Достаём тригер3",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        [],
+        []
       ]
     },
     "Меняем triger0 на 3": {
@@ -572,6 +555,29 @@
         [
           {
             "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Отфильтровываем строки со статусом Доставлено1": {
+      "main": [
+        [
+          {
+            "node": "Забираем только нужные поля",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Меняем triger0 на 3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Достаём тригер3",
             "type": "main",
             "index": 0
           }
@@ -1823,8 +1829,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        620,
-        280
+        540,
+        -140
       ],
       "id": "5e6c95cd-3204-4321-a187-5a27a207bcec",
       "name": "Отфильтровываем строки со статусом Доставлено"
@@ -2080,6 +2086,59 @@
       "id": "fa8d628e-6c83-480a-ab7d-03ac6ce7c170",
       "name": "Code5",
       "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9e4da2bb-3786-44b8-a0b5-02acbecbf433",
+              "leftValue": "={{ $json['Отметка о доставке'] }}",
+              "rightValue": "Не доставлено",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "ad816c7c-c430-4f62-ace2-b5242c0178bc",
+              "leftValue": "={{ $json['Отметка о доставке'] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "63977327-23fb-4955-baa3-f3a9e102d47f",
+              "leftValue": "={{ $json['Отметка о доставке'] }}",
+              "rightValue": "Результат не найден",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        280
+      ],
+      "id": "dfe18e2f-3d7a-42be-8f1c-920917d3ad15",
+      "name": "Отфильтровываем строки со статусом Доставлено1"
     }
   ],
   "pinData": {},
@@ -2089,6 +2148,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-13T08:48:20.000Z",
-  "versionId": "a2060bf4-815a-4b6c-a749-b851c0ea73a7"
+  "updatedAt": "2025-07-15T07:34:53.000Z",
+  "versionId": "f56334e2-dde2-46da-8690-6dfa11b6adde"
 }
