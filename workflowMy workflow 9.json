@@ -35,7 +35,6 @@
     {
       "parameters": {
         "path": "command",
-        "authentication": "headerAuth",
         "responseMode": "responseNode",
         "options": {}
       },
@@ -47,13 +46,7 @@
       ],
       "id": "63b57040-6755-4153-b445-18fa7ffd2782",
       "name": "Webhook",
-      "webhookId": "3c03b5fd-c79b-4618-bea6-0afffd54d6f6",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "aWSuxCmBU2IwQU5w",
-          "name": "Header Auth account 2"
-        }
-      }
+      "webhookId": "3c03b5fd-c79b-4618-bea6-0afffd54d6f6"
     },
     {
       "parameters": {
@@ -84,6 +77,20 @@
       ],
       "id": "1143e0a0-9912-49ff-bae2-75999009d524",
       "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "url": "https://n8n.makeesn8n.online/webhook/command",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        0,
+        60
+      ],
+      "id": "790b867c-7ba0-4bf1-94a6-2ae49ca25f26",
+      "name": "HTTP Request"
     }
   ],
   "pinData": {},
@@ -93,6 +100,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2025-07-13T14:37:34.000Z",
-  "versionId": "d7dfb53c-258e-49be-83c3-1723fb96af55"
+  "updatedAt": "2025-07-14T14:08:36.000Z",
+  "versionId": "c1b898bb-b760-4846-93e3-fe4c8d0db759"
 }
