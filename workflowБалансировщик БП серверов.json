@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "MySQL": {
       "main": [
@@ -272,6 +272,8 @@
       "id": "a2f349d9-c4a6-4777-9cb0-7deaacbfa25b",
       "name": "MySQL",
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -588,6 +590,8 @@
       "id": "ee36bee3-f094-4582-a815-8b382e4ba7ea",
       "name": "MySQL1",
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -781,6 +785,8 @@
       "id": "2336259f-e4f6-47b5-a65b-933c2dddef65",
       "name": "MySQL2",
       "alwaysOutputData": true,
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -876,6 +882,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-13T08:31:04.000Z",
-  "versionId": "32bee9ca-15e5-4ca7-86b6-ce259887a641"
+  "updatedAt": "2025-07-15T07:41:07.000Z",
+  "versionId": "71d3b16d-b590-4ae8-85b7-b96b88cce56f"
 }
