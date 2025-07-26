@@ -876,6 +876,8 @@
         3920,
         940
       ],
+      "retryOnFail": true,
+      "waitBetweenTries": 2000,
       "credentials": {
         "mySql": {
           "id": "8aCpW2vOoONBz7HE",
@@ -1928,6 +1930,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-05-26T12:45:29.000Z",
-  "versionId": "cbc4237d-ebcd-4444-8d81-0b07f5769672"
+  "updatedAt": "2025-07-26T04:05:14.000Z",
+  "versionId": "b9f75978-12fe-4f8e-966e-e2777a20427a"
 }
