@@ -575,20 +575,26 @@
             {
               "id": "1ef43b64-0bdd-4332-899a-9e17a7fd07af",
               "name": "Link",
-              "value": "https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit?gid=208083408#gid=208083408",
+              "value": "https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit?gid=1679397325#gid=1679397325",
               "type": "string"
             },
             {
               "id": "3a1943fc-7258-4c8c-8027-55291c9b84a3",
               "name": "IdTables",
-              "value": "ForIra001",
+              "value": "ForIra003",
               "type": "string"
             },
             {
               "id": "b97b5ad9-1201-46f8-a916-e07511e0efe9",
               "name": "NeedCheck",
-              "value": 1,
+              "value": 0,
               "type": "number"
+            },
+            {
+              "id": "baf98b0f-49fd-44a9-9c17-1fd5c3f9c670",
+              "name": "TableTipe",
+              "value": "VO",
+              "type": "string"
             }
           ]
         },
@@ -777,7 +783,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "INSERT INTO Tabls (ID, Link, IdTables, NeedCheck)\nVALUE ('{{ $json.ID }}', '{{ $json.Link }}', '{{ $json.IdTables }}', {{ $json.NeedCheck }}); ",
+        "query": "INSERT INTO Tabls (ID, Link, IdTables, NeedCheck, TableTipe)\nVALUE ('{{ $json.ID }}', '{{ $json.Link }}', '{{ $json.IdTables }}', {{ $json.NeedCheck }}, '{{ $json.TableTipe }}')",
         "options": {}
       },
       "id": "e9024735-0ce1-4324-a41f-f87c236c4e94",
@@ -1714,6 +1720,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-04-06T20:39:01.000Z",
-  "versionId": "20f15ee5-8879-4ca7-9fb6-1b251a6e54ac"
+  "updatedAt": "2025-07-26T06:18:00.000Z",
+  "versionId": "4f834377-e964-4296-aded-2e3f398c4f3b"
 }
