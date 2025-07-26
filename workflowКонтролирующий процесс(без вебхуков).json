@@ -477,6 +477,44 @@
           }
         ]
       ]
+    },
+    "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей1": {
+      "main": [
+        [
+          {
+            "node": "формируем запрос к логированию4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Проверка старых треков",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "формируем запрос к логированию4": {
+      "main": [
+        [
+          {
+            "node": "Запрос в процесс логирования4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Запуск выставления статуса трека в гугл таблицы1": {
+      "main": [
+        [
+          {
+            "node": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-03-20T09:50:31.458Z",
@@ -701,7 +739,9 @@
       "position": [
         3360,
         500
-      ]
+      ],
+      "retryOnFail": true,
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
@@ -1685,6 +1725,155 @@
       "typeVersion": 1,
       "id": "50a3bfa7-68eb-4f0e-b88e-c2ccffe2ce82",
       "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "Выставляет статусы за предыдущий день",
+        "height": 80,
+        "width": 364.49983326877265
+      },
+      "id": "a547031e-f6a1-43b3-9c0e-81d6bb5bfdc0",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        820,
+        1220
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "1fcc2602-4ff7-4d77-8760-41712663fcbe",
+      "name": "Отправляемся на следующий шаг проверки - Выставление статусов в гугл таблицы пользоваетлей1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        660,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d22d35f9-6a2c-4806-926f-fa11b5f5f566",
+              "name": "opr",
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "id": "1899134f-bf98-48f0-a9cf-6a4f89849e2f",
+              "name": "poc_name",
+              "value": "proceses_control",
+              "type": "string"
+            },
+            {
+              "id": "e953757c-1e36-4772-9860-f255d33f2d81",
+              "name": "message",
+              "value": "={{ $now.format('HH:mm:ss') }} : Отправлен запрос на проверку старых треков\n",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        800
+      ],
+      "id": "3166328f-3e7f-4097-87ea-f3289588e6af",
+      "name": "формируем запрос к логированию4"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "lOtPJcL6AitkSaoP",
+          "mode": "list",
+          "cachedResultName": "Лог в БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        900,
+        800
+      ],
+      "id": "53c3578e-3742-4192-a808-1c5415a05712",
+      "name": "Запрос в процесс логирования4"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 5,
+              "triggerAtMinute": 2
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        360,
+        1000
+      ],
+      "id": "638739ba-f303-456c-ab12-974ba636fa8d",
+      "name": "Запуск выставления статуса трека в гугл таблицы1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Запуск проверки старых треков",
+        "height": 83,
+        "width": 473
+      },
+      "id": "d119c8b5-b609-4751-af04-7d7a7b17ffc9",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## вернуть на 6 утра\n",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        280,
+        1180
+      ],
+      "typeVersion": 1,
+      "id": "9202b6b0-9748-4a8a-96a6-325300e6b1ee",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "0FVCSRW2Q4FA7czE",
+          "mode": "list",
+          "cachedResultName": "Проверка старых треков в таблице и БД"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        1000
+      ],
+      "id": "8785250b-57b5-48ef-922c-78ff7e0044c7",
+      "name": "Проверка старых треков"
     }
   ],
   "pinData": {},
@@ -1703,6 +1892,9 @@
     },
     "node:Запуск отправки логов в ТГ": {
       "recurrenceRules": []
+    },
+    "node:Запуск выставления статуса трека в гугл таблицы1": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1714,6 +1906,6 @@
     }
   ],
   "triggerCount": 4,
-  "updatedAt": "2025-06-01T20:57:05.000Z",
-  "versionId": "1b01ef04-d6a0-4fb9-b4b4-9590743b0364"
+  "updatedAt": "2025-07-26T06:18:43.000Z",
+  "versionId": "2e39d62e-4b87-489a-a367-28d831b0f7ce"
 }
