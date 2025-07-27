@@ -3581,7 +3581,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -120,
+        -140,
         1520
       ],
       "retryOnFail": true,
@@ -3629,6 +3629,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-07-13T08:14:43.000Z",
-  "versionId": "fe1e4e68-7e10-48e8-b92a-4453a0ff80e6"
+  "updatedAt": "2025-07-26T21:04:04.000Z",
+  "versionId": "89c05bcb-a9b5-4048-b24d-c29631734055"
 }
