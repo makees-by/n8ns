@@ -425,7 +425,7 @@
       "main": [
         [
           {
-            "node": "Выставляем в БД табл Traks статус Доставлено",
+            "node": "Проверяем есть ли изменения в статусе посылки1",
             "type": "main",
             "index": 0
           }
@@ -443,14 +443,14 @@
       "main": [
         [
           {
-            "node": "Выставляем в БД табл Traks статус Доставлено отправителю",
+            "node": "Проверяем есть ли изменения в статусе посылки2",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Выставляем в БД табл Traks статус Доставлено1",
+            "node": "Проверяем есть ли изменения в статусе посылки",
             "type": "main",
             "index": 0
           }
@@ -560,6 +560,137 @@
           }
         ]
       ]
+    },
+    "Проверяем есть ли изменения в статусе посылки1": {
+      "main": [
+        [
+          {
+            "node": "Сравниваем имеющуюся запись с полученной1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Сравниваем имеющуюся запись с полученной1": {
+      "main": [
+        [
+          {
+            "node": "Нет изменений по треку",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Возвращаем актуальные данные1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Возвращаем актуальные данные1": {
+      "main": [
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем есть ли изменения в статусе посылки": {
+      "main": [
+        [
+          {
+            "node": "Сравниваем имеющуюся запись с полученной",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Сравниваем имеющуюся запись с полученной": {
+      "main": [
+        [
+          {
+            "node": "Нет изменений по треку",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Возвращаем актуальные данные",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Возвращаем актуальные данные": {
+      "main": [
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Проверяем есть ли изменения в статусе посылки2": {
+      "main": [
+        [
+          {
+            "node": "Сравниваем имеющуюся запись с полученной2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Сравниваем имеющуюся запись с полученной2": {
+      "main": [
+        [
+          {
+            "node": "Нет изменений по треку",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Возвращаем актуальные данные2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Возвращаем актуальные данные2": {
+      "main": [
+        [
+          {
+            "node": "Выставляем в БД табл Traks статус Доставлено отправителю",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Нет изменений по треку": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2024-11-03T16:36:45.367Z",
@@ -639,7 +770,7 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        4200,
+        4220,
         940
       ]
     },
@@ -791,8 +922,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4360,
-        380
+        4760,
+        400
       ],
       "credentials": {
         "mySql": {
@@ -828,8 +959,8 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        4240,
-        640
+        4580,
+        660
       ],
       "credentials": {
         "mySql": {
@@ -1622,7 +1753,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        3940,
+        3640,
         640
       ]
     },
@@ -1845,7 +1976,7 @@
     },
     {
       "parameters": {
-        "maxItems": 173,
+        "maxItems": 59,
         "keep": "lastItems"
       },
       "type": "n8n-nodes-base.limit",
@@ -1914,6 +2045,329 @@
       ],
       "id": "be230711-1877-4213-bef9-f799e84f2e44",
       "name": "Запрос в процесс логирования2"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Track",
+              "value": "={{ $json.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "ef87adc1-4b07-4601-a7f6-851c26743b50",
+      "name": "Проверяем есть ли изменения в статусе посылки1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        4240,
+        380
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2df2d925-6359-48a4-903f-753ab0f47cdd",
+              "leftValue": "={{ $json.History }}",
+              "rightValue": "={{ $('If4').item.json.steps.toJsonString().replaceAll('},{','/') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4480,
+        100
+      ],
+      "id": "6d80bd85-fb9b-448e-87b9-4143a2841774",
+      "name": "Сравниваем имеющуюся запись с полученной1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "248164fd-aa5a-4474-bbaa-678c6e4f2001",
+              "name": "number",
+              "value": "={{ $('If4').item.json.number }}",
+              "type": "string"
+            },
+            {
+              "id": "f0d0e868-56b7-47d0-b12b-3d86b3523cdd",
+              "name": "last_event",
+              "value": "={{ $('If4').item.json.last_event }}",
+              "type": "string"
+            },
+            {
+              "id": "fa91915b-8434-43e1-8671-8584f1bcf742",
+              "name": "steps",
+              "value": "={{ $('If4').item.json.steps }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4480,
+        400
+      ],
+      "id": "8dfad619-adb0-497e-a7ba-23aa0c214e78",
+      "name": "Возвращаем актуальные данные1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        3420,
+        1320
+      ],
+      "id": "13a03bde-0077-4a9a-b4bb-04edd807535d",
+      "name": "Нет изменений по треку"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Track",
+              "value": "={{ $json.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7e884891-8dc6-4e07-a613-a106a11d3b2f",
+      "name": "Проверяем есть ли изменения в статусе посылки",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3220,
+        920
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2df2d925-6359-48a4-903f-753ab0f47cdd",
+              "leftValue": "={{ $json.History }}",
+              "rightValue": "={{ $('If4').item.json.steps.toJsonString().replaceAll('},{','/') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3420,
+        920
+      ],
+      "id": "ea72abb8-2746-4650-8cd3-6b52da4b1fc1",
+      "name": "Сравниваем имеющуюся запись с полученной"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "248164fd-aa5a-4474-bbaa-678c6e4f2001",
+              "name": "number",
+              "value": "={{ $('If4').item.json.number }}",
+              "type": "string"
+            },
+            {
+              "id": "f0d0e868-56b7-47d0-b12b-3d86b3523cdd",
+              "name": "last_event",
+              "value": "={{ $('If4').item.json.last_event }}",
+              "type": "string"
+            },
+            {
+              "id": "fa91915b-8434-43e1-8671-8584f1bcf742",
+              "name": "steps",
+              "value": "={{ $('If4').item.json.steps }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3640,
+        940
+      ],
+      "id": "74eca5f7-6949-40eb-9493-6db22e0e4630",
+      "name": "Возвращаем актуальные данные"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "Traks",
+          "mode": "list",
+          "cachedResultName": "Traks"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "Track",
+              "value": "={{ $json.number }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "557ddada-b143-49f6-b060-4d9691f91adc",
+      "name": "Проверяем есть ли изменения в статусе посылки2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.4,
+      "position": [
+        3840,
+        640
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "8aCpW2vOoONBz7HE",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2df2d925-6359-48a4-903f-753ab0f47cdd",
+              "leftValue": "={{ $json.History }}",
+              "rightValue": "={{ $('If4').item.json.steps.toJsonString().replaceAll('},{','/') }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4060,
+        640
+      ],
+      "id": "dabee266-13a2-490b-b310-0568d418647c",
+      "name": "Сравниваем имеющуюся запись с полученной2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "248164fd-aa5a-4474-bbaa-678c6e4f2001",
+              "name": "number",
+              "value": "={{ $('If4').item.json.number }}",
+              "type": "string"
+            },
+            {
+              "id": "f0d0e868-56b7-47d0-b12b-3d86b3523cdd",
+              "name": "last_event",
+              "value": "={{ $('If4').item.json.last_event }}",
+              "type": "string"
+            },
+            {
+              "id": "fa91915b-8434-43e1-8671-8584f1bcf742",
+              "name": "steps",
+              "value": "={{ $('If4').item.json.steps }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        4320,
+        660
+      ],
+      "id": "3841a1e7-3076-49e8-bbf1-86498df1dab9",
+      "name": "Возвращаем актуальные данные2"
     }
   ],
   "pinData": {},
@@ -1930,6 +2384,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-07-26T04:05:14.000Z",
-  "versionId": "b9f75978-12fe-4f8e-966e-e2777a20427a"
+  "updatedAt": "2025-07-27T06:41:00.000Z",
+  "versionId": "1f65da62-7252-4e86-9d55-e31e72a56239"
 }
