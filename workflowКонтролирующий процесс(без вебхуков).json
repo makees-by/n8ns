@@ -505,7 +505,7 @@
         ]
       ]
     },
-    "Запуск выставления статуса трека в гугл таблицы1": {
+    "Запуск проверки старых треков": {
       "main": [
         [
           {
@@ -1808,27 +1808,6 @@
     },
     {
       "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "triggerAtHour": 5,
-              "triggerAtMinute": 2
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        360,
-        1000
-      ],
-      "id": "638739ba-f303-456c-ab12-974ba636fa8d",
-      "name": "Запуск выставления статуса трека в гугл таблицы1",
-      "disabled": true
-    },
-    {
-      "parameters": {
         "content": "## Запуск проверки старых треков",
         "height": 83,
         "width": 473
@@ -1874,6 +1853,26 @@
       ],
       "id": "8785250b-57b5-48ef-922c-78ff7e0044c7",
       "name": "Проверка старых треков"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 5,
+              "triggerAtMinute": 2
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        360,
+        1000
+      ],
+      "id": "638739ba-f303-456c-ab12-974ba636fa8d",
+      "name": "Запуск проверки старых треков"
     }
   ],
   "pinData": {},
@@ -1895,6 +1894,9 @@
     },
     "node:Запуск выставления статуса трека в гугл таблицы1": {
       "recurrenceRules": []
+    },
+    "node:Запуск проверки старых треков": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -1905,7 +1907,7 @@
       "name": "BDCheck"
     }
   ],
-  "triggerCount": 4,
-  "updatedAt": "2025-07-26T06:18:43.000Z",
-  "versionId": "2e39d62e-4b87-489a-a367-28d831b0f7ce"
+  "triggerCount": 5,
+  "updatedAt": "2025-07-28T07:29:21.000Z",
+  "versionId": "9a641aa0-c961-4dbb-83fe-756679ccd95e"
 }
