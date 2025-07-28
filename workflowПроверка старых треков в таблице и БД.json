@@ -111,7 +111,7 @@
       "main": [
         [
           {
-            "node": "Получить все записи из таблицы Tabls1",
+            "node": "Выставление статусов трекам в гугл таблицу",
             "type": "main",
             "index": 0
           }
@@ -736,8 +736,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -20,
-        1480
+        -60,
+        1120
       ]
     },
     {
@@ -2521,6 +2521,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-07-26T13:58:09.000Z",
-  "versionId": "32f59156-d287-4cdf-82a5-7499a7a7531a"
+  "updatedAt": "2025-07-28T07:28:18.000Z",
+  "versionId": "67fe7ace-a423-4528-a2c8-254bbb2cfb35"
 }
