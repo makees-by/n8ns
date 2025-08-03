@@ -566,7 +566,13 @@
     },
     "No Operation, do nothing2": {
       "main": [
-        []
+        [
+          {
+            "node": "Получить все записи из таблицы Tabls1",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Получить все записи из таблицы Tabls1": {
@@ -606,96 +612,6 @@
       "main": [
         [
           {
-            "node": "Get row(s) in sheet1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get row(s) in sheet1": {
-      "main": [
-        [
-          {
-            "node": "Выбирает треки у которых дата добавления раньше 3х месяцев",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "If10": {
-      "main": [
-        [],
-        []
-      ]
-    },
-    "Выбирает треки у которых дата добавления раньше 3х месяцев": {
-      "main": [
-        [
-          {
-            "node": "Определяем чётная дата ли нет",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields1": {
-      "main": [
-        [
-          {
-            "node": "Sort1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Определяем чётная дата ли нет": {
-      "main": [
-        [
-          {
-            "node": "По чётным 1е 200",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "По нечётным последние 200",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "По чётным 1е 200": {
-      "main": [
-        [
-          {
-            "node": "No Operation, do nothing3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "По нечётным последние 200": {
-      "main": [
-        [
-          {
-            "node": "No Operation, do nothing3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "No Operation, do nothing3": {
-      "main": [
-        [
-          {
             "node": "Loop Over Items2",
             "type": "main",
             "index": 0
@@ -706,7 +622,13 @@
     "Loop Over Items2": {
       "main": [
         [],
-        []
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
     "Replace Me": {
@@ -714,6 +636,28 @@
         [
           {
             "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
             "type": "main",
             "index": 0
           }
@@ -736,8 +680,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -60,
-        1120
+        -100,
+        1060
       ]
     },
     {
@@ -2125,7 +2069,8 @@
         1140
       ],
       "id": "c32a054a-8aa3-4f63-b08b-9d3d0884eed6",
-      "name": "No Operation, do nothing2"
+      "name": "No Operation, do nothing2",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -2258,238 +2203,12 @@
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $json.Link }}",
-          "mode": "url"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $json.Link }}",
-          "mode": "url"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.6,
-      "position": [
-        1220,
-        1440
-      ],
-      "id": "6287b6c8-bab5-4baa-9835-54769dab7bdb",
-      "name": "Get row(s) in sheet1",
-      "credentials": {
-        "googleSheetsOAuth2Api": {
-          "id": "Dw91KSbPhrbIymMx",
-          "name": "n8n.by1@gmail.com"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "cb6a68b6-f7bc-41f6-b685-e6b310c5421d",
-              "leftValue": "={{ $json['Дата последнего обновления'] }}",
-              "rightValue": "нет трека",
-              "operator": {
-                "type": "string",
-                "operation": "contains"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1500,
-        1740
-      ],
-      "id": "c6a6af31-08b8-40a7-b211-ab3b9543b824",
-      "name": "If10"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "87c99bba-5f99-41a0-933d-17e6962ab170",
-              "leftValue": "={{ '20'.concat( $json['Дата добавления'].split(' ')[0].split('.')[2] ).concat('-').concat( $json['Дата добавления'].split(' ')[0].split('.')[1].concat('-').concat($json['Дата добавления'].split(' ')[0].split('.')[0])).toDateTime() }}",
-              "rightValue": "={{ $today.minus(3, 'month') }}",
-              "operator": {
-                "type": "dateTime",
-                "operation": "before"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1460,
-        1440
-      ],
-      "id": "9234bb76-3536-40f8-b9d1-2fc696dc1906",
-      "name": "Выбирает треки у которых дата добавления раньше 3х месяцев"
-    },
-    {
-      "parameters": {
-        "sortFieldsUi": {
-          "sortField": [
-            {
-              "fieldName": "Дата добавления"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.sort",
-      "typeVersion": 1,
-      "position": [
-        2540,
-        1140
-      ],
-      "id": "d7c2d811-f9c5-40fe-acb9-4c93ca2f16ad",
-      "name": "Sort1"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "8c5ac5e4-4b02-44de-94ac-cc36b80fef98",
-              "name": "Дата добавления",
-              "value": "={{ '20'.concat( $json['Дата добавления'].split(' ')[0].split('.')[2] ).concat('-').concat( $json['Дата добавления'].split(' ')[0].split('.')[1].concat('-').concat($json['Дата добавления'].split(' ')[0].split('.')[0])).toDateTime() }}",
-              "type": "string"
-            }
-          ]
-        },
-        "includeOtherFields": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        2240,
-        1140
-      ],
-      "id": "49999317-9b14-4e85-bc24-2f4d8ba4516f",
-      "name": "Edit Fields1"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        3480,
-        1240
-      ],
-      "id": "5c4bf3f3-0f71-49dd-a7f5-f556eea59c69",
-      "name": "Limit1"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          },
-          "conditions": [
-            {
-              "id": "f5e44951-6f9c-4dc6-9f68-7a4b9cd2edcb",
-              "leftValue": "={{ $now.format('dd').toNumber().isEven() }}",
-              "rightValue": "",
-              "operator": {
-                "type": "boolean",
-                "operation": "true",
-                "singleValue": true
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [
-        1800,
-        1420
-      ],
-      "id": "ff73c1af-07e8-458d-b36b-34b39996fc8d",
-      "name": "Определяем чётная дата ли нет"
-    },
-    {
-      "parameters": {},
-      "type": "n8n-nodes-base.noOp",
-      "typeVersion": 1,
-      "position": [
-        2280,
-        1440
-      ],
-      "id": "33fbe351-9cf4-437d-b5af-9e2a3cd238c0",
-      "name": "No Operation, do nothing3"
-    },
-    {
-      "parameters": {
-        "maxItems": 200
-      },
-      "id": "d45af200-36e3-4469-bc6b-b8b41c2e1a2c",
-      "name": "По чётным 1е 200",
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        2040,
-        1360
-      ],
-      "retryOnFail": true,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "maxItems": 200,
-        "keep": "lastItems"
-      },
-      "id": "d7238a7e-b2ee-4d22-80d5-57e3f9ec0dd1",
-      "name": "По нечётным последние 200",
-      "type": "n8n-nodes-base.limit",
-      "typeVersion": 1,
-      "position": [
-        2040,
-        1520
-      ],
-      "retryOnFail": true,
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        2500,
+        1200,
         1440
       ],
       "id": "41a41c6f-441f-4ba1-b54f-5088bbe129c5",
@@ -2501,10 +2220,63 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        3360,
-        1680
+        1940,
+        1700
       ],
       "id": "a8251ef5-0a92-44c4-bca2-2b60e8d5cc8e"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ChuqUXTlT8elzHNI",
+          "mode": "list",
+          "cachedResultName": "Проверка старых треков в таблице(диип)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1520,
+        1460
+      ],
+      "id": "5ce22ccf-6892-43ef-acc7-9650c3e304e7",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1940,
+        1460
+      ],
+      "id": "451d708a-d8ce-4952-8047-e5c8bae96ae7",
+      "name": "Wait1",
+      "webhookId": "b0549546-3a75-440a-88a3-42c092ee9693"
+    },
+    {
+      "parameters": {
+        "content": "## Удалеие из таблиц",
+        "width": 420
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -80,
+        1300
+      ],
+      "typeVersion": 1,
+      "id": "3dbeb6a8-f6e4-4239-9ea6-37a0ffabab32",
+      "name": "Sticky Note1"
     }
   ],
   "pinData": {},
@@ -2521,6 +2293,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-07-28T07:28:18.000Z",
-  "versionId": "67fe7ace-a423-4528-a2c8-254bbb2cfb35"
+  "updatedAt": "2025-08-03T07:58:30.000Z",
+  "versionId": "6e27b98d-ed60-416a-8b58-db183db45771"
 }
