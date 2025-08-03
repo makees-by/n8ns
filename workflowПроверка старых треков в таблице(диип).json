@@ -1,0 +1,496 @@
+{
+  "active": false,
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Выбирает треки у которых дата добавления раньше 3х месяцев": {
+      "main": [
+        [
+          {
+            "node": "По чётным 1е 200",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "По чётным 1е 200": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Обновляем формулы в исх табл3": {
+      "main": [
+        [
+          {
+            "node": "Удаляем строку по полученному номеру строки1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "InData",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "InData": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Удаляем строку по полученному номеру строки1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Выбирает треки у которых дата добавления раньше 3х месяцев",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data": {
+      "main": [
+        [
+          {
+            "node": "Обновляем формулы в исх табл3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-03T07:03:07.323Z",
+  "id": "ChuqUXTlT8elzHNI",
+  "isArchived": false,
+  "meta": null,
+  "name": "Проверка старых треков в таблице(диип)",
+  "nodes": [
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "c055762a-8fe7-4141-a639-df2372f30060",
+      "typeVersion": 1.1,
+      "name": "When Executed by Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -20,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        500,
+        420
+      ],
+      "id": "d1948c30-2522-47ed-b43a-0a2e51bddc70",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Dw91KSbPhrbIymMx",
+          "name": "n8n.by1@gmail.com"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "87c99bba-5f99-41a0-933d-17e6962ab170",
+              "leftValue": "={{ '20'.concat( $json['Дата добавления'].split(' ')[0].split('.')[2] ).concat('-').concat( $json['Дата добавления'].split(' ')[0].split('.')[1].concat('-').concat($json['Дата добавления'].split(' ')[0].split('.')[0])).toDateTime() }}",
+              "rightValue": "={{ $today.minus(3, 'month') }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        420
+      ],
+      "id": "8c70736f-51d0-478c-ac67-40d2c846d366",
+      "name": "Выбирает треки у которых дата добавления раньше 3х месяцев"
+    },
+    {
+      "parameters": {
+        "maxItems": 200
+      },
+      "id": "9673198f-3428-459b-995e-f027c8eba4fd",
+      "name": "По чётным 1е 200",
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        400
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $json.Link }}",
+          "mode": "url"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "={{ $json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2180,
+        420
+      ],
+      "id": "78114d03-6799-4963-8957-e8a95637ad30",
+      "name": "Обновляем формулы в исх табл3",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "credentials": {
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return (\n  [\n  {\n    \"IdTables\": \"ForIra001\",\n    \"ID\": \"ForIra\",\n    \"Link\": \"https://docs.google.com/spreadsheets/d/16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s/edit?gid=208083408#gid=208083408\",\n    \"NeedCheck\": 1,\n    \"TableTipe\": \"AT\"\n  }\n]\n);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        340
+      ],
+      "id": "28424603-90be-4dd9-8643-ae078283e05b",
+      "name": "Code",
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        320,
+        600
+      ],
+      "id": "e22334ec-85cf-49b4-965f-afaa54b3b02e",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {},
+      "id": "b5942df6-0160-4ef7-965d-57583acdc8aa",
+      "name": "InData",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        500,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1620,
+        400
+      ],
+      "id": "5896dd62-c982-41f7-8740-6e4d421254c4",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        2560,
+        700
+      ],
+      "id": "87136953-8bac-4f45-9842-d73f8899cbf4"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Data').item.json.Link }}",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Data').item.json.Link }}",
+          "mode": "url"
+        },
+        "startIndex": "={{ $json.row_number }}"
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2620,
+        420
+      ],
+      "id": "c2303060-fd4c-4468-8d85-9ac2f2431810",
+      "name": "Удаляем строку по полученному номеру строки1",
+      "retryOnFail": true,
+      "credentials": {
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        1580,
+        160
+      ],
+      "id": "5bbe11f8-f4ef-42ff-b2e7-e6d7e3a19674",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1a41f44-a1b0-44a0-9e64-68fa0e683904",
+              "name": "row_number",
+              "value": "={{ $json.row_number }}",
+              "type": "number"
+            },
+            {
+              "id": "826cde30-6d9c-47b1-9829-a392797fd6ea",
+              "name": "трек",
+              "value": "={{ $json['трек'] }}",
+              "type": "string"
+            },
+            {
+              "id": "9d566d3f-3383-4a31-a547-0bc149737126",
+              "name": "Дата добавления",
+              "value": "={{ $json['Дата добавления'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        420
+      ],
+      "id": "bee22a4f-1088-46a8-83b6-1b9eec0676f2",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        420
+      ],
+      "id": "2e1b3522-1dd3-4747-879c-11b36d2e90ea",
+      "name": "Data"
+    },
+    {
+      "parameters": {
+        "amount": 25
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2220,
+        660
+      ],
+      "id": "eac92d9e-b0fa-4145-83c2-6ef8f13718e0",
+      "name": "Wait",
+      "webhookId": "c96bf7bd-63e1-475f-9e57-00990723f768"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-03T07:56:00.000Z",
+  "versionId": "21c658bf-10be-45ce-bbcc-3c5a0f5c0bc8"
+}
