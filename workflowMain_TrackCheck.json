@@ -1693,9 +1693,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        260,
-        100
-      ]
+        -120,
+        660
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3875,7 +3876,8 @@
       "position": [
         -1820,
         2700
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3960,7 +3962,8 @@
       "position": [
         -360,
         2740
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -4045,7 +4048,8 @@
       "position": [
         1260,
         2740
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -4496,7 +4500,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 25,
-  "updatedAt": "2025-07-08T09:48:17.000Z",
-  "versionId": "40265673-9dc4-4fca-9e11-938b8ed63e07"
+  "triggerCount": 21,
+  "updatedAt": "2025-08-10T08:42:19.000Z",
+  "versionId": "ca76a4c6-a7e3-450e-8f3a-c7773972fe0a"
 }
