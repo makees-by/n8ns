@@ -430,6 +430,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "ZsNatNik4",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -1212,6 +1219,105 @@
           }
         ]
       ]
+    },
+    "ZsNatNik1": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat4": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ForNat2": {
+      "main": [
+        [
+          {
+            "node": "Отправка запроса на сбор треков в одну таблицу28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsNatNik4": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ZsNatNik5": {
+      "main": [
+        [
+          {
+            "node": "ZsNatNik4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields7": {
+      "main": [
+        [
+          {
+            "node": "in",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "21:00 ZsNatNik": {
+      "main": [
+        [
+          {
+            "node": "ZsNatNik1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "15:20 ZsNatNik2": {
+      "main": [
+        [
+          {
+            "node": "ForNat4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "13:00 ZsNatNik3": {
+      "main": [
+        [
+          {
+            "node": "ForNat2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2023-11-29T08:22:07.757Z",
@@ -1730,8 +1836,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        440,
-        480
+        280,
+        280
       ],
       "disabled": true
     },
@@ -2147,6 +2253,31 @@
               },
               "renameOutput": true,
               "outputKey": "ZsForVikux"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "04de09af-89fe-4170-9f87-a774f2b89475",
+                    "leftValue": "",
+                    "rightValue": "ZsNatNik",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ZsNatNik"
             }
           ]
         },
@@ -3108,13 +3239,13 @@
             {
               "id": "f88bd06e-de99-46fb-94aa-f5dbd9f14af3",
               "name": "processID",
-              "value": "ForNat",
+              "value": "ZsNatNik",
               "type": "string"
             },
             {
               "id": "be53966a-3cb4-4262-abca-d989088172ca",
               "name": "start_tableID",
-              "value": "1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As",
+              "value": "1c35aYzLHTn1b8RB9Oz0L8DJMGiw0vxJDf29-CrAQ7BU",
               "type": "string"
             },
             {
@@ -3126,7 +3257,7 @@
             {
               "id": "a185434b-c597-462e-bda6-3b61a231fe05",
               "name": "all_tableID",
-              "value": "1AN7FDBnws_3WXzBEwkcGiU9ag2_55VuBUIW-QzxR3As",
+              "value": "1c35aYzLHTn1b8RB9Oz0L8DJMGiw0vxJDf29-CrAQ7BU",
               "type": "string"
             },
             {
@@ -4255,6 +4386,268 @@
         1260,
         3000
       ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "cVC6t8mW8i9zazSD",
+          "mode": "list",
+          "cachedResultName": "Сбор треков в одну таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -1200,
+        3200
+      ],
+      "id": "dd88f9e9-a4ed-4f9e-a784-6036aa3335e3",
+      "name": "Отправка запроса на сбор треков в одну таблицу26"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsNatNik"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "78395b47-0d40-442b-8363-949712010cc5",
+      "name": "ZsNatNik1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -1420,
+        3200
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "yzGni57zMlaAsGzq",
+          "mode": "list",
+          "cachedResultName": "Перенос доставленых в отдельную таблицу(для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        260,
+        3240
+      ],
+      "id": "b0c96174-076f-426f-9341-ef28b2efd9c8",
+      "name": "Отправка запроса на сбор треков в одну таблицу27"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsNatNik"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "f734b77a-e5e0-49c2-9493-eb7225d4619a",
+      "name": "ForNat4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        40,
+        3240
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "7fnXycgDiNJ7YWwO",
+          "mode": "list",
+          "cachedResultName": "Перенос ВрОтпр в отдельную таблицу (для всех)"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1860,
+        3220
+      ],
+      "id": "d1f0816e-0de6-487c-acfe-6d7d57b8fd05",
+      "name": "Отправка запроса на сбор треков в одну таблицу28"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsNatNik"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "77eb304d-40fe-4a25-a9ff-7837de35686e",
+      "name": "ForNat2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1640,
+        3220
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ProcessID",
+              "stringValue": "ZsNatNik"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0002ffc4-33d4-440d-8854-2c234b858d77",
+      "name": "Edit Fields7",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        800,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "opWrite",
+        "sourceType": "sourceTypeJson",
+        "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsNatNik\",\n          \"start_tableID\": \"1c35aYzLHTn1b8RB9Oz0L8DJMGiw0vxJDf29-CrAQ7BU\",\n          \"start_pageID\": 690413794,\n           \"allTables_pageID\" : 599440154,\n          \"allTraks_pageID\" : 1029941645,\n          \"allTraksDone_pageID\" : 714703313,\n          \"allTraksVO_pageID\" : 1692704494,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
+        "filePath": "=root/n8n/ZsForVikux.json"
+      },
+      "id": "29472a7f-2951-4eff-acb8-e88464e072f7",
+      "name": "ZsNatNik4",
+      "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 2,
+              "triggerAtMinute": 2
+            }
+          ]
+        }
+      },
+      "id": "ffd3b81b-0b15-4403-ba8d-867b21129745",
+      "name": "ZsNatNik5",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 21
+            }
+          ]
+        }
+      },
+      "id": "4c37950f-7588-4131-aa33-655d405ff85c",
+      "name": "21:00 ZsNatNik",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1800,
+        3200
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 15,
+              "triggerAtMinute": 20
+            }
+          ]
+        }
+      },
+      "id": "01ddbcc0-763c-4844-9e67-469adef63a9a",
+      "name": "15:20 ZsNatNik2",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -360,
+        3240
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 13
+            }
+          ]
+        }
+      },
+      "id": "d29d1aec-90bf-4f38-8dfd-9ba187138561",
+      "name": "13:00 ZsNatNik3",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        1260,
+        3220
+      ]
     }
   ],
   "pinData": {},
@@ -4484,6 +4877,30 @@
     },
     "node:09.00 ForNat": {
       "recurrenceRules": []
+    },
+    "node:ZsNatNik": {
+      "recurrenceRules": []
+    },
+    "node:ZsNatNik2": {
+      "recurrenceRules": []
+    },
+    "node:ZsNatNik3": {
+      "recurrenceRules": []
+    },
+    "node:ZsForVikux9": {
+      "recurrenceRules": []
+    },
+    "node:ZsNatNik5": {
+      "recurrenceRules": []
+    },
+    "node:21:00 ZsNatNik": {
+      "recurrenceRules": []
+    },
+    "node:15:20 ZsNatNik2": {
+      "recurrenceRules": []
+    },
+    "node:13:00 ZsNatNik3": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -4500,7 +4917,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 21,
-  "updatedAt": "2025-08-10T08:42:19.000Z",
-  "versionId": "ca76a4c6-a7e3-450e-8f3a-c7773972fe0a"
+  "triggerCount": 25,
+  "updatedAt": "2025-08-12T08:23:08.000Z",
+  "versionId": "a65c50db-5585-43a5-851b-aa2e84132256"
 }
