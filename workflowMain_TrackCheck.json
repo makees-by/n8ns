@@ -2265,7 +2265,7 @@
                 "conditions": [
                   {
                     "id": "04de09af-89fe-4170-9f87-a774f2b89475",
-                    "leftValue": "",
+                    "leftValue": "={{ $json.query.ProcessID }}",
                     "rightValue": "ZsNatNik",
                     "operator": {
                       "type": "string",
@@ -4560,7 +4560,7 @@
         "operation": "opWrite",
         "sourceType": "sourceTypeJson",
         "sourceData": "={\n     \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsNatNik\",\n          \"start_tableID\": \"1c35aYzLHTn1b8RB9Oz0L8DJMGiw0vxJDf29-CrAQ7BU\",\n          \"start_pageID\": 690413794,\n           \"allTables_pageID\" : 599440154,\n          \"allTraks_pageID\" : 1029941645,\n          \"allTraksDone_pageID\" : 714703313,\n          \"allTraksVO_pageID\" : 1692704494,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {\n            \n          }\n        ],\n        \"EP_traks\": [\n          {\n\n          }\n        ]\n      }\n}",
-        "filePath": "=root/n8n/ZsForVikux.json"
+        "filePath": "=root/n8n/ZsNatNik.json"
       },
       "id": "29472a7f-2951-4eff-acb8-e88464e072f7",
       "name": "ZsNatNik4",
@@ -4918,6 +4918,6 @@
     }
   ],
   "triggerCount": 25,
-  "updatedAt": "2025-08-12T08:23:08.000Z",
-  "versionId": "a65c50db-5585-43a5-851b-aa2e84132256"
+  "updatedAt": "2025-08-14T11:42:57.000Z",
+  "versionId": "d626b84c-ae10-4f42-abeb-aff8ef9ab62d"
 }
