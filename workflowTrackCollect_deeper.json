@@ -2543,6 +2543,15 @@
     "callerPolicy": "workflowsFromSameOwner",
     "errorWorkflow": "k3cmqrd2rdjhkgrK"
   },
+  "shared": [
+    {
+      "createdAt": "2024-02-01T08:49:02.308Z",
+      "updatedAt": "2024-02-01T08:49:02.308Z",
+      "role": "workflow:owner",
+      "workflowId": "AH0rdp23A5bNlc6a",
+      "projectId": "NQcsor1lU8xEGtVE"
+    }
+  ],
   "staticData": null,
   "tags": [
     {
