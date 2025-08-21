@@ -1710,6 +1710,15 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-03-25T15:25:25.375Z",
+      "updatedAt": "2025-03-25T15:25:25.375Z",
+      "role": "workflow:owner",
+      "workflowId": "1TkLyMZuimgvz70e",
+      "projectId": "NQcsor1lU8xEGtVE"
+    }
+  ],
   "staticData": null,
   "tags": [
     {
