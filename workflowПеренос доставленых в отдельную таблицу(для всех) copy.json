@@ -2213,6 +2213,15 @@
   "settings": {
     "executionOrder": "v1"
   },
+  "shared": [
+    {
+      "createdAt": "2025-03-25T14:19:30.309Z",
+      "updatedAt": "2025-03-25T14:19:30.309Z",
+      "role": "workflow:owner",
+      "workflowId": "3ZdYqt72kKbOq5nO",
+      "projectId": "NQcsor1lU8xEGtVE"
+    }
+  ],
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
