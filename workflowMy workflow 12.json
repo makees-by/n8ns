@@ -32,7 +32,7 @@
     },
     {
       "parameters": {
-        "command": "esho \"test\"\n"
+        "command": "pwd\n"
       },
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
@@ -60,6 +60,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-08-27T11:26:31.951Z",
-  "versionId": "bd6c1272-9c89-405f-a912-b27a859ff6ab"
+  "updatedAt": "2025-08-27T16:17:39.000Z",
+  "versionId": "6505dd8c-c894-44bb-b652-f895485569b1"
 }
