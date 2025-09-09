@@ -195,8 +195,8 @@
       "name": "When Executed by Another Workflow",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "position": [
-        -20,
-        340
+        -16,
+        352
       ]
     },
     {
@@ -216,8 +216,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        500,
-        420
+        512,
+        432
       ],
       "id": "d1948c30-2522-47ed-b43a-0a2e51bddc70",
       "name": "Get row(s) in sheet1",
@@ -255,8 +255,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1100,
-        420
+        1104,
+        432
       ],
       "id": "8c70736f-51d0-478c-ac67-40d2c846d366",
       "name": "Выбирает треки у которых дата добавления раньше 3х месяцев"
@@ -302,8 +302,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2180,
-        420
+        2192,
+        432
       ],
       "id": "78114d03-6799-4963-8957-e8a95637ad30",
       "name": "Обновляем формулы в исх табл3",
@@ -323,8 +323,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        260,
-        340
+        272,
+        352
       ],
       "id": "28424603-90be-4dd9-8643-ae078283e05b",
       "name": "Code",
@@ -336,7 +336,7 @@
       "typeVersion": 1,
       "position": [
         320,
-        600
+        608
       ],
       "id": "e22334ec-85cf-49b4-965f-afaa54b3b02e",
       "name": "When clicking ‘Execute workflow’"
@@ -347,8 +347,8 @@
       "name": "InData",
       "type": "n8n-nodes-base.noOp",
       "position": [
-        500,
-        140
+        512,
+        144
       ]
     },
     {
@@ -358,7 +358,7 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        1620,
+        1632,
         400
       ],
       "id": "5896dd62-c982-41f7-8740-6e4d421254c4",
@@ -371,7 +371,7 @@
       "typeVersion": 1,
       "position": [
         2560,
-        700
+        704
       ],
       "id": "87136953-8bac-4f45-9842-d73f8899cbf4"
     },
@@ -394,8 +394,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        2620,
-        420
+        2624,
+        432
       ],
       "id": "c2303060-fd4c-4468-8d85-9ac2f2431810",
       "name": "Удаляем строку по полученному номеру строки1",
@@ -417,7 +417,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        1580,
+        1584,
         160
       ],
       "id": "5bbe11f8-f4ef-42ff-b2e7-e6d7e3a19674",
@@ -452,8 +452,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        780,
-        420
+        784,
+        432
       ],
       "id": "bee22a4f-1088-46a8-83b6-1b9eec0676f2",
       "name": "Edit Fields"
@@ -463,8 +463,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1900,
-        420
+        1904,
+        432
       ],
       "id": "2e1b3522-1dd3-4747-879c-11b36d2e90ea",
       "name": "Data"
@@ -476,8 +476,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        2220,
-        660
+        2224,
+        672
       ],
       "id": "eac92d9e-b0fa-4145-83c2-6ef8f13718e0",
       "name": "Wait",
@@ -500,6 +500,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-08-03T07:56:00.000Z",
-  "versionId": "21c658bf-10be-45ce-bbcc-3c5a0f5c0bc8"
+  "updatedAt": "2025-09-09T06:42:09.000Z",
+  "versionId": "56ee61d2-852f-4907-9ef1-18cf5418e5f8"
 }
