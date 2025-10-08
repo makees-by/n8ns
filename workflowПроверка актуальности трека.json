@@ -379,7 +379,7 @@
         ],
         [
           {
-            "node": "Обновляем формулы в исх табл3",
+            "node": "Получаем строку с искомым треком",
             "type": "main",
             "index": 0
           }
@@ -420,22 +420,6 @@
         [
           {
             "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Обновляем формулы в исх табл3": {
-      "main": [
-        [
-          {
-            "node": "Google Docs1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Удаляем строку по полученному номеру строки1",
             "type": "main",
             "index": 0
           }
@@ -651,6 +635,22 @@
           }
         ]
       ]
+    },
+    "Получаем строку с искомым треком": {
+      "main": [
+        [
+          {
+            "node": "Google Docs1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Удаляем строку по полученному номеру строки1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2025-04-02T15:04:23.920Z",
@@ -670,7 +670,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -1680,
-        20
+        32
       ],
       "typeVersion": 1,
       "id": "85dca325-5521-4aa6-86d8-8429b85f22b9",
@@ -682,7 +682,7 @@
       "typeVersion": 1,
       "position": [
         -1920,
-        1380
+        1392
       ],
       "id": "b10c4653-56da-476c-8504-11a81e232334",
       "name": "When clicking ‘Test workflow’"
@@ -697,7 +697,7 @@
       "typeVersion": 3,
       "position": [
         0,
-        340
+        352
       ],
       "id": "f2096b9f-5906-4307-b541-86fa0afd784b",
       "name": "Loop Over Items"
@@ -708,7 +708,7 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        -40,
+        -48,
         0
       ],
       "id": "460bb52d-5bc4-4719-8ace-0c67b2db4a05"
@@ -721,7 +721,7 @@
       "typeVersion": 1.1,
       "position": [
         1520,
-        660
+        672
       ],
       "id": "d2d968ea-ed77-472e-b6a0-c41d72b05a65",
       "name": "Wait1",
@@ -744,8 +744,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -780,
-        360
+        -784,
+        368
       ],
       "id": "4612f268-6c5f-4054-a80b-d5b7006f4eeb",
       "name": "Получаем треки с отметкой доставлено",
@@ -781,8 +781,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        500,
-        360
+        512,
+        368
       ],
       "id": "db1f65fa-d951-4f82-833e-d80cf0233d16",
       "name": "Получаем данные из таблицы все треки по треку",
@@ -812,8 +812,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1260,
-        540
+        1264,
+        544
       ],
       "id": "31228d5f-a816-4808-ae0e-55af10dabde8",
       "name": "Удаляем строку по полученному номеру строки",
@@ -831,8 +831,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1400,
-        360
+        -1408,
+        368
       ],
       "id": "55680d71-1192-49fb-90ba-274a09646289",
       "name": "Code"
@@ -847,8 +847,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1220,
-        360
+        -1216,
+        368
       ]
     },
     {
@@ -856,8 +856,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -1000,
-        360
+        -1008,
+        368
       ],
       "id": "cfc6d27c-8a9a-44bf-a4be-0c91292e06f8",
       "name": "Датос"
@@ -867,8 +867,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        260,
-        360
+        272,
+        368
       ],
       "id": "3c6556ab-a9f4-4c14-b380-5eb7f119369e",
       "name": "ДатосЦикл"
@@ -880,8 +880,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -260,
-        340
+        -256,
+        352
       ],
       "id": "43e8ae89-88c9-49c9-891a-597c9115b761",
       "name": "Limit"
@@ -893,8 +893,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1340,
-        580
+        -1344,
+        592
       ],
       "id": "9627cb9d-c376-490b-ba85-c139d89b6a55",
       "name": "Code1",
@@ -928,8 +928,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        740,
-        360
+        752,
+        368
       ],
       "id": "0e3f49fd-90c9-4d37-9e31-57d4c2dec2dd",
       "name": "If"
@@ -1116,8 +1116,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        940,
-        140
+        944,
+        144
       ],
       "id": "05745a42-e440-486e-85c3-d58b62e5340d",
       "name": "Обновляем формулы в исх табл",
@@ -1251,8 +1251,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1180,
-        140
+        1184,
+        144
       ],
       "id": "dc5e2a35-2b80-4579-9607-9e9025357495",
       "name": "выставляем пров акт в табл со всеми треками",
@@ -1269,8 +1269,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1500,
-        340
+        1504,
+        352
       ],
       "id": "5782d9f5-15d2-491d-ad4c-5d946d0e9d72",
       "name": "конец акт работы цикла"
@@ -1300,8 +1300,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        940,
-        540
+        944,
+        544
       ],
       "id": "094d744e-d74e-4098-90c1-a533146188f4",
       "name": "Обновляем формулы в исх табл1",
@@ -1329,8 +1329,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1020,
-        360
+        1024,
+        368
       ],
       "id": "e4c4340f-3009-4711-8d84-26afe813ad6a",
       "name": "Google Docs",
@@ -1350,7 +1350,7 @@
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         80,
-        660
+        672
       ],
       "typeVersion": 1,
       "id": "b4c623f7-77e2-41a3-80c2-71d7c3cbb6e2",
@@ -1384,8 +1384,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1220,
-        360
+        1232,
+        368
       ],
       "id": "073feb1b-e695-48c4-81ff-18e4e2ab815e",
       "name": "If1"
@@ -1419,7 +1419,7 @@
       "typeVersion": 2.2,
       "position": [
         -560,
-        360
+        368
       ],
       "id": "1b0ab315-a3ad-4dae-9fdf-0a11b4d4986e",
       "name": "If2"
@@ -1445,8 +1445,8 @@
       "name": "Replace Me1",
       "typeVersion": 1,
       "position": [
-        -40,
-        1020
+        -48,
+        1024
       ],
       "id": "6e9ab6c9-c78b-4b4d-951b-21c078e38bbb",
       "executeOnce": true
@@ -1458,7 +1458,7 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        1960,
+        1968,
         1680
       ],
       "id": "47ab8a0f-de59-4f0a-8d2b-86dd19e00103",
@@ -1483,8 +1483,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        -780,
-        1380
+        -784,
+        1392
       ],
       "id": "4c6c42d1-499c-44dd-b461-20882902e642",
       "name": "Получаем треки с отметкой доставлено1",
@@ -1514,8 +1514,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1700,
-        1560
+        1712,
+        1568
       ],
       "id": "033d7861-cf8c-4972-b3c1-12f3fa8ec44c",
       "name": "Удаляем строку по полученному номеру строки1",
@@ -1530,13 +1530,13 @@
     },
     {
       "parameters": {
-        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"ZsForVika12\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"ZsForVika12\"\n  }\n]\n);"
+        "jsCode": "return (\n  [\n  {\n    \"data\": {\n      \"process\": {\n        \"variebles\": {\n          \"processID\": \"ForNat\",\n          \"start_tableID\": \"16oHTECcQN5z7xQ-3zBZCfgFNOM5MX0N7bE3S3QeiX1s\",\n          \"start_pageID\": 343946080,\n          \"allTables_pageID\": 645009985,\n          \"allTraks_pageID\": 208083408,\n          \"allTraksDone_pageID\": 1070462072,\n          \"url_become\": \"https://n8ns.makees.site/webhook-waiting/1279\"\n        },\n        \"workProcess\": {\n          \"iteration\": 0,\n          \"TrackCollect\": \"no\",\n          \"BP_check\": \"no\",\n          \"EP_check\": \"no\",\n          \"CheckProcess\": \"no\"\n        },\n        \"tg_chats\": {\n          \"chat_id\": 12345,\n          \"chat_id2\": 254321\n        },\n        \"trigers\": {\n          \"TrigerNT\": 0,\n          \"TrigerBP\": 0,\n          \"TrigerEP\": 0\n        }\n      },\n      \"checkProcess\": {\n        \"Iteration\": 0,\n        \"Traks\": {}\n      },\n      \"traks\": {\n        \"BP_traks\": [\n          {}\n        ],\n        \"EP_traks\": [\n          {}\n        ]\n      }\n    },\n    \"ProcessID\": \"ZsForVika12\"\n  }\n]\n);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1400,
-        1380
+        -1408,
+        1392
       ],
       "id": "4c27cf65-6e1e-425a-9077-5f017ce5b8ac",
       "name": "Code2"
@@ -1547,7 +1547,7 @@
       "typeVersion": 1,
       "position": [
         -1040,
-        1380
+        1392
       ],
       "id": "3ea64e11-dea2-49f0-beb4-5e37283cf9f0",
       "name": "Датос1"
@@ -1557,8 +1557,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        200,
-        1380
+        208,
+        1392
       ],
       "id": "492295b9-23b2-4fba-ad5d-264e54d1ccc6",
       "name": "ДатосЦикл1"
@@ -1570,7 +1570,7 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        -260,
+        -256,
         1360
       ],
       "id": "f00cc2b0-c19a-4008-a283-9efe1ae019d0",
@@ -1583,7 +1583,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1340,
+        -1344,
         1600
       ],
       "id": "adcea509-ea85-4cd5-92cd-706464eddb93",
@@ -1618,8 +1618,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1180,
-        1380
+        1184,
+        1392
       ],
       "id": "a43b1e5b-23be-4d0d-a99a-e7278ee39ae8",
       "name": "If3"
@@ -1807,8 +1807,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1420,
-        1160
+        1424,
+        1168
       ],
       "id": "40f6b747-66cb-45bb-9a6f-46c65cc9fec6",
       "name": "Обновляем формулы в исх табл2",
@@ -1945,8 +1945,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.5,
       "position": [
-        1640,
-        1140
+        1648,
+        1152
       ],
       "id": "353b6ab3-e537-437b-a051-71a8347f11f9",
       "name": "выставляем пров акт в табл со всеми треками1",
@@ -1966,51 +1966,11 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1940,
+        1952,
         1360
       ],
       "id": "fcb929a5-6055-4a7e-985d-d3db8b101e0d",
       "name": "конец акт работы цикла1"
-    },
-    {
-      "parameters": {
-        "authentication": "serviceAccount",
-        "documentId": {
-          "__rl": true,
-          "value": "={{ $('Данные для гугл таблиц').first().json.Id_check_tabl }}",
-          "mode": "id"
-        },
-        "sheetName": {
-          "__rl": true,
-          "value": "={{ $('Данные для гугл таблиц').first().json.ID_check_page }}",
-          "mode": "id"
-        },
-        "filtersUI": {
-          "values": [
-            {
-              "lookupColumn": "трек",
-              "lookupValue": "={{ $('ДатосЦикл1').first().json['трек'] }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.5,
-      "position": [
-        1380,
-        1560
-      ],
-      "id": "c5489baf-2833-4cfb-8652-5ce296c8e764",
-      "name": "Обновляем формулы в исх табл3",
-      "alwaysOutputData": true,
-      "retryOnFail": true,
-      "credentials": {
-        "googleApi": {
-          "id": "1FsCDh5Ew3uwW4D1",
-          "name": "Google Sheets account 3"
-        }
-      }
     },
     {
       "parameters": {
@@ -2029,8 +1989,8 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        1460,
-        1380
+        1472,
+        1392
       ],
       "id": "75fc06d1-c604-4258-a1b0-1328d0c61c8b",
       "name": "Google Docs1",
@@ -2050,7 +2010,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -40,
+        -48,
         1680
       ],
       "typeVersion": 1,
@@ -2085,8 +2045,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1660,
-        1380
+        1664,
+        1392
       ],
       "id": "9c8c4bd5-2842-4eb6-8c24-4d0c61788e77",
       "name": "If4"
@@ -2120,7 +2080,7 @@
       "typeVersion": 2.2,
       "position": [
         -560,
-        1380
+        1392
       ],
       "id": "4b32c489-2db4-423b-95c8-5dee5091f351",
       "name": "If5"
@@ -2151,7 +2111,7 @@
       "typeVersion": 2.4,
       "position": [
         -1200,
-        1380
+        1392
       ],
       "credentials": {
         "mySql": {
@@ -2166,8 +2126,8 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -660,
-        1020
+        -656,
+        1024
       ],
       "typeVersion": 1,
       "id": "311ca834-f990-48f6-9449-f87d6ac91a66",
@@ -2202,8 +2162,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        660,
-        1180
+        672,
+        1184
       ],
       "id": "d56664f6-fc38-4875-a8d4-7dfb7af34a9a",
       "name": "Данные для гугл таблиц"
@@ -2236,8 +2196,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1140,
-        1180
+        1152,
+        1184
       ],
       "id": "dfe7b0e9-e1a4-4566-a57a-fe57a120bd90",
       "name": "If6"
@@ -2269,7 +2229,7 @@
       "typeVersion": 4.5,
       "position": [
         880,
-        1400
+        1408
       ],
       "id": "7c7cb95a-9adc-426b-85a9-8b0b9cbf4b42",
       "name": "Получаем данные из таблицы все треки по треку1",
@@ -2291,7 +2251,7 @@
       "typeVersion": 1.1,
       "position": [
         640,
-        1380
+        1392
       ],
       "id": "59b7d28f-05a8-48f4-90d3-ac9756032817",
       "name": "Wait2",
@@ -2318,8 +2278,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        940,
-        1000
+        944,
+        1008
       ],
       "id": "330ea4fc-1052-426e-8b54-8d2b793a285f",
       "name": "Execute Workflow"
@@ -2332,8 +2292,8 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        180,
-        1020
+        192,
+        1024
       ],
       "id": "2d6a15a5-030e-400f-8077-8171ce3359d1",
       "name": "Wait3",
@@ -2346,8 +2306,8 @@
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "typeVersion": 1.1,
       "position": [
-        -1640,
-        1580
+        -1648,
+        1584
       ],
       "id": "b6a70b61-145e-42ec-bf83-fb48fcb1aeb2",
       "name": "When Executed by Another Workflow"
@@ -2357,8 +2317,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1240,
-        1000
+        1248,
+        1008
       ],
       "id": "d7eda153-7ced-4b27-9a19-7b31d24a0bdc",
       "name": "No Operation, do nothing"
@@ -2373,8 +2333,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        380,
-        1020
+        384,
+        1024
       ],
       "executeOnce": true
     },
@@ -2391,8 +2351,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1720,
-        1380
+        -1728,
+        1392
       ],
       "executeOnce": true
     },
@@ -2409,8 +2369,8 @@
       "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
       "typeVersion": 1,
       "position": [
-        -1160,
-        1160
+        -1168,
+        1168
       ],
       "executeOnce": true
     },
@@ -2457,7 +2417,7 @@
       "typeVersion": 2.2,
       "position": [
         640,
-        980
+        992
       ],
       "id": "e1f73ec8-fa8b-4850-ab88-85f07e01433f",
       "name": "If7"
@@ -2479,7 +2439,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -920,
+        -928,
         960
       ],
       "id": "d9b37ee0-6c5c-45cc-b5c5-a6ce24257831",
@@ -2513,11 +2473,51 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -840,
+        -848,
         1200
       ],
       "id": "9d8f4702-1b94-468f-b16a-ee655f5eb6f2",
       "name": "If8"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $('Данные для гугл таблиц').first().json.Id_check_tabl }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ $('Данные для гугл таблиц').first().json.ID_check_page }}",
+          "mode": "id"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "трек",
+              "lookupValue": "={{ $('ДатосЦикл1').first().json['трек'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1392,
+        1568
+      ],
+      "id": "c5489baf-2833-4cfb-8652-5ce296c8e764",
+      "name": "Получаем строку с искомым треком",
+      "alwaysOutputData": true,
+      "retryOnFail": true,
+      "credentials": {
+        "googleApi": {
+          "id": "1FsCDh5Ew3uwW4D1",
+          "name": "Google Sheets account 3"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -2537,6 +2537,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-07-02T09:47:50.000Z",
-  "versionId": "0f122110-8fc5-44ff-ba04-061f7f560ab4"
+  "updatedAt": "2025-10-08T05:33:11.000Z",
+  "versionId": "780a0615-dd5c-4323-9f61-94fe9124e3f4"
 }
