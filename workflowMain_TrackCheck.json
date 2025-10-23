@@ -1688,7 +1688,8 @@
       "position": [
         368,
         -16
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3599,7 +3600,8 @@
       "position": [
         -1536,
         2032
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3759,7 +3761,8 @@
       "position": [
         -336,
         2032
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -3779,7 +3782,8 @@
       "position": [
         944,
         2048
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -5317,7 +5321,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 17,
-  "updatedAt": "2025-10-01T16:12:48.000Z",
-  "versionId": "786ae19a-ddf9-402d-a373-2dd15df356e4"
+  "triggerCount": 13,
+  "updatedAt": "2025-10-22T14:46:07.000Z",
+  "versionId": "d72493cf-ef1a-427f-9183-9b0378a127d7"
 }
