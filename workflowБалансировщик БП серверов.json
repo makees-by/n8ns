@@ -1,5 +1,7 @@
 {
   "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
   "connections": {
     "MySQL": {
       "main": [
@@ -881,8 +883,8 @@
   },
   "shared": [
     {
-      "createdAt": "2025-01-24T08:19:27.800Z",
       "updatedAt": "2025-01-24T08:19:27.800Z",
+      "createdAt": "2025-01-24T08:19:27.800Z",
       "role": "workflow:owner",
       "workflowId": "IO7u4qYcGZJ3Q3LR",
       "projectId": "NQcsor1lU8xEGtVE"
