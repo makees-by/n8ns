@@ -1,5 +1,7 @@
 {
   "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
   "connections": {
     "Google Sheets23": {
       "main": [
@@ -1195,8 +1197,8 @@
   },
   "shared": [
     {
-      "createdAt": "2025-02-28T08:52:24.009Z",
       "updatedAt": "2025-02-28T08:52:24.009Z",
+      "createdAt": "2025-02-28T08:52:24.009Z",
       "role": "workflow:owner",
       "workflowId": "EXGqCFtpn87dq5w8",
       "projectId": "NQcsor1lU8xEGtVE"
