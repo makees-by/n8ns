@@ -1,5 +1,7 @@
 {
   "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
   "connections": {
     "When clicking ‘Test workflow’": {
       "main": [
@@ -562,8 +564,8 @@
   },
   "shared": [
     {
-      "createdAt": "2025-04-02T14:39:54.084Z",
       "updatedAt": "2025-04-02T14:39:54.084Z",
+      "createdAt": "2025-04-02T14:39:54.084Z",
       "role": "workflow:owner",
       "workflowId": "7fnXycgDiNJ7YWwO",
       "projectId": "NQcsor1lU8xEGtVE"
