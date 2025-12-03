@@ -1,5 +1,191 @@
 {
   "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-03T05:38:17.884Z",
+    "createdAt": "2025-12-03T05:38:17.884Z",
+    "versionId": "9abf223e-be79-4025-9dd5-cace172bc2ee",
+    "workflowId": "4WuOPJpelrDgCT4I",
+    "nodes": [
+      {
+        "parameters": {
+          "respondWith": "redirect",
+          "redirectURL": "https://tekushchiy-status-proverki-trekov.webflow.io",
+          "options": {}
+        },
+        "id": "1fd2a0c4-a84c-4b4a-b09c-1b12acf64fdc",
+        "name": "Respond to Webhook",
+        "type": "n8n-nodes-base.respondToWebhook",
+        "typeVersion": 1.1,
+        "position": [
+          -240,
+          60
+        ]
+      },
+      {
+        "parameters": {},
+        "id": "4d70c37e-b067-4e10-98bc-1778d4a049c5",
+        "name": "When clicking \"Test workflow\"",
+        "type": "n8n-nodes-base.manualTrigger",
+        "typeVersion": 1,
+        "position": [
+          -480,
+          300
+        ]
+      },
+      {
+        "parameters": {
+          "resource": "databasePage",
+          "operation": "update",
+          "pageId": {
+            "__rl": true,
+            "value": "https://www.notion.so/n8n8n-239d7743ed784cad87b047442da4b32a",
+            "mode": "url"
+          },
+          "simple": false,
+          "propertiesUi": {
+            "propertyValues": [
+              {
+                "key": "Tags|rich_text",
+                "textContent": "Таким образом, дальнейшее развитие различных форм деятельности обеспечивает актуальность дальнейших направлений развития проекта. Повседневная практика показывает, что социально-экономическое развитие представляет собой интересный эксперимент проверки модели развития! Не следует, однако, забывать о том, что сложившаяся структура организации обеспечивает широкому кругу специалистов участие в формировании системы масштабного изменения ряда параметров.  Не следует, однако, забывать о том, что повышение уровня гражданского сознания требует определения и уточнения соответствующих условий активизации.  Равным образом консультация с профессионалами из IT требует от нас анализа соответствующих условий активизации? Дорогие друзья, постоянное информационно-техническое обеспечение нашей деятельности представляет собой интересный эксперимент проверки модели развития. Значимость этих проблем настолько очевидна, что выбранный нами инновационный путь влечет за собой процесс внедрения и модернизации новых предложений.  Не следует, однако, забывать о том, что повышение уровня гражданского сознания представляет собой интересный эксперимент проверки модели развития. Повседневная практика показывает, что курс на социально-ориентированный национальный проект способствует повышению актуальности системы масштабного изменения ряда параметров. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности обеспечивает актуальность модели развития! Повседневная практика показывает, что социально-экономическое развитие в значительной степени обуславливает создание ключевых компонентов планируемого обновления. Не следует, однако, забывать о том, что сложившаяся структура организации требует от нас системного анализа новых предложений? Таким образом, рамки и место..."
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "f1a2417d-23b8-48be-a727-04a6badf0291",
+        "name": "Notion2",
+        "type": "n8n-nodes-base.notion",
+        "typeVersion": 2.2,
+        "position": [
+          200,
+          300
+        ],
+        "credentials": {
+          "notionApi": {
+            "id": "7SpLd7HTUj4VhGrA",
+            "name": "Notion account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "path": "Page_TC_INFO",
+          "responseMode": "responseNode",
+          "options": {}
+        },
+        "id": "6bb0d1b1-9e25-43c3-b31d-254129245af6",
+        "name": "Webhook",
+        "type": "n8n-nodes-base.webhook",
+        "typeVersion": 2,
+        "position": [
+          -460,
+          60
+        ],
+        "webhookId": "06c2bda5-29fc-41e6-a75f-69c6bbddb5e3"
+      },
+      {
+        "parameters": {
+          "operation": "getAll",
+          "siteId": "6638a76486f3c86d86a51725",
+          "collectionId": "6638e98b159da2f8a37b7b6f"
+        },
+        "id": "44a10c1c-c591-4375-99dc-bef8f835c51a",
+        "name": "Webflow",
+        "type": "n8n-nodes-base.webflow",
+        "typeVersion": 1,
+        "position": [
+          -260,
+          300
+        ],
+        "credentials": {
+          "webflowApi": {
+            "id": "Gvpix45WRLH2V0bl",
+            "name": "Webflow account 2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "update",
+          "siteId": "6638a76486f3c86d86a51725",
+          "collectionId": "6638e98b159da2f8a37b7b6f",
+          "itemId": "=6638eaae01c6208da578a45c",
+          "fieldsUi": {
+            "fieldValues": [
+              {
+                "fieldId": "text",
+                "fieldValue": "Татошка"
+              }
+            ]
+          }
+        },
+        "id": "9cf3e19d-f39c-4446-9a8a-b0a32c6ec7e3",
+        "name": "Webflow1",
+        "type": "n8n-nodes-base.webflow",
+        "typeVersion": 1,
+        "position": [
+          -40,
+          300
+        ],
+        "credentials": {
+          "webflowApi": {
+            "id": "Gvpix45WRLH2V0bl",
+            "name": "Webflow account 2"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "When clicking \"Test workflow\"": {
+        "main": [
+          [
+            {
+              "node": "Webflow",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Webhook": {
+        "main": [
+          [
+            {
+              "node": "Respond to Webhook",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Webflow": {
+        "main": [
+          [
+            {
+              "node": "Webflow1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Webflow1": {
+        "main": [
+          [
+            {
+              "node": "Notion2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "system migration",
+    "name": null,
+    "description": null
+  },
+  "activeVersionId": "9abf223e-be79-4025-9dd5-cace172bc2ee",
   "connections": {
     "When clicking \"Test workflow\"": {
       "main": [
@@ -189,8 +375,8 @@
   },
   "shared": [
     {
-      "createdAt": "2024-05-06T09:26:34.699Z",
       "updatedAt": "2024-05-06T09:26:34.699Z",
+      "createdAt": "2024-05-06T09:26:34.699Z",
       "role": "workflow:owner",
       "workflowId": "4WuOPJpelrDgCT4I",
       "projectId": "NQcsor1lU8xEGtVE"
