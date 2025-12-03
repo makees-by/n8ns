@@ -1,5 +1,3356 @@
 {
   "active": true,
+  "activeVersion": {
+    "updatedAt": "2025-12-03T05:38:17.884Z",
+    "createdAt": "2025-12-03T05:38:17.884Z",
+    "versionId": "da38a521-fd2b-472f-b5c7-6b34c74c4e51",
+    "workflowId": "2zHSSPewVJ2KmlXb",
+    "nodes": [
+      {
+        "parameters": {},
+        "id": "cd7176d3-cacb-4bc7-82db-e3d00cd606b8",
+        "name": "11",
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          -1520,
+          1280
+        ]
+      },
+      {
+        "parameters": {
+          "updates": [
+            "*"
+          ],
+          "additionalFields": {}
+        },
+        "id": "1cb26e22-5218-4a0c-814d-04c1015a1733",
+        "name": "Telegram Trigger1",
+        "type": "n8n-nodes-base.telegramTrigger",
+        "typeVersion": 1,
+        "position": [
+          -340,
+          1720
+        ],
+        "webhookId": "c30d2559-bcbd-4c3c-a200-3ff68372812f",
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "chat",
+          "operation": "leave",
+          "chatId": "={{ $json.my_chat_member.chat.id }}"
+        },
+        "id": "0abf6015-03b7-4a0c-ad02-33bfab771a1d",
+        "name": "Telegram1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          100,
+          1560
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{$json.hasOwnProperty(\"my_chat_member\")}}",
+                "value2": true
+              },
+              {
+                "value1": "={{$json[\"my_chat_member\"][\"new_chat_member\"][\"user\"][\"id\"]==5810332003}}",
+                "value2": true
+              },
+              {
+                "value1": "={{$json[\"my_chat_member\"][\"new_chat_member\"][\"status\"]==\"member\"}}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "53cd8d4f-d56a-49c8-bcf1-ea7ed297bf22",
+        "name": "IF1",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          -120,
+          1720
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{ $json.message.hasOwnProperty(\"text\") }}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "a2755cdb-5417-4b97-8a97-add9c351c12c",
+        "name": "есть ли свойство text1",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          600,
+          1840
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "string": [
+              {
+                "value1": "={{ $json.message.text }}",
+                "operation": "startsWith",
+                "value2": "/"
+              }
+            ]
+          }
+        },
+        "id": "0ab3e2c2-9e0f-4691-bde4-086eef2c155d",
+        "name": "начинается ли команда с символа /1",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          860,
+          1820
+        ]
+      },
+      {
+        "parameters": {
+          "dataType": "string",
+          "value1": "={{ $json.message.text }}",
+          "rules": {
+            "rules": [
+              {
+                "operation": "startsWith",
+                "value2": "/start"
+              },
+              {
+                "value2": "/faq",
+                "output": 1
+              }
+            ]
+          },
+          "fallbackOutput": 3
+        },
+        "id": "cd3315e3-8dfa-49ba-8dc0-63d983094596",
+        "name": "команды1",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 1,
+        "position": [
+          560,
+          1620
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}!</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Запустить процессы",
+                      "additionalFields": {
+                        "callback_data": "proc_start"
+                      }
+                    },
+                    {
+                      "text": "Возобновить процессы",
+                      "additionalFields": {
+                        "callback_data": "proc_restart"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Остановить процессы",
+                      "additionalFields": {
+                        "callback_data": "proc_stop"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "ce672bd0-9b56-40b1-be71-e401fd2c4de8",
+        "name": "Start1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          820,
+          1540
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.from.id }}",
+          "text": "=У Вас нет прав доступа к боту. Обратитесь к администратору.",
+          "additionalFields": {}
+        },
+        "id": "2dd6ce06-2f60-4626-8210-e0e976969c4f",
+        "name": "Telegram",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          680,
+          2900
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "errorMessage": "=Внимание!!! Несанкционированный доступ. Пользователь  {{ $json.result.chat.first_name }} {{ $json.result.chat.last_name }}, с username  {{ $json.result.chat.username }} иtg_id {{ $json.result.from.id }} хочет получить доступ к боту отправка посылок."
+        },
+        "id": "d68e55df-3623-4841-b1b3-033d525bd7f1",
+        "name": "Stop and Error",
+        "type": "n8n-nodes-base.stopAndError",
+        "typeVersion": 1,
+        "position": [
+          700,
+          3140
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=У Вас нет прав доступа к боту. Обратитесь к администратору.",
+          "additionalFields": {}
+        },
+        "id": "70d1d5ec-6f38-407f-9437-0daaab902244",
+        "name": "Telegram2",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          380,
+          3140
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "number": [
+              {
+                "value1": "={{ $json.callback_query.from.id }}",
+                "operation": "equal",
+                "value2": 899054246
+              },
+              {
+                "value1": "={{ $json.message.from.id }}",
+                "operation": "equal",
+                "value2": 899054246
+              },
+              {
+                "value1": "={{ $json.callback_query.from.id }}",
+                "operation": "equal",
+                "value2": 206784276
+              },
+              {
+                "value1": "={{ $json.message.from.id }}",
+                "operation": "equal",
+                "value2": 206784276
+              },
+              {
+                "value1": "={{ $json.message.from.id }}",
+                "operation": "equal",
+                "value2": 659078966
+              },
+              {
+                "value1": "={{ $json.callback_query.from.id }}",
+                "operation": "equal",
+                "value2": 659078966
+              },
+              {
+                "value1": "={{ $json.callback_query.from.id }}",
+                "operation": "equal",
+                "value2": 1353185953
+              },
+              {
+                "value1": "={{ $json.message.from.id }}",
+                "operation": "equal",
+                "value2": 1353185953
+              }
+            ]
+          },
+          "combineOperation": "any"
+        },
+        "id": "e7924d1e-d662-4b83-a950-6d20eb545788",
+        "name": "Проверка прав пользователя",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          640,
+          3500
+        ]
+      },
+      {
+        "parameters": {
+          "content": "## Работа с несанкионированными пользователями",
+          "height": 1016.7463276410781,
+          "width": 1281.5953119949734
+        },
+        "id": "0038c7f1-beda-4b66-a9a3-c55bb25ab227",
+        "name": "Sticky Note",
+        "type": "n8n-nodes-base.stickyNote",
+        "typeVersion": 1,
+        "position": [
+          -360,
+          2820
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "number": [
+              {
+                "value1": "={{ $json.message.from.id }}",
+                "operation": "isEmpty"
+              }
+            ]
+          }
+        },
+        "id": "9bba0206-1889-4924-ae9c-0b81571d4c2e",
+        "name": "Проверка на колбэкКвери",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          460,
+          2920
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{$json.hasOwnProperty(\"callback_query\")}}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "b3b099b8-2316-47d7-87fe-aa3aff8484f6",
+        "name": "если есть свойство callback_query(нажатие на кнопку)",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          580,
+          2260
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "6ce5ec61-edb8-45a1-9ad5-115330c56bf7",
+                "leftValue": "={{ $json.callback_query.data }}",
+                "rightValue": "proc",
+                "operator": {
+                  "type": "string",
+                  "operation": "contains"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "e6dff13b-ac4e-4acd-9d0d-10768cf365fd",
+        "name": "calbackQuery содержит proc",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          820,
+          2240
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "text": "=Запустить со сбросом предыдущего выполнения(заново)",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ForIra",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=ForIra"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ForAnn",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=ForAnn"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "zsForHel",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=zsForHel"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ZsTest",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=ZsTest"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "886dfd0f-ef71-464c-b948-6f467fab02a4",
+        "name": "Start",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          1080,
+          2300
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "text": "=Запустить с места остановки или ошибки",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ForIra",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=ForIra&reset=yes"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ForAnn",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=ForAnn&reset=yes"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "zsForHel",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=zsForHel&reset=yes"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ZsTest",
+                      "additionalFields": {
+                        "url": "https://n8n.makees.ru/webhook/pachatak?procID=ZsTest&reset=yes"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "c81665d0-44ee-4b13-8f75-adee7f79f6c7",
+        "name": "restart",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          1080,
+          2480
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "text": "=Остановить проверку",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ForIra",
+                      "additionalFields": {
+                        "callback_data": "proc_stop_ForIra",
+                        "url": "https://n8n.makees.ru/webhook/MgStop?procID=ForIra"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ForAnn",
+                      "additionalFields": {
+                        "callback_data": "proc_stop_ForAnn",
+                        "url": "https://n8n.makees.ru/webhook/MgStop?procID=ForAnn"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "zsForHel",
+                      "additionalFields": {
+                        "callback_data": "proc_stop_zsForHel",
+                        "url": "https://n8n.makees.ru/webhook/MgStop?procID=ForIra"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "ZsTest",
+                      "additionalFields": {
+                        "callback_data": "proc_stop_ZsTest",
+                        "url": "https://n8n.makees.ru/webhook/MgStop?procID=ZsTest"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "86b3566f-9ec7-48fe-9a73-05ea4e402537",
+        "name": "stop",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          1080,
+          2680
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "start",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "start"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "65f4a255-2c2f-4e06-9d9e-b2fc9a49aa20",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "restart",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "restart"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "c2db2763-f065-4da8-addb-3f09a3cdd9d0",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "stop",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "stop"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "cada9c64-f4e9-45fb-be63-00de9b35472c",
+        "name": "Switch2",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          820,
+          2460
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "sendChatAction",
+          "chatId": "={{ $json.callback_query.message.chat.id }}"
+        },
+        "id": "a36f6548-f19d-4332-a588-dfab0e4b9408",
+        "name": "отправляем действие в чат",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          820,
+          2060
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {},
+        "id": "d64d99c2-bd06-4381-8235-0df2f1751e5f",
+        "name": "ZsTest",
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          -1940,
+          1480
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "text": "=Действия с процессом.",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Останавить проверку",
+                      "additionalFields": {
+                        "callback_data": "go_proc_stop"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Возобновить проверку",
+                      "additionalFields": {
+                        "callback_data": "go_proc_restart"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Запустить проверку",
+                      "additionalFields": {
+                        "callback_data": "go_proc_start"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "0b478c2b-fa47-4c2d-87d9-8a76bb7925a8",
+        "name": "stop1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -940,
+          2100
+        ],
+        "disabled": true
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{ $json.message.hasOwnProperty(\"text\") }}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "7c5c7866-fde1-428b-841f-51f10d557636",
+        "name": "есть ли свойство text",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          -1340,
+          1600
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "string": [
+              {
+                "value1": "={{ $json.message.text }}",
+                "operation": "startsWith",
+                "value2": "/"
+              }
+            ]
+          }
+        },
+        "id": "5d7dbe28-5688-4267-84f4-778ee46ed671",
+        "name": "начинается ли команда с символа /",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          -1080,
+          1540
+        ]
+      },
+      {
+        "parameters": {
+          "dataType": "string",
+          "value1": "={{ $json.message.text }}",
+          "rules": {
+            "rules": [
+              {
+                "operation": "startsWith",
+                "value2": "/start"
+              },
+              {
+                "value2": "/registration",
+                "output": 1
+              },
+              {
+                "value2": "/menu",
+                "output": 2
+              },
+              {
+                "value2": "/help",
+                "output": 3
+              }
+            ]
+          },
+          "fallbackOutput": 3
+        },
+        "id": "e873cfee-3a11-4f8f-9ac2-a8f71e67c2f7",
+        "name": "команды",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 1,
+        "position": [
+          -1080,
+          1360
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{$json.hasOwnProperty(\"callback_query\")}}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "d220f6e1-5222-4809-bbec-7e4edadd667f",
+        "name": "если есть свойство callback_query(нажатие на кнопку)1",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          -1320,
+          1840
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "6ce5ec61-edb8-45a1-9ad5-115330c56bf7",
+                "leftValue": "={{ $json.callback_query.data }}",
+                "rightValue": "proc",
+                "operator": {
+                  "type": "string",
+                  "operation": "contains"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "4d24225a-9908-4bbd-840e-da042236ad2a",
+        "name": "calbackQuery содержит proc1",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          -1080,
+          1720
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "sendChatAction",
+          "chatId": "={{ $json.callback_query.message.chat.id }}"
+        },
+        "id": "d4520280-b8ca-4deb-85f8-a74a00d25ebf",
+        "name": "отправляем действие в чат1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -820,
+          1700
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "a77a8fbb-a5a6-4b06-8c93-bdc0570b1d62",
+                "leftValue": "={{ $json.message }}",
+                "rightValue": "",
+                "operator": {
+                  "type": "object",
+                  "operation": "notEmpty",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "2eddb78c-4341-4978-838f-dff878126361",
+        "name": "If",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          -440,
+          1980
+        ]
+      },
+      {
+        "parameters": {},
+        "id": "c6bca1a6-1c97-49e0-aae9-b011361e5ad1",
+        "name": "admin",
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          360,
+          1720
+        ]
+      },
+      {
+        "parameters": {},
+        "id": "00f0000d-53d2-4f05-ba04-532b12a4ad25",
+        "name": "ZsTest1",
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          320,
+          1900
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "f7c589d2-33f1-441a-943e-e0b35a55ab44",
+                "leftValue": false,
+                "rightValue": "",
+                "operator": {
+                  "type": "boolean",
+                  "operation": "true",
+                  "singleValue": true
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "676d9a82-f39f-4d1a-8b66-4113f9e2fe04",
+        "name": "If1",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          -1400,
+          1420
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "f614b925-d863-4663-a768-a3a4f688f496",
+                "leftValue": "={{ $json.callback_query.data }}",
+                "rightValue": "proc",
+                "operator": {
+                  "type": "string",
+                  "operation": "startsWith"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "1188ef63-172a-4d1c-b3f3-569997707341",
+        "name": "Начинается на proc",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          -2460,
+          1420
+        ]
+      },
+      {
+        "parameters": {
+          "queryPath": "process.workProcess",
+          "filePath": "=root/n8n/{{ $('11').first().json.idProcess }}.json"
+        },
+        "id": "0f1cbada-bc55-414f-9618-299f3c761167",
+        "name": "Чтение данных из workProcess",
+        "type": "@n-octo-n/n8n-nodes-json-database.JsonDatabase",
+        "typeVersion": 1,
+        "position": [
+          -1140,
+          2520
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $('Switch4').item.json.callback_query.message.chat.id }}",
+          "text": "=Данные по текущей проверке:\nСбор треков: {{ $json.data.TrackCollect }}\nПроверка Белпочты: {{ $json.data.BP_check }}\nПроверка Европочты: {{ $json.data.EP_check }}\nПроверка ошибок:  {{ $json.data.CheckProcess }}",
+          "additionalFields": {
+            "appendAttribution": false,
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "a1104b72-d14c-48d3-9cf8-e2edf8cbf69b",
+        "name": "Telegram3",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1.1,
+        "position": [
+          -920,
+          2520
+        ],
+        "disabled": true
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "f614b925-d863-4663-a768-a3a4f688f496",
+                "leftValue": "={{ $json.callback_query.data }}",
+                "rightValue": "go",
+                "operator": {
+                  "type": "string",
+                  "operation": "startsWith"
+                }
+              }
+            ],
+            "combinator": "and"
+          },
+          "options": {}
+        },
+        "id": "675d8a2c-2aaf-40fb-98ef-8391c7b14437",
+        "name": "Начинается на go",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          -2460,
+          1280
+        ]
+      },
+      {
+        "parameters": {
+          "url": "=https://n8n.makees.ru/webhook/MgStop?procID={{ $('11').first().json.idProcess }}",
+          "options": {}
+        },
+        "id": "45dc98cd-9dd9-4dc3-af96-003078a28b82",
+        "name": "stop2",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.1,
+        "position": [
+          -1700,
+          2320
+        ]
+      },
+      {
+        "parameters": {
+          "url": "=https://n8n.makees.ru/webhook/pachatak?procID={{ $('11').first().json.idProcess }}",
+          "options": {}
+        },
+        "id": "74f162e2-ca88-48f7-97dc-f0c79053351f",
+        "name": "restart1",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.1,
+        "position": [
+          -1660,
+          2480
+        ]
+      },
+      {
+        "parameters": {
+          "url": "=https://n8n.makees.ru/webhook/pachatak?procID={{ $('11').first().json.idProcess }}&reset=yes",
+          "options": {}
+        },
+        "id": "5e97a389-ee9d-4955-a5c4-8dfc518c7134",
+        "name": "start",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.1,
+        "position": [
+          -1840,
+          2600
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{ $json.message.hasOwnProperty(\"text\") }}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "b0c5d063-5a5b-4e4d-ad8b-5d905df72931",
+        "name": "есть ли свойство text2",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          -220,
+          2880
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "string": [
+              {
+                "value1": "={{ $json.message.text }}",
+                "operation": "startsWith",
+                "value2": "/"
+              }
+            ]
+          }
+        },
+        "id": "5c5c54b8-3070-49b6-b102-12029eda2b11",
+        "name": "начинается ли команда с символа /2",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          -240,
+          3100
+        ]
+      },
+      {
+        "parameters": {
+          "dataType": "string",
+          "value1": "={{ $json.message.text }}",
+          "rules": {
+            "rules": [
+              {
+                "operation": "startsWith",
+                "value2": "/start"
+              },
+              {
+                "value2": "/registration",
+                "output": 1
+              },
+              {
+                "value2": "/menu",
+                "output": 2
+              },
+              {
+                "value2": "/help",
+                "output": 3
+              }
+            ]
+          },
+          "fallbackOutput": 3
+        },
+        "id": "b01d9e5b-1d7c-41ac-801f-812dc5ba98f7",
+        "name": "команды2",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 1,
+        "position": [
+          -140,
+          3280
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "boolean": [
+              {
+                "value1": "={{$json.hasOwnProperty(\"callback_query\")}}",
+                "value2": true
+              }
+            ]
+          }
+        },
+        "id": "4fe4da57-11c0-4426-a341-472523f0e3a8",
+        "name": "если есть свойство callback_query(нажатие на кнопку)2",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 1,
+        "position": [
+          60,
+          2900
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Ты действительно хочешь отправить зявку на регистрацию?(Соглашаясь, вы даёте разрешение на использование данных вашего аккаунта)</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Да",
+                      "additionalFields": {
+                        "callback_data": "reg_yes"
+                      }
+                    },
+                    {
+                      "text": "Нет",
+                      "additionalFields": {
+                        "callback_data": "reg_no"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "a1a641f0-99a5-4af6-a49a-166d5eb0de23",
+        "name": "registration",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          60,
+          3260
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "=206784276",
+          "text": "=<b>Пользователь {{ $json.callback_query.from.first_name }} {{ $json.callback_query.from.last_name }} желает зарегестрироваться в BotPotApp. \nЕго данные: \nusername - {{ $json.callback_query.from.username }} ; \n id - {{ $json.callback_query.from.id }} </b>   ",
+          "replyMarkup": "inlineKeyboard",
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "fddbe1bd-eb47-4501-a385-e9f4aa915634",
+        "name": "reg_yes",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          340,
+          3320
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "reg_yes",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "reg_yes"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "331a5a4a-795b-48ed-ab3a-ee9658c15a15",
+                      "leftValue": "",
+                      "rightValue": "reg_no",
+                      "operator": {
+                        "type": "string",
+                        "operation": "equals",
+                        "name": "filter.operator.equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "reg_no"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "b93ab11f-97b7-46c7-82ec-aeb88694ff87",
+        "name": "sw_reg",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          140,
+          3440
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Чтож это дело добровольное. Но использовать бота могут только зарегестрированные пользователи</b>",
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "8a5d1042-c063-426f-903b-baca998a644e",
+        "name": "reg_no",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          360,
+          3500
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! К сожалению, тебя нет в списке доступа. Просто пройди регистрацию /registration</b>",
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "cfc17c37-bfcf-4c4c-9a9b-e6bb103823b6",
+        "name": "mess Необходима регистрация",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -60,
+          3040
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! К сожалению, тебя нет в списке доступа. Просто пройди регистрацию /registration</b>",
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "76992f68-978f-485e-831a-dbeb0732ce24",
+        "name": "mess Необходима регистрация1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -180,
+          3580
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! К сожалению, тебя нет в списке доступа. Просто пройди регистрацию /registration</b>",
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "7da60bc5-f32e-4cfa-bdb7-482962b05609",
+        "name": "mess Необходима регистрация2",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -300,
+          3340
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Основное меню</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Действия с проверкой",
+                      "additionalFields": {
+                        "callback_data": "proc_action"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Данные по процессу",
+                      "additionalFields": {
+                        "callback_data": "proc_data"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "f5f961d1-0562-4fea-9cc0-68f6e571d2e3",
+        "name": "menu",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -780,
+          1420
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Привет, {{ $json[\"message\"][\"from\"][\"first_name\"] }} {{ $json[\"message\"][\"from\"][\"last_name\"] }}! Выбери необходимое действие.</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Меню",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    },
+                    {
+                      "text": "Помощь",
+                      "additionalFields": {
+                        "callback_data": "start_help"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "0e088a16-8b46-497a-a6ac-e0a41f63bd76",
+        "name": "start1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -960,
+          1140
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "proc",
+                      "operator": {
+                        "type": "string",
+                        "operation": "startsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "proc"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "6b2a5a28-6225-40b0-bc97-a875ddc88aec",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "go",
+                      "operator": {
+                        "type": "string",
+                        "operation": "startsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "go"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "200f2117-047a-47ca-9a57-2df3b228de6b",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "start",
+                      "operator": {
+                        "type": "string",
+                        "operation": "startsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "start"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "bfef35ef-245f-4d08-b136-3fc3d10b26f0",
+        "name": "начинается с",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          -1940,
+          2120
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "text": "=<b>Основное меню</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Действия с проверкой",
+                      "additionalFields": {
+                        "callback_data": "proc_action"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Данные по процессу",
+                      "additionalFields": {
+                        "callback_data": "proc_data"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "9c7063fe-bb6b-48a6-ab4a-ff267ccfc498",
+        "name": "menu1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -2240,
+          1920
+        ],
+        "disabled": true
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "menu",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "menu"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "5fb03723-81f0-43aa-adb2-c48f2c76aa93",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "help",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "help"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "78b9933b-1e44-40f0-9e0d-4487d0a0db10",
+        "name": "start2",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          -2340,
+          2080
+        ]
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Ты нажал на кнопку \"помощь\". Здесь должны быть описания функий этого бота и со временем так и будет. Но пока могу лишь продублировать список команд /start /menu Но если есть какие-то вопросы пиши в личку администратору.</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Назад",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "2d5758da-d6ed-40a3-8e05-86fdfbd6eda0",
+        "name": "help",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -1160,
+          1180
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "text": "=<b>Ты нажал на кнопку \"помощь\". Здесь должны быть описания функий этого бота и со временем так и будет. Но пока могу лишь продублировать список команд /start /menu Но если есть какие-то вопросы пиши в личку администратору.</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Назад",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "7b3b9ae6-ff02-41ff-b356-4e3aa6a45ed1",
+        "name": "help1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -2460,
+          1900
+        ],
+        "disabled": true
+      },
+      {
+        "parameters": {
+          "chatId": "={{ $json.message.chat.id }}",
+          "text": "=<b>Ты нажал на кнопку \"registration\". Но бот уже знаком с тобой и твоя учётная запись подключена. Если есть какие-то вопросы пиши в личку администратору.</b>",
+          "replyMarkup": "inlineKeyboard",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Назад",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "25617582-3b9c-4272-81c9-58d349deb50e",
+        "name": "registration1",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -780,
+          1220
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "stop",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "stop"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "65f4a255-2c2f-4e06-9d9e-b2fc9a49aa20",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "restart",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "restart"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "325fafd6-e650-4fe8-ba98-5f5077a3fa2c",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "start",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "start"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "98050053-6af1-4697-b7f1-d1346215563a",
+        "name": "Switch5",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          -1920,
+          2380
+        ]
+      },
+      {
+        "parameters": {
+          "jsCode": "return (\n[\n{\n\"update_id\": \n576299154,\n\"callback_query\": \n{\n\"id\": \n\"2830722604890890546\",\n\"from\": \n{\n\"id\": \n659078966,\n\"is_bot\": \nfalse,\n\"first_name\": \n\"Ирина\",\n\"last_name\": \n\"Москалюк\",\n\"username\": \n\"Irina_Moskaliuk\",\n\"language_code\": \n\"ru\"\n},\n\"message\": \n{\n\"message_id\": \n3442,\n\"from\": \n{\n\"id\": \n6432879107,\n\"is_bot\": \ntrue,\n\"first_name\": \n\"Потап Бот\",\n\"username\": \n\"potap_post_bot\"\n},\n\"chat\": \n{\n\"id\": \n659078966,\n\"first_name\": \n\"Ирина\",\n\"last_name\": \n\"Москалюк\",\n\"username\": \n\"Irina_Moskaliuk\",\n\"type\": \n\"private\"\n},\n\"date\": \n1712995971,\n\"text\": \n\"Привет, Ирина Москалюк! Выбери необходимое действие.\",\n\"entities\": \n[\n{\n\"offset\": \n0,\n\"length\": \n52,\n\"type\": \n\"bold\"\n}\n],\n\"reply_markup\": \n{\n\"inline_keyboard\": \n[\n[\n{\n\"text\": \n\"Меню\",\n\"callback_data\": \n\"start_menu\"\n},\n{\n\"text\": \n\"Помощь\",\n\"callback_data\": \n\"start_help\"\n}\n]\n]\n}\n},\n\"chat_instance\": \n\"2480294014262600766\",\n\"data\": \n\"start_menu\"\n}\n}\n]\n);"
+        },
+        "id": "9813df5e-6911-438c-b81e-25760e4c5632",
+        "name": "Code1",
+        "type": "n8n-nodes-base.code",
+        "typeVersion": 2,
+        "position": [
+          -380,
+          1520
+        ]
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "b9001692-c566-4e23-abdf-55c7300c325f",
+                      "leftValue": "={{ $json.callback_query.from.id }}",
+                      "rightValue": 206784276,
+                      "operator": {
+                        "type": "number",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Admin"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.from.id }}",
+                      "rightValue": 1353185953,
+                      "operator": {
+                        "type": "number",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "ZsTest"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "ef843f77-5246-4568-8832-8543da0b8099",
+                      "leftValue": "={{ $json.callback_query.from.id }}",
+                      "rightValue": 659078966,
+                      "operator": {
+                        "type": "number",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "ForIra"
+              }
+            ]
+          },
+          "options": {
+            "fallbackOutput": "extra",
+            "renameFallbackOutput": "остальные"
+          }
+        },
+        "id": "85bbed1b-704a-4447-a177-9a163c3f1203",
+        "name": "ID для calbackQuery",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          -80,
+          2120
+        ]
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "b9001692-c566-4e23-abdf-55c7300c325f",
+                      "leftValue": "={{ $json.message.from.id }}",
+                      "rightValue": 206784276,
+                      "operator": {
+                        "type": "number",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "Admin"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.message.from.id }}",
+                      "rightValue": 1353185953,
+                      "operator": {
+                        "type": "number",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "ZsTest"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "35cf9c52-0470-47da-8c81-844aac9c91d0",
+                      "leftValue": "={{ $json.message.from.id }}",
+                      "rightValue": 659078966,
+                      "operator": {
+                        "type": "number",
+                        "operation": "equals"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "ForIra"
+              }
+            ]
+          },
+          "options": {
+            "fallbackOutput": "extra",
+            "renameFallbackOutput": "остальные"
+          }
+        },
+        "id": "fbf7d619-16cc-4aa8-ad5e-9bb0df5a9a81",
+        "name": "ID для message",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          -80,
+          1940
+        ]
+      },
+      {
+        "parameters": {},
+        "id": "e523a6c4-24f6-4b84-95c0-1b781fb99729",
+        "name": "ForIra",
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          280,
+          2080
+        ]
+      },
+      {
+        "parameters": {},
+        "id": "67a52f66-4354-41eb-97d6-2fabb733756e",
+        "name": "ForIra1",
+        "type": "n8n-nodes-base.noOp",
+        "typeVersion": 1,
+        "position": [
+          -1980,
+          1300
+        ]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "a65fa0d8-0a93-4117-a50c-4dc5020955aa",
+                "name": "idProcess",
+                "value": "ForIra",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "8f1d41d4-f180-4524-aab4-48dbc00a27b1",
+        "name": "idProcess_ForIra",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.3,
+        "position": [
+          -1920,
+          1080
+        ]
+      },
+      {
+        "parameters": {
+          "assignments": {
+            "assignments": [
+              {
+                "id": "a65fa0d8-0a93-4117-a50c-4dc5020955aa",
+                "name": "idProcess",
+                "value": "ZsTest",
+                "type": "string"
+              },
+              {
+                "id": "1d3d160b-2ef4-4393-bb08-3c20ca1206b4",
+                "name": "Start",
+                "value": "https://n8n.makees.ru/webhook/pachatak?procID=ZsTest&reset=yes",
+                "type": "string"
+              },
+              {
+                "id": "ea0dfc58-6dff-4ce4-aa71-51e1a88f5ee7",
+                "name": "Restart",
+                "value": "https://n8n.makees.ru/webhook/pachatak?procID=ZsTest",
+                "type": "string"
+              },
+              {
+                "id": "97108bbc-2500-4537-8b52-42392a2b0e21",
+                "name": "Stop",
+                "value": "https://n8n.makees.ru/webhook/MgStop?procID=ZsTest",
+                "type": "string"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "bbab236e-3b01-460b-8daa-d4be788c70f8",
+        "name": "idProcess_ZsTest",
+        "type": "n8n-nodes-base.set",
+        "typeVersion": 3.3,
+        "position": [
+          -1800,
+          1220
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "editMessageText",
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "messageId": "={{ $json.callback_query.message.message_id }}",
+          "replyMarkup": "inlineKeyboard",
+          "text": "<b>Основное меню</b>",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Действия с проверкой",
+                      "additionalFields": {
+                        "callback_data": "proc_action"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Данные по процессу",
+                      "additionalFields": {
+                        "callback_data": "proc_data"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "2630817d-73dd-4690-a6c2-9cf581a7e432",
+        "name": "menu2",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -2200,
+          1720
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "editMessageText",
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "messageId": "={{ $json.callback_query.message.message_id }}",
+          "replyMarkup": "inlineKeyboard",
+          "text": "=Действия с процессом.",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Останавить проверку",
+                      "additionalFields": {
+                        "callback_data": "go_proc_stop"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Возобновить проверку",
+                      "additionalFields": {
+                        "callback_data": "go_proc_restart"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Запустить проверку",
+                      "additionalFields": {
+                        "callback_data": "go_proc_start"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Назад",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {}
+        },
+        "id": "1d360426-1a04-4759-a03e-61c92d8f5e77",
+        "name": "stop3",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -740,
+          1920
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "editMessageText",
+          "chatId": "={{ $('Switch4').item.json.callback_query.message.chat.id }}",
+          "messageId": "={{ $('Switch4').item.json.callback_query.message.message_id }}",
+          "replyMarkup": "inlineKeyboard",
+          "text": "=Данные по текущей проверке:\nСбор треков: {{ $json.data.TrackCollect }}\nПроверка Белпочты: {{ $json.data.BP_check }}\nПроверка Европочты: {{ $json.data.EP_check }}\nПроверка ошибок:  {{ $json.data.CheckProcess }}",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Назад",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {}
+        },
+        "id": "d1caa351-cf63-40f6-a982-025a1c7bcb44",
+        "name": "Telegram4",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1.1,
+        "position": [
+          -580,
+          2380
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "editMessageText",
+          "chatId": "={{ $json.callback_query.message.chat.id }}",
+          "messageId": "={{ $json.callback_query.message.message_id }}",
+          "replyMarkup": "inlineKeyboard",
+          "text": "=<b>Ты нажал на кнопку \"помощь\". Здесь должны быть описания функий этого бота и со временем так и будет. Но пока могу лишь продублировать список команд /start /menu Но если есть какие-то вопросы пиши в личку администратору.</b>",
+          "inlineKeyboard": {
+            "rows": [
+              {
+                "row": {
+                  "buttons": [
+                    {
+                      "text": "Назад",
+                      "additionalFields": {
+                        "callback_data": "start_menu"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "additionalFields": {
+            "parse_mode": "HTML"
+          }
+        },
+        "id": "f17f2981-ae49-4361-90d4-f672a81e74bd",
+        "name": "help2",
+        "type": "n8n-nodes-base.telegram",
+        "typeVersion": 1,
+        "position": [
+          -2500,
+          1720
+        ],
+        "credentials": {
+          "telegramApi": {
+            "id": "VTWiXBie3BtYtQ5n",
+            "name": "Bot_potap"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "rules": {
+            "values": [
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "action",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "action"
+              },
+              {
+                "conditions": {
+                  "options": {
+                    "caseSensitive": true,
+                    "leftValue": "",
+                    "typeValidation": "strict"
+                  },
+                  "conditions": [
+                    {
+                      "id": "65f4a255-2c2f-4e06-9d9e-b2fc9a49aa20",
+                      "leftValue": "={{ $json.callback_query.data }}",
+                      "rightValue": "data",
+                      "operator": {
+                        "type": "string",
+                        "operation": "endsWith"
+                      }
+                    }
+                  ],
+                  "combinator": "and"
+                },
+                "renameOutput": true,
+                "outputKey": "data"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "3d9ace49-c16d-41f1-a943-2b0e7e4e62fe",
+        "name": "Switch4",
+        "type": "n8n-nodes-base.switch",
+        "typeVersion": 3,
+        "position": [
+          -1400,
+          2100
+        ]
+      },
+      {
+        "parameters": {
+          "url": "https://n8n.makees.ru/webhook/writeJSONforProceses",
+          "sendBody": true,
+          "bodyParameters": {
+            "parameters": [
+              {
+                "name": "procID",
+                "value": "={{ $('11').first().json.idProcess }}"
+              }
+            ]
+          },
+          "options": {}
+        },
+        "id": "009d8468-95fa-4855-9334-5a46cc3b90d3",
+        "name": "HTTP Request",
+        "type": "n8n-nodes-base.httpRequest",
+        "typeVersion": 4.1,
+        "position": [
+          -1120,
+          2320
+        ]
+      },
+      {
+        "parameters": {
+          "conditions": {
+            "options": {
+              "caseSensitive": true,
+              "leftValue": "",
+              "typeValidation": "strict"
+            },
+            "conditions": [
+              {
+                "id": "2cb03d47-66b0-43ce-a011-40cb5bfac3f8",
+                "leftValue": "={{ $('11').first().json.idProcess }}",
+                "rightValue": "ZsTest",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals",
+                  "name": "filter.operator.equals"
+                }
+              },
+              {
+                "id": "957c9698-5f15-4a33-9b3e-4bbacc40618e",
+                "leftValue": "={{ $('11').first().json.idProcess }}",
+                "rightValue": "ForIra",
+                "operator": {
+                  "type": "string",
+                  "operation": "equals",
+                  "name": "filter.operator.equals"
+                }
+              }
+            ],
+            "combinator": "or"
+          },
+          "options": {}
+        },
+        "id": "4270f78c-c5e6-4e3a-ba26-bd5b702ef646",
+        "name": "If2",
+        "type": "n8n-nodes-base.if",
+        "typeVersion": 2,
+        "position": [
+          -1340,
+          2460
+        ]
+      }
+    ],
+    "connections": {
+      "11": {
+        "main": [
+          [
+            {
+              "node": "If1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Telegram Trigger1": {
+        "main": [
+          [
+            {
+              "node": "IF1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "IF1": {
+        "main": [
+          [
+            {
+              "node": "Telegram1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "If",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "есть ли свойство text1": {
+        "main": [
+          [
+            {
+              "node": "начинается ли команда с символа /1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "если есть свойство callback_query(нажатие на кнопку)",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "начинается ли команда с символа /1": {
+        "main": [
+          [
+            {
+              "node": "команды1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "команды1": {
+        "main": [
+          [
+            {
+              "node": "Start1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Telegram": {
+        "main": [
+          [
+            {
+              "node": "Stop and Error",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Telegram2": {
+        "main": [
+          [
+            {
+              "node": "Stop and Error",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Проверка на колбэкКвери": {
+        "main": [
+          [
+            {
+              "node": "Telegram",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Telegram2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "если есть свойство callback_query(нажатие на кнопку)": {
+        "main": [
+          [
+            {
+              "node": "calbackQuery содержит proc",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Switch2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "calbackQuery содержит proc": {
+        "main": [
+          [
+            {
+              "node": "отправляем действие в чат",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Switch2": {
+        "main": [
+          [
+            {
+              "node": "Start",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "restart",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "stop",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "ZsTest": {
+        "main": [
+          [
+            {
+              "node": "есть ли свойство text",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "idProcess_ZsTest",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "есть ли свойство text": {
+        "main": [
+          [
+            {
+              "node": "начинается ли команда с символа /",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "если есть свойство callback_query(нажатие на кнопку)1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "начинается ли команда с символа /": {
+        "main": [
+          [
+            {
+              "node": "команды",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "команды": {
+        "main": [
+          [
+            {
+              "node": "start1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "registration1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "menu",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "help",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "если есть свойство callback_query(нажатие на кнопку)1": {
+        "main": [
+          [
+            {
+              "node": "calbackQuery содержит proc1",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "начинается с",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "calbackQuery содержит proc1": {
+        "main": [
+          [
+            {
+              "node": "отправляем действие в чат1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If": {
+        "main": [
+          [
+            {
+              "node": "ID для message",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "ID для calbackQuery",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "admin": {
+        "main": [
+          [
+            {
+              "node": "есть ли свойство text1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "ZsTest1": {
+        "main": [
+          [
+            {
+              "node": "ZsTest",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If1": {
+        "main": [
+          [
+            {
+              "node": "есть ли свойство text",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Начинается на proc": {
+        "main": [
+          [],
+          [
+            {
+              "node": "Начинается на go",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Чтение данных из workProcess": {
+        "main": [
+          [
+            {
+              "node": "Telegram3",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "есть ли свойство text2": {
+        "main": [
+          [
+            {
+              "node": "начинается ли команда с символа /2",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "если есть свойство callback_query(нажатие на кнопку)2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "начинается ли команда с символа /2": {
+        "main": [
+          [
+            {
+              "node": "команды2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "команды2": {
+        "main": [
+          [
+            {
+              "node": "mess Необходима регистрация",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "registration",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "mess Необходима регистрация2",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "mess Необходима регистрация1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "если есть свойство callback_query(нажатие на кнопку)2": {
+        "main": [
+          [
+            {
+              "node": "sw_reg",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Проверка на колбэкКвери",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "sw_reg": {
+        "main": [
+          [
+            {
+              "node": "reg_yes",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "reg_no",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "начинается с": {
+        "main": [
+          [
+            {
+              "node": "Switch4",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Switch5",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "start2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "start2": {
+        "main": [
+          [
+            {
+              "node": "menu1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "help1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Switch5": {
+        "main": [
+          [
+            {
+              "node": "stop2",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "restart1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "start",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "ID для calbackQuery": {
+        "main": [
+          [
+            {
+              "node": "admin",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "ZsTest1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "ForIra",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "есть ли свойство text2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "ID для message": {
+        "main": [
+          [
+            {
+              "node": "admin",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "ZsTest1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "ForIra",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "есть ли свойство text2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "ForIra": {
+        "main": [
+          [
+            {
+              "node": "ForIra1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "ForIra1": {
+        "main": [
+          [
+            {
+              "node": "есть ли свойство text",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "idProcess_ForIra",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "idProcess_ForIra": {
+        "main": [
+          [
+            {
+              "node": "11",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "idProcess_ZsTest": {
+        "main": [
+          [
+            {
+              "node": "11",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "menu1": {
+        "main": [
+          [
+            {
+              "node": "menu2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "stop1": {
+        "main": [
+          [
+            {
+              "node": "stop3",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Telegram3": {
+        "main": [
+          [
+            {
+              "node": "Telegram4",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "help1": {
+        "main": [
+          [
+            {
+              "node": "help2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Switch4": {
+        "main": [
+          [
+            {
+              "node": "stop1",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "If2",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "HTTP Request": {
+        "main": [
+          [
+            {
+              "node": "Telegram4",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "If2": {
+        "main": [
+          [
+            {
+              "node": "HTTP Request",
+              "type": "main",
+              "index": 0
+            }
+          ],
+          [
+            {
+              "node": "Чтение данных из workProcess",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "authors": "system migration",
+    "name": null,
+    "description": null
+  },
+  "activeVersionId": "da38a521-fd2b-472f-b5c7-6b34c74c4e51",
   "connections": {
     "11": {
       "main": [
@@ -3352,8 +6703,8 @@
   },
   "shared": [
     {
-      "createdAt": "2024-04-14T07:10:35.018Z",
       "updatedAt": "2024-04-14T07:10:35.018Z",
+      "createdAt": "2024-04-14T07:10:35.018Z",
       "role": "workflow:owner",
       "workflowId": "2zHSSPewVJ2KmlXb",
       "projectId": "NQcsor1lU8xEGtVE"
@@ -3362,14 +6713,14 @@
   "staticData": null,
   "tags": [
     {
-      "createdAt": "2023-12-28T08:03:06.646Z",
       "updatedAt": "2023-12-28T08:03:06.646Z",
+      "createdAt": "2023-12-28T08:03:06.646Z",
       "id": "b0NYL2sHCdMBP0aq",
       "name": "bot"
     },
     {
-      "createdAt": "2023-12-28T08:03:06.653Z",
       "updatedAt": "2023-12-28T08:03:06.653Z",
+      "createdAt": "2023-12-28T08:03:06.653Z",
       "id": "rez9x3A4mWjYtuqn",
       "name": "tellegram"
     }
