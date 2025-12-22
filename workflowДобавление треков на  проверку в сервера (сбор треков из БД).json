@@ -138,7 +138,7 @@
       "name": "Execute Workflow Trigger",
       "type": "n8n-nodes-base.executeWorkflowTrigger",
       "position": [
-        -820,
+        -816,
         400
       ]
     },
@@ -153,7 +153,7 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [
-        -120,
+        -128,
         400
       ]
     },
@@ -187,7 +187,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -180,
+        -176,
         160
       ]
     },
@@ -218,7 +218,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        140,
+        144,
         400
       ],
       "executeOnce": true,
@@ -259,7 +259,7 @@
       "typeVersion": 3.4,
       "position": [
         -560,
-        -60
+        -64
       ],
       "id": "d07a33e6-f781-4811-b8ca-6b4abf3d9b6a",
       "name": "формируем запрос к логированию8",
@@ -278,8 +278,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.1,
       "position": [
-        -200,
-        -60
+        -208,
+        -64
       ],
       "id": "add3e8be-490b-483b-a402-312c82a42207",
       "name": "Запрос в процесс логирования8"
@@ -291,8 +291,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -540,
-        660
+        -544,
+        672
       ],
       "id": "3f11d198-6f1f-4b63-bbe5-e98faf970b84",
       "name": "Code"
@@ -302,8 +302,8 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -840,
-        660
+        -848,
+        672
       ],
       "id": "0f7b0f40-6c5c-47ad-b55f-5eb8c61b9815",
       "name": "When clicking ‘Test workflow’"
@@ -314,7 +314,7 @@
       "name": "Входные данные",
       "type": "n8n-nodes-base.noOp",
       "position": [
-        -540,
+        -544,
         400
       ]
     },
@@ -353,7 +353,7 @@
       "type": "n8n-nodes-base.mySql",
       "typeVersion": 2.4,
       "position": [
-        -580,
+        -576,
         160
       ],
       "executeOnce": true,
@@ -372,7 +372,7 @@
       "type": "n8n-nodes-base.googleDocs",
       "typeVersion": 2,
       "position": [
-        -840,
+        -848,
         160
       ],
       "id": "0cf1e08b-d069-402d-9a2f-057d078677d0",
@@ -400,8 +400,15 @@
     }
   ],
   "staticData": null,
-  "tags": [],
+  "tags": [
+    {
+      "updatedAt": "2025-02-05T16:24:37.889Z",
+      "createdAt": "2025-02-05T16:24:37.889Z",
+      "id": "vsUr1hQQVG3ZP6Nk",
+      "name": "BDCheck"
+    }
+  ],
   "triggerCount": 0,
-  "updatedAt": "2025-03-20T14:19:57.000Z",
-  "versionId": "e01bbb6b-a9df-45d0-9f51-274f78bb8e34"
+  "updatedAt": "2025-12-21T14:03:39.000Z",
+  "versionId": "35abb916-3fe3-49a9-b27b-e15abb93a4e5"
 }
