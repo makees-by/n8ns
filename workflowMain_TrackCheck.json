@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-18T11:28:28.519Z",
-    "createdAt": "2025-12-18T11:28:28.519Z",
-    "versionId": "aac00483-a6ab-47f7-a552-35a3de906c4d",
+    "updatedAt": "2025-12-25T12:11:05.744Z",
+    "createdAt": "2025-12-25T12:11:05.744Z",
+    "versionId": "10ed24d9-45ba-4c60-ab47-30bc4035f56c",
     "workflowId": "5teSeVT776DF4RDh",
     "nodes": [
       {
@@ -3795,8 +3795,7 @@
         "position": [
           -272,
           -464
-        ],
-        "disabled": true
+        ]
       }
     ],
     "connections": {
@@ -5133,7 +5132,7 @@
     "name": null,
     "description": null
   },
-  "activeVersionId": "aac00483-a6ab-47f7-a552-35a3de906c4d",
+  "activeVersionId": "10ed24d9-45ba-4c60-ab47-30bc4035f56c",
   "connections": {
     "Webhook": {
       "main": [
@@ -10261,8 +10260,7 @@
       "position": [
         -272,
         -464
-      ],
-      "disabled": true
+      ]
     }
   ],
   "pinData": {},
@@ -10555,6 +10553,9 @@
     },
     "node:15.20 ZsAnnyu": {
       "recurrenceRules": []
+    },
+    "node:ZsAnnyu 22.00": {
+      "recurrenceRules": []
     }
   },
   "tags": [
@@ -10571,7 +10572,7 @@
       "name": "potap"
     }
   ],
-  "triggerCount": 16,
-  "updatedAt": "2025-12-18T11:28:28.000Z",
-  "versionId": "aac00483-a6ab-47f7-a552-35a3de906c4d"
+  "triggerCount": 17,
+  "updatedAt": "2025-12-25T12:11:05.000Z",
+  "versionId": "10ed24d9-45ba-4c60-ab47-30bc4035f56c"
 }
