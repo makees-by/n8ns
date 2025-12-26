@@ -1,9 +1,9 @@
 {
   "active": true,
   "activeVersion": {
-    "updatedAt": "2025-12-25T12:11:05.744Z",
-    "createdAt": "2025-12-25T12:11:05.744Z",
-    "versionId": "10ed24d9-45ba-4c60-ab47-30bc4035f56c",
+    "updatedAt": "2025-12-25T15:58:03.887Z",
+    "createdAt": "2025-12-25T15:58:03.887Z",
+    "versionId": "ea3d6763-84d7-40cb-875d-1595bc0af25b",
     "workflowId": "5teSeVT776DF4RDh",
     "nodes": [
       {
@@ -3793,8 +3793,8 @@
         "type": "n8n-nodes-base.scheduleTrigger",
         "typeVersion": 1.2,
         "position": [
-          -272,
-          -464
+          320,
+          -368
         ]
       }
     ],
@@ -5132,7 +5132,7 @@
     "name": null,
     "description": null
   },
-  "activeVersionId": "10ed24d9-45ba-4c60-ab47-30bc4035f56c",
+  "activeVersionId": "ea3d6763-84d7-40cb-875d-1595bc0af25b",
   "connections": {
     "Webhook": {
       "main": [
@@ -10258,8 +10258,8 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [
-        -272,
-        -464
+        320,
+        -368
       ]
     }
   ],
@@ -10573,6 +10573,6 @@
     }
   ],
   "triggerCount": 17,
-  "updatedAt": "2025-12-25T12:11:05.000Z",
-  "versionId": "10ed24d9-45ba-4c60-ab47-30bc4035f56c"
+  "updatedAt": "2025-12-25T15:58:03.000Z",
+  "versionId": "ea3d6763-84d7-40cb-875d-1595bc0af25b"
 }
