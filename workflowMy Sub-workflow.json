@@ -1,0 +1,98 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {},
+  "createdAt": "2025-12-26T12:33:17.534Z",
+  "id": "1JpoHeQ2RkWMWFwn",
+  "isArchived": true,
+  "meta": null,
+  "name": "My Sub-workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "preBuiltAgentsCalloutHttpRequest": "",
+        "curlImport": "",
+        "method": "POST",
+        "url": "https://n8n.makees.ru/webhook/servFromBD",
+        "authentication": "none",
+        "provideSslCertificates": false,
+        "sendQuery": true,
+        "specifyQuery": "keypair",
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "Server",
+              "value": "={{ $('Start').item.json.Server }}"
+            }
+          ]
+        },
+        "sendHeaders": false,
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "All_traks",
+              "value": "={{ $json.All_traks -1}}"
+            },
+            {
+              "name": "Traks_left",
+              "value": "={{ $json.Traks_left -1 }}"
+            }
+          ]
+        },
+        "options": {},
+        "infoMessage": ""
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        2608,
+        944
+      ],
+      "id": "18390bd0-44b7-4a0e-8dbf-4c10ec046da0",
+      "name": "PostToServBd Обновляем счётчики треков для сервера1",
+      "disabled": false
+    },
+    {
+      "id": "259722d1-4047-4cad-ac9d-b417ec89b931",
+      "typeVersion": 1.1,
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        2400,
+        944
+      ],
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "Server",
+              "type": "any"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pinData": null,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "updatedAt": "2025-12-26T12:33:17.540Z",
+      "createdAt": "2025-12-26T12:33:17.540Z",
+      "role": "workflow:owner",
+      "workflowId": "1JpoHeQ2RkWMWFwn",
+      "projectId": "NQcsor1lU8xEGtVE"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-12-26T12:33:29.000Z",
+  "versionId": "70394b11-9555-46ee-b575-e287376952f7"
+}
